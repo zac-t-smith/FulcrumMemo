@@ -1,24 +1,25 @@
+import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
-import { ExternalLink, FileText, Download } from 'lucide-react';
+import { ExternalLink, FileText, ArrowRight } from 'lucide-react';
 
 const creditMemos = [
   {
     company: "Kirkland's",
     ticker: 'KIRK',
     description: 'Credit analysis of the home décor retailer navigating restructuring and liquidity challenges.',
-    file: '/memos/Kirklands_Credit_Analysis.pdf',
+    path: '/memos/kirklands',
   },
   {
     company: 'The LYCRA Company',
     ticker: 'LYCRA',
     description: 'Deep dive into the specialty fiber manufacturer facing capital structure pressures.',
-    file: '/memos/LYCRA_Credit_Analysis.pdf',
+    path: '/memos/lycra',
   },
   {
     company: 'Party City',
     ticker: 'PRTY',
     description: 'Analysis of the party goods retailer through Chapter 11 proceedings.',
-    file: '/memos/Party_City_Credit_Analysis.pdf',
+    path: '/memos/party-city',
   },
 ];
 
@@ -112,10 +113,10 @@ const ResearchSection = () => {
                     {memo.description}
                   </p>
                   <Button variant="gold-outline" size="sm" asChild className="w-full">
-                    <a href={memo.file} download>
-                      <Download size={14} />
-                      Download Analysis
-                    </a>
+                    <Link to={memo.path}>
+                      <ArrowRight size={14} />
+                      View Analysis
+                    </Link>
                   </Button>
                 </div>
               ))}
