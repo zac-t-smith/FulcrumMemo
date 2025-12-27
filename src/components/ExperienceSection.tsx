@@ -123,13 +123,11 @@ const ExperienceSection = () => {
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <div
-                      className={`p-3 rounded flex items-center justify-center ${
-                        exp.highlight
-                          ? 'bg-white'
-                          : 'bg-white'
+                      className={`w-16 h-16 rounded-full flex items-center justify-center bg-white border border-border/20 shadow-sm ${
+                        exp.highlight ? 'ring-2 ring-primary/20' : ''
                       }`}
                     >
-                      <img src={exp.logo} alt={`${exp.company} logo`} className="w-12 h-12 object-contain" />
+                      <img src={exp.logo} alt={`${exp.company} logo`} className="w-10 h-10 object-contain" />
                     </div>
                     <div>
                       <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
@@ -191,8 +189,8 @@ const ExperienceSection = () => {
                   className="group bg-navy-light border border-border p-6 hover:border-primary/50 transition-all duration-300"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 rounded bg-white flex items-center justify-center">
-                      <img src={program.logo} alt={`${program.company} logo`} className="w-8 h-8 object-contain" />
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white border border-border/20 shadow-sm">
+                      <img src={program.logo} alt={`${program.company} logo`} className="w-7 h-7 object-contain" />
                     </div>
                     <h4 className="font-display text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                       {program.company}

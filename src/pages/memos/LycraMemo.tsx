@@ -296,7 +296,7 @@ const LycraMemo = () => {
         <footer className="mt-16 pt-8 border-t-2 border-border">
           <div className="text-cream-muted font-body text-sm mb-4">
             <p className="font-semibold text-foreground mb-2">Contact</p>
-            <p>Zachary Smith | zac.smith@financier.com</p>
+            <p>Zachary Smith | zac.t.smith@outlook.com</p>
           </div>
           <p className="text-cream-muted font-body text-xs leading-relaxed">
             <strong>Disclaimer:</strong> This analysis is for educational purposes only and does not constitute investment advice. The author may hold positions in securities discussed. All information is based on publicly available sources and estimates, which may prove incorrect.
