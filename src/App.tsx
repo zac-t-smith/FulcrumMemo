@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import KirklandsMemo from "./pages/memos/KirklandsMemo";
 import LycraMemo from "./pages/memos/LycraMemo";
 import PartyCityMemo from "./pages/memos/PartyCityMemo";
+import RXLearning from "./pages/RXLearning";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/memos/kirklands" element={<KirklandsMemo />} />
             <Route path="/memos/lycra" element={<LycraMemo />} />
             <Route path="/memos/party-city" element={<PartyCityMemo />} />
+            <Route path="/rx-learning" element={<RXLearning />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

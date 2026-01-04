@@ -4,10 +4,10 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { DecisionTree, NodeId } from "@/components/rx/DecisionTree";
-import { DiagnosticFramework } from "@/components/rx/DiagnosticFramework";
-import { TechniqueCard } from "@/components/rx/TechniqueCard";
-import { LiquidityTechniquesSection, HoldingStructuresSection } from "@/components/rx/AdditionalTechniques";
+import { DecisionTree, NodeId } from "./decisiontree";
+import { DiagnosticFramework } from "./diagnosticframework";
+import { TechniqueCard } from "./techniquecard";
+import { LiquidityTechniquesSection, HoldingStructuresSection } from "./additionaltechniques";
 
 const Index = () => {
   const [expandedNode, setExpandedNode] = useState<NodeId>("root");

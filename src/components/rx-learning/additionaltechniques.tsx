@@ -1,6 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
-import { TechniqueCard } from "./TechniqueCard";
+import { TechniqueCard } from "./techniquecard";
 
 export const LiquidityTechniquesSection = () => (
   <div className="space-y-6">

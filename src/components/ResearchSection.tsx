@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
-import { ExternalLink, FileText, ArrowRight } from 'lucide-react';
+import { ExternalLink, FileText, ArrowRight, GraduationCap } from 'lucide-react';
 
 const creditMemos = [
   {
@@ -82,6 +82,53 @@ const ResearchSection = () => {
                     <div className="absolute inset-4 border border-primary/30" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="font-display text-6xl text-primary/20">TFM</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* RX Learning Center */}
+          <div className="group relative mb-12">
+            <div className="absolute -inset-px bg-gradient-to-r from-emerald-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            <div className="relative bg-navy-light border border-border p-8 md:p-12">
+              <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center">
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-emerald-500/10 rounded">
+                      <GraduationCap size={20} className="text-emerald-500" />
+                    </div>
+                    <span className="text-emerald-500 font-body text-sm tracking-wide uppercase">
+                      Educational Resource
+                    </span>
+                  </div>
+
+                  <h3 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
+                    Become a RX Professional
+                  </h3>
+
+                  <p className="text-cream-muted font-body text-lg leading-relaxed max-w-2xl">
+                    Master corporate restructuring from fundamentals to advanced techniques.
+                    Learn how restructuring advisors and consultants approach distressed situations,
+                    with a complete decision tree to guide you from diagnosis to resolution.
+                  </p>
+
+                  <Button variant="gold" size="lg" asChild>
+                    <Link to="/rx-learning">
+                      <GraduationCap size={18} />
+                      Explore Learning Center
+                    </Link>
+                  </Button>
+                </div>
+
+                {/* Decorative Element */}
+                <div className="hidden md:block">
+                  <div className="w-48 h-64 border border-border relative">
+                    <div className="absolute inset-4 border border-emerald-500/30" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="font-display text-6xl text-emerald-500/20">RX</span>
                     </div>
                   </div>
                 </div>
