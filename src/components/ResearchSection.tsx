@@ -1,169 +1,208 @@
 import { Link } from 'react-router-dom';
-import { Button } from './ui/button';
-import { ExternalLink, FileText, ArrowRight } from 'lucide-react';
+import { ArrowRight, FileText, Download } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-const creditMemos = [
+const memos = [
   {
-    company: "Kirkland's",
+    id: 'iran-part-1',
+    title: 'The Asymmetric Restructuring of the Middle East',
+    subtitle: "How Iran's infrastructure-targeting strategy exploits asymmetric cost dynamics to achieve leverage no conventional military campaign could deliver",
+    date: 'March 2026',
+    tags: ['Sovereign Distress', 'Geopolitical Strategy'],
+    series: { name: 'Asymmetric Restructuring', part: 1, total: 2 },
+    path: '/memos/iran',
+    pdfPath: '/memos/Iran_Sovereign_Distress_Analysis_Series_1.pdf',
+  },
+  {
+    id: 'iran-part-2',
+    title: 'Second-Order Effects: The Political Timeline',
+    subtitle: 'How the Iran conflict cascades from sovereign crisis to domestic political constraint to sector-level credit stress',
+    date: 'March 2026',
+    tags: ['Political Economy', 'Credit Cycle'],
+    series: { name: 'Asymmetric Restructuring', part: 2, total: 2 },
+    path: '/memos/iran-part-ii',
+    pdfPath: '/memos/Iran_Sovereign_Distress_Analysis_Series_2.pdf',
+  },
+  {
+    id: 'kirklands',
+    title: "When Your White Knight Is Actually a Vulture",
+    subtitle: "The Beyond Inc. takeover of Kirkland's demonstrates how creditor-friendly financing can achieve effective control",
+    date: 'October 2025',
+    tags: ['Corporate RX', 'Retail'],
     ticker: 'KIRK',
-    description: 'Credit analysis of the home décor retailer navigating restructuring and liquidity challenges.',
     path: '/memos/kirklands',
-  },
-  {
-    company: 'The LYCRA Company',
-    ticker: 'LYCRA',
-    description: 'Deep dive into the specialty fiber manufacturer facing capital structure pressures.',
-    path: '/memos/lycra',
-  },
-  {
-    company: 'Party City',
-    ticker: 'PRTY',
-    description: 'Analysis of the party goods retailer through Chapter 11 proceedings.',
-    path: '/memos/party-city',
+    pdfPath: '/memos/Kirklands_Credit_Analysis.pdf',
   },
 ];
 
 const ResearchSection = () => {
   return (
-    <section id="research" className="py-24 bg-background">
+    <section id="research" className="py-20 bg-background relative">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Section Header */}
-          <div className="mb-16">
-            <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">
-              Publications
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-12"
+          >
+            <p className="text-primary font-mono text-[10px] tracking-[0.3em] uppercase mb-3">
+              Latest Analysis
             </p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold text-foreground">
-              Research & Writing
+            <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4">
+              Recent Publications
             </h2>
-          </div>
+            <div className="gold-line-left w-24" />
+          </motion.div>
 
-          {/* Featured Publication */}
-          <div className="group relative mb-12">
-            <div className="absolute -inset-px bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
-            <div className="relative bg-navy-light border border-border p-8 md:p-12">
-              <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-primary/10 rounded">
-                      <FileText size={20} className="text-primary" />
-                    </div>
-                    <span className="text-primary font-body text-sm tracking-wide uppercase">
-                      Credit Research
+          {/* Featured Series - Asymmetric Restructuring */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-12"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <h3 className="font-display text-xl font-semibold text-foreground">
+                The Asymmetric Restructuring Series
+              </h3>
+              <span className="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-mono uppercase tracking-wider border border-primary/30">
+                2-Part Series
+              </span>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              {/* Part I */}
+              <Link
+                to="/memos/iran"
+                className="memo-card group relative"
+              >
+                <div className="absolute top-0 left-0 bg-primary text-primary-foreground px-3 py-1 text-[10px] font-mono uppercase tracking-wider">
+                  Part I
+                </div>
+                <div className="pt-8">
+                  <div className="flex items-center gap-2 mb-2">
+                    <FileText size={14} className="text-primary" />
+                    <span className="text-muted-foreground text-[10px] font-mono uppercase tracking-wider">
+                      March 2026
                     </span>
                   </div>
-
-                  <h3 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
-                    The Fulcrum Memo
-                  </h3>
-
-                  <p className="text-cream-muted font-body text-lg leading-relaxed max-w-2xl">
-                    Independent credit research and analysis covering distressed debt, 
-                    restructuring situations, and special situations investing. 
-                    Published insights on capital structure dynamics and recovery analysis.
+                  <h4 className="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    The Asymmetric Restructuring of the Middle East
+                  </h4>
+                  <p className="text-muted-foreground font-mono text-xs leading-relaxed mb-4">
+                    How Iran's infrastructure-targeting strategy exploits asymmetric cost dynamics.
                   </p>
-
-                  <Button variant="gold" size="lg" asChild>
-                    <a
-                      href="https://zac-t-smith.github.io/The-Fulcrum-Memo"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink size={18} />
-                      Read The Fulcrum Memo
-                    </a>
-                  </Button>
-                </div>
-
-                {/* Decorative Element */}
-                <div className="hidden md:block">
-                  <div className="w-48 h-64 border border-border relative">
-                    <div className="absolute inset-4 border border-primary/30" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="font-display text-6xl text-primary/20">TFM</span>
-                    </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="tag-pill">Sovereign Distress</span>
+                    <span className="tag-pill">Game Theory</span>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
+              </Link>
 
-          {/* Credit Memos */}
-          <div className="mb-16">
-            <h3 className="font-display text-2xl font-semibold text-foreground mb-6">
-              Credit Memos
+              {/* Part II */}
+              <Link
+                to="/memos/iran-part-ii"
+                className="memo-card group relative"
+              >
+                <div className="absolute top-0 left-0 bg-primary text-primary-foreground px-3 py-1 text-[10px] font-mono uppercase tracking-wider">
+                  Part II
+                </div>
+                <div className="pt-8">
+                  <div className="flex items-center gap-2 mb-2">
+                    <FileText size={14} className="text-primary" />
+                    <span className="text-muted-foreground text-[10px] font-mono uppercase tracking-wider">
+                      March 2026
+                    </span>
+                  </div>
+                  <h4 className="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    Second-Order Effects
+                  </h4>
+                  <p className="text-muted-foreground font-mono text-xs leading-relaxed mb-4">
+                    The political timeline, sector repricing, and the coming restructuring cycle.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="tag-pill">Political Economy</span>
+                    <span className="tag-pill">Credit Cycle</span>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Corporate Credit Memos */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-12"
+          >
+            <h3 className="font-display text-xl font-semibold text-foreground mb-6">
+              Corporate Credit Analysis
             </h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              {creditMemos.map((memo, index) => (
-                <div
+            <div className="grid md:grid-cols-3 gap-4">
+              {[
+                {
+                  company: "Kirkland's",
+                  ticker: 'KIRK',
+                  description: 'Credit analysis of the home decor retailer navigating restructuring.',
+                  path: '/memos/kirklands',
+                },
+                {
+                  company: 'The LYCRA Company',
+                  ticker: 'LYCRA',
+                  description: 'Specialty fiber manufacturer facing capital structure pressures.',
+                  path: '/memos/lycra',
+                },
+                {
+                  company: 'Party City',
+                  ticker: 'PRTY',
+                  description: 'Party goods retailer through Chapter 11 proceedings.',
+                  path: '/memos/party-city',
+                },
+              ].map((memo, index) => (
+                <Link
                   key={index}
-                  className="group bg-navy-light border border-border p-6 hover:border-primary/50 transition-all duration-300"
+                  to={memo.path}
+                  className="memo-card group"
                 >
                   <div className="flex items-center gap-2 mb-3">
-                    <FileText size={16} className="text-primary" />
-                    <span className="text-cream-muted text-xs font-body uppercase tracking-wider">
+                    <FileText size={14} className="text-primary" />
+                    <span className="text-muted-foreground text-[10px] font-mono uppercase tracking-wider">
                       {memo.ticker}
                     </span>
                   </div>
-                  <h4 className="font-display text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  <h4 className="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                     {memo.company}
                   </h4>
-                  <p className="text-cream-muted font-body text-sm leading-relaxed mb-4">
+                  <p className="text-muted-foreground font-mono text-xs leading-relaxed">
                     {memo.description}
                   </p>
-                  <Button variant="gold-outline" size="sm" asChild className="w-full">
-                    <Link to={memo.path}>
-                      <ArrowRight size={14} />
-                      View Analysis
-                    </Link>
-                  </Button>
-                </div>
+                </Link>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          {/* Skills & Technical */}
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <h4 className="font-display text-xl font-semibold text-foreground">
-                Technical Expertise
-              </h4>
-              <div className="flex flex-wrap gap-3">
-                {[
-                  'Financial Modeling',
-                  'DCF Analysis',
-                  'LBO Modeling',
-                  '13-Week Cash Flow',
-                  'Restructuring Valuation',
-                  'Bloomberg Terminal',
-                  'Capital IQ',
-                  'Credit Analysis',
-                  'Recovery Analysis',
-                ].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-4 py-2 bg-navy-light border border-border text-cream-muted font-body text-sm hover:border-primary hover:text-foreground transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <h4 className="font-display text-xl font-semibold text-foreground">
-                Education
-              </h4>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-foreground font-body font-medium">University of Mobile</p>
-                  <p className="text-cream-muted font-body">B.S. Finance</p>
-                  <p className="text-cream-muted font-body text-sm">Expected December 2026 • GPA: 3.71</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* View All CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-center"
+          >
+            <Link
+              to="/memos"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-mono text-sm uppercase tracking-wider glow-subtle hover:bg-gold-glow transition-all duration-300 group"
+            >
+              <span>View All Memos</span>
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>

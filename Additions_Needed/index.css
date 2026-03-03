@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RX Professional Learning Center - Premium Finance Design System
+   Deep navy, gold accents, clean professional typography
+   Think Bloomberg terminal meets Evercore pitch book */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Premium Dark Finance Theme */
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Gold accent - signature RX color */
+    --primary: 45 93% 47%;
+    --primary-foreground: 222 47% 5%;
+
+    --secondary: 222 30% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 30% 12%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 222 30% 18%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 15%;
+    --ring: 45 93% 47%;
+
+    --radius: 0.5rem;
+
+    /* Semantic colors for RX states */
+    --urgent: 0 84% 60%;
+    --warning: 38 92% 50%;
+    --success: 142 76% 36%;
+    --info: 199 89% 48%;
+
+    /* Sidebar - matching dark theme */
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 215 20% 65%;
+    --sidebar-primary: 45 93% 47%;
+    --sidebar-primary-foreground: 222 47% 5%;
+    --sidebar-accent: 222 30% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 30% 15%;
+    --sidebar-ring: 45 93% 47%;
+
+    /* Chart colors */
+    --chart-1: 45 93% 47%;
+    --chart-2: 199 89% 48%;
+    --chart-3: 142 76% 36%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 280 65% 60%;
+  }
+
+  /* Light mode (optional - keep for accessibility) */
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 45 93% 37%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 30% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 222 30% 96%;
+    --muted-foreground: 222 20% 40%;
+    --accent: 222 30% 94%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 30% 90%;
+    --input: 222 30% 90%;
+    --ring: 45 93% 47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Custom scrollbar for premium feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/30;
+  }
+}
+
+@layer components {
+  /* Premium card with subtle glow */
+  .rx-card {
+    @apply bg-card border border-border rounded-xl transition-all duration-300;
+    box-shadow: 0 4px 20px -5px hsl(var(--primary) / 0.05);
+  }
+
+  .rx-card:hover {
+    @apply border-primary/30;
+    box-shadow: 0 8px 30px -10px hsl(var(--primary) / 0.15);
+  }
+
+  /* Glass morphism effect */
+  .rx-glass {
+    @apply backdrop-blur-xl bg-card/80 border border-border/50;
+  }
+
+  /* Gold accent gradient */
+  .rx-gold-gradient {
+    background: linear-gradient(135deg, hsl(45 93% 47%), hsl(38 92% 50%));
+  }
+
+  /* Premium header */
+  .rx-header {
+    @apply sticky top-0 z-50 backdrop-blur-xl bg-background/90 border-b border-border/50;
+  }
+
+  /* Section title styling */
+  .rx-section-title {
+    @apply text-2xl font-bold text-foreground flex items-center gap-3;
+  }
+
+  /* Technique badge variants */
+  .rx-badge-urgent {
+    @apply bg-red-500/10 text-red-400 border-red-500/30;
+  }
+
+  .rx-badge-warning {
+    @apply bg-amber-500/10 text-amber-400 border-amber-500/30;
+  }
+
+  .rx-badge-success {
+    @apply bg-emerald-500/10 text-emerald-400 border-emerald-500/30;
+  }
+
+  .rx-badge-info {
+    @apply bg-sky-500/10 text-sky-400 border-sky-500/30;
+  }
+
+  /* Decision tree node */
+  .rx-tree-node {
+    @apply px-4 py-3 rounded-lg border-2 transition-all duration-200;
+  }
+
+  .rx-tree-node:hover {
+    @apply scale-105 shadow-lg;
+  }
+
+  /* Code/formula styling */
+  .rx-formula {
+    @apply font-mono text-sm bg-muted/50 rounded-lg p-4 border border-border;
+  }
+
+  /* Table styling */
+  .rx-table {
+    @apply w-full text-sm;
+  }
+
+  .rx-table thead {
+    @apply bg-muted/50;
+  }
+
+  .rx-table th {
+    @apply text-left p-3 font-semibold text-muted-foreground uppercase text-xs tracking-wider;
+  }
+
+  .rx-table td {
+    @apply p-3 border-t border-border;
+  }
+
+  .rx-table tr:hover {
+    @apply bg-muted/30;
+  }
+
+  /* Learning path indicator */
+  .rx-progress-step {
+    @apply w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-all;
+  }
+
+  .rx-progress-step.active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .rx-progress-step.completed {
+    @apply bg-emerald-500 text-white;
+  }
+
+  .rx-progress-step.upcoming {
+    @apply bg-muted text-muted-foreground;
+  }
+}
+
+@layer utilities {
+  /* Gradient text */
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(45 93% 47%), hsl(38 92% 50%));
+  }
+
+  /* Subtle glow effects */
+  .glow-gold {
+    box-shadow: 0 0 40px -10px hsl(45 93% 47% / 0.4);
+  }
+
+  .glow-success {
+    box-shadow: 0 0 40px -10px hsl(142 76% 36% / 0.4);
+  }
+
+  .glow-danger {
+    box-shadow: 0 0 40px -10px hsl(0 84% 60% / 0.4);
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulseSoft 3s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulseSoft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+}

@@ -1,4 +1,5 @@
 import { GraduationCap } from 'lucide-react';
+import { motion } from 'framer-motion';
 import BORLogo from '../assets/logos/BOR.png';
 import GSLogo from '../assets/logos/GS.png';
 import BFGLogo from '../assets/logos/BFG.png';
@@ -91,61 +92,72 @@ const earlyPrograms = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-24 bg-background">
+    <section id="experience" className="py-20 bg-background">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Section Header */}
-          <div className="mb-16">
-            <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-12"
+          >
+            <p className="text-primary font-mono text-[10px] tracking-[0.3em] uppercase mb-3">
               Career
             </p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold text-foreground">
+            <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4">
               Experience
             </h2>
-          </div>
+            <div className="gold-line-left w-24" />
+          </motion.div>
 
           {/* Experience Timeline */}
-          <div className="space-y-12 mb-16">
+          <div className="space-y-8 mb-12">
             {experiences.map((exp, index) => (
-              <div
+              <motion.div
                 key={index}
-                className={`group relative grid md:grid-cols-[200px_1fr] gap-6 md:gap-12 ${
-                  exp.highlight ? 'py-8 px-6 -mx-6 bg-navy-light border border-border' : ''
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className={`group relative grid md:grid-cols-[180px_1fr] gap-4 md:gap-8 ${
+                  exp.highlight ? 'p-6 surface-elevated border-l-2 border-primary' : ''
                 }`}
               >
                 {/* Left - Meta */}
-                <div className="space-y-2">
-                  <p className="text-cream-muted font-body text-sm">{exp.period}</p>
-                  <p className="text-cream-muted font-body text-sm">{exp.location}</p>
+                <div className="space-y-1">
+                  <p className="text-muted-foreground font-mono text-xs">{exp.period}</p>
+                  <p className="text-muted-foreground font-mono text-xs">{exp.location}</p>
                 </div>
 
                 {/* Right - Content */}
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <div className="flex items-start gap-4">
                     <div
-                      className={`w-16 h-16 rounded-full flex items-center justify-center bg-white border border-border/20 shadow-sm ${
-                        exp.highlight ? 'ring-2 ring-primary/20' : ''
+                      className={`w-14 h-14 rounded-full flex items-center justify-center bg-white border border-border/20 shadow-sm shrink-0 ${
+                        exp.highlight ? 'ring-2 ring-primary/30' : ''
                       }`}
                     >
-                      <img src={exp.logo} alt={`${exp.company} logo`} className="w-10 h-10 object-contain" />
+                      <img src={exp.logo} alt={`${exp.company} logo`} className="w-9 h-9 object-contain" />
                     </div>
                     <div>
-                      <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                      <h3 className="font-display text-lg md:text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                         {exp.company}
                       </h3>
-                      <p className="text-cream-muted font-body">{exp.role}</p>
+                      <p className="text-muted-foreground font-mono text-sm">{exp.role}</p>
                     </div>
                   </div>
 
-                  <p className="text-cream-muted font-body leading-relaxed pl-0 md:pl-16">
+                  <p className="text-muted-foreground font-mono text-sm leading-relaxed pl-0 md:pl-[4.5rem]">
                     {exp.description}
                   </p>
 
                   {exp.bullets.length > 0 && (
-                    <ul className="space-y-2 pl-0 md:pl-16">
+                    <ul className="space-y-2 pl-0 md:pl-[4.5rem]">
                       {exp.bullets.map((bullet, i) => (
-                        <li key={i} className="flex items-start gap-3 text-cream-muted font-body text-sm">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                        <li key={i} className="flex items-start gap-3 text-muted-foreground font-mono text-xs">
+                          <span className="text-primary mt-1">▸</span>
                           {bullet}
                         </li>
                       ))}
@@ -153,58 +165,68 @@ const ExperienceSection = () => {
                   )}
 
                   {exp.highlight && (
-                    <div className="flex gap-6 pt-4 pl-0 md:pl-16">
+                    <div className="flex gap-6 pt-4 pl-0 md:pl-[4.5rem]">
                       <div>
                         <p className="text-2xl font-display font-semibold text-primary">$1.2M</p>
-                        <p className="text-cream-muted text-xs font-body">Revenue</p>
+                        <p className="text-muted-foreground text-[10px] font-mono uppercase tracking-wider">Revenue</p>
                       </div>
                       <div>
                         <p className="text-2xl font-display font-semibold text-foreground">$400K+</p>
-                        <p className="text-cream-muted text-xs font-body">Liabilities Managed</p>
+                        <p className="text-muted-foreground text-[10px] font-mono uppercase tracking-wider">Liabilities</p>
                       </div>
                       <div>
                         <p className="text-2xl font-display font-semibold text-foreground">8</p>
-                        <p className="text-cream-muted text-xs font-body">Team Size</p>
+                        <p className="text-muted-foreground text-[10px] font-mono uppercase tracking-wider">Team Size</p>
                       </div>
                     </div>
                   )}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* Early Programs */}
-          <div className="border-t border-border pt-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="border-t border-border pt-12"
+          >
             <div className="flex items-center gap-3 mb-8">
               <GraduationCap size={20} className="text-primary" />
               <h3 className="font-display text-xl font-semibold text-foreground">
                 Early Insight Programs
               </h3>
             </div>
-            
-            <div className="grid md:grid-cols-3 gap-6">
+
+            <div className="grid md:grid-cols-3 gap-4">
               {earlyPrograms.map((program, index) => (
-                <div
+                <motion.div
                   key={index}
-                  className="group bg-navy-light border border-border p-6 hover:border-primary/50 transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="group memo-card"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white border border-border/20 shadow-sm">
-                      <img src={program.logo} alt={`${program.company} logo`} className="w-7 h-7 object-contain" />
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-white border border-border/20 shadow-sm">
+                      <img src={program.logo} alt={`${program.company} logo`} className="w-6 h-6 object-contain" />
                     </div>
-                    <h4 className="font-display text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                    <h4 className="font-display text-base font-semibold text-foreground group-hover:text-primary transition-colors">
                       {program.company}
                     </h4>
                   </div>
-                  <p className="text-cream-muted text-xs font-body mb-2">{program.period}</p>
-                  <p className="text-primary font-body text-sm mb-3">{program.role}</p>
-                  <p className="text-cream-muted font-body text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-[10px] font-mono uppercase tracking-wider mb-2">{program.period}</p>
+                  <p className="text-primary font-mono text-xs mb-3">{program.role}</p>
+                  <p className="text-muted-foreground font-mono text-xs leading-relaxed">
                     {program.description}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

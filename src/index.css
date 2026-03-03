@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,69 +6,63 @@
 
 @layer base {
   :root {
-    /* Navy & Gold - Finance/Consulting Prestige */
-    --background: 220 25% 6%;
-    --foreground: 45 20% 95%;
+    /* Dark Editorial Finance Theme */
+    --background: 220 20% 4%;        /* Near-black with blue undertone */
+    --foreground: 45 20% 90%;        /* Warm off-white */
 
-    --card: 220 20% 10%;
-    --card-foreground: 45 20% 95%;
+    --card: 220 18% 7%;              /* Slightly elevated surface */
+    --card-foreground: 45 20% 90%;
 
-    --popover: 220 20% 10%;
-    --popover-foreground: 45 20% 95%;
+    --popover: 220 18% 7%;
+    --popover-foreground: 45 20% 90%;
 
-    --primary: 43 74% 49%;
-    --primary-foreground: 220 25% 6%;
+    --primary: 43 80% 55%;           /* GOLD - the accent color */
+    --primary-foreground: 220 20% 4%;
 
-    --secondary: 220 15% 15%;
+    --secondary: 220 15% 12%;
     --secondary-foreground: 45 20% 90%;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 220 15% 12%;
+    --muted-foreground: 220 10% 50%;
 
-    --accent: 43 74% 49%;
-    --accent-foreground: 220 25% 6%;
+    --accent: 43 60% 40%;            /* Darker gold */
+    --accent-foreground: 45 20% 90%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 43 74% 49%;
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 43 80% 55%;
 
-    --radius: 0.25rem;
+    --radius: 0.375rem;
 
-    /* Custom tokens */
-    --gold: 43 74% 49%;
-    --gold-light: 43 80% 65%;
-    --gold-dark: 43 70% 35%;
-    --navy: 220 25% 6%;
-    --navy-light: 220 20% 12%;
-    --navy-lighter: 220 15% 18%;
-    --cream: 45 20% 95%;
-    --cream-muted: 45 15% 75%;
+    /* Custom gold tokens */
+    --gold: 43 80% 55%;
+    --gold-dim: 43 50% 35%;
+    --gold-glow: 43 90% 65%;
 
-    /* Gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(43 74% 49%), hsl(43 80% 65%));
-    --gradient-navy: linear-gradient(180deg, hsl(220 25% 6%), hsl(220 20% 12%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 25% 8%) 0%, hsl(220 20% 4%) 100%);
+    /* Surface elevated */
+    --surface-elevated: 220 18% 9%;
 
-    /* Shadows */
-    --shadow-gold: 0 4px 30px hsl(43 74% 49% / 0.15);
-    --shadow-elegant: 0 25px 50px -12px hsl(220 25% 0% / 0.5);
-
-    /* Typography */
-    --font-display: 'Playfair Display', Georgia, serif;
-    --font-body: 'Inter', system-ui, sans-serif;
+    /* Legacy tokens for backward compatibility */
+    --gold-light: 43 90% 65%;
+    --gold-dark: 43 50% 35%;
+    --navy: 220 20% 4%;
+    --navy-light: 220 18% 7%;
+    --navy-lighter: 220 15% 12%;
+    --cream: 45 20% 90%;
+    --cream-muted: 220 10% 50%;
 
     /* Sidebar tokens */
-    --sidebar-background: 220 20% 10%;
-    --sidebar-foreground: 45 20% 95%;
-    --sidebar-primary: 43 74% 49%;
-    --sidebar-primary-foreground: 220 25% 6%;
-    --sidebar-accent: 220 15% 15%;
-    --sidebar-accent-foreground: 45 20% 95%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 43 74% 49%;
+    --sidebar-background: 220 18% 7%;
+    --sidebar-foreground: 45 20% 90%;
+    --sidebar-primary: 43 80% 55%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 45 20% 90%;
+    --sidebar-border: 220 15% 15%;
+    --sidebar-ring: 43 80% 55%;
   }
 }
 
@@ -83,24 +77,104 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: var(--font-body);
+    font-family: 'IBM Plex Mono', monospace;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
+    font-family: 'Space Grotesk', sans-serif;
   }
 }
 
 @layer components {
+  /* Gold gradient text */
+  .gold-gradient-text {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gold-dim)) 0%,
+      hsl(var(--gold)) 50%,
+      hsl(var(--gold-glow)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Legacy alias */
   .text-gradient-gold {
-    background: var(--gradient-gold);
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gold-dim)) 0%,
+      hsl(var(--gold)) 50%,
+      hsl(var(--gold-glow)) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
+  /* Gold horizontal line */
+  .gold-line {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--gold) / 0.6) 50%,
+      transparent 100%
+    );
+  }
+
+  /* Gold line left-aligned */
+  .gold-line-left {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      hsl(var(--gold) / 0.8) 0%,
+      transparent 100%
+    );
+  }
+
+  /* Surface card */
+  .surface-card {
+    @apply bg-card border border-border rounded-md;
+  }
+
+  /* Surface elevated */
+  .surface-elevated {
+    background-color: hsl(var(--surface-elevated));
+  }
+
+  /* Tag pill */
+  .tag-pill {
+    @apply px-2.5 py-1 text-xs font-mono uppercase tracking-wider border rounded;
+    @apply border-border text-muted-foreground;
+    @apply transition-colors duration-200;
+  }
+
+  /* Tag pill active state */
+  .tag-pill-active {
+    @apply border-primary/60 bg-primary/10 text-primary;
+  }
+
+  /* Memo card */
+  .memo-card {
+    @apply bg-card border border-border rounded-md p-6;
+    @apply transition-all duration-300;
+  }
+
+  .memo-card:hover {
+    @apply border-primary/30;
+    box-shadow: 0 0 20px hsl(var(--gold) / 0.1);
+  }
+
+  /* Glow subtle */
+  .glow-subtle {
+    box-shadow: 0 0 20px hsl(var(--gold) / 0.2);
+  }
+
+  /* Legacy classes */
   .bg-gradient-hero {
-    background: var(--gradient-hero);
+    background: linear-gradient(135deg, hsl(220 20% 5%) 0%, hsl(220 20% 3%) 100%);
   }
 
   .border-gold {
@@ -108,7 +182,7 @@
   }
 
   .glow-gold {
-    box-shadow: var(--shadow-gold);
+    box-shadow: 0 4px 30px hsl(var(--gold) / 0.15);
   }
 
   .line-clamp-3 {
@@ -181,5 +255,26 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+/* Print styles for Resume */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  nav, footer, .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 }

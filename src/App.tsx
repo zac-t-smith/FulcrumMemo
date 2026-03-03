@@ -7,9 +7,13 @@ import { HelmetProvider } from "react-helmet-async";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import MemosPage from "./pages/Memos";
+import Resume from "./pages/Resume";
 import KirklandsMemo from "./pages/memos/KirklandsMemo";
 import LycraMemo from "./pages/memos/LycraMemo";
 import PartyCityMemo from "./pages/memos/PartyCityMemo";
+import IranMemo from "./pages/memos/IranMemo";
+import IranMemoPartII from "./pages/memos/IranMemoPartII";
 
 const queryClient = new QueryClient();
 
@@ -23,9 +27,13 @@ const App = () => (
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/memos" element={<MemosPage />} />
             <Route path="/memos/kirklands" element={<KirklandsMemo />} />
             <Route path="/memos/lycra" element={<LycraMemo />} />
             <Route path="/memos/party-city" element={<PartyCityMemo />} />
+            <Route path="/memos/iran" element={<IranMemo />} />
+            <Route path="/memos/iran-part-ii" element={<IranMemoPartII />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
