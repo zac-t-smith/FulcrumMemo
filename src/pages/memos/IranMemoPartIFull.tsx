@@ -306,12 +306,12 @@ const IranMemoPartIFull = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="my-8"
+              className="my-10"
             >
-              <h4 className="font-display text-lg font-semibold text-foreground mb-4">
+              <h4 className="font-display text-lg font-semibold text-zinc-100 mb-6">
                 Conflict Timeline
               </h4>
-              <div className="space-y-4">
+              <div className="space-y-1">
                 {conflictTimeline.map((item, index) => (
                   <motion.div
                     key={item.date}
@@ -319,12 +319,12 @@ const IranMemoPartIFull = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className="flex gap-4 border-l-2 border-primary/30 pl-4 hover:border-primary transition-colors"
+                    className="grid grid-cols-[180px_1fr] gap-6 py-3 border-l-2 border-primary/30 pl-4 hover:border-primary hover:bg-primary/5 transition-all"
                   >
-                    <span className="font-mono text-xs text-primary font-semibold whitespace-nowrap min-w-[100px]">
+                    <span className="font-mono text-sm text-primary font-semibold whitespace-nowrap">
                       {item.date}
                     </span>
-                    <p className="font-mono text-xs text-muted-foreground">{item.event}</p>
+                    <p className="font-mono text-sm text-zinc-300 leading-relaxed">{item.event}</p>
                   </motion.div>
                 ))}
               </div>
