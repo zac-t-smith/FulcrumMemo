@@ -23,7 +23,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter basename="/The-Fulcrum-Memo">
+        <BrowserRouter basename="/FulcrumMemo">
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
