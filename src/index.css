@@ -262,21 +262,28 @@
    MEMO PAGE STYLES - Typography & Layout
    =========================================== */
 
-/* Memo article container - centered with proper width */
-.memo-article {
-  max-width: 800px;
+/* Outer wrapper - centers the entire layout */
+.memo-page-wrapper {
+  max-width: 1200px;
   margin: 0 auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding: 0 2rem;
 }
 
-/* When TOC is visible on desktop */
-@media (min-width: 1280px) {
-  .memo-article {
-    margin-left: 280px;
-    margin-right: auto;
-    max-width: 800px;
+/* Grid layout for TOC + Content on desktop */
+@media (min-width: 1024px) {
+  .memo-page-wrapper {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
   }
+}
+
+/* Memo article container - the content column */
+.memo-article {
+  max-width: 800px;
+  width: 100%;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
 }
 
 /* Memo body text - NOT monospace, readable */
@@ -291,6 +298,15 @@
   margin-bottom: 1.5rem;
 }
 
+/* Apply body styles to paragraphs inside memo-article */
+.memo-article p:not(.memo-label):not(.font-mono) {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: #d4d4d8;
+  margin-bottom: 1.5rem;
+}
+
 /* Memo headings */
 .memo-heading-1 {
   font-family: 'Space Grotesk', sans-serif;
@@ -298,7 +314,7 @@
   font-weight: 700;
   color: #f4f4f5; /* zinc-100 - near white */
   margin-bottom: 1.5rem;
-  padding-top: 3rem;
+  padding-top: 4rem;
 }
 
 .memo-heading-2 {
@@ -336,14 +352,14 @@
 
 /* Memo sections - proper spacing */
 .memo-section {
-  padding-top: 3rem;
-  margin-bottom: 2.5rem;
+  padding-top: 4rem;
+  margin-bottom: 2rem;
 }
 
 /* Chart containers - wider than text, with breathing room */
 .memo-chart-container {
-  max-width: 900px;
-  margin: 2.5rem auto;
+  max-width: 100%;
+  margin: 2.5rem 0;
   padding: 1.5rem;
   background: hsl(220 18% 9%);
   border: 1px solid hsl(220 15% 15%);
@@ -352,8 +368,8 @@
 
 /* Callout boxes with proper spacing */
 .memo-callout {
-  margin: 2rem 0;
-  padding: 1.5rem;
+  margin: 2.5rem 0;
+  padding: 1.5rem 2rem;
   border-radius: 0.5rem;
 }
 
@@ -424,13 +440,19 @@
 /* Download/CTA sections */
 .memo-cta {
   margin: 3rem 0;
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
 }
 
 /* Series navigation */
 .memo-series-nav {
   margin: 2.5rem 0;
   padding: 1.5rem;
+}
+
+/* Executive Summary and Callout boxes */
+.memo-article .surface-elevated {
+  margin: 2.5rem 0;
+  padding: 1.5rem 2rem;
 }
 
 /* Print styles for Resume */

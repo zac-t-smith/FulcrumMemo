@@ -21,7 +21,7 @@ export const TableOfContents = ({ items, className }: TableOfContentsProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1280);
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
@@ -100,15 +100,15 @@ export const TableOfContents = ({ items, className }: TableOfContentsProps) => {
     );
   }
 
-  // Desktop TOC
+  // Desktop TOC - uses sticky positioning within grid
   return (
     <motion.aside
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, delay: 0.3 }}
       className={cn(
-        'fixed left-8 top-32 w-56 max-h-[calc(100vh-180px)] overflow-y-auto',
-        'hidden xl:block',
+        'sticky top-24 h-fit max-h-[calc(100vh-120px)] overflow-y-auto',
+        'hidden lg:block',
         className
       )}
     >

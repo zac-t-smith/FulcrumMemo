@@ -78,9 +78,10 @@ const IranMemoPartIFull = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
 
-        <TableOfContents items={tocItems} />
+        <div className="memo-page-wrapper">
+          <TableOfContents items={tocItems} />
 
-        <article ref={contentRef} className="memo-article pt-24 pb-12">
+          <article ref={contentRef} className="memo-article">
           {/* Back Link */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -851,6 +852,7 @@ const IranMemoPartIFull = () => {
             </p>
           </motion.footer>
         </article>
+        </div>
 
         <Footer />
       </div>

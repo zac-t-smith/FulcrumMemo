@@ -61,7 +61,7 @@ export const Callout = ({ variant = 'insight', title, children, className }: Cal
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       className={cn(
-        'my-8 p-6 border-l-2 rounded-r-lg',
+        'memo-callout border-l-2 rounded-r-lg',
         config.borderColor,
         config.bgColor,
         className
