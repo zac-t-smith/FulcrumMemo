@@ -12,8 +12,8 @@ import Resume from "./pages/Resume";
 import KirklandsMemo from "./pages/memos/KirklandsMemo";
 import LycraMemo from "./pages/memos/LycraMemo";
 import PartyCityMemo from "./pages/memos/PartyCityMemo";
-import IranMemo from "./pages/memos/IranMemo";
-import IranMemoPartII from "./pages/memos/IranMemoPartII";
+import IranMemoPartIFull from "./pages/memos/IranMemoPartIFull";
+import IranMemoPartIIFull from "./pages/memos/IranMemoPartIIFull";
 
 const queryClient = new QueryClient();
 
@@ -23,7 +23,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter basename="/FulcrumMemo">
+        <BrowserRouter basename="/The-Fulcrum-Memo">
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
@@ -32,8 +32,8 @@ const App = () => (
             <Route path="/memos/kirklands" element={<KirklandsMemo />} />
             <Route path="/memos/lycra" element={<LycraMemo />} />
             <Route path="/memos/party-city" element={<PartyCityMemo />} />
-            <Route path="/memos/iran" element={<IranMemo />} />
-            <Route path="/memos/iran-part-ii" element={<IranMemoPartII />} />
+            <Route path="/memos/iran" element={<IranMemoPartIFull />} />
+            <Route path="/memos/iran-part-ii" element={<IranMemoPartIIFull />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

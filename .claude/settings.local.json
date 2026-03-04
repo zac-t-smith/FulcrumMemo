@@ -17,7 +17,13 @@
       "Bash(git pull:*)",
       "Bash(ls:*)",
       "Bash(npm install framer-motion)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(git rev-list:*)",
+      "Bash(git filter-branch:*)",
+      "Bash(git stash:*)",
+      "Bash(FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch:*)",
+      "Bash(gh run list:*)",
+      "Bash(npm install:*)"
     ]
   }
 }

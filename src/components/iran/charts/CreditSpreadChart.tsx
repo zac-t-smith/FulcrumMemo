@@ -1,0 +1,193 @@
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  ReferenceLine,
+  ReferenceArea,
+} from 'recharts';
+import { cn } from '@/lib/utils';
+import { creditMarketData } from '@/data/iranMemoData';
+
+// Historical HY spread data (simplified for demonstration)
+const historicalData = [
+  { date: '2008', spread: 1800, event: 'Financial Crisis Peak' },
+  { date: '2009', spread: 800, event: 'Recovery begins' },
+  { date: '2010', spread: 600, event: '' },
+  { date: '2011', spread: 700, event: 'European debt crisis' },
+  { date: '2012', spread: 550, event: '' },
+  { date: '2013', spread: 400, event: '' },
+  { date: '2014', spread: 350, event: '' },
+  { date: '2015', spread: 650, event: 'Oil crash / China fears' },
+  { date: '2016', spread: 700, event: 'Energy defaults peak' },
+  { date: '2017', spread: 350, event: '' },
+  { date: '2018', spread: 400, event: 'Q4 selloff' },
+  { date: '2019', spread: 350, event: '' },
+  { date: '2020', spread: 1100, event: 'COVID-19 shock' },
+  { date: '2021', spread: 300, event: 'Easy money peak' },
+  { date: '2022', spread: 500, event: 'Russia-Ukraine / Fed hikes' },
+  { date: '2023', spread: 400, event: '' },
+  { date: '2024', spread: 320, event: '' },
+  { date: '2025', spread: 281, event: 'Historic lows' },
+  { date: 'Mar 2026', spread: 320, event: 'Iran conflict begins', isCurrent: true },
+];
+
+const crisisEvents = [
+  { start: '2008', end: '2009', label: '2008-09 GFC', color: '#ef444420' },
+  { start: '2015', end: '2016', label: '2015-16 Energy', color: '#f9731620' },
+  { start: '2020', end: '2020', label: '2020 COVID', color: '#eab30820' },
+];
+
+const CustomTooltip = ({ active, payload, label }: any) => {
+  if (!active || !payload || !payload.length) return null;
+  const data = payload[0].payload;
+
+  return (
+    <div className="surface-card border border-border p-4 rounded-lg shadow-xl">
+      <p className="font-mono text-sm font-semibold text-foreground mb-2">{label}</p>
+      <div className="flex justify-between gap-4 mb-1">
+        <span className="font-mono text-xs text-primary">HY Spread:</span>
+        <span className="font-mono text-xs text-foreground font-semibold">{data.spread} bps</span>
+      </div>
+      {data.event && (
+        <p className="font-mono text-[10px] text-muted-foreground italic mt-2 border-t border-border pt-2">
+          {data.event}
+        </p>
+      )}
+    </div>
+  );
+};
+
+export const CreditSpreadChart = ({ className }: { className?: string }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className={cn('my-8 p-6 surface-card border border-border rounded-lg', className)}
+    >
+      <div className="mb-6">
+        <h4 className="font-display text-lg font-semibold text-foreground mb-1">
+          High-Yield Credit Spreads: Historical Context
+        </h4>
+        <p className="font-mono text-xs text-muted-foreground">
+          HY OAS (Option-Adjusted Spread) over Treasuries - shaded areas show prior crises
+        </p>
+      </div>
+
+      <div className="h-72">
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart data={historicalData}>
+            <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+            <XAxis
+              dataKey="date"
+              stroke="hsl(var(--muted-foreground))"
+              fontSize={10}
+              tickLine={false}
+            />
+            <YAxis
+              stroke="hsl(var(--muted-foreground))"
+              fontSize={10}
+              tickLine={false}
+              domain={[0, 2000]}
+              tickFormatter={(v) => `${v}`}
+              label={{
+                value: 'Spread (bps)',
+                angle: -90,
+                position: 'insideLeft',
+                style: { fontSize: 10, fill: 'hsl(var(--muted-foreground))' },
+              }}
+            />
+            <Tooltip content={<CustomTooltip />} />
+
+            {/* 30-year average line */}
+            <ReferenceLine
+              y={creditMarketData.hySpread.thirtyYearAverage}
+              stroke="#eab308"
+              strokeDasharray="5 5"
+              label={{
+                value: `30-yr avg: ${creditMarketData.hySpread.thirtyYearAverage} bps`,
+                position: 'right',
+                style: { fontSize: 10, fill: '#eab308' },
+              }}
+            />
+
+            {/* Current level line */}
+            <ReferenceLine
+              y={creditMarketData.hySpread.current}
+              stroke="#22c55e"
+              strokeDasharray="3 3"
+              label={{
+                value: `Current: ${creditMarketData.hySpread.current} bps`,
+                position: 'right',
+                style: { fontSize: 10, fill: '#22c55e' },
+              }}
+            />
+
+            <Area
+              type="monotone"
+              dataKey="spread"
+              stroke="hsl(var(--primary))"
+              fill="hsl(var(--primary))"
+              fillOpacity={0.2}
+              strokeWidth={2}
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
+
+      {/* Key Metrics */}
+      <div className="mt-6 pt-6 border-t border-border">
+        <p className="font-mono text-[10px] uppercase tracking-wider text-primary mb-3">
+          Credit Market Setup
+        </p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="p-3 bg-emerald-500/10 rounded border border-emerald-500/20 text-center">
+            <p className="font-display text-2xl font-bold text-emerald-400">
+              {creditMarketData.hySpread.current}
+            </p>
+            <p className="font-mono text-[10px] text-muted-foreground">Current HY Spread (bps)</p>
+          </div>
+          <div className="p-3 bg-amber-500/10 rounded border border-amber-500/20 text-center">
+            <p className="font-display text-2xl font-bold text-amber-400">
+              {creditMarketData.hySpread.thirtyYearAverage}
+            </p>
+            <p className="font-mono text-[10px] text-muted-foreground">30-Year Average</p>
+          </div>
+          <div className="p-3 bg-blue-500/10 rounded border border-blue-500/20 text-center">
+            <p className="font-display text-2xl font-bold text-blue-400">
+              {creditMarketData.tenYearYield.value}%
+            </p>
+            <p className="font-mono text-[10px] text-muted-foreground">10-Year Yield</p>
+          </div>
+          <div className="p-3 bg-red-500/10 rounded border border-red-500/20 text-center">
+            <p className="font-display text-2xl font-bold text-red-400">
+              {creditMarketData.ismPricesPaid.value}
+            </p>
+            <p className="font-mono text-[10px] text-muted-foreground">ISM Prices Paid</p>
+          </div>
+        </div>
+
+        <div className="mt-4 p-4 bg-red-500/10 rounded border border-red-500/20">
+          <p className="font-mono text-xs text-foreground font-semibold mb-1">
+            The Setup: Maximum Widening Potential
+          </p>
+          <p className="font-mono text-[11px] text-muted-foreground">
+            Credit spreads entered this conflict at their tightest levels in 20 years. When the
+            energy shock propagates through corporate earnings—compressed margins, higher input
+            costs, weaker consumer spending—spreads have enormous room to widen. The "refinancing
+            wall" of 2026–2027 amplifies the stress.
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+export default CreditSpreadChart;
