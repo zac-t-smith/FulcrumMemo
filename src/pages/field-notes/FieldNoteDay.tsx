@@ -141,7 +141,7 @@ const FieldNoteDay = () => {
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-xs mb-8"
           >
             <ArrowLeft size={14} />
-            Back to Field Notes
+            All Field Notes
           </Link>
 
           {/* Header */}

@@ -25,11 +25,11 @@ const FieldNotesIndex = () => {
         <div className="container mx-auto px-6 max-w-4xl">
           {/* Back Link */}
           <Link
-            to="/memos/iran"
+            to="/memos"
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-xs mb-8"
           >
             <ArrowLeft size={14} />
-            Back to Part I Memo
+            All Memos
           </Link>
 
           {/* Header */}
