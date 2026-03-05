@@ -708,3 +708,146 @@ export const shippingDisruptionData = {
     minervaFixture: { rate: 436000, vessel: 'Pantanassa', charterer: 'GS Caltex' },
   },
 };
+
+// Casualty data derived from casualtyTimeline
+export const casualtyData = {
+  iranianKilled: {
+    count: getLatest(casualtyTimeline).iranianKilled,
+    asOf: `Day ${casualtyTimeline.length}`,
+    note: `${getLatest(casualtyTimeline).iranianKilled.toLocaleString()}+ killed`,
+  },
+  minabSchool: {
+    deaths: 180,
+    description: 'Minab school death toll',
+    note: '~180 children',
+  },
+  navalLosses: [
+    {
+      vessel: 'IRIS Jamaran',
+      type: 'Frigate',
+      location: 'Indian Ocean, ~40 nautical miles south of Sri Lanka',
+      personnelUnaccounted: '50+',
+      note: 'Not sunk in Strait of Hormuz - reinforces insurance-driven leverage thesis',
+    },
+    {
+      vessel: 'IRIS Dena',
+      type: 'Frigate',
+      location: 'Indian Ocean, ~40 nautical miles south of Sri Lanka',
+      personnelUnaccounted: '50+',
+      note: 'Not sunk in Strait of Hormuz - reinforces insurance-driven leverage thesis',
+    },
+  ],
+  usKilled: getLatest(casualtyTimeline).usKilled,
+};
+
+export const gccWaterData = [
+  { country: 'Saudi Arabia', gdp: '~$1.1T', desalinationDependency: '~60%', waterReserves: 'Days-weeks', damage: 'Riyadh and Eastern Province targeted' },
+  { country: 'UAE', gdp: '~$500B', desalinationDependency: '90%+', waterReserves: '2-5 days', damage: 'Amazon data center burning, Jebel Ali port fire, Burj Al Arab hit, Dubai airport 70% canceled' },
+  { country: 'Qatar', gdp: '~$250B', desalinationDependency: '90%+', waterReserves: '2-5 days', damage: 'Ras Laffan energy facility, Mesaieed water/power plant hit; all flights grounded' },
+  { country: 'Kuwait', gdp: '~$160B', desalinationDependency: '90%+', waterReserves: '2-5 days', damage: '6 U.S. troops killed at base; air raid sirens active' },
+  { country: 'Bahrain', gdp: '~$45B', desalinationDependency: '90%+', waterReserves: '2-3 days', damage: 'U.S. Naval base targeted; commercial district hit' },
+];
+
+export const conflictTimeline = [
+  { date: 'January 13, 2026', event: 'Iranian officials warn they are "ready for war"; U.S. begins largest Middle East military buildup since 2003 Iraq invasion' },
+  { date: 'February 24, 2026', event: 'Trump\'s State of the Union accuses Iran of reviving nuclear weapons program, warns U.S. "prepared to act"' },
+  { date: 'February 28, 2026', event: 'U.S. and Israel launch "Operation Epic Fury"—joint strikes across Iran. Supreme Leader Khamenei killed. Iran launches retaliatory strikes on 27 U.S. bases and Israeli targets within hours' },
+  { date: 'March 1, 2026', event: 'Iran targets GCC civilian infrastructure: energy facilities in Qatar\'s Ras Laffan and Mesaieed, Dubai hotels and ports, Amazon data centers in UAE and Bahrain. Interim Leadership Council formed. Iran rejects U.S. ceasefire proposal via Italian mediator' },
+  { date: 'March 2, 2026', event: 'U.S. death toll rises to 6. Trump says campaign could last 4-5 weeks. Hezbollah enters conflict from Lebanon. Strait of Hormuz shipping halted. Congress begins war powers resolution proceedings' },
+  { date: 'March 3, 2026', event: 'Lloyd\'s P&I clubs announce coverage cancellation effective midnight March 5. Trump announces naval escorts and political risk insurance guarantees. QatarEnergy suspends all LNG production.' },
+  { date: 'March 4, 2026', event: 'Iranian casualties exceed 1,045. IRIS Jamaran and IRIS Dena sunk in Indian Ocean. Tanker transits collapse to ~4/day. Iraq announces 1.5M bpd forced production cuts.' },
+  { date: 'March 5, 2026', event: 'P&I coverage expires at midnight. Brent crude exceeds $108. Iranian casualties exceed 1,320. Congressional war powers debate intensifies.' },
+];
+
+export const macroTransmissionChain = [
+  {
+    id: 'energy-shock',
+    label: 'Energy Shock',
+    description: 'Strait of Hormuz closure, 20% global oil disrupted',
+    metrics: [`Brent +${((getLatest(marketTimeline).brentCrude - 77.52) / 77.52 * 100).toFixed(1)}% to $${getLatest(marketTimeline).brentCrude}`, `VLCC rates $${(getLatest(hormuzTimeline).vlccRate / 1000).toFixed(0)}K/day`, '81% transit collapse'],
+    color: '#ef4444',
+  },
+  {
+    id: 'inflation',
+    label: 'Inflation',
+    description: 'Energy costs propagate through economy',
+    metrics: ['ISM Prices Paid: 70.5 (+11.5 pts)', 'Gas: biggest jump since Ukraine', '$14B annualized per $10/bbl'],
+    color: '#f97316',
+  },
+  {
+    id: 'fed-constraint',
+    label: 'Fed Constraint',
+    description: 'Rate cuts blocked by inflation spike',
+    metrics: ['10Y yield: 4.117%', 'Cutting cycle disrupted', 'Stagflation risk'],
+    color: '#eab308',
+  },
+  {
+    id: 'spread-widening',
+    label: 'Spread Widening',
+    description: 'Credit markets reprice risk',
+    metrics: [`HY OAS: ${getLatest(marketTimeline).hySpread} bps`, '30-yr avg: 525 bps', 'Max widening potential'],
+    color: '#84cc16',
+  },
+  {
+    id: 'defaults',
+    label: 'Defaults',
+    description: 'Zombie companies hit refinancing wall',
+    metrics: ['Leveraged loan default: 7.9%', '2026-27 maturity wall', 'Zombie company population'],
+    color: '#06b6d4',
+  },
+  {
+    id: 'restructuring',
+    label: 'Restructuring Cycle',
+    description: 'Largest since 2008-2009',
+    metrics: ['Retail, CRE, Airlines', 'Cruise, Speculative Tech', 'Advisory mandates surge'],
+    color: '#8b5cf6',
+  },
+];
+
+export const glossaryTerms: Record<string, { term: string; definition: string; category: string }> = {
+  'vlcc': {
+    term: 'VLCC',
+    definition: 'Very Large Crude Carrier - tankers capable of carrying 200,000+ deadweight tons of crude oil. The workhorses of global oil transport.',
+    category: 'shipping',
+  },
+  'pni': {
+    term: 'P&I Insurance',
+    definition: 'Protection & Indemnity insurance - maritime liability coverage that protects shipowners against third-party claims. Without P&I, ships cannot legally operate.',
+    category: 'insurance',
+  },
+  'hyspread': {
+    term: 'HY Spread (OAS)',
+    definition: 'High-Yield Option-Adjusted Spread - the yield premium investors demand for holding high-yield (junk) bonds over risk-free Treasuries. Wider spreads = higher perceived risk.',
+    category: 'credit',
+  },
+  'refinancingwall': {
+    term: 'Refinancing Wall',
+    definition: 'The cluster of debt maturities coming due in a specific period. Companies that borrowed at low rates in 2020-2021 face much higher rates when refinancing in 2026-2027.',
+    category: 'credit',
+  },
+  'zombiecompany': {
+    term: 'Zombie Company',
+    definition: 'A firm whose interest costs exceed its operating income - surviving only through continued access to cheap debt. Rising rates make refinancing impossible.',
+    category: 'credit',
+  },
+  'desalination': {
+    term: 'Desalination',
+    definition: 'The process of removing salt from seawater to produce drinking water. GCC states depend on coastal desalination plants for 90%+ of potable water.',
+    category: 'infrastructure',
+  },
+  'blockingposition': {
+    term: 'Blocking Position',
+    definition: 'In restructuring, holding enough debt to veto a plan of reorganization (typically 33%+ of a class). Iran\'s control of Hormuz gives it a "blocking position" on global energy.',
+    category: 'restructuring',
+  },
+  'irgc': {
+    term: 'IRGC',
+    definition: 'Islamic Revolutionary Guard Corps - Iran\'s parallel military force responsible for asymmetric warfare, missile programs, and regional proxy operations.',
+    category: 'military',
+  },
+  'ism': {
+    term: 'ISM Prices Paid',
+    definition: 'A component of the ISM Manufacturing Index measuring input price inflation. Readings above 50 indicate rising prices; 70.5 signals significant inflationary pressure.',
+    category: 'macro',
+  },
+};

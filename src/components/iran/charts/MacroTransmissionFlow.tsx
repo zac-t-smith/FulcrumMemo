@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { macroTransmissionChain } from '@/data/iranMemoData';
+import { macroTransmissionChain } from '@/data/iranConflictData';
 
 export const MacroTransmissionFlow = ({ className }: { className?: string }) => {
   const [selectedNode, setSelectedNode] = useState<string | null>(null);

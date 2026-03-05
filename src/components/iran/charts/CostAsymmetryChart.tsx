@@ -13,7 +13,7 @@ import {
   LabelList,
 } from 'recharts';
 import { cn } from '@/lib/utils';
-import { costAsymmetryData } from '@/data/iranMemoData';
+import { costAsymmetry } from '@/data/iranConflictData';
 
 type ViewMode = 'perUnit' | 'ratio';
 type ScaleMode = 'linear' | 'log';
@@ -30,38 +30,8 @@ const formatCurrencyShort = (value: number) => {
   return `$${value}`;
 };
 
-const chartData = [
-  {
-    name: 'Shahed Drone',
-    shortName: 'Shahed Drone',
-    iranCost: 35000,
-    interceptorCost: 3700000,
-    ratio: Math.round(3700000 / 35000),
-    category: 'drone',
-    iranLabel: '$35K',
-    interceptorLabel: '$3.7M',
-  },
-  {
-    name: 'Ballistic Missile (low)',
-    shortName: 'Missile (low)',
-    iranCost: 200000,
-    interceptorCost: 9700000,
-    ratio: Math.round(9700000 / 200000),
-    category: 'missile',
-    iranLabel: '$200K',
-    interceptorLabel: '$9.7M',
-  },
-  {
-    name: 'Ballistic Missile (high)',
-    shortName: 'Missile (high)',
-    iranCost: 500000,
-    interceptorCost: 27900000,
-    ratio: Math.round(27900000 / 500000),
-    category: 'missile',
-    iranLabel: '$500K',
-    interceptorLabel: '$27.9M',
-  },
-];
+// Use shared data layer
+const chartData = costAsymmetry;
 
 // Custom tooltip with light background for readability
 const CustomTooltip = ({ active, payload, label, viewMode }: any) => {

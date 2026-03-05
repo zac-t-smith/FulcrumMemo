@@ -12,30 +12,10 @@ import {
   ReferenceArea,
 } from 'recharts';
 import { cn } from '@/lib/utils';
-import { creditMarketData } from '@/data/iranMemoData';
+import { creditMarketData, hySpreadHistory } from '@/data/iranConflictData';
 
-// Historical HY spread data (simplified for demonstration)
-const historicalData = [
-  { date: '2008', spread: 1800, event: 'Financial Crisis Peak' },
-  { date: '2009', spread: 800, event: 'Recovery begins' },
-  { date: '2010', spread: 600, event: '' },
-  { date: '2011', spread: 700, event: 'European debt crisis' },
-  { date: '2012', spread: 550, event: '' },
-  { date: '2013', spread: 400, event: '' },
-  { date: '2014', spread: 350, event: '' },
-  { date: '2015', spread: 650, event: 'Oil crash / China fears' },
-  { date: '2016', spread: 700, event: 'Energy defaults peak' },
-  { date: '2017', spread: 350, event: '' },
-  { date: '2018', spread: 400, event: 'Q4 selloff' },
-  { date: '2019', spread: 350, event: '' },
-  { date: '2020', spread: 1100, event: 'COVID-19 shock' },
-  { date: '2021', spread: 300, event: 'Easy money peak' },
-  { date: '2022', spread: 500, event: 'Russia-Ukraine / Fed hikes' },
-  { date: '2023', spread: 400, event: '' },
-  { date: '2024', spread: 320, event: '' },
-  { date: '2025', spread: 281, event: 'Historic lows' },
-  { date: 'Mar 2026', spread: 320, event: 'Iran conflict begins', isCurrent: true },
-];
+// Use shared data layer for historical HY spread data
+const historicalData = hySpreadHistory;
 
 const crisisEvents = [
   { start: '2008', end: '2009', label: '2008-09 GFC', color: '#ef444420' },

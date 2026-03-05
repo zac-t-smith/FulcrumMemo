@@ -20,7 +20,7 @@ import {
   MacroTransmissionFlow,
   SectorVulnerabilityChart,
 } from '@/components/iran/charts';
-import { creditMarketData } from '@/data/iranMemoData';
+import { creditMarketData } from '@/data/iranConflictData';
 import { generateMemoPdf } from '@/lib/generatePdf';
 
 const tocItems: TOCItem[] = [

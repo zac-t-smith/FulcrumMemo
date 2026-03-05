@@ -13,7 +13,7 @@ import {
   ReferenceDot,
 } from 'recharts';
 import { cn } from '@/lib/utils';
-import { shippingDisruptionData } from '@/data/iranMemoData';
+import { shippingDisruptionData } from '@/data/iranConflictData';
 
 const combinedData = shippingDisruptionData.tankerTransits.map((transit, index) => ({
   ...transit,

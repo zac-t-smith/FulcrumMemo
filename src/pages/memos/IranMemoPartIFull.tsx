@@ -24,7 +24,7 @@ import {
   casualtyData,
   conflictTimeline,
   gccWaterData,
-} from '@/data/iranMemoData';
+} from '@/data/iranConflictData';
 import { generateMemoPdf } from '@/lib/generatePdf';
 
 const tocItems: TOCItem[] = [

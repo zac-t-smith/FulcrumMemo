@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { glossaryTerms } from '@/data/iranMemoData';
+import { glossaryTerms } from '@/data/iranConflictData';
 
 interface GlossaryTooltipProps {
   term: keyof typeof glossaryTerms | string;

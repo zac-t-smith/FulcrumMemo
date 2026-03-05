@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { scenarioData } from '@/data/iranMemoData';
+import { scenarioData } from '@/data/iranConflictData';
 
 export const ScenarioProbabilityMatrix = ({ className }: { className?: string }) => {
   const [expandedScenario, setExpandedScenario] = useState<string | null>('Protracted Attrition');
