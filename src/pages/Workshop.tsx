@@ -98,10 +98,11 @@ const Workshop = () => {
 
   // Custom ticker-based case study
   if (selectedCase === 'custom' && customCompany) {
+    const customPageTitle = `${customCompany.name} Analysis | Zac Smith`;
     return (
       <>
         <Helmet>
-          <title>{customCompany.name} Analysis | Zac Smith</title>
+          <title>{customPageTitle}</title>
         </Helmet>
         <div className="min-h-screen bg-background pb-12">
           <div className="container mx-auto px-6 py-6">

@@ -123,11 +123,12 @@ const FieldNoteDay = () => {
   }
 
   const { scenarioUpdate } = fieldNote;
+  const pageTitle = `Day ${dayNum}: ${fieldNote.title} | Field Notes | The Fulcrum Memo`;
 
   return (
     <>
       <Helmet>
-        <title>Day {dayNum}: {fieldNote.title} | Field Notes | The Fulcrum Memo</title>
+        <title>{pageTitle}</title>
         <meta name="description" content={fieldNote.summary} />
       </Helmet>
 
