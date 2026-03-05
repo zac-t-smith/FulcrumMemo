@@ -24,6 +24,9 @@ import {
   casualtyData,
   conflictTimeline,
   gccWaterData,
+  conflictMetadata,
+  formatShortDate,
+  formatFullDate,
 } from '@/data/iranConflictData';
 import { generateMemoPdf } from '@/lib/generatePdf';
 
@@ -147,7 +150,7 @@ const IranMemoPartIFull = () => {
               <span className="text-primary">|</span>
               <span>Zachary Smith</span>
               <span className="text-primary">|</span>
-              <DataBadge status="updated" date="Mar 4" />
+              <DataBadge status="updated" date={formatShortDate(conflictMetadata.lastUpdated)} />
             </div>
             <div className="mt-4">
               <ShareButtons
@@ -848,7 +851,7 @@ const IranMemoPartIFull = () => {
               <strong>Disclaimer:</strong> This analysis is for educational purposes only and does
               not constitute investment, military, or policy advice. All information is based on
               publicly available sources and estimates, which may prove incorrect. Data reflects
-              publicly available sources as of March 4, 2026.
+              publicly available sources as of {formatFullDate(conflictMetadata.lastUpdated)}.
             </p>
           </motion.footer>
         </article>

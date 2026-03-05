@@ -20,7 +20,7 @@ import {
   MacroTransmissionFlow,
   SectorVulnerabilityChart,
 } from '@/components/iran/charts';
-import { creditMarketData } from '@/data/iranConflictData';
+import { creditMarketData, conflictMetadata, formatShortDate } from '@/data/iranConflictData';
 import { generateMemoPdf } from '@/lib/generatePdf';
 
 const tocItems: TOCItem[] = [
@@ -141,7 +141,7 @@ const IranMemoPartIIFull = () => {
               <span className="text-primary">|</span>
               <span>Zachary Smith</span>
               <span className="text-primary">|</span>
-              <DataBadge status="confirmed" date="Mar 4" />
+              <DataBadge status="confirmed" date={formatShortDate(conflictMetadata.lastUpdated)} />
             </div>
             <div className="mt-4">
               <ShareButtons

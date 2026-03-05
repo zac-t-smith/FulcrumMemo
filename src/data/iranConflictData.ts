@@ -3,6 +3,28 @@
 // Designed to support Field Notes updates with timestamped scenario probability revisions.
 
 // =============================================================================
+// METADATA
+// =============================================================================
+
+export const conflictMetadata = {
+  lastUpdated: '2026-03-05T12:00:00Z',
+  conflictDay: 6,
+  conflictStartDate: '2026-02-28',
+};
+
+// Helper to format date for display (e.g., "Mar 5")
+export const formatShortDate = (isoDate: string): string => {
+  const date = new Date(isoDate);
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+};
+
+// Helper to format full date (e.g., "March 5, 2026")
+export const formatFullDate = (isoDate: string): string => {
+  const date = new Date(isoDate);
+  return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+};
+
+// =============================================================================
 // TYPE DEFINITIONS
 // =============================================================================
 

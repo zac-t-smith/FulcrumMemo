@@ -13,12 +13,18 @@ import {
   ReferenceDot,
 } from 'recharts';
 import { cn } from '@/lib/utils';
-import { shippingDisruptionData } from '@/data/iranConflictData';
+import { shippingDisruptionData, conflictMetadata, formatFullDate } from '@/data/iranConflictData';
 
 const combinedData = shippingDisruptionData.tankerTransits.map((transit, index) => ({
   ...transit,
   vlccRate: shippingDisruptionData.vlccRates[index]?.rate || null,
 }));
+
+// Get date range from data
+const firstDate = shippingDisruptionData.tankerTransits[0]?.date || 'Feb 28';
+const lastDate = shippingDisruptionData.tankerTransits[shippingDisruptionData.tankerTransits.length - 1]?.date || 'Mar 5';
+const dateRangeSubtitle = `Daily tanker transits and VLCC charter rates (${firstDate} - ${lastDate}, 2026)`;
+const keyMetricsDate = formatFullDate(conflictMetadata.lastUpdated);
 
 const formatCurrency = (value: number) => {
   if (value >= 1000) return `$${(value / 1000).toFixed(0)}K`;
@@ -81,7 +87,7 @@ export const ShippingDisruptionChart = ({ className }: { className?: string }) =
           Strait of Hormuz Shipping Disruption
         </h4>
         <p className="font-mono text-xs text-muted-foreground">
-          Daily tanker transits and VLCC charter rates (Feb 28 - Mar 4, 2026)
+          {dateRangeSubtitle}
         </p>
       </div>
 
@@ -162,7 +168,7 @@ export const ShippingDisruptionChart = ({ className }: { className?: string }) =
       {/* Key Metrics */}
       <div className="mt-6 pt-6 border-t border-border">
         <p className="font-mono text-[10px] uppercase tracking-wider text-primary mb-3">
-          Key Metrics (as of March 4, 2026)
+          Key Metrics (as of {keyMetricsDate})
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="text-center p-3 bg-red-500/10 rounded border border-red-500/20">
