@@ -173,7 +173,7 @@ const IranMemoPartII = () => {
           >
             <div className="text-muted-foreground font-mono text-sm mb-4">
               <p className="font-semibold text-foreground mb-2">Contact</p>
-              <p>Zachary Smith | zac.smith@financier.com</p>
+              <p>Zachary Smith | zac.t.smith@outlook.com</p>
             </div>
             <p className="text-muted-foreground font-mono text-xs leading-relaxed">
               <strong>Disclaimer:</strong> This analysis is for educational purposes only and does

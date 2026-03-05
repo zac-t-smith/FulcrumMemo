@@ -32,7 +32,7 @@ const Footer = () => {
               </Link>
               <span className="text-border">|</span>
               <a
-                href="mailto:zac.smith@financier.com"
+                href="mailto:zac.t.smith@outlook.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 Contact

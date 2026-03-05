@@ -188,10 +188,10 @@ const AboutSection = () => {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 text-sm font-mono">
               <a
-                href="mailto:zac.smith@financier.com"
+                href="mailto:zac.t.smith@outlook.com"
                 className="text-primary hover:text-gold-glow transition-colors"
               >
-                zac.smith@financier.com
+                zac.t.smith@outlook.com
               </a>
               <span className="text-border">|</span>
               <a

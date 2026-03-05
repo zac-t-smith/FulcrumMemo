@@ -14,6 +14,8 @@ import LycraMemo from "./pages/memos/LycraMemo";
 import PartyCityMemo from "./pages/memos/PartyCityMemo";
 import IranMemoPartIFull from "./pages/memos/IranMemoPartIFull";
 import IranMemoPartIIFull from "./pages/memos/IranMemoPartIIFull";
+import FieldNotesIndex from "./pages/field-notes/FieldNotesIndex";
+import FieldNoteDay from "./pages/field-notes/FieldNoteDay";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +36,8 @@ const App = () => (
             <Route path="/memos/party-city" element={<PartyCityMemo />} />
             <Route path="/memos/iran" element={<IranMemoPartIFull />} />
             <Route path="/memos/iran-part-ii" element={<IranMemoPartIIFull />} />
+            <Route path="/field-notes" element={<FieldNotesIndex />} />
+            <Route path="/field-notes/:day" element={<FieldNoteDay />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

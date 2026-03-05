@@ -834,7 +834,7 @@ const IranMemoPartIFull = () => {
             <div className="text-muted-foreground font-mono text-sm mb-4">
               <p className="font-semibold text-foreground mb-2">About the Author</p>
               <p className="text-xs leading-relaxed mb-4">
-                Zachary Smith is a U.S. Army veteran (4th Infantry Division, 2019-2023) who founded
+                Zachary Smith is a U.S. Army veteran (4th Infantry Division, 2013-2017) who founded
                 and scaled Best Option Restoration to $100K monthly revenue before navigating a
                 19-month creditor negotiation and controlled liquidation—firsthand experience that
                 became his MBA in distressed credit. Currently finishing his finance degree at
@@ -842,7 +842,7 @@ const IranMemoPartIFull = () => {
                 analyst positions at firms like Evercore, Alvarez & Marsal, and Lazard.
               </p>
               <p className="font-semibold text-foreground mb-2">Contact</p>
-              <p>Zachary Smith | zac.smith@financier.com</p>
+              <p>Zachary Smith | zac.t.smith@outlook.com</p>
             </div>
             <p className="text-muted-foreground font-mono text-xs leading-relaxed">
               <strong>Disclaimer:</strong> This analysis is for educational purposes only and does

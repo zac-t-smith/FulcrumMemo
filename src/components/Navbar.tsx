@@ -18,6 +18,7 @@ const Navbar = () => {
 
   const navLinks = [
     { label: 'Memos', href: '/memos' },
+    { label: 'Field Notes', href: '/field-notes' },
     { label: 'Resume', href: '/resume' },
     { label: 'About', href: '/#about' },
     { label: 'Contact', href: '/#contact' },

@@ -64,10 +64,10 @@ const AuthorBar = () => {
                   <span>LinkedIn</span>
                 </a>
                 <a
-                  href="mailto:zac.smith@financier.com"
+                  href="mailto:zac.t.smith@outlook.com"
                   className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground font-mono text-xs uppercase tracking-wider transition-colors"
                 >
-                  <span>zac.smith@financier.com</span>
+                  <span>zac.t.smith@outlook.com</span>
                 </a>
               </div>
             </div>

@@ -44,11 +44,11 @@ const ContactSection = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
             <a
-              href="mailto:zac.smith@financier.com"
+              href="mailto:zac.t.smith@outlook.com"
               className="inline-flex items-center gap-3 px-8 py-3 bg-primary text-primary-foreground font-mono text-sm uppercase tracking-wider glow-subtle hover:bg-gold-glow transition-all duration-300"
             >
               <Mail size={18} />
-              zac.smith@financier.com
+              zac.t.smith@outlook.com
             </a>
           </motion.div>
 
