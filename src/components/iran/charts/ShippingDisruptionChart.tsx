@@ -21,10 +21,21 @@ const combinedData = shippingDisruptionData.tankerTransits.map((transit, index) 
 }));
 
 // Get date range from data
-const firstDate = shippingDisruptionData.tankerTransits[0]?.date || 'Feb 28';
-const lastDate = shippingDisruptionData.tankerTransits[shippingDisruptionData.tankerTransits.length - 1]?.date || 'Mar 5';
+const tankerTransits = shippingDisruptionData.tankerTransits;
+const firstDate = tankerTransits[0]?.date || 'Feb 28';
+const lastDate = tankerTransits[tankerTransits.length - 1]?.date || 'Mar 5';
 const dateRangeSubtitle = `Daily tanker transits and VLCC charter rates (${firstDate} - ${lastDate}, 2026)`;
 const keyMetricsDate = formatFullDate(conflictMetadata.lastUpdated);
+
+// Calculate dynamic key metrics
+const firstTransitCount = tankerTransits[0]?.count || 100;
+const lastTransitCount = tankerTransits[tankerTransits.length - 1]?.count || 3;
+const transitCollapsePercent = Math.round(((firstTransitCount - lastTransitCount) / firstTransitCount) * 100);
+
+const maxVlccRate = Math.max(...shippingDisruptionData.vlccRates.map(r => r.rate));
+const maxVlccRateFormatted = `$${Math.round(maxVlccRate / 1000)}K`;
+
+const { tankersStranded, shipsUnableToExit } = shippingDisruptionData.keyMetrics;
 
 const formatCurrency = (value: number) => {
   if (value >= 1000) return `$${(value / 1000).toFixed(0)}K`;
@@ -149,14 +160,14 @@ export const ShippingDisruptionChart = ({ className }: { className?: string }) =
               dot={{ fill: '#eab308', strokeWidth: 2 }}
               name="VLCC Rate"
             />
-            {/* Reference line for 81% collapse */}
+            {/* Reference line for transit collapse */}
             <ReferenceLine
               yAxisId="left"
-              y={18}
+              y={lastTransitCount}
               stroke="#ef4444"
               strokeDasharray="5 5"
               label={{
-                value: '81% collapse',
+                value: `${transitCollapsePercent}% collapse`,
                 position: 'right',
                 style: { fontSize: 10, fill: '#ef4444' },
               }}
@@ -172,19 +183,19 @@ export const ShippingDisruptionChart = ({ className }: { className?: string }) =
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="text-center p-3 bg-red-500/10 rounded border border-red-500/20">
-            <p className="font-display text-2xl font-bold text-red-400">81%</p>
+            <p className="font-display text-2xl font-bold text-red-400">{transitCollapsePercent}%</p>
             <p className="font-mono text-[10px] text-muted-foreground">Transit Collapse</p>
           </div>
           <div className="text-center p-3 bg-amber-500/10 rounded border border-amber-500/20">
-            <p className="font-display text-2xl font-bold text-amber-400">$445K</p>
+            <p className="font-display text-2xl font-bold text-amber-400">{maxVlccRateFormatted}</p>
             <p className="font-mono text-[10px] text-muted-foreground">VLCC Rate/Day</p>
           </div>
           <div className="text-center p-3 bg-blue-500/10 rounded border border-blue-500/20">
-            <p className="font-display text-2xl font-bold text-blue-400">200+</p>
+            <p className="font-display text-2xl font-bold text-blue-400">{tankersStranded}</p>
             <p className="font-mono text-[10px] text-muted-foreground">Tankers Stranded</p>
           </div>
           <div className="text-center p-3 bg-purple-500/10 rounded border border-purple-500/20">
-            <p className="font-display text-2xl font-bold text-purple-400">700+</p>
+            <p className="font-display text-2xl font-bold text-purple-400">{shipsUnableToExit}</p>
             <p className="font-mono text-[10px] text-muted-foreground">Ships Unable to Exit</p>
           </div>
         </div>

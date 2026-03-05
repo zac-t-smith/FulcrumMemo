@@ -27,6 +27,9 @@ import {
   conflictMetadata,
   formatShortDate,
   formatFullDate,
+  hormuzTimeline,
+  casualtyTimeline,
+  getLatest,
 } from '@/data/iranConflictData';
 import { generateMemoPdf } from '@/lib/generatePdf';
 
@@ -222,14 +225,14 @@ const IranMemoPartIFull = () => {
                   <strong className="text-foreground">Strait of Hormuz closed de facto:</strong>{' '}
                   Tanker transits collapsed 81% (from ~100 to ~7). 20% of global oil, 20% of LNG, 33%
                   of global fertilizer trade halted—not by naval blockade, but by insurance
-                  withdrawal. <GlossaryTooltip term="vlcc">VLCC</GlossaryTooltip> rates hit $445,200/day.
+                  withdrawal. <GlossaryTooltip term="vlcc">VLCC</GlossaryTooltip> rates hit ${getLatest(hormuzTimeline).vlccRate.toLocaleString()}/day.
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold mt-0.5">▸</span>
                 <span>
-                  <strong className="text-foreground">Iranian Casualties:</strong> 1,045+ killed (as
-                  of Day 5), including ~180 children at Minab school. IRIS Jamaran and IRIS Dena
+                  <strong className="text-foreground">Iranian Casualties:</strong> {getLatest(casualtyTimeline).iranianKilled.toLocaleString()}+ killed (as
+                  of Day {conflictMetadata.conflictDay}), including ~180 children at Minab school. IRIS Jamaran and IRIS Dena
                   (frigates) sunk in Indian Ocean—not Strait of Hormuz.
                 </span>
               </li>
