@@ -7,8 +7,8 @@
 // =============================================================================
 
 export const conflictMetadata = {
-  lastUpdated: '2026-03-05T12:00:00Z',
-  conflictDay: 6,
+  lastUpdated: '2026-03-06T08:00:00Z',
+  conflictDay: 7,
   conflictStartDate: '2026-02-28',
 };
 
@@ -172,13 +172,14 @@ export interface FieldNoteDay {
 // =============================================================================
 
 export const hormuzTimeline: HormuzTransitEntry[] = [
-  { date: 'Feb 27', timestamp: Date.parse('2026-02-27'), tankerCount: 95, vlccRate: 78000, event: 'Pre-conflict normal' },
-  { date: 'Feb 28', timestamp: Date.parse('2026-02-28'), tankerCount: 100, vlccRate: 85000, event: 'Operation Epic Fury begins' },
+  { date: 'Feb 27', timestamp: Date.parse('2026-02-27'), tankerCount: 100, vlccRate: 78000, event: 'Pre-conflict normal' },
+  { date: 'Feb 28', timestamp: Date.parse('2026-02-28'), tankerCount: 72, vlccRate: 85000, event: 'Operation Epic Fury begins' },
   { date: 'Mar 1', timestamp: Date.parse('2026-03-01'), tankerCount: 18, vlccRate: 280000, event: 'Insurance withdrawal begins' },
   { date: 'Mar 2', timestamp: Date.parse('2026-03-02'), tankerCount: 7, vlccRate: 423736, event: "Lloyd's cancellation announced" },
-  { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), tankerCount: 5, vlccRate: 445200, event: 'Trump announces naval escorts' },
-  { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), tankerCount: 4, vlccRate: 445200, event: 'P&I coverage expires midnight Mar 5' },
-  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), tankerCount: 3, vlccRate: 460000, event: 'Post-P&I expiration' },
+  { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), tankerCount: 0, vlccRate: 445200, event: 'JMIC confirms zero transits. Trump announces naval escorts' },
+  { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), tankerCount: 0, vlccRate: 445200, event: 'P&I coverage expires midnight Mar 5' },
+  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), tankerCount: 0, vlccRate: 460000, event: "Lloyd's war risk cancellation takes effect. ~200 tankers stranded. 60 VLCCs trapped (8% of global fleet)" },
+  { date: 'Mar 6', timestamp: Date.parse('2026-03-06'), tankerCount: 0, vlccRate: 460000, event: 'Strait effectively sealed. Iran targeting radar systems. Israel launches broad wave on Tehran overnight' },
 ];
 
 export const casualtyTimeline: CasualtyEntry[] = [
@@ -187,27 +188,28 @@ export const casualtyTimeline: CasualtyEntry[] = [
   { date: 'Mar 2', timestamp: Date.parse('2026-03-02'), iranianKilled: 520, iranianCivilian: 156, usKilled: 4, gccCivilian: 89, note: 'Hezbollah enters' },
   { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), iranianKilled: 780, iranianCivilian: 268, usKilled: 6, gccCivilian: 145, note: 'Minab school incident' },
   { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), iranianKilled: 1045, iranianCivilian: 380, usKilled: 6, gccCivilian: 178, note: 'Naval losses' },
-  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), iranianKilled: 1320, iranianCivilian: 445, usKilled: 8, gccCivilian: 212, note: 'Day 6 escalation' },
+  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), iranianKilled: 1230, iranianCivilian: 420, usKilled: 6, gccCivilian: 195, note: 'Azerbaijan airport struck. WHO: 13 attacks on Iranian health infrastructure' },
+  { date: 'Mar 6', timestamp: Date.parse('2026-03-06'), iranianKilled: 1400, iranianCivilian: 480, usKilled: 6, gccCivilian: 210, note: 'Tehran residential areas and Tehran University vicinity hit overnight. Beirut evacuation ordered (500K+ people)' },
 ];
 
 export const marketTimeline: MarketEntry[] = [
-  { date: 'Feb 27', timestamp: Date.parse('2026-02-27'), brentCrude: 77.52, wti: 73.45, naturalGas: 3.12, goldSpot: 2845, spx: 5980, vix: 15.2, hySpread: 281 },
-  { date: 'Feb 28', timestamp: Date.parse('2026-02-28'), brentCrude: 83.58, wti: 79.23, naturalGas: 3.45, goldSpot: 2912, spx: 5820, vix: 24.5, hySpread: 295, event: 'Op begins' },
-  { date: 'Mar 1', timestamp: Date.parse('2026-03-01'), brentCrude: 89.45, wti: 85.12, naturalGas: 3.78, goldSpot: 2978, spx: 5645, vix: 32.1, hySpread: 325 },
-  { date: 'Mar 2', timestamp: Date.parse('2026-03-02'), brentCrude: 94.80, wti: 90.55, naturalGas: 4.02, goldSpot: 3045, spx: 5520, vix: 38.4, hySpread: 358 },
-  { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), brentCrude: 98.20, wti: 93.85, naturalGas: 4.15, goldSpot: 3089, spx: 5480, vix: 35.8, hySpread: 372 },
-  { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), brentCrude: 102.45, wti: 97.80, naturalGas: 4.28, goldSpot: 3125, spx: 5395, vix: 41.2, hySpread: 395 },
-  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), brentCrude: 108.20, wti: 103.45, naturalGas: 4.52, goldSpot: 3178, spx: 5280, vix: 45.8, hySpread: 425 },
+  { date: 'Feb 27', timestamp: Date.parse('2026-02-27'), brentCrude: 77.52, wti: 73.45, naturalGas: 3.00, goldSpot: 2845, spx: 5980, vix: 15.2, hySpread: 281 },
+  { date: 'Feb 28', timestamp: Date.parse('2026-02-28'), brentCrude: 83.58, wti: 79.23, naturalGas: 3.12, goldSpot: 2912, spx: 5820, vix: 24.5, hySpread: 295, event: 'Op begins' },
+  { date: 'Mar 1', timestamp: Date.parse('2026-03-01'), brentCrude: 89.45, wti: 85.12, naturalGas: 3.45, goldSpot: 2978, spx: 5645, vix: 32.1, hySpread: 325 },
+  { date: 'Mar 2', timestamp: Date.parse('2026-03-02'), brentCrude: 94.80, wti: 90.55, naturalGas: 3.78, goldSpot: 3045, spx: 5520, vix: 38.4, hySpread: 358 },
+  { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), brentCrude: 98.20, wti: 93.85, naturalGas: 4.02, goldSpot: 3089, spx: 5480, vix: 35.8, hySpread: 372 },
+  { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), brentCrude: 102.45, wti: 97.80, naturalGas: 4.15, goldSpot: 3125, spx: 5395, vix: 41.2, hySpread: 395 },
+  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), brentCrude: 85.41, wti: 81.01, naturalGas: 4.28, goldSpot: 5121, spx: 5830.71, vix: 26.5, hySpread: 410, event: 'WTI +8.5% biggest single-day gain since May 2020. Dow wiped out 2026 gains' },
 ];
 
 export const gasPrices: GasPriceEntry[] = [
-  { date: 'Feb 27', timestamp: Date.parse('2026-02-27'), usAverage: 3.12, california: 4.85 },
-  { date: 'Feb 28', timestamp: Date.parse('2026-02-28'), usAverage: 3.18, california: 4.92, change: 0.06, note: 'Initial reaction' },
-  { date: 'Mar 1', timestamp: Date.parse('2026-03-01'), usAverage: 3.45, california: 5.28, change: 0.27, note: 'Biggest jump since Ukraine' },
-  { date: 'Mar 2', timestamp: Date.parse('2026-03-02'), usAverage: 3.68, california: 5.55, change: 0.23 },
-  { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), usAverage: 3.89, california: 5.78, change: 0.21 },
-  { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), usAverage: 4.12, california: 6.05, change: 0.23 },
-  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), usAverage: 4.38, california: 6.35, change: 0.26, note: 'Approaching 2022 highs' },
+  { date: 'Feb 27', timestamp: Date.parse('2026-02-27'), usAverage: 3.00, california: 4.65 },
+  { date: 'Feb 28', timestamp: Date.parse('2026-02-28'), usAverage: 3.04, california: 4.72, change: 0.04, note: 'Initial reaction' },
+  { date: 'Mar 1', timestamp: Date.parse('2026-03-01'), usAverage: 3.08, california: 4.80, change: 0.04 },
+  { date: 'Mar 2', timestamp: Date.parse('2026-03-02'), usAverage: 3.12, california: 4.88, change: 0.04 },
+  { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), usAverage: 3.16, california: 4.95, change: 0.04 },
+  { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), usAverage: 3.21, california: 5.02, change: 0.05 },
+  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), usAverage: 3.26, california: 5.10, change: 0.05, note: 'Up 26 cents in one week. Trump refuses to tap SPR' },
 ];
 
 export const asianMarkets: AsianMarketEntry[] = [
@@ -215,7 +217,7 @@ export const asianMarkets: AsianMarketEntry[] = [
   { date: 'Mar 2', timestamp: Date.parse('2026-03-02'), nikkei: 37120, nikkeiChange: -2.9, hangseng: 19125, hangsengChange: -3.6, kospi: 2378, kospiChange: -3.2, sensex: 70890, sensexChange: -2.2 },
   { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), nikkei: 36580, nikkeiChange: -1.5, hangseng: 18890, hangsengChange: -1.2, kospi: 2345, kospiChange: -1.4, sensex: 70120, sensexChange: -1.1, note: 'Naval escort announcement stabilizes' },
   { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), nikkei: 35890, nikkeiChange: -1.9, hangseng: 18420, hangsengChange: -2.5, kospi: 2289, kospiChange: -2.4, sensex: 69450, sensexChange: -1.0 },
-  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), nikkei: 34980, nikkeiChange: -2.5, hangseng: 17850, hangsengChange: -3.1, kospi: 2212, kospiChange: -3.4, sensex: 68780, sensexChange: -1.0, note: 'P&I expiration impact' },
+  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), nikkei: 36430, nikkeiChange: 1.5, hangseng: 18200, hangsengChange: 2.0, kospi: 2518, kospiChange: 10.0, sensex: 70100, sensexChange: 1.0, note: 'Dead cat bounce after historic crash' },
 ];
 
 export const interceptorStatus: InterceptorStatusEntry[] = [
@@ -232,11 +234,18 @@ export const conflictGeography: ConflictGeographyEntry[] = [
   { location: 'Natanz Nuclear Facility', lat: 33.7249, lng: 51.7274, type: 'strike', date: 'Feb 28', description: 'Nuclear facility strikes' },
   { location: 'Ras Laffan, Qatar', lat: 25.9264, lng: 51.5308, type: 'damage', date: 'Mar 1', description: 'LNG facility damaged, production suspended' },
   { location: 'Dubai, UAE', lat: 25.2048, lng: 55.2708, type: 'damage', date: 'Mar 1', description: 'Jebel Ali port fire, Burj Al Arab hit' },
-  { location: 'Strait of Hormuz', lat: 26.5667, lng: 56.2500, type: 'shipping', date: 'Mar 2', description: '81% transit collapse' },
+  { location: 'Strait of Hormuz', lat: 26.5667, lng: 56.2500, type: 'shipping', date: 'Mar 3', description: 'Zero transits - strait effectively sealed' },
   { location: 'Bandar Abbas', lat: 27.1865, lng: 56.2808, type: 'strike', date: 'Mar 2', description: 'Naval base strikes' },
-  { location: 'Indian Ocean (S of Sri Lanka)', lat: 5.5000, lng: 79.5000, type: 'naval', date: 'Mar 4', description: 'IRIS Jamaran & Dena sunk' },
+  { location: 'Indian Ocean (S of Sri Lanka)', lat: 5.5000, lng: 79.5000, type: 'naval', date: 'Mar 4', description: 'IRIS Jamaran & Dena sunk. IRIS Bushehr interned by Sri Lanka' },
   { location: 'Kuwait (Camp Arifjan)', lat: 28.9167, lng: 48.1333, type: 'base', date: 'Mar 2', description: '6 U.S. troops killed' },
   { location: 'Minab, Iran', lat: 27.1500, lng: 57.0833, type: 'damage', date: 'Mar 3', description: 'School strike, ~180 children killed' },
+  { location: 'Azerbaijan (Baku Airport)', lat: 40.4675, lng: 50.0467, type: 'damage', date: 'Mar 5', description: 'Airport struck' },
+  { location: 'Cyprus (Larnaca)', lat: 34.8751, lng: 33.6263, type: 'base', date: 'Mar 5', description: 'U.S. evacuation operations' },
+  { location: 'Turkey (Incirlik)', lat: 37.0022, lng: 35.4258, type: 'base', date: 'Mar 5', description: 'NATO intercepted Iranian missile' },
+  { location: 'Pakistan (Karachi)', lat: 24.8607, lng: 67.0011, type: 'base', date: 'Mar 5', description: 'U.S. consulate closed' },
+  { location: 'Tehran University', lat: 35.7029, lng: 51.3952, type: 'strike', date: 'Mar 6', description: 'Israel broad wave overnight - residential areas hit' },
+  { location: 'Beirut (Southern Suburbs)', lat: 33.8547, lng: 35.4832, type: 'damage', date: 'Mar 6', description: 'Israel orders evacuation - 500K+ people' },
+  { location: 'Kurdistan (NW Iran)', lat: 36.6833, lng: 45.0833, type: 'strike', date: 'Mar 6', description: 'Kurdish ground offensive - first ground front' },
 ];
 
 // =============================================================================
@@ -332,8 +341,8 @@ export const scenarioUpdates: ScenarioUpdate[] = [
     timestamp: Date.parse('2026-03-05'),
     day: 6,
     probabilities: [
-      { scenario: 'Quick Resolution', probability: 18 },
-      { scenario: 'Protracted Attrition', probability: 47 },
+      { scenario: 'Quick Resolution', probability: 10 },
+      { scenario: 'Protracted Attrition', probability: 55 },
       { scenario: 'Full Escalation', probability: 35 },
     ],
     rationale: 'P&I expiration creating anticipated chokepoint. Oil above $100 validates transmission mechanism thesis. Interceptor depletion accelerating.',
@@ -342,6 +351,27 @@ export const scenarioUpdates: ScenarioUpdate[] = [
       'Brent crude exceeds $100/bbl',
       'Interceptor stockpiles approaching Heritage warning thresholds',
       'Congressional war powers debate intensifies',
+    ],
+  },
+  {
+    date: 'Mar 6, 2026',
+    timestamp: Date.parse('2026-03-06'),
+    day: 7,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 5 },
+      { scenario: 'Protracted Attrition', probability: 60 },
+      { scenario: 'Full Escalation', probability: 35 },
+    ],
+    rationale: 'Both chambers kill war powers resolution. Trump says "no time limits." Hegseth says war "only just begun." Iran FM refuses all negotiation. Zero Hormuz transits for 3+ consecutive days. Kurdish ground offensive opens new front.',
+    keyDevelopments: [
+      'Both House and Senate kill war powers resolutions — zero legislative off-ramps',
+      'Trump: "no time limits." Hegseth: war "only just begun"',
+      'Iran FM Araghchi refuses all negotiation on NBC',
+      'Zero tanker transits for 3+ consecutive days',
+      'Kurdish ground offensive opens new front in northwest Iran',
+      'Israel launches broad wave on Tehran overnight',
+      'Beirut southern suburbs evacuation ordered (500K+ people)',
+      'War costing U.S. $1B/day (NBC sources)',
     ],
   },
 ];
@@ -487,17 +517,18 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     day: 6,
     date: 'March 5, 2026',
     title: 'P&I Expiration Day: The Insurance Chokepoint Arrives',
-    summary: "Lloyd's P&I coverage expires at midnight. The insurance-driven leverage mechanism we outlined in Part I is now fully operational. Oil breaks $100, validating our transmission thesis. Interceptor depletion accelerating toward Heritage Foundation warning thresholds.",
+    summary: "Lloyd's P&I coverage officially expires. Zero tanker transits for 3rd consecutive day. 200+ tankers stranded, 60 VLCCs trapped (8% of global fleet). WTI jumps 8.5% - biggest single-day gain since May 2020. Dow wipes out all 2026 gains. War costing U.S. $1B/day.",
     thesisScorecard: [
       {
         thesis: 'Insurance mechanism as primary leverage tool',
         initialConfidence: 75,
-        currentConfidence: 92,
+        currentConfidence: 95,
         status: 'confirmed',
         evidence: [
-          "Lloyd's unprecedented P&I cancellation",
-          '81% transit collapse without single mine',
-          'Naval escorts insufficient to restore confidence',
+          "Lloyd's P&I coverage officially expired",
+          'Zero tanker transits for 3 consecutive days',
+          '200+ tankers stranded, 60 VLCCs trapped',
+          '20,000 seafarers stranded (IMO)',
         ],
       },
       {
@@ -514,23 +545,24 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
       {
         thesis: 'Interceptor cost asymmetry unsustainable',
         initialConfidence: 80,
-        currentConfidence: 85,
-        status: 'developing',
+        currentConfidence: 90,
+        status: 'confirmed',
         evidence: [
-          'Est. $4.2B in interceptors expended',
-          'Heritage warning threshold approaching',
-          'Production cannot match expenditure rate',
+          'War costing U.S. $1B/day (NBC sources)',
+          'Iran drone-heavy strategy continues',
+          'Heritage warning thresholds reached',
         ],
       },
       {
         thesis: 'Credit market transmission mechanism',
         initialConfidence: 65,
-        currentConfidence: 78,
-        status: 'developing',
+        currentConfidence: 85,
+        status: 'confirmed',
         evidence: [
-          'HY spreads widen 144bps to 425bps',
-          'ISM Prices Paid spike confirms inflation path',
-          'Refinancing wall exposure validated',
+          '10yr yield 4.13% (up 16bps from pre-war)',
+          'Fed cuts pushed to summer',
+          'AAL downgraded, negative EPS forecast',
+          'Airlines down 5%+ in single day',
         ],
       },
     ],
@@ -539,53 +571,207 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
       {
         category: 'Insurance & Shipping',
         items: [
-          "Lloyd's P&I coverage expires at midnight",
-          'Only 3 tankers attempted transit today',
-          'VLCC rates holding at $460K/day',
-          'Dark fleet night transits increasing',
+          "Lloyd's P&I coverage officially expires",
+          'Zero tanker transits for 3rd consecutive day',
+          '200+ tankers stranded, 60 VLCCs trapped (8% of global fleet)',
+          '20,000 seafarers and 15,000 cruise passengers stranded (IMO)',
+          'Cape of Good Hope diversions surged 112% in single day',
         ],
       },
       {
         category: 'Energy Markets',
         items: [
-          'Brent crude breaks $100, closes at $108.20',
-          'U.S. gas prices approach $4.40 national average',
-          'Iraq production cuts now at 1.5M bpd',
-          'Qatar LNG remains suspended',
+          'Brent crude closes at $85.41 (+4.9% on Day 6)',
+          'WTI +8.5%, biggest single-day gain since May 2020',
+          'Oil up ~20% for the week',
+          'Trump refuses to tap Strategic Petroleum Reserve',
+          'U.S. gas at $3.26/gal, up 26 cents in one week',
         ],
       },
       {
         category: 'Military Situation',
         items: [
-          'Iranian casualties now exceed 1,320',
-          'U.S. casualties at 8',
-          'Hezbollah rocket attacks intensify',
-          'Congress war powers debate continues',
+          'Iranian casualties now exceed 1,230',
+          'Azerbaijan airport struck',
+          'WHO reports 13 attacks on Iranian health infrastructure',
+          'Cyprus: U.S. evacuation operations',
+          'Turkey: NATO intercepted Iranian missile',
         ],
       },
       {
-        category: 'Credit Markets',
+        category: 'Credit & Equity Markets',
         items: [
-          'HY spreads at 425bps (up from 281 pre-conflict)',
-          'VIX at 45.8',
-          'S&P 500 down 11.7% from pre-conflict',
-          'CDS on distressed retail widening rapidly',
+          'Dow wipes out all 2026 gains',
+          '10-year yield at 4.13% (up from 3.97% pre-war)',
+          'Airlines destroyed: AAL -5.4%, UAL -5%, DAL -4%, LUV -6%',
+          'AAL downgraded by Rothschild, negative EPS forecast',
+          'Fed rate cut expectations pushed to summer',
         ],
       },
     ],
     marketSnapshot: {
-      brentCrude: 108.20,
+      brentCrude: 85.41,
       vlccRate: 460000,
-      hySpread: 425,
-      vix: 45.8,
-      usGas: 4.38,
+      hySpread: 410,
+      vix: 26.5,
+      usGas: 3.26,
     },
     tradingImplications: [
-      'Long oil thesis validated but entry increasingly expensive',
-      'Distressed credit opportunities emerging in retail, CRE',
-      'Airlines facing double squeeze - fuel + route closures',
-      'GCC sovereign CDS worth monitoring for reconstruction plays',
-      'Interceptor manufacturers (RTX, LMT, NOC) benefiting but priced in',
+      'Long oil thesis validated - WTI +8.5% single day confirms transmission',
+      'Airlines now active restructuring candidates - AAL negative EPS forecast',
+      'Dow wiped out 2026 gains - systematic risk repricing underway',
+      '10yr yield at 4.13% - Fed cuts pushed to summer, stagflation risk rising',
+      'War at $1B/day with no off-ramps - protracted attrition confirmed',
+    ],
+  },
+  7: {
+    day: 7,
+    date: 'March 6, 2026',
+    title: "Zero Transits, $1B/Day Burn Rate, and No Off-Ramps",
+    summary: "Every off-ramp has been systematically closed. Congress won't act - both chambers killed war powers resolutions. Iran won't negotiate - FM Araghchi refuses all talks. Trump promising open-ended commitment: 'no time limits.' The strait is sealed by insurance, not mines. The macro transmission chain from Part II is running ahead of base case timeline.",
+    thesisScorecard: [
+      {
+        thesis: 'Hormuz closed by insurance, not navy',
+        initialConfidence: 75,
+        currentConfidence: 98,
+        status: 'confirmed',
+        evidence: [
+          'Zero tanker transits for 4 consecutive days',
+          '200+ tankers stranded, 60 VLCCs trapped (8% of global fleet)',
+          "P&I coverage officially expired - Lloyd's war risk cancellation in effect",
+          '20,000 seafarers and 15,000 cruise passengers stranded (IMO)',
+        ],
+      },
+      {
+        thesis: 'Protracted attrition > 4 weeks',
+        initialConfidence: 50,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          'Trump: "no time limits"',
+          'Hegseth: war "only just begun"',
+          'Both House and Senate kill war powers resolutions',
+          'Iran FM refuses all negotiation',
+        ],
+      },
+      {
+        thesis: 'Iran refuses to negotiate',
+        initialConfidence: 60,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          'FM Araghchi on NBC: "no reason to negotiate with those who are not honest"',
+          'U.S. attacked during active talks - trust destroyed',
+          'Mojtaba Khamenei emerging as next supreme leader',
+        ],
+      },
+      {
+        thesis: 'Credit/macro transmission active',
+        initialConfidence: 65,
+        currentConfidence: 92,
+        status: 'confirmed',
+        evidence: [
+          '10yr yield 4.13% (up 16bps from pre-war)',
+          'Fed cuts pushed to summer',
+          'AAL downgraded, negative EPS forecast',
+          'Dow wiped out all 2026 gains',
+        ],
+      },
+      {
+        thesis: 'Cost asymmetry bankrupting defenders',
+        initialConfidence: 80,
+        currentConfidence: 88,
+        status: 'developing',
+        evidence: [
+          'War costing U.S. $1B/day (NBC sources)',
+          'Iran drone-heavy strategy continues',
+          'Interceptor stockpiles depleting faster than production',
+        ],
+      },
+      {
+        thesis: 'Airlines as restructuring candidates',
+        initialConfidence: 55,
+        currentConfidence: 85,
+        status: 'developing',
+        evidence: [
+          'AAL downgraded by Rothschild, negative EPS forecast',
+          'Sector down 5%+ in single day',
+          'Middle East routes closed, fuel costs spiking',
+        ],
+      },
+      {
+        thesis: 'Geographic escalation',
+        initialConfidence: 70,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          'Now 15+ countries involved',
+          'Kurdish ground offensive opens new front',
+          'Cyprus: U.S. evacuation',
+          'Turkey: NATO missile intercept',
+          'Pakistan: U.S. consulate closed',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[6], // Day 7 update
+    keyDevelopments: [
+      {
+        category: 'Political/Diplomatic',
+        items: [
+          'Both House and Senate kill war powers resolutions — zero legislative off-ramps',
+          'Trump: "no time limits"',
+          'Hegseth: war "only just begun"',
+          'Iran FM Araghchi on NBC: refuses all negotiation, says U.S. attacked during active talks',
+          'Mojtaba Khamenei (son) emerging as next supreme leader',
+          'Trump demands role in choosing next Iranian leader — "unacceptable"',
+          'China dispatches special envoy',
+        ],
+      },
+      {
+        category: 'Military Escalation',
+        items: [
+          'Israel launches "broad-scale wave" on Tehran overnight',
+          'Tehran residential areas and Tehran University vicinity hit',
+          'Israel orders evacuation of ALL southern Beirut — 500K+ people',
+          'Kurdish ground offensive in northwest Iran — first ground front',
+          'Iran targeting radar systems across Arabian Peninsula to degrade air defenses',
+          'IRIS Bushehr interned by Sri Lanka — first warship interned in neutral country since WWII',
+        ],
+      },
+      {
+        category: 'Shipping & Trade',
+        items: [
+          'Zero tanker transits for 4th consecutive day',
+          'Strait effectively sealed by insurance mechanism',
+          'IMO: 20,000 seafarers + 15,000 cruise passengers stranded',
+          'Cape of Good Hope diversions continue surging',
+        ],
+      },
+      {
+        category: 'Markets & Economy',
+        items: [
+          'War costing U.S. $1B/day (NBC sources)',
+          'Dow wiped out all 2026 gains',
+          'Oil up 20%+ for the week',
+          'Airlines getting destroyed — sector down 5%+ in single day',
+          'AAL negative EPS forecast — first concrete restructuring signal',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 85.41,
+      vlccRate: 460000,
+      hySpread: 410,
+      vix: 26.5,
+      usGas: 3.26,
+    },
+    tradingImplications: [
+      'Quick Resolution probability → 5%. All off-ramps systematically closed',
+      'Protracted Attrition → 60%. This is now the base case',
+      'AAL negative EPS = first concrete company transitioning to restructuring candidate',
+      'The macro transmission chain from Part II is running ahead of base case timeline',
+      'Insurance thesis fully validated — strait sealed without mines or naval blockade',
+      'Every indicator suggests extended conflict with no negotiated resolution',
     ],
   },
 };
@@ -718,16 +904,27 @@ export const shippingDisruptionData = {
   events: [
     { date: 'Mar 1', title: 'Insurance Withdrawal Begins', description: 'Major war risk insurers begin withdrawing coverage for Hormuz transits' },
     { date: 'Mar 2', title: 'QatarEnergy Suspends LNG', description: 'All LNG production suspended after drone attack on Ras Laffan facility' },
+    { date: 'Mar 3', title: 'ZERO Transits Confirmed', description: 'JMIC confirms zero tanker transits through Strait of Hormuz' },
     { date: 'Mar 3', title: "Lloyd's P&I Cancellation", description: "Lloyd's-linked P&I clubs cancelling war risk coverage effective midnight March 5" },
     { date: 'Mar 3', title: 'Trump Naval Escorts', description: 'Trump announces naval escorts for tankers and U.S. political risk insurance guarantees' },
     { date: 'Mar 3', title: 'Iraq Production Cuts', description: 'Iraq announces forced production cuts of 1.5M bpd due to storage saturation' },
+    { date: 'Mar 5', title: 'P&I Coverage Expires', description: "Lloyd's war risk cancellation takes effect at midnight. 200+ tankers stranded, 60 VLCCs trapped (8% of global fleet)" },
+    { date: 'Mar 5', title: 'IMO Stranded Report', description: '20,000 seafarers and 15,000 cruise passengers stranded across the region' },
+    { date: 'Mar 6', title: 'Strait Effectively Sealed', description: 'Zero transits for 4th consecutive day. Iran targeting radar systems. Israel launches broad wave on Tehran overnight' },
   ],
   keyMetrics: {
-    transitCollapsePercent: 81,
-    tankersStranded: '150-200+',
+    transitCollapsePercent: 100,
+    tankersStranded: '200+',
     shipsUnableToExit: '700+',
+    trappedVLCCs: 60,
+    percentGlobalVLCCFleet: 8,
+    strandedSeafarers: 20000,
+    strandedCruisePassengers: 15000,
+    commercialShipsAttacked: '8+',
+    capeOfGoodHopeDiversions: 'surged 112% in single day',
     crudeBoundForIndia: '12 million barrels',
     minervaFixture: { rate: 436000, vessel: 'Pantanassa', charterer: 'GS Caltex' },
+    consecutiveZeroTransitDays: 4,
   },
 };
 
@@ -776,9 +973,36 @@ export const conflictTimeline = [
   { date: 'February 28, 2026', event: 'U.S. and Israel launch "Operation Epic Fury"—joint strikes across Iran. Supreme Leader Khamenei killed. Iran launches retaliatory strikes on 27 U.S. bases and Israeli targets within hours' },
   { date: 'March 1, 2026', event: 'Iran targets GCC civilian infrastructure: energy facilities in Qatar\'s Ras Laffan and Mesaieed, Dubai hotels and ports, Amazon data centers in UAE and Bahrain. Interim Leadership Council formed. Iran rejects U.S. ceasefire proposal via Italian mediator' },
   { date: 'March 2, 2026', event: 'U.S. death toll rises to 6. Trump says campaign could last 4-5 weeks. Hezbollah enters conflict from Lebanon. Strait of Hormuz shipping halted. Congress begins war powers resolution proceedings' },
-  { date: 'March 3, 2026', event: 'Lloyd\'s P&I clubs announce coverage cancellation effective midnight March 5. Trump announces naval escorts and political risk insurance guarantees. QatarEnergy suspends all LNG production.' },
-  { date: 'March 4, 2026', event: 'Iranian casualties exceed 1,045. IRIS Jamaran and IRIS Dena sunk in Indian Ocean. Tanker transits collapse to ~4/day. Iraq announces 1.5M bpd forced production cuts.' },
-  { date: 'March 5, 2026', event: 'P&I coverage expires at midnight. Brent crude exceeds $108. Iranian casualties exceed 1,320. Congressional war powers debate intensifies.' },
+  { date: 'March 3, 2026', event: 'JMIC confirms ZERO tanker transits through Hormuz. Lloyd\'s P&I clubs announce coverage cancellation effective midnight March 5. Trump announces naval escorts. QatarEnergy suspends all LNG production.' },
+  { date: 'March 4, 2026', event: 'Iranian casualties exceed 1,045. IRIS Jamaran and IRIS Dena sunk in Indian Ocean. Zero tanker transits continue. Iraq announces 1.5M bpd forced production cuts.' },
+  { date: 'March 5, 2026', event: 'P&I coverage officially expires. Zero transits for 3rd consecutive day. 200+ tankers stranded, 60 VLCCs trapped (8% of global fleet). 20,000 seafarers and 15,000 cruise passengers stranded. WTI +8.5%, biggest single-day gain since May 2020. Dow wipes out 2026 gains. War costing U.S. $1B/day.' },
+  { date: 'March 6, 2026', event: 'Both House and Senate kill war powers resolutions. Trump says "no time limits." Iran FM refuses all negotiation. Israel launches broad wave on Tehran overnight - residential areas hit. Beirut evacuation ordered (500K+ people). Kurdish ground offensive opens new front. China dispatches special envoy.' },
+];
+
+// =============================================================================
+// NEW DATA ARRAYS - SECTOR IMPACT
+// =============================================================================
+
+export interface AirlineImpactEntry extends TimeSeriesEntry {
+  americanAirlines: number;
+  unitedAirlines: number;
+  deltaAirlines: number;
+  southwestAirlines: number;
+  note?: string;
+}
+
+export const airlineImpact: AirlineImpactEntry[] = [
+  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), americanAirlines: -5.4, unitedAirlines: -5.0, deltaAirlines: -3.9, southwestAirlines: -6.0, note: 'AAL downgraded to neutral by Rothschild, negative EPS forecast for 2026' },
+];
+
+export interface WarCostEntry extends TimeSeriesEntry {
+  dailyCostUSD: number;
+  cumulativeCostUSD?: number;
+  note?: string;
+}
+
+export const warCostEstimate: WarCostEntry[] = [
+  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), dailyCostUSD: 1000000000, note: 'NBC sources: war costing U.S. $1 billion per day' },
 ];
 
 export const macroTransmissionChain = [
@@ -786,7 +1010,7 @@ export const macroTransmissionChain = [
     id: 'energy-shock',
     label: 'Energy Shock',
     description: 'Strait of Hormuz closure, 20% global oil disrupted',
-    metrics: [`Brent +${((getLatest(marketTimeline).brentCrude - 77.52) / 77.52 * 100).toFixed(1)}% to $${getLatest(marketTimeline).brentCrude}`, `VLCC rates $${(getLatest(hormuzTimeline).vlccRate / 1000).toFixed(0)}K/day`, '81% transit collapse'],
+    metrics: [`Brent +${((getLatest(marketTimeline).brentCrude - 77.52) / 77.52 * 100).toFixed(1)}% to $${getLatest(marketTimeline).brentCrude}`, `VLCC rates $${(getLatest(hormuzTimeline).vlccRate / 1000).toFixed(0)}K/day`, '100% transit collapse - zero transits 4 days'],
     color: '#ef4444',
   },
   {
@@ -800,7 +1024,7 @@ export const macroTransmissionChain = [
     id: 'fed-constraint',
     label: 'Fed Constraint',
     description: 'Rate cuts blocked by inflation spike',
-    metrics: ['10Y yield: 4.117%', 'Cutting cycle disrupted', 'Stagflation risk'],
+    metrics: ['10Y yield: 4.13% (+16bps from pre-war)', 'Fed cuts pushed to summer', 'Stagflation risk rising'],
     color: '#eab308',
   },
   {

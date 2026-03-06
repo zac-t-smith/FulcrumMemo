@@ -30,6 +30,8 @@ import {
   hormuzTimeline,
   casualtyTimeline,
   getLatest,
+  shippingDisruptionData,
+  warCostEstimate,
 } from '@/data/iranConflictData';
 import { generateMemoPdf } from '@/lib/generatePdf';
 
@@ -222,10 +224,10 @@ const IranMemoPartIFull = () => {
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold mt-0.5">▸</span>
                 <span>
-                  <strong className="text-foreground">Strait of Hormuz closed de facto:</strong>{' '}
-                  Tanker transits collapsed 81% (from ~100 to ~7). 20% of global oil, 20% of LNG, 33%
+                  <strong className="text-foreground">Strait of Hormuz sealed:</strong>{' '}
+                  Zero tanker transits for {shippingDisruptionData.keyMetrics.consecutiveZeroTransitDays}+ consecutive days. 20% of global oil, 20% of LNG, 33%
                   of global fertilizer trade halted—not by naval blockade, but by insurance
-                  withdrawal. <GlossaryTooltip term="vlcc">VLCC</GlossaryTooltip> rates hit ${getLatest(hormuzTimeline).vlccRate.toLocaleString()}/day.
+                  withdrawal. {shippingDisruptionData.keyMetrics.tankersStranded} tankers stranded, {shippingDisruptionData.keyMetrics.trappedVLCCs} VLCCs trapped ({shippingDisruptionData.keyMetrics.percentGlobalVLCCFleet}% of global fleet). <GlossaryTooltip term="vlcc">VLCC</GlossaryTooltip> rates at ${getLatest(hormuzTimeline).vlccRate.toLocaleString()}/day.
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -592,7 +594,7 @@ const IranMemoPartIFull = () => {
                 {
                   actor: 'United States',
                   objective: 'Quick victory narrative',
-                  costContinuing: 'High — $500M-$1B/day + casualties',
+                  costContinuing: 'High — $1B/day confirmed (NBC) + casualties',
                   costStopping: 'Moderate — can redefine objectives',
                   color: 'blue',
                 },
