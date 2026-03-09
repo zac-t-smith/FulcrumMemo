@@ -343,7 +343,7 @@ export const scenarioUpdates: ScenarioUpdate[] = [
       "Lloyd's coverage cancellation effective Mar 5",
       'Trump announces naval escorts',
       'QatarEnergy suspends all LNG production',
-      'Iraq announces 1.5M bpd production cuts',
+      'Iraq output down 70% due to storage saturation from Hormuz closure',
     ],
   },
   {
@@ -465,7 +465,7 @@ export const scenarioUpdates: ScenarioUpdate[] = [
       '8th US service member killed',
       'Iran announces nationwide gathering to pledge allegiance to new supreme leader',
       'Saudi Arabia production cuts deepening — running out of storage due to Hormuz closure',
-      'Iraq already cut 1.5M bpd',
+      'Iraq output down 70% due to storage saturation',
       'JPMorgan warns Brent could hit $120 if Gulf producers exhaust storage',
       'G7 considering coordinated SPR release',
     ],
@@ -958,8 +958,10 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
         category: 'Energy',
         items: [
           'Oil climbing toward $100',
-          'Brent at ~$91',
+          'Brent at ~$92+ (WTI closed Friday Mar 7 up +$9.89 / +12.21%)',
+          'WTI surged 12.2% on Friday alone — largest single-day percentage gain in months',
           'VLCC rates sustained at $440K/day',
+          "Qatar's energy minister told FT the war could 'bring down the economies of the world' — predicted $150/bbl and all Gulf exporters shut down within weeks",
         ],
       },
       {
@@ -972,13 +974,14 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
       },
     ],
     marketSnapshot: {
-      brentCrude: 91.20,
+      brentCrude: 92.0,
       vlccRate: 440000,
       hySpread: 435,
       vix: 27.5,
       usGas: 3.38,
     },
     tradingImplications: [
+      'WTI surged 12.2% on Friday alone — largest single-day percentage gain in months',
       'Selective Hormuz access changes energy geopolitics permanently — China gets preferential oil access',
       "Israel's munitions burn rate raises stockpile sustainability questions",
       'GPS jamming affecting 1,650+ ships — maritime insurance costs will stay elevated even after conflict',
@@ -1204,8 +1207,10 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
         category: 'Supply',
         items: [
           'Saudi Arabia production cuts deepening — running out of storage',
-          'Iraq already cut 1.5M bpd due to storage saturation',
+          'Iraq output down 70% due to storage saturation from Hormuz closure',
+          'Bahrain\'s Bapco declared force majeure — analysts expect more Gulf producers to follow as storage fills',
           'JPMorgan warns Brent could hit $120 if Gulf producers exhaust storage',
+          'Goldman Sachs warns $140-150 if Hormuz stays disrupted beyond 30 days, potentially triggering synchronized global downturn',
           'G7 considering coordinated SPR release',
         ],
       },
@@ -1227,7 +1232,8 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
       usGas: 3.478,
     },
     tradingImplications: [
-      '$100 oil is not a ceiling — it\'s a floor if Hormuz stays closed. JPMorgan projects $120',
+      '$100 oil is not a ceiling — it\'s a floor if Hormuz stays closed. JPMorgan warns $120 if storage exhausted. Goldman Sachs warns $140-150 if Hormuz stays disrupted beyond 30 days, potentially triggering synchronized global economic downturn',
+      'Futures curve sharply backwardated: April WTI $108, May $103, June $95, July $88. Market expects eventual resolution but near-term pricing is crisis-level. The steepness of backwardation signals physical supply panic, not just speculative bidding',
       'G7 SPR release = temporary band-aid. Global SPR covers ~90 days of imports. Hormuz disrupts 20% of supply indefinitely',
       'Asia is the transmission vector — Japan and Korea are Hormuz-dependent. Their market crashes will feed back into global risk-off',
       'Credit spreads about to blow out. HY at 475 with oil above $100 and equity markets crashing',
@@ -1368,7 +1374,7 @@ export const shippingDisruptionData = {
     { date: 'Mar 2', title: 'Zero Transits Begin', description: 'First day of zero tanker transits through Strait of Hormuz' },
     { date: 'Mar 3', title: "Lloyd's P&I Cancellation", description: "Lloyd's-linked P&I clubs cancelling war risk coverage effective midnight March 5" },
     { date: 'Mar 3', title: 'Trump Naval Escorts', description: 'Trump announces naval escorts for tankers and U.S. political risk insurance guarantees' },
-    { date: 'Mar 3', title: 'Iraq Production Cuts', description: 'Iraq announces forced production cuts of 1.5M bpd due to storage saturation' },
+    { date: 'Mar 3', title: 'Iraq Production Collapse', description: 'Iraq output has dropped 70% due to storage saturation from Hormuz closure' },
     { date: 'Mar 5', title: 'P&I Coverage Expires', description: "Lloyd's war risk cancellation takes effect at midnight. 200+ tankers stranded, 60 VLCCs trapped (8% of global fleet)" },
     { date: 'Mar 5', title: 'IMO Stranded Report', description: '20,000 seafarers and 15,000 cruise passengers stranded across the region' },
     { date: 'Mar 6', title: 'Selective Transit Emerges', description: 'China/Iran-linked vessels begin transiting. Western shipping blocked.' },
@@ -1377,6 +1383,8 @@ export const shippingDisruptionData = {
     { date: 'Mar 8', title: 'New Supreme Leader', description: 'Mojtaba Khamenei named Supreme Leader. IRGC pledges allegiance.' },
     { date: 'Mar 8', title: 'Oil Infrastructure Targeted', description: 'Israel strikes Iranian oil infrastructure for first time: Shahr Rey, Shahran, Nobonyad depots' },
     { date: 'Mar 9', title: 'Oil Breaches $100', description: 'Brent hits $119 intraday. Largest single-day dollar gain since 1988. Crude up 50% since conflict started.' },
+    { date: 'Mar 9', title: 'Bapco Force Majeure', description: 'Bahrain\'s Bapco declares force majeure. Analysts (Jones Trading) expect more Gulf producers to follow as storage fills.' },
+    { date: 'Mar 9', title: 'Goldman Sachs Warning', description: 'Goldman warns $140-150 oil if Hormuz stays disrupted beyond 30 days, potentially triggering synchronized global economic downturn.' },
   ],
   keyMetrics: {
     transitCollapsePercent: 98,
@@ -1441,12 +1449,12 @@ export const conflictTimeline = [
   { date: 'March 1, 2026', event: 'Iran targets GCC civilian infrastructure: energy facilities in Qatar\'s Ras Laffan and Mesaieed, Dubai hotels and ports, Amazon data centers in UAE and Bahrain. Interim Leadership Council formed. Iran rejects U.S. ceasefire proposal via Italian mediator' },
   { date: 'March 2, 2026', event: 'U.S. death toll rises to 6. Trump says campaign could last 4-5 weeks. Hezbollah enters conflict from Lebanon. Zero tanker transits through Hormuz begins. Congress begins war powers resolution proceedings' },
   { date: 'March 3, 2026', event: 'Zero transits continue. Lloyd\'s P&I clubs announce coverage cancellation effective midnight March 5. Trump announces naval escorts. QatarEnergy suspends all LNG production.' },
-  { date: 'March 4, 2026', event: 'Iranian casualties exceed 1,045. IRIS Jamaran and IRIS Dena sunk in Indian Ocean. 5 tankers transit (3 outbound only). Iraq announces 1.5M bpd forced production cuts.' },
+  { date: 'March 4, 2026', event: 'Iranian casualties exceed 1,045. IRIS Jamaran and IRIS Dena sunk in Indian Ocean. 5 tankers transit (3 outbound only). Iraq output down 70% due to storage saturation from Hormuz closure.' },
   { date: 'March 5, 2026', event: 'P&I coverage officially expires. Zero transits resume. 200+ tankers stranded, 60 VLCCs trapped (8% of global fleet). 20,000 seafarers stranded. WTI +8.5%, biggest single-day gain since May 2020. Dow wipes out 2026 gains. War costing U.S. $1B/day.' },
   { date: 'March 6, 2026', event: 'Both House and Senate kill war powers resolutions. Trump says "no time limits." Iran FM refuses all negotiation. Israel launches broad wave on Tehran overnight. Beirut evacuation ordered (500K+ people). Kurdish ground offensive opens new front. China dispatches special envoy.' },
   { date: 'March 7, 2026', event: 'Israeli Air Force attacks 400+ targets in Iran, dropping 1,465 munitions. 80+ fighter jets strike Tehran with ~230 munitions. IDF destroys 16 Quds Force cargo aircraft at Mehrabad Airport. PRIMA tanker struck by Iranian drone in Hormuz. GPS jamming affects 1,650+ ships (up 55%). Selective transit emerges — only 3 vessels transit (Palau, Iran, Liberia flagged). Iran confirms Strait closed only to US, Israel, Western allies.' },
   { date: 'March 8, 2026', event: 'Mojtaba Khamenei (son) named new Supreme Leader — IRGC pledges allegiance. Israel strikes Iranian oil infrastructure for first time: Shahr Rey, Shahran, Nobonyad depots. Senior Iranian official warns war entered "new phase" — threatens regional energy infrastructure. Saudi Arabia first fatalities: 2 killed, 12 injured. Bahrain desalination plant hit. Kuwait airport fuel tanks targeted. Israel strikes hotel in central Beirut, killing 4. 7th US soldier killed. US orders non-emergency diplomats out of Saudi Arabia. G7 discusses emergency SPR release.' },
-  { date: 'March 9, 2026', event: 'Oil surges past $100/barrel — Brent hits $119 intraday. Largest single-day dollar gain since 1988. Crude up 50% since conflict started. Asian markets crash: Nikkei -7.5%, KOSPI -8.1%. US gas hits $3.478 (AAA), up $0.50 in one week. 8th US soldier killed. Iran announces nationwide allegiance gathering for new Supreme Leader. Saudi/Iraq production cuts deepening due to storage saturation. JPMorgan warns Brent could hit $120. G7 considering coordinated SPR release.' },
+  { date: 'March 9, 2026', event: 'Oil surges past $100/barrel — Brent hits $119 intraday. Largest single-day dollar gain since 1988. Crude up 50% since conflict started. Asian markets crash: Nikkei -7.5%, KOSPI -8.1%. US gas hits $3.478 (AAA), up $0.50 in one week. 8th US soldier killed. Mojtaba Khamenei named new Supreme Leader — IRGC and military pledge allegiance. Iran announces nationwide allegiance gathering. Iraq output down 70% due to storage saturation. Bapco (Bahrain) declares force majeure — more expected to follow. Goldman Sachs warns $140-150 oil if Hormuz disrupted beyond 30 days. G7 considering coordinated SPR release.' },
 ];
 
 // =============================================================================
@@ -1518,6 +1526,30 @@ export const macroTransmissionChain = [
     metrics: ['Retail, CRE, Airlines', 'Cruise, Speculative Tech', 'Advisory mandates surge'],
     color: '#8b5cf6',
   },
+];
+
+// =============================================================================
+// ADDITIONAL MARKET DATA
+// =============================================================================
+
+export const iraqProductionDeclinePercent = 70;
+
+export const forceMajeureDeclarers = [
+  { company: 'Bapco Energies', country: 'Bahrain', date: 'Mar 9, 2026', note: 'Storage saturation from Hormuz closure' },
+];
+
+export const goldmanSachsProjection = {
+  thirtyDayDisruption: '$140-150/bbl',
+  trigger: 'synchronized global economic downturn',
+  source: 'Goldman Sachs',
+  date: 'Mar 9, 2026',
+};
+
+export const futuresCurve = [
+  { month: 'April', price: 108 },
+  { month: 'May', price: 103 },
+  { month: 'June', price: 95 },
+  { month: 'July', price: 88 },
 ];
 
 export const glossaryTerms: Record<string, { term: string; definition: string; category: string }> = {
