@@ -7,8 +7,8 @@
 // =============================================================================
 
 export const conflictMetadata = {
-  lastUpdated: '2026-03-06T08:00:00Z',
-  conflictDay: 7,
+  lastUpdated: '2026-03-09T12:00:00Z',
+  conflictDay: 10,
   conflictStartDate: '2026-02-28',
 };
 
@@ -172,14 +172,17 @@ export interface FieldNoteDay {
 // =============================================================================
 
 export const hormuzTimeline: HormuzTransitEntry[] = [
-  { date: 'Feb 27', timestamp: Date.parse('2026-02-27'), tankerCount: 100, vlccRate: 78000, event: 'Pre-conflict normal' },
-  { date: 'Feb 28', timestamp: Date.parse('2026-02-28'), tankerCount: 72, vlccRate: 85000, event: 'Operation Epic Fury begins' },
-  { date: 'Mar 1', timestamp: Date.parse('2026-03-01'), tankerCount: 18, vlccRate: 280000, event: 'Insurance withdrawal begins' },
-  { date: 'Mar 2', timestamp: Date.parse('2026-03-02'), tankerCount: 7, vlccRate: 423736, event: "Lloyd's cancellation announced" },
-  { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), tankerCount: 0, vlccRate: 445200, event: 'JMIC confirms zero transits. Trump announces naval escorts' },
-  { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), tankerCount: 0, vlccRate: 445200, event: 'P&I coverage expires midnight Mar 5' },
+  { date: 'Feb 27', timestamp: Date.parse('2026-02-27'), tankerCount: 120, vlccRate: 170000, event: 'Pre-conflict normal' },
+  { date: 'Feb 28', timestamp: Date.parse('2026-02-28'), tankerCount: 17, vlccRate: 218000, event: 'Operation Epic Fury begins' },
+  { date: 'Mar 1', timestamp: Date.parse('2026-03-01'), tankerCount: 4, vlccRate: 300000, event: 'Insurance withdrawal begins' },
+  { date: 'Mar 2', timestamp: Date.parse('2026-03-02'), tankerCount: 0, vlccRate: 424000, event: "Zero transits. Lloyd's cancellation announced. VLCC record" },
+  { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), tankerCount: 0, vlccRate: 445000, event: 'Zero transits continue. Trump announces naval escorts' },
+  { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), tankerCount: 5, vlccRate: 315000, event: '5 transits (3 outbound only). P&I coverage expires midnight Mar 5' },
   { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), tankerCount: 0, vlccRate: 460000, event: "Lloyd's war risk cancellation takes effect. ~200 tankers stranded. 60 VLCCs trapped (8% of global fleet)" },
-  { date: 'Mar 6', timestamp: Date.parse('2026-03-06'), tankerCount: 0, vlccRate: 460000, event: 'Strait effectively sealed. Iran targeting radar systems. Israel launches broad wave on Tehran overnight' },
+  { date: 'Mar 6', timestamp: Date.parse('2026-03-06'), tankerCount: 3, vlccRate: 445000, event: 'Selective transit emerges — China/Iran-linked vessels only. Israel launches broad wave on Tehran' },
+  { date: 'Mar 7', timestamp: Date.parse('2026-03-07'), tankerCount: 3, vlccRate: 440000, event: '3 transits (Palau, Iran, Liberia flagged). GPS jamming affects 1,650+ ships' },
+  { date: 'Mar 8', timestamp: Date.parse('2026-03-08'), tankerCount: 2, vlccRate: 450000, event: 'Selective access continuing. Mojtaba Khamenei named Supreme Leader' },
+  { date: 'Mar 9', timestamp: Date.parse('2026-03-09'), tankerCount: 1, vlccRate: 455000, event: 'Near-zero Western transits. Oil breaches $100, hits $119 intraday' },
 ];
 
 export const casualtyTimeline: CasualtyEntry[] = [
@@ -189,27 +192,38 @@ export const casualtyTimeline: CasualtyEntry[] = [
   { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), iranianKilled: 780, iranianCivilian: 268, usKilled: 6, gccCivilian: 145, note: 'Minab school incident' },
   { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), iranianKilled: 1045, iranianCivilian: 380, usKilled: 6, gccCivilian: 178, note: 'Naval losses' },
   { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), iranianKilled: 1230, iranianCivilian: 420, usKilled: 6, gccCivilian: 195, note: 'Azerbaijan airport struck. WHO: 13 attacks on Iranian health infrastructure' },
-  { date: 'Mar 6', timestamp: Date.parse('2026-03-06'), iranianKilled: 1400, iranianCivilian: 480, usKilled: 6, gccCivilian: 210, note: 'Tehran residential areas and Tehran University vicinity hit overnight. Beirut evacuation ordered (500K+ people)' },
+  { date: 'Mar 6', timestamp: Date.parse('2026-03-06'), iranianKilled: 1400, iranianCivilian: 480, usKilled: 6, gccCivilian: 210, note: 'Tehran residential areas hit overnight. Beirut evacuation ordered (500K+ people)' },
+  { date: 'Mar 7', timestamp: Date.parse('2026-03-07'), iranianKilled: 1650, iranianCivilian: 550, usKilled: 6, gccCivilian: 225, note: 'Israel hits 400+ targets, 1,465 munitions. Mehrabad Airport destroyed. PRIMA tanker struck' },
+  { date: 'Mar 8', timestamp: Date.parse('2026-03-08'), iranianKilled: 1900, iranianCivilian: 620, usKilled: 7, gccCivilian: 245, note: 'Oil infrastructure targeted. Saudi first fatalities (2 dead, 12 injured). Bahrain desalination plant hit' },
+  { date: 'Mar 9', timestamp: Date.parse('2026-03-09'), iranianKilled: 2150, iranianCivilian: 690, usKilled: 8, gccCivilian: 260, note: '8th US soldier killed. Oil breaches $100. Iran nationwide allegiance gathering' },
 ];
 
 export const marketTimeline: MarketEntry[] = [
-  { date: 'Feb 27', timestamp: Date.parse('2026-02-27'), brentCrude: 77.52, wti: 73.45, naturalGas: 3.00, goldSpot: 2845, spx: 5980, vix: 15.2, hySpread: 281 },
-  { date: 'Feb 28', timestamp: Date.parse('2026-02-28'), brentCrude: 83.58, wti: 79.23, naturalGas: 3.12, goldSpot: 2912, spx: 5820, vix: 24.5, hySpread: 295, event: 'Op begins' },
-  { date: 'Mar 1', timestamp: Date.parse('2026-03-01'), brentCrude: 89.45, wti: 85.12, naturalGas: 3.45, goldSpot: 2978, spx: 5645, vix: 32.1, hySpread: 325 },
-  { date: 'Mar 2', timestamp: Date.parse('2026-03-02'), brentCrude: 94.80, wti: 90.55, naturalGas: 3.78, goldSpot: 3045, spx: 5520, vix: 38.4, hySpread: 358 },
-  { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), brentCrude: 98.20, wti: 93.85, naturalGas: 4.02, goldSpot: 3089, spx: 5480, vix: 35.8, hySpread: 372 },
-  { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), brentCrude: 102.45, wti: 97.80, naturalGas: 4.15, goldSpot: 3125, spx: 5395, vix: 41.2, hySpread: 395 },
-  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), brentCrude: 85.41, wti: 81.01, naturalGas: 4.28, goldSpot: 5121, spx: 5830.71, vix: 26.5, hySpread: 410, event: 'WTI +8.5% biggest single-day gain since May 2020. Dow wiped out 2026 gains' },
+  { date: 'Feb 27', timestamp: Date.parse('2026-02-27'), brentCrude: 72.50, wti: 68.45, naturalGas: 2.85, goldSpot: 2845, spx: 5980, vix: 15.2, hySpread: 281 },
+  { date: 'Feb 28', timestamp: Date.parse('2026-02-28'), brentCrude: 78.50, wti: 74.23, naturalGas: 2.95, goldSpot: 2912, spx: 5820, vix: 24.5, hySpread: 295, event: 'Op begins' },
+  { date: 'Mar 1', timestamp: Date.parse('2026-03-01'), brentCrude: 82.45, wti: 78.12, naturalGas: 3.15, goldSpot: 2978, spx: 5645, vix: 32.1, hySpread: 325 },
+  { date: 'Mar 2', timestamp: Date.parse('2026-03-02'), brentCrude: 85.80, wti: 81.55, naturalGas: 3.35, goldSpot: 3045, spx: 5520, vix: 38.4, hySpread: 358 },
+  { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), brentCrude: 88.20, wti: 84.85, naturalGas: 3.55, goldSpot: 3089, spx: 5480, vix: 35.8, hySpread: 372 },
+  { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), brentCrude: 90.45, wti: 86.80, naturalGas: 3.70, goldSpot: 3125, spx: 5395, vix: 41.2, hySpread: 395 },
+  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), brentCrude: 85.41, wti: 81.01, naturalGas: 3.85, goldSpot: 5121, spx: 5830.71, vix: 26.5, hySpread: 410, event: 'WTI +8.5% biggest single-day gain since May 2020. Dow wiped out 2026 gains' },
+  { date: 'Mar 6', timestamp: Date.parse('2026-03-06'), brentCrude: 88.50, wti: 84.50, naturalGas: 3.95, goldSpot: 5180, spx: 5750, vix: 27.0, hySpread: 425, event: 'Selective Hormuz transit emerges. Israel broad wave on Tehran' },
+  { date: 'Mar 7', timestamp: Date.parse('2026-03-07'), brentCrude: 91.20, wti: 87.80, naturalGas: 4.10, goldSpot: 5050, spx: 5680, vix: 27.5, hySpread: 435, event: 'Israel hits 400+ targets, 1,465 munitions. GPS jamming spreads' },
+  { date: 'Mar 8', timestamp: Date.parse('2026-03-08'), brentCrude: 92.69, wti: 89.20, naturalGas: 4.25, goldSpot: 5085, spx: 5620, vix: 28.0, hySpread: 450, event: 'Mojtaba Khamenei named Supreme Leader. Israel strikes oil infrastructure' },
+  { date: 'Mar 9', timestamp: Date.parse('2026-03-09'), brentCrude: 108.75, wti: 108.62, naturalGas: 4.50, goldSpot: 5100, spx: 5480, vix: 29.48, hySpread: 475, event: 'Oil breaches $100, hits $119 intraday. Largest single-day $ gain since 1988. Asia crashes' },
 ];
 
 export const gasPrices: GasPriceEntry[] = [
-  { date: 'Feb 27', timestamp: Date.parse('2026-02-27'), usAverage: 3.00, california: 4.65 },
-  { date: 'Feb 28', timestamp: Date.parse('2026-02-28'), usAverage: 3.04, california: 4.72, change: 0.04, note: 'Initial reaction' },
-  { date: 'Mar 1', timestamp: Date.parse('2026-03-01'), usAverage: 3.08, california: 4.80, change: 0.04 },
-  { date: 'Mar 2', timestamp: Date.parse('2026-03-02'), usAverage: 3.12, california: 4.88, change: 0.04 },
-  { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), usAverage: 3.16, california: 4.95, change: 0.04 },
-  { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), usAverage: 3.21, california: 5.02, change: 0.05 },
-  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), usAverage: 3.26, california: 5.10, change: 0.05, note: 'Up 26 cents in one week. Trump refuses to tap SPR' },
+  { date: 'Feb 27', timestamp: Date.parse('2026-02-27'), usAverage: 2.98, california: 4.50 },
+  { date: 'Feb 28', timestamp: Date.parse('2026-02-28'), usAverage: 3.02, california: 4.58, change: 0.04, note: 'Initial reaction' },
+  { date: 'Mar 1', timestamp: Date.parse('2026-03-01'), usAverage: 3.08, california: 4.68, change: 0.06 },
+  { date: 'Mar 2', timestamp: Date.parse('2026-03-02'), usAverage: 3.14, california: 4.78, change: 0.06 },
+  { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), usAverage: 3.20, california: 4.88, change: 0.06 },
+  { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), usAverage: 3.26, california: 4.98, change: 0.06 },
+  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), usAverage: 3.30, california: 5.05, change: 0.04, note: 'Trump refuses to tap SPR' },
+  { date: 'Mar 6', timestamp: Date.parse('2026-03-06'), usAverage: 3.34, california: 5.12, change: 0.04 },
+  { date: 'Mar 7', timestamp: Date.parse('2026-03-07'), usAverage: 3.38, california: 5.20, change: 0.04 },
+  { date: 'Mar 8', timestamp: Date.parse('2026-03-08'), usAverage: 3.42, california: 5.28, change: 0.04 },
+  { date: 'Mar 9', timestamp: Date.parse('2026-03-09'), usAverage: 3.478, california: 5.40, change: 0.058, note: 'AAA confirmed. Up $0.50 in one week. Experts project $4.00 by end of March' },
 ];
 
 export const asianMarkets: AsianMarketEntry[] = [
@@ -217,7 +231,11 @@ export const asianMarkets: AsianMarketEntry[] = [
   { date: 'Mar 2', timestamp: Date.parse('2026-03-02'), nikkei: 37120, nikkeiChange: -2.9, hangseng: 19125, hangsengChange: -3.6, kospi: 2378, kospiChange: -3.2, sensex: 70890, sensexChange: -2.2 },
   { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), nikkei: 36580, nikkeiChange: -1.5, hangseng: 18890, hangsengChange: -1.2, kospi: 2345, kospiChange: -1.4, sensex: 70120, sensexChange: -1.1, note: 'Naval escort announcement stabilizes' },
   { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), nikkei: 35890, nikkeiChange: -1.9, hangseng: 18420, hangsengChange: -2.5, kospi: 2289, kospiChange: -2.4, sensex: 69450, sensexChange: -1.0 },
-  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), nikkei: 36430, nikkeiChange: 1.5, hangseng: 18200, hangsengChange: 2.0, kospi: 2518, kospiChange: 10.0, sensex: 70100, sensexChange: 1.0, note: 'Dead cat bounce after historic crash' },
+  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), nikkei: 36430, nikkeiChange: 1.5, hangseng: 18750, hangsengChange: 1.8, kospi: 2518, kospiChange: 10.0, sensex: 70100, sensexChange: 1.0, note: 'Dead cat bounce after historic crash' },
+  { date: 'Mar 6', timestamp: Date.parse('2026-03-06'), nikkei: 35980, nikkeiChange: -1.2, hangseng: 18420, hangsengChange: -1.8, kospi: 2450, kospiChange: -2.7, sensex: 69650, sensexChange: -0.6 },
+  { date: 'Mar 7', timestamp: Date.parse('2026-03-07'), nikkei: 35450, nikkeiChange: -1.5, hangseng: 18100, hangsengChange: -1.7, kospi: 2380, kospiChange: -2.9, sensex: 69200, sensexChange: -0.7, note: 'GPS jamming concerns' },
+  { date: 'Mar 8', timestamp: Date.parse('2026-03-08'), nikkei: 34980, nikkeiChange: -1.3, hangseng: 17850, hangsengChange: -1.4, kospi: 2320, kospiChange: -2.5, sensex: 68800, sensexChange: -0.6, note: 'New Supreme Leader named' },
+  { date: 'Mar 9', timestamp: Date.parse('2026-03-09'), nikkei: 32360, nikkeiChange: -7.5, hangseng: 16950, hangsengChange: -5.0, kospi: 2132, kospiChange: -8.1, sensex: 66500, sensexChange: -3.3, note: 'Oil breaches $100 — Asia crashes. Japan energy crisis escalating' },
 ];
 
 export const interceptorStatus: InterceptorStatusEntry[] = [
@@ -234,7 +252,7 @@ export const conflictGeography: ConflictGeographyEntry[] = [
   { location: 'Natanz Nuclear Facility', lat: 33.7249, lng: 51.7274, type: 'strike', date: 'Feb 28', description: 'Nuclear facility strikes' },
   { location: 'Ras Laffan, Qatar', lat: 25.9264, lng: 51.5308, type: 'damage', date: 'Mar 1', description: 'LNG facility damaged, production suspended' },
   { location: 'Dubai, UAE', lat: 25.2048, lng: 55.2708, type: 'damage', date: 'Mar 1', description: 'Jebel Ali port fire, Burj Al Arab hit' },
-  { location: 'Strait of Hormuz', lat: 26.5667, lng: 56.2500, type: 'shipping', date: 'Mar 3', description: 'Zero transits - strait effectively sealed' },
+  { location: 'Strait of Hormuz', lat: 26.5667, lng: 56.2500, type: 'shipping', date: 'Mar 3', description: 'Selective transit only - Western shipping blocked' },
   { location: 'Bandar Abbas', lat: 27.1865, lng: 56.2808, type: 'strike', date: 'Mar 2', description: 'Naval base strikes' },
   { location: 'Indian Ocean (S of Sri Lanka)', lat: 5.5000, lng: 79.5000, type: 'naval', date: 'Mar 4', description: 'IRIS Jamaran & Dena sunk. IRIS Bushehr interned by Sri Lanka' },
   { location: 'Kuwait (Camp Arifjan)', lat: 28.9167, lng: 48.1333, type: 'base', date: 'Mar 2', description: '6 U.S. troops killed' },
@@ -246,6 +264,15 @@ export const conflictGeography: ConflictGeographyEntry[] = [
   { location: 'Tehran University', lat: 35.7029, lng: 51.3952, type: 'strike', date: 'Mar 6', description: 'Israel broad wave overnight - residential areas hit' },
   { location: 'Beirut (Southern Suburbs)', lat: 33.8547, lng: 35.4832, type: 'damage', date: 'Mar 6', description: 'Israel orders evacuation - 500K+ people' },
   { location: 'Kurdistan (NW Iran)', lat: 36.6833, lng: 45.0833, type: 'strike', date: 'Mar 6', description: 'Kurdish ground offensive - first ground front' },
+  { location: 'Mehrabad Airport, Tehran', lat: 35.6892, lng: 51.3100, type: 'strike', date: 'Mar 7', description: 'IDF destroys 16 Quds Force cargo aircraft' },
+  { location: 'IRGC University, Tehran', lat: 35.7100, lng: 51.4200, type: 'strike', date: 'Mar 7', description: '400+ targets hit, 1,465 munitions dropped' },
+  { location: 'Strait of Hormuz (PRIMA tanker)', lat: 26.4500, lng: 56.3000, type: 'shipping', date: 'Mar 7', description: 'PRIMA tanker struck by Iranian drone' },
+  { location: 'Shahr Rey Oil Depot, Tehran', lat: 35.5900, lng: 51.4400, type: 'strike', date: 'Mar 8', description: 'First Israeli strike on Iranian oil infrastructure' },
+  { location: 'Shahran Oil Depot, Tehran', lat: 35.7200, lng: 51.3500, type: 'strike', date: 'Mar 8', description: 'Oil infrastructure targeted' },
+  { location: 'Riyadh Province, Saudi Arabia', lat: 24.7136, lng: 46.6753, type: 'damage', date: 'Mar 8', description: 'First Saudi fatalities: 2 killed, 12 injured' },
+  { location: 'Bahrain (Desalination Plant)', lat: 26.0275, lng: 50.5500, type: 'damage', date: 'Mar 8', description: 'Iranian drone hits desalination plant' },
+  { location: 'Kuwait International Airport', lat: 29.2266, lng: 47.9689, type: 'damage', date: 'Mar 8', description: 'Drones target fuel tanks' },
+  { location: 'Beirut (Central)', lat: 33.8938, lng: 35.5018, type: 'strike', date: 'Mar 8', description: 'Israel strikes hotel, killing 4 - first strike on heart of capital' },
 ];
 
 // =============================================================================
@@ -372,6 +399,75 @@ export const scenarioUpdates: ScenarioUpdate[] = [
       'Israel launches broad wave on Tehran overnight',
       'Beirut southern suburbs evacuation ordered (500K+ people)',
       'War costing U.S. $1B/day (NBC sources)',
+    ],
+  },
+  {
+    date: 'Mar 7, 2026',
+    timestamp: Date.parse('2026-03-07'),
+    day: 8,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 5 },
+      { scenario: 'Protracted Attrition', probability: 55 },
+      { scenario: 'Full Escalation', probability: 40 },
+    ],
+    rationale: "Israel's weekend bombing campaign (400+ targets, 1,465 munitions) is the most intense since war began. Targeting Mehrabad Airport and IRGC university signals intent to degrade regime infrastructure. Selective transit emerging (China/Iran-linked vessels) creates de facto two-tier Hormuz.",
+    keyDevelopments: [
+      'Israeli Air Force attacks 400+ targets, drops 1,465 munitions',
+      '80+ fighter jets strike Tehran alone with ~230 munitions',
+      'IDF destroys 16 Quds Force cargo aircraft at Mehrabad Airport',
+      'PRIMA tanker struck by Iranian drone in Hormuz',
+      'GPS jamming affects 1,650+ ships in Gulf (up 55%)',
+      'Only 3 vessels transit Hormuz (Palau, Iran, Liberia flagged)',
+      'Iran confirms Strait closed only to US, Israel, Western allies — selective access for China/others',
+      'Kurdish ground offensive continues',
+    ],
+  },
+  {
+    date: 'Mar 8, 2026',
+    timestamp: Date.parse('2026-03-08'),
+    day: 9,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 3 },
+      { scenario: 'Protracted Attrition', probability: 50 },
+      { scenario: 'Full Escalation', probability: 47 },
+    ],
+    rationale: "Three escalatory developments in 24 hours. First: Israel strikes Iranian oil infrastructure for first time — Shahr Rey, Shahran, Nobonyad depots. Second: Mojtaba Khamenei named Supreme Leader — regime continuity, no moderation signal. Third: senior Iranian official warns of retaliatory strikes on regional energy infrastructure, calling this a 'new phase.'",
+    keyDevelopments: [
+      'Mojtaba Khamenei (son) named new Supreme Leader — IRGC pledges allegiance',
+      'Israel strikes Iranian oil infrastructure for first time: Shahr Rey, Shahran, Nobonyad oil depots',
+      'Senior Iranian official warns war entered "new phase" — threatens retaliatory strikes on regional energy infrastructure',
+      'Saudi Arabia first fatalities: 2 killed, 12 injured in Riyadh Province',
+      'Bahrain: desalination plant hit by Iranian drone',
+      'Kuwait: drones target fuel tanks at Kuwait International Airport',
+      'Israel strikes hotel in central Beirut, killing 4 — first strike on heart of capital',
+      '7th US service member killed',
+      'US State Department orders non-emergency diplomats to leave Saudi Arabia',
+      'Trump says he and Israel will set "terms of surrender"',
+      'G7 finance ministers discuss coordinated emergency oil stockpile release',
+    ],
+  },
+  {
+    date: 'Mar 9, 2026',
+    timestamp: Date.parse('2026-03-09'),
+    day: 10,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 2 },
+      { scenario: 'Protracted Attrition', probability: 45 },
+      { scenario: 'Full Escalation', probability: 53 },
+    ],
+    rationale: 'Full Escalation becomes base case for the first time. Oil breaching $100 transforms this from regional military conflict into global economic event. Brent +23% in single session, largest since 1988. Saudi/Iraq cutting production due to storage constraints. G7 discussing SPR release is governmental equivalent of margin call.',
+    keyDevelopments: [
+      'Oil surges past $100/barrel — Brent hits $119 intraday before settling ~$108-110',
+      'Largest single-day dollar gain in Brent futures since 1988',
+      'Crude up ~50% since conflict started',
+      'Asian markets crash: Nikkei -7.5%, KOSPI -8.1%, European markets -2-3%',
+      'US gas hits $3.478 national average (AAA), up $0.50 in one week',
+      '8th US service member killed',
+      'Iran announces nationwide gathering to pledge allegiance to new supreme leader',
+      'Saudi Arabia production cuts deepening — running out of storage due to Hormuz closure',
+      'Iraq already cut 1.5M bpd',
+      'JPMorgan warns Brent could hit $120 if Gulf producers exhaust storage',
+      'G7 considering coordinated SPR release',
     ],
   },
 ];
@@ -774,6 +870,371 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
       'Every indicator suggests extended conflict with no negotiated resolution',
     ],
   },
+  8: {
+    day: 8,
+    date: 'March 7, 2026',
+    title: "1,465 Munitions on Tehran, Selective Transit Emerges, GPS Jamming Spreads",
+    summary: "Israel's weekend bombing campaign (400+ targets, 1,465 munitions) is the most intense since war began. Targeting Mehrabad Airport and IRGC university signals intent to degrade regime infrastructure. Selective transit emerging (China/Iran-linked vessels) creates de facto two-tier Hormuz — closed to West, open to strategic allies. This fundamentally changes the conflict economics.",
+    thesisScorecard: [
+      {
+        thesis: 'Insurance mechanism as primary leverage tool',
+        initialConfidence: 75,
+        currentConfidence: 97,
+        status: 'confirmed',
+        evidence: [
+          "P&I expired, de facto blockade sustained by market forces not navy",
+          'Selective transit for China/Iran-linked vessels only',
+          '98% transit collapse for Western shipping',
+        ],
+      },
+      {
+        thesis: 'GCC infrastructure targeting',
+        initialConfidence: 70,
+        currentConfidence: 90,
+        status: 'confirmed',
+        evidence: [
+          'Continued strikes on Gulf states',
+          'PRIMA tanker struck by Iranian drone',
+          'GPS jamming affecting 1,650+ ships',
+        ],
+      },
+      {
+        thesis: 'Interceptor cost asymmetry',
+        initialConfidence: 80,
+        currentConfidence: 92,
+        status: 'confirmed',
+        evidence: [
+          '1,465 munitions in one weekend — Israel burning through stockpiles',
+          '400+ targets hit by 80+ fighter jets',
+          'War costing U.S. $1B/day continues',
+        ],
+      },
+      {
+        thesis: 'Credit market transmission',
+        initialConfidence: 65,
+        currentConfidence: 88,
+        status: 'confirmed',
+        evidence: [
+          'Oil climbing toward $100',
+          'Fed cuts increasingly unlikely',
+          'HY spreads at 435 bps',
+        ],
+      },
+      {
+        thesis: 'Selective Hormuz access (China/allies)',
+        initialConfidence: 80,
+        currentConfidence: 85,
+        status: 'developing',
+        evidence: [
+          'Iran allowing Chinese vessels through',
+          'Only 3 transits: Palau, Iran, Liberia flagged',
+          'Western shipping blocked entirely',
+          'If confirmed as policy, most significant geopolitical development of conflict',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[7], // Day 8 update
+    keyDevelopments: [
+      {
+        category: 'Military',
+        items: [
+          'Israeli Air Force attacks 400+ targets, drops 1,465 munitions',
+          '80+ fighter jets strike Tehran alone with ~230 munitions',
+          'IDF destroys 16 Quds Force cargo aircraft at Mehrabad Airport',
+          'IRGC university targeted',
+          'Kurdish ground offensive continues',
+        ],
+      },
+      {
+        category: 'Shipping',
+        items: [
+          'Only 3 vessels transit Hormuz (Palau, Iran, Liberia flagged)',
+          'PRIMA tanker struck by Iranian drone',
+          'GPS jamming affects 1,650+ ships in Gulf (up 55%)',
+          'Iran confirms selective access — closed to US/Israel/West, open to China/others',
+        ],
+      },
+      {
+        category: 'Energy',
+        items: [
+          'Oil climbing toward $100',
+          'Brent at ~$91',
+          'VLCC rates sustained at $440K/day',
+        ],
+      },
+      {
+        category: 'Geopolitical',
+        items: [
+          'Two-tier Hormuz emerging — fundamental change in energy geopolitics',
+          'China gets preferential oil access',
+          'Western shipping blocked entirely',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 91.20,
+      vlccRate: 440000,
+      hySpread: 435,
+      vix: 27.5,
+      usGas: 3.38,
+    },
+    tradingImplications: [
+      'Selective Hormuz access changes energy geopolitics permanently — China gets preferential oil access',
+      "Israel's munitions burn rate raises stockpile sustainability questions",
+      'GPS jamming affecting 1,650+ ships — maritime insurance costs will stay elevated even after conflict',
+      'Oil approaching $100 — credit market transmission accelerating',
+    ],
+  },
+  9: {
+    day: 9,
+    date: 'March 8, 2026',
+    title: "New Supreme Leader, Oil Infrastructure Targeted, War Enters 'New Phase'",
+    summary: "Three escalatory developments in 24 hours. First: Israel strikes Iranian oil infrastructure for the first time — Shahr Rey, Shahran, Nobonyad depots. This crosses a threshold that had been avoided for 9 days. Second: Mojtaba Khamenei named Supreme Leader — regime continuity, no moderation signal, IRGC allegiance pledged. Third: senior Iranian official explicitly warns of retaliatory strikes on regional energy infrastructure, calling this a 'new phase.' Both sides are now targeting each other's energy infrastructure.",
+    thesisScorecard: [
+      {
+        thesis: 'Insurance mechanism as primary leverage tool',
+        initialConfidence: 75,
+        currentConfidence: 97,
+        status: 'confirmed',
+        evidence: [
+          'De facto blockade sustained for 9+ days',
+          'Selective transit only for non-Western vessels',
+          '250+ tankers now stranded',
+        ],
+      },
+      {
+        thesis: 'Protracted attrition confirmed',
+        initialConfidence: 50,
+        currentConfidence: 96,
+        status: 'confirmed',
+        evidence: [
+          'New Supreme Leader named — no moderation signal',
+          'Trump: "terms of surrender"',
+          'IRGC pledges allegiance to Mojtaba Khamenei',
+        ],
+      },
+      {
+        thesis: 'Credit market transmission',
+        initialConfidence: 65,
+        currentConfidence: 90,
+        status: 'confirmed',
+        evidence: [
+          'HY spreads at 450 bps',
+          'Oil at $93 and climbing',
+          'G7 discusses emergency SPR release',
+        ],
+      },
+      {
+        thesis: 'Energy infrastructure targeting bilateral',
+        initialConfidence: 85,
+        currentConfidence: 90,
+        status: 'confirmed',
+        evidence: [
+          'Israel strikes Iranian oil depots for first time',
+          'Iran threatens retaliatory strikes on regional energy infrastructure',
+          'Senior official declares "new phase"',
+          'Escalation spiral toward energy war',
+        ],
+      },
+      {
+        thesis: 'Geographic escalation',
+        initialConfidence: 70,
+        currentConfidence: 97,
+        status: 'confirmed',
+        evidence: [
+          'Saudi Arabia first fatalities (2 dead, 12 injured)',
+          'Bahrain desalination plant hit',
+          'Kuwait airport fuel tanks targeted',
+          'Israel strikes central Beirut hotel',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[8], // Day 9 update
+    keyDevelopments: [
+      {
+        category: 'Leadership',
+        items: [
+          'Mojtaba Khamenei (son) named new Supreme Leader',
+          'IRGC and top leaders pledge allegiance',
+          'Trump calls him "lightweight"',
+          'No moderation signal from new leadership',
+        ],
+      },
+      {
+        category: 'Military',
+        items: [
+          'Israel strikes Iranian oil infrastructure for first time',
+          'Shahr Rey, Shahran, Nobonyad oil depots hit in Tehran',
+          'Military refineries and IRGC university targeted',
+          'Israel strikes hotel in central Beirut, killing 4',
+        ],
+      },
+      {
+        category: 'Regional',
+        items: [
+          'Saudi Arabia first fatalities: 2 killed, 12 injured in Riyadh Province',
+          'Bahrain desalination plant hit by Iranian drone',
+          'Kuwait airport fuel tanks targeted by drones',
+          'US orders non-emergency diplomats out of Saudi Arabia',
+        ],
+      },
+      {
+        category: 'Diplomatic',
+        items: [
+          '7th US service member killed',
+          'Trump says he and Israel will set "terms of surrender"',
+          'G7 finance ministers discuss coordinated emergency SPR release',
+          'Senior Iranian official warns of "new phase" — threatens regional energy infrastructure',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 92.69,
+      vlccRate: 450000,
+      hySpread: 450,
+      vix: 28.0,
+      usGas: 3.42,
+    },
+    tradingImplications: [
+      'Oil infrastructure targeting is now bilateral — energy war thesis confirmed',
+      'New supreme leader = no off-ramp from Iranian side',
+      'Saudi fatalities could trigger Saudi response — MBS was already pushing for war',
+      '$100/bbl oil now inevitable — question is $120 or $150',
+      'G7 SPR release discussion signals panic at governmental level',
+    ],
+  },
+  10: {
+    day: 10,
+    date: 'March 9, 2026',
+    title: "Oil Breaches $100, Asia Crashes, $119 Intraday — Energy Crisis Arrives",
+    summary: "Full Escalation becomes base case for the first time. Oil breaching $100 is the threshold that transforms this from a regional military conflict into a global economic event. The Brent move — 23% in a single session, largest since 1988 — is not a spike, it's a regime change in energy pricing. Saudi Arabia and Iraq cutting production due to storage constraints means supply destruction is now structural. G7 discussing coordinated SPR release is the governmental equivalent of a margin call.",
+    thesisScorecard: [
+      {
+        thesis: 'Insurance mechanism as primary leverage tool',
+        initialConfidence: 75,
+        currentConfidence: 98,
+        status: 'confirmed',
+        evidence: [
+          'De facto blockade sustained for 10 days',
+          'Selective transit only — Western shipping blocked',
+          '250+ tankers stranded, 60 VLCCs trapped',
+        ],
+      },
+      {
+        thesis: 'Credit market transmission',
+        initialConfidence: 65,
+        currentConfidence: 93,
+        status: 'confirmed',
+        evidence: [
+          'Oil above $100, VIX approaching 30',
+          'Asian markets crash: Nikkei -7.5%, KOSPI -8.1%',
+          'HY spreads at 475 bps',
+          'G7 discussing SPR release',
+        ],
+      },
+      {
+        thesis: 'Cost asymmetry unsustainable',
+        initialConfidence: 80,
+        currentConfidence: 94,
+        status: 'confirmed',
+        evidence: [
+          'War cost accelerating — $1B/day confirmed',
+          'Oil infrastructure damage on both sides',
+          'Israel needs 3 more weeks to accomplish goals',
+        ],
+      },
+      {
+        thesis: 'Energy infrastructure targeting bilateral',
+        initialConfidence: 85,
+        currentConfidence: 92,
+        status: 'confirmed',
+        evidence: [
+          'Confirmed — both sides now hitting energy assets',
+          'Iranian oil depots struck',
+          'Regional GCC infrastructure under attack',
+        ],
+      },
+      {
+        thesis: 'Airlines as restructuring candidates',
+        initialConfidence: 55,
+        currentConfidence: 90,
+        status: 'confirmed',
+        evidence: [
+          'AAL, Spirit already distressed pre-war',
+          'Entire sector now in crisis territory',
+          'Fuel hedges expiring, ticket demand dropping',
+        ],
+      },
+      {
+        thesis: 'Full Escalation becomes base case',
+        initialConfidence: 35,
+        currentConfidence: 53,
+        status: 'confirmed',
+        evidence: [
+          'Oil above $100 — global economic event',
+          'Both sides targeting energy infrastructure',
+          'No off-ramps: Congress rejected, Iran refuses negotiation',
+          'G7 emergency coordination signals systemic threat',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[9], // Day 10 update
+    keyDevelopments: [
+      {
+        category: 'Energy',
+        items: [
+          'Brent crude hits $119 intraday, settles ~$108-110',
+          'WTI $108.62 (+19.4% single session) — largest daily $ gain since 1988',
+          'Crude up ~50% since conflict started',
+          'First time above $100 since 2022',
+          'Trump still refuses to tap Strategic Petroleum Reserve',
+        ],
+      },
+      {
+        category: 'Markets',
+        items: [
+          'Asian markets crash: Nikkei -7.5%, KOSPI -8.1%',
+          'European markets down 2-3%',
+          'S&P futures -1.7% to -2.1%',
+          'VIX 29.48 (+24%), approaching crisis territory (30+)',
+          'US gas hits $3.478/gal (AAA), up $0.50 in one week',
+        ],
+      },
+      {
+        category: 'Supply',
+        items: [
+          'Saudi Arabia production cuts deepening — running out of storage',
+          'Iraq already cut 1.5M bpd due to storage saturation',
+          'JPMorgan warns Brent could hit $120 if Gulf producers exhaust storage',
+          'G7 considering coordinated SPR release',
+        ],
+      },
+      {
+        category: 'Conflict',
+        items: [
+          '8th US service member killed',
+          'Iran announces nationwide gathering to pledge allegiance to new Supreme Leader',
+          'Israel says needs 3 more weeks to accomplish goals',
+          'Regional energy infrastructure attacks continue',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 108.75,
+      vlccRate: 455000,
+      hySpread: 475,
+      vix: 29.48,
+      usGas: 3.478,
+    },
+    tradingImplications: [
+      '$100 oil is not a ceiling — it\'s a floor if Hormuz stays closed. JPMorgan projects $120',
+      'G7 SPR release = temporary band-aid. Global SPR covers ~90 days of imports. Hormuz disrupts 20% of supply indefinitely',
+      'Asia is the transmission vector — Japan and Korea are Hormuz-dependent. Their market crashes will feed back into global risk-off',
+      'Credit spreads about to blow out. HY at 475 with oil above $100 and equity markets crashing',
+      'Airline sector now in active distress. Fuel hedges expire. Ticket demand drops. RX pipeline building',
+      'The Fed is trapped — inflation surging from energy, but cutting rates would amplify it. Stagflation scenario materializing',
+    ],
+  },
 };
 
 // =============================================================================
@@ -904,18 +1365,23 @@ export const shippingDisruptionData = {
   events: [
     { date: 'Mar 1', title: 'Insurance Withdrawal Begins', description: 'Major war risk insurers begin withdrawing coverage for Hormuz transits' },
     { date: 'Mar 2', title: 'QatarEnergy Suspends LNG', description: 'All LNG production suspended after drone attack on Ras Laffan facility' },
-    { date: 'Mar 3', title: 'ZERO Transits Confirmed', description: 'JMIC confirms zero tanker transits through Strait of Hormuz' },
+    { date: 'Mar 2', title: 'Zero Transits Begin', description: 'First day of zero tanker transits through Strait of Hormuz' },
     { date: 'Mar 3', title: "Lloyd's P&I Cancellation", description: "Lloyd's-linked P&I clubs cancelling war risk coverage effective midnight March 5" },
     { date: 'Mar 3', title: 'Trump Naval Escorts', description: 'Trump announces naval escorts for tankers and U.S. political risk insurance guarantees' },
     { date: 'Mar 3', title: 'Iraq Production Cuts', description: 'Iraq announces forced production cuts of 1.5M bpd due to storage saturation' },
     { date: 'Mar 5', title: 'P&I Coverage Expires', description: "Lloyd's war risk cancellation takes effect at midnight. 200+ tankers stranded, 60 VLCCs trapped (8% of global fleet)" },
     { date: 'Mar 5', title: 'IMO Stranded Report', description: '20,000 seafarers and 15,000 cruise passengers stranded across the region' },
-    { date: 'Mar 6', title: 'Strait Effectively Sealed', description: 'Zero transits for 4th consecutive day. Iran targeting radar systems. Israel launches broad wave on Tehran overnight' },
+    { date: 'Mar 6', title: 'Selective Transit Emerges', description: 'China/Iran-linked vessels begin transiting. Western shipping blocked.' },
+    { date: 'Mar 7', title: 'GPS Jamming Spreads', description: 'GPS jamming affects 1,650+ ships in Gulf, up 55% from prior week. PRIMA tanker struck by Iranian drone.' },
+    { date: 'Mar 7', title: 'Iran Confirms Two-Tier Hormuz', description: 'Iran confirms Strait closed only to US, Israel, Western allies — selective access for China/others' },
+    { date: 'Mar 8', title: 'New Supreme Leader', description: 'Mojtaba Khamenei named Supreme Leader. IRGC pledges allegiance.' },
+    { date: 'Mar 8', title: 'Oil Infrastructure Targeted', description: 'Israel strikes Iranian oil infrastructure for first time: Shahr Rey, Shahran, Nobonyad depots' },
+    { date: 'Mar 9', title: 'Oil Breaches $100', description: 'Brent hits $119 intraday. Largest single-day dollar gain since 1988. Crude up 50% since conflict started.' },
   ],
   keyMetrics: {
-    transitCollapsePercent: 100,
-    tankersStranded: '200+',
-    shipsUnableToExit: '700+',
+    transitCollapsePercent: 98,
+    tankersStranded: '250+',
+    shipsUnableToExit: '750+',
     trappedVLCCs: 60,
     percentGlobalVLCCFleet: 8,
     strandedSeafarers: 20000,
@@ -924,7 +1390,8 @@ export const shippingDisruptionData = {
     capeOfGoodHopeDiversions: 'surged 112% in single day',
     crudeBoundForIndia: '12 million barrels',
     minervaFixture: { rate: 436000, vessel: 'Pantanassa', charterer: 'GS Caltex' },
-    consecutiveZeroTransitDays: 4,
+    gpsJammingAffectedShips: 1650,
+    selectiveTransitOnly: true,
   },
 };
 
@@ -972,11 +1439,14 @@ export const conflictTimeline = [
   { date: 'February 24, 2026', event: 'Trump\'s State of the Union accuses Iran of reviving nuclear weapons program, warns U.S. "prepared to act"' },
   { date: 'February 28, 2026', event: 'U.S. and Israel launch "Operation Epic Fury"—joint strikes across Iran. Supreme Leader Khamenei killed. Iran launches retaliatory strikes on 27 U.S. bases and Israeli targets within hours' },
   { date: 'March 1, 2026', event: 'Iran targets GCC civilian infrastructure: energy facilities in Qatar\'s Ras Laffan and Mesaieed, Dubai hotels and ports, Amazon data centers in UAE and Bahrain. Interim Leadership Council formed. Iran rejects U.S. ceasefire proposal via Italian mediator' },
-  { date: 'March 2, 2026', event: 'U.S. death toll rises to 6. Trump says campaign could last 4-5 weeks. Hezbollah enters conflict from Lebanon. Strait of Hormuz shipping halted. Congress begins war powers resolution proceedings' },
-  { date: 'March 3, 2026', event: 'JMIC confirms ZERO tanker transits through Hormuz. Lloyd\'s P&I clubs announce coverage cancellation effective midnight March 5. Trump announces naval escorts. QatarEnergy suspends all LNG production.' },
-  { date: 'March 4, 2026', event: 'Iranian casualties exceed 1,045. IRIS Jamaran and IRIS Dena sunk in Indian Ocean. Zero tanker transits continue. Iraq announces 1.5M bpd forced production cuts.' },
-  { date: 'March 5, 2026', event: 'P&I coverage officially expires. Zero transits for 3rd consecutive day. 200+ tankers stranded, 60 VLCCs trapped (8% of global fleet). 20,000 seafarers and 15,000 cruise passengers stranded. WTI +8.5%, biggest single-day gain since May 2020. Dow wipes out 2026 gains. War costing U.S. $1B/day.' },
-  { date: 'March 6, 2026', event: 'Both House and Senate kill war powers resolutions. Trump says "no time limits." Iran FM refuses all negotiation. Israel launches broad wave on Tehran overnight - residential areas hit. Beirut evacuation ordered (500K+ people). Kurdish ground offensive opens new front. China dispatches special envoy.' },
+  { date: 'March 2, 2026', event: 'U.S. death toll rises to 6. Trump says campaign could last 4-5 weeks. Hezbollah enters conflict from Lebanon. Zero tanker transits through Hormuz begins. Congress begins war powers resolution proceedings' },
+  { date: 'March 3, 2026', event: 'Zero transits continue. Lloyd\'s P&I clubs announce coverage cancellation effective midnight March 5. Trump announces naval escorts. QatarEnergy suspends all LNG production.' },
+  { date: 'March 4, 2026', event: 'Iranian casualties exceed 1,045. IRIS Jamaran and IRIS Dena sunk in Indian Ocean. 5 tankers transit (3 outbound only). Iraq announces 1.5M bpd forced production cuts.' },
+  { date: 'March 5, 2026', event: 'P&I coverage officially expires. Zero transits resume. 200+ tankers stranded, 60 VLCCs trapped (8% of global fleet). 20,000 seafarers stranded. WTI +8.5%, biggest single-day gain since May 2020. Dow wipes out 2026 gains. War costing U.S. $1B/day.' },
+  { date: 'March 6, 2026', event: 'Both House and Senate kill war powers resolutions. Trump says "no time limits." Iran FM refuses all negotiation. Israel launches broad wave on Tehran overnight. Beirut evacuation ordered (500K+ people). Kurdish ground offensive opens new front. China dispatches special envoy.' },
+  { date: 'March 7, 2026', event: 'Israeli Air Force attacks 400+ targets in Iran, dropping 1,465 munitions. 80+ fighter jets strike Tehran with ~230 munitions. IDF destroys 16 Quds Force cargo aircraft at Mehrabad Airport. PRIMA tanker struck by Iranian drone in Hormuz. GPS jamming affects 1,650+ ships (up 55%). Selective transit emerges — only 3 vessels transit (Palau, Iran, Liberia flagged). Iran confirms Strait closed only to US, Israel, Western allies.' },
+  { date: 'March 8, 2026', event: 'Mojtaba Khamenei (son) named new Supreme Leader — IRGC pledges allegiance. Israel strikes Iranian oil infrastructure for first time: Shahr Rey, Shahran, Nobonyad depots. Senior Iranian official warns war entered "new phase" — threatens regional energy infrastructure. Saudi Arabia first fatalities: 2 killed, 12 injured. Bahrain desalination plant hit. Kuwait airport fuel tanks targeted. Israel strikes hotel in central Beirut, killing 4. 7th US soldier killed. US orders non-emergency diplomats out of Saudi Arabia. G7 discusses emergency SPR release.' },
+  { date: 'March 9, 2026', event: 'Oil surges past $100/barrel — Brent hits $119 intraday. Largest single-day dollar gain since 1988. Crude up 50% since conflict started. Asian markets crash: Nikkei -7.5%, KOSPI -8.1%. US gas hits $3.478 (AAA), up $0.50 in one week. 8th US soldier killed. Iran announces nationwide allegiance gathering for new Supreme Leader. Saudi/Iraq production cuts deepening due to storage saturation. JPMorgan warns Brent could hit $120. G7 considering coordinated SPR release.' },
 ];
 
 // =============================================================================
