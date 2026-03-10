@@ -745,7 +745,7 @@ export const ConflictMap = ({
   showDaySlider = false,
   showLayerControls = true,
   showLiveFeed = true,
-  aisApiKey,
+  aisApiKey = import.meta.env.VITE_AISSTREAM_API_KEY,
 }: ConflictMapProps) => {
   const [selectedDay, setSelectedDay] = useState(throughDay);
   const [selectedEvent, setSelectedEvent] = useState<ConflictEvent | null>(null);
