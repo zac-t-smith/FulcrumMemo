@@ -1051,6 +1051,19 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
           'Israel strikes central Beirut hotel',
         ],
       },
+      {
+        thesis: 'GCC water infrastructure targeted',
+        initialConfidence: 70,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          'BILATERAL — U.S. struck Qeshm Island desalination plant (Day 8), cutting water to 30 villages',
+          'Iran struck Bahrain desalination plant (Day 9) — first Gulf water infrastructure strike of war',
+          'Both sides have now crossed water infrastructure targeting threshold',
+          "Part I's 'GCC Water Clock' framework is now live",
+          'Chatham House called Bahrain strike a "major escalation"',
+        ],
+      },
     ],
     scenarioUpdate: scenarioUpdates[8], // Day 9 update
     keyDevelopments: [
@@ -1076,9 +1089,23 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
         category: 'Regional',
         items: [
           'Saudi Arabia first fatalities: 2 killed, 12 injured in Riyadh Province',
-          'Bahrain desalination plant hit by Iranian drone',
           'Kuwait airport fuel tanks targeted by drones',
           'US orders non-emergency diplomats out of Saudi Arabia',
+        ],
+      },
+      {
+        category: 'Water Infrastructure (NEW ESCALATION)',
+        items: [
+          'Bahrain desalination plant hit by Iranian drone — FIRST Gulf water infrastructure strike of the war',
+          "Iran's justification: U.S. struck Qeshm Island desalination plant first (Day 8), cutting water to 30 villages",
+          'FM Araghchi on X: "the U.S. set this precedent, not Iran"',
+          'Water infrastructure targeting is now BILATERAL — both sides have crossed this line',
+          'Chatham House called it a "major escalation" — Iran moving from economic targets to ones affecting "livelihoods of Gulf citizens"',
+          '400+ desalination plants in the Gulf produce 40% of world\'s desalinated water',
+          'Bahrain has 103 plants, zero natural aquifers, majority of drinking water from desalination',
+          'Bahrain, Kuwait, Qatar rank among five most water-stressed countries globally',
+          'Bahrain confirmed this specific strike did NOT disrupt operations — but capability and willingness now demonstrated',
+          'Deliberate attacks on civilian water infrastructure violate Article 54 of Additional Protocol I to the Geneva Conventions',
         ],
       },
       {
@@ -1104,6 +1131,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
       'Saudi fatalities could trigger Saudi response — MBS was already pushing for war',
       '$100/bbl oil now inevitable — question is $120 or $150',
       'G7 SPR release discussion signals panic at governmental level',
+      'Water infrastructure targeting introduces risk vector markets haven\'t priced: if desalination capacity degraded 30-50% in any GCC state, potable water exhaustion occurs within 7-14 days (per Part I analysis). This would force evacuation of civilian populations and collapse of economic activity — an outcome that dwarfs oil price impact',
     ],
   },
   10: {
@@ -1221,6 +1249,53 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
           'Iran announces nationwide gathering to pledge allegiance to new Supreme Leader',
           'Israel says needs 3 more weeks to accomplish goals',
           'Regional energy infrastructure attacks continue',
+          'Nearly 3,000 Iranian missiles and drones launched at Gulf states since war began (Arab League figures)',
+          'Bahrain alone: intercepted 95 missiles and 164 drones',
+          'UAE: 100+ missiles and drones in single barrages',
+        ],
+      },
+      {
+        category: 'Rhetoric Divergence (CRITICAL)',
+        items: [
+          'Trump: war could end "soon," goals "pretty much complete," called it "short-term excursion"',
+          'Hegseth on 60 Minutes (same day): plans 500-lb, 1,000-lb, 2,000-lb bombs, says "we haven\'t even really got to start that effort"',
+          'IDF says needs 3 more weeks to accomplish goals',
+          'This Pentagon vs White House disconnect is significant — markets reacting to rhetoric, not reality',
+        ],
+      },
+      {
+        category: 'Oil Price Whiplash',
+        items: [
+          'Oil hit $119 intraday then dropped sharply toward $80-88 WTI in post-settlement trading after Trump\'s "could end soon" remarks',
+          'Brent stayed higher at ~$99 while WTI fell to ~$88 — divergence between U.S. benchmark (reacting to rhetoric) and international benchmarks (pricing physical reality)',
+          'This divergence itself is a data point: U.S. markets pricing Trump statements, global markets pricing supply fundamentals',
+        ],
+      },
+      {
+        category: 'Intelligence & Geopolitical',
+        items: [
+          'AP sources: Russia gave Iran information to help hit U.S. military targets — new escalation vector',
+          'Araghchi on Meet the Press declined to confirm or deny Russian intelligence sharing',
+          'Iran internal rift: Pezeshkian (apologized to neighbors, called for diplomacy) vs hardliners/IRGC (continued strikes)',
+          'Mojtaba Khamenei appointment resolved the rift — hardline continuity wins',
+        ],
+      },
+      {
+        category: 'U.S. Forces On-Ground (Stars & Stripes)',
+        items: [
+          'U.S. service members and families in Bahrain relying on local markets — on-base commissaries shuttered',
+          'Bahrain government cracking down on price gouging, shut down at least one food store',
+          'King Fahd Causeway to Saudi Arabia is primary ground route out of Bahrain',
+          'Bahrain airspace remains closed',
+        ],
+      },
+      {
+        category: 'Israeli Casualties (Alma Research Center)',
+        items: [
+          '12 Israeli civilians killed, 2,142 injured since war began',
+          '3,000+ Israelis displaced',
+          'Hezbollah: 223 attack waves since joining March 2',
+          'Iran attack wave frequency declining: peaked 55 on Day 2, down to 9 on Day 9 — confirms missile rationing thesis',
         ],
       },
     ],
@@ -1551,6 +1626,46 @@ export const futuresCurve = [
   { month: 'June', price: 95 },
   { month: 'July', price: 88 },
 ];
+
+export const waterInfrastructure = [
+  {
+    date: '2026-03-07',
+    day: 8,
+    target: 'Qeshm Island desalination plant (Iran)',
+    attacker: 'United States',
+    impact: 'Water supply cut to 30 villages',
+    source: 'FM Araghchi statement on X',
+  },
+  {
+    date: '2026-03-08',
+    day: 9,
+    target: 'Unnamed desalination plant (Bahrain)',
+    attacker: 'Iran (drone)',
+    impact: 'Material damage confirmed, operations not disrupted',
+    source: 'Bahrain Ministry of Interior',
+  },
+];
+
+export const gulfStrikeData = {
+  totalIranianMissilesAndDrones: '3000+',
+  source: 'Arab League figures',
+  bahrainIntercepted: { missiles: 95, drones: 164 },
+  uaeBarrages: '100+ missiles and drones in single barrages',
+};
+
+export const israeliCasualtyData = {
+  civiliansKilled: 12,
+  civiliansInjured: 2142,
+  displaced: 3000,
+  hezbollahAttackWaves: 223,
+  hezbollahJoinedDate: 'March 2',
+  iranAttackWaveFrequency: [
+    { day: 2, waves: 55 },
+    { day: 9, waves: 9 },
+  ],
+  note: 'Attack wave decline confirms missile rationing thesis',
+  source: 'Alma Research Center',
+};
 
 export const glossaryTerms: Record<string, { term: string; definition: string; category: string }> = {
   'vlcc': {

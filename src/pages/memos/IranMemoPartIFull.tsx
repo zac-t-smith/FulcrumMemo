@@ -423,6 +423,28 @@ const IranMemoPartIFull = () => {
               U.S. military superiority can accelerate water production. This is Iran's ultimate
               leverage mechanism—the threat alone constrains coalition options.
             </Callout>
+
+            {/* CONFIRMED annotation for GCC Water Clock */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-4 p-4 bg-red-500/10 border border-red-500/30 rounded-lg"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <span className="px-2 py-0.5 bg-red-500/20 text-red-400 text-[10px] font-mono uppercase tracking-wider rounded">
+                  Confirmed Day 9
+                </span>
+              </div>
+              <p className="font-mono text-xs text-muted-foreground leading-relaxed">
+                <strong className="text-red-400">This vulnerability was validated on Day 9</strong> when Iran struck
+                a Bahrain desalination plant with a drone—the first Gulf water infrastructure strike of the conflict.
+                Water targeting is now <strong className="text-red-400">bilateral</strong>: the U.S. struck Iran's
+                Qeshm Island desalination plant on Day 8, cutting water to 30 villages. Chatham House called the
+                Bahrain strike a "major escalation"—Iran moving from economic targets to ones affecting "livelihoods
+                of Gulf citizens."
+              </p>
+            </motion.div>
           </section>
 
           {/* Section III: Cost Asymmetry */}
