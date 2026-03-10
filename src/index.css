@@ -475,3 +475,76 @@
     print-color-adjust: exact !important;
   }
 }
+
+/* ============================================
+   LEAFLET MAP CUSTOMIZATIONS
+   ============================================ */
+
+/* Custom marker styles */
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Dark theme popup */
+.leaflet-popup-content-wrapper {
+  background: hsl(220 18% 7%) !important;
+  color: hsl(45 20% 90%) !important;
+  border: 1px solid hsl(220 15% 15%) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-popup-tip {
+  background: hsl(220 18% 7%) !important;
+  border: 1px solid hsl(220 15% 15%) !important;
+}
+
+.leaflet-popup-close-button {
+  color: hsl(220 10% 50%) !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: hsl(43 80% 55%) !important;
+}
+
+/* Map controls dark theme */
+.leaflet-control-zoom a {
+  background: hsl(220 18% 7%) !important;
+  color: hsl(45 20% 90%) !important;
+  border-color: hsl(220 15% 15%) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: hsl(220 15% 12%) !important;
+}
+
+.leaflet-control-attribution {
+  background: hsla(220, 18%, 7%, 0.8) !important;
+  color: hsl(220 10% 50%) !important;
+}
+
+.leaflet-control-attribution a {
+  color: hsl(43 80% 55%) !important;
+}
+
+/* Range slider custom styling */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: hsl(43 80% 55%);
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: hsl(43 80% 55%);
+  cursor: pointer;
+  border: 2px solid white;
+}

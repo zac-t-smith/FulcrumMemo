@@ -95,6 +95,18 @@ export interface ConflictGeographyEntry {
   description: string;
 }
 
+export interface ConflictEvent {
+  date: string;
+  day: number;
+  lat: number;
+  lng: number;
+  type: 'strike_us' | 'strike_iran' | 'strike_israel' | 'shipping' | 'infrastructure_energy' | 'infrastructure_water' | 'naval' | 'ground_offensive' | 'interception';
+  target: string;
+  description: string;
+  impact?: string;
+  status?: 'confirmed' | 'reported' | 'unconfirmed';
+}
+
 export interface ScenarioProbability {
   scenario: string;
   probability: number;
@@ -1666,6 +1678,98 @@ export const israeliCasualtyData = {
   note: 'Attack wave decline confirms missile rationing thesis',
   source: 'Alma Research Center',
 };
+
+// =============================================================================
+// CONFLICT EVENTS MAP DATA
+// =============================================================================
+
+export const conflictEvents: ConflictEvent[] = [
+  // DAY 1 — Feb 28
+  { date: '2026-02-28', day: 1, lat: 35.6892, lng: 51.3890, type: 'strike_us', target: 'Leadership House, Tehran', description: 'Operation Epic Fury opening salvo. Khamenei killed.', status: 'confirmed' },
+  { date: '2026-02-28', day: 1, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz', description: '3 tankers struck near strait. Insurance withdrawal begins.', status: 'confirmed' },
+  { date: '2026-02-28', day: 1, lat: 26.2285, lng: 50.5860, type: 'strike_iran', target: 'NSA Bahrain / US 5th Fleet HQ', description: 'Iranian missiles and drones hit US naval base', status: 'confirmed' },
+  { date: '2026-02-28', day: 1, lat: 29.3117, lng: 47.4818, type: 'strike_iran', target: 'Kuwait US base', description: '6 US service members killed in drone attack', status: 'confirmed' },
+  { date: '2026-02-28', day: 1, lat: 33.7249, lng: 51.7274, type: 'strike_us', target: 'Natanz Nuclear Facility', description: 'Nuclear facility destroyed in initial strikes', status: 'confirmed' },
+
+  // DAY 2 — Mar 1
+  { date: '2026-03-01', day: 2, lat: 25.2854, lng: 51.5310, type: 'infrastructure_energy', target: 'Ras Laffan, Qatar', description: 'Iran strikes Qatar energy facility. QatarEnergy suspends LNG production.', status: 'confirmed' },
+  { date: '2026-03-01', day: 2, lat: 25.0136, lng: 55.0553, type: 'strike_iran', target: 'Dubai hotels and Jebel Ali port', description: 'Fire at Jebel Ali. Dubai Airport 70% cancelled.', status: 'confirmed' },
+  { date: '2026-03-01', day: 2, lat: 24.4539, lng: 54.3773, type: 'infrastructure_energy', target: 'Amazon data center, Abu Dhabi', description: 'AWS data center burning. Still offline.', status: 'confirmed' },
+  { date: '2026-03-01', day: 2, lat: 27.1542, lng: 56.2553, type: 'shipping', target: 'Strait of Hormuz', description: 'Tanker transits collapse to 18. VLCC rates $300K/day.', status: 'confirmed' },
+  { date: '2026-03-01', day: 2, lat: 25.2797, lng: 51.4935, type: 'infrastructure_energy', target: 'Mesaieed, Qatar', description: 'Water and power plant hit. QatarEnergy suspends all production.', status: 'confirmed' },
+
+  // DAY 3 — Mar 2
+  { date: '2026-03-02', day: 3, lat: 33.8938, lng: 35.5018, type: 'strike_israel', target: 'Beirut, Lebanon', description: 'Hezbollah enters conflict. Israel strikes southern suburbs.', status: 'confirmed' },
+  { date: '2026-03-02', day: 3, lat: 27.1865, lng: 56.2808, type: 'strike_us', target: 'Bandar Abbas Naval Base', description: 'US strikes Iranian naval base', status: 'confirmed' },
+  { date: '2026-03-02', day: 3, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz', description: 'Zero tanker transits begin. Lloyd\'s P&I cancellation announced.', status: 'confirmed' },
+
+  // DAY 4 — Mar 3
+  { date: '2026-03-03', day: 4, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz', description: 'Zero transits continue. Trump announces naval escorts.', status: 'confirmed' },
+  { date: '2026-03-03', day: 4, lat: 27.1500, lng: 57.0833, type: 'strike_us', target: 'Minab, Iran', description: 'School strike kills ~180 children. Major civilian casualty event.', impact: '~180 children killed', status: 'confirmed' },
+
+  // DAY 5 — Mar 4
+  { date: '2026-03-04', day: 5, lat: 5.9549, lng: 80.5550, type: 'naval', target: 'Indian Ocean, south of Sri Lanka', description: 'IRIS Jamaran and IRIS Dena sunk by US submarine. 87 bodies recovered, 32 survivors.', status: 'confirmed' },
+  { date: '2026-03-04', day: 5, lat: 30.4217, lng: 48.1653, type: 'infrastructure_energy', target: 'Basra, Iraq', description: 'Iraq output down 70% due to storage saturation from Hormuz closure.', impact: '70% production decline', status: 'confirmed' },
+
+  // DAY 6 — Mar 5
+  { date: '2026-03-05', day: 6, lat: 40.4675, lng: 50.0467, type: 'strike_iran', target: 'Baku Airport, Azerbaijan', description: 'Iranian drones strike airport terminal. Two civilians injured. Conflict jumps to Caucasus.', status: 'confirmed' },
+  { date: '2026-03-05', day: 6, lat: 34.8021, lng: 38.9968, type: 'strike_israel', target: 'Homs/Bekaa, Lebanon', description: 'Israel intensifies Lebanon strikes. 500K+ evacuated from southern Beirut.', status: 'confirmed' },
+  { date: '2026-03-05', day: 6, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz', description: 'P&I coverage expires. 200+ tankers stranded. 60 VLCCs trapped.', impact: '8% of global VLCC fleet trapped', status: 'confirmed' },
+
+  // DAY 7 — Mar 6
+  { date: '2026-03-06', day: 7, lat: 35.6892, lng: 51.3890, type: 'strike_us', target: 'Tehran residential areas', description: 'Massive overnight explosions near Tehran University. Jomhuri Avenue hit.', status: 'confirmed' },
+  { date: '2026-03-06', day: 7, lat: 33.8547, lng: 35.4832, type: 'strike_israel', target: 'Beirut Southern Suburbs', description: 'Israel orders evacuation of ALL southern Beirut — 500K+ people.', status: 'confirmed' },
+  { date: '2026-03-06', day: 7, lat: 36.6833, lng: 45.0833, type: 'ground_offensive', target: 'Kurdistan (NW Iran)', description: 'Kurdish ground offensive begins — first ground front of the war.', status: 'confirmed' },
+
+  // DAY 8 — Mar 7
+  { date: '2026-03-07', day: 8, lat: 35.6892, lng: 51.3100, type: 'strike_israel', target: 'Mehrabad Airport, Tehran', description: 'IDF destroys 16 Quds Force cargo aircraft. 400+ targets, 1,465 munitions over weekend.', impact: '1,465 munitions dropped', status: 'confirmed' },
+  { date: '2026-03-07', day: 8, lat: 35.7100, lng: 51.4200, type: 'strike_israel', target: 'IRGC University, Tehran', description: '80+ fighter jets strike Tehran with ~230 munitions.', status: 'confirmed' },
+  { date: '2026-03-07', day: 8, lat: 26.7606, lng: 56.2808, type: 'shipping', target: 'PRIMA tanker, Hormuz', description: 'Tanker struck by Iranian drone in strait.', status: 'confirmed' },
+  { date: '2026-03-07', day: 8, lat: 26.5445, lng: 56.2578, type: 'infrastructure_water', target: 'Qeshm Island, Iran', description: "US strikes desalination plant. Water cut to 30 villages. Araghchi: 'US set this precedent.'", impact: 'Water to 30 villages cut', status: 'confirmed' },
+  { date: '2026-03-07', day: 8, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz', description: 'GPS jamming affects 1,650+ ships (up 55%). Only 3 vessels transit.', status: 'confirmed' },
+
+  // DAY 9 — Mar 8
+  { date: '2026-03-08', day: 9, lat: 35.5861, lng: 51.3554, type: 'infrastructure_energy', target: 'Shahr Rey oil depot, Tehran', description: 'Israel strikes Iranian oil infrastructure for first time. Toxic smoke over Tehran.', status: 'confirmed' },
+  { date: '2026-03-08', day: 9, lat: 35.7796, lng: 51.4272, type: 'infrastructure_energy', target: 'Shahran oil depot, Tehran', description: 'Major fire visible from highway. Blackened rain reported.', status: 'confirmed' },
+  { date: '2026-03-08', day: 9, lat: 26.2285, lng: 50.5500, type: 'infrastructure_water', target: 'Desalination plant, Bahrain', description: 'Iranian drone damages plant. First Gulf water infrastructure strike. Operations not disrupted.', status: 'confirmed' },
+  { date: '2026-03-08', day: 9, lat: 24.4100, lng: 47.5800, type: 'strike_iran', target: 'Riyadh Province, Saudi Arabia', description: 'First Saudi fatalities: 2 killed, 12 injured from projectile hitting residential area.', impact: '2 killed, 12 injured', status: 'confirmed' },
+  { date: '2026-03-08', day: 9, lat: 29.2266, lng: 47.9689, type: 'infrastructure_energy', target: 'Kuwait International Airport', description: 'Drones target fuel tanks at airport.', status: 'confirmed' },
+  { date: '2026-03-08', day: 9, lat: 33.8750, lng: 35.5097, type: 'strike_israel', target: 'Central Beirut hotel', description: 'Israel strikes hotel in heart of capital. 4 killed. First strike on central Beirut.', impact: '4 killed', status: 'confirmed' },
+
+  // DAY 10 — Mar 9
+  { date: '2026-03-09', day: 10, lat: 26.2285, lng: 50.6110, type: 'strike_iran', target: 'Sitra Island, Bahrain', description: 'Iranian strike on Bapco refinery. Force majeure declared.', status: 'confirmed' },
+  { date: '2026-03-09', day: 10, lat: 26.0667, lng: 50.5577, type: 'strike_iran', target: 'Manama residential, Bahrain', description: '29-year-old woman killed, 8 injured. First Bahraini civilian death.', impact: '1 killed, 8 injured', status: 'confirmed' },
+  { date: '2026-03-09', day: 10, lat: 22.7877, lng: 54.7585, type: 'interception', target: 'Shaybah oil field, Saudi Arabia', description: 'Saudi intercepts drone targeting massive oil field.', status: 'confirmed' },
+  { date: '2026-03-09', day: 10, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz', description: 'Oil breaches $100, hits $119 intraday. Near-zero Western transits continue.', impact: 'Oil +50% since conflict start', status: 'confirmed' },
+];
+
+// Insurance exclusion zone polygon (for map overlay)
+export const insuranceExclusionZone = {
+  name: 'P&I War Risk Exclusion Zone (effective Mar 5)',
+  coordinates: [
+    [22.7083, 59.9083], // Cape al-Hadd, Oman
+    [25.175, 61.617],   // Iran-Pakistan border
+    [27.25, 57.0],      // Northern Oman Gulf
+    [27.0, 52.5],       // Central Gulf
+    [29.0, 48.5],       // Kuwait
+    [30.5, 48.0],       // Iraq coast
+    [29.5, 50.5],       // Saudi coast
+    [26.0, 50.0],       // Bahrain
+    [24.5, 51.5],       // Qatar
+    [24.0, 54.0],       // UAE
+    [22.7083, 59.9083], // Close polygon
+  ] as [number, number][],
+};
+
+// Helper to get events up to a specific day
+export function getEventsThrough(day: number): ConflictEvent[] {
+  return conflictEvents.filter(e => e.day <= day);
+}
+
+// Helper to get events for a specific day
+export function getEventsForDay(day: number): ConflictEvent[] {
+  return conflictEvents.filter(e => e.day === day);
+}
 
 export const glossaryTerms: Record<string, { term: string; definition: string; category: string }> = {
   'vlcc': {

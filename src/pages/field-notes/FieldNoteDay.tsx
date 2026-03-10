@@ -16,10 +16,12 @@ import {
   Fuel,
   Ship,
   DollarSign,
+  Map,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import { cn } from '@/lib/utils';
 import { getFieldNote, getAvailableFieldNoteDays, type ThesisScorecard } from '@/data/iranConflictData';
+import { ConflictMap } from '@/components/maps/ConflictMap';
 
 const statusConfig = {
   confirmed: { color: 'text-emerald-400', bg: 'bg-emerald-500/10', border: 'border-emerald-500/30', icon: CheckCircle },
@@ -304,6 +306,28 @@ const FieldNoteDay = () => {
                 <ThesisCard key={thesis.thesis} thesis={thesis} />
               ))}
             </div>
+          </motion.section>
+
+          {/* Intelligence Map */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="mb-12"
+          >
+            <div className="flex items-center gap-2 mb-6">
+              <Map size={16} className="text-primary" />
+              <h2 className="font-display text-xl font-semibold text-foreground">
+                Intelligence Map
+              </h2>
+            </div>
+            <ConflictMap
+              throughDay={dayNum}
+              highlightDay={dayNum}
+              height="450px"
+              showLegend={true}
+              showDaySlider={false}
+            />
           </motion.section>
 
           {/* Key Developments */}

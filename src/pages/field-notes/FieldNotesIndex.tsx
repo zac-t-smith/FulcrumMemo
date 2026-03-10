@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Calendar, TrendingUp, AlertTriangle, ChevronRight, ArrowLeft } from 'lucide-react';
+import { Calendar, TrendingUp, AlertTriangle, ChevronRight, ArrowLeft, Map } from 'lucide-react';
 import Navbar from '@/components/Navbar';
-import { fieldNotes, getLatestScenario, getAvailableFieldNoteDays } from '@/data/iranConflictData';
+import { fieldNotes, getLatestScenario, getAvailableFieldNoteDays, conflictMetadata } from '@/data/iranConflictData';
+import { ConflictMap } from '@/components/maps/ConflictMap';
 
 const FieldNotesIndex = () => {
   const availableDays = getAvailableFieldNoteDays();
@@ -102,6 +103,27 @@ const FieldNotesIndex = () => {
                 );
               })}
             </div>
+          </motion.div>
+
+          {/* Conflict Map with Timeline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="mb-12"
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <Map size={16} className="text-primary" />
+              <h2 className="font-mono text-[10px] uppercase tracking-wider text-primary">
+                Conflict Timeline Map
+              </h2>
+            </div>
+            <ConflictMap
+              throughDay={conflictMetadata.conflictDay}
+              height="500px"
+              showLegend={true}
+              showDaySlider={true}
+            />
           </motion.div>
 
           {/* Field Notes List */}
