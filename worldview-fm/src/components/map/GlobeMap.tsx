@@ -43,11 +43,11 @@ interface GlobeMapProps {
   initialDate?: string;
 }
 
-// Initial camera position
+// Initial camera position - centered on Persian Gulf / Strait of Hormuz
 const INITIAL_CAMERA = {
   lon: 56.26,
   lat: 26.57,
-  alt: 8000000 // 8000km - shows full globe shape
+  alt: 4500000 // 4500km - shows Middle East theater clearly
 };
 
 const CONFLICT_START = new Date('2026-02-28T00:00:00Z');
@@ -212,8 +212,8 @@ function GlobeMapComponent({
     viewer.camera.setView({
       destination: Cesium.Cartesian3.fromDegrees(initLon, initLat, initAlt),
       orientation: {
-        heading: Cesium.Math.toRadians(0),
-        pitch: Cesium.Math.toRadians(-45),
+        heading: 0,
+        pitch: Cesium.Math.toRadians(-90), // Straight down view
         roll: 0
       }
     });
