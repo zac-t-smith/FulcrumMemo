@@ -2,9 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-      - master
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -20,30 +18,60 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      # Build main Fulcrum Memo site first
+      - name: Install main site dependencies
+        run: npm install
 
-      - name: Build
+      - name: Build main site
         run: npm run build
-        env:
-          VITE_AISSTREAM_API_KEY: ${{ secrets.AISSTREAM_API_KEY }}
 
-      - name: Copy index.html to 404.html for SPA routing
+      # Copy index.html to 404.html for SPA routing
+      - name: Setup SPA routing
         run: cp dist/index.html dist/404.html
+
+      # Copy events snapshot for WorldView static fallback
+      - name: Copy events snapshot
+        run: |
+          mkdir -p worldview-fm/public
+          if [ -f worldview-fm-agents/src/data/events.json ]; then
+            cp worldview-fm-agents/src/data/events.json worldview-fm/public/events-static.json
+          else
+            echo "[]" > worldview-fm/public/events-static.json
+          fi
+
+      # Build WorldView-FM
+      - name: Install WorldView dependencies
+        run: cd worldview-fm && npm install
+
+      - name: Build WorldView
+        run: cd worldview-fm && npm run build
+        env:
+          VITE_CESIUM_TOKEN: ${{ secrets.VITE_CESIUM_TOKEN }}
+          VITE_AISSTREAM_KEY: ${{ secrets.VITE_AISSTREAM_KEY }}
+
+      # Combine both builds into one dist folder
+      - name: Combine builds
+        run: |
+          mkdir -p combined-dist
+          # Copy main site to root
+          cp -r dist/. combined-dist/
+          # Copy WorldView into subdirectory
+          mkdir -p combined-dist/worldview-fm
+          cp -r worldview-fm/dist/. combined-dist/worldview-fm/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: combined-dist
 
   deploy:
     environment:

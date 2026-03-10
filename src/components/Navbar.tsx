@@ -16,9 +16,10 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
+  const navLinks: Array<{ label: string; href: string; external?: boolean; highlight?: boolean }> = [
     { label: 'Memos', href: '/memos' },
     { label: 'Field Notes', href: '/field-notes' },
+    { label: 'WorldView', href: '/FulcrumMemo/worldview-fm/', external: true, highlight: true },
     { label: 'Resume', href: '/resume' },
     { label: 'About', href: '/#about' },
     { label: 'Contact', href: '/#contact' },
@@ -52,20 +53,34 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              to={link.href}
-              className="relative text-muted-foreground hover:text-foreground transition-colors text-[10px] tracking-[0.2em] uppercase font-mono"
-            >
-              {link.label}
-              {isActive(link.href) && (
-                <motion.div
-                  layoutId="nav-underline"
-                  className="absolute -bottom-1 left-0 right-0 h-px bg-primary"
-                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                />
-              )}
-            </Link>
+            link.external ? (
+              <a
+                key={link.label}
+                href={link.href}
+                className={`relative text-[10px] tracking-[0.2em] uppercase font-mono transition-colors ${
+                  link.highlight
+                    ? 'text-[#F96302] hover:text-[#ff7a1a]'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.label}
+                to={link.href}
+                className="relative text-muted-foreground hover:text-foreground transition-colors text-[10px] tracking-[0.2em] uppercase font-mono"
+              >
+                {link.label}
+                {isActive(link.href) && (
+                  <motion.div
+                    layoutId="nav-underline"
+                    className="absolute -bottom-1 left-0 right-0 h-px bg-primary"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </Link>
+            )
           ))}
         </div>
 
@@ -91,18 +106,33 @@ const Navbar = () => {
           >
             <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  to={link.href}
-                  className={`text-[11px] tracking-[0.2em] uppercase font-mono py-2 transition-colors ${
-                    isActive(link.href)
-                      ? 'text-primary'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
+                link.external ? (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className={`text-[11px] tracking-[0.2em] uppercase font-mono py-2 transition-colors ${
+                      link.highlight
+                        ? 'text-[#F96302] hover:text-[#ff7a1a]'
+                        : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    className={`text-[11px] tracking-[0.2em] uppercase font-mono py-2 transition-colors ${
+                      isActive(link.href)
+                        ? 'text-primary'
+                        : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )
               ))}
             </div>
           </motion.div>
