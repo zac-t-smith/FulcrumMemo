@@ -2,7 +2,7 @@
 // Uses primitive collections for 10-50x faster rendering
 // All Cesium objects managed via useRef, never useState
 
-import { useEffect, useCallback, useRef, memo } from 'react';
+import { useEffect, useCallback, useRef, memo, useState } from 'react';
 import * as Cesium from 'cesium';
 import type { AgentEvent } from '../../data/feeds/agentFeed';
 import { startAgentFeed, subscribeToAgentFeed } from '../../data/feeds/agentFeed';
@@ -14,7 +14,6 @@ import type { VesselPosition } from '../../data/feeds/aisStream';
 import type { FlightPosition } from '../../data/feeds/openSkyFeed';
 import { TimelineScrubber } from '../TimelineScrubber';
 import { IntelFeedPanel } from '../IntelFeedPanel';
-import { EventDetailModal } from '../EventDetailModal';
 import type { LayerState } from '../../types';
 
 import 'cesium/Build/Cesium/Widgets/widgets.css';
@@ -110,6 +109,11 @@ function GlobeMapComponent({
   const pointsRef = useRef<Cesium.PointPrimitiveCollection | null>(null);
   const labelsRef = useRef<Cesium.LabelCollection | null>(null);
   const groundTracksRef = useRef<Cesium.PrimitiveCollection | null>(null);
+  const clickHandlerRef = useRef<Cesium.ScreenSpaceEventHandler | null>(null);
+
+  // Point-to-event mapping for click detection
+  const pointEventMapRef = useRef<Map<number, AgentEvent>>(new Map());
+  const eventPointsRef = useRef<Map<string, Cesium.PointPrimitive>>(new Map());
 
   // Data refs
   const eventsRef = useRef<AgentEvent[]>([]);
@@ -121,7 +125,10 @@ function GlobeMapComponent({
   const layersRef = useRef(layers);
   const timelineDateRef = useRef<Date | null>(initialDate ? new Date(initialDate) : null);
   const isLiveRef = useRef(!initialDate);
-  const selectedEventRef = useRef<AgentEvent | null>(null);
+
+  // React state for modal (needs re-renders)
+  const [selectedEvent, setSelectedEvent] = useState<AgentEvent | null>(null);
+  const [modalPos, setModalPos] = useState({ x: 0, y: 0 });
 
   // Stats for display
   const statsRef = useRef({
@@ -246,8 +253,64 @@ function GlobeMapComponent({
       onMapStateChange({ center: [lat, lon], zoom });
     });
 
+    // Set up click handler for event markers
+    const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+
+    // Click handler
+    handler.setInputAction((click: { position: Cesium.Cartesian2 }) => {
+      const pickedObject = viewer.scene.pick(click.position);
+
+      if (Cesium.defined(pickedObject) && pickedObject.primitive) {
+        // Check if it's a point primitive from our events collection
+        const primitive = pickedObject.primitive;
+        if (primitive === pointsRef.current) {
+          // Get the specific point that was clicked
+          const pointPrimitive = pickedObject.id;
+          if (pointPrimitive && typeof pointPrimitive === 'string') {
+            // Find event by ID stored on primitive
+            const event = eventsRef.current.find(e => e.id === pointPrimitive);
+            if (event) {
+              setSelectedEvent(event);
+              setModalPos({ x: click.position.x, y: click.position.y });
+              viewer.scene.requestRender();
+              return;
+            }
+          }
+          // Fallback: check point-event map by index
+          for (const [_index, event] of pointEventMapRef.current.entries()) {
+            const point = eventPointsRef.current.get(event.id);
+            if (point === pickedObject.primitive || pickedObject.id === event.id) {
+              setSelectedEvent(event);
+              setModalPos({ x: click.position.x, y: click.position.y });
+              viewer.scene.requestRender();
+              return;
+            }
+          }
+        }
+      }
+
+      // Clicked empty space - close modal
+      setSelectedEvent(null);
+    }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+    // Hover handler for cursor
+    handler.setInputAction((movement: { endPosition: Cesium.Cartesian2 }) => {
+      const pickedObject = viewer.scene.pick(movement.endPosition);
+      if (Cesium.defined(pickedObject) && pickedObject.primitive === pointsRef.current) {
+        viewer.scene.canvas.style.cursor = 'pointer';
+      } else {
+        viewer.scene.canvas.style.cursor = 'default';
+      }
+    }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+
+    clickHandlerRef.current = handler;
+
     // Cleanup
     return () => {
+      if (clickHandlerRef.current) {
+        clickHandlerRef.current.destroy();
+        clickHandlerRef.current = null;
+      }
       if (viewerRef.current) {
         viewerRef.current.destroy();
         viewerRef.current = null;
@@ -306,14 +369,18 @@ function GlobeMapComponent({
 
     if (!viewer || !points || !labels || !groundTracks) return;
 
-    // Clear existing primitives
+    // Clear existing primitives and maps
     points.removeAll();
     labels.removeAll();
     groundTracks.removeAll();
+    pointEventMapRef.current.clear();
+    eventPointsRef.current.clear();
 
     const layers = layersRef.current;
     const cameraAlt = viewer.camera.positionCartographic.height;
     const showLabels = cameraAlt < 3000000; // Show labels when < 3000km
+
+    let pointIndex = 0; // Track point index for click mapping
 
     // Render conflict events
     if (layers.conflictEvents) {
@@ -330,13 +397,19 @@ function GlobeMapComponent({
 
       for (const event of filteredEvents) {
         const color = EVENT_COLORS[event.eventType] || EVENT_COLORS.default;
-        points.add({
+        const point = points.add({
           position: Cesium.Cartesian3.fromDegrees(event.lon!, event.lat!, 0),
-          pixelSize: 10,
+          pixelSize: 12, // Slightly larger for easier clicking
           color: color,
           outlineColor: Cesium.Color.WHITE,
-          outlineWidth: 2
+          outlineWidth: 2,
+          id: event.id // Store event ID on the primitive
         });
+
+        // Store mapping from point index to event
+        pointEventMapRef.current.set(pointIndex, event);
+        eventPointsRef.current.set(event.id, point);
+        pointIndex++;
 
         if (showLabels) {
           labels.add({
@@ -579,18 +652,117 @@ function GlobeMapComponent({
         onLiveToggle={handleLiveToggle}
       />
 
-      {/* Event Detail Modal */}
-      <EventDetailModal
-        event={selectedEventRef.current}
-        allEvents={eventsRef.current}
-        onClose={() => {
-          selectedEventRef.current = null;
-        }}
-        onEventClick={(event) => {
-          selectedEventRef.current = event;
-          handleEventClick(event);
-        }}
-      />
+      {/* Event Detail Modal - positioned near click location */}
+      {selectedEvent && (
+        <div
+          className="event-popup"
+          style={{
+            position: 'fixed',
+            left: Math.min(modalPos.x + 15, window.innerWidth - 380),
+            top: Math.min(modalPos.y - 10, window.innerHeight - 320),
+            width: '360px',
+            backgroundColor: '#0d1117',
+            border: '1px solid #F96302',
+            borderRadius: '6px',
+            padding: '16px',
+            zIndex: 1000,
+            color: '#e5e7eb',
+            fontFamily: 'ui-monospace, monospace',
+            boxShadow: '0 10px 40px rgba(0,0,0,0.5)'
+          }}
+        >
+          {/* Header */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+            <span style={{
+              color: EVENT_COLORS[selectedEvent.eventType]?.toCssColorString() || '#F96302',
+              fontSize: '11px',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em'
+            }}>
+              {selectedEvent.eventType}
+            </span>
+            <button
+              onClick={() => setSelectedEvent(null)}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: '#9ca3af',
+                cursor: 'pointer',
+                fontSize: '20px',
+                lineHeight: 1,
+                padding: '0 4px'
+              }}
+            >
+              ×
+            </button>
+          </div>
+
+          {/* Summary */}
+          <div style={{ fontSize: '13px', marginBottom: '12px', lineHeight: '1.6', color: '#f3f4f6' }}>
+            {selectedEvent.summary}
+          </div>
+
+          {/* Actor info */}
+          <div style={{ fontSize: '11px', color: '#9ca3af', marginBottom: '6px' }}>
+            <span style={{ color: '#F96302' }}>{selectedEvent.actor1}</span>
+            <span style={{ margin: '0 6px' }}>→</span>
+            <span style={{ color: '#ef4444' }}>{selectedEvent.actor2}</span>
+          </div>
+
+          {/* Location */}
+          <div style={{ fontSize: '11px', color: '#9ca3af', marginBottom: '6px' }}>
+            📍 {selectedEvent.location}
+          </div>
+
+          {/* Timestamp */}
+          <div style={{ fontSize: '11px', color: '#9ca3af', marginBottom: '14px' }}>
+            🕐 {new Date(selectedEvent.timestamp).toLocaleString()}
+          </div>
+
+          {/* Footer */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span style={{
+              fontSize: '10px',
+              padding: '3px 8px',
+              backgroundColor: selectedEvent.confidence === 'high' ? '#166534' : selectedEvent.confidence === 'medium' ? '#854d0e' : '#7f1d1d',
+              color: selectedEvent.confidence === 'high' ? '#86efac' : selectedEvent.confidence === 'medium' ? '#fde68a' : '#fca5a5',
+              borderRadius: '4px',
+              fontWeight: 'bold',
+              textTransform: 'uppercase'
+            }}>
+              {selectedEvent.confidence} CONFIDENCE
+            </span>
+            <div style={{ display: 'flex', gap: '12px' }}>
+              {selectedEvent.sourceUrl && (
+                <a
+                  href={selectedEvent.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '11px', color: '#F96302', textDecoration: 'none' }}
+                >
+                  SOURCE →
+                </a>
+              )}
+              <button
+                onClick={() => {
+                  handleEventClick(selectedEvent);
+                }}
+                style={{
+                  fontSize: '11px',
+                  color: '#3b82f6',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: 0
+                }}
+              >
+                FLY TO →
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
