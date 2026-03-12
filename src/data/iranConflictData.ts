@@ -7,8 +7,8 @@
 // =============================================================================
 
 export const conflictMetadata = {
-  lastUpdated: '2026-03-09T12:00:00Z',
-  conflictDay: 10,
+  lastUpdated: '2026-03-12T18:00:00Z',
+  conflictDay: 13,
   conflictStartDate: '2026-02-28',
 };
 
@@ -195,6 +195,9 @@ export const hormuzTimeline: HormuzTransitEntry[] = [
   { date: 'Mar 7', timestamp: Date.parse('2026-03-07'), tankerCount: 3, vlccRate: 440000, event: '3 transits (Palau, Iran, Liberia flagged). GPS jamming affects 1,650+ ships' },
   { date: 'Mar 8', timestamp: Date.parse('2026-03-08'), tankerCount: 2, vlccRate: 450000, event: 'Selective access continuing. Mojtaba Khamenei named Supreme Leader' },
   { date: 'Mar 9', timestamp: Date.parse('2026-03-09'), tankerCount: 1, vlccRate: 455000, event: 'Near-zero Western transits. Oil breaches $100, hits $119 intraday' },
+  { date: 'Mar 10', timestamp: Date.parse('2026-03-10'), tankerCount: 2, vlccRate: 460000, event: "Iran mines reported in Hormuz (CNN). Trump warns Iran to remove mines 'IMMEDIATELY.' Mojtaba Khamenei says Hormuz should remain closed as 'tool to pressure enemy.'" },
+  { date: 'Mar 11', timestamp: Date.parse('2026-03-11'), tankerCount: 3, vlccRate: 450000, event: 'US destroys 16 mine-laying vessels near Hormuz. Thai bulk carrier Mayuree Naree struck and set ablaze. Container ship Express Rome hit. Japanese One Majesty damaged at anchor.' },
+  { date: 'Mar 12', timestamp: Date.parse('2026-03-12'), tankerCount: 2, vlccRate: 460000, event: '3 more ships struck overnight. Iraq shuts down oil port operations after tanker attacks at Basra. Iran says some ships allowed through with permission. IRGC: all ships must get Iran approval or face attack.' },
 ];
 
 export const casualtyTimeline: CasualtyEntry[] = [
@@ -208,6 +211,9 @@ export const casualtyTimeline: CasualtyEntry[] = [
   { date: 'Mar 7', timestamp: Date.parse('2026-03-07'), iranianKilled: 1650, iranianCivilian: 550, usKilled: 6, gccCivilian: 225, note: 'Israel hits 400+ targets, 1,465 munitions. Mehrabad Airport destroyed. PRIMA tanker struck' },
   { date: 'Mar 8', timestamp: Date.parse('2026-03-08'), iranianKilled: 1900, iranianCivilian: 620, usKilled: 7, gccCivilian: 245, note: 'Oil infrastructure targeted. Saudi first fatalities (2 dead, 12 injured). Bahrain desalination plant hit' },
   { date: 'Mar 9', timestamp: Date.parse('2026-03-09'), iranianKilled: 2150, iranianCivilian: 690, usKilled: 8, gccCivilian: 260, note: '8th US soldier killed. Oil breaches $100. Iran nationwide allegiance gathering' },
+  { date: 'Mar 10', timestamp: Date.parse('2026-03-10'), iranianKilled: 2350, iranianCivilian: 720, usKilled: 8, gccCivilian: 275, note: '8th US service member dies. Iran mining Hormuz. Qatar shoots down 2 Iranian Su-24 bombers.' },
+  { date: 'Mar 11', timestamp: Date.parse('2026-03-11'), iranianKilled: 2500, iranianCivilian: 800, usKilled: 8, gccCivilian: 290, note: 'US confirms 140 service members wounded in first 10 days. 16 Iranian mine-laying vessels destroyed.' },
+  { date: 'Mar 12', timestamp: Date.parse('2026-03-12'), iranianKilled: 2650, iranianCivilian: 1348, usKilled: 8, gccCivilian: 310, note: 'Iran UN rep: 1,348 civilians killed, 17,000+ injured. UNICEF: 1,100+ children injured or killed.' },
 ];
 
 export const marketTimeline: MarketEntry[] = [
@@ -222,6 +228,9 @@ export const marketTimeline: MarketEntry[] = [
   { date: 'Mar 7', timestamp: Date.parse('2026-03-07'), brentCrude: 91.20, wti: 87.80, naturalGas: 4.10, goldSpot: 5050, spx: 5680, vix: 27.5, hySpread: 435, event: 'Israel hits 400+ targets, 1,465 munitions. GPS jamming spreads' },
   { date: 'Mar 8', timestamp: Date.parse('2026-03-08'), brentCrude: 92.69, wti: 89.20, naturalGas: 4.25, goldSpot: 5085, spx: 5620, vix: 28.0, hySpread: 450, event: 'Mojtaba Khamenei named Supreme Leader. Israel strikes oil infrastructure' },
   { date: 'Mar 9', timestamp: Date.parse('2026-03-09'), brentCrude: 108.75, wti: 108.62, naturalGas: 4.50, goldSpot: 5100, spx: 5480, vix: 29.48, hySpread: 475, event: 'Oil breaches $100, hits $119 intraday. Largest single-day $ gain since 1988. Asia crashes' },
+  { date: 'Mar 10', timestamp: Date.parse('2026-03-10'), brentCrude: 94, wti: 88, naturalGas: 4.60, goldSpot: 5120, spx: 5365, vix: 28.5, hySpread: 485, event: "Oil briefly hit $119 intraday before collapsing on Trump 'ending soon' rhetoric. Settled ~$94." },
+  { date: 'Mar 11', timestamp: Date.parse('2026-03-11'), brentCrude: 87.69, wti: 83.43, naturalGas: 4.55, goldSpot: 5080, spx: 5354, vix: 27.2, hySpread: 480, event: 'IEA announces record 400M barrel reserve release. Oil crashed 11% intraday before recovering. CPI: Feb inflation at 2.4% YoY (pre-war baseline).' },
+  { date: 'Mar 12', timestamp: Date.parse('2026-03-12'), brentCrude: 100.11, wti: 94, naturalGas: 4.70, goldSpot: 5150, spx: 5295, vix: 24.77, hySpread: 495, event: 'Brent back above $100 despite record SPR release. WTI +8%. Iran ship attacks intensifying. Energy Sec Wright: Navy not ready to escort tankers. Goldman raises inflation forecast.' },
 ];
 
 export const gasPrices: GasPriceEntry[] = [
@@ -236,6 +245,9 @@ export const gasPrices: GasPriceEntry[] = [
   { date: 'Mar 7', timestamp: Date.parse('2026-03-07'), usAverage: 3.38, california: 5.20, change: 0.04 },
   { date: 'Mar 8', timestamp: Date.parse('2026-03-08'), usAverage: 3.42, california: 5.28, change: 0.04 },
   { date: 'Mar 9', timestamp: Date.parse('2026-03-09'), usAverage: 3.478, california: 5.40, change: 0.058, note: 'AAA confirmed. Up $0.50 in one week. Experts project $4.00 by end of March' },
+  { date: 'Mar 10', timestamp: Date.parse('2026-03-10'), usAverage: 3.52, california: 5.48, change: 0.042 },
+  { date: 'Mar 11', timestamp: Date.parse('2026-03-11'), usAverage: 3.58, california: 5.55, change: 0.06 },
+  { date: 'Mar 12', timestamp: Date.parse('2026-03-12'), usAverage: 3.60, california: 5.62, change: 0.02, note: 'AAA: $3.60/gal. Greece caps gasoline profit margins for 3 months.' },
 ];
 
 export const asianMarkets: AsianMarketEntry[] = [
@@ -482,6 +494,78 @@ export const scenarioUpdates: ScenarioUpdate[] = [
       'G7 considering coordinated SPR release',
     ],
   },
+  {
+    date: 'Mar 10, 2026',
+    timestamp: Date.parse('2026-03-10'),
+    day: 11,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 2 },
+      { scenario: 'Protracted Attrition', probability: 42 },
+      { scenario: 'Full Escalation', probability: 56 },
+    ],
+    rationale: "Mojtaba Khamenei's first public statement directs keeping Hormuz closed as economic weapon. Iran now mining the strait — crosses from insurance closure to physical military closure. Qatar strikes Iran (shoots down 2 Su-24s) — first GCC offensive action. Oil whiplash ($119 to $88) shows market volatility but fundamentals unchanged.",
+    keyDevelopments: [
+      "Mojtaba Khamenei's first message: Hormuz should remain closed as 'tool to pressure enemy'",
+      'CNN reports Iran laying mines in Strait of Hormuz',
+      "Trump demands mines removed 'IMMEDIATELY' or consequences 'at level never seen before'",
+      'Qatar shoots down 2 Iranian Su-24 bombers — first GCC offensive action',
+      'Oil whiplash: $119 → $88 on conflicting Trump signals',
+      '8th US service member dies',
+    ],
+  },
+  {
+    date: 'Mar 11, 2026',
+    timestamp: Date.parse('2026-03-11'),
+    day: 12,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 2 },
+      { scenario: 'Protracted Attrition', probability: 40 },
+      { scenario: 'Full Escalation', probability: 58 },
+    ],
+    rationale: "IEA announces largest SPR release in history (400M barrels). Oil crashed 11% intraday on news — then recovered within hours. Validates Part II thesis that supply response cannot break transmission chain. Goldman says 400M barrels offsets only 12 days of Gulf disruption. US destroys 16 mine-laying vessels but ships still getting attacked. Ukraine anti-drone teams deployed to Gulf states.",
+    keyDevelopments: [
+      'IEA announces record 400M barrel strategic reserve release — largest in history',
+      'US contributing 172M barrels to release',
+      'Oil crashed 11% intraday on SPR news, then recovered',
+      'US destroys 16 Iranian mine-laying vessels near Hormuz',
+      'Thai ship Mayuree Naree set ablaze in strait',
+      'Express Rome (Liberia-flagged) and One Majesty (Japan-flagged) struck',
+      'IRGC: all ships need Iran permission to transit',
+      'Lebanon: 750,000+ displaced, 634 killed',
+      'Ukrainian anti-drone teams deployed to Qatar, UAE, Saudi Arabia',
+      'Feb CPI: 2.4% YoY (pre-war baseline)',
+      'US confirms 140 service members wounded in first 10 days',
+    ],
+  },
+  {
+    date: 'Mar 12, 2026',
+    timestamp: Date.parse('2026-03-12'),
+    day: 13,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 2 },
+      { scenario: 'Protracted Attrition', probability: 40 },
+      { scenario: 'Full Escalation', probability: 58 },
+    ],
+    rationale: "IEA record 400M barrel release failed to hold oil below $100 — Brent back above $100 within 24 hours. This is the price floor, not a spike. Iraq shutting Basra ports = supply destruction is structural and expanding. Energy Sec Wright admits Navy 'not ready' to escort tankers — destroys naval escort narrative. Pezeshkian sets 3 conditions (recognition, reparations, guarantees) — structurally unachievable in current political environment. IEA calls this 'largest supply disruption in history of global oil market.'",
+    keyDevelopments: [
+      'Brent crude back above $100 despite record SPR release',
+      'WTI surges 8% to $94',
+      '3 more ships struck overnight near Hormuz and Dubai',
+      'Iraq shuts down oil port operations at Basra after tanker attacks',
+      "Energy Secretary Wright admits Navy 'not ready' to escort tankers — won't be ready until end of month",
+      'Pezeshkian sets 3 conditions for peace: recognition of rights, war reparations, guarantees against future aggression',
+      "New Supreme Leader Khamenei's adviser calls Trump 'Satan himself'",
+      'IRGC + Hezbollah launch joint missile operation against Israel',
+      'Iran claims most intense operation since beginning of war',
+      'Bahrain fuel storage at airport hit by drone',
+      'Kuwait: 6 power lines downed by interceptor debris',
+      'Oman: Salalah port fuel tanks hit',
+      'Iran-linked hackers (Handala) steal 50TB from medical device company Stryker',
+      'UN Security Council adopts resolution urging Iran to stop Gulf attacks',
+      'Goldman raises inflation forecast to 2.9-3.3%',
+      "IEA warns of 'largest supply disruption in history of global oil market'",
+    ],
+  },
 ];
 
 // =============================================================================
@@ -613,7 +697,7 @@ export const hySpreadHistory: HySpreadHistoryEntry[] = [
   { date: '2023', spread: 400 },
   { date: '2024', spread: 320 },
   { date: '2025', spread: 281, event: 'Historic lows' },
-  { date: 'Mar 2026', spread: 425, event: 'Iran conflict', isCurrent: true },
+  { date: 'Mar 2026', spread: 495, event: 'Iran conflict Day 13', isCurrent: true },
 ];
 
 // =============================================================================
@@ -1328,6 +1412,366 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
       'The Fed is trapped — inflation surging from energy, but cutting rates would amplify it. Stagflation scenario materializing',
     ],
   },
+  11: {
+    day: 11,
+    date: 'March 10, 2026',
+    title: "Mojtaba's First Order — Keep Hormuz Closed. Mines in the Water.",
+    summary: "The new supreme leader's first public directive is to maintain the economic weapon. Mining the strait crosses a new threshold — from insurance-driven closure to physical military closure. Qatar strikes back against Iran (first GCC offensive action). Oil whiplash ($119 to $88) reflects market confusion, not resolution.",
+    thesisScorecard: [
+      {
+        thesis: 'Mining of Hormuz as escalation',
+        initialConfidence: 75,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          'CNN reports Iran laying naval mines in Strait of Hormuz',
+          "Trump demands mines removed 'IMMEDIATELY'",
+          'US warns of consequences "at level never seen before"',
+          'Crosses threshold from insurance closure to physical military closure',
+        ],
+      },
+      {
+        thesis: 'New Supreme Leader maintains hardline',
+        initialConfidence: 70,
+        currentConfidence: 92,
+        status: 'confirmed',
+        evidence: [
+          "Mojtaba's first message: keep Hormuz closed as 'tool to pressure enemy'",
+          'No moderation signal from new leadership',
+          'IRGC strategy continues unchanged',
+        ],
+      },
+      {
+        thesis: 'GCC escalation',
+        initialConfidence: 60,
+        currentConfidence: 85,
+        status: 'confirmed',
+        evidence: [
+          'Qatar shoots down 2 Iranian Su-24 bombers — first GCC offensive action',
+          'Attack was attempt to bomb Doha airport',
+          'Expands conflict from defensive interceptions to offensive engagement',
+        ],
+      },
+      {
+        thesis: 'Market volatility not resolution',
+        initialConfidence: 70,
+        currentConfidence: 90,
+        status: 'confirmed',
+        evidence: [
+          "Oil hit $119 intraday, collapsed to $88 on Trump 'ending soon' rhetoric",
+          'Fundamentals unchanged — strait still closed',
+          'Whiplash reflects market confusion, not resolution',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[10], // Day 11 update
+    keyDevelopments: [
+      {
+        category: 'Leadership',
+        items: [
+          "Mojtaba Khamenei's first public message: Hormuz should remain closed as 'tool to pressure enemy'",
+          '8th US service member dies',
+          'Pezeshkian backtracks on earlier Gulf apology',
+        ],
+      },
+      {
+        category: 'Military',
+        items: [
+          'CNN reports Iran laying naval mines in Strait of Hormuz',
+          "Trump demands mines removed 'IMMEDIATELY' or consequences 'at level never seen before'",
+          'Qatar shoots down 2 Iranian Su-24 bombers attempting to bomb Doha airport',
+          'First GCC offensive action of the war',
+        ],
+      },
+      {
+        category: 'Markets',
+        items: [
+          'Oil hit $119 intraday then crashed to $88 on conflicting Trump signals',
+          'Trump says war could end "soon" — Pentagon says opposite',
+          'Market whiplash reflects rhetoric, not fundamentals',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 94,
+      vlccRate: 460000,
+      hySpread: 485,
+      vix: 28.5,
+      usGas: 3.52,
+    },
+    tradingImplications: [
+      "Oil whiplash ($119 → $88) is noise, not signal — strait still closed, mines now in water",
+      "Mining the strait = physical military closure layered on top of insurance closure",
+      "Qatar offensive action expands conflict scope — no longer just US/Israel vs Iran",
+      "Quick Resolution probability at 2% — all off-ramps remain closed",
+    ],
+  },
+  12: {
+    day: 12,
+    date: 'March 11, 2026',
+    title: "Record 400M Barrel Release — Market Says 'Not Enough'",
+    summary: "The IEA announces the largest strategic reserve release in history: 400 million barrels, with the US contributing 172 million. Oil crashed 11% intraday on the news — then recovered. Within 24 hours, Brent is back above $100. This validates the Part II thesis that supply response cannot break the transmission chain. Goldman says 400M barrels offsets only 12 days of Gulf disruption.",
+    thesisScorecard: [
+      {
+        thesis: 'SPR cannot break transmission chain',
+        initialConfidence: 85,
+        currentConfidence: 98,
+        status: 'confirmed',
+        evidence: [
+          'Record 400M barrel release announced — largest in IEA history',
+          'Oil crashed 11% intraday on news, then recovered',
+          'Brent back above $100 within 24 hours',
+          'Goldman: release offsets only 12 days of Gulf disruption',
+        ],
+      },
+      {
+        thesis: 'Physical attacks continuing',
+        initialConfidence: 85,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          'US destroys 16 Iranian mine-laying vessels near Hormuz',
+          'Thai ship Mayuree Naree set ablaze in strait',
+          'Container ship Express Rome struck',
+          'Japanese tanker One Majesty damaged at anchor',
+        ],
+      },
+      {
+        thesis: 'IRGC control of strait',
+        initialConfidence: 80,
+        currentConfidence: 94,
+        status: 'confirmed',
+        evidence: [
+          'IRGC declares all ships need Iran permission to transit',
+          'Selective enforcement continues',
+          '3+ ships attacked despite US mine-clearing operations',
+        ],
+      },
+      {
+        thesis: 'US casualties mounting',
+        initialConfidence: 70,
+        currentConfidence: 88,
+        status: 'confirmed',
+        evidence: [
+          'US confirms 140 service members wounded in first 10 days',
+          'First official wounded count disclosure',
+          'Lebanon: 750,000+ displaced, 634 killed',
+        ],
+      },
+      {
+        thesis: 'International involvement expanding',
+        initialConfidence: 65,
+        currentConfidence: 85,
+        status: 'confirmed',
+        evidence: [
+          'Ukrainian anti-drone teams now operating in Qatar, UAE, Saudi Arabia',
+          'Israel ground incursion in southern Lebanon',
+          'Conflict geography expanding',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[11], // Day 12 update
+    keyDevelopments: [
+      {
+        category: 'Energy/Markets',
+        items: [
+          'IEA announces record 400M barrel strategic reserve release — largest in history',
+          'US contributing 172M barrels (43% of total)',
+          'Previous record: 182M barrels after Russia-Ukraine 2022',
+          'Oil crashed 11% intraday on SPR news, then recovered',
+          'Goldman: 400M barrels offsets only 12 days of Gulf disruption',
+          'Feb CPI: 2.4% YoY (pre-war baseline)',
+          "Trump reverses — will tap SPR 'a little bit'",
+        ],
+      },
+      {
+        category: 'Shipping/Strait',
+        items: [
+          'US destroys 16 Iranian mine-laying vessels near Hormuz',
+          'Thai bulk carrier Mayuree Naree set ablaze',
+          'Container ship Express Rome (Liberia-flagged) struck',
+          'Japanese tanker One Majesty damaged at anchor',
+          'IRGC: all ships need Iran permission to transit',
+        ],
+      },
+      {
+        category: 'Military/Casualties',
+        items: [
+          'US confirms 140 service members wounded in first 10 days — first disclosure',
+          "Hegseth: today would be 'most intense day yet' of US strikes",
+          'Lebanon: 750,000+ displaced, 634 killed',
+          'Israel ground incursion in southern Lebanon',
+        ],
+      },
+      {
+        category: 'Political',
+        items: [
+          'Ukrainian anti-drone teams deployed to Qatar, UAE, Saudi Arabia',
+          "Joe Rogan criticizes Trump: war 'seems so insane based on what he ran on'",
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 87.69,
+      vlccRate: 450000,
+      hySpread: 480,
+      vix: 27.2,
+      usGas: 3.58,
+    },
+    tradingImplications: [
+      "SPR release is band-aid, not cure — validates Part II transmission thesis",
+      "400M barrels = 12 days of Gulf disruption coverage per Goldman",
+      "Oil recovered above $100 within 24 hours despite largest release in history",
+      "Ship attacks continuing during mine-clearing = Iran can overwhelm defensive measures",
+      "140 wounded disclosure signals higher actual casualty toll than reported",
+    ],
+  },
+  13: {
+    day: 13,
+    date: 'March 12, 2026',
+    title: "$100 Oil Is the New Floor. Iraq Ports Shut. Navy 'Not Ready.'",
+    summary: "Oil is above $100 DESPITE the largest reserve release in history. This is the price floor, not a spike. Iraq shutting Basra ports means supply destruction is structural and expanding beyond Hormuz. Energy Secretary Wright admitting the Navy 'can\'t escort tankers for weeks' destroys the Day 4 naval escort narrative. Pezeshkian's 3 conditions for peace (recognition, reparations, guarantees) are structurally unachievable. IEA calls this the 'largest supply disruption in history of global oil market.'",
+    thesisScorecard: [
+      {
+        thesis: '$100 as price floor, not spike',
+        initialConfidence: 75,
+        currentConfidence: 96,
+        status: 'confirmed',
+        evidence: [
+          'Brent back above $100 despite record 400M barrel SPR release',
+          'WTI surges 8% to $94',
+          'Price recovered within 24 hours of largest reserve release in history',
+          "IEA: 'largest supply disruption in history of global oil market'",
+        ],
+      },
+      {
+        thesis: 'Naval escort solution invalidated',
+        initialConfidence: 40,
+        currentConfidence: 95,
+        status: 'invalidated',
+        evidence: [
+          "Energy Secretary Wright admits Navy 'not ready' to escort tankers",
+          "Won't be ready until end of month",
+          'Destroys Day 4 naval escort narrative',
+          'Ships being attacked while Navy conducts mine-clearing operations',
+        ],
+      },
+      {
+        thesis: 'Supply destruction expanding',
+        initialConfidence: 80,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          'Iraq shuts down oil port operations at Basra after tanker attacks',
+          'Iraq oil exports halted — not just Hormuz now',
+          '3 more ships struck overnight',
+          'Supply destruction spreading beyond strait to regional ports',
+        ],
+      },
+      {
+        thesis: 'Peace conditions unachievable',
+        initialConfidence: 70,
+        currentConfidence: 92,
+        status: 'confirmed',
+        evidence: [
+          'Pezeshkian sets 3 conditions: recognition of rights, reparations, guarantees',
+          'None achievable in current US political environment',
+          "Khamenei adviser calls Trump 'Satan himself'",
+          'Structural impediments to negotiated resolution',
+        ],
+      },
+      {
+        thesis: 'Regional infrastructure collapse',
+        initialConfidence: 75,
+        currentConfidence: 90,
+        status: 'confirmed',
+        evidence: [
+          'Bahrain airport fuel storage hit by drone',
+          'Kuwait: 6 power lines downed by interceptor debris',
+          'Oman: Salalah port fuel tanks hit — first Omani damage',
+          'GCC infrastructure under sustained attack',
+        ],
+      },
+      {
+        thesis: 'Inflation transmission accelerating',
+        initialConfidence: 70,
+        currentConfidence: 88,
+        status: 'confirmed',
+        evidence: [
+          'Goldman raises inflation forecast to 2.9-3.3%',
+          'Gas at $3.60/gal (AAA)',
+          'Greece caps gasoline profit margins for 3 months',
+          'Global policy response beginning',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[12], // Day 13 update
+    keyDevelopments: [
+      {
+        category: 'Energy/Markets',
+        items: [
+          'Brent crude back above $100 despite record SPR release',
+          'WTI surges 8% to $94',
+          "Energy Secretary Wright: Navy 'not ready' to escort tankers — won't be ready until end of month",
+          'Goldman raises inflation forecast to 2.9-3.3%',
+          "IEA: 'largest supply disruption in history of global oil market'",
+          'Gas: $3.60/gal (AAA)',
+          'Greece caps gasoline profit margins for 3 months',
+        ],
+      },
+      {
+        category: 'Shipping/Ports',
+        items: [
+          '3 more ships struck overnight near Hormuz and Dubai',
+          'Iraq shuts down oil port operations at Basra after tanker attacks',
+          'Iraq oil exports halted',
+          'Iran: some ships allowed through with permission',
+          'IRGC: all ships must get Iran approval or face attack',
+        ],
+      },
+      {
+        category: 'Military',
+        items: [
+          'IRGC + Hezbollah launch joint missile operation against Israel',
+          'Iran claims most intense operation since beginning of war',
+          'Bahrain airport fuel storage hit by drone',
+          'Kuwait: 6 power lines downed by interceptor debris',
+          'Oman: Salalah port fuel tanks hit — first Omani damage',
+        ],
+      },
+      {
+        category: 'Diplomatic/Humanitarian',
+        items: [
+          'Pezeshkian sets 3 conditions: recognition of rights, reparations, guarantees against future aggression',
+          "Khamenei adviser calls Trump 'Satan himself'",
+          'Iran UN rep: 1,348 civilians killed, 17,000+ injured',
+          'UNICEF: 1,100+ children injured or killed',
+          'UN Security Council adopts resolution urging Iran to stop Gulf attacks',
+        ],
+      },
+      {
+        category: 'Cyber',
+        items: [
+          'Iran-linked hackers (Handala) steal 50TB from medical device company Stryker',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 100.11,
+      vlccRate: 460000,
+      hySpread: 495,
+      vix: 24.77,
+      usGas: 3.60,
+    },
+    tradingImplications: [
+      "$100 oil is the floor, not the ceiling — record SPR release couldn't hold it below",
+      "Naval escort thesis destroyed — Navy 'not ready' for weeks per Energy Secretary",
+      "Supply destruction expanding beyond Hormuz — Iraq ports now shut",
+      "Pezeshkian's 3 conditions = no achievable off-ramp. Recognition + reparations + guarantees impossible in US political environment",
+      "Goldman inflation forecast 2.9-3.3% = stagflation thesis accelerating",
+      "Full Escalation at 58% — remains base case",
+    ],
+  },
 };
 
 // =============================================================================
@@ -1472,6 +1916,14 @@ export const shippingDisruptionData = {
     { date: 'Mar 9', title: 'Oil Breaches $100', description: 'Brent hits $119 intraday. Largest single-day dollar gain since 1988. Crude up 50% since conflict started.' },
     { date: 'Mar 9', title: 'Bapco Force Majeure', description: 'Bahrain\'s Bapco declares force majeure. Analysts (Jones Trading) expect more Gulf producers to follow as storage fills.' },
     { date: 'Mar 9', title: 'Goldman Sachs Warning', description: 'Goldman warns $140-150 oil if Hormuz stays disrupted beyond 30 days, potentially triggering synchronized global economic downturn.' },
+    { date: 'Mar 10', title: 'Iran Mining Hormuz', description: "CNN reports Iran laying naval mines in Strait of Hormuz. Mojtaba Khamenei: Hormuz should remain closed as 'tool to pressure enemy.'" },
+    { date: 'Mar 10', title: 'Qatar Offensive Action', description: 'Qatar shoots down 2 Iranian Su-24 bombers attempting to bomb Doha airport — first GCC offensive action.' },
+    { date: 'Mar 11', title: 'Record SPR Release', description: 'IEA announces record 400M barrel strategic reserve release — largest in history. US contributing 172M barrels. Oil crashed 11% intraday, then recovered.' },
+    { date: 'Mar 11', title: 'US Destroys Mine-Layers', description: 'US destroys 16 Iranian mine-laying vessels near Hormuz. Ships still being attacked — Thai, Liberian, Japanese vessels struck.' },
+    { date: 'Mar 11', title: 'IRGC Transit Declaration', description: 'IRGC declares all ships need Iran permission to transit. Selective enforcement continues.' },
+    { date: 'Mar 12', title: 'Iraq Ports Shut Down', description: 'Iraq shuts down oil port operations at Basra after tanker attacks. Supply destruction expands beyond Hormuz.' },
+    { date: 'Mar 12', title: 'Navy Not Ready', description: "Energy Secretary Wright admits Navy 'not ready' to escort tankers — won't be ready until end of month." },
+    { date: 'Mar 12', title: 'Oil Back Above $100', description: 'Brent crude back above $100 despite record SPR release. WTI +8%. IEA: largest supply disruption in history.' },
   ],
   keyMetrics: {
     transitCollapsePercent: 98,
@@ -1481,7 +1933,7 @@ export const shippingDisruptionData = {
     percentGlobalVLCCFleet: 8,
     strandedSeafarers: 20000,
     strandedCruisePassengers: 15000,
-    commercialShipsAttacked: '8+',
+    commercialShipsAttacked: '12+',
     capeOfGoodHopeDiversions: 'surged 112% in single day',
     crudeBoundForIndia: '12 million barrels',
     minervaFixture: { rate: 436000, vessel: 'Pantanassa', charterer: 'GS Caltex' },
@@ -1542,6 +1994,9 @@ export const conflictTimeline = [
   { date: 'March 7, 2026', event: 'Israeli Air Force attacks 400+ targets in Iran, dropping 1,465 munitions. 80+ fighter jets strike Tehran with ~230 munitions. IDF destroys 16 Quds Force cargo aircraft at Mehrabad Airport. PRIMA tanker struck by Iranian drone in Hormuz. GPS jamming affects 1,650+ ships (up 55%). Selective transit emerges — only 3 vessels transit (Palau, Iran, Liberia flagged). Iran confirms Strait closed only to US, Israel, Western allies.' },
   { date: 'March 8, 2026', event: 'Mojtaba Khamenei (son) named new Supreme Leader — IRGC pledges allegiance. Israel strikes Iranian oil infrastructure for first time: Shahr Rey, Shahran, Nobonyad depots. Senior Iranian official warns war entered "new phase" — threatens regional energy infrastructure. Saudi Arabia first fatalities: 2 killed, 12 injured. Bahrain desalination plant hit. Kuwait airport fuel tanks targeted. Israel strikes hotel in central Beirut, killing 4. 7th US soldier killed. US orders non-emergency diplomats out of Saudi Arabia. G7 discusses emergency SPR release.' },
   { date: 'March 9, 2026', event: 'Oil surges past $100/barrel — Brent hits $119 intraday. Largest single-day dollar gain since 1988. Crude up 50% since conflict started. Asian markets crash: Nikkei -7.5%, KOSPI -8.1%. US gas hits $3.478 (AAA), up $0.50 in one week. 8th US soldier killed. Mojtaba Khamenei named new Supreme Leader — IRGC and military pledge allegiance. Iran announces nationwide allegiance gathering. Iraq output down 70% due to storage saturation. Bapco (Bahrain) declares force majeure — more expected to follow. Goldman Sachs warns $140-150 oil if Hormuz disrupted beyond 30 days. G7 considering coordinated SPR release.' },
+  { date: 'March 10, 2026', event: "Mojtaba Khamenei's first public message: Hormuz should remain closed as 'tool to pressure enemy.' CNN reports Iran laying mines in Hormuz. Trump demands mines removed 'IMMEDIATELY' or consequences 'at level never seen before.' Qatar strikes Iran — shoots down 2 Su-24 bombers attempting to bomb Doha airport, first GCC offensive action. 8th US service member dies. Pezeshkian backtracks on Gulf apology. Oil whiplash: hits $119 then crashes to $88 on conflicting Trump signals." },
+  { date: 'March 11, 2026', event: "IEA announces record 400M barrel strategic reserve release — largest in history. US contributing 172M barrels. Oil crashed 11% intraday on news then recovered. US destroys 16 Iranian mine-laying vessels near Hormuz. Thai ship Mayuree Naree set ablaze in Hormuz. Express Rome (Liberia-flagged) and One Majesty (Japan-flagged) struck. IRGC: all ships need Iran permission to transit. Hegseth says 'most intense day yet' of US strikes. Lebanon: 750,000+ displaced, 634 killed. Israel ground incursion in southern Lebanon. Ukrainian anti-drone teams now operating in Qatar, UAE, Saudi Arabia. US confirms 140 service members wounded in first 10 days. Feb CPI: 2.4% YoY (pre-war). Joe Rogan criticizes Trump — war 'seems so insane based on what he ran on.'" },
+  { date: 'March 12, 2026', event: "Brent crude back above $100 despite record SPR release. WTI surges 8% to $94. 3 more ships struck overnight near Hormuz and Dubai. Iraq shuts down oil port operations at Basra after tanker attacks. Pezeshkian sets 3 conditions for peace: recognition of rights, war reparations, guarantees against future aggression — none achievable in current political environment. Khamenei adviser calls Trump 'Satan himself.' IRGC + Hezbollah launch joint missile operation against Israel — Iran claims most intense operation since war began. Energy Secretary Wright admits Navy 'not ready' to escort tankers — won't be ready until end of month. Bahrain fuel storage at airport hit by drone. Kuwait: 6 power lines downed by interceptor debris. Oman: Salalah port fuel tanks hit. Iran-linked hackers (Handala) steal 50TB from Stryker medical devices. UN Security Council adopts resolution urging Iran to stop Gulf attacks. Goldman raises inflation forecast to 2.9-3.3%. IEA warns of 'largest supply disruption in history of global oil market.' Iran UN rep: 1,348 civilians killed, 17,000+ injured. UNICEF: 1,100+ children injured or killed." },
 ];
 
 // =============================================================================
@@ -1630,6 +2085,17 @@ export const goldmanSachsProjection = {
   trigger: 'synchronized global economic downturn',
   source: 'Goldman Sachs',
   date: 'Mar 9, 2026',
+  inflationForecast: '2.9-3.3%',
+  inflationForecastDate: 'Mar 12, 2026',
+};
+
+export const sprRelease = {
+  announced: '2026-03-11',
+  totalBarrels: 400000000,
+  usContribution: 172000000,
+  precedent: 'Largest in IEA history. Previous record: 182M barrels after Russia-Ukraine 2022.',
+  marketReaction: 'Oil dropped 11% intraday on announcement, then recovered above $100 within 24 hours. Goldman says release offsets only 12 days of Gulf disruption.',
+  note: "Trump also indicated US would tap SPR 'a little bit' — reversing earlier refusal",
 };
 
 export const futuresCurve = [
@@ -1741,6 +2207,28 @@ export const conflictEvents: ConflictEvent[] = [
   { date: '2026-03-09', day: 10, lat: 26.0667, lng: 50.5577, type: 'strike_iran', target: 'Manama residential, Bahrain', description: '29-year-old woman killed, 8 injured. First Bahraini civilian death.', impact: '1 killed, 8 injured', status: 'confirmed' },
   { date: '2026-03-09', day: 10, lat: 22.7877, lng: 54.7585, type: 'interception', target: 'Shaybah oil field, Saudi Arabia', description: 'Saudi intercepts drone targeting massive oil field.', status: 'confirmed' },
   { date: '2026-03-09', day: 10, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz', description: 'Oil breaches $100, hits $119 intraday. Near-zero Western transits continue.', impact: 'Oil +50% since conflict start', status: 'confirmed' },
+
+  // DAY 11 — Mar 10
+  { date: '2026-03-10', day: 11, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz', description: "Iran laying naval mines in strait (CNN). Mojtaba Khamenei: Hormuz should remain closed as 'tool to pressure enemy.'", status: 'confirmed' },
+  { date: '2026-03-10', day: 11, lat: 25.2854, lng: 51.5310, type: 'interception', target: 'Doha Airport, Qatar', description: 'Qatar shoots down 2 Iranian Su-24 bombers attempting to bomb airport — first GCC offensive action.', status: 'confirmed' },
+  { date: '2026-03-10', day: 11, lat: 35.6892, lng: 51.3890, type: 'strike_us', target: 'Tehran', description: 'US/Israeli strikes continue. Oil hits $119 intraday before collapsing to $88 on Trump rhetoric.', status: 'confirmed' },
+
+  // DAY 12 — Mar 11
+  { date: '2026-03-11', day: 12, lat: 27.1832, lng: 56.2666, type: 'naval', target: 'Strait of Hormuz', description: 'US destroys 16 Iranian mine-laying vessels near Hormuz. IEA announces record 400M barrel SPR release.', status: 'confirmed' },
+  { date: '2026-03-11', day: 12, lat: 26.5667, lng: 56.2500, type: 'shipping', target: 'Thai bulk carrier Mayuree Naree, Hormuz', description: 'Ship struck and set ablaze in strait. IRGC: all ships need Iran permission.', status: 'confirmed' },
+  { date: '2026-03-11', day: 12, lat: 26.4500, lng: 56.3000, type: 'shipping', target: 'Container ship Express Rome, Hormuz', description: 'Liberia-flagged container ship struck in strait.', status: 'confirmed' },
+  { date: '2026-03-11', day: 12, lat: 25.2700, lng: 55.3300, type: 'shipping', target: 'Japanese tanker One Majesty, Dubai anchorage', description: 'Japanese-flagged tanker damaged at anchor near Dubai.', status: 'confirmed' },
+  { date: '2026-03-11', day: 12, lat: 33.8938, lng: 35.5018, type: 'ground_offensive', target: 'Southern Lebanon', description: 'Israel ground incursion in southern Lebanon. 750,000+ displaced, 634 killed in Lebanon.', status: 'confirmed' },
+  { date: '2026-03-11', day: 12, lat: 24.6877, lng: 46.7219, type: 'interception', target: 'Riyadh, Saudi Arabia', description: 'Ukrainian anti-drone teams now operating in Saudi Arabia, Qatar, and UAE.', status: 'confirmed' },
+
+  // DAY 13 — Mar 12
+  { date: '2026-03-12', day: 13, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz', description: '3 more ships struck overnight. Brent back above $100 despite record SPR release.', status: 'confirmed' },
+  { date: '2026-03-12', day: 13, lat: 30.4217, lng: 48.1653, type: 'infrastructure_energy', target: 'Basra Oil Port, Iraq', description: 'Iraq shuts down oil port operations after tanker attacks at Basra.', impact: 'Iraq oil exports halted', status: 'confirmed' },
+  { date: '2026-03-12', day: 13, lat: 26.2700, lng: 50.6300, type: 'infrastructure_energy', target: 'Bahrain Airport Fuel Storage', description: 'Iranian drone strikes fuel storage at Bahrain airport.', status: 'confirmed' },
+  { date: '2026-03-12', day: 13, lat: 29.3117, lng: 47.4818, type: 'strike_iran', target: 'Kuwait Power Grid', description: '6 power lines downed by interceptor debris in Kuwait.', status: 'confirmed' },
+  { date: '2026-03-12', day: 13, lat: 17.0194, lng: 54.0924, type: 'infrastructure_energy', target: 'Salalah Port, Oman', description: 'Fuel tanks at Salalah port hit by Iranian strike. First Omani infrastructure damage.', status: 'confirmed' },
+  { date: '2026-03-12', day: 13, lat: 32.0853, lng: 34.7818, type: 'strike_iran', target: 'Israel', description: 'IRGC + Hezbollah launch joint missile operation — Iran claims most intense operation since war began.', status: 'confirmed' },
+  { date: '2026-03-12', day: 13, lat: 25.2700, lng: 55.3300, type: 'shipping', target: 'Dubai anchorage', description: 'Additional ships struck overnight near Dubai.', status: 'confirmed' },
 ];
 
 // Insurance exclusion zone polygon (for map overlay)

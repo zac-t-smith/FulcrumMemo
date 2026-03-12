@@ -299,7 +299,7 @@ const IranMemoPartIFull = () => {
                 does not. Iran's retaliatory campaign—targeting U.S. bases across the GCC, Israeli
                 military and civilian infrastructure, Gulf energy and water facilities, data
                 centers, and commercial shipping—launched within hours of the first strikes and has
-                not diminished. Six U.S. service members have been killed. The Strait of Hormuz is
+                not diminished. Eight U.S. service members have been killed, 140 wounded. The Strait of Hormuz is
                 effectively closed. Global oil prices surged 8% on market open. Amazon's UAE data
                 center is still offline. And Iran has rejected all ceasefire proposals.
               </p>
