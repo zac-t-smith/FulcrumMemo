@@ -21,36 +21,26 @@ interface MapWrapperProps {
 const GlobeMap = React.lazy(() => import('./GlobeMap').then(module => ({ default: module.GlobeMap })));
 
 /**
- * MapWrapper - Automatic map selection based on environment
+ * MapWrapper - Automatic map selection based on Cesium token availability
  *
- * Uses CesiumJS 3D globe when:
- * - Running on localhost (development)
- * - AND Cesium Ion token is available
- *
- * Falls back to Leaflet 2D map when:
- * - Running on GitHub Pages (production)
- * - OR Cesium token is missing
- *
- * This ensures the map always works on the deployed site
- * while allowing 3D globe development locally.
+ * Uses CesiumJS 3D globe when VITE_CESIUM_ION_TOKEN is set
+ * Falls back to Leaflet 2D map when token is missing
  */
 export function MapWrapper(props: MapWrapperProps) {
   const [mapMode, setMapMode] = useState<'loading' | 'cesium' | 'leaflet'>('loading');
 
   useEffect(() => {
-    const token = import.meta.env.VITE_CESIUM_ION_TOKEN;
-    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const cesiumToken = import.meta.env.VITE_CESIUM_ION_TOKEN;
+    const hasCesiumToken = !!cesiumToken && cesiumToken.length > 10;
 
-    // Only attempt Cesium on localhost with a token
-    if (token && isLocal) {
-      console.log('[MapWrapper] Using CesiumJS 3D globe (localhost with token)');
+    // Debug: verify token is reaching the build
+    console.log('[MapWrapper] Cesium token present:', hasCesiumToken, 'length:', cesiumToken?.length ?? 0);
+
+    if (hasCesiumToken) {
+      console.log('[MapWrapper] Using CesiumJS 3D globe');
       setMapMode('cesium');
     } else {
-      if (!token) {
-        console.log('[MapWrapper] Using Leaflet 2D map (no Cesium token)');
-      } else {
-        console.log('[MapWrapper] Using Leaflet 2D map (GitHub Pages deployment)');
-      }
+      console.log('[MapWrapper] Using Leaflet 2D map (no Cesium token)');
       setMapMode('leaflet');
     }
   }, []);
