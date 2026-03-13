@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { marketData, scenarios, evaluatePredictions, predictions as fallbackPredictions } from '../../data/conflictData';
 import { subscribeToAgentFeed, getAgentFeedState } from '../../data/feeds/agentFeed';
+import { subscribeToOilPrices, startOilPriceFeed } from '../../data/feeds/oilPriceFeed';
+import type { OilPriceState } from '../../data/feeds/oilPriceFeed';
 import type { LayerState } from '../../types';
 import type { Prediction } from '../../types';
 
@@ -11,6 +13,7 @@ interface IntelligencePanelProps {
 
 export function IntelligencePanel({ layers, onToggleLayer }: IntelligencePanelProps) {
   const [predictions, setPredictions] = useState<Prediction[]>(fallbackPredictions);
+  const [oilPrices, setOilPrices] = useState<OilPriceState | null>(null);
 
   // Subscribe to agent feed and evaluate predictions
   useEffect(() => {
@@ -30,6 +33,15 @@ export function IntelligencePanel({ layers, onToggleLayer }: IntelligencePanelPr
     return unsubscribe;
   }, []);
 
+  // Subscribe to live oil prices
+  useEffect(() => {
+    startOilPriceFeed();
+    const unsubscribe = subscribeToOilPrices((state) => {
+      setOilPrices(state);
+    });
+    return unsubscribe;
+  }, []);
+
   const confirmedCount = predictions.filter(p => p.status === 'confirmed').length;
 
   return (
@@ -43,13 +55,14 @@ export function IntelligencePanel({ layers, onToggleLayer }: IntelligencePanelPr
         <div className="space-y-2">
           <DataRow
             label="BRENT CRUDE"
-            value={`$${marketData.brent.toFixed(2)}`}
-            subValue={`HIGH: $${marketData.brentHigh.toFixed(2)}`}
+            value={`$${oilPrices?.brent?.price.toFixed(2) || marketData.brent.toFixed(2)}`}
+            subValue={oilPrices?.brent ? `${oilPrices.brent.changePercent >= 0 ? '+' : ''}${oilPrices.brent.changePercent.toFixed(2)}%` : `HIGH: $${marketData.brentHigh.toFixed(2)}`}
             highlight
           />
           <DataRow
             label="WTI"
-            value={`$${marketData.wti.toFixed(2)}`}
+            value={`$${oilPrices?.wti?.price.toFixed(2) || marketData.wti.toFixed(2)}`}
+            subValue={oilPrices?.wti ? `${oilPrices.wti.changePercent >= 0 ? '+' : ''}${oilPrices.wti.changePercent.toFixed(2)}%` : undefined}
           />
           <DataRow
             label="10Y YIELD"

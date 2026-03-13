@@ -281,21 +281,6 @@ function GlobeMapComponent({
     vesselBillboardsRef.current = vesselBillboards;
     flightTrailsRef.current = flightTrails;
 
-    // Add night lights layer (Cesium Ion asset) - async IIFE
-    (async () => {
-      try {
-        const nightLights = await Cesium.IonImageryProvider.fromAssetId(3812);
-        if (viewerRef.current && !viewerRef.current.isDestroyed()) {
-          const nightLayer = viewerRef.current.imageryLayers.addImageryProvider(nightLights);
-          nightLayer.alpha = 0.6; // Blend with dark basemap
-          nightLayer.brightness = 1.5;
-          console.log('[Globe] Night lights layer added');
-        }
-      } catch (err) {
-        console.warn('[Globe] Night lights layer unavailable:', err);
-      }
-    })();
-
     // Enable globe lighting for day/night effect
     viewer.scene.globe.enableLighting = true;
     viewer.scene.light = new Cesium.SunLight();
@@ -317,39 +302,50 @@ function GlobeMapComponent({
     // Set up click handler for event markers
     const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
 
-    // Click handler - simplified approach using event ID stored on primitive
+    // Click handler - properly handle different id types
     handler.setInputAction((click: { position: Cesium.Cartesian2 }) => {
-      const pickedObject = viewer.scene.pick(click.position);
+      const picked = viewer.scene.pick(click.position);
 
-      if (Cesium.defined(pickedObject)) {
-        // Check for event ID on the picked object
-        const eventId = pickedObject.id;
-        if (eventId && typeof eventId === 'string') {
-          // Find event by ID
-          const event = eventsRef.current.find(e => e.id === eventId);
-          if (event) {
+      if (!picked) {
+        setSelectedEvent(null);
+        return;
+      }
+
+      // Extract string ID from various possible formats
+      let id: string | null = null;
+      if (picked.id && typeof picked.id === 'string') {
+        id = picked.id;
+      } else if (picked.id && typeof picked.id === 'object') {
+        // Handle entity objects
+        id = picked.id?.id || picked.id?._id || null;
+      }
+
+      // Check if this is an event marker
+      if (id && typeof id === 'string') {
+        // Skip glow markers
+        if (id.endsWith('-glow')) {
+          id = id.replace('-glow', '');
+        }
+
+        const event = eventsRef.current.find(e => e.id === id);
+        if (event) {
+          setSelectedEvent(event);
+          setModalPos({ x: click.position.x, y: click.position.y });
+          viewer.scene.requestRender();
+          return;
+        }
+      }
+
+      // Check primitive-to-event map as fallback
+      const primitive = picked.primitive;
+      if (primitive && pointEventMapRef.current.size > 0) {
+        for (const [_index, event] of pointEventMapRef.current.entries()) {
+          const point = eventPointsRef.current.get(event.id);
+          if (point === primitive) {
             setSelectedEvent(event);
             setModalPos({ x: click.position.x, y: click.position.y });
             viewer.scene.requestRender();
             return;
-          }
-        }
-
-        // Fallback: check point-event map
-        if (pickedObject.primitive === pointsRef.current) {
-          // Try to find by iterating the map
-          for (const [_index, event] of pointEventMapRef.current.entries()) {
-            const point = eventPointsRef.current.get(event.id);
-            if (point && pickedObject.primitive) {
-              // Check if this is an event point by position comparison
-              const clickedPoint = pickedObject.id;
-              if (clickedPoint === event.id) {
-                setSelectedEvent(event);
-                setModalPos({ x: click.position.x, y: click.position.y });
-                viewer.scene.requestRender();
-                return;
-              }
-            }
           }
         }
       }
@@ -360,68 +356,85 @@ function GlobeMapComponent({
 
     // Hover handler for cursor and tooltips
     handler.setInputAction((movement: { endPosition: Cesium.Cartesian2 }) => {
-      const pickedObject = viewer.scene.pick(movement.endPosition);
+      const picked = viewer.scene.pick(movement.endPosition);
 
-      if (Cesium.defined(pickedObject) && pickedObject.id) {
-        const id = pickedObject.id as string;
-        const x = movement.endPosition.x;
-        const y = movement.endPosition.y;
+      if (!Cesium.defined(picked)) {
+        viewer.scene.canvas.style.cursor = 'default';
+        setTooltip({ visible: false, content: '', x: 0, y: 0, type: null });
+        return;
+      }
 
-        // Check for flight
-        if (id.startsWith('flight-')) {
-          const flight = flightPointMapRef.current.get(id);
-          if (flight) {
-            const altFt = Math.round(flight.altitude * 3.28084);
-            const speedKts = Math.round(flight.velocity * 1.944);
-            setTooltip({
-              visible: true,
-              content: `${flight.callsign || flight.icao24}\n${altFt.toLocaleString()} ft · ${speedKts} kts`,
-              x, y,
-              type: 'flight'
-            });
-            viewer.scene.canvas.style.cursor = 'pointer';
-            return;
-          }
-        }
+      // Extract string ID from various possible formats
+      let id: string | null = null;
+      if (picked.id && typeof picked.id === 'string') {
+        id = picked.id;
+      } else if (picked.id && typeof picked.id === 'object') {
+        id = picked.id?.id || picked.id?._id || null;
+      }
 
-        // Check for vessel
-        if (id.startsWith('vessel-')) {
-          const vessel = vesselPointMapRef.current.get(id);
-          if (vessel) {
-            const speedKts = vessel.speed?.toFixed(1) || '0';
-            setTooltip({
-              visible: true,
-              content: `${vessel.name || vessel.mmsi}\n${speedKts} kts`,
-              x, y,
-              type: 'vessel'
-            });
-            viewer.scene.canvas.style.cursor = 'pointer';
-            return;
-          }
-        }
+      if (!id || typeof id !== 'string') {
+        viewer.scene.canvas.style.cursor = 'default';
+        setTooltip({ visible: false, content: '', x: 0, y: 0, type: null });
+        return;
+      }
 
-        // Check for satellite
-        if (id.startsWith('sat-')) {
-          const sat = satellitePointMapRef.current.get(id);
-          if (sat) {
-            const altKm = Math.round(sat.alt);
-            setTooltip({
-              visible: true,
-              content: `${sat.name}\n${altKm.toLocaleString()} km · ${sat.country}`,
-              x, y,
-              type: 'satellite'
-            });
-            viewer.scene.canvas.style.cursor = 'pointer';
-            return;
-          }
-        }
+      const x = movement.endPosition.x;
+      const y = movement.endPosition.y;
 
-        // Check for event (existing behavior)
-        if (eventsRef.current.find(e => e.id === id)) {
+      // Check for flight
+      if (id.startsWith('flight-')) {
+        const flight = flightPointMapRef.current.get(id);
+        if (flight) {
+          const altFt = Math.round(flight.altitude * 3.28084);
+          const speedKts = Math.round(flight.velocity * 1.944);
+          setTooltip({
+            visible: true,
+            content: `${flight.callsign || flight.icao24}\n${altFt.toLocaleString()} ft · ${speedKts} kts`,
+            x, y,
+            type: 'flight'
+          });
           viewer.scene.canvas.style.cursor = 'pointer';
-          setTooltip({ visible: false, content: '', x: 0, y: 0, type: null });
           return;
         }
+      }
+
+      // Check for vessel
+      if (id.startsWith('vessel-')) {
+        const vessel = vesselPointMapRef.current.get(id);
+        if (vessel) {
+          const speedKts = vessel.speed?.toFixed(1) || '0';
+          setTooltip({
+            visible: true,
+            content: `${vessel.name || vessel.mmsi}\n${speedKts} kts`,
+            x, y,
+            type: 'vessel'
+          });
+          viewer.scene.canvas.style.cursor = 'pointer';
+          return;
+        }
+      }
+
+      // Check for satellite
+      if (id.startsWith('sat-')) {
+        const sat = satellitePointMapRef.current.get(id);
+        if (sat) {
+          const altKm = Math.round(sat.alt);
+          setTooltip({
+            visible: true,
+            content: `${sat.name}\n${altKm.toLocaleString()} km · ${sat.country}`,
+            x, y,
+            type: 'satellite'
+          });
+          viewer.scene.canvas.style.cursor = 'pointer';
+          return;
+        }
+      }
+
+      // Check for event marker
+      if (eventsRef.current.find(e => e.id === id || e.id === id.replace('-glow', ''))) {
+        viewer.scene.canvas.style.cursor = 'pointer';
+        setTooltip({ visible: false, content: '', x: 0, y: 0, type: null });
+        return;
       }
 
       // No valid hover target

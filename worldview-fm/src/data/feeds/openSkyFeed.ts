@@ -42,6 +42,7 @@ const MAX_FLIGHTS = 100; // Cap for performance
 const MILITARY_PATTERNS = [
   /^RCH/,      // Air Mobility Command
   /^REACH/,   // Air Mobility Command
+  /^LAGR/,    // Logistics airlift
   /^CHAOS/,   // Special ops
   /^JAKE/,    // Military
   /^KNIFE/,   // Military
@@ -80,13 +81,36 @@ const MILITARY_PATTERNS = [
   /^AWACS/,   // AWACS
   /^MAGIC/,   // AWACS
   /^RIVET/,   // Reconnaissance
-  /^COBRA/,   // Cobra Ball
   /^JSTARS/,  // E-8
   /^RAF/,     // Royal Air Force
   /^RRR/,     // Royal Air Force
   /^IAF/,     // Israeli Air Force
   /^ISRA/,    // Israeli
+  /^NAVY/,    // US Navy
+  /^ARMY/,    // US Army
+  /^DUKE/,    // C-17 common
+  /^ATLAS/,   // C-17/heavy lift
+  /^GORDO/,   // KC-135
+  /^SHELL/,   // Tanker
+  /^TEXAN/,   // T-6 trainer
+  /^PACK/,    // Pack callsigns
+  /^NITRO/,   // Fighter
+  /^KILLER/,  // Attack
+  /^BANDIT/,  // Fighter
 ];
+
+// US Military ICAO24 hex ranges
+// AE0000-AFFFFF is US military block
+function isMilitaryIcao24(icao24: string): boolean {
+  if (!icao24 || icao24.length !== 6) return false;
+  const hex = icao24.toLowerCase();
+  // US Military: AE0000 to AFFFFF
+  if (hex >= 'ae0000' && hex <= 'afffff') return true;
+  // Additional military blocks
+  // UK Military: 43C000-43CFFF
+  if (hex >= '43c000' && hex <= '43cfff') return true;
+  return false;
+}
 
 let currentState: OpenSkyState = {
   flights: [],
@@ -114,6 +138,13 @@ function isMilitaryCallsign(callsign: string): boolean {
   if (!callsign) return false;
   const upper = callsign.trim().toUpperCase();
   return MILITARY_PATTERNS.some(pattern => pattern.test(upper));
+}
+
+function isMilitaryFlight(icao24: string, callsign: string): boolean {
+  // Check ICAO24 hex range first (most reliable)
+  if (isMilitaryIcao24(icao24)) return true;
+  // Then check callsign patterns
+  return isMilitaryCallsign(callsign);
 }
 
 async function fetchFlights() {
@@ -160,7 +191,7 @@ async function fetchFlights() {
       if (lat === null || lon === null) continue;
 
       const callsignStr = callsign?.trim() || '';
-      const isMilitary = isMilitaryCallsign(callsignStr);
+      const isMilitary = isMilitaryFlight(icao24, callsignStr);
 
       if (isMilitary) militaryCount++;
 
