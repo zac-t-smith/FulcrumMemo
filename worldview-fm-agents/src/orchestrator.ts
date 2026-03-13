@@ -114,18 +114,15 @@ function setupCronJobs(): void {
   console.log('[Orchestrator] Cron jobs configured');
 }
 
-async function main(): Promise<void> {
-  console.log('[Orchestrator] Initializing...');
+// Exported function to initialize agents (called from server.ts)
+export async function initializeAgents(): Promise<void> {
+  console.log('[Orchestrator] Initializing agents...');
   console.log(`[Orchestrator] Anthropic API Key: ${process.env.ANTHROPIC_API_KEY ? 'Set' : 'MISSING'}`);
-  console.log('');
 
   if (!process.env.ANTHROPIC_API_KEY) {
-    console.error('[Orchestrator] ERROR: Missing ANTHROPIC_API_KEY in .env file');
-    process.exit(1);
+    console.error('[Orchestrator] ERROR: Missing ANTHROPIC_API_KEY');
+    return;
   }
-
-  // Start the Express API server
-  startServer();
 
   // Check if historical backfill is needed
   if (needsBackfill()) {
@@ -140,8 +137,15 @@ async function main(): Promise<void> {
   console.log('\n[Orchestrator] Running initial agent sweep...');
   await runAllAgents();
 
-  console.log('[Orchestrator] Agent swarm is now active and monitoring.');
-  console.log('[Orchestrator] Press Ctrl+C to stop.\n');
+  console.log('[Orchestrator] Agent swarm is now active and monitoring.\n');
+}
+
+async function main(): Promise<void> {
+  // Start the Express API server (skipAgents=true since we call initializeAgents below)
+  startServer(true);
+
+  // Initialize agents
+  await initializeAgents();
 }
 
 // Handle graceful shutdown
@@ -166,4 +170,7 @@ process.on('unhandledRejection', (reason) => {
   // Don't exit - keep running
 });
 
-main().catch(console.error);
+// Only run main() when this file is executed directly
+if (require.main === module) {
+  main().catch(console.error);
+}

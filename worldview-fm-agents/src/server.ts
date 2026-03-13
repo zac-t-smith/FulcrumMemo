@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import Anthropic from '@anthropic-ai/sdk';
 import { getEvents, getEventsSince, getEventsByType, getValidatedEvents, getAgentLog } from './utils';
 import { SystemStatus, AgentStatus } from './types';
+import { initializeAgents } from './orchestrator';
 
 dotenv.config();
 
@@ -359,7 +360,7 @@ app.get('/api/health', (_req: Request, res: Response) => {
   });
 });
 
-export function startServer(): void {
+export function startServer(skipAgents = false): void {
   app.listen(PORT, () => {
     console.log(`[Server] Agent API server running on http://localhost:${PORT}`);
     console.log(`[Server] Endpoints available:`);
@@ -371,6 +372,14 @@ export function startServer(): void {
     console.log(`  GET  /api/vessels       - Vessel positions`);
     console.log(`  POST /api/sitrep        - Generate situation report`);
     console.log(`  GET  /api/health        - Health check`);
+
+    // Start agent orchestrator unless skipped (e.g., when called from orchestrator.ts)
+    if (!skipAgents) {
+      console.log('[Server] Starting agent orchestrator...');
+      initializeAgents().catch(err => {
+        console.error('[Server] Failed to initialize agents:', err);
+      });
+    }
   });
 }
 
