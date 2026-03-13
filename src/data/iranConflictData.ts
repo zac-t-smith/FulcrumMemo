@@ -1635,124 +1635,185 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
       {
         thesis: '$100 as price floor, not spike',
         initialConfidence: 75,
-        currentConfidence: 96,
+        currentConfidence: 97,
         status: 'confirmed',
         evidence: [
           'Brent back above $100 despite record 400M barrel SPR release',
           'WTI surges 8% to $94',
           'Price recovered within 24 hours of largest reserve release in history',
           "IEA: 'largest supply disruption in history of global oil market'",
+          'IEA: global supply could fall 8 million bpd in March (nearly 8% of global supply)',
         ],
       },
       {
         thesis: 'Naval escort solution invalidated',
         initialConfidence: 40,
-        currentConfidence: 95,
+        currentConfidence: 98,
         status: 'invalidated',
         evidence: [
           "Energy Secretary Wright admits Navy 'not ready' to escort tankers",
           "Won't be ready until end of month",
           'Destroys Day 4 naval escort narrative',
           'Ships being attacked while Navy conducts mine-clearing operations',
+          'US-owned tanker Safesea Vishnu attacked off Iraq coast',
         ],
       },
       {
         thesis: 'Supply destruction expanding',
         initialConfidence: 80,
-        currentConfidence: 95,
+        currentConfidence: 97,
         status: 'confirmed',
         evidence: [
           'Iraq shuts down oil port operations at Basra after tanker attacks',
           'Iraq oil exports halted — not just Hormuz now',
           '3 more ships struck overnight',
           'Supply destruction spreading beyond strait to regional ports',
+          'US-owned tanker, Liberian ship, Japanese vessel all attacked',
+          'Two tankers caught fire in Iraqi territorial waters',
         ],
       },
       {
         thesis: 'Peace conditions unachievable',
         initialConfidence: 70,
-        currentConfidence: 92,
+        currentConfidence: 95,
         status: 'confirmed',
         evidence: [
           'Pezeshkian sets 3 conditions: recognition of rights, reparations, guarantees',
           'None achievable in current US political environment',
           "Khamenei adviser calls Trump 'Satan himself'",
-          'Structural impediments to negotiated resolution',
+          "Iran: ready for 'long-term war of attrition that will destroy the entire American economy'",
+          "Mojtaba warned war could spread to 'other fronts'",
         ],
       },
       {
         thesis: 'Regional infrastructure collapse',
         initialConfidence: 75,
-        currentConfidence: 90,
+        currentConfidence: 93,
         status: 'confirmed',
         evidence: [
           'Bahrain airport fuel storage hit by drone',
           'Kuwait: 6 power lines downed by interceptor debris',
           'Oman: Salalah port fuel tanks hit — first Omani damage',
+          'Dubai airport hit by drones, 4 wounded',
+          'Kuwait airport targeted by drones',
           'GCC infrastructure under sustained attack',
         ],
       },
       {
         thesis: 'Inflation transmission accelerating',
         initialConfidence: 70,
-        currentConfidence: 88,
+        currentConfidence: 90,
         status: 'confirmed',
         evidence: [
           'Goldman raises inflation forecast to 2.9-3.3%',
           'Gas at $3.60/gal (AAA)',
           'Greece caps gasoline profit margins for 3 months',
+          'Cathay Pacific raises fuel surcharges 105%',
           'Global policy response beginning',
+        ],
+      },
+      {
+        thesis: 'War cost asymmetry unsustainable',
+        initialConfidence: 80,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          'Pentagon: first 6 days cost $11.3B+ (~$1.9B/day — nearly double Day 6 estimate)',
+          "Sen. Coons: actual total 'significantly higher'",
+          'Munitions replacement costs alone exceed $10B',
+          'Day 6 estimate of $1B/day was undercount',
+        ],
+      },
+      {
+        thesis: 'Financial infrastructure as new threat vector',
+        initialConfidence: 50,
+        currentConfidence: 70,
+        status: 'developing',
+        evidence: [
+          'Iran threatens to target US-linked banks across Middle East',
+          'New escalation vector beyond energy/water/transport',
+          'Handala cyberattack (50TB from Stryker) demonstrates capability',
         ],
       },
     ],
     scenarioUpdate: scenarioUpdates[12], // Day 13 update
     keyDevelopments: [
       {
+        category: 'War Cost',
+        items: [
+          'Pentagon briefed senators: first 6 days cost $11.3B+ (roughly $1.9B/day — nearly double Day 6 estimate)',
+          "Sen. Coons: actual total 'significantly above that'",
+          'Munitions replacement costs alone exceed $10B',
+        ],
+      },
+      {
         category: 'Energy/Markets',
         items: [
           'Brent crude back above $100 despite record SPR release',
           'WTI surges 8% to $94',
           "Energy Secretary Wright: Navy 'not ready' to escort tankers — won't be ready until end of month",
+          'IEA: global supply could fall 8 million bpd in March (nearly 8% of global supply)',
           'Goldman raises inflation forecast to 2.9-3.3%',
           "IEA: 'largest supply disruption in history of global oil market'",
           'Gas: $3.60/gal (AAA)',
           'Greece caps gasoline profit margins for 3 months',
+          'Cathay Pacific raises fuel surcharges 105%',
+          'Market close: Dow -571pts (-1.2%), S&P -1.1%, Nasdaq -1.4%',
         ],
       },
       {
         category: 'Shipping/Ports',
         items: [
           '3 more ships struck overnight near Hormuz and Dubai',
+          'US-owned tanker Safesea Vishnu attacked off Iraq coast',
+          'Two tankers caught fire in Iraqi territorial waters',
           'Iraq shuts down oil port operations at Basra after tanker attacks',
           'Iraq oil exports halted',
           'Iran: some ships allowed through with permission',
           'IRGC: all ships must get Iran approval or face attack',
+          'IMO convening extraordinary session March 18-19',
         ],
       },
       {
-        category: 'Military',
+        category: 'Military/Iran Escalation',
         items: [
+          "Iran launched 'most intense operation since beginning of war' — most advanced ballistic missiles toward Tel Aviv and Haifa",
           'IRGC + Hezbollah launch joint missile operation against Israel',
-          'Iran claims most intense operation since beginning of war',
+          'Iran threatens to target US-linked banks across Middle East (new vector: financial infrastructure)',
+          "Mojtaba Khamenei warned war could spread to 'other fronts'",
+          "Khamenei's first message was text-only, read by TV anchor — no video/audio raises injury questions",
+          'Dubai airport hit by drones, 4 wounded (still operating)',
+          'Kuwait airport targeted by drones (material damage only)',
           'Bahrain airport fuel storage hit by drone',
           'Kuwait: 6 power lines downed by interceptor debris',
           'Oman: Salalah port fuel tanks hit — first Omani damage',
         ],
       },
       {
-        category: 'Diplomatic/Humanitarian',
+        category: 'Humanitarian',
+        items: [
+          '3.2 million Iranians displaced (UN refugee agency)',
+          'Lebanon: 687 killed, 750,000+ displaced',
+          'Iran UN rep: 1,348 civilians killed, 17,000+ injured',
+          "UNICEF: 'catastrophic' situation, 1,100+ children injured or killed",
+          '46 senators sign letter demanding investigation of Minab school strike',
+        ],
+      },
+      {
+        category: 'Diplomatic',
         items: [
           'Pezeshkian sets 3 conditions: recognition of rights, reparations, guarantees against future aggression',
           "Khamenei adviser calls Trump 'Satan himself'",
-          'Iran UN rep: 1,348 civilians killed, 17,000+ injured',
-          'UNICEF: 1,100+ children injured or killed',
+          "Iran says ready for 'long-term war of attrition that will destroy the entire American economy'",
+          'Spain withdraws ambassador to Israel',
           'UN Security Council adopts resolution urging Iran to stop Gulf attacks',
         ],
       },
       {
         category: 'Cyber',
         items: [
-          'Iran-linked hackers (Handala) steal 50TB from medical device company Stryker',
+          'Iran-linked hackers (Handala) steal 50TB from medical device company Stryker — retaliation for Minab school strike',
+          'Cyberwarfare front now active alongside kinetic operations',
         ],
       },
     ],
@@ -1765,11 +1826,14 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     },
     tradingImplications: [
       "$100 oil is the floor, not the ceiling — record SPR release couldn't hold it below",
+      "IEA: 8M bpd supply loss in March = ~8% of global supply. This is structural, not transient",
       "Naval escort thesis destroyed — Navy 'not ready' for weeks per Energy Secretary",
-      "Supply destruction expanding beyond Hormuz — Iraq ports now shut",
-      "Pezeshkian's 3 conditions = no achievable off-ramp. Recognition + reparations + guarantees impossible in US political environment",
-      "Goldman inflation forecast 2.9-3.3% = stagflation thesis accelerating",
-      "Full Escalation at 58% — remains base case",
+      "Supply destruction expanding beyond Hormuz — Iraq ports now shut, US tanker Safesea Vishnu attacked",
+      "War cost accelerating: $11.3B first 6 days (~$1.9B/day) per Pentagon — nearly double Day 6 estimate. Munitions alone $10B+",
+      "Pezeshkian's 3 conditions = no achievable off-ramp. Iran ready for 'long-term war of attrition'",
+      "New threat vector: Iran threatens US-linked banks across Middle East. Financial infrastructure now target",
+      "Goldman inflation forecast 2.9-3.3% = stagflation thesis accelerating. Cathay raises fuel surcharges 105%",
+      "Full Escalation at 58% — remains base case. Khamenei warns war could spread to 'other fronts'",
     ],
   },
 };
@@ -2023,7 +2087,15 @@ export interface WarCostEntry extends TimeSeriesEntry {
 
 export const warCostEstimate: WarCostEntry[] = [
   { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), dailyCostUSD: 1000000000, note: 'NBC sources: war costing U.S. $1 billion per day' },
+  { date: 'Mar 12', timestamp: Date.parse('2026-03-12'), dailyCostUSD: 1900000000, cumulativeCostUSD: 11300000000, note: "Pentagon briefed Senate: $11.3B first 6 days (~$1.9B/day). Sen. Coons says actual total 'significantly higher.' Munitions replacement alone exceeds $10B." },
 ];
+
+export const ieaSupplyImpact = {
+  date: '2026-03-12',
+  estimatedSupplyLossBpd: 8000000,
+  percentGlobalSupply: 8,
+  note: 'IEA estimates global supply could fall 8 million bpd in March — nearly 8% of global supply',
+};
 
 export const macroTransmissionChain = [
   {
@@ -2227,8 +2299,11 @@ export const conflictEvents: ConflictEvent[] = [
   { date: '2026-03-12', day: 13, lat: 26.2700, lng: 50.6300, type: 'infrastructure_energy', target: 'Bahrain Airport Fuel Storage', description: 'Iranian drone strikes fuel storage at Bahrain airport.', status: 'confirmed' },
   { date: '2026-03-12', day: 13, lat: 29.3117, lng: 47.4818, type: 'strike_iran', target: 'Kuwait Power Grid', description: '6 power lines downed by interceptor debris in Kuwait.', status: 'confirmed' },
   { date: '2026-03-12', day: 13, lat: 17.0194, lng: 54.0924, type: 'infrastructure_energy', target: 'Salalah Port, Oman', description: 'Fuel tanks at Salalah port hit by Iranian strike. First Omani infrastructure damage.', status: 'confirmed' },
-  { date: '2026-03-12', day: 13, lat: 32.0853, lng: 34.7818, type: 'strike_iran', target: 'Israel', description: 'IRGC + Hezbollah launch joint missile operation — Iran claims most intense operation since war began.', status: 'confirmed' },
+  { date: '2026-03-12', day: 13, lat: 32.0853, lng: 34.7818, type: 'strike_iran', target: 'Tel Aviv and Haifa, Israel', description: "Iran's 'most intense operation since beginning of war' — most advanced ballistic missiles toward Tel Aviv and Haifa.", status: 'confirmed' },
   { date: '2026-03-12', day: 13, lat: 25.2700, lng: 55.3300, type: 'shipping', target: 'Dubai anchorage', description: 'Additional ships struck overnight near Dubai.', status: 'confirmed' },
+  { date: '2026-03-12', day: 13, lat: 29.7, lng: 48.8, type: 'shipping', target: 'US tanker Safesea Vishnu, off Iraq coast', description: 'US-owned tanker attacked off Iraq coast. Two tankers caught fire in Iraqi territorial waters.', status: 'confirmed' },
+  { date: '2026-03-12', day: 13, lat: 25.2532, lng: 55.3657, type: 'strike_iran', target: 'Dubai International Airport', description: 'Dubai airport hit by Iranian drones. 4 wounded. Airport still operating.', impact: '4 wounded', status: 'confirmed' },
+  { date: '2026-03-12', day: 13, lat: 29.2266, lng: 47.9689, type: 'strike_iran', target: 'Kuwait International Airport', description: 'Kuwait airport targeted by Iranian drones. Material damage only.', status: 'confirmed' },
 ];
 
 // Insurance exclusion zone polygon (for map overlay)
