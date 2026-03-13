@@ -190,16 +190,21 @@ export function Header({ vesselCount = 0, onShare, onSitrep }: HeaderProps) {
           </span>
           {oilPrices?.brent ? (
             <span
-              className={`text-xs font-bold font-mono px-2 py-0.5 rounded ${
+              className={`text-xs font-bold font-mono px-2 py-0.5 rounded flex items-center gap-1 ${
+                oilPrices.isStatic ? 'text-[#F96302] bg-[#F96302]/20' :
                 oilPrices.brent.direction === 'up' ? 'text-[#22c55e] bg-[#22c55e]/20 price-up' :
                 oilPrices.brent.direction === 'down' ? 'text-[#ef4444] bg-[#ef4444]/20 price-down' :
                 'text-gray-300 bg-gray-500/20'
               }`}
             >
               ${oilPrices.brent.price.toFixed(2)}
-              <span className="ml-1 text-[10px]">
-                {oilPrices.brent.changePercent >= 0 ? '+' : ''}{oilPrices.brent.changePercent.toFixed(2)}%
-              </span>
+              {oilPrices.isStatic ? (
+                <span className="text-[9px] text-gray-400 ml-1">CACHED</span>
+              ) : (
+                <span className="ml-1 text-[10px]">
+                  {oilPrices.brent.changePercent >= 0 ? '+' : ''}{oilPrices.brent.changePercent.toFixed(2)}%
+                </span>
+              )}
             </span>
           ) : (
             <span className="text-xs font-bold text-gray-500 bg-gray-500/20 px-2 py-0.5 rounded">

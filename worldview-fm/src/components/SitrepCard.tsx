@@ -8,7 +8,9 @@ interface SitrepData {
   cached?: boolean;
 }
 
-const SITREP_API_URL = 'http://localhost:3001/api/sitrep';
+// Configurable agent URL - defaults to localhost for dev
+const AGENT_URL = import.meta.env.VITE_AGENT_URL || 'http://localhost:3001';
+const SITREP_API_URL = `${AGENT_URL}/api/sitrep`;
 const REFRESH_INTERVAL = 30 * 60 * 1000; // 30 minutes
 
 export function SitrepCard() {

@@ -22,7 +22,9 @@ export interface AISStreamState {
 }
 
 const AIS_WS_URL = 'wss://stream.aisstream.io/v0/stream';
-const FALLBACK_API_URL = 'http://localhost:3001/api/vessels';
+// Configurable agent URL - defaults to localhost for dev
+const AGENT_URL = import.meta.env.VITE_AGENT_URL || 'http://localhost:3001';
+const FALLBACK_API_URL = `${AGENT_URL}/api/vessels`;
 const MAX_VESSELS = 200; // PERFORMANCE: reduced from 300
 const RECONNECT_DELAY = 5000;
 const WS_TIMEOUT = 10000; // 10 seconds to receive first message

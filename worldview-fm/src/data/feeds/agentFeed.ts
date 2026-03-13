@@ -25,7 +25,8 @@ export interface AgentFeedState {
   events: AgentEvent[]
 }
 
-const AGENT_API = 'http://localhost:3001'
+// Configurable agent URL - defaults to localhost for dev
+const AGENT_API = import.meta.env.VITE_AGENT_URL || 'http://localhost:3001'
 
 // Helper to detect if running on localhost
 function isLocalhost(): boolean {

@@ -35,11 +35,14 @@ jobs:
       - name: Setup SPA routing
         run: cp dist/index.html dist/404.html
 
-      # Verify events-static.json exists (should be committed to repo)
-      - name: Verify events snapshot
+      # Update events snapshot from agent data if available
+      - name: Update events snapshot
         run: |
-          if [ -f worldview-fm/public/events-static.json ]; then
-            echo "Events snapshot found: $(wc -l < worldview-fm/public/events-static.json) lines"
+          if [ -f worldview-fm-agents/src/data/events.json ]; then
+            cp worldview-fm-agents/src/data/events.json worldview-fm/public/events-static.json
+            echo "Snapshot updated from agent data: $(wc -l < worldview-fm/public/events-static.json) lines"
+          elif [ -f worldview-fm/public/events-static.json ]; then
+            echo "Using existing snapshot: $(wc -l < worldview-fm/public/events-static.json) lines"
           else
             echo "WARNING: events-static.json not found - creating empty file"
             mkdir -p worldview-fm/public

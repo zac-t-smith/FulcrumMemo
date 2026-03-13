@@ -305,13 +305,24 @@ export function WorldMap({
     });
   }, [agentFeed.events, timelineDate]);
 
-  // Stable key for MarkerClusterGroup - only changes when event count actually changes
-  const clusterKey = useRef(0);
+  // Force re-render of MarkerClusterGroup when events change
+  const [clusterKey, setClusterKey] = useState(0);
   const prevEventCount = useRef(0);
-  if (filteredAgentEvents.length !== prevEventCount.current) {
-    prevEventCount.current = filteredAgentEvents.length;
-    clusterKey.current += 1;
-  }
+
+  useEffect(() => {
+    if (filteredAgentEvents.length !== prevEventCount.current) {
+      console.log('[WorldMap] Event count changed:', prevEventCount.current, '->', filteredAgentEvents.length, '- forcing cluster re-render');
+      prevEventCount.current = filteredAgentEvents.length;
+      setClusterKey(k => k + 1);
+    }
+  }, [filteredAgentEvents.length]);
+
+  // Log when markers should render
+  useEffect(() => {
+    if (layers.conflictEvents && filteredAgentEvents.length > 0) {
+      console.log('[WorldMap] Markers added to map:', filteredAgentEvents.length);
+    }
+  }, [layers.conflictEvents, filteredAgentEvents.length, clusterKey]);
 
   // Debug logging - only when values change
   useEffect(() => {
@@ -389,7 +400,7 @@ export function WorldMap({
         {/* Agent-sourced events - clustered markers */}
         {layers.conflictEvents && filteredAgentEvents.length > 0 && (
           <MarkerClusterGroup
-            key={`cluster-${clusterKey.current}`}
+            key={`cluster-${clusterKey}`}
             chunkedLoading
             showCoverageOnHover={false}
             spiderfyOnMaxZoom={true}

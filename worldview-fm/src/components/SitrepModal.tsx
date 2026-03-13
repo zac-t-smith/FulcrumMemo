@@ -17,7 +17,8 @@ interface SitrepData {
   cached?: boolean;
 }
 
-const AGENT_API = 'http://localhost:3001';
+// Configurable agent URL - defaults to localhost for dev
+const AGENT_API = import.meta.env.VITE_AGENT_URL || 'http://localhost:3001';
 
 export function SitrepModal({ isOpen, onClose }: SitrepModalProps) {
   const [sitrep, setSitrep] = useState<SitrepData | null>(null);

@@ -9,6 +9,7 @@ export interface OilPrice {
   changePercent: number;
   direction: 'up' | 'down' | 'unchanged';
   lastUpdate: Date;
+  isStatic?: boolean;
 }
 
 export interface OilPriceState {
@@ -16,10 +17,43 @@ export interface OilPriceState {
   wti: OilPrice | null;
   isLoading: boolean;
   error: string | null;
+  isStatic?: boolean;
 }
 
-const AGENT_API_URL = 'http://localhost:3001/api/market';
+// Configurable agent URL - defaults to localhost for dev
+const AGENT_URL = import.meta.env.VITE_AGENT_URL || 'http://localhost:3001';
+const AGENT_API_URL = `${AGENT_URL}/api/market`;
 const POLL_INTERVAL = 5 * 60 * 1000; // 5 minutes
+
+// Helper to detect if running on GitHub Pages
+function isGitHubPages(): boolean {
+  return window.location.hostname.includes('github.io');
+}
+
+// Static fallback prices for GitHub Pages (last known values from anchor events)
+const STATIC_BRENT: OilPrice = {
+  symbol: 'BZ=F',
+  name: 'Brent Crude',
+  price: 108.75,
+  previousPrice: null,
+  change: 0,
+  changePercent: 0,
+  direction: 'unchanged',
+  lastUpdate: new Date(),
+  isStatic: true
+};
+
+const STATIC_WTI: OilPrice = {
+  symbol: 'CL=F',
+  name: 'WTI Crude',
+  price: 108.62,
+  previousPrice: null,
+  change: 0,
+  changePercent: 0,
+  direction: 'unchanged',
+  lastUpdate: new Date(),
+  isStatic: true
+};
 
 let currentState: OilPriceState = {
   brent: null,
@@ -124,6 +158,20 @@ async function fetchPrices() {
 export function startOilPriceFeed() {
   if (pollInterval) {
     console.log('[OilPrice] Already running');
+    return;
+  }
+
+  // On GitHub Pages, use static fallback prices
+  if (isGitHubPages()) {
+    console.log('[OilPrice] GitHub Pages mode: using static cached prices');
+    currentState = {
+      brent: STATIC_BRENT,
+      wti: STATIC_WTI,
+      isLoading: false,
+      error: null,
+      isStatic: true
+    };
+    notify();
     return;
   }
 
