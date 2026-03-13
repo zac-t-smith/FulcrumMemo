@@ -131,6 +131,20 @@ function GlobeMapComponent({
   const [selectedEvent, setSelectedEvent] = useState<AgentEvent | null>(null);
   const [modalPos, setModalPos] = useState({ x: 0, y: 0 });
 
+  // Tooltip state for flights/vessels
+  const [tooltip, setTooltip] = useState<{
+    visible: boolean;
+    content: string;
+    x: number;
+    y: number;
+    type: 'flight' | 'vessel' | 'satellite' | null;
+  }>({ visible: false, content: '', x: 0, y: 0, type: null });
+
+  // Maps for flight/vessel point lookup
+  const flightPointMapRef = useRef<Map<string, FlightPosition>>(new Map());
+  const vesselPointMapRef = useRef<Map<string, VesselPosition>>(new Map());
+  const satellitePointMapRef = useRef<Map<string, SatellitePosition>>(new Map());
+
   // Stats for display
   const statsRef = useRef({
     satellites: 0,
@@ -305,14 +319,75 @@ function GlobeMapComponent({
       setSelectedEvent(null);
     }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
 
-    // Hover handler for cursor
+    // Hover handler for cursor and tooltips
     handler.setInputAction((movement: { endPosition: Cesium.Cartesian2 }) => {
       const pickedObject = viewer.scene.pick(movement.endPosition);
-      if (Cesium.defined(pickedObject) && pickedObject.primitive === pointsRef.current) {
-        viewer.scene.canvas.style.cursor = 'pointer';
-      } else {
-        viewer.scene.canvas.style.cursor = 'default';
+
+      if (Cesium.defined(pickedObject) && pickedObject.id) {
+        const id = pickedObject.id as string;
+        const x = movement.endPosition.x;
+        const y = movement.endPosition.y;
+
+        // Check for flight
+        if (id.startsWith('flight-')) {
+          const flight = flightPointMapRef.current.get(id);
+          if (flight) {
+            const altFt = Math.round(flight.altitude * 3.28084);
+            const speedKts = Math.round(flight.velocity * 1.944);
+            setTooltip({
+              visible: true,
+              content: `${flight.callsign || flight.icao24}\n${altFt.toLocaleString()} ft · ${speedKts} kts`,
+              x, y,
+              type: 'flight'
+            });
+            viewer.scene.canvas.style.cursor = 'pointer';
+            return;
+          }
+        }
+
+        // Check for vessel
+        if (id.startsWith('vessel-')) {
+          const vessel = vesselPointMapRef.current.get(id);
+          if (vessel) {
+            const speedKts = vessel.speed?.toFixed(1) || '0';
+            setTooltip({
+              visible: true,
+              content: `${vessel.name || vessel.mmsi}\n${speedKts} kts`,
+              x, y,
+              type: 'vessel'
+            });
+            viewer.scene.canvas.style.cursor = 'pointer';
+            return;
+          }
+        }
+
+        // Check for satellite
+        if (id.startsWith('sat-')) {
+          const sat = satellitePointMapRef.current.get(id);
+          if (sat) {
+            const altKm = Math.round(sat.alt);
+            setTooltip({
+              visible: true,
+              content: `${sat.name}\n${altKm.toLocaleString()} km · ${sat.country}`,
+              x, y,
+              type: 'satellite'
+            });
+            viewer.scene.canvas.style.cursor = 'pointer';
+            return;
+          }
+        }
+
+        // Check for event (existing behavior)
+        if (eventsRef.current.find(e => e.id === id)) {
+          viewer.scene.canvas.style.cursor = 'pointer';
+          setTooltip({ visible: false, content: '', x: 0, y: 0, type: null });
+          return;
+        }
       }
+
+      // No valid hover target
+      viewer.scene.canvas.style.cursor = 'default';
+      setTooltip({ visible: false, content: '', x: 0, y: 0, type: null });
     }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
 
     clickHandlerRef.current = handler;
@@ -387,6 +462,9 @@ function GlobeMapComponent({
     groundTracks.removeAll();
     pointEventMapRef.current.clear();
     eventPointsRef.current.clear();
+    flightPointMapRef.current.clear();
+    vesselPointMapRef.current.clear();
+    satellitePointMapRef.current.clear();
 
     const layers = layersRef.current;
     const cameraAlt = viewer.camera.positionCartographic.height;
@@ -448,14 +526,18 @@ function GlobeMapComponent({
         const category = getShipTypeCategory(vessel.shipType);
         const color = VESSEL_COLORS[category] || VESSEL_COLORS.other;
         const size = category === 'military' ? 8 : category === 'tanker' ? 6 : 5;
+        const vesselId = `vessel-${vessel.mmsi}`;
 
         points.add({
           position: Cesium.Cartesian3.fromDegrees(vessel.lon, vessel.lat, 0),
           pixelSize: size,
           color: color,
           outlineColor: Cesium.Color.WHITE.withAlpha(0.5),
-          outlineWidth: 1
+          outlineWidth: 1,
+          id: vesselId
         });
+
+        vesselPointMapRef.current.set(vesselId, vessel);
       }
     }
 
@@ -464,14 +546,18 @@ function GlobeMapComponent({
       for (const flight of flightsRef.current) {
         const color = FLIGHT_COLORS[flight.category] || FLIGHT_COLORS.unknown;
         const size = flight.category === 'military' ? 8 : 5;
+        const flightId = `flight-${flight.icao24}`;
 
         points.add({
           position: Cesium.Cartesian3.fromDegrees(flight.lon, flight.lat, flight.altitude),
           pixelSize: size,
           color: color,
           outlineColor: Cesium.Color.WHITE.withAlpha(0.5),
-          outlineWidth: 1
+          outlineWidth: 1,
+          id: flightId
         });
+
+        flightPointMapRef.current.set(flightId, flight);
 
         // Military flight labels
         if (flight.category === 'military' && showLabels && flight.callsign) {
@@ -499,6 +585,7 @@ function GlobeMapComponent({
         const colorStr = getSatelliteCountryColor(sat.country);
         const color = Cesium.Color.fromCssColorString(colorStr);
         const size = sat.isOverTheater ? 6 : 4;
+        const satId = `sat-${sat.noradId}`;
 
         // Satellite position
         points.add({
@@ -506,8 +593,11 @@ function GlobeMapComponent({
           pixelSize: size,
           color: color,
           outlineColor: sat.isOverTheater ? Cesium.Color.WHITE : Cesium.Color.TRANSPARENT,
-          outlineWidth: sat.isOverTheater ? 1 : 0
+          outlineWidth: sat.isOverTheater ? 1 : 0,
+          id: satId
         });
+
+        satellitePointMapRef.current.set(satId, sat);
 
         // Labels for surveillance satellites over theater
         if (sat.isOverTheater && sat.category === 'leo-surveillance' && showLabels) {
@@ -663,6 +753,31 @@ function GlobeMapComponent({
         isLive={isLiveRef.current}
         onLiveToggle={handleLiveToggle}
       />
+
+      {/* Hover Tooltip */}
+      {tooltip.visible && (
+        <div
+          style={{
+            position: 'fixed',
+            left: tooltip.x + 12,
+            top: tooltip.y - 10,
+            backgroundColor: tooltip.type === 'flight' ? 'rgba(34, 197, 94, 0.9)'
+              : tooltip.type === 'vessel' ? 'rgba(249, 99, 2, 0.9)'
+              : 'rgba(59, 130, 246, 0.9)',
+            color: 'white',
+            padding: '4px 8px',
+            borderRadius: '4px',
+            fontSize: '11px',
+            fontFamily: 'ui-monospace, monospace',
+            whiteSpace: 'pre-line',
+            pointerEvents: 'none',
+            zIndex: 999,
+            boxShadow: '0 2px 8px rgba(0,0,0,0.3)'
+          }}
+        >
+          {tooltip.content}
+        </div>
+      )}
 
       {/* Event Detail Modal - positioned near click location */}
       {selectedEvent && (
