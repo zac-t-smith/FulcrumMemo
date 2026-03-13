@@ -187,11 +187,16 @@ app.get('/api/market', async (_req: Request, res: Response) => {
       return res.json({ success: true, ...marketCache.data, cached: true });
     }
 
-    // Fetch fresh data from Yahoo Finance
+    // Fetch fresh data from Yahoo Finance with 5 second timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
+
     const [brentRes, wtiRes] = await Promise.all([
-      fetch('https://query1.finance.yahoo.com/v8/finance/chart/BZ=F'),
-      fetch('https://query1.finance.yahoo.com/v8/finance/chart/CL=F')
+      fetch('https://query1.finance.yahoo.com/v8/finance/chart/BZ=F', { signal: controller.signal }),
+      fetch('https://query1.finance.yahoo.com/v8/finance/chart/CL=F', { signal: controller.signal })
     ]);
+
+    clearTimeout(timeoutId);
 
     const brentData = await brentRes.json() as { chart?: { result?: Array<{ meta?: { regularMarketPrice?: number; previousClose?: number } }> } };
     const wtiData = await wtiRes.json() as { chart?: { result?: Array<{ meta?: { regularMarketPrice?: number; previousClose?: number } }> } };
