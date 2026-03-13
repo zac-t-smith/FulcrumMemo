@@ -73,6 +73,13 @@ jobs:
           VITE_CESIUM_ION_TOKEN: ${{ secrets.VITE_CESIUM_ION_TOKEN }}
           VITE_AISSTREAM_API_KEY: ${{ secrets.VITE_AISSTREAM_API_KEY }}
 
+      # Copy Cesium assets to dist (vite-plugin-cesium doesn't always copy them)
+      - name: Copy Cesium assets
+        run: |
+          mkdir -p worldview-fm/dist/cesium
+          cp -r worldview-fm/node_modules/cesium/Build/Cesium/. worldview-fm/dist/cesium/
+          echo "Cesium assets copied: $(ls worldview-fm/dist/cesium/ | head -5)"
+
       # Combine both builds into one dist folder
       - name: Combine builds
         run: |

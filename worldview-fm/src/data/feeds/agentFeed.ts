@@ -26,7 +26,20 @@ export interface AgentFeedState {
 }
 
 const AGENT_API = 'http://localhost:3001'
-const STATIC_EVENTS_URL = import.meta.env.BASE_URL + 'events-static.json'
+
+// Helper to detect if running on localhost
+function isLocalhost(): boolean {
+  return window.location.hostname === 'localhost' ||
+         window.location.hostname === '127.0.0.1'
+}
+
+// Build static URL properly
+function getStaticEventsUrl(): string {
+  const base = import.meta.env.BASE_URL || '/'
+  const url = `${base}events-static.json`
+  console.log('[AgentFeed] Static URL constructed:', url, 'from BASE_URL:', base)
+  return url
+}
 
 let currentState: AgentFeedState = {
   status: 'connecting',
@@ -51,16 +64,27 @@ export function subscribeToAgentFeed(fn: (state: AgentFeedState) => void) {
 
 // Fetch from static fallback (baked events.json for GitHub Pages)
 async function fetchStaticEvents(): Promise<boolean> {
+  const staticUrl = getStaticEventsUrl()
+
   try {
-    console.log('[AgentFeed] Attempting static fallback from:', STATIC_EVENTS_URL)
-    const res = await fetch(STATIC_EVENTS_URL)
-    if (!res.ok) throw new Error(`Static fetch returned ${res.status}`)
-    const data = await res.json()
+    console.log('[AgentFeed] Fetching static from:', staticUrl)
+    const res = await fetch(staticUrl)
+    console.log('[AgentFeed] Static response status:', res.status)
+
+    if (!res.ok) {
+      console.error('[AgentFeed] Static fetch failed:', res.status, res.statusText)
+      return false
+    }
+
+    const text = await res.text()
+    console.log('[AgentFeed] Static raw length:', text.length)
+
+    const data = JSON.parse(text)
 
     // Handle both array format and object with events array
     const events = Array.isArray(data) ? data : (data.events || [])
 
-    console.log('[AgentFeed] Static mode: loaded', events.length, 'cached events')
+    console.log('[AgentFeed] Static parsed events:', events.length)
     currentState = {
       status: 'static',
       eventCount: events.length,
@@ -69,13 +93,25 @@ async function fetchStaticEvents(): Promise<boolean> {
     }
     return true
   } catch (err) {
-    console.warn('[AgentFeed] Static fallback failed:', err)
+    console.error('[AgentFeed] Static parse error:', err)
     return false
   }
 }
 
 export async function startAgentFeed() {
-  console.log('[AgentFeed] Starting feed, fetching from', AGENT_API)
+  // On GitHub Pages, skip live feed entirely - go straight to static
+  if (!isLocalhost()) {
+    console.log('[AgentFeed] GitHub Pages mode: loading static snapshot only')
+    const staticLoaded = await fetchStaticEvents()
+    if (!staticLoaded) {
+      currentState = { ...currentState, status: 'offline' }
+    }
+    notify()
+    return
+  }
+
+  // Only attempt localhost connection when actually running locally
+  console.log('[AgentFeed] Localhost mode: trying live feed from', AGENT_API)
 
   try {
     // Try live agent server first (3 second timeout for fast fallback)

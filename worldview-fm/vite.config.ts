@@ -7,13 +7,11 @@ export default defineConfig({
   base: '/FulcrumMemo/worldview-fm/',
   plugins: [
     react(),
-    cesium({
-      rebuildCesium: false
-    })
+    cesium()  // No options - let plugin handle asset copying
   ],
   define: {
     'process.env': {},
-    CESIUM_BASE_URL: JSON.stringify('/FulcrumMemo/worldview-fm/'),
+    CESIUM_BASE_URL: JSON.stringify('/FulcrumMemo/worldview-fm/cesium/'),
   },
   build: {
     chunkSizeWarningLimit: 3000,
