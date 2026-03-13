@@ -63,20 +63,24 @@ const EVENT_COLORS: Record<string, Cesium.Color> = {
   default: Cesium.Color.fromCssColorString('#6b7280')
 };
 
-// Vessel colors
-const VESSEL_COLORS: Record<string, Cesium.Color> = {
-  tanker: Cesium.Color.fromCssColorString('#F96302'),
-  cargo: Cesium.Color.fromCssColorString('#3b82f6'),
-  military: Cesium.Color.fromCssColorString('#ef4444'),
-  other: Cesium.Color.fromCssColorString('#6b7280')
-};
+// Note: Vessel and flight colors are now embedded in SVG icons
+// See SHIP_SVG_* and PLANE_SVG_* constants below
 
-// Flight colors
-const FLIGHT_COLORS: Record<string, Cesium.Color> = {
-  military: Cesium.Color.fromCssColorString('#ef4444'),
-  commercial: Cesium.Color.fromCssColorString('#22c55e'),
-  unknown: Cesium.Color.fromCssColorString('#6b7280')
-};
+// SVG Icons for billboards
+const PLANE_SVG_COMMERCIAL = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#22c55e" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>`;
+const PLANE_SVG_MILITARY = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#ef4444" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>`;
+const PLANE_SVG_UNKNOWN = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#6b7280" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>`;
+
+// Ship SVGs by type
+const SHIP_SVG_TANKER = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#F96302" d="M20 21c-1.39 0-2.78-.47-4-1.32-2.44 1.71-5.56 1.71-8 0C6.78 20.53 5.39 21 4 21H2v2h2c1.39 0 2.78-.47 4-1.32 2.44 1.71 5.56 1.71 8 0 1.22.85 2.61 1.32 4 1.32h2v-2h-2zM3.95 19H4c1.6 0 3.02-.88 4-2 .98 1.12 2.4 2 4 2s3.02-.88 4-2c.98 1.12 2.4 2 4 2h.05l1.89-6.68c.08-.26.06-.54-.06-.78s-.34-.42-.6-.5L20 10.62V6c0-1.1-.9-2-2-2h-3V1H9v3H6c-1.1 0-2 .9-2 2v4.62l-1.29.42c-.26.08-.47.26-.6.5s-.14.52-.06.78L3.95 19z"/></svg>`;
+const SHIP_SVG_MILITARY = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#ef4444" d="M20 21c-1.39 0-2.78-.47-4-1.32-2.44 1.71-5.56 1.71-8 0C6.78 20.53 5.39 21 4 21H2v2h2c1.39 0 2.78-.47 4-1.32 2.44 1.71 5.56 1.71 8 0 1.22.85 2.61 1.32 4 1.32h2v-2h-2zM3.95 19H4c1.6 0 3.02-.88 4-2 .98 1.12 2.4 2 4 2s3.02-.88 4-2c.98 1.12 2.4 2 4 2h.05l1.89-6.68c.08-.26.06-.54-.06-.78s-.34-.42-.6-.5L20 10.62V6c0-1.1-.9-2-2-2h-3V1H9v3H6c-1.1 0-2 .9-2 2v4.62l-1.29.42c-.26.08-.47.26-.6.5s-.14.52-.06.78L3.95 19z"/></svg>`;
+const SHIP_SVG_CARGO = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#3b82f6" d="M20 21c-1.39 0-2.78-.47-4-1.32-2.44 1.71-5.56 1.71-8 0C6.78 20.53 5.39 21 4 21H2v2h2c1.39 0 2.78-.47 4-1.32 2.44 1.71 5.56 1.71 8 0 1.22.85 2.61 1.32 4 1.32h2v-2h-2zM3.95 19H4c1.6 0 3.02-.88 4-2 .98 1.12 2.4 2 4 2s3.02-.88 4-2c.98 1.12 2.4 2 4 2h.05l1.89-6.68c.08-.26.06-.54-.06-.78s-.34-.42-.6-.5L20 10.62V6c0-1.1-.9-2-2-2h-3V1H9v3H6c-1.1 0-2 .9-2 2v4.62l-1.29.42c-.26.08-.47.26-.6.5s-.14.52-.06.78L3.95 19z"/></svg>`;
+const SHIP_SVG_OTHER = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#6b7280" d="M20 21c-1.39 0-2.78-.47-4-1.32-2.44 1.71-5.56 1.71-8 0C6.78 20.53 5.39 21 4 21H2v2h2c1.39 0 2.78-.47 4-1.32 2.44 1.71 5.56 1.71 8 0 1.22.85 2.61 1.32 4 1.32h2v-2h-2zM3.95 19H4c1.6 0 3.02-.88 4-2 .98 1.12 2.4 2 4 2s3.02-.88 4-2c.98 1.12 2.4 2 4 2h.05l1.89-6.68c.08-.26.06-.54-.06-.78s-.34-.42-.6-.5L20 10.62V6c0-1.1-.9-2-2-2h-3V1H9v3H6c-1.1 0-2 .9-2 2v4.62l-1.29.42c-.26.08-.47.26-.6.5s-.14.52-.06.78L3.95 19z"/></svg>`;
+
+// Helper to get SVG data URL
+function svgToDataUrl(svg: string): string {
+  return 'data:image/svg+xml,' + encodeURIComponent(svg);
+}
 
 // Shipping route data
 const SHIPPING_ROUTES = {
@@ -111,6 +115,13 @@ function GlobeMapComponent({
   const labelsRef = useRef<Cesium.LabelCollection | null>(null);
   const groundTracksRef = useRef<Cesium.PrimitiveCollection | null>(null);
   const clickHandlerRef = useRef<Cesium.ScreenSpaceEventHandler | null>(null);
+
+  // Billboard collections for flights and vessels (rotatable icons)
+  const flightBillboardsRef = useRef<Cesium.BillboardCollection | null>(null);
+  const vesselBillboardsRef = useRef<Cesium.BillboardCollection | null>(null);
+
+  // Polyline collection for flight trails
+  const flightTrailsRef = useRef<Cesium.PolylineCollection | null>(null);
 
   // Point-to-event mapping for click detection
   const pointEventMapRef = useRef<Map<number, AgentEvent>>(new Map());
@@ -251,15 +262,43 @@ function GlobeMapComponent({
     const points = new Cesium.PointPrimitiveCollection();
     const labels = new Cesium.LabelCollection();
     const groundTracks = new Cesium.PrimitiveCollection();
+    const flightBillboards = new Cesium.BillboardCollection();
+    const vesselBillboards = new Cesium.BillboardCollection();
+    const flightTrails = new Cesium.PolylineCollection();
 
     viewer.scene.primitives.add(points);
     viewer.scene.primitives.add(labels);
     viewer.scene.primitives.add(groundTracks);
+    viewer.scene.primitives.add(flightBillboards);
+    viewer.scene.primitives.add(vesselBillboards);
+    viewer.scene.primitives.add(flightTrails);
 
     viewerRef.current = viewer;
     pointsRef.current = points;
     labelsRef.current = labels;
     groundTracksRef.current = groundTracks;
+    flightBillboardsRef.current = flightBillboards;
+    vesselBillboardsRef.current = vesselBillboards;
+    flightTrailsRef.current = flightTrails;
+
+    // Add night lights layer (Cesium Ion asset) - async IIFE
+    (async () => {
+      try {
+        const nightLights = await Cesium.IonImageryProvider.fromAssetId(3812);
+        if (viewerRef.current && !viewerRef.current.isDestroyed()) {
+          const nightLayer = viewerRef.current.imageryLayers.addImageryProvider(nightLights);
+          nightLayer.alpha = 0.6; // Blend with dark basemap
+          nightLayer.brightness = 1.5;
+          console.log('[Globe] Night lights layer added');
+        }
+      } catch (err) {
+        console.warn('[Globe] Night lights layer unavailable:', err);
+      }
+    })();
+
+    // Enable globe lighting for day/night effect
+    viewer.scene.globe.enableLighting = true;
+    viewer.scene.light = new Cesium.SunLight();
 
     // Add shipping routes as static polylines
     addShippingRoutes(viewer);
@@ -453,6 +492,9 @@ function GlobeMapComponent({
     const points = pointsRef.current;
     const labels = labelsRef.current;
     const groundTracks = groundTracksRef.current;
+    const flightBillboards = flightBillboardsRef.current;
+    const vesselBillboards = vesselBillboardsRef.current;
+    const flightTrails = flightTrailsRef.current;
 
     if (!viewer || !points || !labels || !groundTracks) return;
 
@@ -460,6 +502,9 @@ function GlobeMapComponent({
     points.removeAll();
     labels.removeAll();
     groundTracks.removeAll();
+    flightBillboards?.removeAll();
+    vesselBillboards?.removeAll();
+    flightTrails?.removeAll();
     pointEventMapRef.current.clear();
     eventPointsRef.current.clear();
     flightPointMapRef.current.clear();
@@ -487,13 +532,23 @@ function GlobeMapComponent({
 
       for (const event of filteredEvents) {
         const color = EVENT_COLORS[event.eventType] || EVENT_COLORS.default;
+
+        // Add glow effect: outer glow point first (rendered behind)
+        points.add({
+          position: Cesium.Cartesian3.fromDegrees(event.lon!, event.lat!, 0),
+          pixelSize: 24,
+          color: color.withAlpha(0.3),
+          id: `${event.id}-glow`
+        });
+
+        // Add main point with enhanced outline for glow effect
         const point = points.add({
           position: Cesium.Cartesian3.fromDegrees(event.lon!, event.lat!, 0),
-          pixelSize: 12, // Slightly larger for easier clicking
+          pixelSize: 12,
           color: color,
-          outlineColor: Cesium.Color.WHITE,
-          outlineWidth: 2,
-          id: event.id // Store event ID on the primitive
+          outlineColor: color.withAlpha(0.6),
+          outlineWidth: 4,
+          id: event.id
         });
 
         // Store mapping from point index to event
@@ -520,20 +575,43 @@ function GlobeMapComponent({
       }
     }
 
-    // Render vessels
-    if (layers.vessels) {
+    // Render vessels with ship billboards
+    if (layers.vessels && vesselBillboards) {
       for (const vessel of vesselsRef.current) {
         const category = getShipTypeCategory(vessel.shipType);
-        const color = VESSEL_COLORS[category] || VESSEL_COLORS.other;
-        const size = category === 'military' ? 8 : category === 'tanker' ? 6 : 5;
         const vesselId = `vessel-${vessel.mmsi}`;
 
-        points.add({
+        // Select appropriate ship SVG based on category
+        let shipSvg: string;
+        let size: number;
+        switch (category) {
+          case 'tanker':
+            shipSvg = SHIP_SVG_TANKER;
+            size = 20;
+            break;
+          case 'military':
+            shipSvg = SHIP_SVG_MILITARY;
+            size = 22;
+            break;
+          case 'cargo':
+            shipSvg = SHIP_SVG_CARGO;
+            size = 18;
+            break;
+          default:
+            shipSvg = SHIP_SVG_OTHER;
+            size = 16;
+        }
+
+        // Rotate ship icon based on heading
+        const heading = vessel.heading ?? 0;
+
+        vesselBillboards.add({
           position: Cesium.Cartesian3.fromDegrees(vessel.lon, vessel.lat, 0),
-          pixelSize: size,
-          color: color,
-          outlineColor: Cesium.Color.WHITE.withAlpha(0.5),
-          outlineWidth: 1,
+          image: svgToDataUrl(shipSvg),
+          width: size,
+          height: size,
+          rotation: Cesium.Math.toRadians(-(heading)),
+          alignedAxis: Cesium.Cartesian3.UNIT_Z,
           id: vesselId
         });
 
@@ -541,23 +619,64 @@ function GlobeMapComponent({
       }
     }
 
-    // Render flights
-    if (layers.flights) {
+    // Render flights with airplane billboards
+    if (layers.flights && flightBillboards && flightTrails) {
       for (const flight of flightsRef.current) {
-        const color = FLIGHT_COLORS[flight.category] || FLIGHT_COLORS.unknown;
-        const size = flight.category === 'military' ? 8 : 5;
         const flightId = `flight-${flight.icao24}`;
 
-        points.add({
+        // Select appropriate airplane SVG based on category
+        let planeSvg: string;
+        let size: number;
+        switch (flight.category) {
+          case 'military':
+            planeSvg = PLANE_SVG_MILITARY;
+            size = 20;
+            break;
+          case 'commercial':
+            planeSvg = PLANE_SVG_COMMERCIAL;
+            size = 16;
+            break;
+          default:
+            planeSvg = PLANE_SVG_UNKNOWN;
+            size = 14;
+        }
+
+        // Rotate airplane icon based on heading (true track)
+        const heading = flight.heading ?? 0;
+
+        flightBillboards.add({
           position: Cesium.Cartesian3.fromDegrees(flight.lon, flight.lat, flight.altitude),
-          pixelSize: size,
-          color: color,
-          outlineColor: Cesium.Color.WHITE.withAlpha(0.5),
-          outlineWidth: 1,
+          image: svgToDataUrl(planeSvg),
+          width: size,
+          height: size,
+          rotation: Cesium.Math.toRadians(-(heading)),
+          alignedAxis: Cesium.Cartesian3.UNIT_Z,
           id: flightId
         });
 
         flightPointMapRef.current.set(flightId, flight);
+
+        // Add flight trail (short tail showing recent path)
+        if (flight.category === 'military' || flight.velocity > 200) {
+          // Calculate trail endpoint based on velocity and heading
+          const trailLength = 0.3; // degrees (roughly 30km)
+          const headingRad = Cesium.Math.toRadians(heading + 180); // reverse direction
+          const trailLon = flight.lon + Math.sin(headingRad) * trailLength;
+          const trailLat = flight.lat + Math.cos(headingRad) * trailLength;
+
+          const color = flight.category === 'military'
+            ? Cesium.Color.fromCssColorString('#ef4444').withAlpha(0.5)
+            : Cesium.Color.fromCssColorString('#22c55e').withAlpha(0.3);
+
+          flightTrails.add({
+            positions: Cesium.Cartesian3.fromDegreesArrayHeights([
+              trailLon, trailLat, flight.altitude,
+              flight.lon, flight.lat, flight.altitude
+            ]),
+            width: flight.category === 'military' ? 2 : 1,
+            material: Cesium.Material.fromType('Color', { color })
+          });
+        }
 
         // Military flight labels
         if (flight.category === 'military' && showLabels && flight.callsign) {
