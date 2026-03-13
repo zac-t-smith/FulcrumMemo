@@ -78,12 +78,7 @@ jobs:
           VITE_AISSTREAM_API_KEY: ${{ secrets.VITE_AISSTREAM_API_KEY }}
           VITE_AGENT_URL: https://fulcrummemo-production.up.railway.app
 
-      # Copy Cesium assets to dist (vite-plugin-cesium doesn't always copy them)
-      - name: Copy Cesium assets
-        run: |
-          mkdir -p worldview-fm/dist/cesium
-          cp -r worldview-fm/node_modules/cesium/Build/Cesium/. worldview-fm/dist/cesium/
-          echo "Cesium assets copied: $(ls worldview-fm/dist/cesium/ | head -5)"
+      # Cesium assets are now copied by vite-plugin-static-copy during build
 
       # Combine both builds into one dist folder
       - name: Combine builds
