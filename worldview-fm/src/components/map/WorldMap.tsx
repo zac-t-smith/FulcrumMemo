@@ -306,6 +306,10 @@ export function WorldMap({
   // Debug logging
   console.log('[WorldMap] Agent feed status:', agentFeed.status, '| Total events:', agentFeed.events.length, '| Filtered for map:', filteredAgentEvents.length);
   console.log('[WorldMap] AIS vessels:', aisState.vesselCount, '| Connected:', aisState.isConnected);
+  console.log('[WorldMap] layers.conflictEvents:', layers.conflictEvents, '| Will render markers:', layers.conflictEvents && filteredAgentEvents.length > 0);
+  if (filteredAgentEvents.length > 0) {
+    console.log('[WorldMap] First event coords:', filteredAgentEvents[0].lat, filteredAgentEvents[0].lon, '| ID:', filteredAgentEvents[0].id);
+  }
 
   const handleDateChange = useCallback((date: Date | null) => {
     setTimelineDate(date);
@@ -374,6 +378,7 @@ export function WorldMap({
         {/* Agent-sourced events - clustered markers */}
         {layers.conflictEvents && filteredAgentEvents.length > 0 && (
           <MarkerClusterGroup
+            key={`cluster-${filteredAgentEvents.length}-${agentFeed.status}`}
             chunkedLoading
             showCoverageOnHover={false}
             spiderfyOnMaxZoom={true}
