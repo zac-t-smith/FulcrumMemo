@@ -10,6 +10,7 @@ import {
   needsBackfill
 } from './agents';
 import { startServer } from './server';
+import { seedEventsIfNeeded } from './utils';
 
 dotenv.config();
 
@@ -123,6 +124,9 @@ export async function initializeAgents(): Promise<void> {
     console.error('[Orchestrator] ERROR: Missing ANTHROPIC_API_KEY');
     return;
   }
+
+  // Seed baseline events if events.json is empty or has < 10 events
+  seedEventsIfNeeded();
 
   // Check if historical backfill is needed
   if (needsBackfill()) {

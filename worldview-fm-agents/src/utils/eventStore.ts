@@ -4,6 +4,7 @@ import { ConflictEvent, AgentRun } from '../types';
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const EVENTS_FILE = path.join(DATA_DIR, 'events.json');
+const EVENTS_SEED_FILE = path.join(__dirname, '..', 'data', 'events-seed.json');
 const AGENT_LOG_FILE = path.join(DATA_DIR, 'agentLog.json');
 
 function ensureDataDir(): void {
@@ -102,4 +103,46 @@ export function logAgentRun(run: AgentRun): void {
 export function eventExists(id: string): boolean {
   const events = getEvents();
   return events.some(e => e.id === id);
+}
+
+export function seedEventsIfNeeded(): boolean {
+  const events = getEvents();
+
+  // If we have more than 10 events, no need to seed
+  if (events.length > 10) {
+    console.log(`[EventStore] Found ${events.length} events, skipping seed`);
+    return false;
+  }
+
+  // Try to load seed file
+  try {
+    if (!fs.existsSync(EVENTS_SEED_FILE)) {
+      console.log('[EventStore] No seed file found at', EVENTS_SEED_FILE);
+      return false;
+    }
+
+    const seedContent = fs.readFileSync(EVENTS_SEED_FILE, 'utf-8');
+    const seedEvents = JSON.parse(seedContent) as ConflictEvent[];
+
+    if (!Array.isArray(seedEvents) || seedEvents.length === 0) {
+      console.log('[EventStore] Seed file is empty or invalid');
+      return false;
+    }
+
+    // Merge seed events with existing (seed events won't overwrite existing)
+    const existingIds = new Set(events.map(e => e.id));
+    const newFromSeed = seedEvents.filter(e => !existingIds.has(e.id));
+
+    if (newFromSeed.length > 0) {
+      saveEvents([...events, ...newFromSeed]);
+      console.log(`[EventStore] Seeded ${newFromSeed.length} baseline events (total: ${events.length + newFromSeed.length})`);
+      return true;
+    }
+
+    console.log('[EventStore] All seed events already exist');
+    return false;
+  } catch (error) {
+    console.error('[EventStore] Error seeding events:', error);
+    return false;
+  }
 }
