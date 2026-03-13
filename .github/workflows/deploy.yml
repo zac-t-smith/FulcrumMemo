@@ -66,22 +66,17 @@ jobs:
           else
             echo "VITE_AISSTREAM_API_KEY secret is set"
           fi
-          if [ -z "$VITE_AGENT_URL" ]; then
-            echo "WARNING: VITE_AGENT_URL secret is NOT set - Using static fallback data"
-          else
-            echo "VITE_AGENT_URL secret is set: $VITE_AGENT_URL"
-          fi
+          echo "VITE_AGENT_URL: https://fulcrummemo-production.up.railway.app (hardcoded)"
         env:
           VITE_CESIUM_ION_TOKEN: ${{ secrets.VITE_CESIUM_ION_TOKEN }}
           VITE_AISSTREAM_API_KEY: ${{ secrets.VITE_AISSTREAM_API_KEY }}
-          VITE_AGENT_URL: ${{ secrets.VITE_AGENT_URL }}
 
       - name: Build WorldView
         run: cd worldview-fm && npm run build
         env:
           VITE_CESIUM_ION_TOKEN: ${{ secrets.VITE_CESIUM_ION_TOKEN }}
           VITE_AISSTREAM_API_KEY: ${{ secrets.VITE_AISSTREAM_API_KEY }}
-          VITE_AGENT_URL: ${{ secrets.VITE_AGENT_URL }}
+          VITE_AGENT_URL: https://fulcrummemo-production.up.railway.app
 
       # Copy Cesium assets to dist (vite-plugin-cesium doesn't always copy them)
       - name: Copy Cesium assets
