@@ -4,6 +4,25 @@ import cesium from 'vite-plugin-cesium'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), cesium()],
-  base: '/FulcrumMemo/worldview-fm/' // For GitHub Pages subdirectory deployment
+  base: '/FulcrumMemo/worldview-fm/',
+  plugins: [
+    react(),
+    cesium({
+      rebuildCesium: false
+    })
+  ],
+  define: {
+    'process.env': {},
+    CESIUM_BASE_URL: JSON.stringify('/FulcrumMemo/worldview-fm/'),
+  },
+  build: {
+    chunkSizeWarningLimit: 3000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+        }
+      }
+    }
+  }
 })

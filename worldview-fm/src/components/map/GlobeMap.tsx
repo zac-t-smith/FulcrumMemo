@@ -18,13 +18,14 @@ import type { LayerState } from '../../types';
 
 import 'cesium/Build/Cesium/Widgets/widgets.css';
 
-// Configure Cesium Ion
-const CESIUM_ION_TOKEN = import.meta.env.VITE_CESIUM_ION_TOKEN;
+// Configure Cesium Ion - check both possible env var names
+const CESIUM_ION_TOKEN = import.meta.env.VITE_CESIUM_ION_TOKEN || import.meta.env.VITE_CESIUM_TOKEN;
 if (CESIUM_ION_TOKEN) {
   Cesium.Ion.defaultAccessToken = CESIUM_ION_TOKEN;
   console.log('[Globe] Cesium Ion token configured');
 } else {
-  console.warn('[Globe] No Cesium Ion token found');
+  console.error('[Globe] No Cesium Ion token found - set VITE_CESIUM_TOKEN in GitHub Secrets or .env');
+  console.error('[Globe] The 3D globe will not render correctly without a valid token');
 }
 
 interface MapState {

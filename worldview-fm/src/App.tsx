@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { Header } from './components/Header';
-import { GlobeMap } from './components/map/GlobeMap';
+import { MapWrapper } from './components/map/MapWrapper';
 import { ViewModeFilter } from './components/ViewModeFilter';
 import { IntelligencePanel } from './components/panels/IntelligencePanel';
 import { SitrepModal } from './components/SitrepModal';
@@ -115,7 +115,7 @@ function App() {
       />
       <div className="flex-1 flex overflow-hidden relative">
         <div className="flex-1 relative">
-          <GlobeMap
+          <MapWrapper
             layers={layers}
             onVesselCountChange={handleVesselCountChange}
             onMapStateChange={handleMapStateChange}

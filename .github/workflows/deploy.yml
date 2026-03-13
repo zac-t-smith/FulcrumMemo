@@ -49,9 +49,27 @@ jobs:
       - name: Install WorldView dependencies
         run: cd worldview-fm && npm install
 
+      - name: Verify secrets
+        run: |
+          if [ -z "$VITE_CESIUM_TOKEN" ]; then
+            echo "WARNING: VITE_CESIUM_TOKEN secret is NOT set - Cesium 3D globe will not load"
+            echo "Set this secret in GitHub repo settings to enable the 3D globe"
+          else
+            echo "VITE_CESIUM_TOKEN secret is set"
+          fi
+          if [ -z "$VITE_AISSTREAM_KEY" ]; then
+            echo "WARNING: VITE_AISSTREAM_KEY secret is NOT set - Live AIS data will not work"
+          else
+            echo "VITE_AISSTREAM_KEY secret is set"
+          fi
+        env:
+          VITE_CESIUM_TOKEN: ${{ secrets.VITE_CESIUM_TOKEN }}
+          VITE_AISSTREAM_KEY: ${{ secrets.VITE_AISSTREAM_KEY }}
+
       - name: Build WorldView
         run: cd worldview-fm && npm run build
         env:
+          VITE_CESIUM_ION_TOKEN: ${{ secrets.VITE_CESIUM_TOKEN }}
           VITE_CESIUM_TOKEN: ${{ secrets.VITE_CESIUM_TOKEN }}
           VITE_AISSTREAM_KEY: ${{ secrets.VITE_AISSTREAM_KEY }}
 
