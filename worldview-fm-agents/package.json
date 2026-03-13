@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "ts-node src/orchestrator.ts",
     "server": "ts-node src/server.ts",
-    "build": "tsc",
+    "build": "tsc && node -e \"require('fs').mkdirSync('dist/data', {recursive:true}); require('fs').copyFileSync('src/data/events-seed.json', 'dist/data/events-seed.json'); console.log('Copied events-seed.json to dist/data/')\"",
     "start": "node dist/orchestrator.js"
   },
   "dependencies": {
