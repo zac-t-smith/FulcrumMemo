@@ -1,5 +1,8 @@
-import { marketData, scenarios, predictions } from '../../data/conflictData';
+import { useState, useEffect } from 'react';
+import { marketData, scenarios, evaluatePredictions, predictions as fallbackPredictions } from '../../data/conflictData';
+import { subscribeToAgentFeed, getAgentFeedState } from '../../data/feeds/agentFeed';
 import type { LayerState } from '../../types';
+import type { Prediction } from '../../types';
 
 interface IntelligencePanelProps {
   layers: LayerState;
@@ -7,6 +10,26 @@ interface IntelligencePanelProps {
 }
 
 export function IntelligencePanel({ layers, onToggleLayer }: IntelligencePanelProps) {
+  const [predictions, setPredictions] = useState<Prediction[]>(fallbackPredictions);
+
+  // Subscribe to agent feed and evaluate predictions
+  useEffect(() => {
+    // Get initial state
+    const initialState = getAgentFeedState();
+    if (initialState.events.length > 0) {
+      setPredictions(evaluatePredictions(initialState.events));
+    }
+
+    // Subscribe to updates
+    const unsubscribe = subscribeToAgentFeed((state) => {
+      if (state.events.length > 0) {
+        setPredictions(evaluatePredictions(state.events));
+      }
+    });
+
+    return unsubscribe;
+  }, []);
+
   const confirmedCount = predictions.filter(p => p.status === 'confirmed').length;
 
   return (

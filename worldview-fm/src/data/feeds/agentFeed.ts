@@ -61,6 +61,11 @@ export function subscribeToAgentFeed(fn: (state: AgentFeedState) => void) {
   }
 }
 
+// Get current state synchronously (for initial render)
+export function getAgentFeedState(): AgentFeedState {
+  return { ...currentState }
+}
+
 // Fetch from static fallback (baked events.json for GitHub Pages)
 async function fetchStaticEvents(): Promise<boolean> {
   const staticUrl = getStaticEventsUrl()

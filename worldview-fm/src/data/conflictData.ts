@@ -173,7 +173,17 @@ export const vesselData: VesselData[] = [
   }
 ];
 
-// Market snapshot data
+// Conflict start date
+export const CONFLICT_START = new Date('2026-02-28T00:00:00Z');
+
+// Calculate current conflict day dynamically
+export function getConflictDay(): number {
+  const now = new Date();
+  const diffMs = now.getTime() - CONFLICT_START.getTime();
+  return Math.max(1, Math.floor(diffMs / (1000 * 60 * 60 * 24)) + 1);
+}
+
+// Market snapshot data - conflictDay is now a getter
 export const marketData: MarketData = {
   brent: 108.75,
   brentHigh: 119.50,
@@ -184,7 +194,7 @@ export const marketData: MarketData = {
   hySpreadBaseline: 281,
   vlccRate: '$440-460K/day',
   hormuzTransits: 0,
-  conflictDay: 10,
+  get conflictDay() { return getConflictDay(); },
   lastUpdated: new Date().toISOString()
 };
 
@@ -207,55 +217,166 @@ export const scenarios: ScenarioProbability[] = [
   }
 ];
 
-// Predictions scorecard
-export const predictions: Prediction[] = [
+// Predictions scorecard - base definitions
+// Status is evaluated dynamically based on events
+export interface PredictionRule {
+  id: string;
+  prediction: string;
+  // Function to check if prediction is confirmed based on events
+  checkFn: (events: AgentEventLike[]) => { confirmed: boolean; date?: string };
+}
+
+// Simplified event interface for prediction checking
+interface AgentEventLike {
+  id: string;
+  timestamp: string;
+  eventType: string;
+  location?: string;
+  summary?: string;
+  lat?: number | null;
+  lon?: number | null;
+}
+
+// Helper to get day number from event timestamp
+function getDayFromTimestamp(timestamp: string): number {
+  const eventDate = new Date(timestamp);
+  const diffMs = eventDate.getTime() - CONFLICT_START.getTime();
+  return Math.max(1, Math.floor(diffMs / (1000 * 60 * 60 * 24)) + 1);
+}
+
+// Prediction rules with event-based evaluation
+export const predictionRules: PredictionRule[] = [
   {
     id: 'pred-1',
     prediction: 'Hormuz closure within 72h of conflict initiation',
-    status: 'confirmed',
-    date: 'Day 1'
+    checkFn: (events) => {
+      const hormuzEvent = events.find(e =>
+        e.eventType === 'naval' &&
+        e.location?.toLowerCase().includes('hormuz') &&
+        getDayFromTimestamp(e.timestamp) <= 3
+      );
+      return hormuzEvent
+        ? { confirmed: true, date: `Day ${getDayFromTimestamp(hormuzEvent.timestamp)}` }
+        : { confirmed: false };
+    }
   },
   {
     id: 'pred-2',
     prediction: 'Brent spike above $100/bbl',
-    status: 'confirmed',
-    date: 'Day 1'
+    checkFn: (events) => {
+      // Check for economic event mentioning oil price spike
+      const oilEvent = events.find(e =>
+        e.eventType === 'economic' &&
+        (e.summary?.includes('$1') || e.summary?.toLowerCase().includes('spike') || e.summary?.toLowerCase().includes('brent'))
+      );
+      return oilEvent
+        ? { confirmed: true, date: `Day ${getDayFromTimestamp(oilEvent.timestamp)}` }
+        : { confirmed: false };
+    }
   },
   {
     id: 'pred-3',
     prediction: 'GCC desalination infrastructure targeted',
-    status: 'confirmed',
-    date: 'Day 9'
+    checkFn: (events) => {
+      const desalEvent = events.find(e =>
+        (e.eventType === 'infrastructure' || e.eventType === 'strike') &&
+        (e.summary?.toLowerCase().includes('desal') || e.location?.toLowerCase().includes('bahrain'))
+      );
+      return desalEvent
+        ? { confirmed: true, date: `Day ${getDayFromTimestamp(desalEvent.timestamp)}` }
+        : { confirmed: false };
+    }
   },
   {
     id: 'pred-4',
     prediction: 'VLCC rates exceed $400K/day',
-    status: 'confirmed',
-    date: 'Day 3'
+    checkFn: (events) => {
+      // Check for economic event mentioning VLCC or tanker rates
+      const vlccEvent = events.find(e =>
+        e.eventType === 'economic' &&
+        (e.summary?.toLowerCase().includes('vlcc') || e.summary?.toLowerCase().includes('tanker'))
+      );
+      return vlccEvent
+        ? { confirmed: true, date: `Day ${getDayFromTimestamp(vlccEvent.timestamp)}` }
+        : { confirmed: false };
+    }
   },
   {
     id: 'pred-5',
     prediction: 'HY spreads widen 150+ bps',
-    status: 'confirmed',
-    date: 'Day 5'
+    checkFn: (events) => {
+      // Check for economic/market event
+      const spreadEvent = events.find(e =>
+        e.eventType === 'economic' &&
+        getDayFromTimestamp(e.timestamp) >= 5
+      );
+      return spreadEvent
+        ? { confirmed: true, date: `Day ${getDayFromTimestamp(spreadEvent.timestamp)}` }
+        : { confirmed: false };
+    }
   },
   {
     id: 'pred-6',
     prediction: 'Iranian naval assets neutralized',
-    status: 'confirmed',
-    date: 'Day 2-4'
+    checkFn: (events) => {
+      const navalEvents = events.filter(e =>
+        e.eventType === 'naval' &&
+        (e.summary?.toLowerCase().includes('iran') || e.summary?.toLowerCase().includes('iris'))
+      );
+      if (navalEvents.length >= 2) {
+        const days = navalEvents.map(e => getDayFromTimestamp(e.timestamp));
+        return { confirmed: true, date: `Day ${Math.min(...days)}-${Math.max(...days)}` };
+      }
+      return { confirmed: false };
+    }
   },
   {
     id: 'pred-7',
     prediction: 'Saudi infrastructure strike attempt',
-    status: 'tracking'
+    checkFn: (events) => {
+      const saudiEvent = events.find(e =>
+        (e.eventType === 'strike' || e.eventType === 'infrastructure') &&
+        e.location?.toLowerCase().includes('saudi')
+      );
+      return saudiEvent
+        ? { confirmed: true, date: `Day ${getDayFromTimestamp(saudiEvent.timestamp)}` }
+        : { confirmed: false };
+    }
   },
   {
     id: 'pred-8',
     prediction: 'China diplomatic intervention',
-    status: 'tracking'
+    checkFn: (events) => {
+      const chinaEvent = events.find(e =>
+        e.eventType === 'diplomatic' &&
+        e.summary?.toLowerCase().includes('china')
+      );
+      return chinaEvent
+        ? { confirmed: true, date: `Day ${getDayFromTimestamp(chinaEvent.timestamp)}` }
+        : { confirmed: false };
+    }
   }
 ];
+
+// Evaluate predictions based on events and return Prediction[] format
+export function evaluatePredictions(events: AgentEventLike[]): Prediction[] {
+  return predictionRules.map(rule => {
+    const result = rule.checkFn(events);
+    return {
+      id: rule.id,
+      prediction: rule.prediction,
+      status: result.confirmed ? 'confirmed' : 'tracking',
+      date: result.date
+    };
+  });
+}
+
+// Legacy static predictions (fallback when no events available)
+export const predictions: Prediction[] = predictionRules.map(rule => ({
+  id: rule.id,
+  prediction: rule.prediction,
+  status: 'tracking' as const
+}));
 
 // Data sources configuration
 export const dataSources: DataSource[] = [
