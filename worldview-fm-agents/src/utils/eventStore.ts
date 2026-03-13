@@ -47,6 +47,9 @@ export function addEvents(newEvents: ConflictEvent[]): number {
 
   if (uniqueNew.length > 0) {
     saveEvents([...existing, ...uniqueNew]);
+    console.log(`[EventStore] Added ${uniqueNew.length} new events (total: ${existing.length + uniqueNew.length})`);
+  } else if (newEvents.length > 0) {
+    console.log(`[EventStore] ${newEvents.length} events already exist, no new events added`);
   }
 
   return uniqueNew.length;

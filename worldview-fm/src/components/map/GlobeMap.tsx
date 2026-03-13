@@ -206,9 +206,16 @@ function GlobeMapComponent({
     viewer.resolutionScale = 0.9;
     viewer.scene.globe.tileCacheSize = 100;
 
-    // Camera constraints
-    viewer.scene.screenSpaceCameraController.minimumZoomDistance = 500;
-    viewer.scene.screenSpaceCameraController.maximumZoomDistance = 20000000;
+    // Camera constraints and controls
+    const controller = viewer.scene.screenSpaceCameraController;
+    controller.minimumZoomDistance = 500;
+    controller.maximumZoomDistance = 20000000;
+    // Explicitly enable all camera controls
+    controller.enableRotate = true;
+    controller.enableZoom = true;
+    controller.enableTilt = true;
+    controller.enableLook = true;
+    controller.enableTranslate = true;
 
     // Set initial camera position
     const initLon = initialCenter ? initialCenter[1] : INITIAL_CAMERA.lon;
@@ -257,34 +264,38 @@ function GlobeMapComponent({
     // Set up click handler for event markers
     const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
 
-    // Click handler
+    // Click handler - simplified approach using event ID stored on primitive
     handler.setInputAction((click: { position: Cesium.Cartesian2 }) => {
       const pickedObject = viewer.scene.pick(click.position);
 
-      if (Cesium.defined(pickedObject) && pickedObject.primitive) {
-        // Check if it's a point primitive from our events collection
-        const primitive = pickedObject.primitive;
-        if (primitive === pointsRef.current) {
-          // Get the specific point that was clicked
-          const pointPrimitive = pickedObject.id;
-          if (pointPrimitive && typeof pointPrimitive === 'string') {
-            // Find event by ID stored on primitive
-            const event = eventsRef.current.find(e => e.id === pointPrimitive);
-            if (event) {
-              setSelectedEvent(event);
-              setModalPos({ x: click.position.x, y: click.position.y });
-              viewer.scene.requestRender();
-              return;
-            }
+      if (Cesium.defined(pickedObject)) {
+        // Check for event ID on the picked object
+        const eventId = pickedObject.id;
+        if (eventId && typeof eventId === 'string') {
+          // Find event by ID
+          const event = eventsRef.current.find(e => e.id === eventId);
+          if (event) {
+            setSelectedEvent(event);
+            setModalPos({ x: click.position.x, y: click.position.y });
+            viewer.scene.requestRender();
+            return;
           }
-          // Fallback: check point-event map by index
+        }
+
+        // Fallback: check point-event map
+        if (pickedObject.primitive === pointsRef.current) {
+          // Try to find by iterating the map
           for (const [_index, event] of pointEventMapRef.current.entries()) {
             const point = eventPointsRef.current.get(event.id);
-            if (point === pickedObject.primitive || pickedObject.id === event.id) {
-              setSelectedEvent(event);
-              setModalPos({ x: click.position.x, y: click.position.y });
-              viewer.scene.requestRender();
-              return;
+            if (point && pickedObject.primitive) {
+              // Check if this is an event point by position comparison
+              const clickedPoint = pickedObject.id;
+              if (clickedPoint === event.id) {
+                setSelectedEvent(event);
+                setModalPos({ x: click.position.x, y: click.position.y });
+                viewer.scene.requestRender();
+                return;
+              }
             }
           }
         }
