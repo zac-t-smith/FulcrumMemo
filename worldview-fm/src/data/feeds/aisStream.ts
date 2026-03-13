@@ -29,11 +29,9 @@ const MAX_VESSELS = 200; // PERFORMANCE: reduced from 300
 const RECONNECT_DELAY = 5000;
 const WS_TIMEOUT = 10000; // 10 seconds to receive first message
 
-// Helper to detect if running on localhost
-function isLocalhost(): boolean {
-  return window.location.hostname === 'localhost' ||
-         window.location.hostname === '127.0.0.1';
-}
+// Only skip fallback if NO agent URL is configured AND we're on GitHub Pages
+const SKIP_FALLBACK = !import.meta.env.VITE_AGENT_URL &&
+                      window.location.hostname.includes('github.io');
 
 let ws: WebSocket | null = null;
 let reconnectTimeout: ReturnType<typeof setTimeout> | null = null;
@@ -181,17 +179,17 @@ async function fetchFallbackVessels() {
 function startFallbackMode() {
   if (usingFallback) return;
 
-  // On GitHub Pages, don't attempt localhost fallback - just mark as disconnected
-  if (!isLocalhost()) {
-    console.log('[AIS] GitHub Pages mode: skipping localhost fallback');
+  // Only skip fallback if no agent URL configured and on GitHub Pages
+  if (SKIP_FALLBACK) {
+    console.log('[AIS] Static mode: no VITE_AGENT_URL configured');
     usingFallback = true;
     isConnected = false;
-    lastError = 'No live AIS feed on GitHub Pages';
+    lastError = 'No live AIS feed available';
     notify();
     return;
   }
 
-  console.log('[AIS] Switching to fallback mode (agent server)');
+  console.log('[AIS] Switching to fallback mode:', AGENT_URL);
   usingFallback = true;
 
   // Stop WebSocket

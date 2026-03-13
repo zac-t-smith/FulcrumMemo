@@ -22,15 +22,22 @@ let sitrepCache: {
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// CORS configuration - allow all localhost ports for dev
+// CORS configuration - allow localhost and GitHub Pages
+const ALLOWED_ORIGINS = [
+  /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/,  // Any localhost port
+  /^https:\/\/zac-t-smith\.github\.io$/,          // GitHub Pages
+  /^https:\/\/.*\.github\.io$/                     // Any GitHub Pages subdomain
+];
+
 app.use(cors({
   origin: (origin, callback) => {
     // Allow requests with no origin (like mobile apps or curl)
     if (!origin) return callback(null, true);
-    // Allow any localhost port
-    if (origin.match(/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/)) {
+    // Check against allowed patterns
+    if (ALLOWED_ORIGINS.some(pattern => pattern.test(origin))) {
       return callback(null, true);
     }
+    console.log('[CORS] Blocked origin:', origin);
     callback(new Error('Not allowed by CORS'));
   },
   methods: ['GET', 'POST', 'OPTIONS'],

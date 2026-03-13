@@ -28,11 +28,9 @@ export interface AgentFeedState {
 // Configurable agent URL - defaults to localhost for dev
 const AGENT_API = import.meta.env.VITE_AGENT_URL || 'http://localhost:3001'
 
-// Helper to detect if running on localhost
-function isLocalhost(): boolean {
-  return window.location.hostname === 'localhost' ||
-         window.location.hostname === '127.0.0.1'
-}
+// Only use static fallback if NO agent URL is configured AND we're on GitHub Pages
+const USE_STATIC_ONLY = !import.meta.env.VITE_AGENT_URL &&
+                        window.location.hostname.includes('github.io')
 
 // Build static URL properly
 function getStaticEventsUrl(): string {
@@ -100,9 +98,9 @@ async function fetchStaticEvents(): Promise<boolean> {
 }
 
 export async function startAgentFeed() {
-  // On GitHub Pages, skip live feed entirely - go straight to static
-  if (!isLocalhost()) {
-    console.log('[AgentFeed] GitHub Pages mode: loading static snapshot only')
+  // Only use static fallback if no agent URL configured and on GitHub Pages
+  if (USE_STATIC_ONLY) {
+    console.log('[AgentFeed] Static mode: no VITE_AGENT_URL configured')
     const staticLoaded = await fetchStaticEvents()
     if (!staticLoaded) {
       currentState = { ...currentState, status: 'offline' }
@@ -111,8 +109,8 @@ export async function startAgentFeed() {
     return
   }
 
-  // Only attempt localhost connection when actually running locally
-  console.log('[AgentFeed] Localhost mode: trying live feed from', AGENT_API)
+  // Try live feed from configured agent URL (Railway or localhost)
+  console.log('[AgentFeed] Live mode: connecting to', AGENT_API)
 
   try {
     // Try live agent server first (3 second timeout for fast fallback)

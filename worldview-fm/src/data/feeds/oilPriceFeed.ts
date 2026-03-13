@@ -25,10 +25,9 @@ const AGENT_URL = import.meta.env.VITE_AGENT_URL || 'http://localhost:3001';
 const AGENT_API_URL = `${AGENT_URL}/api/market`;
 const POLL_INTERVAL = 5 * 60 * 1000; // 5 minutes
 
-// Helper to detect if running on GitHub Pages
-function isGitHubPages(): boolean {
-  return window.location.hostname.includes('github.io');
-}
+// Only use static fallback if NO agent URL is configured AND we're on GitHub Pages
+const USE_STATIC_ONLY = !import.meta.env.VITE_AGENT_URL &&
+                        window.location.hostname.includes('github.io');
 
 // Static fallback prices for GitHub Pages (last known values from anchor events)
 const STATIC_BRENT: OilPrice = {
@@ -161,9 +160,9 @@ export function startOilPriceFeed() {
     return;
   }
 
-  // On GitHub Pages, use static fallback prices
-  if (isGitHubPages()) {
-    console.log('[OilPrice] GitHub Pages mode: using static cached prices');
+  // Only use static fallback if no agent URL configured and on GitHub Pages
+  if (USE_STATIC_ONLY) {
+    console.log('[OilPrice] Static mode: no VITE_AGENT_URL configured');
     currentState = {
       brent: STATIC_BRENT,
       wti: STATIC_WTI,
@@ -175,7 +174,7 @@ export function startOilPriceFeed() {
     return;
   }
 
-  console.log('[OilPrice] Starting price feed via agent proxy...');
+  console.log('[OilPrice] Live mode: connecting to', AGENT_URL);
 
   // Initial fetch
   fetchPrices();
