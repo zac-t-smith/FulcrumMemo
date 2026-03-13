@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useMemo, useRef } from 'react';
 import { MapContainer, TileLayer, ZoomControl, CircleMarker, Popup, useMap, Marker } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import L from 'leaflet';
@@ -286,30 +286,41 @@ export function WorldMap({
     };
   }, [onVesselCountChange]);
 
-  // Filter events by timeline date and map relevance
-  const filteredAgentEvents = agentFeed.events.filter(e => {
-    // Must have coordinates
-    if (e.lat === null || e.lon === null) return false;
+  // Filter events by timeline date and map relevance - MEMOIZED to prevent re-renders
+  const filteredAgentEvents = useMemo(() => {
+    return agentFeed.events.filter(e => {
+      // Must have coordinates
+      if (e.lat === null || e.lon === null) return false;
 
-    // Filter by map relevance (if field exists, use it; otherwise show all with coords)
-    if (e.mapRelevant === false) return false;
+      // Filter by map relevance (if field exists, use it; otherwise show all with coords)
+      if (e.mapRelevant === false) return false;
 
-    // Filter by timeline date
-    if (timelineDate) {
-      const eventDate = new Date(e.timestamp);
-      return eventDate >= CONFLICT_START && eventDate <= timelineDate;
-    }
+      // Filter by timeline date
+      if (timelineDate) {
+        const eventDate = new Date(e.timestamp);
+        return eventDate >= CONFLICT_START && eventDate <= timelineDate;
+      }
 
-    return true;
-  });
+      return true;
+    });
+  }, [agentFeed.events, timelineDate]);
 
-  // Debug logging
-  console.log('[WorldMap] Agent feed status:', agentFeed.status, '| Total events:', agentFeed.events.length, '| Filtered for map:', filteredAgentEvents.length);
-  console.log('[WorldMap] AIS vessels:', aisState.vesselCount, '| Connected:', aisState.isConnected);
-  console.log('[WorldMap] layers.conflictEvents:', layers.conflictEvents, '| Will render markers:', layers.conflictEvents && filteredAgentEvents.length > 0);
-  if (filteredAgentEvents.length > 0) {
-    console.log('[WorldMap] First event coords:', filteredAgentEvents[0].lat, filteredAgentEvents[0].lon, '| ID:', filteredAgentEvents[0].id);
+  // Stable key for MarkerClusterGroup - only changes when event count actually changes
+  const clusterKey = useRef(0);
+  const prevEventCount = useRef(0);
+  if (filteredAgentEvents.length !== prevEventCount.current) {
+    prevEventCount.current = filteredAgentEvents.length;
+    clusterKey.current += 1;
   }
+
+  // Debug logging - only when values change
+  useEffect(() => {
+    console.log('[WorldMap] Agent feed status:', agentFeed.status, '| Total events:', agentFeed.events.length, '| Filtered for map:', filteredAgentEvents.length);
+    console.log('[WorldMap] layers.conflictEvents:', layers.conflictEvents, '| Will render markers:', layers.conflictEvents && filteredAgentEvents.length > 0);
+    if (filteredAgentEvents.length > 0) {
+      console.log('[WorldMap] First event coords:', filteredAgentEvents[0].lat, filteredAgentEvents[0].lon, '| ID:', filteredAgentEvents[0].id);
+    }
+  }, [agentFeed.status, agentFeed.events.length, filteredAgentEvents.length, layers.conflictEvents]);
 
   const handleDateChange = useCallback((date: Date | null) => {
     setTimelineDate(date);
@@ -378,7 +389,7 @@ export function WorldMap({
         {/* Agent-sourced events - clustered markers */}
         {layers.conflictEvents && filteredAgentEvents.length > 0 && (
           <MarkerClusterGroup
-            key={`cluster-${filteredAgentEvents.length}-${agentFeed.status}`}
+            key={`cluster-${clusterKey.current}`}
             chunkedLoading
             showCoverageOnHover={false}
             spiderfyOnMaxZoom={true}
