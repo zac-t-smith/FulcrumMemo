@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "AI agent swarm for real-time conflict intelligence",
   "main": "src/orchestrator.ts",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "ts-node src/orchestrator.ts",
     "server": "ts-node src/server.ts",
