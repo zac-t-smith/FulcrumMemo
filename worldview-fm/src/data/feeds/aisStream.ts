@@ -194,12 +194,12 @@ function startFallbackMode() {
 }
 
 function connect() {
-  const apiKey = import.meta.env.VITE_AISSTREAM_KEY;
+  const apiKey = import.meta.env.VITE_AISSTREAM_API_KEY;
 
   console.log('[AIS] API key present:', !!apiKey);
 
   if (!apiKey) {
-    console.warn('[AIS] No API key found (VITE_AISSTREAM_KEY) - using fallback');
+    console.warn('[AIS] No API key found (VITE_AISSTREAM_API_KEY) - using fallback');
     startFallbackMode();
     return;
   }

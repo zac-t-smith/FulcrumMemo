@@ -38,7 +38,7 @@ export function MapWrapper(props: MapWrapperProps) {
   const [mapMode, setMapMode] = useState<'loading' | 'cesium' | 'leaflet'>('loading');
 
   useEffect(() => {
-    const token = import.meta.env.VITE_CESIUM_ION_TOKEN || import.meta.env.VITE_CESIUM_TOKEN;
+    const token = import.meta.env.VITE_CESIUM_ION_TOKEN;
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
     // Only attempt Cesium on localhost with a token

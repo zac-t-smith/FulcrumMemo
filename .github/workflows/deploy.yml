@@ -35,13 +35,14 @@ jobs:
       - name: Setup SPA routing
         run: cp dist/index.html dist/404.html
 
-      # Copy events snapshot for WorldView static fallback
-      - name: Copy events snapshot
+      # Verify events-static.json exists (should be committed to repo)
+      - name: Verify events snapshot
         run: |
-          mkdir -p worldview-fm/public
-          if [ -f worldview-fm-agents/src/data/events.json ]; then
-            cp worldview-fm-agents/src/data/events.json worldview-fm/public/events-static.json
+          if [ -f worldview-fm/public/events-static.json ]; then
+            echo "Events snapshot found: $(wc -l < worldview-fm/public/events-static.json) lines"
           else
+            echo "WARNING: events-static.json not found - creating empty file"
+            mkdir -p worldview-fm/public
             echo "[]" > worldview-fm/public/events-static.json
           fi
 
@@ -51,27 +52,26 @@ jobs:
 
       - name: Verify secrets
         run: |
-          if [ -z "$VITE_CESIUM_TOKEN" ]; then
-            echo "WARNING: VITE_CESIUM_TOKEN secret is NOT set - Cesium 3D globe will not load"
+          if [ -z "$VITE_CESIUM_ION_TOKEN" ]; then
+            echo "WARNING: VITE_CESIUM_ION_TOKEN secret is NOT set - Cesium 3D globe will not load"
             echo "Set this secret in GitHub repo settings to enable the 3D globe"
           else
-            echo "VITE_CESIUM_TOKEN secret is set"
+            echo "VITE_CESIUM_ION_TOKEN secret is set"
           fi
-          if [ -z "$VITE_AISSTREAM_KEY" ]; then
-            echo "WARNING: VITE_AISSTREAM_KEY secret is NOT set - Live AIS data will not work"
+          if [ -z "$VITE_AISSTREAM_API_KEY" ]; then
+            echo "WARNING: VITE_AISSTREAM_API_KEY secret is NOT set - Live AIS data will not work"
           else
-            echo "VITE_AISSTREAM_KEY secret is set"
+            echo "VITE_AISSTREAM_API_KEY secret is set"
           fi
         env:
-          VITE_CESIUM_TOKEN: ${{ secrets.VITE_CESIUM_TOKEN }}
-          VITE_AISSTREAM_KEY: ${{ secrets.VITE_AISSTREAM_KEY }}
+          VITE_CESIUM_ION_TOKEN: ${{ secrets.VITE_CESIUM_ION_TOKEN }}
+          VITE_AISSTREAM_API_KEY: ${{ secrets.VITE_AISSTREAM_API_KEY }}
 
       - name: Build WorldView
         run: cd worldview-fm && npm run build
         env:
-          VITE_CESIUM_ION_TOKEN: ${{ secrets.VITE_CESIUM_TOKEN }}
-          VITE_CESIUM_TOKEN: ${{ secrets.VITE_CESIUM_TOKEN }}
-          VITE_AISSTREAM_KEY: ${{ secrets.VITE_AISSTREAM_KEY }}
+          VITE_CESIUM_ION_TOKEN: ${{ secrets.VITE_CESIUM_ION_TOKEN }}
+          VITE_AISSTREAM_API_KEY: ${{ secrets.VITE_AISSTREAM_API_KEY }}
 
       # Combine both builds into one dist folder
       - name: Combine builds
