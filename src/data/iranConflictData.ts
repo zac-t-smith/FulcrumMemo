@@ -7,8 +7,8 @@
 // =============================================================================
 
 export const conflictMetadata = {
-  lastUpdated: '2026-03-12T18:00:00Z',
-  conflictDay: 13,
+  lastUpdated: '2026-03-14T21:00:00Z',
+  conflictDay: 15,
   conflictStartDate: '2026-02-28',
 };
 
@@ -198,6 +198,8 @@ export const hormuzTimeline: HormuzTransitEntry[] = [
   { date: 'Mar 10', timestamp: Date.parse('2026-03-10'), tankerCount: 2, vlccRate: 460000, event: "Iran mines reported in Hormuz (CNN). Trump warns Iran to remove mines 'IMMEDIATELY.' Mojtaba Khamenei says Hormuz should remain closed as 'tool to pressure enemy.'" },
   { date: 'Mar 11', timestamp: Date.parse('2026-03-11'), tankerCount: 3, vlccRate: 450000, event: 'US destroys 16 mine-laying vessels near Hormuz. Thai bulk carrier Mayuree Naree struck and set ablaze. Container ship Express Rome hit. Japanese One Majesty damaged at anchor.' },
   { date: 'Mar 12', timestamp: Date.parse('2026-03-12'), tankerCount: 2, vlccRate: 460000, event: '3 more ships struck overnight. Iraq shuts down oil port operations after tanker attacks at Basra. Iran says some ships allowed through with permission. IRGC: all ships must get Iran approval or face attack.' },
+  { date: 'Mar 13', timestamp: Date.parse('2026-03-13'), tankerCount: 3, vlccRate: 460000, event: 'Iran considering yuan-only Hormuz transit. Two Indian LPG carriers allowed through. Petrodollar disruption emerging.' },
+  { date: 'Mar 14', timestamp: Date.parse('2026-03-14'), tankerCount: 2, vlccRate: 465000, event: 'US bombs Kharg Island military targets. Trump threatens oil infrastructure next. Iran warns $200 oil if energy facilities hit.' },
 ];
 
 export const casualtyTimeline: CasualtyEntry[] = [
@@ -214,6 +216,7 @@ export const casualtyTimeline: CasualtyEntry[] = [
   { date: 'Mar 10', timestamp: Date.parse('2026-03-10'), iranianKilled: 2350, iranianCivilian: 720, usKilled: 8, gccCivilian: 275, note: '8th US service member dies. Iran mining Hormuz. Qatar shoots down 2 Iranian Su-24 bombers.' },
   { date: 'Mar 11', timestamp: Date.parse('2026-03-11'), iranianKilled: 2500, iranianCivilian: 800, usKilled: 8, gccCivilian: 290, note: 'US confirms 140 service members wounded in first 10 days. 16 Iranian mine-laying vessels destroyed.' },
   { date: 'Mar 12', timestamp: Date.parse('2026-03-12'), iranianKilled: 2650, iranianCivilian: 1348, usKilled: 8, gccCivilian: 310, note: 'Iran UN rep: 1,348 civilians killed, 17,000+ injured. UNICEF: 1,100+ children injured or killed.' },
+  { date: 'Mar 13', timestamp: Date.parse('2026-03-13'), iranianKilled: 5844, iranianCivilian: 1444, usKilled: 13, gccCivilian: 826, note: '1,444 civilians + 4,400 military killed in Iran. 826 killed in Lebanon. 13+ US dead. 140 wounded. US refueling plane crashes in Iraq — 6 crew killed.' },
 ];
 
 export const marketTimeline: MarketEntry[] = [
@@ -230,7 +233,9 @@ export const marketTimeline: MarketEntry[] = [
   { date: 'Mar 9', timestamp: Date.parse('2026-03-09'), brentCrude: 108.75, wti: 108.62, naturalGas: 4.50, goldSpot: 5100, spx: 5480, vix: 29.48, hySpread: 475, event: 'Oil breaches $100, hits $119 intraday. Largest single-day $ gain since 1988. Asia crashes' },
   { date: 'Mar 10', timestamp: Date.parse('2026-03-10'), brentCrude: 94, wti: 88, naturalGas: 4.60, goldSpot: 5120, spx: 5365, vix: 28.5, hySpread: 485, event: "Oil briefly hit $119 intraday before collapsing on Trump 'ending soon' rhetoric. Settled ~$94." },
   { date: 'Mar 11', timestamp: Date.parse('2026-03-11'), brentCrude: 87.69, wti: 83.43, naturalGas: 4.55, goldSpot: 5080, spx: 5354, vix: 27.2, hySpread: 480, event: 'IEA announces record 400M barrel reserve release. Oil crashed 11% intraday before recovering. CPI: Feb inflation at 2.4% YoY (pre-war baseline).' },
-  { date: 'Mar 12', timestamp: Date.parse('2026-03-12'), brentCrude: 100.11, wti: 94, naturalGas: 4.70, goldSpot: 5150, spx: 5295, vix: 24.77, hySpread: 495, event: 'Brent back above $100 despite record SPR release. WTI +8%. Iran ship attacks intensifying. Energy Sec Wright: Navy not ready to escort tankers. Goldman raises inflation forecast.' },
+  { date: 'Mar 12', timestamp: Date.parse('2026-03-12'), brentCrude: 100.46, wti: 95.73, naturalGas: 4.70, goldSpot: 5150, spx: 5295, vix: 24.77, hySpread: 495, event: 'All three indexes hit 2026 closing lows. Brent first close above $100 since Aug 2022. S&P 6672.62 (-1.52%), Dow 46677.85 (-1.56%), Nasdaq -1.78%.' },
+  { date: 'Mar 13', timestamp: Date.parse('2026-03-13'), brentCrude: 103.14, wti: 98.71, naturalGas: 4.80, goldSpot: 5180, spx: 5275, vix: 25.5, hySpread: 505, event: 'Brent $103.14, second close above $100. S&P first 3-week losing streak in a year. Weekly: Brent +10%, WTI +8%.' },
+  { date: 'Mar 14', timestamp: Date.parse('2026-03-14'), brentCrude: 103, wti: 99, naturalGas: 4.90, goldSpot: 5200, spx: 5250, vix: 26.0, hySpread: 515, event: 'US bombs Kharg Island military targets. Trump threatens oil infrastructure next. Iran warns $200 oil if energy facilities hit.' },
 ];
 
 export const gasPrices: GasPriceEntry[] = [
@@ -248,6 +253,7 @@ export const gasPrices: GasPriceEntry[] = [
   { date: 'Mar 10', timestamp: Date.parse('2026-03-10'), usAverage: 3.52, california: 5.48, change: 0.042 },
   { date: 'Mar 11', timestamp: Date.parse('2026-03-11'), usAverage: 3.58, california: 5.55, change: 0.06 },
   { date: 'Mar 12', timestamp: Date.parse('2026-03-12'), usAverage: 3.60, california: 5.62, change: 0.02, note: 'AAA: $3.60/gal. Greece caps gasoline profit margins for 3 months.' },
+  { date: 'Mar 14', timestamp: Date.parse('2026-03-14'), usAverage: 3.60, california: 5.65, change: 0.03, note: 'Gas prices steady despite oil above $100.' },
 ];
 
 export const asianMarkets: AsianMarketEntry[] = [
@@ -566,7 +572,75 @@ export const scenarioUpdates: ScenarioUpdate[] = [
       "IEA warns of 'largest supply disruption in history of global oil market'",
     ],
   },
+  {
+    date: 'Mar 13, 2026',
+    timestamp: Date.parse('2026-03-13'),
+    day: 14,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 2 },
+      { scenario: 'Protracted Attrition', probability: 35 },
+      { scenario: 'Full Escalation', probability: 63 },
+    ],
+    rationale: "Yuan-denominated Hormuz transit is the biggest structural development of the war — Iran weaponizing the strait not just to block oil but to restructure HOW oil is traded. This is petrodollar disruption, not just supply disruption. If this becomes policy, it outlasts the war. Mojtaba wounded/disfigured changes succession calculus. Iran military losing control of units = decentralized escalation risk. Fed cuts priced out to 2027-2028 = stagflation thesis confirmed by rates market. 1973 OPEC crisis comparisons going mainstream.",
+    keyDevelopments: [
+      'Iran considering yuan-only Hormuz transit — petrodollar disruption',
+      'Two Indian LPG carriers allowed through under yuan transit framework',
+      'Hegseth: Mojtaba Khamenei "wounded and likely disfigured"',
+      'Explosions near Tehran rally attended by Larijani, Pezeshkian, Araghchi',
+      '1,444 civilians + 4,400 military killed in Iran',
+      'Iran Foreign Ministry says military lost control of several units',
+      'US refueling plane crashes in Iraq — 6 crew killed',
+      '2,200 Marines deploying from Okinawa',
+      '250+ US orgs demand Congress halt war funding',
+      'Fed rate cuts priced out until 2027-2028',
+      'Stagflation comparisons to 1973 now mainstream',
+    ],
+  },
+  {
+    date: 'Mar 14, 2026',
+    timestamp: Date.parse('2026-03-14'),
+    day: 15,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 2 },
+      { scenario: 'Protracted Attrition', probability: 35 },
+      { scenario: 'Full Escalation', probability: 63 },
+    ],
+    rationale: "US strikes Kharg Island — 90% of Iran's oil exports pass through it. Trump spared oil infrastructure 'this time' but threatened it next. Iran responds: any attack on energy facilities triggers retaliation on regional oil infrastructure. This is bilateral energy infrastructure targeting from Day 9 taken to logical extreme. The $200 oil warning is not hyperbole if Kharg oil infrastructure is hit and Iran retaliates against Saudi/UAE export capacity. Trump asking other countries to send warships = admission US can't reopen Hormuz alone.",
+    keyDevelopments: [
+      "US bombs Kharg Island military targets — Iran's 'crown jewel'",
+      'Trump threatens oil infrastructure next if Hormuz stays blocked',
+      'Iran: any energy facility attack triggers retaliation on regional oil infrastructure',
+      "IRGC tells UAE residents to evacuate near US 'hideouts'",
+      'Fujairah bunkering hub fire',
+      'Jordan: intercepted 79/85 projectiles in week 2',
+      '56 Iranian cultural sites damaged',
+      'Trump calls on China, France, Japan, SK, UK to send warships',
+      'Iran spokesperson warns oil could hit $200',
+      'Brent closes at $103.14',
+      'S&P at 2026 lows',
+    ],
+  },
 ];
+
+// =============================================================================
+// DAY 14-15 SPECIAL EVENTS
+// =============================================================================
+
+export const khargIslandStrike = {
+  date: '2026-03-14',
+  target: 'Military installations on Kharg Island',
+  oilInfraSpared: true,
+  threatLevel: 'Trump warned oil infrastructure is next if Hormuz stays blocked',
+  iranResponse: 'Any attack on energy facilities triggers retaliation on regional oil infrastructure',
+  significance: "90% of Iran's oil exports pass through Kharg. First strike on the island in 14 days of war.",
+};
+
+export const yuanHormuzAccess = {
+  date: '2026-03-13',
+  description: 'Iran considering allowing limited tanker transit if oil traded in yuan not dollars',
+  indianLPGCarriers: 'Two Indian-flagged LPG carriers allowed through',
+  significance: 'Direct attack on petrodollar system. Selective access expanding beyond China.',
+};
 
 // =============================================================================
 // REFERENCE DATA
@@ -697,7 +771,7 @@ export const hySpreadHistory: HySpreadHistoryEntry[] = [
   { date: '2023', spread: 400 },
   { date: '2024', spread: 320 },
   { date: '2025', spread: 281, event: 'Historic lows' },
-  { date: 'Mar 2026', spread: 495, event: 'Iran conflict Day 13', isCurrent: true },
+  { date: 'Mar 2026', spread: 515, event: 'Iran conflict Day 15 — Kharg Island struck', isCurrent: true },
 ];
 
 // =============================================================================
@@ -1836,6 +1910,227 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
       "Full Escalation at 58% — remains base case. Khamenei warns war could spread to 'other fronts'",
     ],
   },
+  14: {
+    day: 14,
+    date: 'March 13, 2026',
+    title: "Yuan for Oil, Wounded Leader, and the 1973 Playbook Returns",
+    summary: "Yuan-denominated Hormuz transit is the biggest structural development of the war — Iran weaponizing the strait not just to block oil but to restructure HOW oil is traded. This is petrodollar disruption, not just supply disruption. If this becomes policy, it outlasts the war. Mojtaba wounded/disfigured changes succession calculus. Iran military losing control of units = decentralized escalation risk. Fed cuts priced out to 2027-2028 = your Part II stagflation thesis confirmed by the rates market. 1973 OPEC crisis comparisons going mainstream.",
+    thesisScorecard: [
+      {
+        thesis: 'Yuan-denominated Hormuz access',
+        initialConfidence: 30,
+        currentConfidence: 75,
+        status: 'developing',
+        evidence: [
+          'Iran considering allowing limited tanker transit if oil traded in yuan not dollars',
+          'Two Indian-flagged LPG carriers allowed through',
+          'Direct attack on petrodollar system',
+          'Selective access expanding beyond China',
+        ],
+      },
+      {
+        thesis: 'Stagflation thesis',
+        initialConfidence: 65,
+        currentConfidence: 92,
+        status: 'confirmed',
+        evidence: [
+          'Fed rate cuts priced out until 2027-2028',
+          '1973 OPEC crisis comparisons now mainstream',
+          'S&P first 3-week losing streak in a year',
+          'Brent second close above $100 at $103.14',
+        ],
+      },
+      {
+        thesis: 'Leadership succession instability',
+        initialConfidence: 60,
+        currentConfidence: 85,
+        status: 'confirmed',
+        evidence: [
+          'Hegseth: Mojtaba Khamenei "wounded and likely disfigured"',
+          'Iran Foreign Ministry says military lost control of several units',
+          'Decentralized escalation risk increasing',
+        ],
+      },
+      {
+        thesis: 'US military overextension',
+        initialConfidence: 70,
+        currentConfidence: 88,
+        status: 'confirmed',
+        evidence: [
+          '13+ US dead, 140 wounded',
+          'US refueling plane crashes in Iraq — 6 crew killed',
+          '2,200 Marines deploying from Okinawa',
+          '250+ US orgs demand Congress halt war funding',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[13], // Day 14 update
+    keyDevelopments: [
+      {
+        category: 'Petrodollar Disruption',
+        items: [
+          'Iran considering yuan-only Hormuz transit — petrodollar disruption',
+          'Two Indian LPG carriers allowed through under yuan framework',
+          'Direct attack on dollar-denominated oil system',
+          'If this becomes policy, it outlasts the war',
+        ],
+      },
+      {
+        category: 'Leadership & Military',
+        items: [
+          'Hegseth: Mojtaba Khamenei "wounded and likely disfigured"',
+          'Explosions near Tehran rally attended by top officials',
+          'Iran Foreign Ministry says military lost control of several units',
+          '2,200 Marines deploying from Okinawa to Gulf region',
+        ],
+      },
+      {
+        category: 'Casualties',
+        items: [
+          '1,444 Iranian civilians killed',
+          '4,400 Iranian military killed',
+          '826 killed in Lebanon',
+          '13+ US dead, 140 wounded',
+          'US refueling plane crashes in Iraq — 6 crew killed',
+        ],
+      },
+      {
+        category: 'Markets & Economy',
+        items: [
+          'Brent $103.14 — second close above $100',
+          'WTI $98.71',
+          'S&P first 3-week losing streak in a year',
+          'Fed rate cuts priced out until 2027-2028',
+          'Stagflation comparisons to 1973 now mainstream',
+          '250+ US orgs demand Congress halt war funding',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 103.14,
+      vlccRate: 460000,
+      hySpread: 505,
+      vix: 25.5,
+      usGas: 3.60,
+    },
+    tradingImplications: [
+      "Yuan-denominated Hormuz transit is structural petrodollar disruption — this changes global oil trading architecture",
+      "Fed cuts priced out to 2027-2028 = stagflation now consensus, not thesis",
+      "Mojtaba wounded/disfigured introduces succession uncertainty within succession uncertainty",
+      "Iran military losing control of units = decentralized escalation, harder to negotiate with",
+      "1973 comparisons going mainstream — market participants now pricing 1970s-style energy crisis",
+      "S&P 3-week losing streak + oil above $100 = credit transmission accelerating",
+    ],
+  },
+  15: {
+    day: 15,
+    date: 'March 14, 2026',
+    title: "Kharg Island — The Crown Jewel Gets Hit",
+    summary: "Kharg Island is the escalation everyone feared. 90% of Iran's oil exports flow through it. Trump says he spared the oil infrastructure 'this time' — that's a direct threat and negotiating lever. But Iran's response ('any energy facility attack triggers regional retaliation') means the next step could be Iran hitting Saudi Aramco facilities, UAE export terminals, or Ras Tanura. This is the bilateral energy infrastructure targeting from Day 9 taken to its logical extreme. The $200 oil warning from Iran's spokesperson is not hyperbole if Kharg oil infrastructure is hit and Iran retaliates against Saudi/UAE export capacity. Trump asking other countries to send warships = admission the US can't reopen Hormuz alone.",
+    thesisScorecard: [
+      {
+        thesis: 'Bilateral energy infrastructure targeting',
+        initialConfidence: 85,
+        currentConfidence: 98,
+        status: 'confirmed',
+        evidence: [
+          "US bombs Kharg Island — Iran's 'crown jewel'",
+          "90% of Iran's oil exports pass through Kharg",
+          'Trump threatens oil infrastructure next',
+          'Iran warns retaliation on regional oil infrastructure',
+        ],
+      },
+      {
+        thesis: '$200 oil scenario',
+        initialConfidence: 40,
+        currentConfidence: 65,
+        status: 'developing',
+        evidence: [
+          'Iran spokesperson warns oil could hit $200',
+          'If Kharg oil infrastructure hit + Iran retaliates on Saudi/UAE',
+          'Brent already at $103',
+          'Bilateral energy targeting now explicit policy',
+        ],
+      },
+      {
+        thesis: 'US cannot reopen Hormuz alone',
+        initialConfidence: 60,
+        currentConfidence: 85,
+        status: 'confirmed',
+        evidence: [
+          'Trump calls on China, France, Japan, SK, UK to send warships',
+          'Admission US Navy overstretched',
+          'Energy Sec Wright: Navy not ready until end of month',
+        ],
+      },
+      {
+        thesis: 'Regional infrastructure under sustained attack',
+        initialConfidence: 75,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          'Fujairah bunkering hub fire',
+          '56 Iranian cultural sites damaged',
+          "IRGC tells UAE residents to evacuate near US 'hideouts'",
+          'Jordan intercepted 79/85 projectiles in week 2',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[14], // Day 15 update
+    keyDevelopments: [
+      {
+        category: 'Kharg Island Strike',
+        items: [
+          "US bombs Kharg Island military targets — Trump calls it Iran's 'crown jewel'",
+          "90% of Iran's oil exports pass through Kharg",
+          "First strike on the island in 14 days of war",
+          "Trump warns oil infrastructure is next if Hormuz stays blocked",
+          "Iran: any attack on energy facilities triggers retaliation on regional oil infrastructure",
+        ],
+      },
+      {
+        category: 'Regional Escalation',
+        items: [
+          'Fujairah bunkering hub fire',
+          "IRGC tells UAE residents to evacuate near US 'hideouts'",
+          'Jordan: intercepted 79/85 projectiles in week 2',
+          '56 Iranian cultural sites damaged',
+        ],
+      },
+      {
+        category: 'International Response',
+        items: [
+          'Trump calls on China, France, Japan, South Korea, UK to send warships',
+          'Admission US cannot reopen Hormuz alone',
+          'Iran spokesperson warns oil could hit $200 if energy facilities targeted',
+        ],
+      },
+      {
+        category: 'Markets',
+        items: [
+          'Brent ~$103, WTI ~$99',
+          'S&P at 2026 lows',
+          'All three indexes hit 2026 closing lows on Day 13',
+          'Weekly: Brent +10%, WTI +8%',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 103,
+      vlccRate: 460000,
+      hySpread: 515,
+      vix: 26.0,
+      usGas: 3.60,
+    },
+    tradingImplications: [
+      "Kharg Island strike is the escalation threshold — next step is actual oil infrastructure",
+      "$200 oil is not hyperbole if Kharg oil infrastructure hit and Iran retaliates on Saudi/UAE export capacity",
+      "Trump asking allies for warships = US Navy overextended, cannot reopen Hormuz unilaterally",
+      "Bilateral energy targeting now explicit — both sides have drawn red lines around energy infrastructure",
+      "S&P at 2026 lows, oil at $103 — credit transmission chain fully active",
+      "Full Escalation at 63% — highest of the war. Next Iranian response could define $120 vs $150 vs $200",
+    ],
+  },
 };
 
 // =============================================================================
@@ -1988,6 +2283,11 @@ export const shippingDisruptionData = {
     { date: 'Mar 12', title: 'Iraq Ports Shut Down', description: 'Iraq shuts down oil port operations at Basra after tanker attacks. Supply destruction expands beyond Hormuz.' },
     { date: 'Mar 12', title: 'Navy Not Ready', description: "Energy Secretary Wright admits Navy 'not ready' to escort tankers — won't be ready until end of month." },
     { date: 'Mar 12', title: 'Oil Back Above $100', description: 'Brent crude back above $100 despite record SPR release. WTI +8%. IEA: largest supply disruption in history.' },
+    { date: 'Mar 13', title: 'Yuan Transit Emerging', description: 'Iran considering yuan-only Hormuz transit. Two Indian LPG carriers allowed through. Petrodollar disruption.' },
+    { date: 'Mar 13', title: 'Stagflation Comparisons', description: 'Fed cuts priced out to 2027-2028. 1973 OPEC crisis comparisons now mainstream. S&P first 3-week losing streak in year.' },
+    { date: 'Mar 14', title: 'Kharg Island Struck', description: "US bombs Kharg Island military targets — 90% of Iran's oil exports pass through here. Trump threatens oil infrastructure next." },
+    { date: 'Mar 14', title: '$200 Oil Warning', description: 'Iran spokesperson warns oil could hit $200 if energy facilities targeted. Bilateral energy targeting now explicit.' },
+    { date: 'Mar 14', title: 'US Requests Allied Warships', description: 'Trump calls on China, France, Japan, South Korea, UK to send warships — admission US cannot reopen Hormuz alone.' },
   ],
   keyMetrics: {
     transitCollapsePercent: 98,
@@ -2304,6 +2604,21 @@ export const conflictEvents: ConflictEvent[] = [
   { date: '2026-03-12', day: 13, lat: 29.7, lng: 48.8, type: 'shipping', target: 'US tanker Safesea Vishnu, off Iraq coast', description: 'US-owned tanker attacked off Iraq coast. Two tankers caught fire in Iraqi territorial waters.', status: 'confirmed' },
   { date: '2026-03-12', day: 13, lat: 25.2532, lng: 55.3657, type: 'strike_iran', target: 'Dubai International Airport', description: 'Dubai airport hit by Iranian drones. 4 wounded. Airport still operating.', impact: '4 wounded', status: 'confirmed' },
   { date: '2026-03-12', day: 13, lat: 29.2266, lng: 47.9689, type: 'strike_iran', target: 'Kuwait International Airport', description: 'Kuwait airport targeted by Iranian drones. Material damage only.', status: 'confirmed' },
+
+  // DAY 14 — Mar 13
+  { date: '2026-03-13', day: 14, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz', description: 'Iran considering yuan-only Hormuz transit. Two Indian LPG carriers allowed through. Petrodollar disruption emerging.', status: 'confirmed' },
+  { date: '2026-03-13', day: 14, lat: 35.6892, lng: 51.3890, type: 'strike_us', target: 'Tehran Rally Site', description: 'Explosions near Tehran rally attended by Larijani, Pezeshkian, Araghchi.', status: 'confirmed' },
+  { date: '2026-03-13', day: 14, lat: 33.3152, lng: 44.3661, type: 'strike_us', target: 'US Refueling Plane, Iraq', description: 'US refueling plane crashes in Iraq — 6 crew killed.', impact: '6 crew killed', status: 'confirmed' },
+  { date: '2026-03-13', day: 14, lat: 33.8938, lng: 35.5018, type: 'strike_israel', target: 'Lebanon', description: '826 killed in Lebanon total. Conflict continues.', impact: '826 killed total', status: 'confirmed' },
+  { date: '2026-03-13', day: 14, lat: 26.3927, lng: 127.7314, type: 'naval', target: 'Okinawa, Japan', description: '2,200 Marines deploying from Okinawa to Gulf region.', status: 'confirmed' },
+
+  // DAY 15 — Mar 14
+  { date: '2026-03-14', day: 15, lat: 29.2442, lng: 50.3235, type: 'strike_us', target: 'Kharg Island, Iran', description: "US bombs Kharg Island military targets — Trump calls it Iran's 'crown jewel.' 90% of Iran's oil exports pass through here.", impact: 'First strike on Kharg Island', status: 'confirmed' },
+  { date: '2026-03-14', day: 15, lat: 25.1200, lng: 56.3300, type: 'infrastructure_energy', target: 'Fujairah Bunkering Hub, UAE', description: 'Fire at Fujairah bunkering hub.', status: 'confirmed' },
+  { date: '2026-03-14', day: 15, lat: 31.9539, lng: 35.9106, type: 'interception', target: 'Jordan Airspace', description: 'Jordan intercepted 79/85 projectiles in week 2 of conflict.', impact: '79/85 intercepted', status: 'confirmed' },
+  { date: '2026-03-14', day: 15, lat: 35.6892, lng: 51.3890, type: 'strike_us', target: 'Iranian Cultural Sites', description: '56 Iranian cultural sites damaged since conflict began.', impact: '56 cultural sites damaged', status: 'confirmed' },
+  { date: '2026-03-14', day: 15, lat: 24.4539, lng: 54.3773, type: 'strike_iran', target: 'UAE Near US Facilities', description: "IRGC tells UAE residents to evacuate near US 'hideouts.'", status: 'confirmed' },
+  { date: '2026-03-14', day: 15, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz', description: "Trump threatens oil infrastructure next if Hormuz stays blocked. Iran warns $200 oil if energy facilities hit.", status: 'confirmed' },
 ];
 
 // Insurance exclusion zone polygon (for map overlay)
