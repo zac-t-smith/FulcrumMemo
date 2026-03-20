@@ -59,10 +59,10 @@ const IranMemoPartIIFull = () => {
         <title>Second-Order Effects: Sector Repricing & The Coming Restructuring Cycle | The Fulcrum Memo</title>
         <meta
           name="description"
-          content="How the Iran conflict cascades from sovereign crisis to domestic political constraint to sector-level credit stress — and why the next 24 months will produce the largest restructuring cycle since 2008."
+          content="How the Iran conflict cascades from sovereign crisis to domestic political constraint to sector-level credit stress — and why the next 12-18 months will produce the largest restructuring cycle since 2008."
         />
         <meta property="og:title" content="Second-Order Effects: The Coming Restructuring Cycle" />
-        <meta property="og:description" content="How the Iran conflict cascades to sector-level credit stress and why the next 24 months will produce the largest restructuring cycle since 2008." />
+        <meta property="og:description" content="How the Iran conflict cascades to sector-level credit stress and why the next 12-18 months will produce the largest restructuring cycle since 2008." />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
@@ -133,7 +133,7 @@ const IranMemoPartIIFull = () => {
             </h1>
             <p className="text-muted-foreground font-mono text-base italic mb-6 leading-relaxed">
               How the Iran conflict cascades from sovereign crisis to domestic political constraint
-              to sector-level credit stress — and why the next 24 months will produce the largest
+              to sector-level credit stress — and why the next 12-18 months will produce the largest
               restructuring cycle since 2008
             </p>
             <div className="flex flex-wrap items-center gap-4 text-muted-foreground font-mono text-xs">
@@ -533,6 +533,17 @@ const IranMemoPartIIFull = () => {
               VI. The Larijani Signal: Why the Base Case Is Holding
             </motion.h2>
 
+            <Callout variant="critical" title="UPDATE: Larijani Killed — Day 18 (March 17, 2026)">
+              Ali Larijani was killed in strikes on Day 18. He was the most credible negotiation
+              partner remaining on the Iranian side — the pragmatic senior official who advanced
+              the JCPOA in 2015 and was de facto leader after Khamenei's death. His death
+              eliminates the diplomatic off-ramp entirely. Combined with Mojtaba Khamenei's
+              hardline stance and Araghchi's explicit rejection of all negotiation, there is now
+              literally no one authorized to negotiate a deal on the Iranian side. The analysis
+              below, written before his death, explains why his refusal to negotiate was the
+              critical signal. His elimination makes that signal permanent.
+            </Callout>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -556,13 +567,17 @@ const IranMemoPartIIFull = () => {
               </p>
             </motion.div>
 
-            <Callout variant="critical" title="The Investment Implication of Larijani's Refusal">
-              If Iran is not negotiating, the conflict extends. If the conflict extends, oil stays
-              elevated. If oil stays elevated, consumer spending compresses. If consumer spending
-              compresses while the refinancing wall hits, defaults accelerate. If defaults
-              accelerate with credit spreads at historic lows, spread widening is violent and
-              sudden. Every link in this chain is now active. Larijani's refusal to negotiate is
-              the first domino. The restructuring cycle is the last.
+            <Callout variant="critical" title="The Investment Implication of Larijani's Death">
+              If Iran cannot negotiate (because the person with authority to do so is dead), the
+              conflict extends. If the conflict extends, oil stays elevated. If oil stays elevated,
+              consumer spending compresses. If consumer spending compresses while the refinancing
+              wall hits, defaults accelerate. If defaults accelerate with credit spreads at
+              historic lows, spread widening is violent and sudden. Every link in this chain is
+              now active. Larijani's death — combined with the Ras Laffan structural damage (5
+              years to repair) — transforms the "protracted attrition" vs "full escalation"
+              distinction into an academic question. The damage is already done and will outlast
+              the war itself. The restructuring cycle timeline has accelerated from 24 months to
+              12-18 months.
             </Callout>
           </section>
 

@@ -543,7 +543,7 @@ const IranMemoPartIFull = () => {
                 {
                   title: 'Khamenei was 86 and symbolic, not operational.',
                   content:
-                    'Day-to-day management had already shifted to Ali Larijani and the IRGC. The operational handoff had already occurred. Removing Khamenei eliminated a figurehead, not the command structure.',
+                    'Day-to-day management had already shifted to Ali Larijani and the IRGC. The operational handoff had already occurred. Removing Khamenei eliminated a figurehead, not the command structure. [UPDATE Day 18: Larijani himself was killed on March 17, 2026 — eliminating the last credible negotiation partner on the Iranian side.]',
                 },
                 {
                   title: 'Succession protocols activated with suspicious speed.',

@@ -12,7 +12,7 @@ const IranMemoPartII = () => {
         <title>Second-Order Effects | The Fulcrum Memo</title>
         <meta
           name="description"
-          content="How the Iran conflict cascades from sovereign crisis to domestic political constraint to sector-level credit stress — and why the next 24 months will produce the largest restructuring cycle since 2008."
+          content="How the Iran conflict cascades from sovereign crisis to domestic political constraint to sector-level credit stress — and why the next 12-18 months will produce the largest restructuring cycle since 2008."
         />
       </Helmet>
 
@@ -100,7 +100,7 @@ const IranMemoPartII = () => {
             Building on the geopolitical framework established in Part I, this analysis traces the
             second-order effects of Iran's infrastructure-targeting strategy through domestic
             political constraints, sector-level credit stress, and the emerging restructuring cycle.
-            The cascade from sovereign crisis to investable thesis reveals why the next 24 months
+            The cascade from sovereign crisis to investable thesis reveals why the next 12-18 months
             will reshape credit markets.
           </motion.p>
 

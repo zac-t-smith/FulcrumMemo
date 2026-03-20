@@ -7,8 +7,8 @@
 // =============================================================================
 
 export const conflictMetadata = {
-  lastUpdated: '2026-03-14T21:00:00Z',
-  conflictDay: 15,
+  lastUpdated: '2026-03-20T21:00:00Z',
+  conflictDay: 21,
   conflictStartDate: '2026-02-28',
 };
 
@@ -200,6 +200,12 @@ export const hormuzTimeline: HormuzTransitEntry[] = [
   { date: 'Mar 12', timestamp: Date.parse('2026-03-12'), tankerCount: 2, vlccRate: 460000, event: '3 more ships struck overnight. Iraq shuts down oil port operations after tanker attacks at Basra. Iran says some ships allowed through with permission. IRGC: all ships must get Iran approval or face attack.' },
   { date: 'Mar 13', timestamp: Date.parse('2026-03-13'), tankerCount: 3, vlccRate: 460000, event: 'Iran considering yuan-only Hormuz transit. Two Indian LPG carriers allowed through. Petrodollar disruption emerging.' },
   { date: 'Mar 14', timestamp: Date.parse('2026-03-14'), tankerCount: 2, vlccRate: 465000, event: 'US bombs Kharg Island military targets. Trump threatens oil infrastructure next. Iran warns $200 oil if energy facilities hit.' },
+  { date: 'Mar 15', timestamp: Date.parse('2026-03-15'), tankerCount: 2, vlccRate: 465000, event: 'Iran FM denies ceasefire. Hezbollah drone hits Cyprus RAF base. 6 US crew from KC-135 crash confirmed.' },
+  { date: 'Mar 16', timestamp: Date.parse('2026-03-16'), tankerCount: 2, vlccRate: 468000, event: 'FCC Chair threatens broadcaster licenses. Formula One cancels Bahrain and Saudi GPs. Israel expands Lebanon ground ops.' },
+  { date: 'Mar 17', timestamp: Date.parse('2026-03-17'), tankerCount: 2, vlccRate: 470000, event: 'Larijani killed — last viable negotiation partner eliminated. IRGC warns military lost control of several units.' },
+  { date: 'Mar 18', timestamp: Date.parse('2026-03-18'), tankerCount: 1, vlccRate: 485000, event: "Israel strikes South Pars. Iran retaliates against Ras Laffan — world's largest LNG facility. 17% export capacity lost, 5 years to repair." },
+  { date: 'Mar 19', timestamp: Date.parse('2026-03-19'), tankerCount: 2, vlccRate: 490000, event: 'Brent spikes to $119 intraday. Goldman warns oil could exceed $147 all-time high. JPMorgan cuts S&P year-end target.' },
+  { date: 'Mar 20', timestamp: Date.parse('2026-03-20'), tankerCount: 2, vlccRate: 495000, event: "Trump rejects ceasefire. Calls NATO 'cowards.' Strikes hit Tehran during Nowruz. Senior Iranian source: strait 'will not return to pre-war conditions.'" },
 ];
 
 export const casualtyTimeline: CasualtyEntry[] = [
@@ -217,6 +223,9 @@ export const casualtyTimeline: CasualtyEntry[] = [
   { date: 'Mar 11', timestamp: Date.parse('2026-03-11'), iranianKilled: 2500, iranianCivilian: 800, usKilled: 8, gccCivilian: 290, note: 'US confirms 140 service members wounded in first 10 days. 16 Iranian mine-laying vessels destroyed.' },
   { date: 'Mar 12', timestamp: Date.parse('2026-03-12'), iranianKilled: 2650, iranianCivilian: 1348, usKilled: 8, gccCivilian: 310, note: 'Iran UN rep: 1,348 civilians killed, 17,000+ injured. UNICEF: 1,100+ children injured or killed.' },
   { date: 'Mar 13', timestamp: Date.parse('2026-03-13'), iranianKilled: 5844, iranianCivilian: 1444, usKilled: 13, gccCivilian: 826, note: '1,444 civilians + 4,400 military killed in Iran. 826 killed in Lebanon. 13+ US dead. 140 wounded. US refueling plane crashes in Iraq — 6 crew killed.' },
+  { date: 'Mar 15', timestamp: Date.parse('2026-03-15'), iranianKilled: 5844, iranianCivilian: 1444, usKilled: 13, gccCivilian: 826, note: '6 crew from KC-135 crash in Iraq confirmed dead. Iran FM denies ceasefire.' },
+  { date: 'Mar 17', timestamp: Date.parse('2026-03-17'), iranianKilled: 5844, iranianCivilian: 1444, usKilled: 13, gccCivilian: 900, note: 'Larijani killed. De facto post-Khamenei leader eliminated.' },
+  { date: 'Mar 20', timestamp: Date.parse('2026-03-20'), iranianKilled: 5844, iranianCivilian: 1444, usKilled: 13, gccCivilian: 1000, note: 'Iranian Red Crescent: 204 children among 1,444 civilians killed. Lebanon exceeds 1,000 dead.' },
 ];
 
 export const marketTimeline: MarketEntry[] = [
@@ -236,6 +245,12 @@ export const marketTimeline: MarketEntry[] = [
   { date: 'Mar 12', timestamp: Date.parse('2026-03-12'), brentCrude: 100.46, wti: 95.73, naturalGas: 4.70, goldSpot: 5150, spx: 5295, vix: 24.77, hySpread: 495, event: 'All three indexes hit 2026 closing lows. Brent first close above $100 since Aug 2022. S&P 6672.62 (-1.52%), Dow 46677.85 (-1.56%), Nasdaq -1.78%.' },
   { date: 'Mar 13', timestamp: Date.parse('2026-03-13'), brentCrude: 103.14, wti: 98.71, naturalGas: 4.80, goldSpot: 5180, spx: 5275, vix: 25.5, hySpread: 505, event: 'Brent $103.14, second close above $100. S&P first 3-week losing streak in a year. Weekly: Brent +10%, WTI +8%.' },
   { date: 'Mar 14', timestamp: Date.parse('2026-03-14'), brentCrude: 103, wti: 99, naturalGas: 4.90, goldSpot: 5200, spx: 5250, vix: 26.0, hySpread: 515, event: 'US bombs Kharg Island military targets. Trump threatens oil infrastructure next. Iran warns $200 oil if energy facilities hit.' },
+  { date: 'Mar 15', timestamp: Date.parse('2026-03-15'), brentCrude: 102, wti: 97, naturalGas: 4.95, goldSpot: 5220, spx: 5230, vix: 26.5, hySpread: 520, event: 'Iran FM Araghchi denies ceasefire on CBS Face the Nation. 6 US crew killed in Iraq plane crash confirmed.' },
+  { date: 'Mar 16', timestamp: Date.parse('2026-03-16'), brentCrude: 103, wti: 98, naturalGas: 5.00, goldSpot: 5240, spx: 5210, vix: 27.0, hySpread: 525, event: 'FCC Chair threatens broadcaster licenses over Iran war coverage. Israel ground ops in southern Lebanon.' },
+  { date: 'Mar 17', timestamp: Date.parse('2026-03-17'), brentCrude: 103, wti: 97, naturalGas: 5.05, goldSpot: 5260, spx: 5190, vix: 27.5, hySpread: 530, event: 'Ali Larijani killed in strikes. Most credible Iranian negotiation partner eliminated.' },
+  { date: 'Mar 18', timestamp: Date.parse('2026-03-18'), brentCrude: 108.78, wti: 97, naturalGas: 5.15, goldSpot: 5300, spx: 5100, vix: 30.0, hySpread: 550, event: "Israel strikes Iran's South Pars gas field. Iran retaliates against Qatar's Ras Laffan — world's largest LNG facility. QatarEnergy: 17% export capacity lost, 5 years to repair." },
+  { date: 'Mar 19', timestamp: Date.parse('2026-03-19'), brentCrude: 108.65, wti: 96.14, naturalGas: 5.25, goldSpot: 5350, spx: 6606.49, vix: 31.0, hySpread: 560, event: 'Brent spikes to $119 intraday before settling $108.65. JPMorgan cuts S&P year-end target. Goldman warns oil could exceed 2008 all-time high of $147.' },
+  { date: 'Mar 20', timestamp: Date.parse('2026-03-20'), brentCrude: 107.40, wti: 96, naturalGas: 5.30, goldSpot: 5380, spx: 6580, vix: 30.5, hySpread: 565, event: "Trump rejects ceasefire. Calls NATO 'cowards.' More Marines rerouted to Middle East. Strikes hit Tehran during Nowruz. Hormuz closed for 21 days. Senior Iranian source: strait 'will not return to pre-war conditions.'" },
 ];
 
 export const gasPrices: GasPriceEntry[] = [
@@ -254,6 +269,9 @@ export const gasPrices: GasPriceEntry[] = [
   { date: 'Mar 11', timestamp: Date.parse('2026-03-11'), usAverage: 3.58, california: 5.55, change: 0.06 },
   { date: 'Mar 12', timestamp: Date.parse('2026-03-12'), usAverage: 3.60, california: 5.62, change: 0.02, note: 'AAA: $3.60/gal. Greece caps gasoline profit margins for 3 months.' },
   { date: 'Mar 14', timestamp: Date.parse('2026-03-14'), usAverage: 3.60, california: 5.65, change: 0.03, note: 'Gas prices steady despite oil above $100.' },
+  { date: 'Mar 16', timestamp: Date.parse('2026-03-16'), usAverage: 3.65, california: 5.72, change: 0.05 },
+  { date: 'Mar 18', timestamp: Date.parse('2026-03-18'), usAverage: 3.75, california: 5.85, change: 0.10, note: 'Ras Laffan strike spikes energy prices.' },
+  { date: 'Mar 20', timestamp: Date.parse('2026-03-20'), usAverage: 3.85, california: 5.98, change: 0.10, note: 'Continuing to climb. Approaching $4 threshold.' },
 ];
 
 export const asianMarkets: AsianMarketEntry[] = [
@@ -620,6 +638,31 @@ export const scenarioUpdates: ScenarioUpdate[] = [
       'S&P at 2026 lows',
     ],
   },
+  {
+    date: 'Mar 20, 2026',
+    timestamp: Date.parse('2026-03-20'),
+    day: 21,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 1 },
+      { scenario: 'Protracted Attrition', probability: 30 },
+      { scenario: 'Full Escalation', probability: 69 },
+    ],
+    rationale: "Day 21: Full Escalation dominant. Energy infrastructure targeting now bilateral and structural (Ras Laffan 5yr repair). Larijani killed — no negotiation partner remaining. Trump rejects ceasefire. Goldman warns oil could exceed $147 all-time high. Hormuz 'will not return to pre-war conditions.' Fed cuts priced out to 2027-2028. War entering 4th week with more Marines deploying.",
+    keyDevelopments: [
+      "Israel strikes South Pars gas field → Iran retaliates on Ras Laffan (world's largest LNG facility)",
+      'QatarEnergy: 17% LNG capacity lost, up to 5 YEARS to repair',
+      'Ali Larijani killed — last viable negotiation partner eliminated',
+      "Hormuz closed 21 consecutive days. Iran: 'will not return to pre-war conditions'",
+      'Goldman warns oil could exceed 2008 all-time high ($147)',
+      'JPMorgan cuts S&P year-end target',
+      'Fed rate cuts priced out to 2027-2028',
+      "Trump rejects ceasefire, calls NATO 'cowards'",
+      'More Marines rerouted to Middle East (11th MEU, Boxer ARG)',
+      'Strikes hit Tehran during Nowruz (Persian New Year)',
+      'Iranian Red Crescent: 204 children among 1,444 civilians killed',
+      'Lebanon exceeds 1,000 dead',
+    ],
+  },
 ];
 
 // =============================================================================
@@ -640,6 +683,42 @@ export const yuanHormuzAccess = {
   description: 'Iran considering allowing limited tanker transit if oil traded in yuan not dollars',
   indianLPGCarriers: 'Two Indian-flagged LPG carriers allowed through',
   significance: 'Direct attack on petrodollar system. Selective access expanding beyond China.',
+};
+
+// =============================================================================
+// DAY 16-21 SPECIAL EVENTS
+// =============================================================================
+
+export const rasLaffanStrike = {
+  date: '2026-03-18',
+  trigger: "Israel struck Iran's South Pars gas field",
+  retaliation: "Iran struck Qatar's Ras Laffan — world's largest LNG facility",
+  damage: '17% LNG export capacity lost',
+  repairTimeline: 'Up to 5 years to fully repair',
+  significance: 'Even if war ends tomorrow, structural energy supply damage persists for years. This single event transforms the conflict from a temporary disruption into a permanent reshaping of global LNG markets.',
+};
+
+export const larijaniKilled = {
+  date: '2026-03-17',
+  significance: "Ali Larijani was the pragmatic senior official who was de facto leader after Khamenei's death. Instrumental in advancing JCPOA in 2015. His death removes the most credible negotiation partner on the Iranian side. Combined with Mojtaba Khamenei's hardline stance, this eliminates the diplomatic off-ramp.",
+};
+
+export const goldmanSachsUpdate = {
+  date: '2026-03-20',
+  warning: 'Brent could exceed all-time high of ~$147/bbl (set in 2008) if supply disruptions lengthen',
+  worstCase: '$111/bbl by Q4 2027 if supply stays very low for 2+ months',
+  favorableCase: 'Brent to $70s by Q4 2026 IF gradual Hormuz recovery from April',
+  tripleDigitDuration: 'Oil likely stays in triple digits for extended period',
+  fedImpact: 'Rate cuts not priced in until 2027-2028',
+};
+
+export const hormuzStatus = {
+  daysClosed: 21,
+  seniorIranianSource: 'Strait will not return to pre-war conditions',
+  mojtabaOrder: 'Lever of closing Hormuz must certainly continue',
+  indiaShips: '2 Indian-flagged ships allowed through. 22 more in ongoing negotiations.',
+  navalEscorts: 'UK sent military planners. Other allies say unlikely to send ships during active hostilities.',
+  trumpResponse: "Called NATO allies 'cowards' for not helping",
 };
 
 // =============================================================================
@@ -771,7 +850,7 @@ export const hySpreadHistory: HySpreadHistoryEntry[] = [
   { date: '2023', spread: 400 },
   { date: '2024', spread: 320 },
   { date: '2025', spread: 281, event: 'Historic lows' },
-  { date: 'Mar 2026', spread: 515, event: 'Iran conflict Day 15 — Kharg Island struck', isCurrent: true },
+  { date: 'Mar 2026', spread: 565, event: 'Iran conflict Day 21 — Ras Laffan structural damage, Larijani killed, $119 oil', isCurrent: true },
 ];
 
 // =============================================================================
@@ -2131,6 +2210,503 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
       "Full Escalation at 63% — highest of the war. Next Iranian response could define $120 vs $150 vs $200",
     ],
   },
+  16: {
+    day: 16,
+    date: 'March 15, 2026',
+    title: "'We Never Asked for a Ceasefire' — Araghchi Shuts the Door",
+    summary: "Iran's foreign minister publicly and explicitly rejects ceasefire, negotiations, and any engagement with the US. Combined with 6 more US deaths in Iraq plane crash, the political math for Trump gets worse daily. Hezbollah drone hits Cyprus RAF base — war touching NATO territory.",
+    thesisScorecard: [
+      {
+        thesis: 'Iran refuses all negotiation',
+        initialConfidence: 60,
+        currentConfidence: 98,
+        status: 'confirmed',
+        evidence: [
+          "Araghchi on CBS: 'We never asked for a ceasefire'",
+          'Flatly contradicts Trump claim that Iran wants deal',
+          'No diplomatic channel remaining',
+        ],
+      },
+      {
+        thesis: 'Geographic escalation continues',
+        initialConfidence: 70,
+        currentConfidence: 97,
+        status: 'confirmed',
+        evidence: [
+          'Hezbollah drone strikes Cyprus RAF base — NATO territory',
+          'Israeli strikes on Hamadan and Isfahan continue',
+          'War geography expanding beyond original theater',
+        ],
+      },
+      {
+        thesis: 'US casualties mounting political pressure',
+        initialConfidence: 70,
+        currentConfidence: 90,
+        status: 'confirmed',
+        evidence: [
+          '6 US crew from KC-135 crash in Iraq confirmed dead',
+          '13+ US dead, 140+ wounded total',
+          'Political cost of war increasing daily',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[15],
+    keyDevelopments: [
+      {
+        category: 'Diplomatic',
+        items: [
+          "Araghchi on CBS Face the Nation: 'We never asked for a ceasefire'",
+          "'We are ready to defend ourselves as long as it takes'",
+          'Trump claims Iran wants deal — Araghchi flatly denies',
+          'No diplomatic off-ramp remaining',
+        ],
+      },
+      {
+        category: 'Military',
+        items: [
+          '6 US crew from KC-135 crash in Iraq identified and confirmed dead',
+          'Israeli strikes on Hamadan and Isfahan continue',
+          'Hezbollah drone strikes Cyprus British RAF base',
+          'War now touching NATO territory',
+        ],
+      },
+      {
+        category: 'Markets',
+        items: [
+          'Brent ~$102, WTI ~$97',
+          'Oil stabilizing above $100 floor',
+          'Markets pricing in extended conflict',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 102,
+      vlccRate: 465000,
+      hySpread: 520,
+      vix: 26.5,
+      usGas: 3.65,
+    },
+    tradingImplications: [
+      "Ceasefire rejection eliminates near-term resolution scenario",
+      "Cyprus strike = NATO territory involved — potential Article 5 implications",
+      "US casualties at 13+ dead create domestic political pressure on Trump",
+      "Oil above $100 floor now consensus — question is $120 or $150",
+    ],
+  },
+  17: {
+    day: 17,
+    date: 'March 16, 2026',
+    title: "Formula One Cancels, FCC Threatens Media, Ground War in Lebanon",
+    summary: "The war's second-order effects are spreading into civilian life (F1 cancellations), press freedom (FCC threats), and new fronts (Israel ground ops in Lebanon). These aren't military developments — they're indicators of how deeply the conflict is embedding into the global system.",
+    thesisScorecard: [
+      {
+        thesis: 'Second-order effects spreading',
+        initialConfidence: 65,
+        currentConfidence: 88,
+        status: 'confirmed',
+        evidence: [
+          'Formula One cancels Bahrain and Saudi Arabia Grand Prix',
+          'Major sporting events affected',
+          'Global entertainment industry disrupted',
+        ],
+      },
+      {
+        thesis: 'Press freedom under pressure',
+        initialConfidence: 50,
+        currentConfidence: 75,
+        status: 'developing',
+        evidence: [
+          'FCC Chair threatens broadcaster licenses over war coverage',
+          "Sen. Murphy: 'middle of a totalitarian takeover'",
+          'Domestic political dynamics shifting',
+        ],
+      },
+      {
+        thesis: 'Ground war expanding',
+        initialConfidence: 70,
+        currentConfidence: 92,
+        status: 'confirmed',
+        evidence: [
+          'Israel expands ground operations in southern Lebanon',
+          'Multiple ground fronts now active',
+          'War geography expanding',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[15],
+    keyDevelopments: [
+      {
+        category: 'Civilian Impact',
+        items: [
+          'Formula One cancels Bahrain and Saudi Arabia Grand Prix races',
+          'Major international events being cancelled',
+          'Global tourism to region halted',
+        ],
+      },
+      {
+        category: 'Domestic Politics',
+        items: [
+          'FCC Chair Brendan Carr threatens to revoke broadcaster licenses over Iran war coverage',
+          "Sen. Murphy calls it 'middle of a totalitarian takeover'",
+          'Press freedom concerns escalating',
+        ],
+      },
+      {
+        category: 'Military',
+        items: [
+          'Israel expands ground operations in southern Lebanon',
+          'Multiple ground fronts now active',
+          'Lebanon casualties mounting',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 103,
+      vlccRate: 468000,
+      hySpread: 525,
+      vix: 27.0,
+      usGas: 3.68,
+    },
+    tradingImplications: [
+      "Second-order effects (F1 cancellation) signal war embedding into global system",
+      "Press freedom threats indicate domestic political stress",
+      "Ground operations in Lebanon expand conflict scope",
+      "Full Escalation probability stable at 67%",
+    ],
+  },
+  18: {
+    day: 18,
+    date: 'March 17, 2026',
+    title: "Larijani Dead — The Last Off-Ramp Is Gone",
+    summary: "Larijani was the one person in Iranian leadership with both the credibility and pragmatism to negotiate a deal. He advanced the JCPOA in 2015. He was de facto leader after Khamenei's death. Now he's dead. Mojtaba is wounded/hidden, Pezeshkian's conditions are unachievable, Araghchi refuses to talk. There is literally no one left to negotiate with on the Iranian side. This is the diplomatic equivalent of a company's board being eliminated during a restructuring — there's no one authorized to sign a deal.",
+    thesisScorecard: [
+      {
+        thesis: 'Diplomatic off-ramp eliminated',
+        initialConfidence: 70,
+        currentConfidence: 99,
+        status: 'confirmed',
+        evidence: [
+          'Ali Larijani killed — most credible negotiation partner',
+          'Advanced JCPOA in 2015',
+          'De facto post-Khamenei leader eliminated',
+          'No one left to negotiate with',
+        ],
+      },
+      {
+        thesis: 'Command and control fragmenting',
+        initialConfidence: 60,
+        currentConfidence: 85,
+        status: 'confirmed',
+        evidence: [
+          'IRGC warns military lost control of several units',
+          'Units operating on old instructions',
+          'Decentralized escalation risk increasing',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[15],
+    keyDevelopments: [
+      {
+        category: 'Leadership',
+        items: [
+          'Ali Larijani killed in strikes',
+          'De facto post-Khamenei leader eliminated',
+          'Most credible negotiation partner gone',
+          'Instrumental in advancing JCPOA in 2015',
+        ],
+      },
+      {
+        category: 'Military',
+        items: [
+          'IRGC warns military has lost control over several units',
+          'Units operating on old instructions',
+          'Decentralized escalation risk increasing',
+        ],
+      },
+      {
+        category: 'Diplomatic',
+        items: [
+          'Mojtaba wounded/hidden',
+          "Pezeshkian's conditions unachievable",
+          'Araghchi refuses to talk',
+          'No one authorized to sign a deal',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 103,
+      vlccRate: 470000,
+      hySpread: 530,
+      vix: 27.5,
+      usGas: 3.72,
+    },
+    tradingImplications: [
+      "CRITICAL: Larijani death eliminates last viable negotiation partner",
+      "Diplomatic off-ramp: CLOSED",
+      "Command fragmentation = decentralized escalation risk",
+      "Full Escalation probability rising to 69%",
+    ],
+  },
+  19: {
+    day: 19,
+    date: 'March 18, 2026',
+    title: "South Pars → Ras Laffan — The Energy War Goes Structural",
+    summary: "THE most important day of the war for the thesis since Day 1. Israel strikes South Pars. Iran retaliates against Ras Laffan. QatarEnergy says 17% LNG capacity lost, 5 years to repair. This single exchange transforms the conflict from a temporary disruption into permanent structural damage to global energy infrastructure. Even a ceasefire tomorrow doesn't fix a 5-year LNG repair timeline. The 'protracted attrition' vs 'full escalation' distinction is now academic — the damage is already done and will outlast the war itself.",
+    thesisScorecard: [
+      {
+        thesis: 'Energy infrastructure targeting structural',
+        initialConfidence: 85,
+        currentConfidence: 100,
+        status: 'confirmed',
+        evidence: [
+          "Israel strikes Iran's South Pars gas field",
+          "Iran retaliates on Qatar's Ras Laffan — world's largest LNG facility",
+          '17% LNG export capacity lost',
+          '5 years to repair',
+        ],
+      },
+      {
+        thesis: 'Damage outlasts war',
+        initialConfidence: 70,
+        currentConfidence: 98,
+        status: 'confirmed',
+        evidence: [
+          'Ceasefire tomorrow cannot fix 5-year repair timeline',
+          'Structural damage to global LNG markets',
+          'European energy crisis accelerated',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[15],
+    keyDevelopments: [
+      {
+        category: 'Energy Infrastructure',
+        items: [
+          "Israel strikes Iran's South Pars gas field",
+          "Iran retaliates against Qatar's Ras Laffan",
+          "World's largest LNG facility damaged",
+          'QatarEnergy: 17% export capacity lost',
+          'Up to 5 years to fully repair',
+        ],
+      },
+      {
+        category: 'Regional',
+        items: [
+          'Kuwait oil refinery hit',
+          'Energy infrastructure targeting now bilateral AND structural',
+          'Damage will outlast the war',
+        ],
+      },
+      {
+        category: 'Markets',
+        items: [
+          'Brent surges to $108.78',
+          'Triple-digit oil as new floor confirmed',
+          'European LNG supply gap permanent',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 108.78,
+      vlccRate: 485000,
+      hySpread: 550,
+      vix: 30.0,
+      usGas: 3.75,
+    },
+    tradingImplications: [
+      "Ras Laffan damage creates permanent European LNG supply gap: 90% confidence",
+      "5-year repair timeline means structural energy shortfall regardless of ceasefire",
+      "Part II restructuring cycle timeline accelerated from 24 months to 12-18 months",
+      "Full Escalation at 71% — structural damage already done",
+    ],
+  },
+  20: {
+    day: 20,
+    date: 'March 19, 2026',
+    title: "$119 Intraday, Goldman Says $147 Possible, JPM Cuts Targets",
+    summary: "Goldman Sachs now warning oil could exceed the 2008 all-time high. JPMorgan cutting equity targets. Fed rate cuts priced out to 2027-2028. The institutional consensus has shifted from 'this will be brief' to 'this could be structural.' That's the market catching up to what the memos predicted on Day 1. Netanyahu saying war 'may end sooner than people think' is the first potential off-ramp signal — but Iran has rejected every ceasefire attempt, and the Ras Laffan damage can't be undone.",
+    thesisScorecard: [
+      {
+        thesis: 'Institutional consensus shifts to structural',
+        initialConfidence: 65,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          'Goldman warns oil could exceed 2008 all-time high of $147',
+          'JPMorgan cuts S&P year-end target',
+          "Consensus shifted from 'brief' to 'structural'",
+        ],
+      },
+      {
+        thesis: 'Fed trapped in stagflation',
+        initialConfidence: 70,
+        currentConfidence: 94,
+        status: 'confirmed',
+        evidence: [
+          'Fed rate cuts priced out to 2027-2028',
+          'Stagflation scenario materializing',
+          'Cannot cut rates with inflation surging',
+        ],
+      },
+      {
+        thesis: 'Triple-digit oil as new floor',
+        initialConfidence: 75,
+        currentConfidence: 97,
+        status: 'confirmed',
+        evidence: [
+          'Brent hit $119 intraday',
+          'Goldman warns of sustained triple digits',
+          'Structural supply damage confirms floor',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[15],
+    keyDevelopments: [
+      {
+        category: 'Markets',
+        items: [
+          'Brent spikes to $119 intraday before settling $108.65',
+          'Goldman warns oil could exceed 2008 all-time high of $147',
+          'JPMorgan cuts S&P 500 year-end target',
+          'Fed rate cuts priced out to 2027-2028',
+        ],
+      },
+      {
+        category: 'Diplomatic',
+        items: [
+          "Netanyahu: war 'may end sooner than people think'",
+          'Israel helping to open Hormuz',
+          'First potential off-ramp signal from Israel',
+          'But Iran rejected every ceasefire attempt',
+        ],
+      },
+      {
+        category: 'Shipping',
+        items: [
+          'India negotiating with Iran to get 22 ships through Hormuz',
+          '2 Indian-flagged ships already through',
+          'Selective access expanding',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 108.65,
+      vlccRate: 490000,
+      hySpread: 560,
+      vix: 31.0,
+      usGas: 3.80,
+    },
+    tradingImplications: [
+      "Goldman $147 warning = institutional consensus now aligned with Part II thesis",
+      "JPMorgan cutting targets = equity markets pricing structural damage",
+      "Fed cuts priced out to 2027-2028 = stagflation trap confirmed by rates market",
+      "Part II base case is now consensus",
+    ],
+  },
+  21: {
+    day: 21,
+    date: 'March 20, 2026',
+    title: "Three Weeks In — No Ceasefire, No Hormuz, No Off-Ramps",
+    summary: "The war enters its fourth week. Trump explicitly rejects ceasefire. Calls NATO 'cowards.' More Marines deploying. Strikes hit Tehran during Nowruz — Iran's most sacred holiday. A senior Iranian source says Hormuz 'will not return to pre-war conditions.' Goldman says triple-digit oil could persist for years. The 4-week disruption that the market originally priced has arrived — and there's no resolution in sight.",
+    thesisScorecard: [
+      {
+        thesis: 'No ceasefire possible',
+        initialConfidence: 70,
+        currentConfidence: 99,
+        status: 'confirmed',
+        evidence: [
+          "Trump rejects ceasefire: 'You don't do a ceasefire when you're literally obliterating the other side'",
+          "Calls NATO allies 'cowards'",
+          'No off-ramps remaining',
+        ],
+      },
+      {
+        thesis: 'Hormuz closure permanent',
+        initialConfidence: 60,
+        currentConfidence: 92,
+        status: 'confirmed',
+        evidence: [
+          'Hormuz closed 21 consecutive days',
+          "Senior Iranian source: 'will not return to pre-war conditions'",
+          'Mojtaba: lever of closing Hormuz must continue',
+        ],
+      },
+      {
+        thesis: 'Post-war oil structurally higher',
+        initialConfidence: 80,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          'Ras Laffan 5-year repair timeline',
+          'Infrastructure damage persists regardless of ceasefire',
+          'Goldman says triple-digit oil for extended period',
+        ],
+      },
+      {
+        thesis: 'Selective Hormuz access creates petrodollar erosion',
+        initialConfidence: 60,
+        currentConfidence: 75,
+        status: 'developing',
+        evidence: [
+          'Yuan and rupee denominated transit now operational',
+          'India negotiating for 22 ships, 2 already through',
+          'Precedent set even after war ends',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[15],
+    keyDevelopments: [
+      {
+        category: 'Political',
+        items: [
+          "Trump rejects ceasefire: 'You don't do a ceasefire when you're literally obliterating the other side'",
+          "Calls NATO allies 'cowards' for not helping with Hormuz",
+          'More Marines and sailors (11th MEU, Boxer ARG) rerouted to Middle East',
+        ],
+      },
+      {
+        category: 'Military',
+        items: [
+          'Strikes hit Tehran during Nowruz — Persian New Year',
+          "Iran's most sacred holiday targeted",
+          'Iran threatens world tourism sites',
+        ],
+      },
+      {
+        category: 'Shipping/Hormuz',
+        items: [
+          'Hormuz closed for 21 consecutive days',
+          "Senior Iranian source: 'will not return to pre-war conditions'",
+          'India: 2 ships through, 22 more in negotiations',
+        ],
+      },
+      {
+        category: 'Casualties',
+        items: [
+          'Iranian Red Crescent: 204 children among 1,444 civilians killed',
+          'Lebanon exceeds 1,000 dead',
+          '13+ US dead, 140+ wounded',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 107.40,
+      vlccRate: 495000,
+      hySpread: 565,
+      vix: 30.5,
+      usGas: 3.85,
+    },
+    tradingImplications: [
+      "Day 21: Full Escalation dominant at 69%",
+      "Larijani killed — diplomatic off-ramp: CLOSED",
+      "Energy infrastructure targeting bilateral AND structural — Ras Laffan 5yr repair",
+      "SPR release failure RECONFIRMED — 400M barrels couldn't hold oil below $100",
+      "Triple-digit oil as new floor: CONFIRMED by Goldman, JPMorgan, market action",
+      "Fed stagflation trap: CONFIRMED — rate cuts priced out to 2027-2028",
+      "Hormuz closure exceeds market pricing — at 3 weeks with 'will not return to pre-war conditions'",
+      "Part II restructuring cycle: NOW INSTITUTIONAL CONSENSUS",
+    ],
+  },
 };
 
 // =============================================================================
@@ -2288,6 +2864,12 @@ export const shippingDisruptionData = {
     { date: 'Mar 14', title: 'Kharg Island Struck', description: "US bombs Kharg Island military targets — 90% of Iran's oil exports pass through here. Trump threatens oil infrastructure next." },
     { date: 'Mar 14', title: '$200 Oil Warning', description: 'Iran spokesperson warns oil could hit $200 if energy facilities targeted. Bilateral energy targeting now explicit.' },
     { date: 'Mar 14', title: 'US Requests Allied Warships', description: 'Trump calls on China, France, Japan, South Korea, UK to send warships — admission US cannot reopen Hormuz alone.' },
+    { date: 'Mar 15', title: 'Iran Denies Ceasefire', description: "Iran FM Araghchi on CBS: 'We never asked for a ceasefire.' Hezbollah drone hits Cyprus RAF base — war touching NATO territory." },
+    { date: 'Mar 16', title: 'FCC Threatens Broadcasters', description: 'FCC Chair threatens broadcaster licenses over Iran war coverage. F1 cancels Bahrain and Saudi GPs.' },
+    { date: 'Mar 17', title: 'Larijani Killed', description: 'Ali Larijani killed in strikes — last viable negotiation partner eliminated. IRGC warns military lost control of some units.' },
+    { date: 'Mar 18', title: 'Ras Laffan Structural Damage', description: "Israel strikes South Pars → Iran retaliates on Ras Laffan. QatarEnergy: 17% LNG capacity lost, 5 YEARS to repair." },
+    { date: 'Mar 19', title: '$119 Intraday Spike', description: 'Brent spikes to $119 intraday. Goldman warns oil could exceed 2008 all-time high of $147. JPMorgan cuts targets.' },
+    { date: 'Mar 20', title: 'Hormuz 21 Days Closed', description: "Trump rejects ceasefire. Senior Iranian source: strait 'will not return to pre-war conditions.' Oil in triple digits for extended period." },
   ],
   keyMetrics: {
     transitCollapsePercent: 98,
@@ -2303,6 +2885,8 @@ export const shippingDisruptionData = {
     minervaFixture: { rate: 436000, vessel: 'Pantanassa', charterer: 'GS Caltex' },
     gpsJammingAffectedShips: 1650,
     selectiveTransitOnly: true,
+    consecutiveZeroTransitDays: 4,
+    hormuzDaysClosed: 21,
   },
 };
 
@@ -2361,6 +2945,14 @@ export const conflictTimeline = [
   { date: 'March 10, 2026', event: "Mojtaba Khamenei's first public message: Hormuz should remain closed as 'tool to pressure enemy.' CNN reports Iran laying mines in Hormuz. Trump demands mines removed 'IMMEDIATELY' or consequences 'at level never seen before.' Qatar strikes Iran — shoots down 2 Su-24 bombers attempting to bomb Doha airport, first GCC offensive action. 8th US service member dies. Pezeshkian backtracks on Gulf apology. Oil whiplash: hits $119 then crashes to $88 on conflicting Trump signals." },
   { date: 'March 11, 2026', event: "IEA announces record 400M barrel strategic reserve release — largest in history. US contributing 172M barrels. Oil crashed 11% intraday on news then recovered. US destroys 16 Iranian mine-laying vessels near Hormuz. Thai ship Mayuree Naree set ablaze in Hormuz. Express Rome (Liberia-flagged) and One Majesty (Japan-flagged) struck. IRGC: all ships need Iran permission to transit. Hegseth says 'most intense day yet' of US strikes. Lebanon: 750,000+ displaced, 634 killed. Israel ground incursion in southern Lebanon. Ukrainian anti-drone teams now operating in Qatar, UAE, Saudi Arabia. US confirms 140 service members wounded in first 10 days. Feb CPI: 2.4% YoY (pre-war). Joe Rogan criticizes Trump — war 'seems so insane based on what he ran on.'" },
   { date: 'March 12, 2026', event: "Brent crude back above $100 despite record SPR release. WTI surges 8% to $94. 3 more ships struck overnight near Hormuz and Dubai. Iraq shuts down oil port operations at Basra after tanker attacks. Pezeshkian sets 3 conditions for peace: recognition of rights, war reparations, guarantees against future aggression — none achievable in current political environment. Khamenei adviser calls Trump 'Satan himself.' IRGC + Hezbollah launch joint missile operation against Israel — Iran claims most intense operation since war began. Energy Secretary Wright admits Navy 'not ready' to escort tankers — won't be ready until end of month. Bahrain fuel storage at airport hit by drone. Kuwait: 6 power lines downed by interceptor debris. Oman: Salalah port fuel tanks hit. Iran-linked hackers (Handala) steal 50TB from Stryker medical devices. UN Security Council adopts resolution urging Iran to stop Gulf attacks. Goldman raises inflation forecast to 2.9-3.3%. IEA warns of 'largest supply disruption in history of global oil market.' Iran UN rep: 1,348 civilians killed, 17,000+ injured. UNICEF: 1,100+ children injured or killed." },
+  { date: 'March 13, 2026', event: "Yuan-denominated Hormuz transit emerging — Iran weaponizing strait to restructure how oil is traded. Two Indian LPG carriers allowed through under yuan framework. Hegseth: Mojtaba Khamenei 'wounded and likely disfigured.' Iran Foreign Ministry says military lost control of several units. 1,444 civilians + 4,400 military killed in Iran. 826 killed in Lebanon. 13+ US dead, 140 wounded. US refueling plane crashes in Iraq — 6 crew killed. 2,200 Marines deploying from Okinawa. Fed cuts priced out to 2027-2028. Stagflation comparisons to 1973 now mainstream." },
+  { date: 'March 14, 2026', event: "US bombs Kharg Island military targets — Iran's 'crown jewel.' 90% of Iran's oil exports pass through Kharg. Trump threatens oil infrastructure next if Hormuz stays blocked. Iran warns retaliation on regional oil infrastructure. Fujairah bunkering hub fire. IRGC tells UAE residents to evacuate near US 'hideouts.' Trump calls on allies to send warships. Iran spokesperson warns oil could hit $200. Brent $103. S&P at 2026 lows." },
+  { date: 'March 15, 2026', event: "Iran FM Araghchi on CBS Face the Nation: 'We never asked for a ceasefire. We are ready to defend ourselves as long as it takes.' Trump claims Iran wants deal — Araghchi flatly denies. 6 US crew from KC-135 refueling plane crash in Iraq identified. Israeli strikes on Hamadan and Isfahan continue. Hezbollah drone strikes Cyprus British RAF base — war touching NATO territory." },
+  { date: 'March 16, 2026', event: "FCC Chair Brendan Carr threatens to revoke broadcaster licenses over Iran war coverage — Sen. Murphy calls it 'middle of a totalitarian takeover.' Formula One cancels Bahrain and Saudi Arabia Grand Prix races. Israel expands ground operations in southern Lebanon." },
+  { date: 'March 17, 2026', event: "Ali Larijani killed in strikes — de facto post-Khamenei leader and most credible negotiation partner. IRGC warns Iran military has lost control over several units operating on old instructions. Decentralized escalation risk increasing." },
+  { date: 'March 18, 2026', event: "Israel strikes Iran's South Pars gas field. Iran retaliates by striking Qatar's Ras Laffan — world's largest LNG facility. QatarEnergy: 17% export capacity lost, up to 5 years to repair. Brent surges to $108.78. This is the escalation that transforms temporary disruption into structural damage." },
+  { date: 'March 19, 2026', event: "Brent spikes to $119 intraday before settling $108.65 as Middle East energy infrastructure attacks intensify. JPMorgan cuts S&P 500 year-end target. Goldman warns Brent could exceed 2008 all-time high of $147. Netanyahu says Israel helping open Hormuz, war 'may end sooner than people think.' India negotiating with Iran to get 22 ships through Hormuz — 2 already through. Fed comments add to risk-off sentiment. Mortgage rates hit 3-month highs." },
+  { date: 'March 20, 2026', event: "Trump rejects ceasefire: 'You don't do a ceasefire when you're literally obliterating the other side.' Calls NATO allies 'cowards' for not helping with Hormuz. Fresh strikes hit Tehran during Nowruz (Persian New Year). Thousands more Marines and sailors (11th MEU, Boxer ARG) rerouted from Indo-Pacific to Middle East. Iran threatens world tourism sites. Brent at $107.40. Hormuz closed for 21 consecutive days. Senior Iranian source: strait 'will not return to pre-war conditions.' Goldman says oil may stay in triple digits for years. Iranian Red Crescent: 204 children among 1,444 civilians killed. Lebanon exceeds 1,000 dead." },
 ];
 
 // =============================================================================
@@ -2619,6 +3211,33 @@ export const conflictEvents: ConflictEvent[] = [
   { date: '2026-03-14', day: 15, lat: 35.6892, lng: 51.3890, type: 'strike_us', target: 'Iranian Cultural Sites', description: '56 Iranian cultural sites damaged since conflict began.', impact: '56 cultural sites damaged', status: 'confirmed' },
   { date: '2026-03-14', day: 15, lat: 24.4539, lng: 54.3773, type: 'strike_iran', target: 'UAE Near US Facilities', description: "IRGC tells UAE residents to evacuate near US 'hideouts.'", status: 'confirmed' },
   { date: '2026-03-14', day: 15, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz', description: "Trump threatens oil infrastructure next if Hormuz stays blocked. Iran warns $200 oil if energy facilities hit.", status: 'confirmed' },
+
+  // DAY 16 — Mar 15
+  { date: '2026-03-15', day: 16, lat: 35.6892, lng: 51.3890, type: 'strike_us', target: 'Tehran', description: 'Continued strikes on Tehran. Iran FM Araghchi on CBS denies ceasefire: "We never asked for a ceasefire."', status: 'confirmed' },
+  { date: '2026-03-15', day: 16, lat: 34.59, lng: 32.99, type: 'strike_iran', target: 'RAF Akrotiri, Cyprus', description: 'Hezbollah drone strikes British RAF base in Cyprus — war touching NATO territory.', status: 'confirmed' },
+  { date: '2026-03-15', day: 16, lat: 32.4279, lng: 53.6880, type: 'strike_israel', target: 'Hamadan and Isfahan, Iran', description: 'Israeli strikes on Hamadan and Isfahan continue.', status: 'confirmed' },
+
+  // DAY 17 — Mar 16
+  { date: '2026-03-16', day: 17, lat: 33.85, lng: 35.50, type: 'ground_offensive', target: 'Southern Lebanon', description: 'Israel expands ground operations in southern Lebanon.', status: 'confirmed' },
+  { date: '2026-03-16', day: 17, lat: 26.0346, lng: 50.5577, type: 'interception', target: 'Bahrain Grand Prix Circuit', description: 'Formula One cancels Bahrain and Saudi Arabia Grand Prix races due to conflict.', status: 'confirmed' },
+
+  // DAY 18 — Mar 17
+  { date: '2026-03-17', day: 18, lat: 35.69, lng: 51.39, type: 'strike_us', target: 'Tehran — Larijani killed', description: 'Ali Larijani killed in strikes — de facto post-Khamenei leader and most credible negotiation partner eliminated.', impact: 'Last diplomatic off-ramp closed', status: 'confirmed' },
+  { date: '2026-03-17', day: 18, lat: 35.6892, lng: 51.3890, type: 'strike_us', target: 'IRGC facilities', description: 'IRGC warns military has lost control over several units operating on old instructions. Decentralized escalation risk.', status: 'confirmed' },
+
+  // DAY 19 — Mar 18
+  { date: '2026-03-18', day: 19, lat: 27.5, lng: 52.5, type: 'infrastructure_energy', target: "South Pars gas field, Iran", description: "Israel strikes Iran's South Pars gas field — major Iranian energy infrastructure.", status: 'confirmed' },
+  { date: '2026-03-18', day: 19, lat: 25.9, lng: 51.5, type: 'infrastructure_energy', target: "Ras Laffan LNG facility, Qatar", description: "Iran retaliates by striking Ras Laffan — world's largest LNG facility. QatarEnergy: 17% export capacity lost, up to 5 years to repair.", impact: 'Structural energy damage', status: 'confirmed' },
+  { date: '2026-03-18', day: 19, lat: 29.08, lng: 48.13, type: 'infrastructure_energy', target: 'Kuwait oil refinery', description: 'Kuwait oil refinery hit by Iranian strikes.', status: 'confirmed' },
+
+  // DAY 20 — Mar 19
+  { date: '2026-03-19', day: 20, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz', description: 'Brent spikes to $119 intraday before settling $108.65. Goldman warns oil could exceed 2008 all-time high of $147.', status: 'confirmed' },
+  { date: '2026-03-19', day: 20, lat: 33.85, lng: 35.50, type: 'strike_israel', target: 'Beirut southern suburbs', description: 'Continued strikes on Beirut southern suburbs.', status: 'confirmed' },
+
+  // DAY 21 — Mar 20
+  { date: '2026-03-20', day: 21, lat: 35.69, lng: 51.39, type: 'strike_us', target: 'Tehran — Nowruz strikes', description: 'Strikes hit Tehran during Nowruz (Persian New Year). Trump rejects ceasefire.', status: 'confirmed' },
+  { date: '2026-03-20', day: 21, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz', description: "Hormuz closed for 21 consecutive days. Senior Iranian source: strait 'will not return to pre-war conditions.'", status: 'confirmed' },
+  { date: '2026-03-20', day: 21, lat: 32.7157, lng: -117.1611, type: 'naval', target: 'US Marines deployment', description: 'More Marines and sailors (11th MEU, Boxer ARG) rerouted from Indo-Pacific to Middle East.', status: 'confirmed' },
 ];
 
 // Insurance exclusion zone polygon (for map overlay)
