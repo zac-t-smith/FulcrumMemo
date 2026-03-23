@@ -605,6 +605,22 @@ const IranMemoPartIIFull = () => {
               them.
             </motion.p>
 
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="memo-body mb-8"
+            >
+              Day 24 brought "productive conversations" — the first direct U.S.-Iran communication
+              since February 28. Markets crashed oil 13% and celebrated as if peace had broken out.
+              It has not. Hormuz remains closed. 17 Americans are dead. And critically: even if a
+              ceasefire were signed tomorrow, the structural damage is already locked in. Ras Laffan's
+              17% LNG capacity loss needs 5 years to repair. The maritime insurance market has been
+              permanently transformed. Yuan-denominated Hormuz transit has set a precedent that will
+              outlast this war. The question is no longer whether the restructuring cycle activates.
+              It is how long and how deep.
+            </motion.p>
+
             <PullQuote>
               "The first memo identified who holds leverage in the sovereign crisis. This one
               identifies who makes money from the fallout. The answer is restructuring."

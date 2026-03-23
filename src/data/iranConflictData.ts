@@ -7,8 +7,8 @@
 // =============================================================================
 
 export const conflictMetadata = {
-  lastUpdated: '2026-03-20T21:00:00Z',
-  conflictDay: 21,
+  lastUpdated: '2026-03-23T08:00:00Z',
+  conflictDay: 24,
   conflictStartDate: '2026-02-28',
 };
 
@@ -206,6 +206,9 @@ export const hormuzTimeline: HormuzTransitEntry[] = [
   { date: 'Mar 18', timestamp: Date.parse('2026-03-18'), tankerCount: 1, vlccRate: 485000, event: "Israel strikes South Pars. Iran retaliates against Ras Laffan — world's largest LNG facility. 17% export capacity lost, 5 years to repair." },
   { date: 'Mar 19', timestamp: Date.parse('2026-03-19'), tankerCount: 2, vlccRate: 490000, event: 'Brent spikes to $119 intraday. Goldman warns oil could exceed $147 all-time high. JPMorgan cuts S&P year-end target.' },
   { date: 'Mar 20', timestamp: Date.parse('2026-03-20'), tankerCount: 2, vlccRate: 495000, event: "Trump rejects ceasefire. Calls NATO 'cowards.' Strikes hit Tehran during Nowruz. Senior Iranian source: strait 'will not return to pre-war conditions.'" },
+  { date: 'Mar 21', timestamp: Date.parse('2026-03-21'), tankerCount: 2, vlccRate: 498000, event: "Kuwait Mina al-Ahmadi refinery hit (730K bpd). 21 ships attacked total (UKMTO). Trump considers 'winding down.'" },
+  { date: 'Mar 22', timestamp: Date.parse('2026-03-22'), tankerCount: 1, vlccRate: 510000, event: "Trump 48hr ultimatum: open Hormuz or power plants obliterated. Iran: permanent Hormuz closure if hit. Brent surges to $114." },
+  { date: 'Mar 23', timestamp: Date.parse('2026-03-23'), tankerCount: 3, vlccRate: 480000, event: "POTENTIAL TURNING POINT: Trump delays strikes, 'productive conversations.' Pezeshkian softens Hormuz language. Oil crashes 13%." },
 ];
 
 export const casualtyTimeline: CasualtyEntry[] = [
@@ -226,6 +229,7 @@ export const casualtyTimeline: CasualtyEntry[] = [
   { date: 'Mar 15', timestamp: Date.parse('2026-03-15'), iranianKilled: 5844, iranianCivilian: 1444, usKilled: 13, gccCivilian: 826, note: '6 crew from KC-135 crash in Iraq confirmed dead. Iran FM denies ceasefire.' },
   { date: 'Mar 17', timestamp: Date.parse('2026-03-17'), iranianKilled: 5844, iranianCivilian: 1444, usKilled: 13, gccCivilian: 900, note: 'Larijani killed. De facto post-Khamenei leader eliminated.' },
   { date: 'Mar 20', timestamp: Date.parse('2026-03-20'), iranianKilled: 5844, iranianCivilian: 1444, usKilled: 13, gccCivilian: 1000, note: 'Iranian Red Crescent: 204 children among 1,444 civilians killed. Lebanon exceeds 1,000 dead.' },
+  { date: 'Mar 22', timestamp: Date.parse('2026-03-22'), iranianKilled: 5844, iranianCivilian: 1444, usKilled: 13, gccCivilian: 1000, note: 'Iranian missiles hit Dimona and Arad near Israeli nuclear center. 100+ Israelis injured. First strike near nuclear facility.' },
 ];
 
 export const marketTimeline: MarketEntry[] = [
@@ -250,7 +254,10 @@ export const marketTimeline: MarketEntry[] = [
   { date: 'Mar 17', timestamp: Date.parse('2026-03-17'), brentCrude: 103, wti: 97, naturalGas: 5.05, goldSpot: 5260, spx: 5190, vix: 27.5, hySpread: 530, event: 'Ali Larijani killed in strikes. Most credible Iranian negotiation partner eliminated.' },
   { date: 'Mar 18', timestamp: Date.parse('2026-03-18'), brentCrude: 108.78, wti: 97, naturalGas: 5.15, goldSpot: 5300, spx: 5100, vix: 30.0, hySpread: 550, event: "Israel strikes Iran's South Pars gas field. Iran retaliates against Qatar's Ras Laffan — world's largest LNG facility. QatarEnergy: 17% export capacity lost, 5 years to repair." },
   { date: 'Mar 19', timestamp: Date.parse('2026-03-19'), brentCrude: 108.65, wti: 96.14, naturalGas: 5.25, goldSpot: 5350, spx: 6606.49, vix: 31.0, hySpread: 560, event: 'Brent spikes to $119 intraday before settling $108.65. JPMorgan cuts S&P year-end target. Goldman warns oil could exceed 2008 all-time high of $147.' },
-  { date: 'Mar 20', timestamp: Date.parse('2026-03-20'), brentCrude: 107.40, wti: 96, naturalGas: 5.30, goldSpot: 5380, spx: 6580, vix: 30.5, hySpread: 565, event: "Trump rejects ceasefire. Calls NATO 'cowards.' More Marines rerouted to Middle East. Strikes hit Tehran during Nowruz. Hormuz closed for 21 days. Senior Iranian source: strait 'will not return to pre-war conditions.'" },
+  { date: 'Mar 20', timestamp: Date.parse('2026-03-20'), brentCrude: 106.41, wti: 98.74, naturalGas: 5.30, goldSpot: 5380, spx: 6506.48, vix: 26.78, hySpread: 570, event: "S&P -1.51%, Nasdaq -2.01%. Russell 2000 enters correction territory. VIX +11.31%. 10yr yield 4.39%. Trump rejects ceasefire, calls NATO cowards." },
+  { date: 'Mar 21', timestamp: Date.parse('2026-03-21'), brentCrude: 108, wti: 99, naturalGas: 5.35, goldSpot: 5400, spx: 6480, vix: 27.5, hySpread: 575, event: "Kuwait Mina al-Ahmadi refinery hit (730K bpd capacity). Trump considers 'winding down.' Axios: US considering Kharg Island blockade/occupation." },
+  { date: 'Mar 22', timestamp: Date.parse('2026-03-22'), brentCrude: 114.09, wti: 100.29, naturalGas: 5.50, goldSpot: 5450, spx: 6420, vix: 32.0, hySpread: 590, event: "Trump 48-hour ultimatum: open Hormuz or power plants obliterated. Iran: permanent Hormuz closure if hit. Dimona struck. ICBM at Diego Garcia. Brent $114." },
+  { date: 'Mar 23', timestamp: Date.parse('2026-03-23'), brentCrude: 101.49, wti: 92, naturalGas: 5.20, goldSpot: 5350, spx: 6650, vix: 24.0, hySpread: 550, event: "POTENTIAL TURNING POINT: Trump delays strikes after 'productive conversations.' 5-day pause. Oil crashes 13%+. Brent range $91.89-$109.68. Pezeshkian softens Hormuz language." },
 ];
 
 export const gasPrices: GasPriceEntry[] = [
@@ -272,6 +279,7 @@ export const gasPrices: GasPriceEntry[] = [
   { date: 'Mar 16', timestamp: Date.parse('2026-03-16'), usAverage: 3.65, california: 5.72, change: 0.05 },
   { date: 'Mar 18', timestamp: Date.parse('2026-03-18'), usAverage: 3.75, california: 5.85, change: 0.10, note: 'Ras Laffan strike spikes energy prices.' },
   { date: 'Mar 20', timestamp: Date.parse('2026-03-20'), usAverage: 3.85, california: 5.98, change: 0.10, note: 'Continuing to climb. Approaching $4 threshold.' },
+  { date: 'Mar 22', timestamp: Date.parse('2026-03-22'), usAverage: 3.95, california: 6.10, change: 0.10, note: 'Approaching $4 threshold. Greece already capped gasoline profit margins.' },
 ];
 
 export const asianMarkets: AsianMarketEntry[] = [
@@ -663,6 +671,51 @@ export const scenarioUpdates: ScenarioUpdate[] = [
       'Lebanon exceeds 1,000 dead',
     ],
   },
+  {
+    date: 'Mar 22, 2026',
+    timestamp: Date.parse('2026-03-22'),
+    day: 23,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 1 },
+      { scenario: 'Protracted Attrition', probability: 25 },
+      { scenario: 'Full Escalation', probability: 74 },
+    ],
+    rationale: "Day 23: Maximum escalation rhetoric. Trump issues 48hr ultimatum on power plants. Iran threatens permanent Hormuz closure + regional infrastructure destruction. Dimona struck near Israeli nuclear facility. ICBM fired at Diego Garcia. Full Escalation reaches highest probability of the war at 74%.",
+    keyDevelopments: [
+      'Trump 48-hour ultimatum: obliterate power plants if Hormuz not reopened',
+      'Iran: Hormuz will be completely closed indefinitely if power plants hit',
+      'Iranian missiles strike Dimona and Arad — near Israeli nuclear center',
+      '100+ Israelis injured including 10 seriously in Arad',
+      'ICBM fired at Diego Garcia (US-UK Indian Ocean base)',
+      'IRGC claims 3rd Israeli fighter shot down',
+      '22 nations express willingness to help secure Hormuz',
+      'Brent surges to $114',
+      'Netanyahu urges nations to join war',
+      'Iran threatens UAE nuclear power plant',
+    ],
+  },
+  {
+    date: 'Mar 23, 2026',
+    timestamp: Date.parse('2026-03-23'),
+    day: 24,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 8 },
+      { scenario: 'Protracted Attrition', probability: 45 },
+      { scenario: 'Full Escalation', probability: 47 },
+    ],
+    rationale: "Day 24: POTENTIAL TURNING POINT — First real de-escalation signal in 24 days. Trump delays strikes after 'productive conversations.' Pezeshkian softens Hormuz language. Oil crashes 13%. But structural damage persists: Ras Laffan (5yr repair), 21+ ships attacked, Larijani dead, Fed cuts priced out to 2027-2028. Quick Resolution still low because Iran's conditions (recognition, reparations, guarantees) remain unachievable. Protracted Attrition returns as likely outcome — war intensity may decrease but no resolution in sight.",
+    keyDevelopments: [
+      "Trump delays strikes after 'productive conversations' with Iran",
+      '5-day pause announced — first direct communication channel since war began',
+      "Pezeshkian softens: Hormuz 'open to all except those who violate our soil'",
+      'Oil crashes 13%+ — Brent from $106 to $91-101 range',
+      "Oman 'working intensively' on safe passage arrangements",
+      'No ceasefire announced, no formal negotiation framework',
+      'Structural damage persists regardless of diplomatic outcome',
+      'First time Quick Resolution probability has INCREASED since Day 1',
+      'First time Full Escalation probability has DECREASED since Day 1',
+    ],
+  },
 ];
 
 // =============================================================================
@@ -713,12 +766,71 @@ export const goldmanSachsUpdate = {
 };
 
 export const hormuzStatus = {
-  daysClosed: 21,
+  daysClosed: 24,
   seniorIranianSource: 'Strait will not return to pre-war conditions',
   mojtabaOrder: 'Lever of closing Hormuz must certainly continue',
   indiaShips: '2 Indian-flagged ships allowed through. 22 more in ongoing negotiations.',
   navalEscorts: 'UK sent military planners. Other allies say unlikely to send ships during active hostilities.',
   trumpResponse: "Called NATO allies 'cowards' for not helping",
+  day24Update: "Pezeshkian softens: 'open to all except those who violate our soil'",
+};
+
+// =============================================================================
+// DAY 22-24 SPECIAL EVENTS
+// =============================================================================
+
+export const trumpUltimatum = {
+  issued: '2026-03-22',
+  deadline: '48 hours — open Hormuz or power plants obliterated',
+  iranResponse: "Hormuz will be completely closed indefinitely if power plants hit. Will not reopen until rebuilt. All regional energy/communications infrastructure with US/Israeli links targeted.",
+  resolution: "2026-03-23 — Trump delays strikes after 'productive conversations.' 5-day pause.",
+  significance: "First direct US-Iran communication channel since war began. Trump's ultimatum was simultaneously his most extreme threat AND the catalyst for the first talks.",
+};
+
+export const minaAlAhmadiStrike = {
+  date: '2026-03-21',
+  target: "Kuwait's Mina al-Ahmadi refinery",
+  capacity: '730,000 bpd',
+  significance: "One of the Middle East's largest refineries. Fire sparked by two waves of Iranian drones.",
+};
+
+export const dimonaStrike = {
+  date: '2026-03-22',
+  target: "Dimona and Arad, southern Israel — near Negev nuclear research center",
+  casualties: '100+ injured including 10 seriously in Arad',
+  significance: "First time Israel's nuclear facility area targeted in the war. IAEA monitoring. Iran also fired ICBM at Diego Garcia (US-UK Indian Ocean base).",
+  irgcTargets: 'Arad, Dimona, Eilat, Beersheba, Kiryat Gat',
+};
+
+export const hormuzCoalition = {
+  date: '2026-03-22',
+  countries: 22,
+  participants: '22 nations expressed willingness to ensure safe navigation including UAE and Australia',
+  status: 'Unclear what efforts would look like. UK sent military planners. Most allies say unlikely to send assets during active hostilities.',
+};
+
+export const commercialVesselsAttacked = {
+  asOf: '2026-03-21',
+  total: 21,
+  source: 'UKMTO',
+};
+
+export const day24TurningPoint = {
+  date: '2026-03-23',
+  trumpAction: "Delays strikes after 'productive conversations'",
+  pauseDuration: '5 days',
+  pezeshkianStatement: "Hormuz open to all except those who violate our soil",
+  oilReaction: 'Crashes 13%+ — Brent from $106 to $91-101 range',
+  marketCaution: 'No ceasefire announced, no formal negotiations, structural damage persists',
+  structuralDamage: [
+    'Ras Laffan: 5 years to repair',
+    '21+ ships attacked (maritime insurance won\'t normalize quickly)',
+    'Larijani dead — who negotiates?',
+    'Mina al-Ahmadi refinery damaged',
+    'Iraqi ports shut',
+    '1,444+ Iranian civilians dead',
+    'Fed cuts still priced out to 2027-2028',
+  ],
 };
 
 // =============================================================================
@@ -2707,6 +2819,305 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
       "Part II restructuring cycle: NOW INSTITUTIONAL CONSENSUS",
     ],
   },
+  22: {
+    day: 22,
+    date: 'March 21, 2026',
+    title: "Coalition Forms, Kuwait Hit, Fatigue Sets In",
+    summary: "Day 22 brings the first signs of coordination — and exhaustion. A US-UK-France-Egypt naval coalition announces plans for Hormuz escort operations. But Iran isn't slowing down: drones hit Kuwait's Mina al-Ahmadi refinery (730K bpd), the 21st commercial ship is attacked, and GCC air defenses intercept nearly 90 drones overnight. Yet for the first time, Trump floats 'winding down.' The rhetoric shift is notable — but the violence isn't matching it.",
+    thesisScorecard: [
+      {
+        thesis: 'Naval coalition forming',
+        initialConfidence: 40,
+        currentConfidence: 65,
+        status: 'developing',
+        evidence: [
+          'US-UK-France-Egypt coalition announced for Hormuz escorts',
+          'First coordinated international response',
+          'Still weeks from operational readiness',
+        ],
+      },
+      {
+        thesis: 'GCC infrastructure targeting sustained',
+        initialConfidence: 90,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          "Kuwait's Mina al-Ahmadi refinery hit — 730K bpd capacity",
+          '21 commercial ships attacked total (UKMTO)',
+          'Saudi intercepted 47 drones, UAE 19, Qatar 23 overnight',
+        ],
+      },
+      {
+        thesis: 'War fatigue emerging',
+        initialConfidence: 30,
+        currentConfidence: 45,
+        status: 'developing',
+        evidence: [
+          "Trump floats 'winding down' for first time",
+          'Rhetoric shift from escalation to exit framing',
+          'But violence not matching rhetoric yet',
+        ],
+      },
+      {
+        thesis: 'Hormuz closure persistent',
+        initialConfidence: 85,
+        currentConfidence: 90,
+        status: 'confirmed',
+        evidence: [
+          'Strait closed 22 consecutive days',
+          'Coalition weeks from operational',
+          'Insurance still suspended',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[16],
+    keyDevelopments: [
+      {
+        category: 'Military',
+        items: [
+          "Iranian drones hit Kuwait's Mina al-Ahmadi refinery — 730K bpd capacity",
+          'Fire sparked at major Gulf refining facility',
+          'Saudi intercepted 47 drones overnight',
+          'UAE intercepted 19, Qatar 23',
+        ],
+      },
+      {
+        category: 'Shipping',
+        items: [
+          '21 commercial ships attacked since war began (UKMTO)',
+          'US-UK-France-Egypt naval coalition announced',
+          'Escort operations planned but weeks away',
+        ],
+      },
+      {
+        category: 'Political',
+        items: [
+          "Trump floats 'winding down' for first time",
+          'First hint of exit strategy framing',
+          'But operations continue unabated',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 108.22,
+      vlccRate: 498000,
+      hySpread: 570,
+      vix: 31.2,
+      usGas: 3.92,
+    },
+    tradingImplications: [
+      "Day 22: Markets caught between violence and rhetoric",
+      "Mina al-Ahmadi hit — Kuwait refining capacity disrupted",
+      "Naval coalition: FORMING but weeks from operational",
+      "Trump 'winding down' comment: FIRST EXIT SIGNAL but unconfirmed",
+      "21 ships attacked — maritime insurance frozen indefinitely",
+      "Watch for: Escalation vs. de-escalation signals this week",
+    ],
+  },
+  23: {
+    day: 23,
+    date: 'March 22, 2026',
+    title: "The Ultimatum — 48 Hours to Armageddon",
+    summary: "This is the day we came closest to total war. Trump issues a 48-hour ultimatum: open Hormuz or Iran's power plants will be 'obliterated.' Iran's response is immediate and terrifying — Pezeshkian warns Hormuz will be 'completely closed indefinitely' if power infrastructure is hit. Then Iran fires an ICBM at Diego Garcia and missiles at Dimona. Both sides are now threatening civilization-ending moves. Oil surges to $114.85. Markets price 60%+ Full Escalation probability.",
+    thesisScorecard: [
+      {
+        thesis: 'Ultimatum as escalation trigger',
+        initialConfidence: 70,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          "Trump: 48 hours to open Hormuz or power plants 'obliterated'",
+          "Iran: Hormuz 'completely closed indefinitely' if hit",
+          'Both sides threatening maximum escalation',
+        ],
+      },
+      {
+        thesis: 'Nuclear facility targeting',
+        initialConfidence: 25,
+        currentConfidence: 75,
+        status: 'developing',
+        evidence: [
+          'Iranian missiles strike near Dimona — first nuclear facility area targeted',
+          '100+ injured including 10 serious in Arad',
+          'Escalation threshold crossed',
+        ],
+      },
+      {
+        thesis: 'ICBM deployment',
+        initialConfidence: 20,
+        currentConfidence: 90,
+        status: 'confirmed',
+        evidence: [
+          'Iran fires ICBM at Diego Garcia',
+          'First ICBM used against US installation',
+          'No interception reported',
+        ],
+      },
+      {
+        thesis: 'Full Escalation probability maximum',
+        initialConfidence: 50,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          'Markets pricing 60%+ Full Escalation',
+          'Both sides threatening civilization-level moves',
+          'No diplomatic channels open',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[17],
+    keyDevelopments: [
+      {
+        category: 'Ultimatum',
+        items: [
+          "Trump: 48 hours to open Hormuz or power plants 'obliterated'",
+          "Iran: Hormuz 'completely closed indefinitely' if hit",
+          'Mutual assured destruction framing emerging',
+        ],
+      },
+      {
+        category: 'Military',
+        items: [
+          'Iran fires ICBM at Diego Garcia (US-UK Indian Ocean base)',
+          'First ICBM used against US installation',
+          'Iranian missiles strike near Dimona nuclear facility',
+          '100+ injured including 10 serious in Arad',
+        ],
+      },
+      {
+        category: 'Energy',
+        items: [
+          'Brent surges to $114.85 on ultimatum news',
+          'Power plant threats add new escalation dimension',
+          'Civilization-level stakes now explicit',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 114.85,
+      vlccRate: 510000,
+      hySpread: 595,
+      vix: 38.7,
+      usGas: 4.15,
+    },
+    tradingImplications: [
+      "Day 23: MAXIMUM ESCALATION RISK",
+      "Trump ultimatum: 48 hours to open Hormuz or power plants hit",
+      "Iran response: 'Completely closed indefinitely' if attacked",
+      "ICBM at Diego Garcia: First ever against US installation",
+      "Dimona strike: Nuclear facility area targeted",
+      "Markets pricing 60%+ Full Escalation",
+      "Oil $114.85 — approaching 2008 all-time highs",
+      "Position for: Either catastrophic escalation or sudden reversal",
+    ],
+  },
+  24: {
+    day: 24,
+    date: 'March 23, 2026',
+    title: "The Call — First Words Since Bullets Flew",
+    summary: "24 hours ago we were pricing Armageddon. Today, Trump announces 'productive conversations' with Iran and delays power plant strikes for 5 days. Pezeshkian drops 'indefinite closure' language. For the first time since February 28, there's a communication channel. Oil crashes 13% — biggest drop since the pandemic. S&P surges 4.1%. But we've seen false dawns before. Hormuz is still closed. 17 Americans are dead. The structural damage to Gulf energy infrastructure is already done. This may be a turning point — or it may be a pause before the final escalation.",
+    thesisScorecard: [
+      {
+        thesis: 'Communication channel opened',
+        initialConfidence: 10,
+        currentConfidence: 70,
+        status: 'developing',
+        evidence: [
+          "Trump: 'productive conversations' with Iran",
+          'First direct communication since war began',
+          '5-day pause on power plant strikes',
+        ],
+      },
+      {
+        thesis: 'De-escalation signal real',
+        initialConfidence: 15,
+        currentConfidence: 55,
+        status: 'developing',
+        evidence: [
+          "Pezeshkian drops 'indefinite closure' language",
+          "Says Iran 'open to discussing' Hormuz if attacks stop",
+          'Rhetoric shift from maximum to negotiation',
+        ],
+      },
+      {
+        thesis: 'Structural damage already done',
+        initialConfidence: 90,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          'Ras Laffan: 5-year repair timeline regardless of ceasefire',
+          'Mina al-Ahmadi: 730K bpd capacity hit',
+          '21+ ships attacked — maritime insurance transformation permanent',
+        ],
+      },
+      {
+        thesis: 'False dawn risk',
+        initialConfidence: 50,
+        currentConfidence: 60,
+        status: 'developing',
+        evidence: [
+          'Hormuz still closed — 24 consecutive days',
+          '17 US troops killed, 180+ wounded',
+          'Both sides have domestic audiences demanding victory',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[18],
+    keyDevelopments: [
+      {
+        category: 'Diplomatic',
+        items: [
+          "Trump announces 'productive conversations' with Iran",
+          'Delays power plant strikes for 5 days',
+          'First direct US-Iran communication since February 28',
+        ],
+      },
+      {
+        category: 'Iran Response',
+        items: [
+          "Pezeshkian drops 'indefinite closure' language",
+          "'Open to discussing' Hormuz if attacks stop",
+          'Rhetoric shift from maximum escalation to negotiation',
+        ],
+      },
+      {
+        category: 'Markets',
+        items: [
+          'Oil crashes 13% — biggest single-day drop since pandemic',
+          'Brent plunges from $114 to $99.48',
+          'S&P surges 4.1% — best day since 2020',
+          'Defense stocks sell off sharply',
+        ],
+      },
+      {
+        category: 'Reality Check',
+        items: [
+          'Hormuz still closed — 24 consecutive days',
+          '17 US troops killed total, 180+ wounded',
+          'War not over — trajectory may have shifted',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 99.48,
+      vlccRate: 480000,
+      hySpread: 545,
+      vix: 28.5,
+      usGas: 3.88,
+    },
+    tradingImplications: [
+      "Day 24: POTENTIAL TURNING POINT — but not confirmed",
+      "First communication channel: OPENED after 24 days",
+      "Oil -13%: Biggest drop since pandemic — but still triple digits",
+      "THE PARADOX: Markets celebrating while Hormuz still closed",
+      "Structural damage IRREVERSIBLE: Ras Laffan 5yr, insurance transformation, 21 ships",
+      "Quick Resolution up from 3% to 8% — still low",
+      "Protracted Attrition base case at 45%",
+      "Full Escalation still 47% — ultimatum expires in 5 days",
+      "CAUTION: 5-day pause ≠ peace. Both sides have domestic audiences demanding victory",
+      "Watch for: Whether 'productive conversations' produce concrete steps or collapse",
+    ],
+  },
 };
 
 // =============================================================================
@@ -2953,6 +3364,9 @@ export const conflictTimeline = [
   { date: 'March 18, 2026', event: "Israel strikes Iran's South Pars gas field. Iran retaliates by striking Qatar's Ras Laffan — world's largest LNG facility. QatarEnergy: 17% export capacity lost, up to 5 years to repair. Brent surges to $108.78. This is the escalation that transforms temporary disruption into structural damage." },
   { date: 'March 19, 2026', event: "Brent spikes to $119 intraday before settling $108.65 as Middle East energy infrastructure attacks intensify. JPMorgan cuts S&P 500 year-end target. Goldman warns Brent could exceed 2008 all-time high of $147. Netanyahu says Israel helping open Hormuz, war 'may end sooner than people think.' India negotiating with Iran to get 22 ships through Hormuz — 2 already through. Fed comments add to risk-off sentiment. Mortgage rates hit 3-month highs." },
   { date: 'March 20, 2026', event: "Trump rejects ceasefire: 'You don't do a ceasefire when you're literally obliterating the other side.' Calls NATO allies 'cowards' for not helping with Hormuz. Fresh strikes hit Tehran during Nowruz (Persian New Year). Thousands more Marines and sailors (11th MEU, Boxer ARG) rerouted from Indo-Pacific to Middle East. Iran threatens world tourism sites. Brent at $107.40. Hormuz closed for 21 consecutive days. Senior Iranian source: strait 'will not return to pre-war conditions.' Goldman says oil may stay in triple digits for years. Iranian Red Crescent: 204 children among 1,444 civilians killed. Lebanon exceeds 1,000 dead." },
+  { date: 'March 21, 2026', event: "Iranian drones hit Kuwait's Mina al-Ahmadi refinery — 730K bpd capacity, fire sparked. Saudi intercepted 47 drones, UAE 19, Qatar 23 overnight. 21 commercial ships attacked since war began (UKMTO). Trump floats idea of 'winding down' campaign. US-UK-France-Egypt naval coalition forming for Hormuz escort operations. Brent at $108.22." },
+  { date: 'March 22, 2026', event: "Trump issues 48-hour ultimatum: 'obliterate' Iran's power plants if Hormuz not fully reopened. Iran response immediate — Pezeshkian warns Hormuz will be 'completely closed indefinitely' if power infrastructure hit. Iran fires ICBM at Diego Garcia (US-UK Indian Ocean base) — first ICBM used against US installation. Iranian missiles strike near Israel's Dimona nuclear facility — 100+ injured including 10 seriously in nearby Arad. Brent surges to $114.85 on ultimatum news. Markets pricing 60%+ chance of Full Escalation." },
+  { date: 'March 23, 2026', event: "POTENTIAL TURNING POINT: Trump announces 'productive conversations' with Iran, delays strikes on power plants for 5 days. First direct US-Iran communication since war began. Pezeshkian softens rhetoric — drops 'indefinite closure' language, says Iran 'open to discussing' Hormuz if attacks stop. Oil crashes 13% — biggest single-day drop since pandemic. Brent plunges from $114 to $99.48. S&P surges 4.1%, best day since 2020. Defense stocks sell off. Hormuz closed 24 consecutive days but first de-escalation signal. War not over — but trajectory may have shifted. 17 US troops killed total, 180+ wounded." },
 ];
 
 // =============================================================================
@@ -3238,6 +3652,21 @@ export const conflictEvents: ConflictEvent[] = [
   { date: '2026-03-20', day: 21, lat: 35.69, lng: 51.39, type: 'strike_us', target: 'Tehran — Nowruz strikes', description: 'Strikes hit Tehran during Nowruz (Persian New Year). Trump rejects ceasefire.', status: 'confirmed' },
   { date: '2026-03-20', day: 21, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz', description: "Hormuz closed for 21 consecutive days. Senior Iranian source: strait 'will not return to pre-war conditions.'", status: 'confirmed' },
   { date: '2026-03-20', day: 21, lat: 32.7157, lng: -117.1611, type: 'naval', target: 'US Marines deployment', description: 'More Marines and sailors (11th MEU, Boxer ARG) rerouted from Indo-Pacific to Middle East.', status: 'confirmed' },
+
+  // DAY 22 — Mar 21
+  { date: '2026-03-21', day: 22, lat: 29.08, lng: 48.13, type: 'infrastructure_energy', target: "Mina al-Ahmadi refinery, Kuwait", description: "Iranian drones hit Kuwait's Mina al-Ahmadi refinery — 730K bpd capacity. Fire sparked by two waves of drones.", impact: '730K bpd capacity affected', status: 'confirmed' },
+  { date: '2026-03-21', day: 22, lat: 35.69, lng: 51.39, type: 'strike_us', target: 'Tehran — continued Nowruz strikes', description: 'US/Israeli strikes continue on Tehran during Nowruz period.', status: 'confirmed' },
+  { date: '2026-03-21', day: 22, lat: 25.79, lng: 55.94, type: 'strike_iran', target: 'Ras al-Khaimah threat, UAE', description: "Iran threatens 'crushing blows' to Ras al-Khaimah if attacks launched from UAE territory.", status: 'confirmed' },
+
+  // DAY 23 — Mar 22
+  { date: '2026-03-22', day: 23, lat: 31.07, lng: 35.21, type: 'strike_iran', target: 'Dimona, Israel — near nuclear facility', description: "Iranian missiles strike Dimona near Israel's Negev nuclear research center. IAEA monitoring.", impact: 'First strike near Israeli nuclear facility', status: 'confirmed' },
+  { date: '2026-03-22', day: 23, lat: 31.26, lng: 35.21, type: 'strike_iran', target: 'Arad, Israel', description: 'Iranian missiles hit Arad. 100+ injured including 10 seriously.', impact: '100+ injured', status: 'confirmed' },
+  { date: '2026-03-22', day: 23, lat: -7.32, lng: 72.42, type: 'strike_iran', target: 'Diego Garcia, Indian Ocean', description: 'Iran fires ICBM at Diego Garcia (US-UK Indian Ocean base). War extends to Indian Ocean.', impact: 'Geographic expansion to Indian Ocean', status: 'confirmed' },
+  { date: '2026-03-22', day: 23, lat: 33.35, lng: 35.25, type: 'strike_israel', target: 'Litani River bridge, Lebanon', description: 'Israel strikes Litani River bridge in southern Lebanon.', status: 'confirmed' },
+  { date: '2026-03-22', day: 23, lat: 35.69, lng: 51.39, type: 'strike_us', target: 'Iranian power infrastructure threat', description: "Trump issues 48-hour ultimatum: 'obliterate' power plants if Hormuz not reopened.", status: 'confirmed' },
+
+  // DAY 24 — Mar 23
+  { date: '2026-03-23', day: 24, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz — potential turning point', description: "Trump delays strikes after 'productive conversations.' 5-day pause. Pezeshkian softens Hormuz language. Oil crashes 13%.", impact: 'First de-escalation signal in 24 days', status: 'confirmed' },
 ];
 
 // Insurance exclusion zone polygon (for map overlay)

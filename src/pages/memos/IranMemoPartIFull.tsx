@@ -299,9 +299,13 @@ const IranMemoPartIFull = () => {
                 does not. Iran's retaliatory campaign—targeting U.S. bases across the GCC, Israeli
                 military and civilian infrastructure, Gulf energy and water facilities, data
                 centers, and commercial shipping—launched within hours of the first strikes and has
-                not diminished. Eight U.S. service members have been killed, 140 wounded. The Strait of Hormuz is
-                effectively closed. Global oil prices surged 8% on market open. Amazon's UAE data
-                center is still offline. And Iran has rejected all ceasefire proposals.
+                not diminished. Seventeen U.S. service members have been killed, 180+ wounded. The Strait of Hormuz
+                remains effectively closed for 24 consecutive days. Oil has touched $115. Amazon's UAE data
+                center is still offline. Day 24 brought the first "productive conversations" between the U.S. and Iran —
+                the first direct communication since the war began. Markets celebrated. But structural damage
+                is already locked in: Ras Laffan needs 5 years to repair, maritime insurance has been transformed,
+                and yuan-denominated Hormuz transit has set a permanent precedent. The diplomatic shift may matter.
+                The infrastructure damage already does.
               </p>
             </motion.div>
 
