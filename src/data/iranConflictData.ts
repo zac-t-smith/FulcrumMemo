@@ -7,8 +7,8 @@
 // =============================================================================
 
 export const conflictMetadata = {
-  lastUpdated: '2026-03-23T08:00:00Z',
-  conflictDay: 24,
+  lastUpdated: '2026-03-25T08:00:00Z',
+  conflictDay: 26,
   conflictStartDate: '2026-02-28',
 };
 
@@ -230,6 +230,7 @@ export const casualtyTimeline: CasualtyEntry[] = [
   { date: 'Mar 17', timestamp: Date.parse('2026-03-17'), iranianKilled: 5844, iranianCivilian: 1444, usKilled: 13, gccCivilian: 900, note: 'Larijani killed. De facto post-Khamenei leader eliminated.' },
   { date: 'Mar 20', timestamp: Date.parse('2026-03-20'), iranianKilled: 5844, iranianCivilian: 1444, usKilled: 13, gccCivilian: 1000, note: 'Iranian Red Crescent: 204 children among 1,444 civilians killed. Lebanon exceeds 1,000 dead.' },
   { date: 'Mar 22', timestamp: Date.parse('2026-03-22'), iranianKilled: 5844, iranianCivilian: 1444, usKilled: 13, gccCivilian: 1000, note: 'Iranian missiles hit Dimona and Arad near Israeli nuclear center. 100+ Israelis injured. First strike near nuclear facility.' },
+  { date: 'Mar 24', timestamp: Date.parse('2026-03-24'), iranianKilled: 6000, iranianCivilian: 1444, usKilled: 19, gccCivilian: 1100, note: 'US dead: 13 combat + 6 plane crash. 290 wounded (doubled in 2 weeks). 82,000 civilian structures destroyed in Iran. 15 Israelis, 4 Palestinians killed by Iranian strikes. Lebanon 1,000+.' },
 ];
 
 export const marketTimeline: MarketEntry[] = [
@@ -257,7 +258,9 @@ export const marketTimeline: MarketEntry[] = [
   { date: 'Mar 20', timestamp: Date.parse('2026-03-20'), brentCrude: 106.41, wti: 98.74, naturalGas: 5.30, goldSpot: 5380, spx: 6506.48, vix: 26.78, hySpread: 570, event: "S&P -1.51%, Nasdaq -2.01%. Russell 2000 enters correction territory. VIX +11.31%. 10yr yield 4.39%. Trump rejects ceasefire, calls NATO cowards." },
   { date: 'Mar 21', timestamp: Date.parse('2026-03-21'), brentCrude: 108, wti: 99, naturalGas: 5.35, goldSpot: 5400, spx: 6480, vix: 27.5, hySpread: 575, event: "Kuwait Mina al-Ahmadi refinery hit (730K bpd capacity). Trump considers 'winding down.' Axios: US considering Kharg Island blockade/occupation." },
   { date: 'Mar 22', timestamp: Date.parse('2026-03-22'), brentCrude: 114.09, wti: 100.29, naturalGas: 5.50, goldSpot: 5450, spx: 6420, vix: 32.0, hySpread: 590, event: "Trump 48-hour ultimatum: open Hormuz or power plants obliterated. Iran: permanent Hormuz closure if hit. Dimona struck. ICBM at Diego Garcia. Brent $114." },
-  { date: 'Mar 23', timestamp: Date.parse('2026-03-23'), brentCrude: 101.49, wti: 92, naturalGas: 5.20, goldSpot: 5350, spx: 6650, vix: 24.0, hySpread: 550, event: "POTENTIAL TURNING POINT: Trump delays strikes after 'productive conversations.' 5-day pause. Oil crashes 13%+. Brent range $91.89-$109.68. Pezeshkian softens Hormuz language." },
+  { date: 'Mar 23', timestamp: Date.parse('2026-03-23'), brentCrude: 99.94, wti: 89, naturalGas: 5.10, goldSpot: 5320, spx: 6650, vix: 24.0, hySpread: 540, event: "TURNING POINT: Trump delays strikes, cites 'productive conversations.' Oil crashes 11%. S&P futures swing from -1% to +3% in minutes. Dow futures +1,000. Iran denies talks, says Trump 'retreated out of fear.'" },
+  { date: 'Mar 24', timestamp: Date.parse('2026-03-24'), brentCrude: 104.49, wti: 92.35, naturalGas: 5.25, goldSpot: 5380, spx: 6580, vix: 26.5, hySpread: 555, event: "Oil rebounds above $100 as Iran denies talks and strikes continue. Missile hits Tel Aviv street. 82nd Airborne (1,000+) deploying. 290 US troops wounded. Trump approval 36%. Port Arthur TX refinery explodes. $580M insider trading probe." },
+  { date: 'Mar 25', timestamp: Date.parse('2026-03-25'), brentCrude: 99.16, wti: 88.41, naturalGas: 5.00, goldSpot: 5350, spx: 6720, vix: 23.5, hySpread: 530, event: "Oil drops 5-7% on ceasefire hopes. NYT: US sent Iran 15-point plan. Israel Ch12: Washington seeking 1-month ceasefire. Pakistan offers to host talks. Brent below $100 for first time since Day 13. But: Hormuz still closed, mines confirmed, strikes continue." },
 ];
 
 export const gasPrices: GasPriceEntry[] = [
@@ -280,6 +283,7 @@ export const gasPrices: GasPriceEntry[] = [
   { date: 'Mar 18', timestamp: Date.parse('2026-03-18'), usAverage: 3.75, california: 5.85, change: 0.10, note: 'Ras Laffan strike spikes energy prices.' },
   { date: 'Mar 20', timestamp: Date.parse('2026-03-20'), usAverage: 3.85, california: 5.98, change: 0.10, note: 'Continuing to climb. Approaching $4 threshold.' },
   { date: 'Mar 22', timestamp: Date.parse('2026-03-22'), usAverage: 3.95, california: 6.10, change: 0.10, note: 'Approaching $4 threshold. Greece already capped gasoline profit margins.' },
+  { date: 'Mar 24', timestamp: Date.parse('2026-03-24'), usAverage: 3.95, california: 6.15, change: 0.00, note: 'Approaching $4. Port Arthur TX refinery explosion adding upward pressure on domestic supply.' },
 ];
 
 export const asianMarkets: AsianMarketEntry[] = [
@@ -716,6 +720,51 @@ export const scenarioUpdates: ScenarioUpdate[] = [
       'First time Full Escalation probability has DECREASED since Day 1',
     ],
   },
+  {
+    date: 'Mar 24, 2026',
+    timestamp: Date.parse('2026-03-24'),
+    day: 25,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 10 },
+      { scenario: 'Protracted Attrition', probability: 48 },
+      { scenario: 'Full Escalation', probability: 42 },
+    ],
+    rationale: "Day 25: Market whiplash. Oil rebounds to $104 after Iran denies talks and calls Trump 'deceitful.' 82nd Airborne (1,000+) deploying — actions contradict 'we won' rhetoric. 290 US troops wounded (doubled in 2 weeks). Trump approval at 36%. Port Arthur TX refinery explosion adds domestic supply disruption. $580M insider trading probe on suspicious trades 15 min before Trump's Truth Social post. Iran names Zolghadr to replace Larijani. Volatility masquerading as progress.",
+    keyDevelopments: [
+      'Oil rebounds above $100 as Iran denies direct talks',
+      "IRGC calls Trump 'deceitful' — no softening from Iranian military",
+      '82nd Airborne (1,000+) deploying despite claims war is won',
+      '290 US troops wounded — doubled in two weeks',
+      'Trump approval at 36% (Reuters/Ipsos) — lowest of second term',
+      'Port Arthur TX refinery explosion — domestic supply disruption',
+      '$580M insider trading probe — bets placed 15 min before Trump post',
+      'Missile hits Tel Aviv street — strikes continue on both sides',
+      'Zolghadr named to replace killed Larijani as National Security Council head',
+    ],
+  },
+  {
+    date: 'Mar 25, 2026',
+    timestamp: Date.parse('2026-03-25'),
+    day: 26,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 15 },
+      { scenario: 'Protracted Attrition', probability: 50 },
+      { scenario: 'Full Escalation', probability: 35 },
+    ],
+    rationale: "Day 26: LARGEST PROBABILITY SHIFT OF THE WAR. First concrete diplomatic framework: NYT reports US sent Iran 15-point plan to end conflict. Israel Ch12: Washington seeking 1-month ceasefire. Pakistan offers to host talks. This is qualitatively different from vague 'productive conversations.' Quick Resolution now plausible for first time. BUT: Hormuz still closed with confirmed mines, 82nd Airborne deploying, strikes continuing on both sides. Full Escalation drops below 40% for first time since Day 10. Even a successful ceasefire won't instantly reopen Hormuz (mines), repair Ras Laffan (5 years), or unwind insurance repricing.",
+    keyDevelopments: [
+      'NYT: US sent Iran 15-point plan to end conflict — first concrete diplomatic document',
+      'Israel Ch12: Washington seeking 1-month ceasefire',
+      'Pakistan offers to host talks — trusted by Iran, allied with US',
+      'Oil drops 5-7%, Brent below $100 for first time since Day 13',
+      'IEA: "greatest energy and food security challenge in history"',
+      '50% of global urea and sulfur exports disrupted — food security dimension',
+      '40+ energy assets damaged across 9 countries',
+      'Hormuz still closed with confirmed mines — Navy minesweeping weeks away',
+      'Strikes continue on both sides despite diplomatic signals',
+      'First time Full Escalation not the leading scenario since Day 10',
+    ],
+  },
 ];
 
 // =============================================================================
@@ -831,6 +880,72 @@ export const day24TurningPoint = {
     '1,444+ Iranian civilians dead',
     'Fed cuts still priced out to 2027-2028',
   ],
+};
+
+// =============================================================================
+// DAY 25-26 SPECIAL EVENTS
+// =============================================================================
+
+export const diplomaticDevelopments = [
+  { date: '2026-03-23', event: "Trump postpones power plant strikes 5 days. Claims 'productive conversations.' Iran denies direct talks but senior official confirms 'received points through mediators.'" },
+  { date: '2026-03-24', event: "Trump claims Iran offered 'prize' and 'big present' related to Hormuz. Says Vance, Rubio, Witkoff, Kushner all involved. Iran prefers Vance as negotiator — views him as 'sympathetic to ending war.' Pakistan emerges as key intermediary. Mohammad Bagher Zolghadr named new National Security Council secretary replacing killed Larijani." },
+  { date: '2026-03-25', event: "NYT: US sent Iran 15-point plan to end conflict. Israel Ch12: Washington seeking 1-month ceasefire. Oil drops 5-7%. Brent below $100 for first time since Day 13. But strikes continue on both sides." },
+];
+
+export const insiderTradingProbe = {
+  date: '2026-03-23',
+  amount: 580000000,
+  description: "Financial Times found $580 million in bets on falling oil prices placed 15 minutes before Trump's Truth Social announcement about Iran talks. Triggered insider trading speculation and calls for investigation.",
+  significance: "If confirmed, this would be the largest insider trading scandal related to a sitting president's social media posts.",
+};
+
+export const portArthurExplosion = {
+  date: '2026-03-24',
+  description: "Explosion and fire at major refinery in Port Arthur, Texas. Diesel-producing portion likely offline for extended period. Domestic supply disruption compounding Iran war effects.",
+  significance: "Adding domestic refining disruption on top of global supply shock.",
+};
+
+export const usDeployments = {
+  total82ndAirborne: 1000,
+  total31stMEU: 2200,
+  total11thMEU: 'rerouted from Indo-Pacific',
+  ussNimitz: 'extended to March 2027',
+  twoCarrierGroups: true,
+  note: "Deploying MORE troops while claiming war is 'won' — the actions contradict the rhetoric",
+};
+
+export const trumpApproval = {
+  date: '2026-03-24',
+  rating: 36,
+  source: 'Reuters/Ipsos',
+  note: 'Lowest of second term. Attributed to cost of living and war disapproval.',
+};
+
+export const warCostUpdate = {
+  totalFirst6Days: 11300000000,
+  estimatedTotalDay25: 'likely exceeding $30B+',
+  usWounded: 290,
+  usKilled: 19,
+  civilianStructuresDestroyedIran: 82000,
+  note: 'IEA: 40+ energy assets damaged across 9 countries. 82,000 civilian structures destroyed in Iran.',
+};
+
+export const ieaAssessment = {
+  description: 'Greatest global energy and food security challenge in history',
+  supplyDisruption: 'Largest in history of global oil market',
+  energyAssetsDamaged: 40,
+  countriesAffected: 9,
+  fertilizerImpact: '50% of global urea and sulfur exports disrupted',
+  foodSecurityThreat: 'UN WFP warns of long-term global food price increases',
+};
+
+export const fifteenPointPlan = {
+  date: '2026-03-25',
+  source: 'New York Times',
+  description: 'US sent Iran 15-point plan to end conflict',
+  ceasefireRequest: '1-month ceasefire (per Israel Ch12)',
+  mediator: 'Pakistan offers to host talks',
+  significance: 'First concrete diplomatic framework — qualitatively different from vague "productive conversations"',
 };
 
 // =============================================================================
@@ -3108,7 +3223,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     tradingImplications: [
       "Day 24: POTENTIAL TURNING POINT — but not confirmed",
       "First communication channel: OPENED after 24 days",
-      "Oil -13%: Biggest drop since pandemic — but still triple digits",
+      "Oil -11%: Biggest drop since pandemic — but still triple digits",
       "THE PARADOX: Markets celebrating while Hormuz still closed",
       "Structural damage IRREVERSIBLE: Ras Laffan 5yr, insurance transformation, 21 ships",
       "Quick Resolution up from 3% to 8% — still low",
@@ -3116,6 +3231,217 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
       "Full Escalation still 47% — ultimatum expires in 5 days",
       "CAUTION: 5-day pause ≠ peace. Both sides have domestic audiences demanding victory",
       "Watch for: Whether 'productive conversations' produce concrete steps or collapse",
+    ],
+  },
+  25: {
+    day: 25,
+    date: 'March 24, 2026',
+    title: "The Market Whiplash — $580M Before the Tweet, 290 Wounded After, and the 82nd Airborne en Route",
+    summary: "The contradictions are piling up. Trump says 'we've won' while deploying the 82nd Airborne. Claims 'productive talks' while Iran calls him 'deceitful.' Oil crashes 11% on a Truth Social post then rebounds to $104 the next day. $580M in suspicious trades placed 15 minutes before the announcement. 290 troops wounded — doubled in two weeks. Port Arthur refinery exploding adds domestic supply chaos. This is not de-escalation — this is volatility masquerading as progress.",
+    thesisScorecard: [
+      {
+        thesis: 'Diplomatic progress real',
+        initialConfidence: 30,
+        currentConfidence: 35,
+        status: 'developing',
+        evidence: [
+          "Iran received 'points through mediators'",
+          "Zolghadr replaces Larijani — new negotiator appointed",
+          "Pakistan emerging as intermediary",
+        ],
+      },
+      {
+        thesis: 'Actions contradict rhetoric',
+        initialConfidence: 70,
+        currentConfidence: 90,
+        status: 'confirmed',
+        evidence: [
+          "82nd Airborne (1,000+) deploying while Trump claims victory",
+          "Strikes continue on both sides",
+          "Iran calls Trump 'deceitful' while engaging through mediators",
+        ],
+      },
+      {
+        thesis: 'Market manipulation/volatility',
+        initialConfidence: 50,
+        currentConfidence: 75,
+        status: 'developing',
+        evidence: [
+          "$580M in bets placed 15 min before Trump post",
+          "Oil swings 11% on social media",
+          "S&P futures swing from -1% to +3% in minutes",
+        ],
+      },
+      {
+        thesis: 'Structural damage persists',
+        initialConfidence: 95,
+        currentConfidence: 98,
+        status: 'confirmed',
+        evidence: [
+          "290 US wounded — doubled in two weeks",
+          "Port Arthur domestic refinery explosion",
+          "Hormuz still closed with mines confirmed",
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[19],
+    keyDevelopments: [
+      {
+        category: 'Military',
+        items: [
+          "82nd Airborne (1,000+) deploying — actions contradict 'we won' rhetoric",
+          "290 US troops wounded — doubled in two weeks",
+          "Missile hits Tel Aviv street — strikes continue on both sides",
+        ],
+      },
+      {
+        category: 'Political',
+        items: [
+          "Trump approval at 36% (Reuters/Ipsos) — lowest of second term",
+          "Iran calls Trump 'deceitful' — IRGC not softening",
+          "Zolghadr named to replace killed Larijani",
+        ],
+      },
+      {
+        category: 'Market/Financial',
+        items: [
+          "Oil rebounds to $104 — 11% crash reversed",
+          "$580M insider trading probe — bets placed 15 min before Trump post",
+          "Port Arthur TX refinery explosion — domestic supply disruption",
+        ],
+      },
+      {
+        category: 'Diplomacy',
+        items: [
+          "Iran denies direct talks but confirms 'received points through mediators'",
+          "Trump claims Iran offered 'prize' related to Hormuz",
+          "Pakistan emerges as key intermediary",
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 104.49,
+      vlccRate: 490000,
+      hySpread: 555,
+      vix: 26.5,
+      usGas: 3.95,
+    },
+    tradingImplications: [
+      "Day 25: VOLATILITY MASQUERADING AS PROGRESS",
+      "Oil rebound: $104 — 11% crash completely reversed",
+      "$580M insider trading probe: If confirmed, largest scandal tied to presidential social media",
+      "82nd Airborne deploying while claiming victory — watch the actions, not the words",
+      "290 wounded (doubled in 2 weeks) — war accelerating despite rhetoric",
+      "Port Arthur explosion: Domestic supply shock on top of global disruption",
+      "Trump approval 36%: Political thesis from Part I confirmed",
+      "Iran appointing Zolghadr: May indicate willingness to negotiate, or just bureaucratic replacement",
+      "Structural damage unchanged: Ras Laffan 5yr, Hormuz mined, insurance frozen",
+    ],
+  },
+  26: {
+    day: 26,
+    date: 'March 25, 2026',
+    title: "The 15-Point Plan — First Real Framework, But Hormuz Is Still Mined",
+    summary: "For the first time in 26 days, there is a concrete diplomatic document on the table (the NYT 15-point plan) and a specific ask (1-month ceasefire). This is qualitatively different from Trump's vague 'productive conversations.' Pakistan as intermediary makes sense — trusted by Iran, allied with US, nuclear power that understands the stakes. But the physical reality hasn't changed: Hormuz is mined, 82nd Airborne is deploying, strikes are continuing. The market is pricing hope. The fundamentals are pricing reality. When these two diverge, one of them is wrong.",
+    thesisScorecard: [
+      {
+        thesis: 'First concrete diplomatic framework',
+        initialConfidence: 20,
+        currentConfidence: 65,
+        status: 'developing',
+        evidence: [
+          "NYT: US sent Iran 15-point plan to end conflict",
+          "Israel Ch12: Washington seeking 1-month ceasefire",
+          "Pakistan offers to host talks",
+        ],
+      },
+      {
+        thesis: 'Full Escalation probability drops',
+        initialConfidence: 60,
+        currentConfidence: 35,
+        status: 'developing',
+        evidence: [
+          "First time Full Escalation not leading scenario since Day 10",
+          "Diplomatic infrastructure now exists",
+          "Both sides signaling through mediators",
+        ],
+      },
+      {
+        thesis: 'Physical reality unchanged',
+        initialConfidence: 95,
+        currentConfidence: 98,
+        status: 'confirmed',
+        evidence: [
+          "Hormuz still closed with confirmed mines",
+          "Navy minesweeping weeks away",
+          "Strikes continue on both sides despite diplomacy",
+        ],
+      },
+      {
+        thesis: 'Structural damage locked in regardless',
+        initialConfidence: 95,
+        currentConfidence: 99,
+        status: 'confirmed',
+        evidence: [
+          "Even 1-month ceasefire won't instantly reopen Hormuz (mines)",
+          "Ras Laffan: 5 years to repair regardless",
+          "Maritime insurance repricing permanent",
+          "50% global fertilizer trade disrupted — food security dimension",
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[20],
+    keyDevelopments: [
+      {
+        category: 'Diplomatic',
+        items: [
+          "NYT: US sent Iran 15-point plan — first concrete document",
+          "Israel Ch12: Washington seeking 1-month ceasefire",
+          "Pakistan offers to host talks — trusted by both sides",
+        ],
+      },
+      {
+        category: 'Markets',
+        items: [
+          "Oil drops 5-7%, Brent below $100 for first time since Day 13",
+          "Markets pricing hope — but fundamentals unchanged",
+        ],
+      },
+      {
+        category: 'Physical Reality',
+        items: [
+          "Hormuz still closed — 26 consecutive days with confirmed mines",
+          "Strikes continue on both sides despite diplomatic signals",
+          "82nd Airborne still deploying",
+        ],
+      },
+      {
+        category: 'Broader Impact',
+        items: [
+          "IEA: 'greatest energy and food security challenge in history'",
+          "50% of global urea and sulfur exports disrupted",
+          "40+ energy assets damaged across 9 countries",
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 99.16,
+      vlccRate: 485000,
+      hySpread: 530,
+      vix: 23.5,
+      usGas: 3.90,
+    },
+    tradingImplications: [
+      "Day 26: LARGEST PROBABILITY SHIFT OF THE WAR",
+      "First time Full Escalation not the leading scenario since Day 10",
+      "15-point plan + 1-month ceasefire = first concrete diplomatic framework",
+      "BUT: Hormuz still mined — ceasefire won't instantly reopen it",
+      "Ras Laffan 5yr repair timeline unchanged regardless of diplomacy",
+      "50% global fertilizer disrupted: Food security dimension broadens macro impact",
+      "IEA: 'greatest energy and food security challenge in history'",
+      "Quick Resolution now 15% — first time plausible since Day 1",
+      "Protracted Attrition 50% base case — war may de-escalate but won't end quickly",
+      "CRITICAL: Even successful ceasefire doesn't unwind structural damage — Part II thesis holds",
     ],
   },
 };
@@ -3366,7 +3692,9 @@ export const conflictTimeline = [
   { date: 'March 20, 2026', event: "Trump rejects ceasefire: 'You don't do a ceasefire when you're literally obliterating the other side.' Calls NATO allies 'cowards' for not helping with Hormuz. Fresh strikes hit Tehran during Nowruz (Persian New Year). Thousands more Marines and sailors (11th MEU, Boxer ARG) rerouted from Indo-Pacific to Middle East. Iran threatens world tourism sites. Brent at $107.40. Hormuz closed for 21 consecutive days. Senior Iranian source: strait 'will not return to pre-war conditions.' Goldman says oil may stay in triple digits for years. Iranian Red Crescent: 204 children among 1,444 civilians killed. Lebanon exceeds 1,000 dead." },
   { date: 'March 21, 2026', event: "Iranian drones hit Kuwait's Mina al-Ahmadi refinery — 730K bpd capacity, fire sparked. Saudi intercepted 47 drones, UAE 19, Qatar 23 overnight. 21 commercial ships attacked since war began (UKMTO). Trump floats idea of 'winding down' campaign. US-UK-France-Egypt naval coalition forming for Hormuz escort operations. Brent at $108.22." },
   { date: 'March 22, 2026', event: "Trump issues 48-hour ultimatum: 'obliterate' Iran's power plants if Hormuz not fully reopened. Iran response immediate — Pezeshkian warns Hormuz will be 'completely closed indefinitely' if power infrastructure hit. Iran fires ICBM at Diego Garcia (US-UK Indian Ocean base) — first ICBM used against US installation. Iranian missiles strike near Israel's Dimona nuclear facility — 100+ injured including 10 seriously in nearby Arad. Brent surges to $114.85 on ultimatum news. Markets pricing 60%+ chance of Full Escalation." },
-  { date: 'March 23, 2026', event: "POTENTIAL TURNING POINT: Trump announces 'productive conversations' with Iran, delays strikes on power plants for 5 days. First direct US-Iran communication since war began. Pezeshkian softens rhetoric — drops 'indefinite closure' language, says Iran 'open to discussing' Hormuz if attacks stop. Oil crashes 13% — biggest single-day drop since pandemic. Brent plunges from $114 to $99.48. S&P surges 4.1%, best day since 2020. Defense stocks sell off. Hormuz closed 24 consecutive days but first de-escalation signal. War not over — but trajectory may have shifted. 17 US troops killed total, 180+ wounded." },
+  { date: 'March 23, 2026', event: "POTENTIAL TURNING POINT: Trump announces 'productive conversations' with Iran, delays strikes on power plants for 5 days. First direct US-Iran communication since war began. Pezeshkian softens rhetoric — drops 'indefinite closure' language. Oil crashes 11%. S&P futures swing from -1% to +3% in minutes. Dow futures +1,000. Iran denies direct talks, says Trump 'retreated out of fear.' Senior official confirms 'received points through mediators.'" },
+  { date: 'March 24, 2026', event: "Oil rebounds to $104 as Iran denies talks and strikes continue. Missile hits Tel Aviv street. 82nd Airborne (1,000+) deploying. 290 US wounded — doubled in two weeks. Trump approval 36% (Reuters/Ipsos). Port Arthur TX refinery explosion adds domestic supply disruption. $580M insider trading probe — bets placed 15 min before Trump's Truth Social post. Trump claims Iran offered 'prize' related to Hormuz. IRGC calls Trump 'deceitful.' Zolghadr named new National Security Council head replacing killed Larijani." },
+  { date: 'March 25, 2026', event: "Oil drops 5-7%, Brent near $99 — below $100 for first time since Day 13. NYT: US sent Iran 15-point plan to end conflict — first concrete diplomatic framework. Israel Ch12: Washington seeking 1-month ceasefire. Pakistan offers to host talks. IEA: 'greatest energy and food security challenge in history.' 50% of global urea and sulfur exports disrupted — food security dimension. 40+ energy assets damaged across 9 countries. BUT: Hormuz still closed with confirmed mines, 82nd Airborne deploying, strikes continue on both sides. First time Full Escalation not the leading scenario since Day 10." },
 ];
 
 // =============================================================================
@@ -3666,7 +3994,19 @@ export const conflictEvents: ConflictEvent[] = [
   { date: '2026-03-22', day: 23, lat: 35.69, lng: 51.39, type: 'strike_us', target: 'Iranian power infrastructure threat', description: "Trump issues 48-hour ultimatum: 'obliterate' power plants if Hormuz not reopened.", status: 'confirmed' },
 
   // DAY 24 — Mar 23
-  { date: '2026-03-23', day: 24, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz — potential turning point', description: "Trump delays strikes after 'productive conversations.' 5-day pause. Pezeshkian softens Hormuz language. Oil crashes 13%.", impact: 'First de-escalation signal in 24 days', status: 'confirmed' },
+  { date: '2026-03-23', day: 24, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz — potential turning point', description: "Trump delays strikes after 'productive conversations.' 5-day pause. Pezeshkian softens Hormuz language. Oil crashes 11%.", impact: 'First de-escalation signal in 24 days', status: 'confirmed' },
+
+  // DAY 25 — Mar 24
+  { date: '2026-03-24', day: 25, lat: 32.0853, lng: 34.7818, type: 'strike_iran', target: 'Tel Aviv street strike', description: 'Iranian missile hits Tel Aviv street. Strikes continue despite diplomatic signals.', status: 'confirmed' },
+  { date: '2026-03-24', day: 25, lat: 29.9546, lng: -93.9280, type: 'infrastructure_energy', target: 'Port Arthur TX refinery', description: 'Explosion and fire at major refinery in Port Arthur, Texas. Diesel-producing portion offline. Domestic supply disruption.', impact: 'Domestic refining capacity reduced', status: 'confirmed' },
+  { date: '2026-03-24', day: 25, lat: 35.05, lng: -79.00, type: 'military', target: '82nd Airborne deployment', description: '82nd Airborne (1,000+ troops) deploying to Middle East despite Trump claiming war is won.', status: 'confirmed' },
+  { date: '2026-03-24', day: 25, lat: 35.69, lng: 51.39, type: 'political', target: 'Iran leadership', description: "Mohammad Bagher Zolghadr named new National Security Council secretary replacing killed Larijani. Iran calls Trump 'deceitful.'", status: 'confirmed' },
+
+  // DAY 26 — Mar 25
+  { date: '2026-03-25', day: 26, lat: 38.9072, lng: -77.0369, type: 'diplomatic', target: 'Washington DC — 15-point plan', description: 'NYT: US sent Iran 15-point plan to end conflict. First concrete diplomatic framework.', impact: 'First formal negotiation document', status: 'confirmed' },
+  { date: '2026-03-25', day: 26, lat: 33.6844, lng: 73.0479, type: 'diplomatic', target: 'Islamabad, Pakistan', description: 'Pakistan offers to host US-Iran talks. Trusted by Iran, allied with US, nuclear power understanding stakes.', status: 'confirmed' },
+  { date: '2026-03-25', day: 26, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz — mines confirmed', description: 'Hormuz still closed Day 26 with confirmed mines. Navy minesweeping weeks away. Coalition forming but not operational.', impact: 'Physical closure persists despite diplomacy', status: 'confirmed' },
+  { date: '2026-03-25', day: 26, lat: 35.69, lng: 51.39, type: 'strike_us', target: 'Tehran — strikes continue', description: 'US/Israeli strikes continue on Iran despite diplomatic signals. Both sides maintaining military pressure.', status: 'confirmed' },
 ];
 
 // Insurance exclusion zone polygon (for map overlay)

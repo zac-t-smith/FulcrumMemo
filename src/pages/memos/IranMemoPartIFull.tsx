@@ -299,13 +299,14 @@ const IranMemoPartIFull = () => {
                 does not. Iran's retaliatory campaign—targeting U.S. bases across the GCC, Israeli
                 military and civilian infrastructure, Gulf energy and water facilities, data
                 centers, and commercial shipping—launched within hours of the first strikes and has
-                not diminished. Seventeen U.S. service members have been killed, 180+ wounded. The Strait of Hormuz
-                remains effectively closed for 24 consecutive days. Oil has touched $115. Amazon's UAE data
-                center is still offline. Day 24 brought the first "productive conversations" between the U.S. and Iran —
-                the first direct communication since the war began. Markets celebrated. But structural damage
-                is already locked in: Ras Laffan needs 5 years to repair, maritime insurance has been transformed,
-                and yuan-denominated Hormuz transit has set a permanent precedent. The diplomatic shift may matter.
-                The infrastructure damage already does.
+                not diminished. Nineteen U.S. service members have been killed, 290 wounded — doubled in two weeks.
+                The Strait of Hormuz remains closed for 26 consecutive days with confirmed mines. Oil touched $115,
+                crashed 11%, then rebounded. Amazon's UAE data center is still offline. Day 26 brings the first
+                concrete diplomatic framework: a NYT-reported 15-point plan, a 1-month ceasefire proposal, Pakistan
+                offering to host talks. This is qualitatively different from Day 24's vague "productive conversations."
+                But structural damage is already locked in: Ras Laffan needs 5 years to repair, maritime insurance
+                has been permanently transformed, 50% of global fertilizer trade is disrupted, and yuan-denominated
+                Hormuz transit has set a precedent that will outlast this war.
               </p>
             </motion.div>
 
