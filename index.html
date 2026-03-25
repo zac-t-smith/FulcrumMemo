@@ -17,10 +17,8 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Lovable" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
 
-  <body>
-    <!-- Single Page Apps for GitHub Pages - redirect handler -->
+    <!-- Single Page Apps for GitHub Pages - redirect handler (MUST be in head, before React) -->
     <script type="text/javascript">
       // This script checks to see if a redirect is present in the query string,
       // converts it back into the correct url and adds it to the browser's history
@@ -39,6 +37,9 @@
         }
       }(window.location))
     </script>
+  </head>
+
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
