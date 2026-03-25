@@ -100,7 +100,7 @@ export interface ConflictEvent {
   day: number;
   lat: number;
   lng: number;
-  type: 'strike_us' | 'strike_iran' | 'strike_israel' | 'shipping' | 'infrastructure_energy' | 'infrastructure_water' | 'naval' | 'ground_offensive' | 'interception';
+  type: 'strike_us' | 'strike_iran' | 'strike_israel' | 'shipping' | 'infrastructure_energy' | 'infrastructure_water' | 'naval' | 'ground_offensive' | 'interception' | 'military' | 'political' | 'diplomatic';
   target: string;
   description: string;
   impact?: string;

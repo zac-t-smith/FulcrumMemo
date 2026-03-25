@@ -30,6 +30,8 @@ jobs:
 
       - name: Build main site
         run: npm run build
+        env:
+          VITE_AISSTREAM_API_KEY: ${{ secrets.AISSTREAM_API_KEY }}
 
       # Copy index.html to 404.html for SPA routing
       - name: Setup SPA routing
@@ -69,13 +71,13 @@ jobs:
           echo "VITE_AGENT_URL: https://fulcrummemo-production.up.railway.app (hardcoded)"
         env:
           VITE_CESIUM_ION_TOKEN: ${{ secrets.VITE_CESIUM_ION_TOKEN }}
-          VITE_AISSTREAM_API_KEY: ${{ secrets.VITE_AISSTREAM_API_KEY }}
+          VITE_AISSTREAM_API_KEY: ${{ secrets.AISSTREAM_API_KEY }}
 
       - name: Build WorldView
         run: cd worldview-fm && npm run build
         env:
           VITE_CESIUM_ION_TOKEN: ${{ secrets.VITE_CESIUM_ION_TOKEN }}
-          VITE_AISSTREAM_API_KEY: ${{ secrets.VITE_AISSTREAM_API_KEY }}
+          VITE_AISSTREAM_API_KEY: ${{ secrets.AISSTREAM_API_KEY }}
           VITE_AGENT_URL: https://fulcrummemo-production.up.railway.app
 
       # Cesium assets are now copied by vite-plugin-static-copy during build

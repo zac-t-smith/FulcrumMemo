@@ -85,7 +85,7 @@ interface LayerState {
 // =============================================================================
 
 // Event type colors and icons
-const eventTypeConfig: Record<ConflictEvent['type'], { color: string; label: string; emoji: string }> = {
+const eventTypeConfig: Record<string, { color: string; label: string; emoji: string }> = {
   strike_us: { color: '#3b82f6', label: 'US/Coalition Strike', emoji: '💥' },
   strike_israel: { color: '#6366f1', label: 'Israeli Strike', emoji: '💥' },
   strike_iran: { color: '#ef4444', label: 'Iranian Strike', emoji: '🔥' },
@@ -95,7 +95,14 @@ const eventTypeConfig: Record<ConflictEvent['type'], { color: string; label: str
   naval: { color: '#1e3a8a', label: 'Naval Engagement', emoji: '⚓' },
   ground_offensive: { color: '#22c55e', label: 'Ground Offensive', emoji: '🎖️' },
   interception: { color: '#a855f7', label: 'Interception', emoji: '🛡️' },
+  military: { color: '#4b5563', label: 'Military Movement', emoji: '🪖' },
+  political: { color: '#8b5cf6', label: 'Political Event', emoji: '🏛️' },
+  diplomatic: { color: '#10b981', label: 'Diplomatic Event', emoji: '🤝' },
 };
+
+// Fallback for unknown event types
+const defaultEventConfig = { color: '#9ca3af', label: 'Event', emoji: '📍' };
+const getEventConfig = (type: string) => eventTypeConfig[type] || defaultEventConfig;
 
 // Live event type colors
 const liveEventColors: Record<LiveFeedEvent['type'], string> = {
@@ -139,7 +146,7 @@ const QUERY_ROTATION_INTERVAL = 60 * 1000; // 1 minute per query
 
 // Create custom marker icons for curated events
 const createCustomIcon = (type: ConflictEvent['type'], isHighlighted: boolean) => {
-  const config = eventTypeConfig[type];
+  const config = getEventConfig(type);
   const size = isHighlighted ? 32 : 24;
   const pulseClass = isHighlighted ? 'animate-pulse' : '';
 
@@ -939,11 +946,11 @@ export const ConflictMap = ({
                       <span
                         className="px-2 py-0.5 rounded text-[9px] font-mono uppercase tracking-wider"
                         style={{
-                          backgroundColor: `${eventTypeConfig[event.type].color}20`,
-                          color: eventTypeConfig[event.type].color,
+                          backgroundColor: `${getEventConfig(event.type).color}20`,
+                          color: getEventConfig(event.type).color,
                         }}
                       >
-                        {eventTypeConfig[event.type].label}
+                        {getEventConfig(event.type).label}
                       </span>
                       <span className="px-1.5 py-0.5 bg-primary/20 rounded text-[8px] font-mono text-primary">
                         VERIFIED
@@ -1067,12 +1074,12 @@ export const ConflictMap = ({
               <div key={type} className="flex items-center gap-2">
                 <div
                   className="w-3 h-3 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: eventTypeConfig[type].color }}
+                  style={{ backgroundColor: getEventConfig(type).color }}
                 >
-                  <span className="text-[8px]">{eventTypeConfig[type].emoji}</span>
+                  <span className="text-[8px]">{getEventConfig(type).emoji}</span>
                 </div>
                 <span className="font-mono text-[9px] text-muted-foreground">
-                  {eventTypeConfig[type].label}
+                  {getEventConfig(type).label}
                 </span>
               </div>
             ))}
