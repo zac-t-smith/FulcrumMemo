@@ -224,69 +224,71 @@ const FieldNoteDay = () => {
           </motion.section>
 
           {/* Scenario Probabilities */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-12"
-          >
-            <div className="flex items-center gap-2 mb-4">
-              <Target size={16} className="text-primary" />
-              <h2 className="font-mono text-[10px] uppercase tracking-wider text-primary">
-                Scenario Probabilities
-              </h2>
-            </div>
-            <div className="p-6 surface-card border border-border rounded-lg">
-              {/* Probability Bar */}
-              <div className="flex h-10 rounded-lg overflow-hidden mb-4">
-                {scenarioUpdate.probabilities.map((p, index) => {
-                  const colors = ['#22c55e', '#eab308', '#ef4444'];
-                  const isBaseCase = index === 1;
-                  return (
-                    <div
-                      key={p.scenario}
-                      className="relative flex items-center justify-center"
-                      style={{
-                        width: `${p.probability}%`,
-                        backgroundColor: colors[index],
-                      }}
-                    >
-                      <span className="font-mono text-sm font-bold text-background">
-                        {p.probability}%
-                      </span>
-                      {isBaseCase && (
-                        <span className="absolute -top-6 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-primary text-primary-foreground text-[8px] font-mono uppercase rounded whitespace-nowrap">
-                          Base Case
+          {scenarioUpdate && scenarioUpdate.probabilities && (
+            <motion.section
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-12"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <Target size={16} className="text-primary" />
+                <h2 className="font-mono text-[10px] uppercase tracking-wider text-primary">
+                  Scenario Probabilities
+                </h2>
+              </div>
+              <div className="p-6 surface-card border border-border rounded-lg">
+                {/* Probability Bar */}
+                <div className="flex h-10 rounded-lg overflow-hidden mb-4">
+                  {scenarioUpdate.probabilities.map((p, index) => {
+                    const colors = ['#22c55e', '#eab308', '#ef4444'];
+                    const isBaseCase = index === 1;
+                    return (
+                      <div
+                        key={p.scenario}
+                        className="relative flex items-center justify-center"
+                        style={{
+                          width: `${p.probability}%`,
+                          backgroundColor: colors[index],
+                        }}
+                      >
+                        <span className="font-mono text-sm font-bold text-background">
+                          {p.probability}%
                         </span>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
+                        {isBaseCase && (
+                          <span className="absolute -top-6 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-primary text-primary-foreground text-[8px] font-mono uppercase rounded whitespace-nowrap">
+                            Base Case
+                          </span>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
 
-              <div className="grid grid-cols-3 gap-4 mb-6">
-                {scenarioUpdate.probabilities.map((p, index) => {
-                  const colors = ['text-emerald-400', 'text-amber-400', 'text-red-400'];
-                  return (
-                    <div key={p.scenario} className="text-center">
-                      <p className={cn('font-mono text-xs font-semibold', colors[index])}>
-                        {p.scenario}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
+                <div className="grid grid-cols-3 gap-4 mb-6">
+                  {scenarioUpdate.probabilities.map((p, index) => {
+                    const colors = ['text-emerald-400', 'text-amber-400', 'text-red-400'];
+                    return (
+                      <div key={p.scenario} className="text-center">
+                        <p className={cn('font-mono text-xs font-semibold', colors[index])}>
+                          {p.scenario}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
 
-              <div className="pt-4 border-t border-border">
-                <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-2">
-                  Rationale
-                </p>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {scenarioUpdate.rationale}
-                </p>
+                <div className="pt-4 border-t border-border">
+                  <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-2">
+                    Rationale
+                  </p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {scenarioUpdate.rationale}
+                  </p>
+                </div>
               </div>
-            </div>
-          </motion.section>
+            </motion.section>
+          )}
 
           {/* Thesis Scorecard */}
           <motion.section

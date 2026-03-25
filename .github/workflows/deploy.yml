@@ -33,9 +33,7 @@ jobs:
         env:
           VITE_AISSTREAM_API_KEY: ${{ secrets.AISSTREAM_API_KEY }}
 
-      # Copy index.html to 404.html for SPA routing
-      - name: Setup SPA routing
-        run: cp dist/index.html dist/404.html
+      # 404.html with SPA redirect script is in public/ and copied by Vite build
 
       # Update events snapshot from agent data if available
       - name: Update events snapshot
