@@ -576,8 +576,9 @@ const IranMemoPartIIFull = () => {
               now active. Larijani's death — combined with the Ras Laffan structural damage (5
               years to repair) — transforms the "protracted attrition" vs "full escalation"
               distinction into an academic question. The damage is already done and will outlast
-              the war itself. The restructuring cycle timeline has accelerated from 24 months to
-              12-18 months.
+              the war itself. <strong className="text-primary">Day 26 Update:</strong> Restructuring
+              cycle timeline now revised to 12-15 months given structural damage acceleration from
+              Hormuz sovereignty legislation and Iraq escalation adding new destabilization vectors.
             </Callout>
           </section>
 
@@ -611,16 +612,48 @@ const IranMemoPartIIFull = () => {
               viewport={{ once: true }}
               className="memo-body mb-8"
             >
-              Day 26 brings the first concrete diplomatic framework: a NYT-reported 15-point plan,
-              a 1-month ceasefire proposal, Pakistan offering to host talks. This is qualitatively
-              different from Day 24's vague "productive conversations." Markets crashed oil 11%,
-              then rebounded, then dropped again below $100. But the physical reality hasn't changed:
-              Hormuz is still mined, 19 Americans are dead, 290 wounded — doubled in two weeks.
+              Day 26 delivers the answer to Day 25's diplomatic hopes: Iran REJECTS the US 15-point
+              plan and issues 5 counter-conditions including war reparations, protection of all proxy
+              groups, and — critically — recognition of Iran's sovereignty over the Strait of Hormuz.
+              These are maximalist demands, not final terms. But they confirm the base case: Protracted
+              Attrition, now at 55%. Markets yo-yo on conflicting signals, oil hovering around $100.
+            </motion.p>
+
+            <Callout variant="critical" title="Day 26 Update: New Macro Transmission Vectors">
+              <p>
+                <strong className="text-primary">Iraq Escalation:</strong> Iraqi PM gave Iran-backed PMF
+                "green light for self-defense" against US strikes after 7 Iraqi soldiers were killed in
+                Anbar Province. Iraq summoned the US diplomat and filed a formal breach of international
+                law complaint. The PMF is officially part of the Iraqi army. If Iraq formally opposes US
+                military operations, the legal basis for 20+ years of US presence in Iraq collapses. This
+                destabilizes the entire Gulf security architecture — a new transmission vector for
+                geopolitical risk into markets.
+              </p>
+              <p className="mt-3">
+                <strong className="text-primary">Food Security Dimension Expanding:</strong> 50% of global
+                urea and sulfur exports remain disrupted. Sri Lanka cutting energy consumption 25%. China
+                subsidizing gas prices. The global demand destruction your thesis predicted is now visible
+                in peripheral economies before it hits developed markets. The macro transmission chain now
+                extends from oil prices → consumer spending → food inflation → emerging market instability.
+              </p>
+              <p className="mt-3">
+                <strong className="text-primary">Revised Timeline:</strong> Original estimate was 24 months.
+                Day 15 revised to 12-18 months. Current assessment: <span className="text-primary">12-15 months</span>{' '}
+                given structural damage acceleration. Iran's Hormuz sovereignty legislation (if passed) adds
+                permanent uncertainty premium to all Gulf transit — this is structural, not cyclical.
+              </p>
+            </Callout>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="memo-body mb-8"
+            >
               The IEA calls this the "greatest global energy and food security challenge in history."
-              50% of global urea and sulfur exports are disrupted — the macro transmission chain now
-              extends from oil prices to food inflation. Even a successful ceasefire tomorrow won't
-              instantly reopen Hormuz (mines need clearing), won't repair Ras Laffan (5 years), won't
-              unwind the maritime insurance repricing. Fed rate cuts are priced out to 2027-2028.
+              Even a successful ceasefire tomorrow won't instantly reopen Hormuz (mines need clearing,
+              and now Iran is codifying sovereignty), won't repair Ras Laffan (5 years), won't unwind
+              the maritime insurance repricing. Fed rate cuts remain priced out to 2027-2028.
               The restructuring cycle thesis holds regardless of diplomatic outcome.
             </motion.p>
 

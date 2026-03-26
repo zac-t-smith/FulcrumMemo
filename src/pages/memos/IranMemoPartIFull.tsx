@@ -681,6 +681,29 @@ const IranMemoPartIFull = () => {
             </motion.h2>
 
             <ShippingDisruptionChart />
+
+            <Callout variant="thesis" title="Day 26 Update: Hormuz Sovereignty Codification — The Endgame Becomes Clear">
+              <p>
+                The progression of Iran's Hormuz strategy has now reached its logical endpoint. Day 1: Insurance
+                withdrawal shuts the strait without a single Iranian shot. Day 13: Yuan-denominated transit for
+                select vessels (Iran/China-linked) — selective access emerging. Day 25: GCC confirms Iran already
+                charging passage fees for safe transit. <strong className="text-primary">Day 26: Iranian parliament
+                pursuing legislation to formally codify sovereignty, control, and oversight over the Strait of Hormuz
+                with permanent transit fee collection.</strong>
+              </p>
+              <p className="mt-3">
+                This is the structural development that outlasts the war. Iran is converting a wartime blockade into
+                permanent legal/sovereign control over the strait. If codified into Iranian law, this persists regardless
+                of any ceasefire. It's the equivalent of a creditor converting a temporary DIP lien into permanent equity —
+                Iran wants ownership of the chokepoint, not just leverage over it.
+              </p>
+              <p className="mt-3">
+                UAE's Abu Dhabi National Oil Co. head called it "economic terrorism" — "every nation pays the ransom at the
+                gas pump, grocery store and pharmacy." But the structural reality is: if this legislation passes, the pre-war
+                Hormuz status quo is gone permanently. The petrodollar erosion from yuan-denominated transit combined with
+                formal sovereignty claims means the global energy architecture is being rewritten in real time.
+              </p>
+            </Callout>
           </section>
 
           {/* Section VII: Alliance Portfolio */}

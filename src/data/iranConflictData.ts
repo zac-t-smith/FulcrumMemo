@@ -7,7 +7,7 @@
 // =============================================================================
 
 export const conflictMetadata = {
-  lastUpdated: '2026-03-25T08:00:00Z',
+  lastUpdated: '2026-03-25T23:00:00Z',
   conflictDay: 26,
   conflictStartDate: '2026-02-28',
 };
@@ -231,6 +231,7 @@ export const casualtyTimeline: CasualtyEntry[] = [
   { date: 'Mar 20', timestamp: Date.parse('2026-03-20'), iranianKilled: 5844, iranianCivilian: 1444, usKilled: 13, gccCivilian: 1000, note: 'Iranian Red Crescent: 204 children among 1,444 civilians killed. Lebanon exceeds 1,000 dead.' },
   { date: 'Mar 22', timestamp: Date.parse('2026-03-22'), iranianKilled: 5844, iranianCivilian: 1444, usKilled: 13, gccCivilian: 1000, note: 'Iranian missiles hit Dimona and Arad near Israeli nuclear center. 100+ Israelis injured. First strike near nuclear facility.' },
   { date: 'Mar 24', timestamp: Date.parse('2026-03-24'), iranianKilled: 6000, iranianCivilian: 1444, usKilled: 19, gccCivilian: 1100, note: 'US dead: 13 combat + 6 plane crash. 290 wounded (doubled in 2 weeks). 82,000 civilian structures destroyed in Iran. 15 Israelis, 4 Palestinians killed by Iranian strikes. Lebanon 1,000+.' },
+  { date: 'Mar 25', timestamp: Date.parse('2026-03-25'), iranianKilled: 6300, iranianCivilian: 1500, usKilled: 19, gccCivilian: 1172, note: 'Hengaw: 5,300+ Iranian military killed (up from 4,400). Lebanon: 1,072 killed, 2,966 wounded. 33 deaths in Lebanon in last 24 hours. IRGC navy chief killed. Bushehr nuclear complex struck.' },
 ];
 
 export const marketTimeline: MarketEntry[] = [
@@ -260,7 +261,7 @@ export const marketTimeline: MarketEntry[] = [
   { date: 'Mar 22', timestamp: Date.parse('2026-03-22'), brentCrude: 114.09, wti: 100.29, naturalGas: 5.50, goldSpot: 5450, spx: 6420, vix: 32.0, hySpread: 590, event: "Trump 48-hour ultimatum: open Hormuz or power plants obliterated. Iran: permanent Hormuz closure if hit. Dimona struck. ICBM at Diego Garcia. Brent $114." },
   { date: 'Mar 23', timestamp: Date.parse('2026-03-23'), brentCrude: 99.94, wti: 89, naturalGas: 5.10, goldSpot: 5320, spx: 6650, vix: 24.0, hySpread: 540, event: "TURNING POINT: Trump delays strikes, cites 'productive conversations.' Oil crashes 11%. S&P futures swing from -1% to +3% in minutes. Dow futures +1,000. Iran denies talks, says Trump 'retreated out of fear.'" },
   { date: 'Mar 24', timestamp: Date.parse('2026-03-24'), brentCrude: 104.49, wti: 92.35, naturalGas: 5.25, goldSpot: 5380, spx: 6580, vix: 26.5, hySpread: 555, event: "Oil rebounds above $100 as Iran denies talks and strikes continue. Missile hits Tel Aviv street. 82nd Airborne (1,000+) deploying. 290 US troops wounded. Trump approval 36%. Port Arthur TX refinery explodes. $580M insider trading probe." },
-  { date: 'Mar 25', timestamp: Date.parse('2026-03-25'), brentCrude: 99.16, wti: 88.41, naturalGas: 5.00, goldSpot: 5350, spx: 6720, vix: 23.5, hySpread: 530, event: "Oil drops 5-7% on ceasefire hopes. NYT: US sent Iran 15-point plan. Israel Ch12: Washington seeking 1-month ceasefire. Pakistan offers to host talks. Brent below $100 for first time since Day 13. But: Hormuz still closed, mines confirmed, strikes continue." },
+  { date: 'Mar 25', timestamp: Date.parse('2026-03-25'), brentCrude: 100, wti: 88, naturalGas: 5.00, goldSpot: 5350, spx: 6720, vix: 23.5, hySpread: 530, event: "Iran REJECTS US 15-point plan. Issues 5 counter-conditions including sovereignty over Hormuz and war reparations. Parliament pursuing legislation to codify permanent Hormuz control with transit fees. GCC says Iran already charging fees. Stocks rise, oil eases — market yo-yoing. Bushehr nuclear complex struck. IRGC navy chief killed. Iraq gives Iran-backed PMF green light for 'self-defense' against US strikes." },
 ];
 
 export const gasPrices: GasPriceEntry[] = [
@@ -747,22 +748,24 @@ export const scenarioUpdates: ScenarioUpdate[] = [
     timestamp: Date.parse('2026-03-25'),
     day: 26,
     probabilities: [
-      { scenario: 'Quick Resolution', probability: 15 },
-      { scenario: 'Protracted Attrition', probability: 50 },
+      { scenario: 'Quick Resolution', probability: 10 },
+      { scenario: 'Protracted Attrition', probability: 55 },
       { scenario: 'Full Escalation', probability: 35 },
     ],
-    rationale: "Day 26: LARGEST PROBABILITY SHIFT OF THE WAR. First concrete diplomatic framework: NYT reports US sent Iran 15-point plan to end conflict. Israel Ch12: Washington seeking 1-month ceasefire. Pakistan offers to host talks. This is qualitatively different from vague 'productive conversations.' Quick Resolution now plausible for first time. BUT: Hormuz still closed with confirmed mines, 82nd Airborne deploying, strikes continuing on both sides. Full Escalation drops below 40% for first time since Day 10. Even a successful ceasefire won't instantly reopen Hormuz (mines), repair Ras Laffan (5 years), or unwind insurance repricing.",
+    rationale: "Day 26: Iran rejects 15-point plan. Issues maximalist counter-conditions (reparations, Hormuz sovereignty, proxy protection). Quick Resolution drops back from 15% — Iran's conditions are non-starters. Protracted Attrition becomes clear base case: both sides exchanging proposals but miles apart. Neither side can 'win' militarily but neither will accept the other's terms. Hormuz sovereignty legislation is the structural wild card — if codified, it outlasts any ceasefire.",
     keyDevelopments: [
-      'NYT: US sent Iran 15-point plan to end conflict — first concrete diplomatic document',
-      'Israel Ch12: Washington seeking 1-month ceasefire',
-      'Pakistan offers to host talks — trusted by Iran, allied with US',
-      'Oil drops 5-7%, Brent below $100 for first time since Day 13',
-      'IEA: "greatest energy and food security challenge in history"',
-      '50% of global urea and sulfur exports disrupted — food security dimension',
-      '40+ energy assets damaged across 9 countries',
-      'Hormuz still closed with confirmed mines — Navy minesweeping weeks away',
-      'Strikes continue on both sides despite diplomatic signals',
-      'First time Full Escalation not the leading scenario since Day 10',
+      'Iran REJECTS US 15-point plan — issues 5 counter-conditions',
+      'Counter-conditions include: war reparations, Hormuz sovereignty, protection of ALL proxy groups',
+      'Iranian parliament pursuing legislation to codify Hormuz sovereignty with transit fees',
+      'GCC confirms Iran already charging passage fees — violating international law',
+      'UAE oil chief calls it "economic terrorism"',
+      'Israel strikes Bushehr nuclear complex, kills IRGC navy chief',
+      'US strikes PMF in Iraq Anbar Province — 7 Iraqi soldiers killed',
+      'Iraqi PM gives PMF "green light for self-defense" — summons US diplomat',
+      'Saudi MBS pressing Trump to continue strikes',
+      'Sri Lanka cutting energy consumption 25%',
+      'Iranian military: 5,300+ killed. Lebanon: 1,072 killed, 2,966 wounded',
+      'Brent ~$100. Markets yo-yoing on conflicting signals',
     ],
   },
 ];
@@ -889,7 +892,7 @@ export const day24TurningPoint = {
 export const diplomaticDevelopments = [
   { date: '2026-03-23', event: "Trump postpones power plant strikes 5 days. Claims 'productive conversations.' Iran denies direct talks but senior official confirms 'received points through mediators.'" },
   { date: '2026-03-24', event: "Trump claims Iran offered 'prize' and 'big present' related to Hormuz. Says Vance, Rubio, Witkoff, Kushner all involved. Iran prefers Vance as negotiator — views him as 'sympathetic to ending war.' Pakistan emerges as key intermediary. Mohammad Bagher Zolghadr named new National Security Council secretary replacing killed Larijani." },
-  { date: '2026-03-25', event: "NYT: US sent Iran 15-point plan to end conflict. Israel Ch12: Washington seeking 1-month ceasefire. Oil drops 5-7%. Brent below $100 for first time since Day 13. But strikes continue on both sides." },
+  { date: '2026-03-25', event: "Iran REJECTS US 15-point plan. Issues 5 counter-conditions: end aggression, guarantees against future attack, war reparations, comprehensive end across ALL fronts (including proxy groups), and recognition of Iran's sovereignty over Hormuz. Parliament codifying Hormuz sovereignty with transit fees. GCC confirms Iran already charging fees. UAE calls it 'economic terrorism.' Iraq gives PMF green light for self-defense against US strikes." },
 ];
 
 export const insiderTradingProbe = {
@@ -939,14 +942,59 @@ export const ieaAssessment = {
   foodSecurityThreat: 'UN WFP warns of long-term global food price increases',
 };
 
-export const fifteenPointPlan = {
+export const usFifteenPointPlan = {
   date: '2026-03-25',
-  source: 'New York Times',
-  description: 'US sent Iran 15-point plan to end conflict',
-  ceasefireRequest: '1-month ceasefire (per Israel Ch12)',
-  mediator: 'Pakistan offers to host talks',
-  significance: 'First concrete diplomatic framework — qualitatively different from vague "productive conversations"',
+  status: 'REJECTED by Iran',
+  source: 'NYT first reported. Delivered via Pakistan.',
+  keyTerms: "Included Iran's commitment to never pursue nuclear weapons and dismantle existing nuclear capabilities",
+  iranResponse: 'Rejected. Issued 5 counter-conditions.',
+  note: "Channel 12 summary was early version — changes made since. But core ask (nuclear dismantlement) was always going to be rejected by Iran.",
 };
+
+export const iranFiveConditions = {
+  date: '2026-03-25',
+  conditions: [
+    'End to aggression by the enemy',
+    'Concrete guarantees preventing recurrence of war',
+    'Clear determination of responsibility',
+    'Guaranteed payment of war damages and compensation',
+    'Comprehensive end to war across ALL fronts including against all resistance groups (Hezbollah, etc.), and recognition of Iran\'s sovereignty over Strait of Hormuz',
+  ],
+  deliveredVia: 'Pakistan — regional intermediary trusted by both sides',
+  araghchiResponse: 'We want to end the war only on our own terms',
+  significance: "Conditions are non-starters for US/Israel. War reparations, sovereignty over Hormuz, and protection of ALL proxy groups (Hezbollah) are maximalist demands. But they establish Iran's negotiating floor — the real question is what they'll actually accept vs. what they're opening with.",
+};
+
+export const hormuzSovereigntyClaim = {
+  date: '2026-03-25',
+  description: 'Iranian parliament pursuing plan to formally codify sovereignty, control and oversight over Strait of Hormuz with revenue collection through transit fees',
+  gccResponse: 'GCC secretary-general says Iran already charging fees for safe passage — violating international law',
+  uaeResponse: "Abu Dhabi National Oil Co. head called it 'economic terrorism' — 'every nation pays the ransom at the gas pump, grocery store and pharmacy'",
+  significance: "THIS IS THE STRUCTURAL DEVELOPMENT THAT OUTLASTS THE WAR. Iran is converting a wartime blockade into permanent legal/sovereign control over the strait. If codified into Iranian law, this persists regardless of ceasefire. It's the equivalent of a creditor converting a temporary lien into permanent equity — Iran wants ownership of the chokepoint, not just leverage over it.",
+};
+
+export const iraqEscalation = {
+  date: '2026-03-25',
+  event: "Iraqi PM gave al-Hashd al-Shaabi (Iran-backed PMF) green light for self-defense against US strikes",
+  trigger: 'US A-10 aircraft struck PMF targets in Anbar Province, killing 7 Iraqi soldiers near army medical center',
+  iraqResponse: 'Summoned top US diplomat. Formal complaint of breach of international law.',
+  significance: 'Iraq edging from reluctant bystander to active participant against US forces. PMF is officially part of Iraqi army. If Iraq formally opposes US strikes, the legal basis for US operations in Iraq collapses.',
+};
+
+export const sriLankaEnergyReduction = {
+  date: '2026-03-25',
+  reduction: '25% cut in energy consumption',
+  significance: 'Small nations bearing brunt of energy crisis. Global demand destruction spreading.',
+};
+
+export const mbsPressure = {
+  date: '2026-03-25',
+  report: 'Saudi Crown Prince MBS pressing Trump to continue strikes on Iran',
+  significance: 'Saudi Arabia sees this as once-in-a-generation opportunity to permanently weaken main rival. Willing to take short-term damage for long-term strategic gain.',
+};
+
+// Legacy export for backwards compatibility
+export const fifteenPointPlan = usFifteenPointPlan;
 
 // =============================================================================
 // REFERENCE DATA
@@ -3341,107 +3389,123 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
   26: {
     day: 26,
     date: 'March 25, 2026',
-    title: "The 15-Point Plan — First Real Framework, But Hormuz Is Still Mined",
-    summary: "For the first time in 26 days, there is a concrete diplomatic document on the table (the NYT 15-point plan) and a specific ask (1-month ceasefire). This is qualitatively different from Trump's vague 'productive conversations.' Pakistan as intermediary makes sense — trusted by Iran, allied with US, nuclear power that understands the stakes. But the physical reality hasn't changed: Hormuz is mined, 82nd Airborne is deploying, strikes are continuing. The market is pricing hope. The fundamentals are pricing reality. When these two diverge, one of them is wrong.",
+    title: "Iran's Counter-Offer — Reparations, Hormuz Sovereignty, and the Restructuring of Global Shipping",
+    summary: "Iran REJECTS the US 15-point plan and issues 5 counter-conditions: end aggression, guarantees against future attack, war reparations, comprehensive end across ALL fronts (including proxy groups), and recognition of Iran's sovereignty over Hormuz. These are maximalist demands — war reparations from the world's largest military, sovereignty over an international waterway, protection of ALL proxy groups. But this is negotiation, not capitulation. The critical development: Iranian parliament is codifying Hormuz sovereignty into law with transit fees. GCC confirms Iran already charging fees. This converts a wartime blockade into permanent legal control. Even if the war ends tomorrow, this legislation persists.",
     thesisScorecard: [
       {
-        thesis: 'First concrete diplomatic framework',
-        initialConfidence: 20,
-        currentConfidence: 65,
-        status: 'developing',
-        evidence: [
-          "NYT: US sent Iran 15-point plan to end conflict",
-          "Israel Ch12: Washington seeking 1-month ceasefire",
-          "Pakistan offers to host talks",
-        ],
-      },
-      {
-        thesis: 'Full Escalation probability drops',
-        initialConfidence: 60,
-        currentConfidence: 35,
-        status: 'developing',
-        evidence: [
-          "First time Full Escalation not leading scenario since Day 10",
-          "Diplomatic infrastructure now exists",
-          "Both sides signaling through mediators",
-        ],
-      },
-      {
-        thesis: 'Physical reality unchanged',
-        initialConfidence: 95,
-        currentConfidence: 98,
+        thesis: 'Iran refuses to negotiate on US terms',
+        initialConfidence: 80,
+        currentConfidence: 95,
         status: 'confirmed',
         evidence: [
-          "Hormuz still closed with confirmed mines",
-          "Navy minesweeping weeks away",
-          "Strikes continue on both sides despite diplomacy",
+          "Iran REJECTS US 15-point plan outright",
+          "Issues 5 counter-conditions that are non-starters for US/Israel",
+          "Araghchi: 'We want to end the war only on our own terms'",
         ],
       },
       {
-        thesis: 'Structural damage locked in regardless',
-        initialConfidence: 95,
-        currentConfidence: 99,
+        thesis: 'Hormuz weaponization goes PERMANENT',
+        initialConfidence: 70,
+        currentConfidence: 90,
+        status: 'developing',
+        evidence: [
+          "Parliament pursuing legislation to codify Hormuz sovereignty",
+          "GCC confirms Iran already charging passage fees",
+          "UAE calls it 'economic terrorism'",
+          "This persists regardless of ceasefire — structural change",
+        ],
+      },
+      {
+        thesis: 'Iraq drawn into conflict',
+        initialConfidence: 50,
+        currentConfidence: 75,
+        status: 'developing',
+        evidence: [
+          "Iraqi PM gives PMF 'green light for self-defense' against US",
+          "7 Iraqi soldiers killed in US Anbar Province strikes",
+          "Iraq summons US diplomat — formal breach of international law complaint",
+          "Legal basis for US Iraq presence eroding",
+        ],
+      },
+      {
+        thesis: 'Protracted Attrition now clear base case',
+        initialConfidence: 50,
+        currentConfidence: 85,
         status: 'confirmed',
         evidence: [
-          "Even 1-month ceasefire won't instantly reopen Hormuz (mines)",
-          "Ras Laffan: 5 years to repair regardless",
-          "Maritime insurance repricing permanent",
-          "50% global fertilizer trade disrupted — food security dimension",
+          "Both sides exchanging proposals but miles apart",
+          "Neither can 'win' militarily but neither will accept other's terms",
+          "Quick Resolution drops back to 10% — Iran's conditions non-starters",
+          "Saudi MBS pressing Trump to continue strikes",
         ],
       },
     ],
-    scenarioUpdate: scenarioUpdates[20],
+    scenarioUpdate: scenarioUpdates[scenarioUpdates.length - 1],
     keyDevelopments: [
       {
         category: 'Diplomatic',
         items: [
-          "NYT: US sent Iran 15-point plan — first concrete document",
-          "Israel Ch12: Washington seeking 1-month ceasefire",
-          "Pakistan offers to host talks — trusted by both sides",
+          "Iran REJECTS US 15-point plan — issues 5 counter-conditions",
+          "Counter-conditions: reparations, Hormuz sovereignty, protection of ALL proxy groups",
+          "Araghchi: 'We want to end the war only on our own terms'",
+          "Delivered via Pakistan — positions miles apart",
         ],
       },
       {
-        category: 'Markets',
+        category: 'Hormuz Sovereignty — THE GAME-CHANGER',
         items: [
-          "Oil drops 5-7%, Brent below $100 for first time since Day 13",
-          "Markets pricing hope — but fundamentals unchanged",
+          "Parliament pursuing legislation to codify permanent Hormuz sovereignty",
+          "GCC confirms Iran already charging transit fees",
+          "UAE oil chief: 'economic terrorism — every nation pays the ransom'",
+          "If codified, this persists regardless of any ceasefire",
         ],
       },
       {
-        category: 'Physical Reality',
+        category: 'Iraq Escalation',
         items: [
-          "Hormuz still closed — 26 consecutive days with confirmed mines",
-          "Strikes continue on both sides despite diplomatic signals",
-          "82nd Airborne still deploying",
+          "Iraqi PM gives PMF green light for self-defense against US strikes",
+          "US A-10 struck PMF in Anbar Province — 7 Iraqi soldiers killed",
+          "Iraq summons US diplomat — formal international law complaint",
+          "PMF officially part of Iraqi army — legal basis for US presence eroding",
         ],
       },
       {
-        category: 'Broader Impact',
+        category: 'Military',
         items: [
-          "IEA: 'greatest energy and food security challenge in history'",
-          "50% of global urea and sulfur exports disrupted",
-          "40+ energy assets damaged across 9 countries",
+          "Israel strikes Bushehr nuclear complex",
+          "IRGC navy chief killed",
+          "Iranian military dead: 5,300+ (Hengaw, up from 4,400)",
+          "Lebanon: 1,072 killed, 2,966 wounded (33 deaths in 24 hours)",
+        ],
+      },
+      {
+        category: 'Global Impact',
+        items: [
+          "Sri Lanka cutting energy consumption 25%",
+          "50% of global urea/sulfur disrupted — food security dimension",
+          "Saudi MBS pressing Trump to continue bombing",
+          "AP: 'midterm warning signs flash' — Trump at 36% approval",
         ],
       },
     ],
     marketSnapshot: {
-      brentCrude: 99.16,
+      brentCrude: 100,
       vlccRate: 485000,
       hySpread: 530,
       vix: 23.5,
-      usGas: 3.90,
+      usGas: 3.95,
     },
     tradingImplications: [
-      "Day 26: LARGEST PROBABILITY SHIFT OF THE WAR",
-      "First time Full Escalation not the leading scenario since Day 10",
-      "15-point plan + 1-month ceasefire = first concrete diplomatic framework",
-      "BUT: Hormuz still mined — ceasefire won't instantly reopen it",
-      "Ras Laffan 5yr repair timeline unchanged regardless of diplomacy",
-      "50% global fertilizer disrupted: Food security dimension broadens macro impact",
-      "IEA: 'greatest energy and food security challenge in history'",
-      "Quick Resolution now 15% — first time plausible since Day 1",
-      "Protracted Attrition 50% base case — war may de-escalate but won't end quickly",
-      "CRITICAL: Even successful ceasefire doesn't unwind structural damage — Part II thesis holds",
+      "Iran's counter-conditions establish negotiating floor — not final terms",
+      "Reparations are bargaining chip; Hormuz sovereignty is non-negotiable",
+      "CRITICAL: Hormuz sovereignty legislation is THE structural wild card",
+      "If codified into Iranian law, this persists regardless of ceasefire",
+      "Iran converting temporary blockade into permanent sovereign control",
+      "Quick Resolution drops from 15% to 10% — Iran's conditions non-starters",
+      "Protracted Attrition 55% now clear base case",
+      "Iraq escalation opens new front — US legal basis eroding",
+      "Political pressure on Trump intensifying: 36% approval, AP midterm warnings",
+      "Shape of eventual deal visible if you know what to look for — but months away",
     ],
   },
 };
@@ -4003,10 +4067,15 @@ export const conflictEvents: ConflictEvent[] = [
   { date: '2026-03-24', day: 25, lat: 35.69, lng: 51.39, type: 'political', target: 'Iran leadership', description: "Mohammad Bagher Zolghadr named new National Security Council secretary replacing killed Larijani. Iran calls Trump 'deceitful.'", status: 'confirmed' },
 
   // DAY 26 — Mar 25
-  { date: '2026-03-25', day: 26, lat: 38.9072, lng: -77.0369, type: 'diplomatic', target: 'Washington DC — 15-point plan', description: 'NYT: US sent Iran 15-point plan to end conflict. First concrete diplomatic framework.', impact: 'First formal negotiation document', status: 'confirmed' },
-  { date: '2026-03-25', day: 26, lat: 33.6844, lng: 73.0479, type: 'diplomatic', target: 'Islamabad, Pakistan', description: 'Pakistan offers to host US-Iran talks. Trusted by Iran, allied with US, nuclear power understanding stakes.', status: 'confirmed' },
-  { date: '2026-03-25', day: 26, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz — mines confirmed', description: 'Hormuz still closed Day 26 with confirmed mines. Navy minesweeping weeks away. Coalition forming but not operational.', impact: 'Physical closure persists despite diplomacy', status: 'confirmed' },
-  { date: '2026-03-25', day: 26, lat: 35.69, lng: 51.39, type: 'strike_us', target: 'Tehran — strikes continue', description: 'US/Israeli strikes continue on Iran despite diplomatic signals. Both sides maintaining military pressure.', status: 'confirmed' },
+  { date: '2026-03-25', day: 26, lat: 38.9072, lng: -77.0369, type: 'diplomatic', target: 'Washington DC — 15-point plan REJECTED', description: 'Iran REJECTS US 15-point plan. Issues 5 counter-conditions including Hormuz sovereignty, war reparations, protection of all proxy groups.', impact: 'Negotiations stall on maximalist demands', status: 'confirmed' },
+  { date: '2026-03-25', day: 26, lat: 33.6844, lng: 73.0479, type: 'diplomatic', target: 'Islamabad, Pakistan — counter-conditions', description: 'Iran delivers 5 counter-conditions via Pakistan. Araghchi: "We want to end the war only on our own terms."', status: 'confirmed' },
+  { date: '2026-03-25', day: 26, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Strait of Hormuz — sovereignty legislation', description: 'Iranian parliament pursuing legislation to codify permanent Hormuz sovereignty with transit fees. GCC confirms Iran already charging passage fees.', impact: 'Wartime blockade converting to permanent legal control', status: 'confirmed' },
+  { date: '2026-03-25', day: 26, lat: 28.83, lng: 50.88, type: 'strike_israel', target: 'Bushehr nuclear complex', description: 'Israel strikes Bushehr nuclear complex. IRGC navy chief killed.', impact: 'Nuclear infrastructure targeted', status: 'confirmed' },
+  { date: '2026-03-25', day: 26, lat: 33.43, lng: 43.30, type: 'strike_us', target: 'Anbar Province, Iraq — PMF strikes', description: 'US A-10 aircraft struck PMF targets in Anbar Province, killing 7 Iraqi soldiers near army medical center.', impact: 'Iraq drawn deeper into conflict', status: 'confirmed' },
+  { date: '2026-03-25', day: 26, lat: 33.31, lng: 44.37, type: 'political', target: 'Baghdad — Iraq escalation', description: "Iraqi PM gives PMF 'green light for self-defense' against US strikes. Summons top US diplomat. Formal complaint of breach of international law.", impact: 'Legal basis for US Iraq presence eroding', status: 'confirmed' },
+  { date: '2026-03-25', day: 26, lat: 32.65, lng: 51.68, type: 'strike_israel', target: 'Isfahan strikes', description: 'Israeli strikes continue on Isfahan military targets.', status: 'confirmed' },
+  { date: '2026-03-25', day: 26, lat: 32.08, lng: 34.83, type: 'strike_iran', target: 'Bnei Brak, Israel — missile impact', description: 'Iranian missile impacts Bnei Brak area. Strikes continue on both sides despite diplomatic signals.', status: 'confirmed' },
+  { date: '2026-03-25', day: 26, lat: 24.47, lng: 54.37, type: 'political', target: 'Abu Dhabi — UAE response', description: "Abu Dhabi National Oil Co. head calls Hormuz fees 'economic terrorism' — 'every nation pays the ransom at the gas pump, grocery store and pharmacy.'", status: 'confirmed' },
 ];
 
 // Insurance exclusion zone polygon (for map overlay)
