@@ -1,7 +1,7 @@
 # IRAN CONFLICT ANALYSIS: COMPLETE COMPILATION
 ## The Fulcrum Memo | March 2026
 
-**Last Updated:** March 25, 2026 08:00 UTC
+**Last Updated:** March 25, 2026 23:00 UTC
 **Conflict Day:** 26
 **Author:** Zachary Smith
 
@@ -720,32 +720,37 @@ The contradictions are piling up. Trump says "we've won" while deploying the 82n
 ---
 
 ## Day 26 — March 25, 2026
-### The 15-Point Plan — First Real Framework, But Hormuz Is Still Mined
+### Iran's Counter-Offer — Reparations, Hormuz Sovereignty, and the Restructuring of Global Shipping
 
-**Market Snapshot:** Brent $99.16 | VLCC $485K/day | HY Spread 530 bps | VIX 23.5 | Gas $3.90
+**Market Snapshot:** Brent ~$100 | VLCC $485K/day | HY Spread 530 bps | VIX 23.5 | Gas $3.95
 
-For the first time in 26 days, there is a concrete diplomatic document on the table (the NYT 15-point plan) and a specific ask (1-month ceasefire). This is qualitatively different from Trump's vague "productive conversations." Pakistan as intermediary makes sense — trusted by Iran, allied with US, nuclear power that understands the stakes. But the physical reality hasn't changed: Hormuz is mined, 82nd Airborne is deploying, strikes are continuing.
+Iran REJECTS the US 15-point plan and issues 5 counter-conditions: end aggression, guarantees against future attack, war reparations, comprehensive end across ALL fronts (including proxy groups), and recognition of Iran's sovereignty over Hormuz. These are maximalist demands — war reparations from the world's largest military, sovereignty over an international waterway, protection of ALL proxy groups. But this is negotiation, not capitulation.
+
+**THE GAME-CHANGER:** Iranian parliament is pursuing legislation to formally codify sovereignty, control and oversight over the Strait of Hormuz with permanent transit fee collection. GCC confirms Iran already charging passage fees. UAE oil chief calls it "economic terrorism" — "every nation pays the ransom at the gas pump, grocery store and pharmacy." If codified into law, this persists regardless of any ceasefire.
 
 **Key Developments:**
-- NYT: US sent Iran 15-point plan — first concrete diplomatic document
-- Israel Ch12: Washington seeking 1-month ceasefire
-- Pakistan offers to host talks — trusted by both sides
-- Oil drops 5-7%, Brent below $100 for first time since Day 13
-- IEA: "greatest energy and food security challenge in history"
-- 50% of global urea and sulfur exports disrupted — food security dimension
-- 40+ energy assets damaged across 9 countries
-- Hormuz still closed — 26 consecutive days with confirmed mines
-- Strikes continue on both sides despite diplomatic signals
-- First time Full Escalation not the leading scenario since Day 10
+- Iran REJECTS US 15-point plan — issues 5 counter-conditions via Pakistan
+- Counter-conditions: war reparations, Hormuz sovereignty, protection of ALL proxy groups (Hezbollah)
+- Araghchi: "We want to end the war only on our own terms"
+- Parliament codifying Hormuz sovereignty with transit fees — permanent restructuring
+- GCC confirms Iran already charging passage fees — violating international law
+- Israel strikes Bushehr nuclear complex, kills IRGC navy chief
+- US strikes PMF in Iraq's Anbar Province — 7 Iraqi soldiers killed
+- Iraqi PM gives PMF "green light for self-defense" — summons US diplomat
+- Iraq files formal breach of international law complaint — legal basis for US presence eroding
+- Saudi MBS pressing Trump to continue strikes
+- Sri Lanka cutting energy consumption 25%
+- Iranian military dead: 5,300+ (Hengaw, up from 4,400). Lebanon: 1,072 killed, 2,966 wounded
+- Brent ~$100. Markets yo-yoing on conflicting signals
 
-**The Critical Point:** Even a successful 1-month ceasefire won't instantly reopen Hormuz (mines need clearing), won't repair Ras Laffan (5 years), won't unwind the maritime insurance repricing. The market is pricing hope. The fundamentals are pricing reality.
+**The Critical Point:** Iran's counter-conditions establish a negotiating floor, not final terms. Reparations are a bargaining chip they'll trade for sanctions relief. Hormuz sovereignty is non-negotiable. The shape of a deal is visible if you know what to look for — but we're months away, not days.
 
 **Scenario Probabilities:**
-- Quick Resolution: 15%
-- Protracted Attrition: 50%
+- Quick Resolution: 10% (down from 15% — Iran's conditions are non-starters)
+- Protracted Attrition: 55% (up from 50% — now clear base case)
 - Full Escalation: 35%
 
-**LARGEST PROBABILITY SHIFT OF THE WAR** — First time Full Escalation not the leading scenario since Day 10.
+**Protracted Attrition now confirmed as base case.** Both sides exchanging proposals but miles apart. Neither can "win" militarily but neither will accept the other's terms. Hormuz sovereignty legislation is THE structural wild card.
 
 ---
 
@@ -781,7 +786,7 @@ For the first time in 26 days, there is a concrete diplomatic document on the ta
 | Mar 22 | $114.85 | $103.00 | $5.50 | $5450 | 6400 | 38.7 | 595 | Trump ultimatum, Dimona/Diego Garcia strikes |
 | Mar 23 | $99.94 | $89.00 | $5.10 | $5320 | 6650 | 24.0 | 540 | "Productive conversations" — oil crashes 11% |
 | Mar 24 | $104.49 | $92.35 | $5.25 | $5380 | 6580 | 26.5 | 555 | Oil rebounds; Port Arthur explosion; $580M probe |
-| Mar 25 | $99.16 | $88.41 | $5.00 | $5350 | 6720 | 23.5 | 530 | NYT 15-point plan; Brent below $100 |
+| Mar 25 | $100.00 | $88.00 | $5.00 | $5350 | 6720 | 23.5 | 530 | Iran REJECTS 15-point plan; Hormuz sovereignty legislation; Iraq PMF escalation |
 
 ## Casualty Timeline
 
@@ -797,6 +802,7 @@ For the first time in 26 days, there is a concrete diplomatic document on the ta
 | Mar 20 | 21 | 5844 | 1444 | 13 | 1000 | 204 children among civilians; Lebanon 1,000+ |
 | Mar 22 | 23 | 5900 | 1500 | 17 | 1100 | Dimona strike — 100+ injured near nuclear facility |
 | Mar 24 | 25 | 6000 | 1444 | 19 | 1100 | 19 US dead, 290 wounded; 82,000 structures destroyed in Iran |
+| Mar 25 | 26 | 6300 | 1500 | 19 | 1172 | Hengaw: 5,300+ military killed. Lebanon: 1,072 killed, 2,966 wounded. IRGC navy chief killed |
 
 ## Gas Prices
 
@@ -813,6 +819,7 @@ For the first time in 26 days, there is a concrete diplomatic document on the ta
 | Mar 22 | $4.15 | $6.25 | +$0.30 | Ultimatum spike |
 | Mar 23 | $3.88 | $6.10 | -$0.27 | "Productive conversations" pullback |
 | Mar 24 | $3.95 | $6.15 | +$0.07 | Port Arthur explosion adds pressure |
+| Mar 25 | $3.95 | $6.15 | +$0.00 | Steady as markets yo-yo on conflicting signals |
 
 ## Shipping Disruption Key Metrics
 
@@ -892,7 +899,7 @@ For the first time in 26 days, there is a concrete diplomatic document on the ta
 
 **March 24, 2026 (Day 25):** Oil rebounds to $104 as Iran denies talks and strikes continue. Missile hits Tel Aviv. 82nd Airborne deploying. 290 US wounded. Trump approval 36%. Port Arthur TX refinery explosion. $580M insider trading probe. IRGC calls Trump "deceitful." Zolghadr replaces killed Larijani
 
-**March 25, 2026 (Day 26):** Oil drops 5-7%, Brent below $100. NYT: US sent Iran 15-point plan — first concrete diplomatic framework. Israel Ch12: Washington seeking 1-month ceasefire. Pakistan offers to host talks. IEA: "greatest energy and food security challenge in history." 50% of global fertilizer trade disrupted. First time Full Escalation not the leading scenario since Day 10
+**March 25, 2026 (Day 26):** Iran REJECTS US 15-point plan. Issues 5 counter-conditions: end aggression, guarantees against future attack, war reparations, comprehensive end across ALL fronts (including proxy groups), and recognition of Iran's sovereignty over Hormuz. Parliament codifying Hormuz sovereignty with transit fees — permanent restructuring. GCC says Iran already charging fees. UAE oil chief: "economic terrorism." Israel strikes Bushehr nuclear complex, kills IRGC navy chief. US strikes PMF in Iraq's Anbar Province — 7 Iraqi soldiers killed. Iraqi PM gives PMF "green light for self-defense," summons US diplomat. Saudi MBS pressing Trump to continue. Sri Lanka cutting energy 25%. Iranian military: 5,300+ killed. Lebanon: 1,072 killed. Brent ~$100. Protracted Attrition 55% now clear base case
 
 ---
 
@@ -917,7 +924,7 @@ For the first time in 26 days, there is a concrete diplomatic document on the ta
 | Mar 22 | 23 | 3% | 35% | 62% | Trump ultimatum, Dimona strike, ICBM at Diego Garcia |
 | Mar 23 | 24 | 8% | 45% | 47% | TURNING POINT: "Productive conversations," oil -11% |
 | Mar 24 | 25 | 10% | 48% | 42% | Oil rebounds; 82nd Airborne deploying; $580M probe |
-| Mar 25 | 26 | 15% | 50% | 35% | **LARGEST SHIFT** — NYT 15-point plan, 1-month ceasefire proposal |
+| Mar 25 | 26 | 10% | 55% | 35% | Iran REJECTS 15-point plan, issues 5 counter-conditions. Hormuz sovereignty legislation. Protracted Attrition confirmed |
 
 ---
 
@@ -951,6 +958,8 @@ For the first time in 26 days, there is a concrete diplomatic document on the ta
 | Selective Hormuz creates petrodollar erosion | 60% | 75% | DEVELOPING | Yuan/rupee transit operational |
 | European LNG permanent supply gap | 70% | 90% | DEVELOPING | 17% Qatar capacity lost for 5 years |
 | Post-war oil structurally higher | 80% | 95% | DEVELOPING | Infrastructure damage persists |
+| Hormuz sovereignty codified into Iranian law | 70% | 85% | DEVELOPING | Parliament pursuing legislation; GCC confirms fees already being charged |
+| Iraq forced into conflict against US | 50% | 75% | DEVELOPING | PM gives PMF green light; 7 Iraqi soldiers killed; diplomat summoned |
 
 ## Invalidated Predictions
 
@@ -960,14 +969,16 @@ For the first time in 26 days, there is a concrete diplomatic document on the ta
 
 ---
 
-# NEW PREDICTIONS (Day 21)
+# NEW PREDICTIONS (Day 26)
 
 | Prediction | Confidence | Rationale |
 |------------|------------|-----------|
 | Ras Laffan damage creates permanent European LNG supply gap | 90% | 17% of Qatar's LNG capacity gone for 5 years. Europe already tight on gas. Accelerates European energy crisis. |
 | Iran selective Hormuz access creates permanent petrodollar erosion | 75% | Yuan and rupee denominated transit now operational. Precedent set even after war ends. |
 | Post-war oil prices structurally higher than pre-war | 95% | Infrastructure damage (Ras Laffan, Iranian refineries, Iraqi ports) persists regardless of ceasefire. |
-| Restructuring cycle timeline 12-18 months (accelerated from 24) | 90% | Goldman $147 warning, JPMorgan cutting targets, Fed cuts priced out to 2027-2028. Structural damage already done. |
+| Restructuring cycle timeline 12-15 months (accelerated from 12-18) | 92% | Hormuz sovereignty legislation + Iraq escalation adds new destabilization vectors. Structural damage accelerating. |
+| Hormuz sovereignty codification persists regardless of ceasefire | 85% | Parliament legislating permanent control. GCC confirms fees already being charged. Converts temporary leverage to permanent equity. |
+| Iraq-US legal basis for operations collapses | 70% | PM gave PMF green light. Formal breach of international law complaint. PMF is officially Iraqi army. |
 
 ---
 
@@ -1009,6 +1020,32 @@ For the first time in 26 days, there is a concrete diplomatic document on the ta
 - **Market Reaction:** Oil dropped 11% intraday, then recovered above $100 within 24 hours
 - **Goldman Assessment:** Release offsets only 12 days of Gulf disruption
 
+## Iran's 5 Counter-Conditions (Day 26)
+- **Date:** March 25, 2026
+- **Delivered Via:** Pakistan — regional intermediary trusted by both sides
+- **Conditions:**
+  1. End to aggression by the enemy
+  2. Concrete guarantees preventing recurrence of war
+  3. Clear determination of responsibility
+  4. Guaranteed payment of war damages and compensation
+  5. Comprehensive end to war across ALL fronts including against all resistance groups (Hezbollah, etc.), and recognition of Iran's sovereignty over Strait of Hormuz
+- **Araghchi Response:** "We want to end the war only on our own terms"
+- **Significance:** Conditions are non-starters for US/Israel. War reparations, sovereignty over Hormuz, and protection of ALL proxy groups (Hezbollah) are maximalist demands. But they establish Iran's negotiating floor — the real question is what they'll actually accept vs. what they're opening with.
+
+## Hormuz Sovereignty Legislation (Day 26)
+- **Date:** March 25, 2026
+- **Description:** Iranian parliament pursuing plan to formally codify sovereignty, control and oversight over Strait of Hormuz with revenue collection through transit fees
+- **GCC Response:** GCC secretary-general says Iran already charging fees for safe passage — violating international law
+- **UAE Response:** Abu Dhabi National Oil Co. head called it "economic terrorism" — "every nation pays the ransom at the gas pump, grocery store and pharmacy"
+- **Significance:** THIS IS THE STRUCTURAL DEVELOPMENT THAT OUTLASTS THE WAR. Iran is converting a wartime blockade into permanent legal/sovereign control over the strait. If codified into Iranian law, this persists regardless of ceasefire. It's the equivalent of a creditor converting a temporary lien into permanent equity — Iran wants ownership of the chokepoint, not just leverage over it.
+
+## Iraq Escalation (Day 26)
+- **Date:** March 25, 2026
+- **Event:** Iraqi PM gave al-Hashd al-Shaabi (Iran-backed PMF) green light for self-defense against US strikes
+- **Trigger:** US A-10 aircraft struck PMF targets in Anbar Province, killing 7 Iraqi soldiers near army medical center
+- **Iraq Response:** Summoned top US diplomat. Formal complaint of breach of international law.
+- **Significance:** Iraq edging from reluctant bystander to active participant against US forces. PMF is officially part of Iraqi army. If Iraq formally opposes US strikes, the legal basis for US operations in Iraq collapses.
+
 ---
 
 # APPENDIX: KEY QUOTES
@@ -1034,7 +1071,13 @@ For the first time in 26 days, there is a concrete diplomatic document on the ta
 > "This could be the largest supply disruption in the history of the global oil market."
 > — IEA, March 12, 2026
 
+> "We want to end the war only on our own terms."
+> — FM Araghchi, March 25, 2026 (responding to 15-point plan rejection)
+
+> "Every nation pays the ransom at the gas pump, grocery store and pharmacy."
+> — Abu Dhabi National Oil Co. head on Iran's Hormuz transit fees, March 25, 2026
+
 ---
 
-*Document compiled March 20, 2026*
+*Document compiled March 25, 2026*
 *The Fulcrum Memo | thefulcrummemo.com*
