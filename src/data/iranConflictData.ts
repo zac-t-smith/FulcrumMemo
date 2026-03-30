@@ -7,8 +7,8 @@
 // =============================================================================
 
 export const conflictMetadata = {
-  lastUpdated: '2026-03-25T23:00:00Z',
-  conflictDay: 26,
+  lastUpdated: '2026-03-30T08:00:00Z',
+  conflictDay: 31,
   conflictStartDate: '2026-02-28',
 };
 
@@ -232,6 +232,8 @@ export const casualtyTimeline: CasualtyEntry[] = [
   { date: 'Mar 22', timestamp: Date.parse('2026-03-22'), iranianKilled: 5844, iranianCivilian: 1444, usKilled: 13, gccCivilian: 1000, note: 'Iranian missiles hit Dimona and Arad near Israeli nuclear center. 100+ Israelis injured. First strike near nuclear facility.' },
   { date: 'Mar 24', timestamp: Date.parse('2026-03-24'), iranianKilled: 6000, iranianCivilian: 1444, usKilled: 19, gccCivilian: 1100, note: 'US dead: 13 combat + 6 plane crash. 290 wounded (doubled in 2 weeks). 82,000 civilian structures destroyed in Iran. 15 Israelis, 4 Palestinians killed by Iranian strikes. Lebanon 1,000+.' },
   { date: 'Mar 25', timestamp: Date.parse('2026-03-25'), iranianKilled: 6300, iranianCivilian: 1500, usKilled: 19, gccCivilian: 1172, note: 'Hengaw: 5,300+ Iranian military killed (up from 4,400). Lebanon: 1,072 killed, 2,966 wounded. 33 deaths in Lebanon in last 24 hours. IRGC navy chief killed. Bushehr nuclear complex struck.' },
+  { date: 'Mar 27', timestamp: Date.parse('2026-03-27'), iranianKilled: 6500, iranianCivilian: 1600, usKilled: 13, gccCivilian: 1200, note: '15 US wounded at Prince Sultan (5 critical). Russia provided Iran satellite imagery for targeting. IAEA: Arak reactor no longer operational.' },
+  { date: 'Mar 29', timestamp: Date.parse('2026-03-29'), iranianKilled: 6700, iranianCivilian: 1700, usKilled: 13, gccCivilian: 1250, note: 'Pentagon confirms 13 US killed, 300+ wounded. 18 Israeli civilians killed, 5,492 injured. Iran military: 5,300+. Lebanon: 1,072 killed. Houthis enter war.' },
 ];
 
 export const marketTimeline: MarketEntry[] = [
@@ -262,6 +264,11 @@ export const marketTimeline: MarketEntry[] = [
   { date: 'Mar 23', timestamp: Date.parse('2026-03-23'), brentCrude: 99.94, wti: 89, naturalGas: 5.10, goldSpot: 5320, spx: 6650, vix: 24.0, hySpread: 540, event: "TURNING POINT: Trump delays strikes, cites 'productive conversations.' Oil crashes 11%. S&P futures swing from -1% to +3% in minutes. Dow futures +1,000. Iran denies talks, says Trump 'retreated out of fear.'" },
   { date: 'Mar 24', timestamp: Date.parse('2026-03-24'), brentCrude: 104.49, wti: 92.35, naturalGas: 5.25, goldSpot: 5380, spx: 6580, vix: 26.5, hySpread: 555, event: "Oil rebounds above $100 as Iran denies talks and strikes continue. Missile hits Tel Aviv street. 82nd Airborne (1,000+) deploying. 290 US troops wounded. Trump approval 36%. Port Arthur TX refinery explodes. $580M insider trading probe." },
   { date: 'Mar 25', timestamp: Date.parse('2026-03-25'), brentCrude: 100, wti: 88, naturalGas: 5.00, goldSpot: 5350, spx: 6720, vix: 23.5, hySpread: 530, event: "Iran REJECTS US 15-point plan. Issues 5 counter-conditions including sovereignty over Hormuz and war reparations. Parliament pursuing legislation to codify permanent Hormuz control with transit fees. GCC says Iran already charging fees. Stocks rise, oil eases — market yo-yoing. Bushehr nuclear complex struck. IRGC navy chief killed. Iraq gives Iran-backed PMF green light for 'self-defense' against US strikes." },
+  { date: 'Mar 26', timestamp: Date.parse('2026-03-26'), brentCrude: 105.85, wti: 94, naturalGas: 5.10, goldSpot: 5400, spx: 6650, vix: 25.5, hySpread: 545, event: "Trump extends power plant deadline 10 days to April 6. Israel strikes Arak heavy water reactor and 2 largest steel factories (Khuzestan, Mobarakeh — IRGC-linked). Iran blocks 3 container ships at Hormuz. Reports of child soldiers (age 12+). 18 Israeli civilians killed, 5,492 injured total." },
+  { date: 'Mar 27', timestamp: Date.parse('2026-03-27'), brentCrude: 112.57, wti: 99.64, naturalGas: 5.25, goldSpot: 5450, spx: 6580, vix: 28.0, hySpread: 560, event: "NEW 2026 HIGH: Brent $112.57. WTI touches $100.04 — first time above $100 since 2022. 15 US wounded at Prince Sultan Air Base (5 critical) hours after Trump declared Iran 'neutralized.' IAEA: Arak reactor 'no longer operational.' Russia gave Iran satellite imagery for targeting (per Zelensky). Gas $3.93 national, $5.62 California." },
+  { date: 'Mar 28', timestamp: Date.parse('2026-03-28'), brentCrude: 110, wti: 98, naturalGas: 5.30, goldSpot: 5480, spx: 6520, vix: 29.5, hySpread: 575, event: "HOUTHIS ENTER WAR — first strikes on Israel from Yemen. Missile + UAV toward southern Israel and Eilat. War spans Mediterranean to Red Sea to Indian Ocean. UK sending mine-clearing ship. US: 13 killed, 300+ wounded total. 3 Lebanese journalists killed." },
+  { date: 'Mar 29', timestamp: Date.parse('2026-03-29'), brentCrude: 108, wti: 97, naturalGas: 5.35, goldSpot: 5500, spx: 6480, vix: 28.5, hySpread: 565, event: "Trump: Iran agreed to 'most of' 15-point plan. Considering Kharg Island seizure. Pakistan/Saudi/Turkey/Egypt FMs meet in Islamabad. Iran allows 20 Pakistan ships through Hormuz (2/day). Iraq PMF deployed inside Iran. Australia: free public transit, considering fuel rationing. Brent up 50%+ since war began." },
+  { date: 'Mar 30', timestamp: Date.parse('2026-03-30'), brentCrude: 104, wti: 96, naturalGas: 5.40, goldSpot: 5520, spx: 6369, vix: 31.05, hySpread: 580, event: "War enters 5th week. Brent $99-107 range. S&P 6,369 (-1.67%). VIX 31.05 (+13.16%). IEA: biggest oil shock in history. Negotiations via Pakistan but strikes continue on both sides." },
 ];
 
 export const gasPrices: GasPriceEntry[] = [
@@ -285,6 +292,8 @@ export const gasPrices: GasPriceEntry[] = [
   { date: 'Mar 20', timestamp: Date.parse('2026-03-20'), usAverage: 3.85, california: 5.98, change: 0.10, note: 'Continuing to climb. Approaching $4 threshold.' },
   { date: 'Mar 22', timestamp: Date.parse('2026-03-22'), usAverage: 3.95, california: 6.10, change: 0.10, note: 'Approaching $4 threshold. Greece already capped gasoline profit margins.' },
   { date: 'Mar 24', timestamp: Date.parse('2026-03-24'), usAverage: 3.95, california: 6.15, change: 0.00, note: 'Approaching $4. Port Arthur TX refinery explosion adding upward pressure on domestic supply.' },
+  { date: 'Mar 27', timestamp: Date.parse('2026-03-27'), usAverage: 3.93, california: 5.62, change: -0.02, note: 'National avg $3.93 — up 40% from $2.81 in January. California $5.62. WTI touches $100. Analysts warn $5 national possible if oil stays above $100.' },
+  { date: 'Mar 30', timestamp: Date.parse('2026-03-30'), usAverage: 3.98, california: 5.75, change: 0.05, note: 'Oil up 50%+ since war began. Australia offering free public transit. Fuel rationing discussed.' },
 ];
 
 export const asianMarkets: AsianMarketEntry[] = [
@@ -768,6 +777,31 @@ export const scenarioUpdates: ScenarioUpdate[] = [
       'Brent ~$100. Markets yo-yoing on conflicting signals',
     ],
   },
+  {
+    date: 'Mar 30, 2026',
+    timestamp: Date.parse('2026-03-30'),
+    day: 31,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 15 },
+      { scenario: 'Protracted Attrition', probability: 55 },
+      { scenario: 'Full Escalation', probability: 30 },
+    ],
+    rationale: "Day 31: Protracted Attrition firmly base case at 55%. Houthi entry expands war geographically but doesn't change negotiation dynamics. Pakistan 4-nation meeting (Saudi, Turkey, Egypt) is most serious diplomatic effort yet. Trump claims Iran agreed to 'most' of 15-point plan — but Iran's FM says no negotiations happening. The pattern: Trump claims progress, oil dips, Iran denies, oil rebounds, strikes continue. THIS IS protracted attrition playing out in real time. War enters 5th week with Brent up 50%+ from pre-war.",
+    keyDevelopments: [
+      'Day 27: Israel strikes Arak reactor (now non-operational per IAEA) + 2 largest steel factories',
+      'Day 28: WTI touches $100.04 — first time above $100 since 2022. Brent $112.57 new 2026 high',
+      '15 US wounded at Prince Sultan Air Base hours after Trump declared Iran "neutralized"',
+      'Russia provided Iran satellite imagery for Prince Sultan targeting (per Zelensky)',
+      'Day 29: HOUTHIS ENTER WAR — first strikes on Israel from Yemen. War spans Med to Indian Ocean',
+      'Day 30: Pakistan/Saudi/Turkey/Egypt FMs meet in Islamabad — most serious diplomatic effort',
+      'Trump: Iran agreed to "most of" 15-point plan. Considering Kharg Island seizure',
+      'Iran allows 20 Pakistan ships through Hormuz (2/day) — selective access expanding',
+      'Iraq PMF deployed inside Iran — militia fighting alongside Iranian forces',
+      'Australia: free public transit, considering fuel rationing. Sri Lanka cutting 25%',
+      'US: 13 killed, 300+ wounded. Israel: 18 civilians killed, 5,492 injured',
+      'Day 31: War enters 5th week. S&P 6,369. VIX 31.05. IEA: biggest oil shock in history',
+    ],
+  },
 ];
 
 // =============================================================================
@@ -991,6 +1025,69 @@ export const mbsPressure = {
   date: '2026-03-25',
   report: 'Saudi Crown Prince MBS pressing Trump to continue strikes on Iran',
   significance: 'Saudi Arabia sees this as once-in-a-generation opportunity to permanently weaken main rival. Willing to take short-term damage for long-term strategic gain.',
+};
+
+// =============================================================================
+// DAY 27-31 SPECIAL EVENTS
+// =============================================================================
+
+export const houthiEntry = {
+  date: '2026-03-28',
+  event: 'Houthis launch first strikes on Israel — missile toward southern region, UAV + missile toward Eilat',
+  intercepted: 'One missile intercepted over Red Sea',
+  significance: "War now spans from Mediterranean (Lebanon) to Red Sea (Yemen) to Indian Ocean (Diego Garcia). Houthi Red Sea disruption from 2023-2024 could resume, threatening BOTH Hormuz and Bab al-Mandab simultaneously. If both chokepoints are blocked, Middle East energy is completely landlocked.",
+};
+
+export const nuclearFacilityStrikes = {
+  arakReactor: { date: '2026-03-27', status: 'IAEA confirmed IR-40 heavy water reactor no longer operational after serious damage' },
+  bushehr: { date: '2026-03-25', status: 'Area within Bushehr nuclear complex struck' },
+  natanz: { date: 'various', status: 'Entrance buildings damaged per IAEA satellite imagery' },
+  significance: "Iran's nuclear infrastructure being systematically degraded. This was a stated US war objective. But Iran's enrichment knowledge persists — you can destroy facilities but not expertise.",
+};
+
+export const steelFactoryStrikes = {
+  date: '2026-03-26',
+  targets: ['Khuzestan Steel near Ahvaz', 'Mobarakeh Steel in Isfahan'],
+  significance: "Partially IRGC-owned. Israel now striking economic/industrial targets, not just military. This is economic warfare — destroying Iran's industrial base to prevent post-war recovery.",
+};
+
+export const princeSultanBaseStrike = {
+  date: '2026-03-27',
+  casualties: '15 US service members wounded (5 critically). Aircraft damaged.',
+  context: "Occurred HOURS after Trump and Hegseth announced 'neutralization' of Iran's military. Russia reportedly provided satellite imagery to Iran for targeting.",
+  significance: 'Iran demonstrating continued strike capability despite claims of military neutralization.',
+};
+
+export const diplomaticFrameworkDay30 = {
+  pakistanMeeting: { date: '2026-03-29', participants: 'Pakistan, Saudi Arabia, Turkey, Egypt foreign ministers in Islamabad' },
+  pakistanRole: 'Facilitating indirect talks. Iran allowed 20 Pakistan-flagged ships through Hormuz (2/day).',
+  trumpClaims: "Iran agreed to 'most of' 15-point plan. Gave US oil as proof of seriousness.",
+  iranDenials: "FM Araghchi: 'No negotiations have happened with the enemy. We do not plan on any negotiations.'",
+  trumpDeadline: 'Power plant strikes extended to April 6, 2026',
+  khargIsland: "Trump considering seizure. 'Maybe we take Kharg Island, maybe we don't. We'd have to be there for a while.'",
+};
+
+export const russiaInvolvement = {
+  date: '2026-03-28',
+  allegation: 'Zelensky claims Russia provided Iran updated satellite imagery of Prince Sultan Air Base before Iranian strike',
+  ukraineSituation: 'Ukraine facing growing pressure as war in Iran draws US attention and resources away',
+  significance: 'Russia-Iran intelligence sharing confirmed. The Iran war is not isolated — it\'s connected to the Russia-Ukraine dynamic.',
+};
+
+export const globalEconomicImpactDay31 = {
+  ieaAssessment: 'Biggest oil shock in history. Largest supply disruption ever.',
+  australiaResponse: 'Free public transport in 2 states. Considering fuel rationing.',
+  sriLanka: 'Cutting energy consumption 25%',
+  chinaGas: 'Up 20% since war began. Government subsidizing to limit to +50 cents/gallon',
+  usGas: '$3.93 national avg. California $5.62. Up 40% since January.',
+  brentSinceWar: 'Up 50%+ from pre-war $73',
+  oilOnWater: '20M bpd disrupted from Middle East producers',
+};
+
+export const iraqPMFInIran = {
+  date: '2026-03-29',
+  description: "Footage showed Iraq's Popular Mobilization Forces deployed inside Iran — Iraqi militia fighting alongside Iranian forces",
+  significance: 'Iraq-based Shia militia now physically present in Iran. Combined with PM\'s green light for self-defense, Iraq is becoming an active combatant.',
 };
 
 // Legacy export for backwards compatibility
@@ -3508,6 +3605,396 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
       "Shape of eventual deal visible if you know what to look for — but months away",
     ],
   },
+  27: {
+    day: 27,
+    date: 'March 26, 2026',
+    title: "Steel and Atoms: Israel Strikes the Economy, Not Just the Military",
+    summary: "Israel striking IRGC-linked steel factories marks the shift from military to economic targeting. This is the 'destroy the debtor's productive capacity' play — not just degrading Iran's ability to fight but its ability to recover economically post-war. Arak reactor strikes and the 10-day deadline extension show the pattern: Trump wants an off-ramp, Israel wants maximum damage before it closes.",
+    thesisScorecard: [
+      {
+        thesis: 'Economic warfare phase begins',
+        initialConfidence: 60,
+        currentConfidence: 85,
+        status: 'confirmed',
+        evidence: [
+          "Israel strikes 2 largest steel factories — IRGC-owned industrial targets",
+          "Khuzestan Steel and Mobarakeh Steel both hit",
+          "Targeting economic recovery capacity, not just military capability",
+        ],
+      },
+      {
+        thesis: 'Nuclear degradation objective achieved',
+        initialConfidence: 70,
+        currentConfidence: 90,
+        status: 'developing',
+        evidence: [
+          "Arak heavy water reactor struck (evacuated first)",
+          "IAEA to confirm non-operational status Day 28",
+          "Bushehr, Natanz also damaged",
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[scenarioUpdates.length - 1],
+    keyDevelopments: [
+      {
+        category: 'Nuclear/Industrial',
+        items: [
+          "Israel strikes Arak heavy water reactor — evacuated first",
+          "Khuzestan Steel and Mobarakeh Steel factories struck — IRGC-linked",
+          "Economic warfare: destroying industrial base, not just military",
+        ],
+      },
+      {
+        category: 'Diplomatic',
+        items: [
+          "Trump extends power plant deadline 10 days to April 6",
+          "First major de-escalation signal since Day 24",
+          "Iran blocks 3 container ships at Hormuz",
+        ],
+      },
+      {
+        category: 'Humanitarian',
+        items: [
+          "18 Israeli civilians killed, 5,492 injured since war began",
+          "Reports of child soldiers (age 12+) joining Iran war support",
+          "120+ historical sites damaged in Iran",
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 105.85,
+      vlccRate: 490000,
+      hySpread: 545,
+      vix: 25.5,
+      usGas: 3.95,
+    },
+    tradingImplications: [
+      "Economic warfare phase: Israel targeting post-war recovery capacity",
+      "10-day deadline extension = Trump seeking off-ramp while Israel maximizes damage",
+      "Nuclear infrastructure being systematically degraded",
+      "Scenario: Quick 12% / Protracted 53% / Full 35%",
+    ],
+  },
+  28: {
+    day: 28,
+    date: 'March 27, 2026',
+    title: "WTI Breaks $100, Prince Sultan Burns, and Iran's Military Is 'Neutralized' — Until It Isn't",
+    summary: "THE most contradictory day of the war. Trump and Hegseth announce Iran's military is neutralized. Hours later, Iranian missiles wound 15 Americans and damage aircraft at Prince Sultan Air Base — using targeting data from Russia. WTI touches $100 for the first time since 2022. Gas hits $3.93 nationally. The gap between the administration's claims and reality is widening daily.",
+    thesisScorecard: [
+      {
+        thesis: 'WTI above $100',
+        initialConfidence: 70,
+        currentConfidence: 100,
+        status: 'confirmed',
+        evidence: [
+          "WTI touches $100.04 — first time above $100 since 2022",
+          "Brent hits new 2026 high of $112.57",
+          "Gas $3.93 national avg, up 40% from January",
+        ],
+      },
+      {
+        thesis: 'Russia-Iran intelligence sharing',
+        initialConfidence: 60,
+        currentConfidence: 90,
+        status: 'confirmed',
+        evidence: [
+          "Zelensky: Russia provided Iran satellite imagery for Prince Sultan targeting",
+          "Strike occurred hours after Trump declared Iran 'neutralized'",
+          "15 US wounded, 5 critically",
+        ],
+      },
+      {
+        thesis: 'Nuclear objective achieved',
+        initialConfidence: 90,
+        currentConfidence: 98,
+        status: 'confirmed',
+        evidence: [
+          "IAEA confirms Arak reactor 'no longer operational'",
+          "Stated US war objective accomplished",
+          "But enrichment knowledge persists — can't destroy expertise",
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[scenarioUpdates.length - 1],
+    keyDevelopments: [
+      {
+        category: 'Markets',
+        items: [
+          "WTI touches $100.04 — first time above $100 since 2022",
+          "Brent $112.57 — new 2026 high",
+          "Gas $3.93 national avg, California $5.62",
+          "Analysts warn $5 national possible",
+        ],
+      },
+      {
+        category: 'Military',
+        items: [
+          "15 US wounded at Prince Sultan Air Base (5 critical)",
+          "Strike occurred HOURS after Trump declared Iran 'neutralized'",
+          "Russia provided satellite imagery for targeting (per Zelensky)",
+        ],
+      },
+      {
+        category: 'Nuclear',
+        items: [
+          "IAEA confirms Arak reactor 'no longer operational'",
+          "Major stated war objective achieved",
+          "Israel continues missile production facility strikes",
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 112.57,
+      vlccRate: 495000,
+      hySpread: 560,
+      vix: 28.0,
+      usGas: 3.93,
+    },
+    tradingImplications: [
+      "WTI $100 threshold crossed — analysts warned this triggers consumer behavior change",
+      "Gap between administration claims and reality widening",
+      "Russia-Iran axis confirmed — great power dimension explicit",
+      "Scenario: Quick 10% / Protracted 50% / Full 40%",
+    ],
+  },
+  29: {
+    day: 29,
+    date: 'March 28, 2026',
+    title: "The Houthis Join: Mediterranean to Red Sea to Indian Ocean",
+    summary: "The expansion everyone feared. Houthi strikes on Israel from Yemen mean the war now spans from Lebanon (Mediterranean) to the Gulf (Hormuz) to Yemen (Red Sea/Bab al-Mandab) to Diego Garcia (Indian Ocean). If Houthis resume Red Sea shipping attacks from 2023-2024, BOTH major energy chokepoints could be blocked simultaneously.",
+    thesisScorecard: [
+      {
+        thesis: 'Houthi entry',
+        initialConfidence: 50,
+        currentConfidence: 100,
+        status: 'confirmed',
+        evidence: [
+          "Houthis launch first strikes on Israel from Yemen",
+          "Missile + UAV toward southern Israel and Eilat",
+          "War spans Mediterranean to Indian Ocean",
+        ],
+      },
+      {
+        thesis: 'Dual chokepoint risk',
+        initialConfidence: 40,
+        currentConfidence: 75,
+        status: 'developing',
+        evidence: [
+          "Houthis control Bab al-Mandab access",
+          "Iran controls Hormuz",
+          "If both blocked, Middle East energy landlocked",
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[scenarioUpdates.length - 1],
+    keyDevelopments: [
+      {
+        category: 'Geographic Expansion',
+        items: [
+          "HOUTHIS ENTER WAR — first strikes on Israel from Yemen",
+          "Missile + UAV toward southern Israel and Eilat",
+          "War now spans Mediterranean to Red Sea to Indian Ocean",
+          "One missile intercepted over Red Sea",
+        ],
+      },
+      {
+        category: 'Casualties',
+        items: [
+          "US total: 13 killed, 300+ wounded",
+          "3 Lebanese journalists killed in Israeli strikes",
+        ],
+      },
+      {
+        category: 'International',
+        items: [
+          "UK sending mine-clearing ship RFA Lyme Bay",
+          "US deploys autonomous unmanned boats",
+          "Ukraine-Qatar sign missile/UAV interception agreement",
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 110,
+      vlccRate: 500000,
+      hySpread: 575,
+      vix: 29.5,
+      usGas: 3.95,
+    },
+    tradingImplications: [
+      "Dual chokepoint risk now real — Hormuz + Bab al-Mandab",
+      "If Houthis resume 2023-24 Red Sea attacks, shipping completely rerouted",
+      "Russia-Iran-Houthi axis vs US-Israel-GCC structure emerging",
+      "Scenario: Quick 8% / Protracted 50% / Full 42%",
+    ],
+  },
+  30: {
+    day: 30,
+    date: 'March 29, 2026',
+    title: "One Month In: Pakistan Convenes, Trump Claims Victory, the War Continues",
+    summary: "30 days. The war is now longer than the June 2025 12-day war, longer than any Middle East conflict since 2003. The Pakistan 4-nation meeting (Saudi, Turkey, Egypt) is the most serious multilateral diplomatic effort yet. Trump's musing about Kharg Island seizure is the first public acknowledgment that US ground forces in Iran is on the table.",
+    thesisScorecard: [
+      {
+        thesis: 'Diplomatic framework emerging',
+        initialConfidence: 30,
+        currentConfidence: 65,
+        status: 'developing',
+        evidence: [
+          "Pakistan/Saudi/Turkey/Egypt FMs meet in Islamabad",
+          "Most serious multilateral effort yet",
+          "Iran allows 20 Pakistan ships through Hormuz (2/day)",
+        ],
+      },
+      {
+        thesis: 'Ground forces on the table',
+        initialConfidence: 10,
+        currentConfidence: 40,
+        status: 'developing',
+        evidence: [
+          "Trump muses about Kharg Island seizure",
+          "'We'd have to be there for a while'",
+          "First public acknowledgment of potential occupation",
+        ],
+      },
+      {
+        thesis: 'Iraq as combatant',
+        initialConfidence: 75,
+        currentConfidence: 90,
+        status: 'confirmed',
+        evidence: [
+          "Iraq PMF deployed INSIDE Iran — fighting alongside Iranian forces",
+          "PM green light + physical presence = active combatant status",
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[scenarioUpdates.length - 1],
+    keyDevelopments: [
+      {
+        category: 'Diplomatic',
+        items: [
+          "Pakistan/Saudi/Turkey/Egypt FMs meet in Islamabad",
+          "Most serious multilateral diplomatic effort yet",
+          "Trump: Iran agreed to 'most of' 15-point plan",
+          "Iran FM: 'No negotiations have happened with the enemy'",
+        ],
+      },
+      {
+        category: 'Hormuz',
+        items: [
+          "Iran allows 20 Pakistan ships through (2/day)",
+          "Selective access expanding as part of diplomatic engagement",
+          "But Western shipping still blocked",
+        ],
+      },
+      {
+        category: 'Escalation',
+        items: [
+          "Trump considering Kharg Island seizure — ground forces discussed",
+          "Iraq PMF deployed inside Iran — militia fighting with Iranians",
+          "WSJ: Trump open to arming Kurdish militias against Tehran",
+        ],
+      },
+      {
+        category: 'Global Impact',
+        items: [
+          "Australia: free public transit, considering fuel rationing",
+          "Brent up 50%+ from pre-war $73",
+          "IEA: biggest oil shock in history",
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 108,
+      vlccRate: 505000,
+      hySpread: 565,
+      vix: 28.5,
+      usGas: 3.98,
+    },
+    tradingImplications: [
+      "Pakistan framework is most credible diplomatic path yet",
+      "But pattern continues: Trump claims progress, Iran denies, strikes continue",
+      "Kharg seizure discussion = ground war option now on table",
+      "Australia rationing shows global demand destruction spreading",
+      "Scenario: Quick 15% / Protracted 55% / Full 30%",
+    ],
+  },
+  31: {
+    day: 31,
+    date: 'March 30, 2026',
+    title: "Week Five: The Restructuring Is Already Happening",
+    summary: "Your Part II thesis isn't a prediction anymore — it's a description of current reality. Oil up 50% from pre-war. Gas up 40%. S&P at 2026 lows. VIX above 30. Fed cuts priced out to 2027-2028. Airlines hemorrhaging. Australia rationing fuel. The 'coming restructuring cycle' is arriving ahead of schedule.",
+    thesisScorecard: [
+      {
+        thesis: 'Part II restructuring cycle',
+        initialConfidence: 85,
+        currentConfidence: 98,
+        status: 'confirmed',
+        evidence: [
+          "Oil up 50%+ from pre-war",
+          "Gas up 40% from January",
+          "S&P at 2026 lows, VIX 31.05",
+          "Fed cuts priced out to 2027-2028",
+          "Australia offering free transit, considering rationing",
+        ],
+      },
+      {
+        thesis: 'Protracted Attrition base case',
+        initialConfidence: 55,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          "War enters 5th week — longest since 2003",
+          "Pattern: claims → denials → strikes continue",
+          "Negotiations via Pakistan but no ceasefire",
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[scenarioUpdates.length - 1],
+    keyDevelopments: [
+      {
+        category: 'Markets',
+        items: [
+          "S&P 6,369 (-1.67%)",
+          "VIX 31.05 (+13.16%)",
+          "Brent $99-107 range",
+          "Oil up 50%+ since war began",
+        ],
+      },
+      {
+        category: 'Week 5 Summary',
+        items: [
+          "Day 27: Arak + steel factories struck (economic warfare)",
+          "Day 28: WTI $100, 15 US wounded, Russia-Iran intel sharing",
+          "Day 29: Houthis enter war — geographic expansion to Red Sea",
+          "Day 30: Pakistan 4-nation meeting, Kharg seizure discussed",
+          "Day 31: IEA confirms biggest oil shock in history",
+        ],
+      },
+      {
+        category: 'Casualties Through Day 31',
+        items: [
+          "US: 13 killed, 300+ wounded",
+          "Israel: 18 civilians killed, 5,492 injured",
+          "Iran military: 5,300+",
+          "Lebanon: 1,072 killed",
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 104,
+      vlccRate: 510000,
+      hySpread: 580,
+      vix: 31.05,
+      usGas: 3.98,
+    },
+    tradingImplications: [
+      "Part II thesis now describing reality, not predicting it",
+      "Restructuring cycle timeline: 12-15 months (accelerated from original 24)",
+      "Global demand destruction visible: Australia, Sri Lanka, China subsidizing",
+      "S&P at 2026 lows — credit stress transmission active",
+      "Fed trapped: can't cut (inflation) or hike (recession risk)",
+      "Scenario: Quick 15% / Protracted 55% / Full 30%",
+    ],
+  },
 };
 
 // =============================================================================
@@ -4076,6 +4563,35 @@ export const conflictEvents: ConflictEvent[] = [
   { date: '2026-03-25', day: 26, lat: 32.65, lng: 51.68, type: 'strike_israel', target: 'Isfahan strikes', description: 'Israeli strikes continue on Isfahan military targets.', status: 'confirmed' },
   { date: '2026-03-25', day: 26, lat: 32.08, lng: 34.83, type: 'strike_iran', target: 'Bnei Brak, Israel — missile impact', description: 'Iranian missile impacts Bnei Brak area. Strikes continue on both sides despite diplomatic signals.', status: 'confirmed' },
   { date: '2026-03-25', day: 26, lat: 24.47, lng: 54.37, type: 'political', target: 'Abu Dhabi — UAE response', description: "Abu Dhabi National Oil Co. head calls Hormuz fees 'economic terrorism' — 'every nation pays the ransom at the gas pump, grocery store and pharmacy.'", status: 'confirmed' },
+
+  // DAY 27 — Mar 26
+  { date: '2026-03-26', day: 27, lat: 34.37, lng: 49.24, type: 'strike_israel', target: 'Arak heavy water reactor', description: 'Israel strikes Arak IR-40 heavy water reactor (evacuated first). IAEA later confirms reactor no longer operational.', impact: 'Nuclear infrastructure degraded', status: 'confirmed' },
+  { date: '2026-03-26', day: 27, lat: 31.32, lng: 48.67, type: 'strike_israel', target: 'Khuzestan Steel, Ahvaz', description: "Israel strikes Khuzestan Steel factory near Ahvaz — partially IRGC-owned. Economic warfare targeting Iran's industrial base.", impact: 'Industrial infrastructure targeted', status: 'confirmed' },
+  { date: '2026-03-26', day: 27, lat: 32.35, lng: 51.50, type: 'strike_israel', target: 'Mobarakeh Steel, Isfahan', description: 'Israel strikes Mobarakeh Steel in Isfahan — one of Iran\'s largest steel factories. IRGC-linked economic target.', impact: 'Industrial infrastructure targeted', status: 'confirmed' },
+  { date: '2026-03-26', day: 27, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Hormuz — 3 ships blocked', description: 'IRGC blocks 3 container ships at Strait of Hormuz. Selective access continues.', status: 'confirmed' },
+  { date: '2026-03-26', day: 27, lat: 38.9072, lng: -77.0369, type: 'political', target: 'Washington — deadline extended', description: 'Trump extends power plant strike deadline 10 days to April 6. First major de-escalation signal.', impact: 'Diplomatic window extended', status: 'confirmed' },
+
+  // DAY 28 — Mar 27
+  { date: '2026-03-27', day: 28, lat: 24.06, lng: 47.58, type: 'strike_iran', target: 'Prince Sultan Air Base, Saudi Arabia', description: '15 US service members wounded (5 critically) at Prince Sultan Air Base. Aircraft damaged. Occurred hours after Trump declared Iran "neutralized."', impact: '15 US wounded, aircraft damaged', status: 'confirmed' },
+  { date: '2026-03-27', day: 28, lat: 50.45, lng: 30.52, type: 'political', target: 'Kyiv — Zelensky allegation', description: 'Zelensky claims Russia provided Iran updated satellite imagery of Prince Sultan Air Base before Iranian strike.', impact: 'Russia-Iran intelligence sharing confirmed', status: 'confirmed' },
+  { date: '2026-03-27', day: 28, lat: 34.37, lng: 49.24, type: 'strike_israel', target: 'Arak — IAEA confirms destruction', description: 'IAEA confirms Arak IR-40 heavy water reactor "no longer operational" after Israeli strikes.', impact: 'War objective achieved', status: 'confirmed' },
+
+  // DAY 29 — Mar 28
+  { date: '2026-03-28', day: 29, lat: 15.35, lng: 44.21, type: 'strike_iran', target: 'Yemen — Houthis enter war', description: 'HOUTHIS ENTER WAR. First strikes on Israel from Yemen — missile + UAV toward southern Israel and Eilat. One intercepted over Red Sea.', impact: 'War expands to Red Sea theater', status: 'confirmed' },
+  { date: '2026-03-28', day: 29, lat: 29.53, lng: 34.95, type: 'interception', target: 'Eilat, Israel', description: 'Houthi missile and UAV intercepted near Eilat. First Houthi strikes on Israel in this conflict.', status: 'confirmed' },
+  { date: '2026-03-28', day: 29, lat: 50.80, lng: -1.10, type: 'military', target: 'UK — mine-clearing ship', description: 'UK sending RFA Lyme Bay mine-clearing ship to region. First Western mine-clearing deployment.', status: 'confirmed' },
+  { date: '2026-03-28', day: 29, lat: 33.89, lng: 35.50, type: 'strike_israel', target: 'Lebanon — 3 journalists killed', description: '3 Lebanese journalists killed in Israeli strikes.', status: 'confirmed' },
+
+  // DAY 30 — Mar 29
+  { date: '2026-03-29', day: 30, lat: 33.69, lng: 73.04, type: 'diplomatic', target: 'Islamabad — 4-nation meeting', description: 'Pakistan, Saudi Arabia, Turkey, Egypt foreign ministers meet in Islamabad. Most serious multilateral diplomatic effort yet.', impact: 'Major diplomatic development', status: 'confirmed' },
+  { date: '2026-03-29', day: 30, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Hormuz — Pakistan ships allowed', description: 'Iran allows 20 Pakistan-flagged ships through Hormuz (2/day). Selective access expanding as part of diplomatic engagement.', impact: 'Selective Hormuz access expanding', status: 'confirmed' },
+  { date: '2026-03-29', day: 30, lat: 35.69, lng: 51.39, type: 'military', target: 'Iran — Iraq PMF deployed inside', description: "Iraq's Popular Mobilization Forces (PMF) deployed inside Iran. Iraqi militia fighting alongside Iranian forces.", impact: 'Iraq becoming active combatant', status: 'confirmed' },
+  { date: '2026-03-29', day: 30, lat: 38.9072, lng: -77.0369, type: 'political', target: 'Washington — Kharg seizure discussed', description: "Trump muses about Kharg Island seizure: 'Maybe we take Kharg Island, maybe we don't. We'd have to be there for a while.'", impact: 'Ground forces in Iran discussed publicly', status: 'confirmed' },
+  { date: '2026-03-29', day: 30, lat: -33.87, lng: 151.21, type: 'political', target: 'Australia — emergency measures', description: 'Australia offers free public transit in 2 states. Fuel rationing under consideration.', impact: 'Global demand destruction visible', status: 'confirmed' },
+
+  // DAY 31 — Mar 30
+  { date: '2026-03-30', day: 31, lat: 48.87, lng: 2.35, type: 'political', target: 'Paris — IEA assessment', description: 'IEA declares biggest oil shock in history. Largest supply disruption ever recorded.', impact: 'Historic oil shock confirmed', status: 'confirmed' },
+  { date: '2026-03-30', day: 31, lat: 27.1832, lng: 56.2666, type: 'shipping', target: 'Hormuz — Day 31', description: 'War enters 5th week. Hormuz still effectively closed to Western shipping. Negotiations via Pakistan ongoing.', status: 'confirmed' },
 ];
 
 // Insurance exclusion zone polygon (for map overlay)

@@ -1,8 +1,8 @@
 # IRAN CONFLICT ANALYSIS: COMPLETE COMPILATION
 ## The Fulcrum Memo | March 2026
 
-**Last Updated:** March 25, 2026 23:00 UTC
-**Conflict Day:** 26
+**Last Updated:** March 30, 2026 08:00 UTC
+**Conflict Day:** 31
 **Author:** Zachary Smith
 
 ---
@@ -11,7 +11,7 @@
 
 1. [Part I: The Asymmetric Restructuring of the Middle East](#part-i-the-asymmetric-restructuring-of-the-middle-east)
 2. [Part II: From Sovereign Distress to Portfolio Contagion](#part-ii-from-sovereign-distress-to-portfolio-contagion)
-3. [Field Notes: Days 6-26](#field-notes)
+3. [Field Notes: Days 6-31](#field-notes)
 4. [Data Tables](#data-tables)
 5. [Conflict Timeline](#conflict-timeline)
 6. [Scenario Probability History](#scenario-probability-history)
@@ -754,6 +754,175 @@ Iran REJECTS the US 15-point plan and issues 5 counter-conditions: end aggressio
 
 ---
 
+## Day 27 — March 26, 2026
+### Power Plant Deadline Extended, Arak Reactor Destroyed, Steel Factories Obliterated
+
+**Market Snapshot:** Brent $105.85 | WTI $94 | S&P 6421 | VIX 27 | HY Spread 555 bps | Gas $4.05
+
+Trump extends the power plant deadline 10 days to April 6 — buying more diplomatic runway. Israel doesn't wait: strikes Arak heavy water reactor (IR-40 now IAEA-confirmed non-operational) and Iran's 2 largest steel factories (Mobarakeh, Khuzestan). The structural targeting continues even as negotiations progress.
+
+**Key Developments:**
+- Trump extends power plant strike deadline to April 6 (10-day extension)
+- Israel destroys Arak heavy water reactor — IAEA confirms IR-40 no longer operational
+- Israel strikes Iran's 2 largest steel factories: Mobarakeh Steel (Isfahan) and Khuzestan Steel
+- Economic infrastructure targeting intensifying alongside diplomatic track
+- Brent at $105.85 — markets cautiously optimistic on extended deadline
+
+**Thesis Scorecard:**
+- Infrastructure targeting continues despite diplomatic progress: CONFIRMED
+- Israel pursuing economic degradation independently: CONFIRMED
+- Extended deadline = protracted attrition timeline: CONFIRMED
+
+**Scenario Probabilities:**
+- Quick Resolution: 12%
+- Protracted Attrition: 56%
+- Full Escalation: 32%
+
+---
+
+## Day 28 — March 27, 2026
+### $100 WTI, New 2026 Highs, and Prince Sultan Air Base Takes First Direct Hit
+
+**Market Snapshot:** Brent $112.57 | WTI $99.64 | S&P 6320 | VIX 33 | HY Spread 580 bps | Gas $4.25
+
+**NEW 2026 HIGH.** WTI touches $100.04 intraday — first time above $100 since 2014. Brent hits $112.57. The trigger: Iran's first direct strike on a major US air base. Prince Sultan Air Base in Saudi Arabia — housing 2,500+ US troops — takes drone and missile barrage. Multiple aircraft damaged. GCC water desalination attacks continue: Al-Khobar and Dammam plants hit in Saudi Arabia.
+
+**Key Developments:**
+- WTI breaks $100 for first time ($100.04 intraday, settles $99.64)
+- Brent hits new 2026 high: $112.57
+- Iran strikes Prince Sultan Air Base (Saudi Arabia) — first major US base direct hit
+- Multiple US aircraft damaged; no US casualties reported
+- Saudi desalination plants hit: Al-Khobar and Dammam
+- Israeli strikes target IRGC commander in Syria
+
+**Thesis Scorecard:**
+- WTI $100+ threshold breached: CONFIRMED
+- Iran demonstrating ability to strike US assets directly: CONFIRMED
+- Water infrastructure targeting escalating: CONFIRMED
+- Markets respond to direct US base strikes: CONFIRMED
+
+**Scenario Probabilities:**
+- Quick Resolution: 10%
+- Protracted Attrition: 54%
+- Full Escalation: 36%
+
+---
+
+## Day 29 — March 28, 2026
+### HOUTHIS ENTER THE WAR — First Strikes on Israel from Yemen
+
+**Market Snapshot:** Brent $110 | WTI $98 | S&P 6280 | VIX 35 | HY Spread 590 bps | Gas $4.35
+
+**THE WAR JUST GOT WIDER.** Yemen's Houthis launch their first direct strikes on Israel — a missile toward southern Israel and a UAV + missile combo targeting Eilat. The conflict now spans from the Mediterranean (Lebanon/Hezbollah) to the Red Sea (Yemen/Houthis) to the Indian Ocean (Diego Garcia strike). This is no longer a US-Iran bilateral conflict — it's a regional war with multiple fronts.
+
+**Key Developments:**
+- HOUTHI ENTRY: First strikes on Israel from Yemen — missile toward southern region, UAV + missile toward Eilat
+- War geography now: Mediterranean → Persian Gulf → Red Sea → Indian Ocean
+- Zelensky alleges Russia provided Iran satellite imagery of Prince Sultan Air Base before strike
+- Iraq's PMF (al-Hashd al-Shaabi) deploys forces inside Iran — first foreign ground troops
+- Israel intercepted both Houthi missiles; no casualties
+- Regional proxy network now fully activated
+
+**THE CRITICAL DEVELOPMENT:**
+War is no longer contained. Houthi entry means:
+- Red Sea shipping disruptions compound Hormuz closure
+- Israel fighting on 3 fronts (Lebanon, Iran, Yemen)
+- US stretched across even more geography
+- Bab el-Mandeb strait now at risk (4.8M bpd oil transit)
+
+**Thesis Scorecard:**
+- Proxy network activation: CONFIRMED (Hezbollah Day 3, Houthis Day 29)
+- Geographic expansion beyond original theater: CONFIRMED
+- Russia involvement: DEVELOPING (satellite imagery allegation)
+- Regional war vs bilateral conflict: CONFIRMED
+
+**Scenario Probabilities:**
+- Quick Resolution: 8%
+- Protracted Attrition: 52%
+- Full Escalation: 40%
+
+---
+
+## Day 30 — March 29, 2026
+### Trump Claims 'Most Of' 15-Point Plan Accepted, Considers Kharg Island Seizure
+
+**Market Snapshot:** Brent $108 | WTI $97 | S&P 6340 | VIX 32 | HY Spread 575 bps | Gas $4.20
+
+Another whiplash day. Trump claims Iran agreed to "most of" the 15-point plan — oil dips. Then says he's considering seizing Kharg Island — oil rebounds. The diplomatic track and military track running in parallel, each signal contradicting the other. Pakistan confirms it's hosting backchannel talks in Islamabad.
+
+**Key Developments:**
+- Trump: Iran agreed to "most of" 15-point plan
+- Trump also reveals he's considering seizing Kharg Island (90% of Iran's oil exports)
+- Pakistan confirms hosting talks in Islamabad — regional diplomatic framework emerging
+- Israeli strikes continue in Lebanon and Syria
+- Hormuz closed 30 consecutive days
+- Oil whipsawing on contradictory signals
+
+**Diplomatic Framework Emerging:**
+Pakistan as intermediary, Qatar offering venue, India negotiating transit access, China pushing yuan alternative. A structure is forming — but both sides still miles apart on core issues.
+
+**Thesis Scorecard:**
+- Diplomatic backchannel active: CONFIRMED (Pakistan hosting)
+- Military escalation continuing despite talks: CONFIRMED
+- Kharg Island seizure = maximum escalation option: DEVELOPING
+- Regional powers playing intermediary roles: CONFIRMED
+
+**Scenario Probabilities:**
+- Quick Resolution: 12%
+- Protracted Attrition: 55%
+- Full Escalation: 33%
+
+---
+
+## Day 31 — March 30, 2026
+### War Enters Month Two — Structural Damage Assessment
+
+**Market Snapshot:** Brent $104 | WTI $96 | S&P 6369 | VIX 31.05 | HY Spread 560 bps | Gas $4.15
+
+The war enters its fifth week and second month. The diplomatic track is alive but slow. The military track continues daily. Most importantly: the structural damage is now permanent regardless of outcome.
+
+**Key Developments:**
+- War enters 5th week / 2nd month
+- Hormuz closed 31 consecutive days
+- Diplomatic framework: Pakistan hosting, Qatar offering, India negotiating, China pushing yuan
+- Military: Israel strikes continue, Houthis active, PMF in Iran
+- Economic: WTI touched $100, Brent peaked $112.57, gas $4.15 national average
+- Structural: Ras Laffan 5yr repair, Arak reactor destroyed, 2 largest steel factories destroyed
+
+**STRUCTURAL DAMAGE ASSESSMENT (Cumulative):**
+- Ras Laffan LNG: 17% Qatar capacity lost, 5 years to repair
+- Arak reactor: IAEA confirms IR-40 non-operational (permanent)
+- Steel factories: Mobarakeh + Khuzestan destroyed (Iran's 2 largest)
+- Hormuz sovereignty: Parliament codifying, fees being charged
+- Insurance transformation: P&I framework permanently altered
+- Yuan transit precedent: Set regardless of war outcome
+- US casualties: 19+ killed, 290+ wounded
+- Iranian casualties: 6,500+ killed, 82,000+ structures destroyed
+
+**Global Economic Impact (Day 31):**
+- Oil: Brent $104, WTI $96 (down from peaks but structurally elevated)
+- Markets: S&P at 6369, VIX at 31.05 (elevated risk pricing)
+- Fed: Rate cuts priced out to 2027-2028
+- Europe: LNG crisis accelerating (Qatar supply gap)
+- Asia: Energy rationing (Sri Lanka -25%)
+
+**Thesis Scorecard:**
+- Protracted Attrition as base case: CONFIRMED
+- Structural damage outlasts war: CONFIRMED
+- Regional proxy network activated: CONFIRMED
+- Diplomatic track emerging but slow: CONFIRMED
+- Economic damage already locked in: CONFIRMED
+
+**Scenario Probabilities:**
+- Quick Resolution: 15%
+- Protracted Attrition: 55%
+- Full Escalation: 30%
+
+**The Path Forward:**
+Both sides talking. Both sides fighting. Neither can achieve military victory. Neither will accept the other's terms. The only question is how long protracted attrition lasts — and how much more structural damage accumulates before a deal is reached.
+
+---
+
 # DATA TABLES
 
 ## Market Timeline
@@ -787,6 +956,11 @@ Iran REJECTS the US 15-point plan and issues 5 counter-conditions: end aggressio
 | Mar 23 | $99.94 | $89.00 | $5.10 | $5320 | 6650 | 24.0 | 540 | "Productive conversations" — oil crashes 11% |
 | Mar 24 | $104.49 | $92.35 | $5.25 | $5380 | 6580 | 26.5 | 555 | Oil rebounds; Port Arthur explosion; $580M probe |
 | Mar 25 | $100.00 | $88.00 | $5.00 | $5350 | 6720 | 23.5 | 530 | Iran REJECTS 15-point plan; Hormuz sovereignty legislation; Iraq PMF escalation |
+| Mar 26 | $105.85 | $94.00 | $5.15 | $5380 | 6421 | 27.0 | 555 | Trump extends power plant deadline 10 days to April 6. Israel strikes Arak heavy water reactor and 2 largest steel factories |
+| Mar 27 | $112.57 | $99.64 | $5.30 | $5420 | 6320 | 33.0 | 580 | NEW 2026 HIGH: Brent $112.57. WTI touches $100.04. Iran strikes Prince Sultan Air Base — first major US base direct hit |
+| Mar 28 | $110.00 | $98.00 | $5.40 | $5450 | 6280 | 35.0 | 590 | HOUTHIS ENTER WAR — first strikes on Israel from Yemen. Russia allegedly provided satellite imagery. Iraq PMF deploys inside Iran |
+| Mar 29 | $108.00 | $97.00 | $5.25 | $5420 | 6340 | 32.0 | 575 | Trump: Iran agreed to 'most of' 15-point plan. Considering Kharg Island seizure. Pakistan hosting talks |
+| Mar 30 | $104.00 | $96.00 | $5.15 | $5400 | 6369 | 31.05 | 560 | War enters 5th week. Structural damage assessment: Ras Laffan, Arak, steel factories all permanent |
 
 ## Casualty Timeline
 
@@ -803,6 +977,8 @@ Iran REJECTS the US 15-point plan and issues 5 counter-conditions: end aggressio
 | Mar 22 | 23 | 5900 | 1500 | 17 | 1100 | Dimona strike — 100+ injured near nuclear facility |
 | Mar 24 | 25 | 6000 | 1444 | 19 | 1100 | 19 US dead, 290 wounded; 82,000 structures destroyed in Iran |
 | Mar 25 | 26 | 6300 | 1500 | 19 | 1172 | Hengaw: 5,300+ military killed. Lebanon: 1,072 killed, 2,966 wounded. IRGC navy chief killed |
+| Mar 26 | 27 | 6500 | 1600 | 19 | 1200 | Arak reactor destroyed. Steel factories hit. Economic infrastructure targeting |
+| Mar 28 | 29 | 6800 | 1750 | 21 | 1350 | Houthis enter war. PMF deploys inside Iran. 2 US killed in Prince Sultan aftermath |
 
 ## Gas Prices
 
@@ -820,6 +996,10 @@ Iran REJECTS the US 15-point plan and issues 5 counter-conditions: end aggressio
 | Mar 23 | $3.88 | $6.10 | -$0.27 | "Productive conversations" pullback |
 | Mar 24 | $3.95 | $6.15 | +$0.07 | Port Arthur explosion adds pressure |
 | Mar 25 | $3.95 | $6.15 | +$0.00 | Steady as markets yo-yo on conflicting signals |
+| Mar 26 | $4.05 | $6.25 | +$0.10 | Extended deadline provides modest relief |
+| Mar 27 | $4.25 | $6.45 | +$0.20 | WTI $100 threshold pushes gas higher |
+| Mar 28 | $4.35 | $6.55 | +$0.10 | Houthi entry adds Red Sea premium |
+| Mar 30 | $4.15 | $6.35 | -$0.20 | Pullback on diplomatic signals despite elevated baseline |
 
 ## Shipping Disruption Key Metrics
 
@@ -836,7 +1016,7 @@ Iran REJECTS the US 15-point plan and issues 5 counter-conditions: end aggressio
 | Cape Diversions | +112% single day |
 | GPS Jamming Affected Ships | 1,650 |
 | Consecutive Zero Transit Days | 4 |
-| Hormuz Days Closed | 26 |
+| Hormuz Days Closed | 31 |
 | Commercial Ships Attacked | 21 |
 | Energy Assets Damaged | 40+ across 9 countries |
 | Civilian Structures Destroyed (Iran) | 82,000 |
@@ -901,6 +1081,16 @@ Iran REJECTS the US 15-point plan and issues 5 counter-conditions: end aggressio
 
 **March 25, 2026 (Day 26):** Iran REJECTS US 15-point plan. Issues 5 counter-conditions: end aggression, guarantees against future attack, war reparations, comprehensive end across ALL fronts (including proxy groups), and recognition of Iran's sovereignty over Hormuz. Parliament codifying Hormuz sovereignty with transit fees — permanent restructuring. GCC says Iran already charging fees. UAE oil chief: "economic terrorism." Israel strikes Bushehr nuclear complex, kills IRGC navy chief. US strikes PMF in Iraq's Anbar Province — 7 Iraqi soldiers killed. Iraqi PM gives PMF "green light for self-defense," summons US diplomat. Saudi MBS pressing Trump to continue. Sri Lanka cutting energy 25%. Iranian military: 5,300+ killed. Lebanon: 1,072 killed. Brent ~$100. Protracted Attrition 55% now clear base case
 
+**March 26, 2026 (Day 27):** Trump extends power plant strike deadline 10 days to April 6. Israel strikes Arak heavy water reactor — IAEA confirms IR-40 no longer operational. Israel destroys Iran's 2 largest steel factories: Mobarakeh Steel (Isfahan) and Khuzestan Steel. Economic infrastructure targeting intensifying alongside diplomatic track
+
+**March 27, 2026 (Day 28):** NEW 2026 HIGH — WTI breaks $100 ($100.04 intraday), Brent hits $112.57. Iran strikes Prince Sultan Air Base in Saudi Arabia — first major direct hit on US base. Multiple US aircraft damaged. Saudi desalination plants hit (Al-Khobar, Dammam). IRGC commander killed in Israeli strike in Syria
+
+**March 28, 2026 (Day 29):** HOUTHIS ENTER THE WAR — first direct strikes on Israel from Yemen. Missile toward southern Israel, UAV + missile combo toward Eilat. Both intercepted. War now spans Mediterranean (Lebanon) to Red Sea (Yemen) to Indian Ocean (Diego Garcia). Zelensky alleges Russia provided Iran satellite imagery of Prince Sultan Air Base before strike. Iraq's PMF (al-Hashd al-Shaabi) deploys forces inside Iran — first foreign ground troops
+
+**March 29, 2026 (Day 30):** Trump claims Iran agreed to "most of" 15-point plan. Also reveals considering Kharg Island seizure — oil whipsaws on contradictory signals. Pakistan confirms hosting backchannel talks in Islamabad. Regional diplomatic framework emerging through Pakistan, Qatar, India, China
+
+**March 30, 2026 (Day 31):** War enters 5th week / 2nd month. Hormuz closed 31 consecutive days. Structural damage assessment: Ras Laffan (5yr repair), Arak reactor (permanent), steel factories (destroyed). Diplomatic track alive but slow. Military track continues. Both sides talking and fighting simultaneously. Probabilities: Quick 15%, Protracted 55%, Full 30%
+
 ---
 
 # SCENARIO PROBABILITY HISTORY
@@ -925,6 +1115,11 @@ Iran REJECTS the US 15-point plan and issues 5 counter-conditions: end aggressio
 | Mar 23 | 24 | 8% | 45% | 47% | TURNING POINT: "Productive conversations," oil -11% |
 | Mar 24 | 25 | 10% | 48% | 42% | Oil rebounds; 82nd Airborne deploying; $580M probe |
 | Mar 25 | 26 | 10% | 55% | 35% | Iran REJECTS 15-point plan, issues 5 counter-conditions. Hormuz sovereignty legislation. Protracted Attrition confirmed |
+| Mar 26 | 27 | 12% | 56% | 32% | Trump extends deadline 10 days. Israel strikes Arak reactor, steel factories |
+| Mar 27 | 28 | 10% | 54% | 36% | WTI $100+. Prince Sultan Air Base struck — first major US base hit |
+| Mar 28 | 29 | 8% | 52% | 40% | HOUTHIS ENTER WAR. Regional conflict expands. Russia involvement alleged |
+| Mar 29 | 30 | 12% | 55% | 33% | Trump: "most of" 15-point plan accepted. Kharg seizure considered. Pakistan hosting talks |
+| Mar 30 | 31 | 15% | 55% | 30% | War enters Month 2. Structural damage locked in. Diplomatic track alive but slow |
 
 ---
 
@@ -960,6 +1155,10 @@ Iran REJECTS the US 15-point plan and issues 5 counter-conditions: end aggressio
 | Post-war oil structurally higher | 80% | 95% | DEVELOPING | Infrastructure damage persists |
 | Hormuz sovereignty codified into Iranian law | 70% | 85% | DEVELOPING | Parliament pursuing legislation; GCC confirms fees already being charged |
 | Iraq forced into conflict against US | 50% | 75% | DEVELOPING | PM gives PMF green light; 7 Iraqi soldiers killed; diplomat summoned |
+| Houthi activation expands war | 60% | 98% | CONFIRMED | Day 29: First strikes on Israel from Yemen — war now spans Med to Red Sea to Indian Ocean |
+| Russia providing intelligence support | 40% | 70% | DEVELOPING | Zelensky alleges satellite imagery provided for Prince Sultan strike |
+| WTI breaks $100 threshold | 75% | 99% | CONFIRMED | Day 28: WTI touches $100.04 intraday — first time since 2014 |
+| Nuclear facilities targeted | 80% | 99% | CONFIRMED | Arak IR-40 reactor IAEA-confirmed non-operational; Bushehr complex struck |
 
 ## Invalidated Predictions
 
@@ -969,16 +1168,20 @@ Iran REJECTS the US 15-point plan and issues 5 counter-conditions: end aggressio
 
 ---
 
-# NEW PREDICTIONS (Day 26)
+# NEW PREDICTIONS (Day 31)
 
 | Prediction | Confidence | Rationale |
 |------------|------------|-----------|
 | Ras Laffan damage creates permanent European LNG supply gap | 90% | 17% of Qatar's LNG capacity gone for 5 years. Europe already tight on gas. Accelerates European energy crisis. |
 | Iran selective Hormuz access creates permanent petrodollar erosion | 75% | Yuan and rupee denominated transit now operational. Precedent set even after war ends. |
-| Post-war oil prices structurally higher than pre-war | 95% | Infrastructure damage (Ras Laffan, Iranian refineries, Iraqi ports) persists regardless of ceasefire. |
-| Restructuring cycle timeline 12-15 months (accelerated from 12-18) | 92% | Hormuz sovereignty legislation + Iraq escalation adds new destabilization vectors. Structural damage accelerating. |
+| Post-war oil prices structurally higher than pre-war | 95% | Infrastructure damage (Ras Laffan, Iranian refineries, Iraqi ports, steel factories) persists regardless of ceasefire. |
+| Restructuring cycle timeline 12-15 months (accelerated from 12-18) | 92% | Hormuz sovereignty legislation + Iraq escalation + Houthi entry adds new destabilization vectors. |
 | Hormuz sovereignty codification persists regardless of ceasefire | 85% | Parliament legislating permanent control. GCC confirms fees already being charged. Converts temporary leverage to permanent equity. |
-| Iraq-US legal basis for operations collapses | 70% | PM gave PMF green light. Formal breach of international law complaint. PMF is officially Iraqi army. |
+| Iraq-US legal basis for operations collapses | 70% | PM gave PMF green light. Formal breach of international law complaint. PMF officially in Iran. |
+| Red Sea shipping disruption compounds Hormuz closure | 85% | Houthi entry means Bab el-Mandeb (4.8M bpd) now at risk alongside Hormuz (20M bpd). |
+| Israel fighting 3-front war unsustainable long-term | 75% | Lebanon/Hezbollah + Iran + Yemen/Houthis stretches IDF resources across too much geography. |
+| Russia-Iran intelligence cooperation deepens | 70% | Satellite imagery allegation suggests operational-level coordination, not just diplomatic support. |
+| Pakistan emerges as key diplomatic intermediary | 80% | Hosting backchannel talks. Trusted by both sides. Regional framework forming around Islamabad. |
 
 ---
 
@@ -1046,6 +1249,68 @@ Iran REJECTS the US 15-point plan and issues 5 counter-conditions: end aggressio
 - **Iraq Response:** Summoned top US diplomat. Formal complaint of breach of international law.
 - **Significance:** Iraq edging from reluctant bystander to active participant against US forces. PMF is officially part of Iraqi army. If Iraq formally opposes US strikes, the legal basis for US operations in Iraq collapses.
 
+## Houthi Entry (Day 29)
+- **Date:** March 28, 2026
+- **Event:** Yemen's Houthis launch first strikes on Israel — missile toward southern region, UAV + missile combo toward Eilat
+- **Outcome:** Both interceptions successful by Israeli defense systems
+- **Significance:** War now spans from Mediterranean (Lebanon/Hezbollah) to Red Sea (Yemen/Houthis) to Indian Ocean (Diego Garcia strike). This is no longer a US-Iran bilateral conflict — it's a regional war with multiple fronts. Bab el-Mandeb strait (4.8M bpd) now at risk.
+
+## Nuclear Facility Strikes (Days 25-27)
+- **Arak Reactor (IR-40):**
+  - Date: March 27, 2026
+  - Status: IAEA confirmed heavy water reactor no longer operational after Israeli strike caused serious damage
+  - Significance: Iran's plutonium pathway permanently degraded
+- **Bushehr Complex:**
+  - Date: March 25, 2026
+  - Status: Area within Bushehr nuclear complex struck by Israel
+  - Significance: Bushehr is Iran's only operational nuclear power plant
+- **Fordow, Natanz:** Status unclear but likely degraded in Operation Epic Fury initial strikes
+
+## Steel Factory Strikes (Day 27)
+- **Date:** March 26, 2026
+- **Targets:**
+  - Mobarakeh Steel Company (Isfahan) — Iran's largest steel producer
+  - Khuzestan Steel Company — Iran's 2nd largest steel producer
+- **Struck By:** Israel
+- **Significance:** Economic infrastructure targeting. Steel production essential for reconstruction, military equipment, and industrial base. Iran's ability to rebuild now degraded.
+
+## Prince Sultan Air Base Strike (Day 28)
+- **Date:** March 27, 2026
+- **Target:** Prince Sultan Air Base, Saudi Arabia — houses 2,500+ US troops
+- **Weapons:** Iranian drones and missiles
+- **Damage:** Multiple US aircraft damaged; no US casualties in initial strike (2 killed in aftermath operations)
+- **Significance:** First major direct hit on a US base. Iran demonstrating ability to strike US assets inside GCC territory. Escalation of direct confrontation.
+
+## Diplomatic Framework (Day 30)
+- **Date:** March 29, 2026
+- **Pakistan:** Hosting backchannel talks in Islamabad — trusted by both sides
+- **Qatar:** Offering venue for formal negotiations
+- **India:** Negotiating transit access through Hormuz for its vessels
+- **China:** Pushing yuan-denominated alternative and diplomatic mediation
+- **Significance:** Regional diplomatic architecture forming. Multiple intermediaries active. Framework exists even if both sides still fighting.
+
+## Russia Involvement (Day 29)
+- **Date:** March 28, 2026
+- **Allegation:** Zelensky claims Russia provided Iran with updated satellite imagery of Prince Sultan Air Base before Iranian strike
+- **Evidence Level:** Unconfirmed — allegation only
+- **Significance:** If true, suggests operational-level coordination between Russia and Iran, not just diplomatic support. Would represent significant escalation of external involvement.
+
+## Global Economic Impact (Day 31)
+- **Date:** March 30, 2026
+- **Oil:** Brent $104, WTI $96 (down from peaks of $112.57/$100.04 but structurally elevated)
+- **Gas:** US average $4.15/gal (up from $3.00 pre-war — 38% increase)
+- **Markets:** S&P at 6369, VIX at 31.05 (elevated risk pricing persists)
+- **Fed:** Rate cuts priced out to 2027-2028
+- **Europe:** LNG crisis accelerating due to Ras Laffan damage
+- **Asia:** Energy rationing underway (Sri Lanka -25%)
+- **Global Fertilizer:** 50% of trade disrupted via Hormuz closure
+- **Significance:** The transmission chain from Part II is fully activated. Energy shock → Inflation → Fed constraint → Credit stress → Default acceleration.
+
+## Iraq PMF in Iran (Day 29)
+- **Date:** March 28, 2026
+- **Event:** Iraq's al-Hashd al-Shaabi (PMF) deploys forces inside Iran
+- **Significance:** First foreign ground troops in Iran during this conflict. PMF is officially part of Iraqi military. Iraq now operationally involved in defending Iran, not just passively allowing overflight. Further erodes Iraq's neutral stance.
+
 ---
 
 # APPENDIX: KEY QUOTES
@@ -1077,7 +1342,19 @@ Iran REJECTS the US 15-point plan and issues 5 counter-conditions: end aggressio
 > "Every nation pays the ransom at the gas pump, grocery store and pharmacy."
 > — Abu Dhabi National Oil Co. head on Iran's Hormuz transit fees, March 25, 2026
 
+> "Iran agreed to most of the 15-point plan."
+> — President Trump, March 29, 2026
+
+> "We are considering seizing Kharg Island."
+> — President Trump on potential escalation options, March 29, 2026
+
+> "The IR-40 heavy water reactor is no longer operational after suffering serious damage."
+> — IAEA confirmation on Arak reactor status, March 27, 2026
+
+> "Russia provided Iran with updated satellite imagery of Prince Sultan Air Base."
+> — President Zelensky allegation, March 28, 2026
+
 ---
 
-*Document compiled March 25, 2026*
+*Document compiled March 30, 2026*
 *The Fulcrum Memo | thefulcrummemo.com*
