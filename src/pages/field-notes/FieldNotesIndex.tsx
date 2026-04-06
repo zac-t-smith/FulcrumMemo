@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Calendar, TrendingUp, AlertTriangle, ChevronRight, ArrowLeft, Map } from 'lucide-react';
 import Navbar from '@/components/Navbar';
-import { fieldNotes, getLatestScenario, getAvailableFieldNoteDays, conflictMetadata } from '@/data/iranConflictData';
+import { fieldNotes, getLatestScenario, getAvailableFieldNoteDays, conflictMetadata, EIA_SOURCE_ATTRIBUTION } from '@/data/iranConflictData';
 import { ConflictMap } from '@/components/maps/ConflictMap';
 
 const FieldNotesIndex = () => {
@@ -210,6 +210,9 @@ const FieldNotesIndex = () => {
                   );
                 })}
             </div>
+            <p className="mt-4 font-mono text-[9px] text-muted-foreground/70">
+              {EIA_SOURCE_ATTRIBUTION}
+            </p>
           </motion.div>
 
           {/* Coming Soon Notice */}

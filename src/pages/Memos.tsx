@@ -15,7 +15,7 @@ const allMemos = [
     date: 'March 2026',
     author: 'Zachary Smith',
     tags: ['Sovereign Distress', 'Geopolitical Strategy', 'Game Theory'],
-    series: { name: 'Asymmetric Restructuring', part: 1, total: 2 },
+    series: { name: 'Asymmetric Restructuring', part: 1, total: 3 },
     path: '/memos/iran',
     pdfPath: '/memos/Iran_Sovereign_Distress_Analysis_Series_1.pdf',
   },
@@ -26,9 +26,20 @@ const allMemos = [
     date: 'March 2026',
     author: 'Zachary Smith',
     tags: ['Political Economy', 'Credit Cycle', 'Macro'],
-    series: { name: 'Asymmetric Restructuring', part: 2, total: 2 },
+    series: { name: 'Asymmetric Restructuring', part: 2, total: 3 },
     path: '/memos/iran-part-ii',
     pdfPath: '/memos/Iran_Sovereign_Distress_Analysis_Series_2.pdf',
+  },
+  {
+    id: 'iran-part-3',
+    title: 'The Trojan Horse: The Largest Distressed Asset Play in History',
+    subtitle: 'How the sequencing of Venezuela, tariffs, and Iran describes the construction of structural energy and trade dominance — a sovereign-level distressed asset play reframing the entire conflict',
+    date: 'April 2026',
+    author: 'Zachary Smith',
+    tags: ['Geopolitical Strategy', 'Sovereign Distress', 'Energy & Commodities', 'Macro'],
+    series: { name: 'Asymmetric Restructuring', part: 3, total: 3 },
+    path: '/memos/iran-part-iii',
+    pdfPath: '/memos/Iran_Sovereign_Distress_Analysis_Series_3.pdf',
   },
   {
     id: 'kirklands',
@@ -203,7 +214,7 @@ const MemosPage = () => {
                   The Asymmetric Restructuring Series
                 </h3>
                 <span className="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-mono uppercase tracking-wider border border-primary/30">
-                  2-Part Series
+                  3-Part Series
                 </span>
               </div>
 

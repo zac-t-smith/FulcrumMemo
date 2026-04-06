@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import { cn } from '@/lib/utils';
-import { getFieldNote, getAvailableFieldNoteDays, type ThesisScorecard } from '@/data/iranConflictData';
+import { getFieldNote, getAvailableFieldNoteDays, type ThesisScorecard, EIA_SOURCE_ATTRIBUTION } from '@/data/iranConflictData';
 import { ConflictMap } from '@/components/maps/ConflictMap';
 
 const statusConfig = {
@@ -221,6 +221,9 @@ const FieldNoteDay = () => {
                 <p className="font-mono text-[10px] text-muted-foreground">US Gas Avg</p>
               </div>
             </div>
+            <p className="mt-3 font-mono text-[9px] text-muted-foreground/70">
+              {EIA_SOURCE_ATTRIBUTION}
+            </p>
           </motion.section>
 
           {/* Scenario Probabilities */}

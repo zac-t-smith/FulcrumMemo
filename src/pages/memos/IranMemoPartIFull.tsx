@@ -116,15 +116,24 @@ const IranMemoPartIFull = () => {
               <p className="text-primary font-mono text-[10px] tracking-wider uppercase mb-1">
                 The Iran Trap — Asymmetric Restructuring Series
               </p>
-              <p className="text-muted-foreground font-mono text-sm">Part I of II</p>
+              <p className="text-muted-foreground font-mono text-sm">Part I of III</p>
             </div>
-            <Link
-              to="/memos/iran-part-ii"
-              className="flex items-center gap-2 text-primary hover:text-foreground transition-colors font-mono text-sm group"
-            >
-              Read Part II
-              <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
-            </Link>
+            <div className="flex gap-4">
+              <Link
+                to="/memos/iran-part-ii"
+                className="flex items-center gap-2 text-primary hover:text-foreground transition-colors font-mono text-sm group"
+              >
+                Part II
+                <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+              </Link>
+              <Link
+                to="/memos/iran-part-iii"
+                className="flex items-center gap-2 text-primary hover:text-foreground transition-colors font-mono text-sm group"
+              >
+                Part III
+                <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </div>
           </motion.div>
 
           {/* Header */}
@@ -875,6 +884,20 @@ const IranMemoPartIFull = () => {
                   </p>
                   <p className="text-foreground font-mono text-sm group-hover:text-primary transition-colors">
                     Second-Order Effects: Sector Repricing & The Coming Restructuring Cycle
+                  </p>
+                </div>
+                <ArrowRight size={16} className="text-primary" />
+              </Link>
+              <Link
+                to="/memos/iran-part-iii"
+                className="flex items-center justify-between p-3 border border-border hover:border-primary/50 transition-colors group"
+              >
+                <div>
+                  <p className="text-muted-foreground font-mono text-[10px] uppercase tracking-wider mb-1">
+                    Part III
+                  </p>
+                  <p className="text-foreground font-mono text-sm group-hover:text-primary transition-colors">
+                    The Trojan Horse: The Largest Distressed Asset Play in History
                   </p>
                 </div>
                 <ArrowRight size={16} className="text-primary" />

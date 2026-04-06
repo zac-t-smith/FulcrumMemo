@@ -2,13 +2,18 @@
 // This file contains all time-series and reference data used by charts across the site.
 // Designed to support Field Notes updates with timestamped scenario probability revisions.
 
+import { getOilPrice, EIA_SOURCE_ATTRIBUTION } from './oilPriceData';
+
+// Re-export for convenience
+export { EIA_SOURCE_ATTRIBUTION };
+
 // =============================================================================
 // METADATA
 // =============================================================================
 
 export const conflictMetadata = {
-  lastUpdated: '2026-03-30T08:00:00Z',
-  conflictDay: 31,
+  lastUpdated: '2026-04-02T12:00:00Z',
+  conflictDay: 34,
   conflictStartDate: '2026-02-28',
 };
 
@@ -236,39 +241,43 @@ export const casualtyTimeline: CasualtyEntry[] = [
   { date: 'Mar 29', timestamp: Date.parse('2026-03-29'), iranianKilled: 6700, iranianCivilian: 1700, usKilled: 13, gccCivilian: 1250, note: 'Pentagon confirms 13 US killed, 300+ wounded. 18 Israeli civilians killed, 5,492 injured. Iran military: 5,300+. Lebanon: 1,072 killed. Houthis enter war.' },
 ];
 
+// Market timeline with EIA-sourced oil prices where available
+// Oil prices from: U.S. Energy Information Administration (EIA)
+// See oilPriceData.ts for authoritative daily oil price data
 export const marketTimeline: MarketEntry[] = [
-  { date: 'Feb 27', timestamp: Date.parse('2026-02-27'), brentCrude: 72.50, wti: 68.45, naturalGas: 2.85, goldSpot: 2845, spx: 5980, vix: 15.2, hySpread: 281 },
-  { date: 'Feb 28', timestamp: Date.parse('2026-02-28'), brentCrude: 78.50, wti: 74.23, naturalGas: 2.95, goldSpot: 2912, spx: 5820, vix: 24.5, hySpread: 295, event: 'Op begins' },
-  { date: 'Mar 1', timestamp: Date.parse('2026-03-01'), brentCrude: 82.45, wti: 78.12, naturalGas: 3.15, goldSpot: 2978, spx: 5645, vix: 32.1, hySpread: 325 },
-  { date: 'Mar 2', timestamp: Date.parse('2026-03-02'), brentCrude: 85.80, wti: 81.55, naturalGas: 3.35, goldSpot: 3045, spx: 5520, vix: 38.4, hySpread: 358 },
-  { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), brentCrude: 88.20, wti: 84.85, naturalGas: 3.55, goldSpot: 3089, spx: 5480, vix: 35.8, hySpread: 372 },
-  { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), brentCrude: 90.45, wti: 86.80, naturalGas: 3.70, goldSpot: 3125, spx: 5395, vix: 41.2, hySpread: 395 },
-  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), brentCrude: 85.41, wti: 81.01, naturalGas: 3.85, goldSpot: 5121, spx: 5830.71, vix: 26.5, hySpread: 410, event: 'WTI +8.5% biggest single-day gain since May 2020. Dow wiped out 2026 gains' },
-  { date: 'Mar 6', timestamp: Date.parse('2026-03-06'), brentCrude: 88.50, wti: 84.50, naturalGas: 3.95, goldSpot: 5180, spx: 5750, vix: 27.0, hySpread: 425, event: 'Selective Hormuz transit emerges. Israel broad wave on Tehran' },
-  { date: 'Mar 7', timestamp: Date.parse('2026-03-07'), brentCrude: 91.20, wti: 87.80, naturalGas: 4.10, goldSpot: 5050, spx: 5680, vix: 27.5, hySpread: 435, event: 'Israel hits 400+ targets, 1,465 munitions. GPS jamming spreads' },
-  { date: 'Mar 8', timestamp: Date.parse('2026-03-08'), brentCrude: 92.69, wti: 89.20, naturalGas: 4.25, goldSpot: 5085, spx: 5620, vix: 28.0, hySpread: 450, event: 'Mojtaba Khamenei named Supreme Leader. Israel strikes oil infrastructure' },
-  { date: 'Mar 9', timestamp: Date.parse('2026-03-09'), brentCrude: 108.75, wti: 108.62, naturalGas: 4.50, goldSpot: 5100, spx: 5480, vix: 29.48, hySpread: 475, event: 'Oil breaches $100, hits $119 intraday. Largest single-day $ gain since 1988. Asia crashes' },
-  { date: 'Mar 10', timestamp: Date.parse('2026-03-10'), brentCrude: 94, wti: 88, naturalGas: 4.60, goldSpot: 5120, spx: 5365, vix: 28.5, hySpread: 485, event: "Oil briefly hit $119 intraday before collapsing on Trump 'ending soon' rhetoric. Settled ~$94." },
-  { date: 'Mar 11', timestamp: Date.parse('2026-03-11'), brentCrude: 87.69, wti: 83.43, naturalGas: 4.55, goldSpot: 5080, spx: 5354, vix: 27.2, hySpread: 480, event: 'IEA announces record 400M barrel reserve release. Oil crashed 11% intraday before recovering. CPI: Feb inflation at 2.4% YoY (pre-war baseline).' },
-  { date: 'Mar 12', timestamp: Date.parse('2026-03-12'), brentCrude: 100.46, wti: 95.73, naturalGas: 4.70, goldSpot: 5150, spx: 5295, vix: 24.77, hySpread: 495, event: 'All three indexes hit 2026 closing lows. Brent first close above $100 since Aug 2022. S&P 6672.62 (-1.52%), Dow 46677.85 (-1.56%), Nasdaq -1.78%.' },
-  { date: 'Mar 13', timestamp: Date.parse('2026-03-13'), brentCrude: 103.14, wti: 98.71, naturalGas: 4.80, goldSpot: 5180, spx: 5275, vix: 25.5, hySpread: 505, event: 'Brent $103.14, second close above $100. S&P first 3-week losing streak in a year. Weekly: Brent +10%, WTI +8%.' },
-  { date: 'Mar 14', timestamp: Date.parse('2026-03-14'), brentCrude: 103, wti: 99, naturalGas: 4.90, goldSpot: 5200, spx: 5250, vix: 26.0, hySpread: 515, event: 'US bombs Kharg Island military targets. Trump threatens oil infrastructure next. Iran warns $200 oil if energy facilities hit.' },
-  { date: 'Mar 15', timestamp: Date.parse('2026-03-15'), brentCrude: 102, wti: 97, naturalGas: 4.95, goldSpot: 5220, spx: 5230, vix: 26.5, hySpread: 520, event: 'Iran FM Araghchi denies ceasefire on CBS Face the Nation. 6 US crew killed in Iraq plane crash confirmed.' },
-  { date: 'Mar 16', timestamp: Date.parse('2026-03-16'), brentCrude: 103, wti: 98, naturalGas: 5.00, goldSpot: 5240, spx: 5210, vix: 27.0, hySpread: 525, event: 'FCC Chair threatens broadcaster licenses over Iran war coverage. Israel ground ops in southern Lebanon.' },
-  { date: 'Mar 17', timestamp: Date.parse('2026-03-17'), brentCrude: 103, wti: 97, naturalGas: 5.05, goldSpot: 5260, spx: 5190, vix: 27.5, hySpread: 530, event: 'Ali Larijani killed in strikes. Most credible Iranian negotiation partner eliminated.' },
-  { date: 'Mar 18', timestamp: Date.parse('2026-03-18'), brentCrude: 108.78, wti: 97, naturalGas: 5.15, goldSpot: 5300, spx: 5100, vix: 30.0, hySpread: 550, event: "Israel strikes Iran's South Pars gas field. Iran retaliates against Qatar's Ras Laffan — world's largest LNG facility. QatarEnergy: 17% export capacity lost, 5 years to repair." },
-  { date: 'Mar 19', timestamp: Date.parse('2026-03-19'), brentCrude: 108.65, wti: 96.14, naturalGas: 5.25, goldSpot: 5350, spx: 6606.49, vix: 31.0, hySpread: 560, event: 'Brent spikes to $119 intraday before settling $108.65. JPMorgan cuts S&P year-end target. Goldman warns oil could exceed 2008 all-time high of $147.' },
-  { date: 'Mar 20', timestamp: Date.parse('2026-03-20'), brentCrude: 106.41, wti: 98.74, naturalGas: 5.30, goldSpot: 5380, spx: 6506.48, vix: 26.78, hySpread: 570, event: "S&P -1.51%, Nasdaq -2.01%. Russell 2000 enters correction territory. VIX +11.31%. 10yr yield 4.39%. Trump rejects ceasefire, calls NATO cowards." },
-  { date: 'Mar 21', timestamp: Date.parse('2026-03-21'), brentCrude: 108, wti: 99, naturalGas: 5.35, goldSpot: 5400, spx: 6480, vix: 27.5, hySpread: 575, event: "Kuwait Mina al-Ahmadi refinery hit (730K bpd capacity). Trump considers 'winding down.' Axios: US considering Kharg Island blockade/occupation." },
-  { date: 'Mar 22', timestamp: Date.parse('2026-03-22'), brentCrude: 114.09, wti: 100.29, naturalGas: 5.50, goldSpot: 5450, spx: 6420, vix: 32.0, hySpread: 590, event: "Trump 48-hour ultimatum: open Hormuz or power plants obliterated. Iran: permanent Hormuz closure if hit. Dimona struck. ICBM at Diego Garcia. Brent $114." },
-  { date: 'Mar 23', timestamp: Date.parse('2026-03-23'), brentCrude: 99.94, wti: 89, naturalGas: 5.10, goldSpot: 5320, spx: 6650, vix: 24.0, hySpread: 540, event: "TURNING POINT: Trump delays strikes, cites 'productive conversations.' Oil crashes 11%. S&P futures swing from -1% to +3% in minutes. Dow futures +1,000. Iran denies talks, says Trump 'retreated out of fear.'" },
-  { date: 'Mar 24', timestamp: Date.parse('2026-03-24'), brentCrude: 104.49, wti: 92.35, naturalGas: 5.25, goldSpot: 5380, spx: 6580, vix: 26.5, hySpread: 555, event: "Oil rebounds above $100 as Iran denies talks and strikes continue. Missile hits Tel Aviv street. 82nd Airborne (1,000+) deploying. 290 US troops wounded. Trump approval 36%. Port Arthur TX refinery explodes. $580M insider trading probe." },
-  { date: 'Mar 25', timestamp: Date.parse('2026-03-25'), brentCrude: 100, wti: 88, naturalGas: 5.00, goldSpot: 5350, spx: 6720, vix: 23.5, hySpread: 530, event: "Iran REJECTS US 15-point plan. Issues 5 counter-conditions including sovereignty over Hormuz and war reparations. Parliament pursuing legislation to codify permanent Hormuz control with transit fees. GCC says Iran already charging fees. Stocks rise, oil eases — market yo-yoing. Bushehr nuclear complex struck. IRGC navy chief killed. Iraq gives Iran-backed PMF green light for 'self-defense' against US strikes." },
-  { date: 'Mar 26', timestamp: Date.parse('2026-03-26'), brentCrude: 105.85, wti: 94, naturalGas: 5.10, goldSpot: 5400, spx: 6650, vix: 25.5, hySpread: 545, event: "Trump extends power plant deadline 10 days to April 6. Israel strikes Arak heavy water reactor and 2 largest steel factories (Khuzestan, Mobarakeh — IRGC-linked). Iran blocks 3 container ships at Hormuz. Reports of child soldiers (age 12+). 18 Israeli civilians killed, 5,492 injured total." },
-  { date: 'Mar 27', timestamp: Date.parse('2026-03-27'), brentCrude: 112.57, wti: 99.64, naturalGas: 5.25, goldSpot: 5450, spx: 6580, vix: 28.0, hySpread: 560, event: "NEW 2026 HIGH: Brent $112.57. WTI touches $100.04 — first time above $100 since 2022. 15 US wounded at Prince Sultan Air Base (5 critical) hours after Trump declared Iran 'neutralized.' IAEA: Arak reactor 'no longer operational.' Russia gave Iran satellite imagery for targeting (per Zelensky). Gas $3.93 national, $5.62 California." },
-  { date: 'Mar 28', timestamp: Date.parse('2026-03-28'), brentCrude: 110, wti: 98, naturalGas: 5.30, goldSpot: 5480, spx: 6520, vix: 29.5, hySpread: 575, event: "HOUTHIS ENTER WAR — first strikes on Israel from Yemen. Missile + UAV toward southern Israel and Eilat. War spans Mediterranean to Red Sea to Indian Ocean. UK sending mine-clearing ship. US: 13 killed, 300+ wounded total. 3 Lebanese journalists killed." },
-  { date: 'Mar 29', timestamp: Date.parse('2026-03-29'), brentCrude: 108, wti: 97, naturalGas: 5.35, goldSpot: 5500, spx: 6480, vix: 28.5, hySpread: 565, event: "Trump: Iran agreed to 'most of' 15-point plan. Considering Kharg Island seizure. Pakistan/Saudi/Turkey/Egypt FMs meet in Islamabad. Iran allows 20 Pakistan ships through Hormuz (2/day). Iraq PMF deployed inside Iran. Australia: free public transit, considering fuel rationing. Brent up 50%+ since war began." },
-  { date: 'Mar 30', timestamp: Date.parse('2026-03-30'), brentCrude: 104, wti: 96, naturalGas: 5.40, goldSpot: 5520, spx: 6369, vix: 31.05, hySpread: 580, event: "War enters 5th week. Brent $99-107 range. S&P 6,369 (-1.67%). VIX 31.05 (+13.16%). IEA: biggest oil shock in history. Negotiations via Pakistan but strikes continue on both sides." },
+  // Pre-conflict baseline
+  { date: 'Feb 27', timestamp: Date.parse('2026-02-27'), brentCrude: 71.32, wti: 66.96, naturalGas: 2.85, goldSpot: 2845, spx: 5980, vix: 15.2, hySpread: 281 },
+  // Conflict begins (Day 1)
+  { date: 'Feb 28', timestamp: Date.parse('2026-02-28'), brentCrude: 73.00, wti: 68.50, naturalGas: 2.95, goldSpot: 2912, spx: 5820, vix: 24.5, hySpread: 295, event: 'Operation Epic Fury begins' },
+  // March - Weekend gap (no EIA data for Mar 1)
+  { date: 'Mar 2', timestamp: Date.parse('2026-03-02'), brentCrude: 77.24, wti: 71.13, naturalGas: 3.35, goldSpot: 3045, spx: 5520, vix: 38.4, hySpread: 358 },
+  { date: 'Mar 3', timestamp: Date.parse('2026-03-03'), brentCrude: 83.28, wti: 74.48, naturalGas: 3.55, goldSpot: 3089, spx: 5480, vix: 35.8, hySpread: 372 },
+  { date: 'Mar 4', timestamp: Date.parse('2026-03-04'), brentCrude: 81.56, wti: 74.58, naturalGas: 3.70, goldSpot: 3125, spx: 5395, vix: 41.2, hySpread: 395 },
+  { date: 'Mar 5', timestamp: Date.parse('2026-03-05'), brentCrude: 88.59, wti: 80.88, naturalGas: 3.85, goldSpot: 5121, spx: 5830.71, vix: 26.5, hySpread: 410, event: 'P&I insurance expires. WTI biggest single-day gain since May 2020' },
+  { date: 'Mar 6', timestamp: Date.parse('2026-03-06'), brentCrude: 95.74, wti: 90.77, naturalGas: 3.95, goldSpot: 5180, spx: 5750, vix: 27.0, hySpread: 425, event: 'Zero Hormuz transits. Israel broad wave on Tehran' },
+  // Weekend gap (no EIA data for Mar 7-8)
+  { date: 'Mar 9', timestamp: Date.parse('2026-03-09'), brentCrude: 94.35, wti: 94.65, naturalGas: 4.50, goldSpot: 5100, spx: 5480, vix: 29.48, hySpread: 475, event: 'Oil breaches $100 intraday. Largest single-day $ gain since 1988. Asia crashes' },
+  { date: 'Mar 10', timestamp: Date.parse('2026-03-10'), brentCrude: 89.84, wti: 83.71, naturalGas: 4.60, goldSpot: 5120, spx: 5365, vix: 28.5, hySpread: 485, event: 'Iran mines the strait. Oil collapses on Trump rhetoric' },
+  { date: 'Mar 11', timestamp: Date.parse('2026-03-11'), brentCrude: 90.98, wti: 86.80, naturalGas: 4.55, goldSpot: 5080, spx: 5354, vix: 27.2, hySpread: 480, event: '400M barrel SPR release announced. CPI: Feb inflation at 2.4% YoY' },
+  { date: 'Mar 12', timestamp: Date.parse('2026-03-12'), brentCrude: 102.38, wti: 95.61, naturalGas: 4.70, goldSpot: 5150, spx: 5295, vix: 24.77, hySpread: 495, event: '$100 floor established. Brent first close above $100 since Aug 2022' },
+  { date: 'Mar 13', timestamp: Date.parse('2026-03-13'), brentCrude: 103.23, wti: 98.48, naturalGas: 4.80, goldSpot: 5180, spx: 5275, vix: 25.5, hySpread: 505, event: 'Yuan-denominated transit emerges. S&P first 3-week losing streak in a year' },
+  // Weekend gap (no EIA data for Mar 14-15)
+  { date: 'Mar 16', timestamp: Date.parse('2026-03-16'), brentCrude: 101.04, wti: 93.39, naturalGas: 5.00, goldSpot: 5240, spx: 5210, vix: 27.0, hySpread: 525, event: 'F1 cancels Gulf races. FCC threatens broadcaster licenses' },
+  { date: 'Mar 17', timestamp: Date.parse('2026-03-17'), brentCrude: 108.39, wti: 96.01, naturalGas: 5.05, goldSpot: 5260, spx: 5190, vix: 27.5, hySpread: 530, event: 'Ali Larijani killed in strikes. Key negotiator eliminated' },
+  { date: 'Mar 18', timestamp: Date.parse('2026-03-18'), brentCrude: 118.09, wti: 96.12, naturalGas: 5.15, goldSpot: 5300, spx: 5100, vix: 30.0, hySpread: 550, event: 'Ras Laffan struck. QatarEnergy: 17% export capacity lost' },
+  { date: 'Mar 19', timestamp: Date.parse('2026-03-19'), brentCrude: 111.05, wti: 96.11, naturalGas: 5.25, goldSpot: 5350, spx: 6606.49, vix: 31.0, hySpread: 560, event: 'Goldman warns $147 possible. JPMorgan cuts S&P target' },
+  { date: 'Mar 20', timestamp: Date.parse('2026-03-20'), brentCrude: 118.42, wti: 98.71, naturalGas: 5.30, goldSpot: 5380, spx: 6506.48, vix: 26.78, hySpread: 570, event: 'Three weeks, no ceasefire. Trump rejects talks, calls NATO cowards' },
+  // Weekend gap (no EIA data for Mar 21-22)
+  { date: 'Mar 23', timestamp: Date.parse('2026-03-23'), brentCrude: 103.79, wti: 89.33, naturalGas: 5.10, goldSpot: 5320, spx: 6650, vix: 24.0, hySpread: 540, event: 'First US-Iran communication. Oil crashes 11%. S&P swings +3%' },
+  { date: 'Mar 24', timestamp: Date.parse('2026-03-24'), brentCrude: 108.42, wti: 93.18, naturalGas: 5.25, goldSpot: 5380, spx: 6580, vix: 26.5, hySpread: 555, event: '$580M insider trading probe. Port Arthur refinery explodes' },
+  { date: 'Mar 25', timestamp: Date.parse('2026-03-25'), brentCrude: 109.14, wti: 91.51, naturalGas: 5.00, goldSpot: 5350, spx: 6720, vix: 23.5, hySpread: 530, event: 'Iran rejects 15-point plan. Bushehr nuclear complex struck' },
+  { date: 'Mar 26', timestamp: Date.parse('2026-03-26'), brentCrude: 113.39, wti: 96.18, naturalGas: 5.10, goldSpot: 5400, spx: 6650, vix: 25.5, hySpread: 545, event: 'Steel factories struck. Iran blocks 3 container ships' },
+  { date: 'Mar 27', timestamp: Date.parse('2026-03-27'), brentCrude: 121.47, wti: 101.26, naturalGas: 5.25, goldSpot: 5450, spx: 6580, vix: 28.0, hySpread: 560, event: 'WTI breaks $100. Russia gave Iran satellite imagery. Gas $3.93/gal' },
+  // Weekend gap (no EIA data for Mar 28-29)
+  { date: 'Mar 30', timestamp: Date.parse('2026-03-30'), brentCrude: 121.88, wti: 104.69, naturalGas: 5.40, goldSpot: 5520, spx: 6369, vix: 31.05, hySpread: 580, event: 'Week 5 begins. IEA: biggest oil shock in history' },
+  { date: 'Mar 31', timestamp: Date.parse('2026-03-31'), brentCrude: 112.78, wti: 106.50, naturalGas: 5.45, goldSpot: 5550, spx: 6320, vix: 28.5, hySpread: 590, event: 'March closes +63%. Gas hits $4.02/gal. IRGC threatens 18 US tech companies' },
+  { date: 'Apr 1', timestamp: Date.parse('2026-04-01'), brentCrude: 104.86, wti: 98.20, naturalGas: 5.50, goldSpot: 5580, spx: 6400, vix: 24.54, hySpread: 585, event: 'Trump primetime address. Claims war "nearing completion"' },
+  { date: 'Apr 2', timestamp: Date.parse('2026-04-02'), brentCrude: 109.40, wti: 110.47, naturalGas: 5.55, goldSpot: 5600, spx: 6350, vix: 24.54, hySpread: 595, event: 'Post-speech oil surge. IEA: April will be "much worse than March"' },
 ];
 
 export const gasPrices: GasPriceEntry[] = [
@@ -800,6 +809,80 @@ export const scenarioUpdates: ScenarioUpdate[] = [
       'Australia: free public transit, considering fuel rationing. Sri Lanka cutting 25%',
       'US: 13 killed, 300+ wounded. Israel: 18 civilians killed, 5,492 injured',
       'Day 31: War enters 5th week. S&P 6,369. VIX 31.05. IEA: biggest oil shock in history',
+    ],
+  },
+  {
+    date: 'Mar 31, 2026',
+    timestamp: Date.parse('2026-03-31'),
+    day: 32,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 18 },
+      { scenario: 'Protracted Attrition', probability: 58 },
+      { scenario: 'Full Escalation', probability: 24 },
+    ],
+    rationale: "Day 32: The Hormuz Admission. Trump administration concludes reopening Hormuz extends beyond 4-6 week timeline — prepared to end war without resolving the blockade. This is the fundamental shift from 'victory over Iran' to 'damage limitation for the US.' Quick Resolution rises slightly on diplomatic signals but Iran's sovereignty demands remain non-starters. Full Escalation drops as administration signals exit framing. Brent closes March up 63% — largest monthly gain since 1988. Gas crosses $4/gallon. IRGC threatens 18 US tech companies.",
+    keyDevelopments: [
+      'Trump administration concludes Hormuz reopening extends beyond 4-6 week timeline',
+      'Prepared to end war without resolving Hormuz blockade — fundamental strategic shift',
+      'Rubio: US objectives achieved in "weeks, not months" — but Hormuz not among them',
+      'Kuwaiti VLCC Al Salmi struck by Iranian drone at Port of Dubai — 23+ vessels hit since war began',
+      'Brent closes March up 63% — largest monthly gain since 1988',
+      'Gas hits $4.02/gallon national average — largest monthly jump on record',
+      'IRGC threatens 18 US tech companies: Apple, Microsoft, Google, Nvidia, Meta, Tesla, Boeing',
+      'Deadline: April 1, 20:00 Tehran time. Employees warned to evacuate facilities',
+      'China-Pakistan present 5-point ceasefire plan: immediate ceasefire, reopen Hormuz',
+      'Iran parliament Security Committee passes "Strait of Hormuz Management Plan"',
+      'US: 348 wounded, 15 killed. Iran military: 6,000+ killed',
+    ],
+  },
+  {
+    date: 'Apr 1, 2026',
+    timestamp: Date.parse('2026-04-01'),
+    day: 33,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 20 },
+      { scenario: 'Protracted Attrition', probability: 55 },
+      { scenario: 'Full Escalation', probability: 25 },
+    ],
+    rationale: "Day 33: Trump's primetime address reveals the gap between rhetoric and reality. Claims war 'nearing completion' while promising 2-3 more weeks of 'extremely hard' strikes. No exit strategy, no Hormuz solution, no ceasefire framework. Quick Resolution rises on ceasefire rumors but Iran immediately denies — 'false and baseless.' Kharazi wounding removes key diplomatic channel. UK's Starmer: 'This is not our war.' S&P rallies 2.9% on rumors, then gives it back as oil surges 4% on traders concluding no quick end.",
+    keyDevelopments: [
+      "Trump's first primetime address on war — claims 'nearing completion'",
+      "Simultaneously promises 2-3 more weeks of 'extremely hard' strikes",
+      'No exit strategy, no Hormuz solution presented in 20-minute speech',
+      'Kamal Kharazi (former FM, key negotiator) seriously wounded, wife killed in Tehran strike',
+      'Kharazi was overseeing Pakistan channel to VP Vance — diplomatic channel damaged',
+      "Iran denies Trump ceasefire claims — 'false and baseless'",
+      "UK PM Starmer: 'This is not our war and we're not going to get dragged into it'",
+      'Cluster munition used in Tel Aviv area attack — 16 wounded including children',
+      '11-year-old girl critically wounded by Iranian cluster bomb in Bnei Brak',
+      'S&P posts best session in nearly a year (+2.9%) on ceasefire rumors — then reversed',
+      'Oil jumped 4% post-speech as traders concluded war will not end quickly',
+      'Gas hits $4.06/gallon national average',
+    ],
+  },
+  {
+    date: 'Apr 2, 2026',
+    timestamp: Date.parse('2026-04-02'),
+    day: 34,
+    probabilities: [
+      { scenario: 'Quick Resolution', probability: 18 },
+      { scenario: 'Protracted Attrition', probability: 57 },
+      { scenario: 'Full Escalation', probability: 25 },
+    ],
+    rationale: "Day 34: Post-speech reality check. Markets deliver their verdict: oil surges as traders process that Trump's address offered no path to resolution. WTI +10.3% to $110.47, Brent +8.2% to $109.40. IEA warns April will be 'much worse than March' — lost 12 million bpd, more than two oil crises combined. China and Russia actively calling for ceasefire. Austria rejects all US overflights. Coalition supporting this war is narrowing while economic damage compounds daily.",
+    keyDevelopments: [
+      'Oil surges post-speech: WTI +10.3% to $110.47, Brent +8.2% to $109.40',
+      "Markets digest: no exit strategy in Trump's address",
+      "IEA warns April will be 'much worse than March'",
+      "Lost 12 million bpd — more than two oil crises combined. IEA: 'worst energy crisis in history'",
+      "China calls for immediate ceasefire — 'military means cannot solve the problem'",
+      'Putin calls MBS urging diplomatic efforts to end war',
+      'Austria rejects all US military overflights since war began — citing neutrality',
+      'Goldman: S&P could drop 5-7% more if Hormuz stays closed through summer',
+      '14 wounded near Tel Aviv including 11-year-old girl',
+      'Tanker hit off Qatar coast — damage but no casualties',
+      '7 Iraqi fighters killed in US strike on Anbar military base',
+      'Gas hits $4.10/gallon national average',
     ],
   },
 ];
@@ -3650,6 +3733,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
           "Trump extends power plant deadline 10 days to April 6",
           "First major de-escalation signal since Day 24",
           "Iran blocks 3 container ships at Hormuz",
+          "Iran warned hotels in UAE and Bahrain hosting US military forces are legitimate targets — Damascus Four Seasons also named",
         ],
       },
       {
@@ -3948,7 +4032,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
         ],
       },
     ],
-    scenarioUpdate: scenarioUpdates[scenarioUpdates.length - 1],
+    scenarioUpdate: scenarioUpdates[scenarioUpdates.length - 4],
     keyDevelopments: [
       {
         category: 'Markets',
@@ -3993,6 +4077,307 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
       "S&P at 2026 lows — credit stress transmission active",
       "Fed trapped: can't cut (inflation) or hike (recession risk)",
       "Scenario: Quick 15% / Protracted 55% / Full 30%",
+    ],
+  },
+  32: {
+    day: 32,
+    date: 'March 31, 2026',
+    title: "The Hormuz Admission: Trump Prepared to End War Without Reopening the Strait",
+    summary: "The most significant strategic admission of the war. Reporting indicates Trump and senior aides have concluded that reopening Hormuz extends beyond their 4-6 week timeline — and they're prepared to end operations without resolving it. This is the fundamental shift: from 'victory over Iran' to 'damage limitation for the US.' Brent closes March up 63%, the largest monthly gain since 1988. Gas crosses $4/gallon. The IRGC escalates with direct threats against 18 US tech companies including Apple, Microsoft, and Nvidia.\n\nChina and Pakistan present a five-point ceasefire plan calling for immediate cessation of hostilities and restoration of Hormuz passage. Iran's parliament Security Committee passes the 'Strait of Hormuz Management Plan' — legislation codifying sovereignty claims and transit fees. The Kuwaiti VLCC Al Salmi is struck by an Iranian drone at Dubai port, the 23rd commercial vessel hit since the war began. The pattern is clear: Iran is winning the attrition game while the coalition struggles to define victory.",
+    thesisScorecard: [
+      {
+        thesis: 'Hormuz remains closed post-war',
+        initialConfidence: 30,
+        currentConfidence: 75,
+        status: 'developing',
+        evidence: [
+          'Trump administration concludes Hormuz reopening extends beyond 4-6 week timeline',
+          'Prepared to end war without resolving blockade',
+          'Iran demanding sovereignty recognition as condition',
+          'Parliament codifying Hormuz sovereignty into law',
+          '23+ vessels attacked — maritime insurance will not normalize',
+        ],
+      },
+      {
+        thesis: 'Tech infrastructure becomes target',
+        initialConfidence: 40,
+        currentConfidence: 85,
+        status: 'confirmed',
+        evidence: [
+          'IRGC threatens 18 US tech companies',
+          'Apple, Microsoft, Google, Nvidia, Meta, Tesla, Boeing all named',
+          'Amazon data centers already hit in early March',
+          'Deadline: April 1, 20:00 Tehran time',
+        ],
+      },
+      {
+        thesis: 'Gas above $4/gallon',
+        initialConfidence: 70,
+        currentConfidence: 100,
+        status: 'confirmed',
+        evidence: [
+          'Gas hits $4.02/gallon national average',
+          'Largest monthly jump on record per AAA',
+          'Up from $2.81 in January — 43% increase',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[scenarioUpdates.length - 3],
+    keyDevelopments: [
+      {
+        category: 'Strategic Shift',
+        items: [
+          'Trump administration concludes Hormuz reopening extends beyond 4-6 week timeline',
+          'Trump now prepared to end war without resolving Hormuz blockade',
+          "Rubio: US objectives achieved in 'weeks, not months' — but Hormuz not among them",
+          'Iran demands Hormuz sovereignty recognition as condition to end war',
+        ],
+      },
+      {
+        category: 'Shipping/Energy',
+        items: [
+          'Kuwaiti VLCC Al Salmi struck by Iranian drone at Port of Dubai',
+          '23+ commercial vessels hit since war started',
+          'Brent closes March up 63% — largest monthly gain since 1988',
+          'Gas hits $4.02/gallon — largest monthly jump on record',
+        ],
+      },
+      {
+        category: 'Tech Escalation',
+        items: [
+          'IRGC threatens 18 US tech companies: Apple, Microsoft, Google, Nvidia, Meta, Tesla, Boeing, JP Morgan',
+          'Deadline: April 1, 20:00 Tehran time',
+          'Employees warned to evacuate 1km radius around facilities',
+          'Amazon data centers in UAE/Bahrain already hit in early March',
+        ],
+      },
+      {
+        category: 'Diplomatic',
+        items: [
+          'China-Pakistan present 5-point ceasefire plan',
+          'Iran parliament passes Strait of Hormuz Management Plan',
+          'Plan codifies sovereignty, establishes rial-based toll system',
+          'Already charging $2 million per vessel — could yield $600M+/month',
+        ],
+      },
+      {
+        category: 'Casualties',
+        items: [
+          '348 US troops wounded per Pentagon',
+          '15 US service members killed',
+          'Iran military: 6,000+ killed',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 112.78,
+      vlccRate: 520000,
+      hySpread: 590,
+      vix: 28.5,
+      usGas: 4.02,
+    },
+    tradingImplications: [
+      'Hormuz may remain functionally closed even after war ends — structural shipping risk',
+      'Tech companies with Middle East exposure now have physical asset risk',
+      'Brent +63% in March = largest monthly gain since 1988 — unprecedented velocity',
+      'Gas above $4 triggers consumer behavior shift — demand destruction accelerates',
+      'GCC pushing Trump to continue strikes — want Iran decisively defeated',
+      'Scenario: Quick 18% / Protracted 58% / Full 24%',
+    ],
+  },
+  33: {
+    day: 33,
+    date: 'April 1, 2026',
+    title: "Trump's Address: 'Nearing Completion' While Promising 2-3 More Weeks of War",
+    summary: "Trump's first primetime address revealed the gap between rhetoric and reality. In 20 minutes, he declared the war 'nearing completion' while simultaneously promising to hit Iran 'extremely hard' for 2-3 more weeks. The speech offered no exit strategy, no Hormuz solution, no ceasefire framework. Markets briefly rallied on rumors Iran's president wanted peace — Tehran immediately called this 'false and baseless.' The S&P posted its best session in nearly a year (+2.9%), then gave it back as oil surged 4% on traders concluding the war won't end quickly.\n\nThe day's most consequential development may be the strike on Kamal Kharazi's Tehran home. The former foreign minister — who was overseeing back-channel talks with VP Vance via Pakistan — was seriously wounded and his wife killed. Iran described the attack as an attempt to derail diplomacy. With Larijani dead and Kharazi wounded, Iran has no credible negotiation partner remaining. UK PM Starmer declared 'this is not our war' as coalition fractures widen.",
+    thesisScorecard: [
+      {
+        thesis: 'Trump claims vs reality diverging',
+        initialConfidence: 60,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          "Speech: war 'nearing completion'",
+          "Also: 2-3 more weeks of 'extremely hard' strikes",
+          'No exit strategy, no Hormuz solution presented',
+          'Iran denies all ceasefire claims',
+        ],
+      },
+      {
+        thesis: 'Diplomatic channel damaged',
+        initialConfidence: 50,
+        currentConfidence: 80,
+        status: 'developing',
+        evidence: [
+          'Kamal Kharazi (key negotiator) seriously wounded, wife killed',
+          'Was overseeing Pakistan channel to VP Vance',
+          'Strike described as attempt to derail diplomacy',
+          'Combined with Larijani death — no credible negotiator remaining',
+        ],
+      },
+      {
+        thesis: 'Coalition fracturing',
+        initialConfidence: 45,
+        currentConfidence: 70,
+        status: 'developing',
+        evidence: [
+          "UK PM Starmer: 'This is not our war'",
+          'Britain explicitly staying out',
+          'Austria rejecting all US overflights',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[scenarioUpdates.length - 2],
+    keyDevelopments: [
+      {
+        category: 'Trump Address',
+        items: [
+          'First primetime address on war — 20 minutes',
+          "Claims war 'nearing completion'",
+          "Promises 2-3 more weeks of 'extremely hard' strikes",
+          'No exit strategy or Hormuz solution presented',
+          "Oil jumped 4% as traders concluded war won't end quickly",
+        ],
+      },
+      {
+        category: 'Diplomatic',
+        items: [
+          'Kamal Kharazi (former FM, key negotiator) seriously wounded, wife killed',
+          'Strike hit his Tehran home — Iran calls it attempt to derail diplomacy',
+          "Iran denies Trump ceasefire claims — 'false and baseless'",
+          "UK PM Starmer: 'This is not our war and we're not going to get dragged into it'",
+        ],
+      },
+      {
+        category: 'Military',
+        items: [
+          'Cluster munition used in Tel Aviv area attack — 16 wounded including children',
+          '11-year-old girl critically wounded by Iranian cluster bomb in Bnei Brak',
+          'Kuwait airport fuel depots hit by Iranian drone',
+          '416 waves of attacks from Iran toward Israel since war began',
+        ],
+      },
+      {
+        category: 'Markets',
+        items: [
+          'S&P posts best session in nearly a year (+2.9%) on ceasefire rumors',
+          'Rally reversed as Iran denied talks',
+          'Gas hits $4.06/gallon national average',
+          '520+ US personnel injured since war began',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 104.86,
+      vlccRate: 515000,
+      hySpread: 585,
+      vix: 24.54,
+      usGas: 4.06,
+    },
+    tradingImplications: [
+      "Trump's speech = buy rumor, sell news — no substance behind 'nearing completion'",
+      'Kharazi wounding removes key diplomatic channel — harder to negotiate now',
+      'S&P +2.9% session was false signal — reversed on Iran denial',
+      'UK explicitly out = coalition of willing shrinking',
+      'Cluster munitions targeting civilian areas = escalation in targeting',
+      'Scenario: Quick 20% / Protracted 55% / Full 25%',
+    ],
+  },
+  34: {
+    day: 34,
+    date: 'April 2, 2026',
+    title: "Post-Speech Reality: Oil Surges as Markets Digest No Exit Strategy",
+    summary: "The day after Trump's address, markets delivered their verdict: oil surged as traders processed that the speech offered no path to resolution. WTI jumped 10.3% to $110.47, Brent rose 8.2% to $109.40. The IEA warned that April will be 'much worse than March' — they've lost 12 million barrels per day, more than two oil crises combined. China and Russia are now actively calling for ceasefire while Austria rejects all US overflights. The coalition supporting this war is narrowing while the economic damage compounds daily.\n\nGoldman Sachs warns the S&P could drop another 5-7% if Hormuz stays closed through summer. VIX futures in backwardation signal acute near-term stress. Gas hits $4.10/gallon — up 46% from January's $2.81. South Korea requests $17.3B emergency budget for energy security. The macro transmission chain is fully active: Energy Shock → Inflation → Fed Constraint → Spread Widening → Credit Stress. Your Part II thesis is now consensus reality.",
+    thesisScorecard: [
+      {
+        thesis: 'April worse than March',
+        initialConfidence: 70,
+        currentConfidence: 95,
+        status: 'confirmed',
+        evidence: [
+          "IEA: April will be 'much worse than March'",
+          'Lost 12 million bpd — more than two oil crises combined',
+          "IEA calls it 'worst energy crisis in history'",
+        ],
+      },
+      {
+        thesis: 'Great power involvement expanding',
+        initialConfidence: 55,
+        currentConfidence: 80,
+        status: 'developing',
+        evidence: [
+          'China calls for immediate ceasefire',
+          'Putin calls MBS urging diplomatic efforts',
+          'Russia provided targeting intel for Prince Sultan strike',
+          'Non-US actors increasingly shaping outcome',
+        ],
+      },
+      {
+        thesis: 'Coalition shrinking',
+        initialConfidence: 70,
+        currentConfidence: 85,
+        status: 'confirmed',
+        evidence: [
+          'Austria rejects all US military overflights since war began',
+          'UK staying out',
+          'Only Israel and GCC states actively supporting operations',
+          'Spain, France, Italy have also denied US airspace/bases',
+        ],
+      },
+    ],
+    scenarioUpdate: scenarioUpdates[scenarioUpdates.length - 1],
+    keyDevelopments: [
+      {
+        category: 'Markets',
+        items: [
+          'Oil surges post-speech: WTI +10.3% to $110.47, Brent +8.2% to $109.40',
+          'Markets digest: no exit strategy in Trump address',
+          'VIX futures in backwardation signaling acute near-term stress',
+          'Goldman: S&P could drop 5-7% more if Hormuz stays closed through summer',
+        ],
+      },
+      {
+        category: 'IEA Warning',
+        items: [
+          "IEA warns April will be 'much worse than March'",
+          'Lost 12 million bpd — more than two oil crises combined',
+          "Birol: 'worst energy crisis in history'",
+          "Food security 'timebomb' warning from International Rescue Committee",
+        ],
+      },
+      {
+        category: 'International',
+        items: [
+          "China calls for immediate ceasefire — 'military means cannot solve the problem'",
+          'Putin calls MBS urging diplomatic efforts to end war',
+          'Austria rejects all US military overflights since war began',
+          'South Korea requests $17.3B emergency budget for energy security',
+        ],
+      },
+      {
+        category: 'Military',
+        items: [
+          '14 wounded near Tel Aviv including 11-year-old girl',
+          'Tanker hit off Qatar coast — damage but no casualties',
+          'Senior Hezbollah commander killed in Beirut — 7 total killed',
+          '7 Iraqi fighters killed in US strike on Anbar military base',
+        ],
+      },
+    ],
+    marketSnapshot: {
+      brentCrude: 109.40,
+      vlccRate: 525000,
+      hySpread: 595,
+      vix: 24.54,
+      usGas: 4.10,
+    },
+    tradingImplications: [
+      "Oil surge = market calling Trump's bluff on 'nearing completion'",
+      'IEA warning: April worse than March = do not expect relief',
+      'China/Russia diplomatic push = alternative resolution framework emerging',
+      'Coalition shrinking (Austria, UK out) = US increasingly isolated',
+      'S&P vulnerable to another 5-7% if Hormuz stays closed through summer',
+      'Scenario: Quick 18% / Protracted 57% / Full 25%',
     ],
   },
 };
