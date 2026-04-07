@@ -145,9 +145,16 @@ export function getPercentChangeFromBaseline(entry: OilPriceEntry): { brent: num
 }
 
 /**
- * Get the latest available price
+ * Get the latest available price with actual data (excludes pending/zero entries)
  */
 export function getLatestOilPrice(): OilPriceEntry {
+  // Find the most recent entry with actual price data (brentSpot > 0)
+  for (let i = oilPriceData.length - 1; i >= 0; i--) {
+    if (oilPriceData[i].brentSpot > 0) {
+      return oilPriceData[i];
+    }
+  }
+  // Fallback to last entry if all are zero (shouldn't happen)
   return oilPriceData[oilPriceData.length - 1];
 }
 
