@@ -193,7 +193,7 @@ export const InversionFeedbackLoop = ({ className }: { className?: string }) => 
                     />
                   </motion.div>
                 )}
-              </motion.button>
+              </motion.div>
             );
           })}
 
