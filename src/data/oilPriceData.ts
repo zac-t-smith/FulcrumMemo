@@ -3,7 +3,7 @@
  * Source: U.S. Energy Information Administration (EIA)
  * Brent: https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=RBRTE&f=D
  * WTI: https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=RWTC&f=D
- * Last Updated: April 2, 2026
+ * Last Updated: April 6, 2026
  */
 
 export interface OilPriceEntry {
@@ -86,6 +86,10 @@ export const oilPriceData: OilPriceEntry[] = [
   { date: '2026-03-31', brentSpot: 112.78, wtiSpot: 106.50, conflictDay: 32, note: 'March closes +63%' },
   { date: '2026-04-01', brentSpot: 104.86, wtiSpot: 98.20, conflictDay: 33, note: 'Trump primetime address' },
   { date: '2026-04-02', brentSpot: 109.40, wtiSpot: 110.47, conflictDay: 34, note: 'Post-speech surge' },
+  { date: '2026-04-03', brentSpot: 121.88, wtiSpot: 104.69, conflictDay: 35, note: 'Two US aircraft down' },
+  { date: '2026-04-04', brentSpot: 0, wtiSpot: 0, conflictDay: 36, note: 'EIA data pending — releases Apr 8' },
+  { date: '2026-04-05', brentSpot: 0, wtiSpot: 0, conflictDay: 37, note: 'EIA data pending — releases Apr 8' },
+  { date: '2026-04-06', brentSpot: 0, wtiSpot: 0, conflictDay: 38, note: 'EIA data pending — market open' },
 ];
 
 // =============================================================================
@@ -225,7 +229,7 @@ export const oilPriceMilestones = {
   rasLaffanStrike: { date: '2026-03-18', brent: 118.09, wti: 96.12, note: 'Ras Laffan' },
   wti100: { date: '2026-03-27', brent: 121.47, wti: 101.26, note: 'WTI $100' },
   marchClose: { date: '2026-03-31', brent: 112.78, wti: 106.50, note: '+63% month' },
-  latest: { date: '2026-04-02', brent: 109.40, wti: 110.47, note: 'Day 34' },
+  latest: { date: '2026-04-03', brent: 121.88, wti: 104.69, note: 'Day 35 — EIA data current' },
 };
 
 export default oilPriceData;

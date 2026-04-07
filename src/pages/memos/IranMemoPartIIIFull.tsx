@@ -15,6 +15,14 @@ import {
   ShareButtons,
   TOCItem,
 } from '@/components/iran';
+import {
+  SequenceTimeline,
+  VenezuelaTombstone,
+  AlliedDependencyMatrix,
+  OilPriceEventChart,
+  InversionFeedbackLoop,
+  ReliefValveFlow,
+} from '@/components/iran/charts';
 import { conflictMetadata, formatShortDate, formatFullDate } from '@/data/iranConflictData';
 import { getLatestOilPrice, EIA_SOURCE_ATTRIBUTION } from '@/data/oilPriceData';
 import { generateMemoPdf } from '@/lib/generatePdf';
@@ -278,6 +286,9 @@ const IranMemoPartIIIFull = () => {
               ever executed. If it wasn't — if the pieces simply fell into place through opportunistic
               improvisation — the structural outcome is identical."
             </PullQuote>
+
+            {/* Sequence Timeline Chart */}
+            <SequenceTimeline className="my-8" />
           </section>
 
           {/* Section: Layer 1 - Venezuela */}
@@ -394,6 +405,9 @@ const IranMemoPartIIIFull = () => {
             <Callout variant="insight" title="Restructuring Framework">
               In restructuring, we call this "buying the company for the price of the debt."
             </Callout>
+
+            {/* Venezuela Deal Tombstone */}
+            <VenezuelaTombstone />
           </section>
 
           {/* Section: Layer 2 - Tariffs */}
@@ -505,6 +519,9 @@ const IranMemoPartIIIFull = () => {
               </p>
             </motion.div>
 
+            {/* Allied Dependency Matrix */}
+            <AlliedDependencyMatrix className="my-8" />
+
             <PullQuote>
               "The tariffs weren't just trade policy. In the context of a Hormuz closure, they became
               the second jaw of a vice. Allies couldn't simply pay the market price for alternative
@@ -601,6 +618,9 @@ const IranMemoPartIIIFull = () => {
             <Callout variant="warning" title="Supply Amputation">
               This is not a supply disruption. It's a supply amputation.
             </Callout>
+
+            {/* Oil Price Event Chart */}
+            <OilPriceEventChart className="my-8" />
           </section>
 
           {/* Section: Layer 4 - Inversion */}
@@ -682,6 +702,9 @@ const IranMemoPartIIIFull = () => {
               the supply disruption, and makes U.S.-controlled alternatives exponentially more
               valuable with each passing day."
             </PullQuote>
+
+            {/* Inversion Feedback Loop */}
+            <InversionFeedbackLoop className="my-8" />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -790,6 +813,9 @@ const IranMemoPartIIIFull = () => {
                 </ul>
               </div>
             </motion.div>
+
+            {/* Relief Valve Flow Diagram */}
+            <ReliefValveFlow className="my-8" />
 
             {/* Endgame Outcomes */}
             <motion.div
