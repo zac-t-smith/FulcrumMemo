@@ -19,6 +19,7 @@ const Navbar = () => {
   const navLinks: Array<{ label: string; href: string; external?: boolean; highlight?: boolean }> = [
     { label: 'Memos', href: '/memos' },
     { label: 'Field Notes', href: '/field-notes' },
+    { label: 'Timeline', href: '/timeline' },
     { label: 'WorldView', href: '/FulcrumMemo/worldview-fm/', external: true, highlight: true },
     { label: 'Resume', href: '/resume' },
     { label: 'About', href: '/#about' },

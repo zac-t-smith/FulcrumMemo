@@ -22,6 +22,7 @@ import {
   OilPriceEventChart,
   InversionFeedbackLoop,
   ReliefValveFlow,
+  ConflictTimeline,
 } from '@/components/iran/charts';
 import { conflictMetadata, formatShortDate, formatFullDate } from '@/data/iranConflictData';
 import { getLatestOilPrice, EIA_SOURCE_ATTRIBUTION } from '@/data/oilPriceData';
@@ -289,6 +290,9 @@ const IranMemoPartIIIFull = () => {
 
             {/* Sequence Timeline Chart */}
             <SequenceTimeline className="my-8" />
+
+            {/* Interactive Conflict Timeline (Compact) */}
+            <ConflictTimeline mode="compact" className="my-8" />
           </section>
 
           {/* Section: Layer 1 - Venezuela */}

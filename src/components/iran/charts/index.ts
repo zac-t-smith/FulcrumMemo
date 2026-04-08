@@ -12,3 +12,6 @@ export { AlliedDependencyMatrix } from './AlliedDependencyMatrix';
 export { OilPriceEventChart } from './OilPriceEventChart';
 export { InversionFeedbackLoop } from './InversionFeedbackLoop';
 export { ReliefValveFlow } from './ReliefValveFlow';
+
+// Interactive Timeline
+export { ConflictTimeline } from './ConflictTimeline';
