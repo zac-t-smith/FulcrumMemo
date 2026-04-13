@@ -5024,7 +5024,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
         ],
       },
     ],
-    scenarioUpdate: scenarioUpdates.find(s => s.day === 39),
+    scenarioUpdate: scenarioUpdates[28], // Day 39
     keyDevelopments: [
       {
         category: 'The Ceasefire',
@@ -5126,7 +5126,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
         ],
       },
     ],
-    scenarioUpdate: scenarioUpdates.find(s => s.day === 40),
+    scenarioUpdate: scenarioUpdates[29], // Day 40
     keyDevelopments: [
       {
         category: 'Ceasefire Implementation',
@@ -5224,7 +5224,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
         ],
       },
     ],
-    scenarioUpdate: scenarioUpdates.find(s => s.day === 41),
+    scenarioUpdate: scenarioUpdates[30], // Day 41
     keyDevelopments: [
       {
         category: 'Ceasefire Strain',
@@ -5323,7 +5323,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
         ],
       },
     ],
-    scenarioUpdate: scenarioUpdates.find(s => s.day === 42),
+    scenarioUpdate: scenarioUpdates[31], // Day 42
     keyDevelopments: [
       {
         category: 'US Delegation',
@@ -5423,7 +5423,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
         ],
       },
     ],
-    scenarioUpdate: scenarioUpdates.find(s => s.day === 43),
+    scenarioUpdate: scenarioUpdates[32], // Day 43
     keyDevelopments: [
       {
         category: 'The Talks',
@@ -5534,7 +5534,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
         ],
       },
     ],
-    scenarioUpdate: scenarioUpdates.find(s => s.day === 44),
+    scenarioUpdate: scenarioUpdates[33], // Day 44
     keyDevelopments: [
       {
         category: 'Talks Collapse',
