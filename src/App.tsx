@@ -15,6 +15,7 @@ import PartyCityMemo from "./pages/memos/PartyCityMemo";
 import IranMemoPartIFull from "./pages/memos/IranMemoPartIFull";
 import IranMemoPartIIFull from "./pages/memos/IranMemoPartIIFull";
 import IranMemoPartIIIFull from "./pages/memos/IranMemoPartIIIFull";
+import ShadowPartnerMemo from "./pages/memos/ShadowPartnerMemo";
 import FieldNotesIndex from "./pages/field-notes/FieldNotesIndex";
 import FieldNoteDay from "./pages/field-notes/FieldNoteDay";
 import TimelinePage from "./pages/TimelinePage";
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/memos/iran" element={<IranMemoPartIFull />} />
             <Route path="/memos/iran-part-ii" element={<IranMemoPartIIFull />} />
             <Route path="/memos/iran-part-iii" element={<IranMemoPartIIIFull />} />
+            <Route path="/memos/shadow-partner" element={<ShadowPartnerMemo />} />
             <Route path="/field-notes" element={<FieldNotesIndex />} />
             <Route path="/field-notes/:day" element={<FieldNoteDay />} />
             <Route path="/positions" element={<PositionsPage />} />

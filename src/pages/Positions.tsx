@@ -145,9 +145,9 @@ India remains at ~2.0 mbpd imports from Russia; China at ~1.8 mbpd. Neither buye
       'Self-sanctioning by remaining buyers',
     ],
     precedingAnalysis: [
-      { date: 'Apr 20, 2026', description: 'Shadow fleet analysis and pipeline infrastructure research', link: '#' },
+      { date: 'Apr 20, 2026', description: 'Shadow fleet analysis and pipeline infrastructure research', link: '/memos/shadow-partner' },
     ],
-    links: [],
+    links: ['/memos/shadow-partner'],
     dateOpened: '2026-04-20',
     status: 'OPEN',
   },

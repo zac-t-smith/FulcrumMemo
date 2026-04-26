@@ -1157,6 +1157,35 @@ const IranMemoPartIIIFull = () => {
             </div>
           </motion.div>
 
+          {/* Shadow Partner Addendum Link */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="my-8"
+          >
+            <Link
+              to="/memos/shadow-partner"
+              className="block p-6 surface-card border-2 border-amber-500/50 hover:border-amber-500 rounded-lg transition-all group"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <span className="inline-block px-2 py-0.5 bg-amber-500/20 text-amber-400 font-mono text-[10px] uppercase tracking-wider border border-amber-500/30 mb-3">
+                    Addendum to Part III
+                  </span>
+                  <h4 className="font-display text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
+                    The Shadow Partner: Russia as Unpriced Counterparty
+                  </h4>
+                  <p className="text-muted-foreground font-mono text-sm leading-relaxed">
+                    How Russia's intelligence sharing, oil arbitrage, and attention capture make it the largest unacknowledged
+                    beneficiary of the Iran conflict — and why the coalition's cost-benefit calculus is missing a $50-60 billion line item.
+                  </p>
+                </div>
+                <ArrowRight size={20} className="text-primary shrink-0 mt-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+          </motion.div>
+
           {/* Field Notes Link */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -42,6 +42,17 @@ const allMemos = [
     pdfPath: '/memos/Iran_Sovereign_Distress_Analysis_Series_3.pdf',
   },
   {
+    id: 'shadow-partner',
+    title: 'The Shadow Partner: Russia as Unpriced Counterparty',
+    subtitle: "How Russia's intelligence sharing, oil arbitrage, and attention capture make it the largest unacknowledged beneficiary of the Iran conflict — and why the coalition's cost-benefit calculus is missing a $50-60 billion line item",
+    date: 'April 2026',
+    author: 'Zachary Smith',
+    tags: ['Geopolitical Strategy', 'Game Theory', 'Energy & Commodities'],
+    series: { name: 'Asymmetric Restructuring', part: 3.5, total: 3 },
+    path: '/memos/shadow-partner',
+    badge: 'ADDENDUM TO PART III',
+  },
+  {
     id: 'kirklands',
     title: "When Your White Knight Is Actually a Vulture",
     subtitle: "The Beyond Inc. takeover of Kirkland's demonstrates how creditor-friendly financing can achieve effective control without triggering takeover regulations",
@@ -230,7 +241,7 @@ const MemosPage = () => {
                       className="memo-card group relative"
                     >
                       <div className="absolute top-0 left-0 bg-primary text-primary-foreground px-3 py-1 text-[10px] font-mono uppercase tracking-wider">
-                        Part {memo.series?.part}
+                        {memo.badge ? memo.badge : `Part ${memo.series?.part}`}
                       </div>
 
                       <div className="pt-8">
