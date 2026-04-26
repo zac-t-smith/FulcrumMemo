@@ -18,6 +18,7 @@ import IranMemoPartIIIFull from "./pages/memos/IranMemoPartIIIFull";
 import FieldNotesIndex from "./pages/field-notes/FieldNotesIndex";
 import FieldNoteDay from "./pages/field-notes/FieldNoteDay";
 import TimelinePage from "./pages/TimelinePage";
+import PositionsPage from "./pages/Positions";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ const App = () => (
             <Route path="/memos/iran-part-iii" element={<IranMemoPartIIIFull />} />
             <Route path="/field-notes" element={<FieldNotesIndex />} />
             <Route path="/field-notes/:day" element={<FieldNoteDay />} />
+            <Route path="/positions" element={<PositionsPage />} />
             <Route path="/timeline" element={<TimelinePage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
