@@ -52,6 +52,10 @@ const variantConfig: Record<CalloutVariant, { icon: React.ElementType; borderCol
 
 export const Callout = ({ variant = 'insight', title, children, className }: CalloutProps) => {
   const config = variantConfig[variant];
+  if (!config) {
+    console.warn(`Callout: Invalid variant "${variant}". Valid options: ${Object.keys(variantConfig).join(', ')}`);
+    return <div className={className}>{children}</div>;
+  }
   const Icon = config.icon;
 
   return (

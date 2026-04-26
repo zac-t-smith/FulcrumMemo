@@ -31,7 +31,11 @@ const statusConfig = {
 };
 
 const ThesisCard = ({ thesis }: { thesis: ThesisScorecard }) => {
-  const config = statusConfig[thesis.status];
+  const config = statusConfig[thesis.status as keyof typeof statusConfig];
+  if (!config) {
+    console.warn(`ThesisCard: Invalid status "${thesis.status}". Valid options: ${Object.keys(statusConfig).join(', ')}`);
+    return null;
+  }
   const Icon = config.icon;
   const confidenceChange = thesis.currentConfidence - thesis.initialConfidence;
 

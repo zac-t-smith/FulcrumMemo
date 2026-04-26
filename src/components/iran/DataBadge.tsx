@@ -29,6 +29,10 @@ const statusConfig: Record<BadgeStatus, { icon: React.ElementType; label: string
 
 export const DataBadge = ({ status, date, className }: DataBadgeProps) => {
   const config = statusConfig[status];
+  if (!config) {
+    console.warn(`DataBadge: Invalid status "${status}". Valid options: ${Object.keys(statusConfig).join(', ')}`);
+    return null;
+  }
   const Icon = config.icon;
 
   return (
