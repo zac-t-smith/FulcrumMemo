@@ -197,7 +197,7 @@ const FieldNoteDay = () => {
                 <p className="font-display text-xl font-bold text-blue-400">
                   ${(fieldNote.marketSnapshot.vlccRate / 1000).toFixed(0)}K
                 </p>
-                <p className="font-mono text-[10px] text-muted-foreground">VLCC Rate/Day</p>
+                <p className="font-mono text-[10px] text-muted-foreground">VLCC Rate/Day <span className="text-zinc-500">(est.)</span></p>
               </div>
               <div className="p-4 surface-card border border-border rounded-lg text-center">
                 <DollarSign size={16} className="text-red-400 mx-auto mb-2" />

@@ -188,7 +188,7 @@ export const ShippingDisruptionChart = ({ className }: { className?: string }) =
           </div>
           <div className="text-center p-3 bg-amber-500/10 rounded border border-amber-500/20">
             <p className="font-display text-2xl font-bold text-amber-400">{maxVlccRateFormatted}</p>
-            <p className="font-mono text-[10px] text-muted-foreground">VLCC Rate/Day</p>
+            <p className="font-mono text-[10px] text-muted-foreground">VLCC Rate/Day <span className="text-zinc-500">(est.)</span></p>
           </div>
           <div className="text-center p-3 bg-blue-500/10 rounded border border-blue-500/20">
             <p className="font-display text-2xl font-bold text-blue-400">{tankersStranded}</p>

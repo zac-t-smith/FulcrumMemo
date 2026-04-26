@@ -1,17 +1,21 @@
 /**
  * FRED API Integration
- * Fetches High Yield OAS (Option-Adjusted Spread) data from Federal Reserve Economic Data
+ * Fetches High Yield OAS (Option-Adjusted Spread) and VIX data from Federal Reserve Economic Data
  *
- * Series:
+ * Credit Series:
  * - BAMLH0A0HYM2: ICE BofA US High Yield Index Option-Adjusted Spread
  * - BAMLH0A1HYBB: ICE BofA BB US High Yield Index OAS
  * - BAMLH0A2HYB: ICE BofA B US High Yield Index OAS
  * - BAMLH0A3HYC: ICE BofA CCC & Lower US High Yield Index OAS
  *
- * Source: ICE Data Indices, LLC via FRED, Federal Reserve Bank of St. Louis
+ * Volatility Series:
+ * - VIXCLS: CBOE Volatility Index (VIX)
+ *
+ * Source: ICE Data Indices, LLC; CBOE via FRED, Federal Reserve Bank of St. Louis
  */
 
 export const FRED_SOURCE_ATTRIBUTION = 'Source: ICE Data Indices, LLC via FRED, Federal Reserve Bank of St. Louis';
+export const VIX_SOURCE_ATTRIBUTION = 'Source: CBOE via FRED, Federal Reserve Bank of St. Louis';
 
 const FRED_API_BASE = 'https://api.stlouisfed.org/fred/series/observations';
 const CACHE_DURATION_MS = 24 * 60 * 60 * 1000; // 24 hours
@@ -22,7 +26,11 @@ const FALLBACK_VALUES = {
   BAMLH0A1HYBB: 185, // BB OAS (bps)
   BAMLH0A2HYB: 295,  // B OAS (bps)
   BAMLH0A3HYC: 750,  // CCC OAS (bps)
+  VIXCLS: 18.5,      // VIX (index points)
 };
+
+// Series that are already in the correct units (not percentages needing conversion to bps)
+const NO_CONVERSION_SERIES = new Set(['VIXCLS']);
 
 export type FredSeriesId = keyof typeof FALLBACK_VALUES;
 
@@ -90,7 +98,8 @@ async function fetchFredSeries(seriesId: FredSeriesId): Promise<number | null> {
       if (obs.value !== '.' && obs.value !== '') {
         const value = parseFloat(obs.value);
         if (!isNaN(value)) {
-          return value * 100; // Convert from percentage to basis points
+          // VIX is already in index points; HY spreads need conversion to bps
+          return NO_CONVERSION_SERIES.has(seriesId) ? value : value * 100;
         }
       }
     }
@@ -167,4 +176,11 @@ export function clearFredCache(): void {
  */
 export function isFredApiConfigured(): boolean {
   return !!getApiKey();
+}
+
+/**
+ * Get VIX (CBOE Volatility Index) with caching
+ */
+export async function getVix(): Promise<number> {
+  return getHYSpread('VIXCLS');
 }

@@ -176,7 +176,7 @@ export interface FieldNoteDay {
   }[];
   marketSnapshot: {
     brentCrude: number;
-    vlccRate: number;
+    vlccRate: number;  // NOTE: VLCC rates are estimates - no live API available
     hySpread: number;
     vix: number;
     usGas: number;
@@ -5938,7 +5938,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     marketSnapshot: {
       brentCrude: 102.50,
       vlccRate: 520000,
-      hySpread: 600,
+      hySpread: 420,
       vix: 28.00,
       usGas: 4.05,
     },
@@ -6003,7 +6003,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     marketSnapshot: {
       brentCrude: 105.30,
       vlccRate: 540000,
-      hySpread: 620,
+      hySpread: 460,
       vix: 29.00,
       usGas: 4.10,
     },
@@ -6068,7 +6068,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     marketSnapshot: {
       brentCrude: 107.20,
       vlccRate: 560000,
-      hySpread: 640,
+      hySpread: 475,
       vix: 31.00,
       usGas: 4.15,
     },
@@ -6145,7 +6145,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     marketSnapshot: {
       brentCrude: 99.80,
       vlccRate: 480000,
-      hySpread: 580,
+      hySpread: 450,
       vix: 26.00,
       usGas: 4.00,
     },
@@ -6210,7 +6210,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     marketSnapshot: {
       brentCrude: 90.50,
       vlccRate: 420000,
-      hySpread: 520,
+      hySpread: 410,
       vix: 22.00,
       usGas: 3.85,
     },
@@ -6287,7 +6287,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     marketSnapshot: {
       brentCrude: 98.70,
       vlccRate: 500000,
-      hySpread: 600,
+      hySpread: 485,
       vix: 28.00,
       usGas: 4.00,
     },
@@ -6364,7 +6364,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     marketSnapshot: {
       brentCrude: 108.40,
       vlccRate: 600000,
-      hySpread: 680,
+      hySpread: 520,
       vix: 34.00,
       usGas: 4.25,
     },
@@ -6429,7 +6429,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     marketSnapshot: {
       brentCrude: 112.80,
       vlccRate: 620000,
-      hySpread: 700,
+      hySpread: 530,
       vix: 32.00,
       usGas: 4.30,
     },
@@ -6506,7 +6506,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     marketSnapshot: {
       brentCrude: 115.20,
       vlccRate: 640000,
-      hySpread: 720,
+      hySpread: 540,
       vix: 30.00,
       usGas: 4.35,
     },
@@ -6583,7 +6583,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     marketSnapshot: {
       brentCrude: 118.90,
       vlccRate: 680000,
-      hySpread: 750,
+      hySpread: 555,
       vix: 33.00,
       usGas: 4.45,
     },
@@ -6660,7 +6660,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     marketSnapshot: {
       brentCrude: 116.50,
       vlccRate: 660000,
-      hySpread: 730,
+      hySpread: 530,
       vix: 29.00,
       usGas: 4.40,
     },
@@ -6746,7 +6746,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     marketSnapshot: {
       brentCrude: 119.80,
       vlccRate: 700000,
-      hySpread: 780,
+      hySpread: 565,
       vix: 35.00,
       usGas: 4.50,
     },
@@ -6844,7 +6844,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     marketSnapshot: {
       brentCrude: 122.40,
       vlccRate: 720000,
-      hySpread: 800,
+      hySpread: 575,
       vix: 36.00,
       usGas: 4.55,
     },
@@ -6943,7 +6943,7 @@ export const fieldNotes: Record<number, FieldNoteDay> = {
     marketSnapshot: {
       brentCrude: 124.60,
       vlccRate: 750000,
-      hySpread: 820,
+      hySpread: 590,
       vix: 37.00,
       usGas: 4.60,
     },

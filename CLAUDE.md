@@ -432,6 +432,18 @@ git push origin main
 
 ---
 
+## Oil Price Data Protocol
+- ALL oil prices must come from EIA daily spot prices
+- Brent series: RBRTE (https://www.eia.gov/dnav/pet/hist/RBRTED.htm)
+- WTI series: RWTC (https://www.eia.gov/dnav/pet/hist/RWTCD.htm)
+- When updating field notes, search for "EIA Brent spot price [DATE]"
+  to get the official close for that day
+- Update oilPriceData.ts with any new trading days
+- NEVER use intraday prices, futures prices, or news article estimates
+  as the canonical price — only EIA daily spot
+- All charts displaying oil prices must show:
+  "Source: U.S. Energy Information Administration"
+
 ## Quality Checklist Before Committing
 
 - [ ] TypeScript compiles clean (`npx tsc --noEmit`)
