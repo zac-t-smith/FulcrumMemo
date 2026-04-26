@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   AreaChart,
@@ -9,10 +8,11 @@ import {
   Tooltip,
   ResponsiveContainer,
   ReferenceLine,
-  ReferenceArea,
 } from 'recharts';
 import { cn } from '@/lib/utils';
+import { Radio } from 'lucide-react';
 import { creditMarketData, hySpreadHistory } from '@/data/iranConflictData';
+import { useLiveHYSpread } from '@/hooks/useLiveMarketData';
 
 // Use shared data layer for historical HY spread data
 const historicalData = hySpreadHistory;
@@ -44,6 +44,12 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 };
 
 export const CreditSpreadChart = ({ className }: { className?: string }) => {
+  const { spreads, isLoading } = useLiveHYSpread();
+
+  // Use live spread if available, otherwise fallback to static
+  const currentSpread = spreads?.hy ?? creditMarketData.hySpread.current;
+  const isLive = spreads?.isLive ?? false;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -100,11 +106,11 @@ export const CreditSpreadChart = ({ className }: { className?: string }) => {
 
             {/* Current level line */}
             <ReferenceLine
-              y={creditMarketData.hySpread.current}
+              y={currentSpread}
               stroke="#22c55e"
               strokeDasharray="3 3"
               label={{
-                value: `Current: ${creditMarketData.hySpread.current} bps`,
+                value: `Current: ${currentSpread} bps${isLive ? ' (LIVE)' : ''}`,
                 position: 'right',
                 style: { fontSize: 10, fill: '#22c55e' },
               }}
@@ -128,9 +134,15 @@ export const CreditSpreadChart = ({ className }: { className?: string }) => {
           Credit Market Setup
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="p-3 bg-emerald-500/10 rounded border border-emerald-500/20 text-center">
+          <div className="p-3 bg-emerald-500/10 rounded border border-emerald-500/20 text-center relative">
+            {isLive && (
+              <div className="absolute top-1 right-1 flex items-center gap-1">
+                <Radio size={8} className="text-emerald-400 animate-pulse" />
+                <span className="font-mono text-[8px] text-emerald-400">LIVE</span>
+              </div>
+            )}
             <p className="font-display text-2xl font-bold text-emerald-400">
-              {creditMarketData.hySpread.current}
+              {isLoading ? '...' : currentSpread}
             </p>
             <p className="font-mono text-[10px] text-muted-foreground">Current HY Spread (bps)</p>
           </div>
@@ -165,6 +177,11 @@ export const CreditSpreadChart = ({ className }: { className?: string }) => {
             wall" of 2026–2027 amplifies the stress.
           </p>
         </div>
+
+        {/* Attribution */}
+        <p className="mt-4 font-mono text-[9px] text-muted-foreground/70">
+          {spreads?.attribution || 'Source: ICE Data Indices, LLC via FRED, Federal Reserve Bank of St. Louis'}
+        </p>
       </div>
     </motion.div>
   );

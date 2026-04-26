@@ -1,14 +1,20 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Calendar, TrendingUp, AlertTriangle, ChevronRight, ArrowLeft, Map } from 'lucide-react';
+import { Calendar, TrendingUp, AlertTriangle, ChevronRight, ArrowLeft, Map, Radio, RefreshCw } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import { fieldNotes, getLatestScenario, getAvailableFieldNoteDays, conflictMetadata, EIA_SOURCE_ATTRIBUTION } from '@/data/iranConflictData';
 import { ConflictMap } from '@/components/maps/ConflictMap';
+import { useLiveMarketData } from '@/hooks/useLiveMarketData';
 
 const FieldNotesIndex = () => {
   const availableDays = getAvailableFieldNoteDays();
   const latestScenario = getLatestScenario();
+  const { oil, spreads, isLoading, lastUpdated, refresh } = useLiveMarketData();
+
+  // Calculate change from pre-war baseline
+  const preWarBrent = 71.32;
+  const brentChange = oil ? ((oil.brent - preWarBrent) / preWarBrent * 100).toFixed(0) : '--';
 
   return (
     <>
@@ -55,11 +61,80 @@ const FieldNotesIndex = () => {
             </p>
           </motion.div>
 
-          {/* Current Scenario Probabilities */}
+          {/* Live Market Data Banner */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-8 p-4 surface-card border border-border rounded-lg"
+          >
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2">
+                {(oil?.isLive || spreads?.isLive) && (
+                  <Radio size={12} className="text-emerald-400 animate-pulse" />
+                )}
+                <h2 className="font-mono text-[10px] uppercase tracking-wider text-primary">
+                  {oil?.isLive || spreads?.isLive ? 'Live Market Data' : 'Market Data'}
+                </h2>
+              </div>
+              <div className="flex items-center gap-2">
+                {lastUpdated && (
+                  <span className="font-mono text-[9px] text-muted-foreground">
+                    {lastUpdated.toLocaleTimeString()}
+                  </span>
+                )}
+                <button
+                  onClick={() => refresh()}
+                  disabled={isLoading}
+                  className="p-1 rounded hover:bg-muted/50 transition-colors disabled:opacity-50"
+                  title="Refresh data"
+                >
+                  <RefreshCw size={12} className={`text-muted-foreground ${isLoading ? 'animate-spin' : ''}`} />
+                </button>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="text-center">
+                <p className="font-display text-xl font-bold text-amber-400">
+                  {isLoading ? '...' : oil ? `$${oil.brent.toFixed(0)}` : '--'}
+                </p>
+                <p className="font-mono text-[10px] text-muted-foreground">Brent Crude</p>
+                {oil && (
+                  <p className="font-mono text-[9px] text-amber-400/70">+{brentChange}% from pre-war</p>
+                )}
+              </div>
+              <div className="text-center">
+                <p className="font-display text-xl font-bold text-blue-400">
+                  {isLoading ? '...' : oil ? `$${oil.wti.toFixed(0)}` : '--'}
+                </p>
+                <p className="font-mono text-[10px] text-muted-foreground">WTI Crude</p>
+              </div>
+              <div className="text-center">
+                <p className="font-display text-xl font-bold text-red-400">
+                  {isLoading ? '...' : spreads ? spreads.hy : '--'}
+                </p>
+                <p className="font-mono text-[10px] text-muted-foreground">HY Spread (bps)</p>
+              </div>
+              <div className="text-center">
+                <p className="font-display text-xl font-bold text-foreground">
+                  Day {conflictMetadata.conflictDay}
+                </p>
+                <p className="font-mono text-[10px] text-muted-foreground">of Conflict</p>
+              </div>
+            </div>
+
+            <div className="mt-3 pt-2 border-t border-border flex flex-wrap gap-4 text-[9px] text-muted-foreground/70">
+              <span>{oil?.attribution}</span>
+              <span>{spreads?.attribution}</span>
+            </div>
+          </motion.div>
+
+          {/* Current Scenario Probabilities */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
             className="mb-12 p-6 surface-card border border-border rounded-lg"
           >
             <div className="flex items-center gap-2 mb-4">
@@ -109,7 +184,7 @@ const FieldNotesIndex = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-12"
           >
             <div className="flex items-center gap-2 mb-4">
@@ -130,7 +205,7 @@ const FieldNotesIndex = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
           >
             <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
               Daily Updates
