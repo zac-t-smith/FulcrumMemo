@@ -121,7 +121,7 @@ const ShadowPartnerMemo = () => {
                 <span className="text-primary">|</span>
                 <span>Zachary Smith</span>
                 <span className="text-primary">|</span>
-                <DataBadge status="developing" date={formatShortDate(conflictMetadata.lastUpdated)} />
+                <DataBadge status="tracking" date={formatShortDate(conflictMetadata.lastUpdated)} />
               </div>
               <div className="mt-4">
                 <ShareButtons
