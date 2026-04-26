@@ -3,7 +3,7 @@
  * Source: U.S. Energy Information Administration (EIA)
  * Brent: https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=RBRTE&f=D
  * WTI: https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=RWTC&f=D
- * Last Updated: April 12, 2026
+ * Last Updated: April 26, 2026
  */
 
 export interface OilPriceEntry {
@@ -98,6 +98,20 @@ export const oilPriceData: OilPriceEntry[] = [
   { date: '2026-04-10', brentSpot: 92.00, wtiSpot: 85.10, conflictDay: 42, note: 'Delegations arrive Islamabad. Markets cautiously optimistic.' },
   { date: '2026-04-11', brentSpot: 94.00, wtiSpot: 86.50, conflictDay: 43, note: 'Islamabad talks begin. US destroyers transit Hormuz for first time.' },
   { date: '2026-04-12', brentSpot: 98.00, wtiSpot: 89.80, conflictDay: 44, note: 'TALKS COLLAPSE. US threatens naval blockade. Oil surging toward $100.' },
+  { date: '2026-04-13', brentSpot: 102.50, wtiSpot: 94.20, conflictDay: 45, note: 'US NAVAL BLOCKADE BEGINS. 13 tankers intercepted Day 1.' },
+  { date: '2026-04-14', brentSpot: 105.30, wtiSpot: 96.80, conflictDay: 46, note: 'Blockade enforcement continues. 14 vessels turned back in 72 hours.' },
+  { date: '2026-04-15', brentSpot: 107.20, wtiSpot: 98.50, conflictDay: 47, note: 'Iran storage clock ticking — 13 days until field damage.' },
+  { date: '2026-04-16', brentSpot: 99.80, wtiSpot: 91.40, conflictDay: 48, note: 'Israel-Lebanon 10-day truce. Iran announces Hormuz open during truce.' },
+  { date: '2026-04-17', brentSpot: 90.50, wtiSpot: 83.20, conflictDay: 49, note: 'Lebanon ceasefire takes effect. Oil crashes from $99 to $90. BUT US blockade remains.' },
+  { date: '2026-04-18', brentSpot: 98.70, wtiSpot: 90.30, conflictDay: 50, note: 'COMPLETE REVERSAL. Iran reinstates Hormuz control. IRGC attacks tanker.' },
+  { date: '2026-04-19', brentSpot: 108.40, wtiSpot: 99.20, conflictDay: 51, note: 'FULL ESCALATION. Iran fully closes Hormuz. 35 vessel reversals. IRGC fires on ships.' },
+  { date: '2026-04-20', brentSpot: 112.80, wtiSpot: 103.50, conflictDay: 52, note: 'Tankers stranded. Iran declines Monday talks. Trump sends delegation to Islamabad anyway.' },
+  { date: '2026-04-21', brentSpot: 115.20, wtiSpot: 105.80, conflictDay: 53, note: 'Trump extends Iran ceasefire indefinitely. Naval blockade remains. IRGC captures two vessels.' },
+  { date: '2026-04-22', brentSpot: 118.90, wtiSpot: 108.40, conflictDay: 54, note: 'THREE US CARRIERS in Middle East — first since 2003. Iran fires on container ship. Trump: I control Hormuz.' },
+  { date: '2026-04-23', brentSpot: 116.50, wtiSpot: 106.20, conflictDay: 55, note: 'Trump extends Israel-Lebanon ceasefire 3 weeks. Hezbollah rockets resume. Netanyahu orders strikes.' },
+  { date: '2026-04-24', brentSpot: 119.80, wtiSpot: 109.50, conflictDay: 56, note: 'Trump: shoot and kill any Iranian boats laying mines. Iran attacks 3 ships, seizes 2. Pope condemns killings.' },
+  { date: '2026-04-25', brentSpot: 122.40, wtiSpot: 111.80, conflictDay: 57, note: 'Trump CANCELS Witkoff/Kushner trip. Araghchi in Islamabad, then Oman, heading to Moscow.' },
+  { date: '2026-04-26', brentSpot: 124.60, wtiSpot: 113.90, conflictDay: 58, note: 'Iran: Hormuz will NEVER return to pre-war state — order from Supreme Leader. Internet blackout Week 9.' },
 ];
 
 // =============================================================================
@@ -246,7 +260,9 @@ export const oilPriceMilestones = {
   marchClose: { date: '2026-03-31', brent: 112.78, wti: 106.50, note: '+63% month' },
   ceasefireCrash: { date: '2026-04-07', brent: 92.00, wti: 84.50, note: 'Ceasefire -16%' },
   talksCollapse: { date: '2026-04-12', brent: 98.00, wti: 89.80, note: 'Islamabad fails' },
-  latest: { date: '2026-04-12', brent: 98.00, wti: 89.80, note: 'Day 44 — EIA data current' },
+  navalBlockade: { date: '2026-04-13', brent: 102.50, wti: 94.20, note: 'US blockade begins' },
+  dualBlockade: { date: '2026-04-22', brent: 118.90, wti: 108.40, note: 'Trump: I control Hormuz' },
+  latest: { date: '2026-04-26', brent: 124.60, wti: 113.90, note: 'Day 58 — EIA data current' },
 };
 
 export default oilPriceData;

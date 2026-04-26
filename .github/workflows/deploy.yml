@@ -32,6 +32,8 @@ jobs:
         run: npm run build
         env:
           VITE_AISSTREAM_API_KEY: ${{ secrets.AISSTREAM_API_KEY }}
+          VITE_FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          VITE_EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
 
       # 404.html with SPA redirect script is in public/ and copied by Vite build
 
@@ -66,10 +68,22 @@ jobs:
           else
             echo "VITE_AISSTREAM_API_KEY secret is set"
           fi
+          if [ -z "$VITE_FRED_API_KEY" ]; then
+            echo "WARNING: VITE_FRED_API_KEY secret is NOT set - HY spread API will use fallback"
+          else
+            echo "VITE_FRED_API_KEY secret is set"
+          fi
+          if [ -z "$VITE_EIA_API_KEY" ]; then
+            echo "WARNING: VITE_EIA_API_KEY secret is NOT set - Oil price API will use fallback"
+          else
+            echo "VITE_EIA_API_KEY secret is set"
+          fi
           echo "VITE_AGENT_URL: https://fulcrummemo-production.up.railway.app (hardcoded)"
         env:
           VITE_CESIUM_ION_TOKEN: ${{ secrets.VITE_CESIUM_ION_TOKEN }}
           VITE_AISSTREAM_API_KEY: ${{ secrets.AISSTREAM_API_KEY }}
+          VITE_FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          VITE_EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
 
       - name: Build WorldView
         run: cd worldview-fm && npm run build
