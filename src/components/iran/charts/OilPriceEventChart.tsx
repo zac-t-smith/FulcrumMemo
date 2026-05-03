@@ -62,27 +62,27 @@ const CustomTooltip = ({ active, payload }: any) => {
 
   return (
     <div className="bg-zinc-900 border border-zinc-700 p-4 rounded-lg shadow-xl min-w-[180px]">
-      <p className="font-mono text-xs text-zinc-400 mb-2">{data.dateDisplay}</p>
+      <p className="text-xs text-zinc-400 mb-2">{data.dateDisplay}</p>
       {data.day && (
-        <p className="font-mono text-[10px] text-primary mb-2">Day {data.day} of conflict</p>
+        <p className="text-[10px] text-primary mb-2">Day {data.day} of conflict</p>
       )}
       <div className="space-y-1">
         <div className="flex justify-between">
-          <span className="font-mono text-xs text-amber-400">Brent:</span>
-          <span className="font-mono text-sm font-semibold text-amber-400">
+          <span className="text-xs text-amber-400">Brent:</span>
+          <span className="text-sm font-semibold text-amber-400">
             ${data.brent?.toFixed(2)}
           </span>
         </div>
         <div className="flex justify-between">
-          <span className="font-mono text-xs text-blue-400">WTI:</span>
-          <span className="font-mono text-sm font-semibold text-blue-400">
+          <span className="text-xs text-blue-400">WTI:</span>
+          <span className="text-sm font-semibold text-blue-400">
             ${data.wti?.toFixed(2)}
           </span>
         </div>
       </div>
       {event && (
         <div className="mt-3 pt-2 border-t border-zinc-700">
-          <p className="font-mono text-xs" style={{ color: event.color }}>
+          <p className="text-xs" style={{ color: event.color }}>
             {event.label}
           </p>
         </div>
@@ -109,10 +109,10 @@ export const OilPriceEventChart = ({ className }: { className?: string }) => {
     >
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
         <div>
-          <h4 className="font-display text-xl font-bold text-zinc-100 mb-2">
+          <h4 className="text-xl font-bold text-zinc-100 mb-2">
             Oil Price with Event Markers
           </h4>
-          <p className="font-mono text-sm text-zinc-400">
+          <p className="text-sm text-zinc-400">
             Brent crude daily spot — the pre-positioning becomes visible
           </p>
         </div>
@@ -120,7 +120,7 @@ export const OilPriceEventChart = ({ className }: { className?: string }) => {
           <button
             onClick={() => setShowVenezuelaEvents(true)}
             className={cn(
-              'px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider rounded transition-colors',
+              'px-3 py-1.5 text-[10px] uppercase tracking-wider rounded transition-colors',
               showVenezuelaEvents
                 ? 'bg-primary text-primary-foreground'
                 : 'bg-zinc-800 text-zinc-400 hover:text-zinc-200 border border-zinc-700'
@@ -131,7 +131,7 @@ export const OilPriceEventChart = ({ className }: { className?: string }) => {
           <button
             onClick={() => setShowVenezuelaEvents(false)}
             className={cn(
-              'px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider rounded transition-colors',
+              'px-3 py-1.5 text-[10px] uppercase tracking-wider rounded transition-colors',
               !showVenezuelaEvents
                 ? 'bg-primary text-primary-foreground'
                 : 'bg-zinc-800 text-zinc-400 hover:text-zinc-200 border border-zinc-700'
@@ -153,7 +153,7 @@ export const OilPriceEventChart = ({ className }: { className?: string }) => {
           borderColor: showVenezuelaEvents ? 'rgba(16, 185, 129, 0.3)' : 'rgba(239, 68, 68, 0.3)',
         }}
       >
-        <p className="font-mono text-xs text-zinc-300">
+        <p className="text-xs text-zinc-300">
           {showVenezuelaEvents
             ? '🔍 With pre-positioning visible: Venezuela secured Jan 3, tariffs escalated Jan 26 — both on the flat part of the price line. The sequencing is not coincidental.'
             : '⚠️ Without context: Looks like a war-driven oil spike. The pre-positioning disappears. This is how most analysts saw it.'
@@ -266,36 +266,36 @@ export const OilPriceEventChart = ({ className }: { className?: string }) => {
       <div className="mt-4 flex flex-wrap items-center gap-4 text-xs">
         <div className="flex items-center gap-2">
           <span className="w-4 h-0.5 bg-amber-500" />
-          <span className="font-mono text-zinc-400">Brent</span>
+          <span className="text-zinc-400">Brent</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="w-4 h-0.5 bg-blue-500" />
-          <span className="font-mono text-zinc-400">WTI</span>
+          <span className="text-zinc-400">WTI</span>
         </div>
         {showVenezuelaEvents && (
           <>
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-emerald-500" />
-              <span className="font-mono text-zinc-400">Venezuela</span>
+              <span className="text-zinc-400">Venezuela</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-amber-500" />
-              <span className="font-mono text-zinc-400">Tariffs</span>
+              <span className="text-zinc-400">Tariffs</span>
             </div>
           </>
         )}
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-full bg-red-500" />
-          <span className="font-mono text-zinc-400">Iran/War</span>
+          <span className="text-zinc-400">Iran/War</span>
         </div>
       </div>
 
       {/* Source */}
       <div className="mt-4 pt-4 border-t border-zinc-700 flex justify-between items-center">
-        <p className="font-mono text-[9px] text-zinc-500">
+        <p className="text-[9px] text-zinc-500">
           {EIA_SOURCE_ATTRIBUTION}
         </p>
-        <p className="font-mono text-[9px] text-zinc-500">
+        <p className="text-[9px] text-zinc-500">
           Toggle view to see thesis in action
         </p>
       </div>

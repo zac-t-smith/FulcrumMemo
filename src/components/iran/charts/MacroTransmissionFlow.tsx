@@ -18,10 +18,10 @@ export const MacroTransmissionFlow = ({ className }: { className?: string }) => 
       className={cn('my-8 p-6 surface-card border border-border rounded-lg', className)}
     >
       <div className="mb-6">
-        <h4 className="font-display text-lg font-semibold text-foreground mb-1">
+        <h4 className="text-lg font-semibold text-foreground mb-1">
           Macro Transmission Chain
         </h4>
-        <p className="font-mono text-xs text-muted-foreground">
+        <p className="text-xs text-muted-foreground">
           Click each stage to see detailed metrics
         </p>
       </div>
@@ -47,11 +47,11 @@ export const MacroTransmissionFlow = ({ className }: { className?: string }) => 
                   className="w-10 h-10 rounded-full mb-2 flex items-center justify-center"
                   style={{ backgroundColor: node.color }}
                 >
-                  <span className="font-display text-lg font-bold text-background">
+                  <span className="text-lg font-bold text-background">
                     {index + 1}
                   </span>
                 </div>
-                <span className="font-mono text-[10px] text-foreground text-center leading-tight">
+                <span className="text-[10px] text-foreground text-center leading-tight">
                   {node.label}
                 </span>
               </motion.button>
@@ -79,11 +79,11 @@ export const MacroTransmissionFlow = ({ className }: { className?: string }) => 
                   className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{ backgroundColor: node.color }}
                 >
-                  <span className="font-display text-lg font-bold text-background">
+                  <span className="text-lg font-bold text-background">
                     {index + 1}
                   </span>
                 </div>
-                <span className="font-mono text-sm text-foreground">{node.label}</span>
+                <span className="text-sm text-foreground">{node.label}</span>
               </motion.button>
               {index < macroTransmissionChain.length - 1 && (
                 <div className="h-6 w-0.5 bg-primary/30 my-1" />
@@ -110,12 +110,12 @@ export const MacroTransmissionFlow = ({ className }: { className?: string }) => 
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h5
-                  className="font-display text-lg font-semibold"
+                  className="text-lg font-semibold"
                   style={{ color: selectedData.color }}
                 >
                   {selectedData.label}
                 </h5>
-                <p className="font-mono text-sm text-muted-foreground mt-1">
+                <p className="text-sm text-muted-foreground mt-1">
                   {selectedData.description}
                 </p>
               </div>
@@ -135,7 +135,7 @@ export const MacroTransmissionFlow = ({ className }: { className?: string }) => 
                   transition={{ duration: 0.2, delay: index * 0.1 }}
                   className="p-3 bg-background/50 rounded border border-border"
                 >
-                  <p className="font-mono text-xs text-foreground">{metric}</p>
+                  <p className="text-xs text-foreground">{metric}</p>
                 </motion.div>
               ))}
             </div>

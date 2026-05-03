@@ -32,16 +32,16 @@ const TimelinePage = () => {
               transition={{ duration: 0.6 }}
               className="max-w-4xl"
             >
-              <p className="text-primary font-mono text-[10px] tracking-[0.2em] uppercase mb-3">
+              <p className="text-primary text-[10px] tracking-[0.2em] uppercase mb-3">
                 The Iran Trap — Asymmetric Restructuring Series
               </p>
-              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
                 The Restructuring of the Middle East
               </h1>
-              <p className="text-muted-foreground font-mono text-base md:text-lg leading-relaxed mb-6">
+              <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6">
                 Interactive timeline: strategic positioning → shock → attrition → negotiation
               </p>
-              <div className="flex flex-wrap items-center gap-4 text-muted-foreground font-mono text-xs">
+              <div className="flex flex-wrap items-center gap-4 text-muted-foreground text-xs">
                 <span>January – April 2026</span>
                 <span className="text-primary">|</span>
                 <span>Day 38+ of Conflict</span>
@@ -65,11 +65,11 @@ const TimelinePage = () => {
             >
               <div className="grid md:grid-cols-2 gap-8">
                 {/* How to Read */}
-                <div className="bg-zinc-900/50 border border-zinc-800 rounded-lg p-6">
-                  <h3 className="font-display text-lg font-bold text-foreground mb-4">
+                <div className="bg-card border border-border rounded p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-4">
                     How to Read This Timeline
                   </h3>
-                  <ul className="space-y-3 text-sm font-mono text-zinc-400">
+                  <ul className="space-y-3 text-sm text-muted-foreground">
                     <li className="flex items-start gap-3">
                       <span className="w-2.5 h-2.5 rounded-full bg-[#1D9E75] mt-1.5 shrink-0" />
                       <span>
@@ -98,16 +98,16 @@ const TimelinePage = () => {
                 </div>
 
                 {/* The Pattern */}
-                <div className="bg-zinc-900/50 border border-zinc-800 rounded-lg p-6">
-                  <h3 className="font-display text-lg font-bold text-foreground mb-4">
+                <div className="bg-card border border-border rounded p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-4">
                     The Pattern
                   </h3>
-                  <p className="text-sm font-mono text-zinc-400 leading-relaxed mb-4">
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     Green events cluster in January (asset acquisition). Amber spans January-February
                     (leverage positioning). Red starts Feb 28 (detonation). The price line is flat
                     during pre-positioning, then explodes at the exact moment all pieces are in place.
                   </p>
-                  <p className="text-sm font-mono text-zinc-400 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Toggle tracks on/off to see how the narrative changes when you hide different
                     dimensions of the conflict.
                   </p>
@@ -115,11 +115,11 @@ const TimelinePage = () => {
               </div>
 
               {/* Source Attribution */}
-              <div className="mt-8 pt-6 border-t border-zinc-800 text-center">
-                <p className="font-mono text-[10px] text-zinc-600">
+              <div className="mt-8 pt-6 border-t border-border text-center">
+                <p className="text-[10px] text-muted-foreground">
                   {EIA_SOURCE_ATTRIBUTION}. Event data compiled from The Fulcrum Memo field notes.
                 </p>
-                <p className="font-mono text-[10px] text-zinc-600 mt-1">
+                <p className="text-[10px] text-muted-foreground mt-1">
                   This timeline is updated as new field notes are published.
                 </p>
               </div>

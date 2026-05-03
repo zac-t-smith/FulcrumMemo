@@ -20,6 +20,7 @@ import FieldNotesIndex from "./pages/field-notes/FieldNotesIndex";
 import FieldNoteDay from "./pages/field-notes/FieldNoteDay";
 import TimelinePage from "./pages/TimelinePage";
 import PositionsPage from "./pages/Positions";
+import FulcrumIndexPage from "./pages/FulcrumIndex";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => (
             <Route path="/field-notes/:day" element={<FieldNoteDay />} />
             <Route path="/positions" element={<PositionsPage />} />
             <Route path="/timeline" element={<TimelinePage />} />
+            <Route path="/fulcrum-index" element={<FulcrumIndexPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -30,7 +30,7 @@ export const WSOBanner = ({
       )}
     >
       <MessageSquare size={18} className="text-emerald-400" />
-      <p className="font-mono text-sm text-muted-foreground">
+      <p className="text-sm text-muted-foreground">
         Discussing this analysis on{' '}
         <a
           href={threadUrl}
@@ -46,7 +46,7 @@ export const WSOBanner = ({
         </a>
       </p>
       {isPlaceholder && (
-        <span className="px-2 py-0.5 bg-amber-500/20 text-amber-400 text-[9px] font-mono uppercase rounded">
+        <span className="px-2 py-0.5 bg-amber-500/20 text-amber-400 text-[9px] uppercase rounded">
           Coming Soon
         </span>
       )}

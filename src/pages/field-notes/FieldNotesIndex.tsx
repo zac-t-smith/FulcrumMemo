@@ -33,7 +33,7 @@ const FieldNotesIndex = () => {
           {/* Back Link */}
           <Link
             to="/memos"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-xs mb-8"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-xs mb-8"
           >
             <ArrowLeft size={14} />
             All Memos
@@ -48,11 +48,11 @@ const FieldNotesIndex = () => {
           >
             <div className="flex items-center gap-3 mb-4">
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-              <span className="font-mono text-[10px] uppercase tracking-wider text-red-400">
+              <span className="text-[10px] uppercase tracking-wider text-red-400">
                 Live Analysis
               </span>
             </div>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Field Notes
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl">
@@ -73,13 +73,13 @@ const FieldNotesIndex = () => {
                 {(oil?.isLive || spreads?.isLive) && (
                   <Radio size={12} className="text-emerald-400 animate-pulse" />
                 )}
-                <h2 className="font-mono text-[10px] uppercase tracking-wider text-primary">
+                <h2 className="text-[10px] uppercase tracking-wider text-primary">
                   {oil?.isLive || spreads?.isLive ? 'Live Market Data' : 'Market Data'}
                 </h2>
               </div>
               <div className="flex items-center gap-2">
                 {lastUpdated && (
-                  <span className="font-mono text-[9px] text-muted-foreground">
+                  <span className="text-[9px] text-muted-foreground">
                     {lastUpdated.toLocaleTimeString()}
                   </span>
                 )}
@@ -96,31 +96,31 @@ const FieldNotesIndex = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="text-center">
-                <p className="font-display text-xl font-bold text-amber-400">
+                <p className="text-xl font-bold text-amber-400">
                   {isLoading ? '...' : oil ? `$${oil.brent.toFixed(0)}` : '--'}
                 </p>
-                <p className="font-mono text-[10px] text-muted-foreground">Brent Crude</p>
+                <p className="text-[10px] text-muted-foreground">Brent Crude</p>
                 {oil && (
-                  <p className="font-mono text-[9px] text-amber-400/70">+{brentChange}% from pre-war</p>
+                  <p className="text-[9px] text-amber-400/70">+{brentChange}% from pre-war</p>
                 )}
               </div>
               <div className="text-center">
-                <p className="font-display text-xl font-bold text-blue-400">
+                <p className="text-xl font-bold text-blue-400">
                   {isLoading ? '...' : oil ? `$${oil.wti.toFixed(0)}` : '--'}
                 </p>
-                <p className="font-mono text-[10px] text-muted-foreground">WTI Crude</p>
+                <p className="text-[10px] text-muted-foreground">WTI Crude</p>
               </div>
               <div className="text-center">
-                <p className="font-display text-xl font-bold text-red-400">
+                <p className="text-xl font-bold text-red-400">
                   {isLoading ? '...' : spreads ? spreads.hy : '--'}
                 </p>
-                <p className="font-mono text-[10px] text-muted-foreground">HY Spread (bps)</p>
+                <p className="text-[10px] text-muted-foreground">HY Spread (bps)</p>
               </div>
               <div className="text-center">
-                <p className="font-display text-xl font-bold text-foreground">
+                <p className="text-xl font-bold text-foreground">
                   Day {conflictMetadata.conflictDay}
                 </p>
-                <p className="font-mono text-[10px] text-muted-foreground">of Conflict</p>
+                <p className="text-[10px] text-muted-foreground">of Conflict</p>
               </div>
             </div>
 
@@ -139,10 +139,10 @@ const FieldNotesIndex = () => {
           >
             <div className="flex items-center gap-2 mb-4">
               <TrendingUp size={16} className="text-primary" />
-              <h2 className="font-mono text-[10px] uppercase tracking-wider text-primary">
+              <h2 className="text-[10px] uppercase tracking-wider text-primary">
                 Current Scenario Probabilities
               </h2>
-              <span className="ml-auto font-mono text-[10px] text-muted-foreground">
+              <span className="ml-auto text-[10px] text-muted-foreground">
                 Updated: {latestScenario.date}
               </span>
             </div>
@@ -160,7 +160,7 @@ const FieldNotesIndex = () => {
                       backgroundColor: colors[index],
                     }}
                   >
-                    <span className="font-mono text-[10px] font-bold text-background">
+                    <span className="text-[10px] font-bold text-background">
                       {p.probability}%
                     </span>
                   </div>
@@ -173,7 +173,7 @@ const FieldNotesIndex = () => {
                 const colors = ['text-emerald-400', 'text-amber-400', 'text-red-400'];
                 return (
                   <div key={p.scenario} className="text-center">
-                    <p className={`font-mono text-xs ${colors[index]}`}>{p.scenario}</p>
+                    <p className={`text-xs ${colors[index]}`}>{p.scenario}</p>
                   </div>
                 );
               })}
@@ -189,7 +189,7 @@ const FieldNotesIndex = () => {
           >
             <div className="flex items-center gap-2 mb-4">
               <Map size={16} className="text-primary" />
-              <h2 className="font-mono text-[10px] uppercase tracking-wider text-primary">
+              <h2 className="text-[10px] uppercase tracking-wider text-primary">
                 Conflict Timeline Map
               </h2>
             </div>
@@ -207,7 +207,7 @@ const FieldNotesIndex = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
           >
-            <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
+            <h2 className="text-2xl font-semibold text-foreground mb-6">
               Daily Updates
             </h2>
 
@@ -231,15 +231,15 @@ const FieldNotesIndex = () => {
                         <div className="flex items-start justify-between gap-4">
                           <div className="flex-1">
                             <div className="flex items-center gap-3 mb-2">
-                              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-primary/10 border border-primary/30 rounded text-primary font-mono text-[10px] uppercase">
+                              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-primary/10 border border-primary/30 rounded text-primary text-[10px] uppercase">
                                 <Calendar size={12} />
                                 Day {day}
                               </span>
-                              <span className="font-mono text-xs text-muted-foreground">
+                              <span className="text-xs text-muted-foreground">
                                 {note.date}
                               </span>
                             </div>
-                            <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
+                            <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
                               {note.title}
                             </h3>
                             <p className="text-muted-foreground text-sm line-clamp-2">
@@ -249,26 +249,26 @@ const FieldNotesIndex = () => {
                             {/* Market Snapshot */}
                             <div className="flex flex-wrap gap-4 mt-4">
                               <div className="flex items-center gap-2">
-                                <span className="font-mono text-[10px] text-muted-foreground">
+                                <span className="text-[10px] text-muted-foreground">
                                   Brent:
                                 </span>
-                                <span className="font-mono text-xs text-amber-400">
+                                <span className="text-xs text-amber-400">
                                   ${note.marketSnapshot.brentCrude}
                                 </span>
                               </div>
                               <div className="flex items-center gap-2">
-                                <span className="font-mono text-[10px] text-muted-foreground">
+                                <span className="text-[10px] text-muted-foreground">
                                   HY Spread:
                                 </span>
-                                <span className="font-mono text-xs text-red-400">
+                                <span className="text-xs text-red-400">
                                   {note.marketSnapshot.hySpread}bps
                                 </span>
                               </div>
                               <div className="flex items-center gap-2">
-                                <span className="font-mono text-[10px] text-muted-foreground">
+                                <span className="text-[10px] text-muted-foreground">
                                   VIX:
                                 </span>
-                                <span className="font-mono text-xs text-red-400">
+                                <span className="text-xs text-red-400">
                                   {note.marketSnapshot.vix}
                                 </span>
                               </div>
@@ -285,7 +285,7 @@ const FieldNotesIndex = () => {
                   );
                 })}
             </div>
-            <p className="mt-4 font-mono text-[9px] text-muted-foreground/70">
+            <p className="mt-4 text-[9px] text-muted-foreground/70">
               {EIA_SOURCE_ATTRIBUTION}
             </p>
           </motion.div>
@@ -298,7 +298,7 @@ const FieldNotesIndex = () => {
             className="mt-12 p-6 border border-dashed border-border rounded-lg text-center"
           >
             <AlertTriangle size={24} className="text-amber-400 mx-auto mb-3" />
-            <p className="font-mono text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               Field notes are published as the conflict develops.
               <br />
               Check back for daily updates on thesis validation and market implications.
@@ -316,10 +316,10 @@ const FieldNotesIndex = () => {
               to="/memos/iran"
               className="p-6 surface-card border border-border rounded-lg hover:border-primary/40 transition-all duration-300 group"
             >
-              <p className="font-mono text-[10px] uppercase tracking-wider text-emerald-400 mb-2">
+              <p className="text-[10px] uppercase tracking-wider text-emerald-400 mb-2">
                 Part I
               </p>
-              <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+              <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                 Insurance-Driven Leverage
               </h3>
               <p className="text-muted-foreground text-sm mt-2">
@@ -330,10 +330,10 @@ const FieldNotesIndex = () => {
               to="/memos/iran-part-ii"
               className="p-6 surface-card border border-border rounded-lg hover:border-primary/40 transition-all duration-300 group"
             >
-              <p className="font-mono text-[10px] uppercase tracking-wider text-amber-400 mb-2">
+              <p className="text-[10px] uppercase tracking-wider text-amber-400 mb-2">
                 Part II
               </p>
-              <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+              <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                 Credit Market Transmission
               </h3>
               <p className="text-muted-foreground text-sm mt-2">

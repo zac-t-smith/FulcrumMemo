@@ -67,7 +67,7 @@ export const TableOfContents = ({ items, className }: TableOfContentsProps) => {
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
               className="absolute bottom-16 right-0 w-72 max-h-[60vh] overflow-y-auto surface-card border border-border rounded-lg shadow-xl p-4"
             >
-              <p className="text-primary font-mono text-[10px] uppercase tracking-wider mb-3">
+              <p className="text-primary text-[10px] uppercase tracking-wider mb-3">
                 Table of Contents
               </p>
               <nav className="space-y-1">
@@ -76,7 +76,7 @@ export const TableOfContents = ({ items, className }: TableOfContentsProps) => {
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
                     className={cn(
-                      'block w-full text-left py-1.5 font-mono text-xs transition-colors',
+                      'block w-full text-left py-1.5 text-xs transition-colors',
                       item.level === 1 ? 'pl-0' : item.level === 2 ? 'pl-3' : 'pl-6',
                       activeId === item.id
                         ? 'text-primary'
@@ -117,7 +117,7 @@ export const TableOfContents = ({ items, className }: TableOfContentsProps) => {
           onClick={() => setIsCollapsed(!isCollapsed)}
           className="flex items-center justify-between w-full mb-3"
         >
-          <p className="text-primary font-mono text-[10px] uppercase tracking-wider">
+          <p className="text-primary text-[10px] uppercase tracking-wider">
             Contents
           </p>
           {isCollapsed ? <ChevronDown size={14} /> : <ChevronUp size={14} />}
@@ -136,7 +136,7 @@ export const TableOfContents = ({ items, className }: TableOfContentsProps) => {
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className={cn(
-                    'block w-full text-left py-1.5 font-mono text-[11px] transition-all duration-200 border-l-2',
+                    'block w-full text-left py-1.5 text-[11px] transition-all duration-200 border-l-2',
                     item.level === 1 ? 'pl-2' : item.level === 2 ? 'pl-4' : 'pl-6',
                     activeId === item.id
                       ? 'text-primary border-primary'

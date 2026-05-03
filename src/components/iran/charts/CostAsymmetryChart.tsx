@@ -41,28 +41,28 @@ const CustomTooltip = ({ active, payload, label, viewMode }: any) => {
 
   return (
     <div className="bg-zinc-100 text-zinc-900 border border-zinc-300 p-4 rounded-lg shadow-xl">
-      <p className="font-mono text-sm font-semibold mb-2">{label}</p>
+      <p className="text-sm font-semibold mb-2">{label}</p>
       {viewMode === 'perUnit' ? (
         <>
           <div className="flex justify-between gap-4 mb-1">
-            <span className="font-mono text-xs text-amber-600 font-medium">Iran Cost:</span>
-            <span className="font-mono text-xs font-semibold">{formatCurrency(data.iranCost)}</span>
+            <span className="text-xs text-amber-600 font-medium">Iran Cost:</span>
+            <span className="text-xs font-semibold">{formatCurrency(data.iranCost)}</span>
           </div>
           <div className="flex justify-between gap-4 mb-1">
-            <span className="font-mono text-xs text-blue-600 font-medium">Interceptor Cost:</span>
-            <span className="font-mono text-xs font-semibold">{formatCurrency(data.interceptorCost)}</span>
+            <span className="text-xs text-blue-600 font-medium">Interceptor Cost:</span>
+            <span className="text-xs font-semibold">{formatCurrency(data.interceptorCost)}</span>
           </div>
           <div className="border-t border-zinc-300 mt-2 pt-2">
             <div className="flex justify-between gap-4">
-              <span className="font-mono text-xs text-zinc-700">Cost Ratio:</span>
-              <span className="font-mono text-xs font-bold text-red-600">{data.ratio}:1</span>
+              <span className="text-xs text-zinc-700">Cost Ratio:</span>
+              <span className="text-xs font-bold text-red-600">{data.ratio}:1</span>
             </div>
           </div>
         </>
       ) : (
         <div className="flex justify-between gap-4">
-          <span className="font-mono text-xs text-zinc-700">Cost Ratio:</span>
-          <span className="font-mono text-xs font-bold text-red-600">{data.ratio}:1 advantage Iran</span>
+          <span className="text-xs text-zinc-700">Cost Ratio:</span>
+          <span className="text-xs font-bold text-red-600">{data.ratio}:1 advantage Iran</span>
         </div>
       )}
     </div>
@@ -83,10 +83,10 @@ export const CostAsymmetryChart = ({ className }: { className?: string }) => {
     >
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
         <div>
-          <h4 className="font-display text-xl font-bold text-zinc-100 mb-2">
+          <h4 className="text-xl font-bold text-zinc-100 mb-2">
             Cost Asymmetry Analysis
           </h4>
-          <p className="font-mono text-sm text-zinc-400">
+          <p className="text-sm text-zinc-400">
             Iranian offensive costs vs. U.S. interceptor defensive costs
           </p>
         </div>
@@ -94,7 +94,7 @@ export const CostAsymmetryChart = ({ className }: { className?: string }) => {
           <button
             onClick={() => setViewMode('ratio')}
             className={cn(
-              'px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider rounded transition-colors',
+              'px-3 py-1.5 text-[10px] uppercase tracking-wider rounded transition-colors',
               viewMode === 'ratio'
                 ? 'bg-primary text-primary-foreground'
                 : 'bg-zinc-800 text-zinc-400 hover:text-zinc-200 border border-zinc-700'
@@ -105,7 +105,7 @@ export const CostAsymmetryChart = ({ className }: { className?: string }) => {
           <button
             onClick={() => setViewMode('perUnit')}
             className={cn(
-              'px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider rounded transition-colors',
+              'px-3 py-1.5 text-[10px] uppercase tracking-wider rounded transition-colors',
               viewMode === 'perUnit'
                 ? 'bg-primary text-primary-foreground'
                 : 'bg-zinc-800 text-zinc-400 hover:text-zinc-200 border border-zinc-700'
@@ -116,7 +116,7 @@ export const CostAsymmetryChart = ({ className }: { className?: string }) => {
           {viewMode === 'perUnit' && (
             <button
               onClick={() => setScaleMode(scaleMode === 'linear' ? 'log' : 'linear')}
-              className="px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider rounded transition-colors bg-zinc-800 text-zinc-400 hover:text-zinc-200 border border-zinc-700"
+              className="px-3 py-1.5 text-[10px] uppercase tracking-wider rounded transition-colors bg-zinc-800 text-zinc-400 hover:text-zinc-200 border border-zinc-700"
             >
               {scaleMode === 'linear' ? 'Log Scale' : 'Linear Scale'}
             </button>
@@ -147,7 +147,7 @@ export const CostAsymmetryChart = ({ className }: { className?: string }) => {
               <Tooltip content={(props) => <CustomTooltip {...props} viewMode={viewMode} />} />
               <Legend
                 formatter={(value) => (
-                  <span className="font-mono text-xs text-zinc-300">{value}</span>
+                  <span className="text-xs text-zinc-300">{value}</span>
                 )}
               />
               <Bar dataKey="iranCost" name="Iran Cost" fill="#f59e0b" radius={[0, 4, 4, 0]}>
@@ -198,31 +198,31 @@ export const CostAsymmetryChart = ({ className }: { className?: string }) => {
 
       {/* Key Insights */}
       <div className="mt-8 pt-6 border-t border-zinc-700">
-        <p className="font-mono text-xs uppercase tracking-wider text-primary mb-4">
+        <p className="text-xs uppercase tracking-wider text-primary mb-4">
           Key Insights
         </p>
         <div className="grid md:grid-cols-2 gap-4">
           <div className="p-4 bg-emerald-500/10 rounded-lg border border-emerald-500/30">
-            <p className="font-mono text-sm text-emerald-400 font-semibold mb-2">Drone Asymmetry</p>
-            <p className="font-mono text-xs text-zinc-300 leading-relaxed">
+            <p className="text-sm text-emerald-400 font-semibold mb-2">Drone Asymmetry</p>
+            <p className="text-xs text-zinc-300 leading-relaxed">
               ~100:1 cost ratio. A $35K Shahed drone requires a $3.7M Patriot PAC-3 to intercept.
             </p>
           </div>
           <div className="p-4 bg-amber-500/10 rounded-lg border border-amber-500/30">
-            <p className="font-mono text-sm text-amber-400 font-semibold mb-2">Missile vs. SM-3</p>
-            <p className="font-mono text-xs text-zinc-300 leading-relaxed">
+            <p className="text-sm text-amber-400 font-semibold mb-2">Missile vs. SM-3</p>
+            <p className="text-xs text-zinc-300 leading-relaxed">
               8-56:1 ratio. U.S. Navy fired 12 SM-3s during Iran's October 2024 attack.
             </p>
           </div>
           <div className="p-4 bg-red-500/10 rounded-lg border border-red-500/30">
-            <p className="font-mono text-sm text-red-400 font-semibold mb-2">Heritage Foundation (Jan 2026)</p>
-            <p className="font-mono text-xs text-zinc-300 leading-relaxed">
+            <p className="text-sm text-red-400 font-semibold mb-2">Heritage Foundation (Jan 2026)</p>
+            <p className="text-xs text-zinc-300 leading-relaxed">
               High-end interceptor stockpiles would likely be exhausted within days of sustained combat.
             </p>
           </div>
           <div className="p-4 bg-blue-500/10 rounded-lg border border-blue-500/30">
-            <p className="font-mono text-sm text-blue-400 font-semibold mb-2">June 2025 War Cost</p>
-            <p className="font-mono text-xs text-zinc-300 leading-relaxed">
+            <p className="text-sm text-blue-400 font-semibold mb-2">June 2025 War Cost</p>
+            <p className="text-xs text-zinc-300 leading-relaxed">
               $2-4 billion in interceptors burned in twelve days (Norsk Luftvern calculation).
             </p>
           </div>

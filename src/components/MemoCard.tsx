@@ -43,10 +43,10 @@ const MemoCard = ({
           {/* Series badge */}
           {series && (
             <div className="flex items-center gap-2 mb-3">
-              <span className="px-2 py-0.5 bg-primary text-primary-foreground text-[10px] font-mono uppercase tracking-wider">
+              <span className="px-2 py-0.5 bg-primary text-primary-foreground text-[10px] uppercase tracking-wider">
                 Part {series.part} of {series.total}
               </span>
-              <span className="text-primary font-mono text-[10px] uppercase tracking-wider">
+              <span className="text-primary text-[10px] uppercase tracking-wider">
                 {series.name} Series
               </span>
             </div>
@@ -55,7 +55,7 @@ const MemoCard = ({
           {/* Ticker badge */}
           {ticker && !series && (
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-primary font-mono text-[10px] uppercase tracking-wider">
+              <span className="text-primary text-[10px] uppercase tracking-wider">
                 {ticker}
               </span>
             </div>
@@ -63,18 +63,18 @@ const MemoCard = ({
 
           {/* Title */}
           <Link to={path}>
-            <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
               {title}
             </h3>
           </Link>
 
           {/* Subtitle */}
-          <p className="text-muted-foreground font-mono text-sm leading-relaxed mb-3 line-clamp-3">
+          <p className="text-muted-foreground text-sm leading-relaxed mb-3 line-clamp-3">
             {subtitle}
           </p>
 
           {/* Meta */}
-          <div className="flex flex-wrap items-center gap-3 text-muted-foreground font-mono text-xs mb-4">
+          <div className="flex flex-wrap items-center gap-3 text-muted-foreground text-xs mb-4">
             <span>{date}</span>
           </div>
 
@@ -92,7 +92,7 @@ const MemoCard = ({
         <div className="flex flex-col gap-2 md:w-40 shrink-0">
           <Link
             to={path}
-            className="inline-flex items-center justify-center gap-2 px-4 py-2 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono text-xs uppercase tracking-wider transition-all duration-300 group/btn"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-xs uppercase tracking-wider transition-all duration-300 group/btn"
           >
             <span>Read</span>
             <ArrowRight
@@ -104,7 +104,7 @@ const MemoCard = ({
             <a
               href={pdfPath}
               download
-              className="inline-flex items-center justify-center gap-2 px-4 py-2 border border-border text-muted-foreground hover:border-primary/50 hover:text-foreground font-mono text-xs uppercase tracking-wider transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2 border border-border text-muted-foreground hover:border-primary/50 hover:text-foreground text-xs uppercase tracking-wider transition-all duration-300"
             >
               <Download size={14} />
               <span>PDF</span>

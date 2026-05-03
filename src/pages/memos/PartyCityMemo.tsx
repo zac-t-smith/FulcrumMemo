@@ -28,7 +28,7 @@ const PartyCityMemo = () => {
           >
             <Link
               to="/memos"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-xs uppercase tracking-wider mb-8"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-xs uppercase tracking-wider mb-8"
             >
               <ArrowLeft size={14} />
               All Memos
@@ -42,25 +42,25 @@ const PartyCityMemo = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-8"
           >
-            <p className="text-primary font-mono text-[10px] tracking-[0.2em] uppercase mb-2">
+            <p className="text-primary text-[10px] tracking-[0.2em] uppercase mb-2">
               Credit Memo
             </p>
-            <span className="inline-block bg-red-500/20 text-red-400 px-3 py-1 text-[10px] font-mono uppercase tracking-wider mb-4">
+            <span className="inline-block bg-red-500/20 text-red-400 px-3 py-1 text-[10px] uppercase tracking-wider mb-4">
               Restructuring Failure
             </span>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="tag-pill">Corporate RX</span>
               <span className="tag-pill">Retail</span>
             </div>
-            <h1 className="font-display text-2xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
+            <h1 className="text-2xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
               Party City: When Debt Reduction Can't Save a Dying Business
             </h1>
-            <p className="text-muted-foreground font-mono text-base italic mb-6 leading-relaxed">
+            <p className="text-muted-foreground text-base italic mb-6 leading-relaxed">
               Post-mortem analysis of a failed bankruptcy restructuring. The specialty retailer
               eliminated nearly $1 billion in debt, only to liquidate 14 months later—a case study
               in mistaking balance sheet repair for business model salvation.
             </p>
-            <div className="flex flex-wrap gap-4 text-muted-foreground font-mono text-xs">
+            <div className="flex flex-wrap gap-4 text-muted-foreground text-xs">
               <span>October 2025</span>
               <span className="text-primary">|</span>
               <span>Zachary Smith</span>
@@ -78,13 +78,13 @@ const PartyCityMemo = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <p className="text-foreground font-mono text-base leading-[1.8] mb-6">
+            <p className="text-foreground text-base leading-[1.8] mb-6">
               Party City's October 2023 bankruptcy emergence lasted just 14 months—a case study in
               mistaking balance sheet repair for business model salvation. The specialty retailer
               eliminated nearly $1 billion in debt, closed 70 underperforming stores, and raised $75
               million in fresh equity, only to file for liquidation bankruptcy in December 2024.
             </p>
-            <p className="text-muted-foreground font-mono text-sm leading-[1.8] mb-8">
+            <p className="text-muted-foreground text-sm leading-[1.8] mb-8">
               By February 2025, all 700+ stores were closed and 12,000 employees terminated. This
               post-mortem examines why the restructuring failed, identifies early warning signs
               visible in real-time, and extracts lessons for credit investors evaluating distressed
@@ -99,10 +99,10 @@ const PartyCityMemo = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="surface-elevated border-l-2 border-primary p-6 mb-8"
           >
-            <h3 className="text-primary font-mono text-[10px] uppercase tracking-wider mb-4">
+            <h3 className="text-primary text-[10px] uppercase tracking-wider mb-4">
               Key Timeline
             </h3>
-            <ul className="space-y-2 text-muted-foreground font-mono text-sm">
+            <ul className="space-y-2 text-muted-foreground text-sm">
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold">▸</span>
                 <span>October 12, 2023: Emerged from Chapter 11 bankruptcy</span>
@@ -129,10 +129,10 @@ const PartyCityMemo = () => {
             transition={{ duration: 0.6, delay: 0.25 }}
             className="surface-elevated border-l-2 border-primary p-6 mb-8"
           >
-            <h3 className="text-primary font-mono text-[10px] uppercase tracking-wider mb-4">
+            <h3 className="text-primary text-[10px] uppercase tracking-wider mb-4">
               Estimated Recoveries
             </h3>
-            <ul className="space-y-2 text-muted-foreground font-mono text-sm">
+            <ul className="space-y-2 text-muted-foreground text-sm">
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold">▸</span>
                 <span>ABL Facility lenders: 30-40 cents on the dollar</span>
@@ -158,7 +158,7 @@ const PartyCityMemo = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="border-l-2 border-primary pl-6 my-8"
           >
-            <p className="text-xl font-display italic text-primary leading-relaxed">
+            <p className="text-xl italic text-primary leading-relaxed">
               "Debt reduction alone cannot salvage a business facing secular decline, intensifying
               competition, and no sustainable competitive advantages."
             </p>
@@ -171,17 +171,17 @@ const PartyCityMemo = () => {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="surface-elevated border-l-2 border-primary p-6 mb-8"
           >
-            <h3 className="text-primary font-mono text-[10px] uppercase tracking-wider mb-4">
+            <h3 className="text-primary text-[10px] uppercase tracking-wider mb-4">
               Full Analysis
             </h3>
-            <p className="text-muted-foreground font-mono text-sm leading-relaxed mb-4">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
               Download the complete PDF analysis including root cause analysis, red flag timeline,
               and trading implications for distressed debt investors.
             </p>
             <a
               href="/memos/Party_City_Credit_Analysis.pdf"
               download
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-mono text-sm uppercase tracking-wider glow-subtle hover:bg-gold-glow transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground text-sm uppercase tracking-wider glow-subtle hover:bg-gold-glow transition-all duration-300"
             >
               <Download size={18} />
               Download Full Analysis (PDF)
@@ -195,7 +195,7 @@ const PartyCityMemo = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="bg-red-900/20 border-2 border-red-600 p-6 rounded mb-8"
           >
-            <p className="text-red-300 font-mono text-sm font-semibold text-center">
+            <p className="text-red-300 text-sm font-semibold text-center">
               When equity is nearly worthless and EV/Revenue is sub-0.2x, even "secured" debt is
               highly speculative.
             </p>
@@ -208,11 +208,11 @@ const PartyCityMemo = () => {
             transition={{ duration: 0.6, delay: 0.45 }}
             className="mt-16 pt-8 border-t border-border"
           >
-            <div className="text-muted-foreground font-mono text-sm mb-4">
+            <div className="text-muted-foreground text-sm mb-4">
               <p className="font-semibold text-foreground mb-2">Contact</p>
               <p>Zachary Smith | zac.smith@financier.com</p>
             </div>
-            <p className="text-muted-foreground font-mono text-xs leading-relaxed">
+            <p className="text-muted-foreground text-xs leading-relaxed">
               <strong>Disclaimer:</strong> This analysis is for educational purposes only and does
               not constitute investment advice. All information is based on publicly available
               sources and estimates, which may prove incorrect.

@@ -1,0 +1,5 @@
+# Fulcrum Memo v4 data pipeline dependencies.
+# The FRED side (scripts/fetch_fred_data.py) is stdlib-only and does NOT
+# need anything in this file. yfinance is required only for the ETF side
+# (scripts/fetch_etf_data.py).
+yfinance>=0.2.40

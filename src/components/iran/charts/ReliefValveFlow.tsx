@@ -146,10 +146,10 @@ export const ReliefValveFlow = ({ className }: { className?: string }) => {
       className={cn('memo-chart-container', className)}
     >
       <div className="mb-6">
-        <h4 className="font-display text-xl font-bold text-zinc-100 mb-2">
+        <h4 className="text-xl font-bold text-zinc-100 mb-2">
           The Relief Valve: Global Oil Supply Routing
         </h4>
-        <p className="font-mono text-sm text-zinc-400">
+        <p className="text-sm text-zinc-400">
           Green sources are ALL Western Hemisphere. Red/orange consumers are ALL dependent on blocked supply.
         </p>
       </div>
@@ -158,13 +158,13 @@ export const ReliefValveFlow = ({ className }: { className?: string }) => {
       <div className="grid md:grid-cols-[1fr_auto_1fr] gap-6 items-start">
         {/* Supply Sources */}
         <div className="space-y-3">
-          <h5 className="font-mono text-xs text-primary uppercase tracking-wider mb-4">
+          <h5 className="text-xs text-primary uppercase tracking-wider mb-4">
             Supply Sources
           </h5>
 
           {/* Eastern Hemisphere - Blocked/Limited */}
           <div className="mb-6">
-            <p className="font-mono text-[10px] text-zinc-500 uppercase mb-2">Eastern Hemisphere</p>
+            <p className="text-[10px] text-zinc-500 uppercase mb-2">Eastern Hemisphere</p>
             {easternSources.map((source, index) => (
               <motion.div
                 key={source.name}
@@ -185,11 +185,11 @@ export const ReliefValveFlow = ({ className }: { className?: string }) => {
                 <div className="flex items-center justify-between mb-1">
                   <div className="flex items-center gap-2">
                     {getStatusIcon(source.status)}
-                    <span className="font-mono text-sm text-foreground">{source.name}</span>
+                    <span className="text-sm text-foreground">{source.name}</span>
                   </div>
                   <span
                     className={cn(
-                      'font-mono text-xs font-semibold',
+                      'text-xs font-semibold',
                       source.status === 'blocked' ? 'text-red-400 line-through' : 'text-amber-400'
                     )}
                   >
@@ -197,7 +197,7 @@ export const ReliefValveFlow = ({ className }: { className?: string }) => {
                   </span>
                 </div>
                 {source.note && (
-                  <p className="font-mono text-[10px] text-zinc-500 mt-1">{source.note}</p>
+                  <p className="text-[10px] text-zinc-500 mt-1">{source.note}</p>
                 )}
               </motion.div>
             ))}
@@ -205,7 +205,7 @@ export const ReliefValveFlow = ({ className }: { className?: string }) => {
 
           {/* Western Hemisphere - Flowing */}
           <div>
-            <p className="font-mono text-[10px] text-emerald-400 uppercase mb-2">
+            <p className="text-[10px] text-emerald-400 uppercase mb-2">
               Western Hemisphere (U.S. Controlled)
             </p>
             {westernSources.map((source, index) => (
@@ -225,14 +225,14 @@ export const ReliefValveFlow = ({ className }: { className?: string }) => {
                 <div className="flex items-center justify-between mb-1">
                   <div className="flex items-center gap-2">
                     {getStatusIcon(source.status)}
-                    <span className="font-mono text-sm text-foreground">{source.name}</span>
+                    <span className="text-sm text-foreground">{source.name}</span>
                   </div>
-                  <span className="font-mono text-xs font-semibold text-emerald-400">
+                  <span className="text-xs font-semibold text-emerald-400">
                     {source.volume}
                   </span>
                 </div>
                 {source.note && (
-                  <p className="font-mono text-[10px] text-zinc-500 mt-1">{source.note}</p>
+                  <p className="text-[10px] text-zinc-500 mt-1">{source.note}</p>
                 )}
               </motion.div>
             ))}
@@ -250,8 +250,8 @@ export const ReliefValveFlow = ({ className }: { className?: string }) => {
           >
             <div className="w-24 h-24 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
               <div className="text-center">
-                <p className="font-mono text-[10px] text-primary uppercase">U.S.</p>
-                <p className="font-mono text-[10px] text-primary uppercase">Control</p>
+                <p className="text-[10px] text-primary uppercase">U.S.</p>
+                <p className="text-[10px] text-primary uppercase">Control</p>
               </div>
             </div>
             {/* Pulsing ring */}
@@ -265,14 +265,14 @@ export const ReliefValveFlow = ({ className }: { className?: string }) => {
           {/* Flow arrows */}
           <div className="flex items-center gap-4 my-4">
             <ArrowRight className="text-emerald-400" />
-            <span className="font-mono text-[10px] text-zinc-500">flows to</span>
+            <span className="text-[10px] text-zinc-500">flows to</span>
             <ArrowRight className="text-zinc-500" />
           </div>
         </div>
 
         {/* Consumers */}
         <div className="space-y-3">
-          <h5 className="font-mono text-xs text-primary uppercase tracking-wider mb-4">
+          <h5 className="text-xs text-primary uppercase tracking-wider mb-4">
             Consumers (Hormuz Dependency)
           </h5>
           {consumers.map((consumer, index) => (
@@ -288,10 +288,10 @@ export const ReliefValveFlow = ({ className }: { className?: string }) => {
               )}
             >
               <div className="flex items-center justify-between mb-1">
-                <span className="font-mono text-sm text-foreground">{consumer.name}</span>
+                <span className="text-sm text-foreground">{consumer.name}</span>
                 <span
                   className={cn(
-                    'font-mono text-sm font-bold px-2 py-0.5 rounded',
+                    'text-sm font-bold px-2 py-0.5 rounded',
                     consumer.status === 'critical' && 'bg-red-500/20 text-red-400',
                     consumer.status === 'severe' && 'bg-orange-500/20 text-orange-400',
                     consumer.status === 'moderate' && 'bg-yellow-500/20 text-yellow-400',
@@ -302,7 +302,7 @@ export const ReliefValveFlow = ({ className }: { className?: string }) => {
                 </span>
               </div>
               {consumer.note && (
-                <p className="font-mono text-[10px] text-zinc-500 mt-1">{consumer.note}</p>
+                <p className="text-[10px] text-zinc-500 mt-1">{consumer.note}</p>
               )}
             </motion.div>
           ))}
@@ -313,24 +313,24 @@ export const ReliefValveFlow = ({ className }: { className?: string }) => {
       <div className="mt-8 pt-4 border-t border-zinc-700 flex flex-wrap items-center gap-6">
         <div className="flex items-center gap-2">
           <Check size={14} className="text-emerald-400" />
-          <span className="font-mono text-[10px] text-zinc-400">Flowing</span>
+          <span className="text-[10px] text-zinc-400">Flowing</span>
         </div>
         <div className="flex items-center gap-2">
           <X size={14} className="text-red-400" />
-          <span className="font-mono text-[10px] text-zinc-400">Blocked</span>
+          <span className="text-[10px] text-zinc-400">Blocked</span>
         </div>
         <div className="flex items-center gap-2">
           <AlertTriangle size={14} className="text-amber-400" />
-          <span className="font-mono text-[10px] text-zinc-400">Limited</span>
+          <span className="text-[10px] text-zinc-400">Limited</span>
         </div>
       </div>
 
       {/* Key Insight */}
       <div className="mt-4 p-4 bg-emerald-500/10 rounded-lg border border-emerald-500/30">
-        <p className="font-mono text-xs text-emerald-400 font-semibold mb-1">
+        <p className="text-xs text-emerald-400 font-semibold mb-1">
           The Structural Outcome
         </p>
-        <p className="font-mono text-xs text-zinc-300 leading-relaxed">
+        <p className="text-xs text-zinc-300 leading-relaxed">
           The U.S. controls the only major relief valve (Venezuela + domestic production) while
           holding tariff leverage over every energy-desperate ally. One country sits in the middle,
           controlling the flow. This isn't a coincidence — it's the capital structure post-restructuring.

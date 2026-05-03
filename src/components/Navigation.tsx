@@ -33,7 +33,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a
           href="#"
-          className="font-display text-2xl font-semibold text-foreground hover:text-primary transition-colors"
+          className="text-2xl font-semibold text-foreground hover:text-primary transition-colors"
         >
           ZS
         </a>

@@ -108,7 +108,7 @@ const EventDot = ({ event, color, onHover, isHighlighted }: EventDotProps) => {
         animate={isHighlighted ? { scale: [1, 1.3, 1] } : {}}
         transition={{ duration: 0.5, repeat: isHighlighted ? Infinity : 0 }}
       />
-      <span className="font-mono text-[8px] text-zinc-500 mt-1 whitespace-nowrap">
+      <span className="text-[8px] text-zinc-500 mt-1 whitespace-nowrap">
         {formatDateShort(event.date)}
       </span>
     </motion.div>
@@ -122,11 +122,11 @@ const CustomTooltip = ({ active, payload }: any) => {
 
   return (
     <div className="bg-zinc-900 border border-zinc-700 p-3 rounded-lg shadow-xl">
-      <p className="font-mono text-xs text-zinc-400 mb-1">{data.dateShort}</p>
-      <p className="font-mono text-sm text-amber-400">
+      <p className="text-xs text-zinc-400 mb-1">{data.dateShort}</p>
+      <p className="text-sm text-amber-400">
         Brent: ${data.brent?.toFixed(2) || 'N/A'}
       </p>
-      <p className="font-mono text-sm text-blue-400">
+      <p className="text-sm text-blue-400">
         WTI: ${data.wti?.toFixed(2) || 'N/A'}
       </p>
     </div>
@@ -146,10 +146,10 @@ export const SequenceTimeline = ({ className }: { className?: string }) => {
       className={cn('memo-chart-container', className)}
     >
       <div className="mb-6">
-        <h4 className="font-display text-xl font-bold text-zinc-100 mb-2">
+        <h4 className="text-xl font-bold text-zinc-100 mb-2">
           The Sequence Timeline
         </h4>
-        <p className="font-mono text-sm text-zinc-400">
+        <p className="text-sm text-zinc-400">
           January – April 2026: Three policy tracks converging
         </p>
       </div>
@@ -161,10 +161,10 @@ export const SequenceTimeline = ({ className }: { className?: string }) => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-4 p-4 bg-zinc-800/80 border border-zinc-700 rounded-lg"
         >
-          <p className="font-mono text-sm font-semibold text-foreground">
+          <p className="text-sm font-semibold text-foreground">
             {hoveredEvent.label}
           </p>
-          <p className="font-mono text-xs text-zinc-400 mt-1">
+          <p className="text-xs text-zinc-400 mt-1">
             {formatDateShort(hoveredEvent.date)} — {hoveredEvent.description}
           </p>
         </motion.div>
@@ -176,7 +176,7 @@ export const SequenceTimeline = ({ className }: { className?: string }) => {
         <div className="relative">
           <div className="flex items-center gap-3 mb-3">
             <span className="w-3 h-3 rounded-full bg-emerald-500" />
-            <span className="font-mono text-xs font-semibold text-emerald-400 uppercase tracking-wider">
+            <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider">
               Venezuela
             </span>
           </div>
@@ -200,7 +200,7 @@ export const SequenceTimeline = ({ className }: { className?: string }) => {
         <div className="relative">
           <div className="flex items-center gap-3 mb-3">
             <span className="w-3 h-3 rounded-full bg-amber-500" />
-            <span className="font-mono text-xs font-semibold text-amber-400 uppercase tracking-wider">
+            <span className="text-xs font-semibold text-amber-400 uppercase tracking-wider">
               Tariffs
             </span>
           </div>
@@ -225,7 +225,7 @@ export const SequenceTimeline = ({ className }: { className?: string }) => {
         <div className="relative">
           <div className="flex items-center gap-3 mb-3">
             <span className="w-3 h-3 rounded-full bg-red-500" />
-            <span className="font-mono text-xs font-semibold text-red-400 uppercase tracking-wider">
+            <span className="text-xs font-semibold text-red-400 uppercase tracking-wider">
               Iran / Hormuz
             </span>
           </div>
@@ -252,10 +252,10 @@ export const SequenceTimeline = ({ className }: { className?: string }) => {
       {/* Oil Price Overlay Chart */}
       <div className="mt-8 pt-6 border-t border-zinc-700">
         <div className="flex items-center justify-between mb-4">
-          <p className="font-mono text-xs uppercase tracking-wider text-primary">
+          <p className="text-xs uppercase tracking-wider text-primary">
             Brent Crude Price Overlay
           </p>
-          <p className="font-mono text-[9px] text-zinc-500">
+          <p className="text-[9px] text-zinc-500">
             {EIA_SOURCE_ATTRIBUTION}
           </p>
         </div>
@@ -313,7 +313,7 @@ export const SequenceTimeline = ({ className }: { className?: string }) => {
 
       {/* Key Insight */}
       <div className="mt-6 p-4 bg-primary/5 rounded-lg border border-primary/20">
-        <p className="font-mono text-xs text-zinc-300 leading-relaxed">
+        <p className="text-xs text-zinc-300 leading-relaxed">
           <span className="text-primary font-semibold">Pattern:</span> Green events cluster in January
           (asset acquisition). Amber spans January-February (leverage positioning). Red starts Feb 28
           (detonation). The price line is flat during pre-positioning, then explodes at the exact

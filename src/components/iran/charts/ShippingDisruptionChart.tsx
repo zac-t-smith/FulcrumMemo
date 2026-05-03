@@ -50,31 +50,31 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
   return (
     <div className="surface-card border border-border p-4 rounded-lg shadow-xl max-w-xs">
-      <p className="font-mono text-sm font-semibold text-primary mb-2">{label}</p>
+      <p className="text-sm font-semibold text-primary mb-2">{label}</p>
       <div className="space-y-2">
         {data.count !== undefined && (
           <div className="flex justify-between gap-4">
-            <span className="font-mono text-xs text-blue-400">Tanker Transits:</span>
-            <span className="font-mono text-xs text-foreground font-semibold">{data.count}</span>
+            <span className="text-xs text-blue-400">Tanker Transits:</span>
+            <span className="text-xs text-foreground font-semibold">{data.count}</span>
           </div>
         )}
         {data.vlccRate && (
           <div className="flex justify-between gap-4">
-            <span className="font-mono text-xs text-amber-400">VLCC Rate:</span>
-            <span className="font-mono text-xs text-foreground font-semibold">
+            <span className="text-xs text-amber-400">VLCC Rate:</span>
+            <span className="text-xs text-foreground font-semibold">
               {formatCurrency(data.vlccRate)}/day
             </span>
           </div>
         )}
         {data.event && (
-          <p className="font-mono text-[10px] text-muted-foreground italic border-t border-border pt-2 mt-2">
+          <p className="text-[10px] text-muted-foreground italic border-t border-border pt-2 mt-2">
             {data.event}
           </p>
         )}
         {event && (
           <div className="border-t border-border pt-2 mt-2">
-            <p className="font-mono text-[10px] text-primary font-semibold">{event.title}</p>
-            <p className="font-mono text-[10px] text-muted-foreground">{event.description}</p>
+            <p className="text-[10px] text-primary font-semibold">{event.title}</p>
+            <p className="text-[10px] text-muted-foreground">{event.description}</p>
           </div>
         )}
       </div>
@@ -94,10 +94,10 @@ export const ShippingDisruptionChart = ({ className }: { className?: string }) =
       className={cn('my-8 p-6 surface-card border border-border rounded-lg', className)}
     >
       <div className="mb-6">
-        <h4 className="font-display text-lg font-semibold text-foreground mb-1">
+        <h4 className="text-lg font-semibold text-foreground mb-1">
           Strait of Hormuz Shipping Disruption
         </h4>
-        <p className="font-mono text-xs text-muted-foreground">
+        <p className="text-xs text-muted-foreground">
           {dateRangeSubtitle}
         </p>
       </div>
@@ -178,32 +178,32 @@ export const ShippingDisruptionChart = ({ className }: { className?: string }) =
 
       {/* Key Metrics */}
       <div className="mt-6 pt-6 border-t border-border">
-        <p className="font-mono text-[10px] uppercase tracking-wider text-primary mb-3">
+        <p className="text-[10px] uppercase tracking-wider text-primary mb-3">
           Key Metrics (as of {keyMetricsDate})
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="text-center p-3 bg-red-500/10 rounded border border-red-500/20">
-            <p className="font-display text-2xl font-bold text-red-400">{transitCollapsePercent}%</p>
-            <p className="font-mono text-[10px] text-muted-foreground">Transit Collapse</p>
+            <p className="text-2xl font-bold text-red-400">{transitCollapsePercent}%</p>
+            <p className="text-[10px] text-muted-foreground">Transit Collapse</p>
           </div>
           <div className="text-center p-3 bg-amber-500/10 rounded border border-amber-500/20">
-            <p className="font-display text-2xl font-bold text-amber-400">{maxVlccRateFormatted}</p>
-            <p className="font-mono text-[10px] text-muted-foreground">VLCC Rate/Day <span className="text-zinc-500">(est.)</span></p>
+            <p className="text-2xl font-bold text-amber-400">{maxVlccRateFormatted}</p>
+            <p className="text-[10px] text-muted-foreground">VLCC Rate/Day <span className="text-zinc-500">(est.)</span></p>
           </div>
           <div className="text-center p-3 bg-blue-500/10 rounded border border-blue-500/20">
-            <p className="font-display text-2xl font-bold text-blue-400">{tankersStranded}</p>
-            <p className="font-mono text-[10px] text-muted-foreground">Tankers Stranded</p>
+            <p className="text-2xl font-bold text-blue-400">{tankersStranded}</p>
+            <p className="text-[10px] text-muted-foreground">Tankers Stranded</p>
           </div>
           <div className="text-center p-3 bg-purple-500/10 rounded border border-purple-500/20">
-            <p className="font-display text-2xl font-bold text-purple-400">{shipsUnableToExit}</p>
-            <p className="font-mono text-[10px] text-muted-foreground">Ships Unable to Exit</p>
+            <p className="text-2xl font-bold text-purple-400">{shipsUnableToExit}</p>
+            <p className="text-[10px] text-muted-foreground">Ships Unable to Exit</p>
           </div>
         </div>
       </div>
 
       {/* Event Timeline */}
       <div className="mt-6 pt-6 border-t border-border">
-        <p className="font-mono text-[10px] uppercase tracking-wider text-primary mb-3">
+        <p className="text-[10px] uppercase tracking-wider text-primary mb-3">
           Key Events
         </p>
         <div className="space-y-2">
@@ -222,16 +222,16 @@ export const ShippingDisruptionChart = ({ className }: { className?: string }) =
               )}
               onClick={() => setSelectedEvent(selectedEvent === event.date ? null : event.date)}
             >
-              <span className="font-mono text-xs text-primary font-semibold whitespace-nowrap">
+              <span className="text-xs text-primary font-semibold whitespace-nowrap">
                 {event.date}
               </span>
               <div>
-                <p className="font-mono text-xs text-foreground font-semibold">{event.title}</p>
+                <p className="text-xs text-foreground font-semibold">{event.title}</p>
                 {selectedEvent === event.date && (
                   <motion.p
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
-                    className="font-mono text-[11px] text-muted-foreground mt-1"
+                    className="text-[11px] text-muted-foreground mt-1"
                   >
                     {event.description}
                   </motion.p>

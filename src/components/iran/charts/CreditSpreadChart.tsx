@@ -29,13 +29,13 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
   return (
     <div className="surface-card border border-border p-4 rounded-lg shadow-xl">
-      <p className="font-mono text-sm font-semibold text-foreground mb-2">{label}</p>
+      <p className="text-sm font-semibold text-foreground mb-2">{label}</p>
       <div className="flex justify-between gap-4 mb-1">
-        <span className="font-mono text-xs text-primary">HY Spread:</span>
-        <span className="font-mono text-xs text-foreground font-semibold">{data.spread} bps</span>
+        <span className="text-xs text-primary">HY Spread:</span>
+        <span className="text-xs text-foreground font-semibold">{data.spread} bps</span>
       </div>
       {data.event && (
-        <p className="font-mono text-[10px] text-muted-foreground italic mt-2 border-t border-border pt-2">
+        <p className="text-[10px] text-muted-foreground italic mt-2 border-t border-border pt-2">
           {data.event}
         </p>
       )}
@@ -59,10 +59,10 @@ export const CreditSpreadChart = ({ className }: { className?: string }) => {
       className={cn('my-8 p-6 surface-card border border-border rounded-lg', className)}
     >
       <div className="mb-6">
-        <h4 className="font-display text-lg font-semibold text-foreground mb-1">
+        <h4 className="text-lg font-semibold text-foreground mb-1">
           High-Yield Credit Spreads: Historical Context
         </h4>
-        <p className="font-mono text-xs text-muted-foreground">
+        <p className="text-xs text-muted-foreground">
           HY OAS (Option-Adjusted Spread) over Treasuries - shaded areas show prior crises
         </p>
       </div>
@@ -130,7 +130,7 @@ export const CreditSpreadChart = ({ className }: { className?: string }) => {
 
       {/* Key Metrics */}
       <div className="mt-6 pt-6 border-t border-border">
-        <p className="font-mono text-[10px] uppercase tracking-wider text-primary mb-3">
+        <p className="text-[10px] uppercase tracking-wider text-primary mb-3">
           Credit Market Setup
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -138,39 +138,39 @@ export const CreditSpreadChart = ({ className }: { className?: string }) => {
             {isLive && (
               <div className="absolute top-1 right-1 flex items-center gap-1">
                 <Radio size={8} className="text-emerald-400 animate-pulse" />
-                <span className="font-mono text-[8px] text-emerald-400">LIVE</span>
+                <span className="text-[8px] text-emerald-400">LIVE</span>
               </div>
             )}
-            <p className="font-display text-2xl font-bold text-emerald-400">
+            <p className="text-2xl font-bold text-emerald-400">
               {isLoading ? '...' : currentSpread}
             </p>
-            <p className="font-mono text-[10px] text-muted-foreground">Current HY Spread (bps)</p>
+            <p className="text-[10px] text-muted-foreground">Current HY Spread (bps)</p>
           </div>
           <div className="p-3 bg-amber-500/10 rounded border border-amber-500/20 text-center">
-            <p className="font-display text-2xl font-bold text-amber-400">
+            <p className="text-2xl font-bold text-amber-400">
               {creditMarketData.hySpread.thirtyYearAverage}
             </p>
-            <p className="font-mono text-[10px] text-muted-foreground">30-Year Average</p>
+            <p className="text-[10px] text-muted-foreground">30-Year Average</p>
           </div>
           <div className="p-3 bg-blue-500/10 rounded border border-blue-500/20 text-center">
-            <p className="font-display text-2xl font-bold text-blue-400">
+            <p className="text-2xl font-bold text-blue-400">
               {creditMarketData.tenYearYield.value}%
             </p>
-            <p className="font-mono text-[10px] text-muted-foreground">10-Year Yield</p>
+            <p className="text-[10px] text-muted-foreground">10-Year Yield</p>
           </div>
           <div className="p-3 bg-red-500/10 rounded border border-red-500/20 text-center">
-            <p className="font-display text-2xl font-bold text-red-400">
+            <p className="text-2xl font-bold text-red-400">
               {creditMarketData.ismPricesPaid.value}
             </p>
-            <p className="font-mono text-[10px] text-muted-foreground">ISM Prices Paid</p>
+            <p className="text-[10px] text-muted-foreground">ISM Prices Paid</p>
           </div>
         </div>
 
         <div className="mt-4 p-4 bg-red-500/10 rounded border border-red-500/20">
-          <p className="font-mono text-xs text-foreground font-semibold mb-1">
+          <p className="text-xs text-foreground font-semibold mb-1">
             The Setup: Maximum Widening Potential
           </p>
-          <p className="font-mono text-[11px] text-muted-foreground">
+          <p className="text-[11px] text-muted-foreground">
             Credit spreads entered this conflict at their tightest levels in 20 years. When the
             energy shock propagates through corporate earnings—compressed margins, higher input
             costs, weaker consumer spending—spreads have enormous room to widen. The "refinancing
@@ -179,7 +179,7 @@ export const CreditSpreadChart = ({ className }: { className?: string }) => {
         </div>
 
         {/* Attribution */}
-        <p className="mt-4 font-mono text-[9px] text-muted-foreground/70">
+        <p className="mt-4 text-[9px] text-muted-foreground/70">
           {spreads?.attribution || 'Source: ICE Data Indices, LLC via FRED, Federal Reserve Bank of St. Louis'}
         </p>
       </div>

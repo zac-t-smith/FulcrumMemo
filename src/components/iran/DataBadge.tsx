@@ -38,7 +38,7 @@ export const DataBadge = ({ status, date, className }: DataBadgeProps) => {
   return (
     <span
       className={cn(
-        'inline-flex items-center gap-1 px-2 py-0.5 rounded border text-[9px] font-mono uppercase tracking-wider',
+        'inline-flex items-center gap-1 px-2 py-0.5 rounded border text-[9px] uppercase tracking-wider',
         config.color,
         className
       )}

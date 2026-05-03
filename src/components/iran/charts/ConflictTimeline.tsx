@@ -198,7 +198,7 @@ const PhaseBar = ({ className }: { className?: string }) => {
               opacity: phase.id === 'resolution' ? 0.4 : 0.8,
             }}
           >
-            <span className="font-mono text-[8px] md:text-[9px] text-white font-semibold tracking-wider whitespace-nowrap px-1">
+            <span className="text-[8px] md:text-[9px] text-white font-semibold tracking-wider whitespace-nowrap px-1">
               {phase.label}
             </span>
           </div>
@@ -230,7 +230,7 @@ const FilterButtons = ({ activeFilters, onToggle }: FilterButtonsProps) => {
             key={track.id}
             onClick={() => onToggle(track.id)}
             className={cn(
-              'px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider rounded transition-all',
+              'px-3 py-1.5 text-[10px] uppercase tracking-wider rounded transition-all',
               isActive
                 ? 'text-white'
                 : 'bg-transparent text-zinc-500 border border-zinc-700 hover:text-zinc-300'
@@ -306,28 +306,28 @@ const EventTooltip = ({ event }: EventTooltipProps) => {
           className="w-2.5 h-2.5 rounded-full"
           style={{ backgroundColor: color }}
         />
-        <p className="font-mono text-xs text-zinc-400">
+        <p className="text-xs text-zinc-400">
           {formatDateShort(event.date)}
           {event.conflictDay && (
             <span className="text-primary ml-2">Day {event.conflictDay}</span>
           )}
         </p>
       </div>
-      <p className="font-mono text-sm font-semibold text-foreground mb-1">
+      <p className="text-sm font-semibold text-foreground mb-1">
         {event.label}
       </p>
       {event.description && (
-        <p className="font-mono text-xs text-zinc-400 mb-2">
+        <p className="text-xs text-zinc-400 mb-2">
           {event.description}
         </p>
       )}
       {oilPrice && (
-        <p className="font-mono text-xs text-amber-400">
+        <p className="text-xs text-amber-400">
           Brent: ${oilPrice.toFixed(2)}
         </p>
       )}
       {event.link && (
-        <p className="font-mono text-[10px] text-primary mt-2">
+        <p className="text-[10px] text-primary mt-2">
           → Field note available
         </p>
       )}
@@ -369,13 +369,13 @@ const EventModal = ({ event, onClose }: EventModalProps) => {
               style={{ backgroundColor: color }}
             />
             <div>
-              <p className="font-mono text-xs text-zinc-400">
+              <p className="text-xs text-zinc-400">
                 {formatDateShort(event.date)}
                 {event.conflictDay && (
                   <span className="text-primary ml-2">Day {event.conflictDay}</span>
                 )}
               </p>
-              <h3 className="font-display text-lg font-bold text-foreground">
+              <h3 className="text-lg font-bold text-foreground">
                 {event.label}
               </h3>
             </div>
@@ -389,7 +389,7 @@ const EventModal = ({ event, onClose }: EventModalProps) => {
         </div>
 
         {event.description && (
-          <p className="font-mono text-sm text-zinc-300 mb-4">
+          <p className="text-sm text-zinc-300 mb-4">
             {event.description}
           </p>
         )}
@@ -397,20 +397,20 @@ const EventModal = ({ event, onClose }: EventModalProps) => {
         <div className="grid grid-cols-2 gap-4 mb-4">
           {oilPrice && (
             <div className="bg-zinc-800 p-3 rounded">
-              <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider mb-1">
+              <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">
                 Brent Crude
               </p>
-              <p className="font-mono text-xl font-bold text-amber-400">
+              <p className="text-xl font-bold text-amber-400">
                 ${oilPrice.toFixed(2)}
               </p>
             </div>
           )}
           {scenario && (
             <div className="bg-zinc-800 p-3 rounded">
-              <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider mb-1">
+              <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">
                 Full Escalation Prob.
               </p>
-              <p className="font-mono text-xl font-bold text-red-400">
+              <p className="text-xl font-bold text-red-400">
                 {scenario.probabilities.find(p => p.scenario === 'Full Escalation')?.probability}%
               </p>
             </div>
@@ -420,7 +420,7 @@ const EventModal = ({ event, onClose }: EventModalProps) => {
         {event.link && (
           <Link
             to={event.link}
-            className="flex items-center gap-2 font-mono text-sm text-primary hover:underline"
+            className="flex items-center gap-2 text-sm text-primary hover:underline"
           >
             View field note <ArrowRight size={14} />
           </Link>
@@ -445,7 +445,7 @@ const ScenarioBar = ({ className }: { className?: string }) => {
   return (
     <div className={cn('', className)}>
       <div className="flex items-center justify-between mb-2">
-        <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider">
+        <p className="text-[10px] text-zinc-500 uppercase tracking-wider">
           Scenario Probabilities (Day {latest.day})
         </p>
       </div>
@@ -455,7 +455,7 @@ const ScenarioBar = ({ className }: { className?: string }) => {
           style={{ width: `${quick}%`, backgroundColor: COLORS.strategic }}
         >
           {quick >= 10 && (
-            <span className="font-mono text-[9px] text-white font-semibold">
+            <span className="text-[9px] text-white font-semibold">
               {quick}%
             </span>
           )}
@@ -465,7 +465,7 @@ const ScenarioBar = ({ className }: { className?: string }) => {
           style={{ width: `${protracted}%`, backgroundColor: COLORS.energy }}
         >
           {protracted >= 10 && (
-            <span className="font-mono text-[9px] text-white font-semibold">
+            <span className="text-[9px] text-white font-semibold">
               {protracted}%
             </span>
           )}
@@ -475,13 +475,13 @@ const ScenarioBar = ({ className }: { className?: string }) => {
           style={{ width: `${full}%`, backgroundColor: COLORS.military }}
         >
           {full >= 10 && (
-            <span className="font-mono text-[9px] text-white font-semibold">
+            <span className="text-[9px] text-white font-semibold">
               {full}%
             </span>
           )}
         </div>
       </div>
-      <div className="flex justify-between mt-2 text-[9px] font-mono text-zinc-500">
+      <div className="flex justify-between mt-2 text-[9px] text-zinc-500">
         <span>Quick Resolution</span>
         <span>Protracted</span>
         <span className="flex items-center gap-1">
@@ -506,49 +506,49 @@ const MetricCards = ({ className }: { className?: string }) => {
   return (
     <div className={cn('grid grid-cols-2 md:grid-cols-4 gap-4', className)}>
       <div className="bg-zinc-800/50 border border-zinc-700 p-4 rounded">
-        <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider mb-2">
+        <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-2">
           Brent Crude
         </p>
-        <p className="font-mono text-2xl font-bold text-amber-400">
+        <p className="text-2xl font-bold text-amber-400">
           ${latestOil.brentSpot.toFixed(2)}
         </p>
-        <p className="font-mono text-xs text-zinc-400">
+        <p className="text-xs text-zinc-400">
           +{change.brent.toFixed(1)}% from pre-war
         </p>
       </div>
 
       <div className="bg-zinc-800/50 border border-zinc-700 p-4 rounded">
-        <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider mb-2">
+        <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-2">
           Hormuz Closure
         </p>
-        <p className="font-mono text-2xl font-bold text-red-400">
+        <p className="text-2xl font-bold text-red-400">
           {conflictMetadata.conflictDay}+ days
         </p>
-        <p className="font-mono text-xs text-zinc-400">
+        <p className="text-xs text-zinc-400">
           ~16M bpd offline
         </p>
       </div>
 
       <div className="bg-zinc-800/50 border border-zinc-700 p-4 rounded">
-        <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider mb-2">
+        <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-2">
           U.S. Casualties
         </p>
-        <p className="font-mono text-2xl font-bold text-foreground">
+        <p className="text-2xl font-bold text-foreground">
           {latestCasualty?.usKilled || 13}
         </p>
-        <p className="font-mono text-xs text-zinc-400">
+        <p className="text-xs text-zinc-400">
           KIA / 300+ wounded
         </p>
       </div>
 
       <div className="bg-zinc-800/50 border border-zinc-700 p-4 rounded">
-        <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider mb-2">
+        <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-2">
           Venezuela Output
         </p>
-        <p className="font-mono text-2xl font-bold text-emerald-400">
+        <p className="text-2xl font-bold text-emerald-400">
           ~900K bpd
         </p>
-        <p className="font-mono text-xs text-zinc-400">
+        <p className="text-xs text-zinc-400">
           Under U.S. control
         </p>
       </div>
@@ -564,8 +564,8 @@ const OilPriceOverlay = ({ height = 120, className }: { height?: number; classNa
     const data = payload[0].payload;
     return (
       <div className="bg-zinc-900 border border-zinc-700 p-2 rounded shadow-xl">
-        <p className="font-mono text-[10px] text-zinc-400">{data.dateShort}</p>
-        <p className="font-mono text-sm font-bold text-amber-400">
+        <p className="text-[10px] text-zinc-400">{data.dateShort}</p>
+        <p className="text-sm font-bold text-amber-400">
           ${data.brent?.toFixed(2)}
         </p>
       </div>
@@ -680,16 +680,16 @@ export const ConflictTimeline = ({ mode, className }: ConflictTimelineProps) => 
         <div>
           {!isCompact && (
             <>
-              <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-2">
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">
                 The Restructuring of the Middle East
               </h3>
-              <p className="font-mono text-sm text-zinc-400">
+              <p className="text-sm text-zinc-400">
                 Interactive timeline: strategic positioning → shock → attrition → negotiation
               </p>
             </>
           )}
           {isCompact && (
-            <h4 className="font-mono text-sm font-semibold text-foreground">
+            <h4 className="text-sm font-semibold text-foreground">
               Conflict Timeline
             </h4>
           )}
@@ -732,7 +732,7 @@ export const ConflictTimeline = ({ mode, className }: ConflictTimelineProps) => 
                   style={{ backgroundColor: COLORS[track] }}
                 />
                 <span
-                  className="font-mono text-[10px] font-semibold uppercase tracking-wider"
+                  className="text-[10px] font-semibold uppercase tracking-wider"
                   style={{ color: COLORS[track] }}
                 >
                   {trackLabels[track]}
@@ -757,10 +757,10 @@ export const ConflictTimeline = ({ mode, className }: ConflictTimelineProps) => 
       {/* Oil Price Overlay */}
       <div className="border-t border-zinc-800 pt-4">
         <div className="flex items-center justify-between mb-2">
-          <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider">
+          <p className="text-[10px] text-zinc-500 uppercase tracking-wider">
             Brent Crude Price Overlay
           </p>
-          <p className="font-mono text-[9px] text-zinc-600">
+          <p className="text-[9px] text-zinc-600">
             {EIA_SOURCE_ATTRIBUTION}
           </p>
         </div>
@@ -774,7 +774,7 @@ export const ConflictTimeline = ({ mode, className }: ConflictTimelineProps) => 
           <MetricCards className="mt-6 pt-6 border-t border-zinc-800" />
 
           <div className="mt-6 pt-4 border-t border-zinc-800 text-center">
-            <p className="font-mono text-[9px] text-zinc-600">
+            <p className="text-[9px] text-zinc-600">
               Oil prices: U.S. Energy Information Administration. Event data: The Fulcrum Memo field notes.
             </p>
           </div>
@@ -786,7 +786,7 @@ export const ConflictTimeline = ({ mode, className }: ConflictTimelineProps) => 
         <div className="mt-4 pt-4 border-t border-zinc-800">
           <Link
             to="/timeline"
-            className="flex items-center justify-center gap-2 font-mono text-sm text-primary hover:text-primary/80 transition-colors"
+            className="flex items-center justify-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
           >
             View full interactive timeline <ArrowRight size={14} />
           </Link>

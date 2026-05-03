@@ -50,21 +50,21 @@ const ThesisCard = ({ thesis }: { thesis: ThesisScorecard }) => {
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
             <Icon size={14} className={config.color} />
-            <span className={cn('font-mono text-[10px] uppercase tracking-wider', config.color)}>
+            <span className={cn('text-[10px] uppercase tracking-wider', config.color)}>
               {thesis.status}
             </span>
           </div>
-          <h4 className="font-display text-base font-semibold text-foreground">
+          <h4 className="text-base font-semibold text-foreground">
             {thesis.thesis}
           </h4>
         </div>
         <div className="text-right">
-          <div className="font-display text-2xl font-bold text-foreground">
+          <div className="text-2xl font-bold text-foreground">
             {thesis.currentConfidence}%
           </div>
           <div
             className={cn(
-              'font-mono text-xs',
+              'text-xs',
               confidenceChange > 0 ? 'text-emerald-400' : confidenceChange < 0 ? 'text-red-400' : 'text-muted-foreground'
             )}
           >
@@ -86,10 +86,10 @@ const ThesisCard = ({ thesis }: { thesis: ThesisScorecard }) => {
           />
         </div>
         <div className="flex justify-between mt-1">
-          <span className="font-mono text-[10px] text-muted-foreground">
+          <span className="text-[10px] text-muted-foreground">
             Initial: {thesis.initialConfidence}%
           </span>
-          <span className="font-mono text-[10px] text-muted-foreground">
+          <span className="text-[10px] text-muted-foreground">
             Current: {thesis.currentConfidence}%
           </span>
         </div>
@@ -97,14 +97,14 @@ const ThesisCard = ({ thesis }: { thesis: ThesisScorecard }) => {
 
       {/* Evidence */}
       <div>
-        <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-2">
+        <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-2">
           Supporting Evidence
         </p>
         <ul className="space-y-1">
           {thesis.evidence.map((item, index) => (
             <li key={index} className="flex items-start gap-2">
               <ChevronRight size={12} className="text-primary mt-0.5 flex-shrink-0" />
-              <span className="font-mono text-xs text-muted-foreground">{item}</span>
+              <span className="text-xs text-muted-foreground">{item}</span>
             </li>
           ))}
         </ul>
@@ -145,7 +145,7 @@ const FieldNoteDay = () => {
           {/* Back Link */}
           <Link
             to="/field-notes"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-xs mb-8"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-xs mb-8"
           >
             <ArrowLeft size={14} />
             All Field Notes
@@ -159,15 +159,15 @@ const FieldNoteDay = () => {
             className="mb-12"
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 border border-primary/30 rounded-full text-primary font-mono text-xs uppercase">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 border border-primary/30 rounded-full text-primary text-xs uppercase">
                 <Calendar size={14} />
                 Day {dayNum}
               </span>
-              <span className="font-mono text-sm text-muted-foreground">
+              <span className="text-sm text-muted-foreground">
                 {fieldNote.date}
               </span>
             </div>
-            <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               {fieldNote.title}
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
@@ -184,48 +184,48 @@ const FieldNoteDay = () => {
           >
             <div className="flex items-center gap-2 mb-4">
               <BarChart3 size={16} className="text-primary" />
-              <h2 className="font-mono text-[10px] uppercase tracking-wider text-primary">
+              <h2 className="text-[10px] uppercase tracking-wider text-primary">
                 Market Snapshot
               </h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               <div className="p-4 surface-card border border-border rounded-lg text-center">
                 <Fuel size={16} className="text-amber-400 mx-auto mb-2" />
-                <p className="font-display text-xl font-bold text-amber-400">
+                <p className="text-xl font-bold text-amber-400">
                   ${fieldNote.marketSnapshot.brentCrude}
                 </p>
-                <p className="font-mono text-[10px] text-muted-foreground">Brent Crude</p>
+                <p className="text-[10px] text-muted-foreground">Brent Crude</p>
               </div>
               <div className="p-4 surface-card border border-border rounded-lg text-center">
                 <Ship size={16} className="text-blue-400 mx-auto mb-2" />
-                <p className="font-display text-xl font-bold text-blue-400">
+                <p className="text-xl font-bold text-blue-400">
                   ${(fieldNote.marketSnapshot.vlccRate / 1000).toFixed(0)}K
                 </p>
-                <p className="font-mono text-[10px] text-muted-foreground">VLCC Rate/Day <span className="text-zinc-500">(est.)</span></p>
+                <p className="text-[10px] text-muted-foreground">VLCC Rate/Day <span className="text-zinc-500">(est.)</span></p>
               </div>
               <div className="p-4 surface-card border border-border rounded-lg text-center">
                 <DollarSign size={16} className="text-red-400 mx-auto mb-2" />
-                <p className="font-display text-xl font-bold text-red-400">
+                <p className="text-xl font-bold text-red-400">
                   {fieldNote.marketSnapshot.hySpread}
                 </p>
-                <p className="font-mono text-[10px] text-muted-foreground">HY Spread (bps)</p>
+                <p className="text-[10px] text-muted-foreground">HY Spread (bps)</p>
               </div>
               <div className="p-4 surface-card border border-border rounded-lg text-center">
                 <Zap size={16} className="text-purple-400 mx-auto mb-2" />
-                <p className="font-display text-xl font-bold text-purple-400">
+                <p className="text-xl font-bold text-purple-400">
                   {fieldNote.marketSnapshot.vix}
                 </p>
-                <p className="font-mono text-[10px] text-muted-foreground">VIX</p>
+                <p className="text-[10px] text-muted-foreground">VIX</p>
               </div>
               <div className="p-4 surface-card border border-border rounded-lg text-center col-span-2 md:col-span-1">
                 <Fuel size={16} className="text-emerald-400 mx-auto mb-2" />
-                <p className="font-display text-xl font-bold text-emerald-400">
+                <p className="text-xl font-bold text-emerald-400">
                   ${fieldNote.marketSnapshot.usGas}
                 </p>
-                <p className="font-mono text-[10px] text-muted-foreground">US Gas Avg</p>
+                <p className="text-[10px] text-muted-foreground">US Gas Avg</p>
               </div>
             </div>
-            <p className="mt-3 font-mono text-[9px] text-muted-foreground/70">
+            <p className="mt-3 text-[9px] text-muted-foreground/70">
               {EIA_SOURCE_ATTRIBUTION}
             </p>
           </motion.section>
@@ -240,7 +240,7 @@ const FieldNoteDay = () => {
             >
               <div className="flex items-center gap-2 mb-4">
                 <Target size={16} className="text-primary" />
-                <h2 className="font-mono text-[10px] uppercase tracking-wider text-primary">
+                <h2 className="text-[10px] uppercase tracking-wider text-primary">
                   Scenario Probabilities
                 </h2>
               </div>
@@ -259,11 +259,11 @@ const FieldNoteDay = () => {
                           backgroundColor: colors[index],
                         }}
                       >
-                        <span className="font-mono text-sm font-bold text-background">
+                        <span className="text-sm font-bold text-background">
                           {p.probability}%
                         </span>
                         {isBaseCase && (
-                          <span className="absolute -top-6 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-primary text-primary-foreground text-[8px] font-mono uppercase rounded whitespace-nowrap">
+                          <span className="absolute -top-6 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-primary text-primary-foreground text-[8px] uppercase rounded whitespace-nowrap">
                             Base Case
                           </span>
                         )}
@@ -277,7 +277,7 @@ const FieldNoteDay = () => {
                     const colors = ['text-emerald-400', 'text-amber-400', 'text-red-400'];
                     return (
                       <div key={p.scenario} className="text-center">
-                        <p className={cn('font-mono text-xs font-semibold', colors[index])}>
+                        <p className={cn('text-xs font-semibold', colors[index])}>
                           {p.scenario}
                         </p>
                       </div>
@@ -286,7 +286,7 @@ const FieldNoteDay = () => {
                 </div>
 
                 <div className="pt-4 border-t border-border">
-                  <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-2">
+                  <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-2">
                     Rationale
                   </p>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -306,7 +306,7 @@ const FieldNoteDay = () => {
           >
             <div className="flex items-center gap-2 mb-6">
               <CheckCircle size={16} className="text-primary" />
-              <h2 className="font-display text-xl font-semibold text-foreground">
+              <h2 className="text-xl font-semibold text-foreground">
                 Thesis Scorecard
               </h2>
             </div>
@@ -326,7 +326,7 @@ const FieldNoteDay = () => {
           >
             <div className="flex items-center gap-2 mb-6">
               <Map size={16} className="text-primary" />
-              <h2 className="font-display text-xl font-semibold text-foreground">
+              <h2 className="text-xl font-semibold text-foreground">
                 Intelligence Map
               </h2>
             </div>
@@ -348,7 +348,7 @@ const FieldNoteDay = () => {
           >
             <div className="flex items-center gap-2 mb-6">
               <Zap size={16} className="text-primary" />
-              <h2 className="font-display text-xl font-semibold text-foreground">
+              <h2 className="text-xl font-semibold text-foreground">
                 Key Developments
               </h2>
             </div>
@@ -358,7 +358,7 @@ const FieldNoteDay = () => {
                   key={category.category}
                   className="p-5 surface-card border border-border rounded-lg"
                 >
-                  <h3 className="font-mono text-[10px] uppercase tracking-wider text-primary mb-3">
+                  <h3 className="text-[10px] uppercase tracking-wider text-primary mb-3">
                     {category.category}
                   </h3>
                   <ul className="space-y-2">
@@ -383,7 +383,7 @@ const FieldNoteDay = () => {
           >
             <div className="flex items-center gap-2 mb-4">
               <TrendingUp size={16} className="text-primary" />
-              <h2 className="font-display text-xl font-semibold text-foreground">
+              <h2 className="text-xl font-semibold text-foreground">
                 Trading Implications
               </h2>
             </div>
@@ -391,7 +391,7 @@ const FieldNoteDay = () => {
               <ul className="space-y-3">
                 {fieldNote.tradingImplications.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/20 text-primary font-mono text-[10px] flex-shrink-0">
+                    <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/20 text-primary text-[10px] flex-shrink-0">
                       {index + 1}
                     </span>
                     <span className="text-foreground text-sm">{item}</span>
@@ -414,7 +414,7 @@ const FieldNoteDay = () => {
                 className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
               >
                 <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-                <span className="font-mono text-sm">Day {prevDay}</span>
+                <span className="text-sm">Day {prevDay}</span>
               </Link>
             ) : (
               <div />
@@ -422,7 +422,7 @@ const FieldNoteDay = () => {
 
             <Link
               to="/field-notes"
-              className="font-mono text-xs text-muted-foreground hover:text-primary transition-colors"
+              className="text-xs text-muted-foreground hover:text-primary transition-colors"
             >
               All Field Notes
             </Link>
@@ -432,7 +432,7 @@ const FieldNoteDay = () => {
                 to={`/field-notes/day-${nextDay}`}
                 className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
               >
-                <span className="font-mono text-sm">Day {nextDay}</span>
+                <span className="text-sm">Day {nextDay}</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             ) : (

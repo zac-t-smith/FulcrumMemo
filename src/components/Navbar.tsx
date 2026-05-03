@@ -1,27 +1,32 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 
+/**
+ * Sitewide navigation header — Phase 4E-3 cream / Economist treatment.
+ *
+ * Eyebrow text in small caps with red dot separators, Georgia serif for
+ * the brand name, letter-spaced uppercase nav links with the active
+ * page in red. Replaces the prior dark/gold/monospace bar.
+ */
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks: Array<{ label: string; href: string; external?: boolean; highlight?: boolean }> = [
+  const navLinks: Array<{ label: string; href: string; external?: boolean }> = [
     { label: 'Memos', href: '/memos' },
     { label: 'Field Notes', href: '/field-notes' },
     { label: 'Positions', href: '/positions' },
+    { label: 'Fulcrum Index', href: '/fulcrum-index' },
     { label: 'Timeline', href: '/timeline' },
-    { label: 'WorldView', href: '/FulcrumMemo/worldview-fm/', external: true, highlight: true },
+    { label: 'WorldView', href: '/FulcrumMemo/worldview-fm/', external: true },
     { label: 'Resume', href: '/resume' },
     { label: 'About', href: '/#about' },
     { label: 'Contact', href: '/#contact' },
@@ -36,34 +41,42 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-background/95 backdrop-blur-md border-b border-border py-3'
-          : 'bg-transparent py-4'
+          ? 'py-2.5 shadow-[0_1px_0_rgba(0,0,0,0.06)]'
+          : 'py-3.5'
       }`}
+      style={{
+        background: isScrolled ? 'rgba(247,245,240,0.96)' : '#f7f5f0',
+        backdropFilter: isScrolled ? 'blur(8px)' : undefined,
+        borderBottom: '1px solid #d9d4c7',
+      }}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          {/* Pulsing gold dot */}
-          <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse-gold" />
-          <span className="font-display text-lg font-semibold gold-gradient-text tracking-tight">
-            THE FULCRUM MEMO
+      <div className="max-w-[1280px] mx-auto px-6 flex items-center justify-between gap-6">
+        {/* Brand — red dot, Georgia serif */}
+        <Link to="/" className="flex items-center gap-2 flex-shrink-0">
+          <span
+            className="w-2 h-2 rounded-full"
+            style={{ background: '#c8102e' }}
+            aria-hidden="true"
+          />
+          <span
+            className="text-[12px] font-bold tracking-[0.18em] uppercase text-[#1a1a1a]"
+            style={{ fontFamily: 'Helvetica Neue, Arial, sans-serif' }}
+          >
+            The Fulcrum Memo
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+        {/* Desktop nav links */}
+        <div className="hidden lg:flex items-center gap-5">
+          {navLinks.map((link) =>
             link.external ? (
               <a
                 key={link.label}
                 href={link.href}
-                className={`relative text-[10px] tracking-[0.2em] uppercase font-mono transition-colors ${
-                  link.highlight
-                    ? 'text-[#F96302] hover:text-[#ff7a1a]'
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
+                className="text-[10.5px] tracking-[0.18em] uppercase font-semibold transition-colors text-[#4a4a4a] hover:text-[#c8102e]"
+                style={{ fontFamily: 'Helvetica Neue, Arial, sans-serif' }}
               >
                 {link.label}
               </a>
@@ -71,75 +84,66 @@ const Navbar = () => {
               <Link
                 key={link.label}
                 to={link.href}
-                className="relative text-muted-foreground hover:text-foreground transition-colors text-[10px] tracking-[0.2em] uppercase font-mono"
+                className={`text-[10.5px] tracking-[0.18em] uppercase font-semibold transition-colors ${
+                  isActive(link.href) ? 'text-[#c8102e]' : 'text-[#4a4a4a] hover:text-[#1a1a1a]'
+                }`}
+                style={{ fontFamily: 'Helvetica Neue, Arial, sans-serif' }}
               >
                 {link.label}
-                {isActive(link.href) && (
-                  <motion.div
-                    layoutId="nav-underline"
-                    className="absolute -bottom-1 left-0 right-0 h-px bg-primary"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
               </Link>
             )
-          ))}
+          )}
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile menu toggle */}
         <button
-          className="md:hidden text-foreground p-2"
+          className="lg:hidden p-2 text-[#1a1a1a]"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md border-b border-border overflow-hidden"
-          >
-            <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                link.external ? (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className={`text-[11px] tracking-[0.2em] uppercase font-mono py-2 transition-colors ${
-                      link.highlight
-                        ? 'text-[#F96302] hover:text-[#ff7a1a]'
-                        : 'text-muted-foreground hover:text-foreground'
-                    }`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.label}
-                    to={link.href}
-                    className={`text-[11px] tracking-[0.2em] uppercase font-mono py-2 transition-colors ${
-                      isActive(link.href)
-                        ? 'text-primary'
-                        : 'text-muted-foreground hover:text-foreground'
-                    }`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                )
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Mobile menu */}
+      {isMobileMenuOpen && (
+        <div
+          className="lg:hidden absolute top-full left-0 right-0 overflow-hidden"
+          style={{
+            background: '#f7f5f0',
+            borderBottom: '1px solid #d9d4c7',
+            boxShadow: '0 8px 24px rgba(0,0,0,0.06)',
+          }}
+        >
+          <div className="max-w-[1280px] mx-auto px-6 py-4 flex flex-col gap-1">
+            {navLinks.map((link) =>
+              link.external ? (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-[11px] tracking-[0.18em] uppercase font-semibold py-2 text-[#4a4a4a] hover:text-[#c8102e]"
+                  style={{ fontFamily: 'Helvetica Neue, Arial, sans-serif' }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  className={`text-[11px] tracking-[0.18em] uppercase font-semibold py-2 ${
+                    isActive(link.href) ? 'text-[#c8102e]' : 'text-[#4a4a4a] hover:text-[#1a1a1a]'
+                  }`}
+                  style={{ fontFamily: 'Helvetica Neue, Arial, sans-serif' }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

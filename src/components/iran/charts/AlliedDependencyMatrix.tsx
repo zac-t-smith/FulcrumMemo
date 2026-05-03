@@ -82,16 +82,16 @@ export const AlliedDependencyMatrix = ({ className }: { className?: string }) =>
     >
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
         <div>
-          <h4 className="font-display text-xl font-bold text-zinc-100 mb-2">
+          <h4 className="text-xl font-bold text-zinc-100 mb-2">
             Allied Dependency Matrix
           </h4>
-          <p className="font-mono text-sm text-zinc-400">
+          <p className="text-sm text-zinc-400">
             Energy dependency + tariff exposure = dual pressure
           </p>
         </div>
         <div className="flex items-center gap-2 px-3 py-1.5 bg-amber-500/10 border border-amber-500/30 rounded">
           <AlertTriangle size={14} className="text-amber-400" />
-          <span className="font-mono text-[10px] text-amber-400 uppercase tracking-wider">
+          <span className="text-[10px] text-amber-400 uppercase tracking-wider">
             Dual Pressure Zone
           </span>
         </div>
@@ -102,19 +102,19 @@ export const AlliedDependencyMatrix = ({ className }: { className?: string }) =>
         <table className="w-full">
           <thead>
             <tr className="border-b border-zinc-700">
-              <th className="text-left py-3 px-4 font-mono text-[10px] text-zinc-500 uppercase tracking-wider">
+              <th className="text-left py-3 px-4 text-[10px] text-zinc-500 uppercase tracking-wider">
                 Country
               </th>
-              <th className="text-center py-3 px-4 font-mono text-[10px] text-zinc-500 uppercase tracking-wider">
+              <th className="text-center py-3 px-4 text-[10px] text-zinc-500 uppercase tracking-wider">
                 Hormuz Dep.
               </th>
-              <th className="text-center py-3 px-4 font-mono text-[10px] text-zinc-500 uppercase tracking-wider">
+              <th className="text-center py-3 px-4 text-[10px] text-zinc-500 uppercase tracking-wider">
                 Tariff Rate
               </th>
-              <th className="text-center py-3 px-4 font-mono text-[10px] text-zinc-500 uppercase tracking-wider">
+              <th className="text-center py-3 px-4 text-[10px] text-zinc-500 uppercase tracking-wider">
                 SPR (Days)
               </th>
-              <th className="text-left py-3 px-4 font-mono text-[10px] text-zinc-500 uppercase tracking-wider">
+              <th className="text-left py-3 px-4 text-[10px] text-zinc-500 uppercase tracking-wider">
                 Status
               </th>
             </tr>
@@ -137,7 +137,7 @@ export const AlliedDependencyMatrix = ({ className }: { className?: string }) =>
               >
                 <td className="py-4 px-4">
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-sm font-semibold text-foreground">
+                    <span className="text-sm font-semibold text-foreground">
                       {ally.country}
                     </span>
                     {ally.notes && (
@@ -157,7 +157,7 @@ export const AlliedDependencyMatrix = ({ className }: { className?: string }) =>
                       />
                     </div>
                     <span className={cn(
-                      'font-mono text-sm font-semibold px-2 py-0.5 rounded',
+                      'text-sm font-semibold px-2 py-0.5 rounded',
                       getDependencyColor(ally.hormuzDep)
                     )}>
                       {ally.hormuzDep}%
@@ -165,17 +165,17 @@ export const AlliedDependencyMatrix = ({ className }: { className?: string }) =>
                   </div>
                 </td>
                 <td className="py-4 px-4 text-center">
-                  <span className="font-mono text-sm text-primary font-semibold">
+                  <span className="text-sm text-primary font-semibold">
                     {ally.tariffRate}
                   </span>
                 </td>
                 <td className="py-4 px-4 text-center">
-                  <span className="font-mono text-sm text-zinc-400">
+                  <span className="text-sm text-zinc-400">
                     {ally.sprDays}
                   </span>
                 </td>
                 <td className="py-4 px-4">
-                  <span className="font-mono text-xs text-zinc-300">
+                  <span className="text-xs text-zinc-300">
                     {ally.status}
                   </span>
                 </td>
@@ -197,16 +197,16 @@ export const AlliedDependencyMatrix = ({ className }: { className?: string }) =>
           >
             <div className="flex items-start justify-between">
               <div>
-                <h5 className="font-mono text-sm font-semibold text-foreground mb-2">
+                <h5 className="text-sm font-semibold text-foreground mb-2">
                   {selectedData.country} — Detailed Assessment
                 </h5>
-                <p className="font-mono text-xs text-zinc-400 leading-relaxed">
+                <p className="text-xs text-zinc-400 leading-relaxed">
                   {selectedData.notes}
                 </p>
               </div>
               <div className="flex flex-col items-end gap-1">
                 <span className={cn(
-                  'px-2 py-1 rounded font-mono text-[10px] uppercase',
+                  'px-2 py-1 rounded text-[10px] uppercase',
                   getDependencyColor(selectedData.hormuzDep)
                 )}>
                   {selectedData.hormuzDep >= 50 ? 'Critical' : selectedData.hormuzDep >= 25 ? 'High' : 'Moderate'} Exposure
@@ -221,24 +221,24 @@ export const AlliedDependencyMatrix = ({ className }: { className?: string }) =>
       <div className="mt-6 pt-4 border-t border-zinc-700 flex flex-wrap items-center gap-6">
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-full bg-red-500" />
-          <span className="font-mono text-[10px] text-zinc-400">&gt;50% Critical</span>
+          <span className="text-[10px] text-zinc-400">&gt;50% Critical</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-full bg-orange-500" />
-          <span className="font-mono text-[10px] text-zinc-400">25-50% High</span>
+          <span className="text-[10px] text-zinc-400">25-50% High</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-full bg-yellow-500" />
-          <span className="font-mono text-[10px] text-zinc-400">&lt;25% Moderate</span>
+          <span className="text-[10px] text-zinc-400">&lt;25% Moderate</span>
         </div>
       </div>
 
       {/* Key Insight */}
       <div className="mt-4 p-4 bg-amber-500/10 rounded-lg border border-amber-500/30">
-        <p className="font-mono text-xs text-amber-400 font-semibold mb-1">
+        <p className="text-xs text-amber-400 font-semibold mb-1">
           The Vice Thesis
         </p>
-        <p className="font-mono text-xs text-zinc-300 leading-relaxed">
+        <p className="text-xs text-zinc-300 leading-relaxed">
           Every country faces both energy crisis AND tariff negotiation simultaneously.
           They can't simply pay market price for alternative supply — they must negotiate
           with Washington for energy relief AND tariff relief. The leverage compounds.

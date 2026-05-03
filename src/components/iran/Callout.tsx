@@ -74,12 +74,12 @@ export const Callout = ({ variant = 'insight', title, children, className }: Cal
       {title && (
         <div className="flex items-center gap-2 mb-3">
           <Icon size={16} className={config.iconColor} />
-          <h4 className={cn('font-mono text-[10px] uppercase tracking-wider', config.iconColor)}>
+          <h4 className={cn('text-[10px] uppercase tracking-wider', config.iconColor)}>
             {title}
           </h4>
         </div>
       )}
-      <div className="text-muted-foreground font-mono text-sm leading-relaxed">
+      <div className="text-muted-foreground text-sm leading-relaxed">
         {children}
       </div>
     </motion.div>

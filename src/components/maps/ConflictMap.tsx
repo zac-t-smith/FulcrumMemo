@@ -533,7 +533,7 @@ const LiveEventFeed = ({
         className="absolute top-3 left-64 z-[1000] bg-background/95 backdrop-blur-sm px-3 py-2 rounded border border-border hover:border-primary transition-colors"
       >
         <div className="flex items-center gap-2">
-          <span className="font-mono text-[10px] text-muted-foreground">Live Feed</span>
+          <span className="text-[10px] text-muted-foreground">Live Feed</span>
           {newEventCount > 0 && (
             <span className="flex items-center justify-center w-5 h-5 rounded-full bg-red-500 text-white text-[9px] font-bold animate-pulse">
               {newEventCount}
@@ -554,14 +554,14 @@ const LiveEventFeed = ({
       <div className="p-3 border-b border-border flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="font-mono text-[10px] uppercase tracking-wider text-primary">Live Event Feed</span>
+          <span className="text-[10px] uppercase tracking-wider text-primary">Live Event Feed</span>
         </div>
         <button onClick={onClose} className="text-muted-foreground hover:text-foreground text-xs">×</button>
       </div>
 
       {/* Data delay disclaimer */}
       <div className="px-3 py-2 bg-amber-500/10 border-b border-amber-500/20">
-        <p className="font-mono text-[9px] text-amber-400">
+        <p className="text-[9px] text-amber-400">
           GDELT updates: ~15 min lag. Auto-coded from news, may contain inaccuracies.
         </p>
       </div>
@@ -588,16 +588,16 @@ const LiveEventFeed = ({
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
                     <span className={cn(
-                      'px-1.5 py-0.5 rounded text-[8px] font-mono uppercase',
+                      'px-1.5 py-0.5 rounded text-[8px] uppercase',
                       event.source === 'curated' ? 'bg-primary/20 text-primary' : 'bg-white/10 text-white/60'
                     )}>
                       {event.source === 'curated' ? 'Verified' : 'GDELT'}
                     </span>
-                    <span className="font-mono text-[9px] text-muted-foreground">
+                    <span className="text-[9px] text-muted-foreground">
                       {new Date(event.timestamp).toLocaleTimeString()}
                     </span>
                   </div>
-                  <p className="font-mono text-[10px] text-foreground leading-relaxed line-clamp-2">
+                  <p className="text-[10px] text-foreground leading-relaxed line-clamp-2">
                     {event.title}
                   </p>
                   {event.url && (
@@ -606,7 +606,7 @@ const LiveEventFeed = ({
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="font-mono text-[9px] text-primary hover:underline mt-1 inline-block"
+                      className="text-[9px] text-primary hover:underline mt-1 inline-block"
                     >
                       Source →
                     </a>
@@ -668,22 +668,22 @@ const LayerTogglePanel = ({
           onChange={() => toggleLayer(layerKey)}
           className="w-3 h-3 accent-primary"
         />
-        <span className="font-mono text-[9px] text-muted-foreground flex-1">{label}</span>
+        <span className="text-[9px] text-muted-foreground flex-1">{label}</span>
         {isLive && (
-          <span className="flex items-center gap-1 px-1.5 py-0.5 bg-emerald-500/20 rounded text-[8px] font-mono text-emerald-400">
+          <span className="flex items-center gap-1 px-1.5 py-0.5 bg-emerald-500/20 rounded text-[8px] text-emerald-400">
             <span className={cn('w-1.5 h-1.5 rounded-full bg-emerald-400', status === 'connected' && 'animate-pulse')} />
             LIVE
           </span>
         )}
         {status === 'loading' && (
-          <span className="text-[8px] font-mono text-amber-400">...</span>
+          <span className="text-[8px] text-amber-400">...</span>
         )}
         {count !== undefined && count > 0 && (
-          <span className="text-[8px] font-mono text-cyan-400">{count}</span>
+          <span className="text-[8px] text-cyan-400">{count}</span>
         )}
       </label>
       {lastUpdate && layers[layerKey] && (
-        <p className="font-mono text-[8px] text-muted-foreground/50 pl-5">
+        <p className="text-[8px] text-muted-foreground/50 pl-5">
           Updated: {lastUpdate.toLocaleTimeString()}
         </p>
       )}
@@ -692,7 +692,7 @@ const LayerTogglePanel = ({
 
   return (
     <div className="absolute top-14 left-3 z-[1000] bg-background/95 backdrop-blur-sm p-3 rounded border border-border w-56">
-      <p className="font-mono text-[9px] uppercase tracking-wider text-primary mb-2">Layers</p>
+      <p className="text-[9px] uppercase tracking-wider text-primary mb-2">Layers</p>
       <div className="space-y-1">
         <LayerToggle label="Curated Events (Verified)" layerKey="curatedEvents" />
         <LayerToggle
@@ -719,11 +719,11 @@ const LayerTogglePanel = ({
       <div className="mt-3 pt-2 border-t border-border space-y-1">
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-blue-500 border-2 border-white/80" />
-          <span className="font-mono text-[8px] text-muted-foreground">Verified (solid)</span>
+          <span className="text-[8px] text-muted-foreground">Verified (solid)</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-white/40 border-2 border-dashed border-white/60" />
-          <span className="font-mono text-[8px] text-muted-foreground">GDELT (auto-coded)</span>
+          <span className="text-[8px] text-muted-foreground">GDELT (auto-coded)</span>
         </div>
       </div>
     </div>
@@ -809,7 +809,7 @@ export const ConflictMap = ({
     >
       {/* Data as of label */}
       <div className="absolute top-3 right-3 z-[1000] bg-background/90 backdrop-blur-sm px-3 py-1.5 rounded border border-border">
-        <span className="font-mono text-[10px] text-muted-foreground">
+        <span className="text-[10px] text-muted-foreground">
           Day {effectiveDay} | {layers.gdeltLive && gdeltLastUpdate ? `GDELT: ${gdeltLastUpdate.toLocaleTimeString()}` : 'Live feeds off'}
         </span>
       </div>
@@ -818,7 +818,7 @@ export const ConflictMap = ({
       {showDaySlider && (
         <div className="absolute top-3 left-3 right-32 z-[1000] bg-background/90 backdrop-blur-sm px-4 py-2 rounded border border-border">
           <div className="flex items-center gap-3">
-            <span className="font-mono text-[10px] text-muted-foreground whitespace-nowrap">Day 1</span>
+            <span className="text-[10px] text-muted-foreground whitespace-nowrap">Day 1</span>
             <input
               type="range"
               min={1}
@@ -827,7 +827,7 @@ export const ConflictMap = ({
               onChange={(e) => setSelectedDay(parseInt(e.target.value))}
               className="flex-1 h-1 bg-border rounded-lg appearance-none cursor-pointer accent-primary"
             />
-            <span className="font-mono text-[10px] text-muted-foreground whitespace-nowrap">
+            <span className="text-[10px] text-muted-foreground whitespace-nowrap">
               Day {conflictMetadata.conflictDay}
             </span>
           </div>
@@ -855,7 +855,7 @@ export const ConflictMap = ({
           className="absolute top-14 left-64 z-[1000] bg-background/95 backdrop-blur-sm px-3 py-2 rounded border border-border hover:border-primary transition-colors"
         >
           <div className="flex items-center gap-2">
-            <span className="font-mono text-[10px] text-muted-foreground">
+            <span className="text-[10px] text-muted-foreground">
               {liveFeedOpen ? 'Hide Feed' : 'Live Feed'}
             </span>
             {newGdeltEventCount > 0 && !liveFeedOpen && (
@@ -944,7 +944,7 @@ export const ConflictMap = ({
                   <div className="p-2 min-w-[200px]">
                     <div className="flex items-center justify-between mb-2">
                       <span
-                        className="px-2 py-0.5 rounded text-[9px] font-mono uppercase tracking-wider"
+                        className="px-2 py-0.5 rounded text-[9px] uppercase tracking-wider"
                         style={{
                           backgroundColor: `${getEventConfig(event.type).color}20`,
                           color: getEventConfig(event.type).color,
@@ -952,22 +952,22 @@ export const ConflictMap = ({
                       >
                         {getEventConfig(event.type).label}
                       </span>
-                      <span className="px-1.5 py-0.5 bg-primary/20 rounded text-[8px] font-mono text-primary">
+                      <span className="px-1.5 py-0.5 bg-primary/20 rounded text-[8px] text-primary">
                         VERIFIED
                       </span>
                     </div>
-                    <h4 className="font-mono text-sm font-semibold text-foreground mb-1">
+                    <h4 className="text-sm font-semibold text-foreground mb-1">
                       {event.target}
                     </h4>
-                    <p className="font-mono text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-xs text-muted-foreground leading-relaxed">
                       {event.description}
                     </p>
                     {event.impact && (
-                      <p className="font-mono text-xs text-primary mt-2 font-semibold">
+                      <p className="text-xs text-primary mt-2 font-semibold">
                         Impact: {event.impact}
                       </p>
                     )}
-                    <p className="font-mono text-[10px] text-muted-foreground mt-2">
+                    <p className="text-[10px] text-muted-foreground mt-2">
                       Day {event.day} • {event.date}
                     </p>
                   </div>
@@ -987,7 +987,7 @@ export const ConflictMap = ({
                 <div className="p-2 min-w-[220px]">
                   <div className="flex items-center gap-2 mb-2">
                     <span
-                      className="px-2 py-0.5 rounded text-[9px] font-mono uppercase"
+                      className="px-2 py-0.5 rounded text-[9px] uppercase"
                       style={{
                         backgroundColor: `${liveEventColors[event.eventType]}20`,
                         color: liveEventColors[event.eventType],
@@ -995,14 +995,14 @@ export const ConflictMap = ({
                     >
                       {event.eventType}
                     </span>
-                    <span className="px-1.5 py-0.5 bg-white/10 rounded text-[8px] font-mono text-white/60">
+                    <span className="px-1.5 py-0.5 bg-white/10 rounded text-[8px] text-white/60">
                       AUTO-CODED
                     </span>
                   </div>
-                  <h4 className="font-mono text-xs font-semibold text-foreground mb-2 leading-relaxed">
+                  <h4 className="text-xs font-semibold text-foreground mb-2 leading-relaxed">
                     {event.name}
                   </h4>
-                  <p className="font-mono text-[10px] text-muted-foreground mb-2">
+                  <p className="text-[10px] text-muted-foreground mb-2">
                     Source: {event.sourcecountry} • {new Date(event.timestamp).toLocaleString()}
                   </p>
                   {event.url && (
@@ -1010,12 +1010,12 @@ export const ConflictMap = ({
                       href={event.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-mono text-[10px] text-primary hover:underline"
+                      className="text-[10px] text-primary hover:underline"
                     >
                       Read article →
                     </a>
                   )}
-                  <p className="font-mono text-[9px] text-amber-400/70 mt-2 italic">
+                  <p className="text-[9px] text-amber-400/70 mt-2 italic">
                     ⚠ Unverified. May contain inaccuracies.
                   </p>
                 </div>
@@ -1035,7 +1035,7 @@ export const ConflictMap = ({
                   <div className="flex items-center gap-2 mb-2">
                     <span
                       className={cn(
-                        'px-2 py-0.5 rounded text-[9px] font-mono uppercase',
+                        'px-2 py-0.5 rounded text-[9px] uppercase',
                         vessel.type === 'tanker' && 'bg-cyan-500/20 text-cyan-400',
                         vessel.type === 'cargo' && 'bg-gray-500/20 text-gray-400',
                         vessel.type === 'military' && 'bg-red-500/20 text-red-400',
@@ -1044,14 +1044,14 @@ export const ConflictMap = ({
                     >
                       {vessel.type}
                     </span>
-                    <span className="font-mono text-[9px] text-muted-foreground">
+                    <span className="text-[9px] text-muted-foreground">
                       {vessel.flag}
                     </span>
                   </div>
-                  <h4 className="font-mono text-xs font-semibold text-foreground mb-1">
+                  <h4 className="text-xs font-semibold text-foreground mb-1">
                     {vessel.name}
                   </h4>
-                  <div className="space-y-1 text-[10px] font-mono text-muted-foreground">
+                  <div className="space-y-1 text-[10px] text-muted-foreground">
                     <p>MMSI: {vessel.mmsi}</p>
                     <p>Speed: {vessel.speed.toFixed(1)} kts</p>
                     <p>Heading: {vessel.heading}°</p>
@@ -1068,7 +1068,7 @@ export const ConflictMap = ({
       {/* Legend */}
       {showLegend && (
         <div className="absolute bottom-3 left-3 z-[1000] bg-background/90 backdrop-blur-sm p-3 rounded border border-border max-w-[200px]">
-          <p className="font-mono text-[9px] uppercase tracking-wider text-primary mb-2">Legend</p>
+          <p className="text-[9px] uppercase tracking-wider text-primary mb-2">Legend</p>
           <div className="grid grid-cols-1 gap-1.5">
             {layers.curatedEvents && activeTypes.slice(0, 5).map((type) => (
               <div key={type} className="flex items-center gap-2">
@@ -1078,7 +1078,7 @@ export const ConflictMap = ({
                 >
                   <span className="text-[8px]">{getEventConfig(type).emoji}</span>
                 </div>
-                <span className="font-mono text-[9px] text-muted-foreground">
+                <span className="text-[9px] text-muted-foreground">
                   {getEventConfig(type).label}
                 </span>
               </div>
@@ -1086,13 +1086,13 @@ export const ConflictMap = ({
             {layers.gdeltLive && (
               <div className="flex items-center gap-2 border-t border-border pt-1 mt-1">
                 <div className="w-3 h-3 rounded-full bg-white/40 border border-dashed border-white/60"></div>
-                <span className="font-mono text-[9px] text-muted-foreground">GDELT (unverified)</span>
+                <span className="text-[9px] text-muted-foreground">GDELT (unverified)</span>
               </div>
             )}
             {layers.exclusionZone && (
               <div className="flex items-center gap-2 border-t border-border pt-1 mt-1">
                 <div className="w-3 h-3 border-2 border-dashed border-red-500 rounded-sm opacity-50"></div>
-                <span className="font-mono text-[9px] text-muted-foreground">War Risk Zone</span>
+                <span className="text-[9px] text-muted-foreground">War Risk Zone</span>
               </div>
             )}
           </div>
@@ -1101,7 +1101,7 @@ export const ConflictMap = ({
 
       {/* Hormuz CLOSED label */}
       <div className="absolute bottom-3 right-3 z-[1000] bg-red-500/90 backdrop-blur-sm px-3 py-1 rounded">
-        <span className="font-mono text-[10px] text-white font-bold tracking-wider">
+        <span className="text-[10px] text-white font-bold tracking-wider">
           HORMUZ: CLOSED TO WESTERN SHIPPING
         </span>
       </div>
@@ -1109,7 +1109,7 @@ export const ConflictMap = ({
       {/* AIS status */}
       {layers.aisVessels && !aisApiKey && (
         <div className="absolute bottom-12 right-3 z-[1000] bg-amber-500/90 backdrop-blur-sm px-3 py-1 rounded">
-          <span className="font-mono text-[9px] text-white">
+          <span className="text-[9px] text-white">
             AIS: No API key configured
           </span>
         </div>

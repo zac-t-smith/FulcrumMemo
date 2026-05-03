@@ -92,7 +92,7 @@ export const DiagnosticFramework = () => {
               <DollarSign className="h-4 w-4 text-primary" />
               A. Liquidity Analysis
             </h4>
-            <div className="bg-muted/50 rounded-lg p-4 font-mono text-sm">
+            <div className="bg-muted/50 rounded-lg p-4 text-sm">
               <p>Current Cash: $X</p>
               <p>+ Revolver availability: $Y</p>
               <p>- Restricted cash: $Z</p>
@@ -138,7 +138,7 @@ export const DiagnosticFramework = () => {
               <TrendingDown className="h-4 w-4 text-primary" />
               B. Solvency Analysis (Who's the Fulcrum?)
             </h4>
-            <div className="bg-muted/50 rounded-lg p-4 font-mono text-sm">
+            <div className="bg-muted/50 rounded-lg p-4 text-sm">
               <p>Enterprise Value: $EV (based on EBITDA multiple or DCF)</p>
               <p className="mt-2 font-semibold">Capital Structure Waterfall:</p>
               <ul className="ml-4 space-y-1">

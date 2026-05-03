@@ -39,7 +39,7 @@ export const ShareButtons = ({ title, text, sectionId, className }: ShareButtons
 
   return (
     <div className={cn('flex items-center gap-2', className)}>
-      <span className="text-muted-foreground font-mono text-[10px] uppercase tracking-wider mr-1">
+      <span className="text-muted-foreground text-[10px] uppercase tracking-wider mr-1">
         Share:
       </span>
       <button

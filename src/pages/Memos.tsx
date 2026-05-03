@@ -144,19 +144,19 @@ const MemosPage = () => {
             >
               <Link
                 to="/"
-                className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-xs uppercase tracking-wider mb-6"
+                className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-xs uppercase tracking-wider mb-6"
               >
                 <ArrowLeft size={14} />
                 Back to Home
               </Link>
 
-              <p className="text-primary font-mono text-[10px] tracking-[0.3em] uppercase mb-3">
+              <p className="text-primary text-[10px] tracking-[0.3em] uppercase mb-3">
                 Publications
               </p>
-              <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                The <span className="gold-gradient-text">Fulcrum</span> Memo
+              <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+                The <span style={{ color: '#c9a227' }}>Fulcrum</span> Memo
               </h1>
-              <p className="text-muted-foreground font-mono text-sm leading-relaxed max-w-2xl">
+              <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
                 Independent credit research and analysis covering distressed debt, restructuring
                 situations, sovereign distress, and special situations investing.
               </p>
@@ -171,13 +171,13 @@ const MemosPage = () => {
             className="mb-10"
           >
             <div className="flex items-center gap-4 mb-4">
-              <h2 className="font-mono text-[10px] text-muted-foreground uppercase tracking-wider">
+              <h2 className="text-[10px] text-muted-foreground uppercase tracking-wider">
                 Filter by tag
               </h2>
               {selectedTags.length > 0 && (
                 <button
                   onClick={clearFilters}
-                  className="text-primary font-mono text-xs hover:underline"
+                  className="text-primary text-xs hover:underline"
                 >
                   Clear filters
                 </button>
@@ -207,7 +207,7 @@ const MemosPage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-muted-foreground font-mono text-xs mb-6"
+            className="text-muted-foreground text-xs mb-6"
           >
             Showing {filteredMemos.length} of {allMemos.length} memos
           </motion.p>
@@ -221,10 +221,10 @@ const MemosPage = () => {
               className="mb-10"
             >
               <div className="flex items-center gap-3 mb-6">
-                <h3 className="font-display text-xl font-semibold text-foreground">
+                <h3 className="text-xl font-semibold text-foreground">
                   The Asymmetric Restructuring Series
                 </h3>
-                <span className="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-mono uppercase tracking-wider border border-primary/30">
+                <span className="px-2 py-0.5 bg-primary/10 text-primary text-[10px] uppercase tracking-wider border border-primary/30">
                   3-Part Series
                 </span>
               </div>
@@ -240,24 +240,24 @@ const MemosPage = () => {
                       transition={{ duration: 0.4, delay: index * 0.1 }}
                       className="memo-card group relative"
                     >
-                      <div className="absolute top-0 left-0 bg-primary text-primary-foreground px-3 py-1 text-[10px] font-mono uppercase tracking-wider">
+                      <div className="absolute top-0 left-0 bg-primary text-primary-foreground px-3 py-1 text-[10px] uppercase tracking-wider">
                         {memo.badge ? memo.badge : `Part ${memo.series?.part}`}
                       </div>
 
                       <div className="pt-8">
                         <div className="flex items-center gap-2 mb-2">
-                          <span className="text-muted-foreground text-[10px] font-mono uppercase tracking-wider">
+                          <span className="text-muted-foreground text-[10px] uppercase tracking-wider">
                             {memo.date}
                           </span>
                         </div>
 
                         <Link to={memo.path}>
-                          <h4 className="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                          <h4 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                             {memo.title}
                           </h4>
                         </Link>
 
-                        <p className="text-muted-foreground font-mono text-xs leading-relaxed mb-4 line-clamp-3">
+                        <p className="text-muted-foreground text-xs leading-relaxed mb-4 line-clamp-3">
                           {memo.subtitle}
                         </p>
 
@@ -272,7 +272,7 @@ const MemosPage = () => {
                         <div className="flex gap-2">
                           <Link
                             to={memo.path}
-                            className="inline-flex items-center gap-2 px-4 py-2 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono text-[10px] uppercase tracking-wider transition-all duration-300 group/btn"
+                            className="inline-flex items-center gap-2 px-4 py-2 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-[10px] uppercase tracking-wider transition-all duration-300 group/btn"
                           >
                             Read
                             <ArrowRight
@@ -284,7 +284,7 @@ const MemosPage = () => {
                             <a
                               href={memo.pdfPath}
                               download
-                              className="inline-flex items-center gap-2 px-4 py-2 border border-border text-muted-foreground hover:border-primary/50 hover:text-foreground font-mono text-[10px] uppercase tracking-wider transition-all duration-300"
+                              className="inline-flex items-center gap-2 px-4 py-2 border border-border text-muted-foreground hover:border-primary/50 hover:text-foreground text-[10px] uppercase tracking-wider transition-all duration-300"
                             >
                               <Download size={12} />
                               PDF
@@ -307,7 +307,7 @@ const MemosPage = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               {seriesMemos.length > 0 && (
-                <h3 className="font-display text-xl font-semibold text-foreground mb-6">
+                <h3 className="text-xl font-semibold text-foreground mb-6">
                   Corporate Credit Analysis
                 </h3>
               )}
@@ -327,23 +327,23 @@ const MemosPage = () => {
                         <div className="flex-1">
                           {memo.ticker && (
                             <div className="flex items-center gap-2 mb-3">
-                              <span className="text-primary font-mono text-[10px] uppercase tracking-wider">
+                              <span className="text-primary text-[10px] uppercase tracking-wider">
                                 {memo.ticker}
                               </span>
                             </div>
                           )}
 
                           <Link to={memo.path}>
-                            <h4 className="font-display text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                            <h4 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                               {memo.title}
                             </h4>
                           </Link>
 
-                          <p className="text-muted-foreground font-mono text-sm leading-relaxed mb-3">
+                          <p className="text-muted-foreground text-sm leading-relaxed mb-3">
                             {memo.subtitle}
                           </p>
 
-                          <div className="flex flex-wrap items-center gap-3 text-muted-foreground font-mono text-xs mb-4">
+                          <div className="flex flex-wrap items-center gap-3 text-muted-foreground text-xs mb-4">
                             <span>{memo.date}</span>
                           </div>
 
@@ -359,7 +359,7 @@ const MemosPage = () => {
                         <div className="flex flex-col gap-2 md:w-36 shrink-0">
                           <Link
                             to={memo.path}
-                            className="inline-flex items-center justify-center gap-2 px-4 py-2 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono text-[10px] uppercase tracking-wider transition-all duration-300 group/btn"
+                            className="inline-flex items-center justify-center gap-2 px-4 py-2 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-[10px] uppercase tracking-wider transition-all duration-300 group/btn"
                           >
                             Read
                             <ArrowRight
@@ -371,7 +371,7 @@ const MemosPage = () => {
                             <a
                               href={memo.pdfPath}
                               download
-                              className="inline-flex items-center justify-center gap-2 px-4 py-2 border border-border text-muted-foreground hover:border-primary/50 hover:text-foreground font-mono text-[10px] uppercase tracking-wider transition-all duration-300"
+                              className="inline-flex items-center justify-center gap-2 px-4 py-2 border border-border text-muted-foreground hover:border-primary/50 hover:text-foreground text-[10px] uppercase tracking-wider transition-all duration-300"
                             >
                               <Download size={12} />
                               PDF
@@ -393,12 +393,12 @@ const MemosPage = () => {
               animate={{ opacity: 1 }}
               className="text-center py-12"
             >
-              <p className="text-muted-foreground font-mono text-sm">
+              <p className="text-muted-foreground text-sm">
                 No memos match the selected filters.
               </p>
               <button
                 onClick={clearFilters}
-                className="text-primary font-mono text-sm mt-2 hover:underline"
+                className="text-primary text-sm mt-2 hover:underline"
               >
                 Clear filters
               </button>

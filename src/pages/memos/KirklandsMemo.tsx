@@ -28,7 +28,7 @@ const KirklandsMemo = () => {
           >
             <Link
               to="/memos"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-xs uppercase tracking-wider mb-8"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-xs uppercase tracking-wider mb-8"
             >
               <ArrowLeft size={14} />
               All Memos
@@ -42,7 +42,7 @@ const KirklandsMemo = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-8"
           >
-            <p className="text-primary font-mono text-[10px] tracking-[0.2em] uppercase mb-2">
+            <p className="text-primary text-[10px] tracking-[0.2em] uppercase mb-2">
               The Fulcrum Memo
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
@@ -50,14 +50,14 @@ const KirklandsMemo = () => {
               <span className="tag-pill">Retail</span>
               <span className="tag-pill">Special Situations</span>
             </div>
-            <h1 className="font-display text-2xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
+            <h1 className="text-2xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
               When Your White Knight Is Actually a Vulture
             </h1>
-            <p className="text-muted-foreground font-mono text-base italic mb-6 leading-relaxed">
+            <p className="text-muted-foreground text-base italic mb-6 leading-relaxed">
               The Beyond Inc. takeover of Kirkland's demonstrates how creditor-friendly financing
               can achieve effective control without triggering takeover regulations
             </p>
-            <div className="flex flex-wrap gap-4 text-muted-foreground font-mono text-xs">
+            <div className="flex flex-wrap gap-4 text-muted-foreground text-xs">
               <span>October 2025</span>
               <span className="text-primary">|</span>
               <span>Zachary Smith</span>
@@ -75,7 +75,7 @@ const KirklandsMemo = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <p className="text-foreground font-mono text-base leading-[1.8] mb-8">
+            <p className="text-foreground text-base leading-[1.8] mb-8">
               Kirkland's Inc. presents not as a traditional distressed retail turnaround, but as a
               live case study in creditor control and strategic asset extraction disguised as rescue
               financing. What appears on the surface as a struggling home decor retailer being
@@ -92,15 +92,15 @@ const KirklandsMemo = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="surface-elevated border-l-2 border-blue-500 p-6 mb-8"
           >
-            <h3 className="text-blue-400 font-mono text-[10px] uppercase tracking-wider mb-3">
+            <h3 className="text-blue-400 text-[10px] uppercase tracking-wider mb-3">
               Why This Analysis Matters
             </h3>
-            <p className="text-muted-foreground font-mono text-sm italic leading-relaxed mb-3">
+            <p className="text-muted-foreground text-sm italic leading-relaxed mb-3">
               I've navigated a business through restructuring—not as an advisor or investor, but as
               the operator making the decisions. When you're burning cash and need capital, you
               don't have the luxury of perfect options.
             </p>
-            <p className="text-muted-foreground font-mono text-sm italic leading-relaxed">
+            <p className="text-muted-foreground text-sm italic leading-relaxed">
               This memo applies those lessons to KIRK—not to criticize management's decisions, but
               to understand the mechanics of how creditor control operates in modern distressed
               situations.
@@ -114,10 +114,10 @@ const KirklandsMemo = () => {
             transition={{ duration: 0.6, delay: 0.25 }}
             className="surface-elevated border-l-2 border-primary p-6 mb-8"
           >
-            <h3 className="text-primary font-mono text-[10px] uppercase tracking-wider mb-4">
+            <h3 className="text-primary text-[10px] uppercase tracking-wider mb-4">
               Executive Summary
             </h3>
-            <ul className="space-y-3 text-muted-foreground font-mono text-sm">
+            <ul className="space-y-3 text-muted-foreground text-sm">
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold">▸</span>
                 <span>
@@ -163,17 +163,17 @@ const KirklandsMemo = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="surface-elevated border-l-2 border-primary p-6 mb-8"
           >
-            <h3 className="text-primary font-mono text-[10px] uppercase tracking-wider mb-4">
+            <h3 className="text-primary text-[10px] uppercase tracking-wider mb-4">
               Full Analysis
             </h3>
-            <p className="text-muted-foreground font-mono text-sm leading-relaxed mb-4">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
               Download the complete PDF analysis for detailed operating metrics, scenario modeling,
               and the full timeline of Beyond's acquisition strategy.
             </p>
             <a
               href="/memos/Kirklands_Credit_Analysis.pdf"
               download
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-mono text-sm uppercase tracking-wider glow-subtle hover:bg-gold-glow transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground text-sm uppercase tracking-wider glow-subtle hover:bg-gold-glow transition-all duration-300"
             >
               <Download size={18} />
               Download Full Analysis (PDF)
@@ -187,7 +187,7 @@ const KirklandsMemo = () => {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="border-l-2 border-primary pl-6 my-8"
           >
-            <p className="text-xl font-display italic text-primary leading-relaxed">
+            <p className="text-xl italic text-primary leading-relaxed">
               "This represents successful value extraction by Beyond, but effective wipeout for
               legacy KIRK shareholders"
             </p>
@@ -200,11 +200,11 @@ const KirklandsMemo = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-16 pt-8 border-t border-border"
           >
-            <div className="text-muted-foreground font-mono text-sm mb-4">
+            <div className="text-muted-foreground text-sm mb-4">
               <p className="font-semibold text-foreground mb-2">Contact</p>
               <p>Zachary Smith | zac.t.smith@outlook.com</p>
             </div>
-            <p className="text-muted-foreground font-mono text-xs leading-relaxed">
+            <p className="text-muted-foreground text-xs leading-relaxed">
               <strong>Disclaimer:</strong> This analysis is for educational purposes only and does
               not constitute investment advice. All information is based on publicly available
               sources and estimates, which may prove incorrect.

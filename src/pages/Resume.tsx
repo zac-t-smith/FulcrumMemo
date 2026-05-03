@@ -33,7 +33,7 @@ const Resume = () => {
           >
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-xs uppercase tracking-wider"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-xs uppercase tracking-wider"
             >
               <ArrowLeft size={14} />
               Back to Home
@@ -42,14 +42,14 @@ const Resume = () => {
               <a
                 href="/resume/Zachary_Smith_Resume.pdf"
                 download
-                className="inline-flex items-center gap-2 px-4 py-2 border border-border text-muted-foreground hover:border-primary/50 hover:text-foreground font-mono text-xs uppercase tracking-wider transition-all duration-300"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-border text-muted-foreground hover:border-primary/50 hover:text-foreground text-xs uppercase tracking-wider transition-all duration-300"
               >
                 <Download size={14} />
                 Download PDF
               </a>
               <button
                 onClick={handlePrint}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-wider glow-subtle hover:bg-gold-glow transition-all duration-300"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-xs uppercase tracking-wider glow-subtle hover:bg-gold-glow transition-all duration-300"
               >
                 <Printer size={14} />
                 Print Resume
@@ -66,13 +66,13 @@ const Resume = () => {
           >
             {/* Header */}
             <header className="text-center mb-8 pb-6 border-b border-border print:border-black/20">
-              <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2 print:text-black">
+              <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2 print:text-black">
                 Zachary Smith
               </h1>
-              <p className="text-primary font-mono text-sm mb-4 print:text-gray-700">
+              <p className="text-primary text-sm mb-4 print:text-gray-700">
                 Restructuring Analyst Candidate
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-4 text-muted-foreground font-mono text-xs print:text-gray-600">
+              <div className="flex flex-wrap items-center justify-center gap-4 text-muted-foreground text-xs print:text-gray-600">
                 <span className="inline-flex items-center gap-1">
                   <MapPin size={12} />
                   Mobile, AL
@@ -90,11 +90,11 @@ const Resume = () => {
 
             {/* Professional Summary */}
             <section className="mb-8">
-              <h2 className="font-display text-lg font-semibold text-foreground mb-3 uppercase tracking-wider print:text-black">
+              <h2 className="text-lg font-semibold text-foreground mb-3 uppercase tracking-wider print:text-black">
                 Professional Summary
               </h2>
               <div className="gold-line-left w-16 mb-4 print:hidden" />
-              <p className="text-muted-foreground font-mono text-sm leading-[1.8] print:text-gray-700">
+              <p className="text-muted-foreground text-sm leading-[1.8] print:text-gray-700">
                 Army veteran and finance professional with firsthand distressed operations experience.
                 Built and scaled property restoration company to $1.2M annual revenue before navigating
                 orderly liquidation with negotiated creditor settlements. Combines military discipline,
@@ -106,7 +106,7 @@ const Resume = () => {
 
             {/* Experience */}
             <section className="mb-8">
-              <h2 className="font-display text-lg font-semibold text-foreground mb-3 uppercase tracking-wider print:text-black">
+              <h2 className="text-lg font-semibold text-foreground mb-3 uppercase tracking-wider print:text-black">
                 Experience
               </h2>
               <div className="gold-line-left w-16 mb-4 print:hidden" />
@@ -114,17 +114,17 @@ const Resume = () => {
                 {/* Gulf Coast Restoration */}
                 <div>
                   <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
-                    <h3 className="font-display text-base font-semibold text-foreground print:text-black">
+                    <h3 className="text-base font-semibold text-foreground print:text-black">
                       Gulf Coast Restoration Group
                     </h3>
-                    <span className="text-muted-foreground font-mono text-xs print:text-gray-600">
+                    <span className="text-muted-foreground text-xs print:text-gray-600">
                       2024 – 2025
                     </span>
                   </div>
-                  <p className="text-primary font-mono text-xs mb-2 print:text-gray-700">
+                  <p className="text-primary text-xs mb-2 print:text-gray-700">
                     Founder & CEO | Mobile, AL & Pensacola, FL
                   </p>
-                  <ul className="space-y-1 text-muted-foreground font-mono text-xs print:text-gray-700">
+                  <ul className="space-y-1 text-muted-foreground text-xs print:text-gray-700">
                     <li className="flex items-start gap-2">
                       <span className="text-primary print:text-gray-500">•</span>
                       Raised $300K institutional capital via scenario-based growth modeling and valuation analysis
@@ -147,17 +147,17 @@ const Resume = () => {
                 {/* Goldman Sachs */}
                 <div>
                   <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
-                    <h3 className="font-display text-base font-semibold text-foreground print:text-black">
+                    <h3 className="text-base font-semibold text-foreground print:text-black">
                       Goldman Sachs
                     </h3>
-                    <span className="text-muted-foreground font-mono text-xs print:text-gray-600">
+                    <span className="text-muted-foreground text-xs print:text-gray-600">
                       Summer 2019
                     </span>
                   </div>
-                  <p className="text-primary font-mono text-xs mb-2 print:text-gray-700">
+                  <p className="text-primary text-xs mb-2 print:text-gray-700">
                     Summer Insight Program — Sales & Trading | New York, NY
                   </p>
-                  <ul className="space-y-1 text-muted-foreground font-mono text-xs print:text-gray-700">
+                  <ul className="space-y-1 text-muted-foreground text-xs print:text-gray-700">
                     <li className="flex items-start gap-2">
                       <span className="text-primary print:text-gray-500">•</span>
                       Selected from 2,800+ applicants for competitive program in fixed income and equities divisions
@@ -168,17 +168,17 @@ const Resume = () => {
                 {/* BlockCrowd */}
                 <div>
                   <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
-                    <h3 className="font-display text-base font-semibold text-foreground print:text-black">
+                    <h3 className="text-base font-semibold text-foreground print:text-black">
                       BlockCrowd Financial Group
                     </h3>
-                    <span className="text-muted-foreground font-mono text-xs print:text-gray-600">
+                    <span className="text-muted-foreground text-xs print:text-gray-600">
                       Winter 2019
                     </span>
                   </div>
-                  <p className="text-primary font-mono text-xs mb-2 print:text-gray-700">
+                  <p className="text-primary text-xs mb-2 print:text-gray-700">
                     Investment Banking Winter Analyst | New York, NY
                   </p>
-                  <ul className="space-y-1 text-muted-foreground font-mono text-xs print:text-gray-700">
+                  <ul className="space-y-1 text-muted-foreground text-xs print:text-gray-700">
                     <li className="flex items-start gap-2">
                       <span className="text-primary print:text-gray-500">•</span>
                       Built pitch materials, financial models (DCF, LBO, comps), and valuation analyses for M&A and capital raises
@@ -189,17 +189,17 @@ const Resume = () => {
                 {/* Pivoton Capital */}
                 <div>
                   <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
-                    <h3 className="font-display text-base font-semibold text-foreground print:text-black">
+                    <h3 className="text-base font-semibold text-foreground print:text-black">
                       Pivoton Capital
                     </h3>
-                    <span className="text-muted-foreground font-mono text-xs print:text-gray-600">
+                    <span className="text-muted-foreground text-xs print:text-gray-600">
                       Spring 2019
                     </span>
                   </div>
-                  <p className="text-primary font-mono text-xs mb-2 print:text-gray-700">
+                  <p className="text-primary text-xs mb-2 print:text-gray-700">
                     Private Equity Spring Analyst | Stamford, CT
                   </p>
-                  <ul className="space-y-1 text-muted-foreground font-mono text-xs print:text-gray-700">
+                  <ul className="space-y-1 text-muted-foreground text-xs print:text-gray-700">
                     <li className="flex items-start gap-2">
                       <span className="text-primary print:text-gray-500">•</span>
                       Built LBO and DCF models for Voxco acquisition ($34M EV); prepared IC materials supporting 2024 portfolio exit
@@ -210,17 +210,17 @@ const Resume = () => {
                 {/* U.S. Army */}
                 <div>
                   <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
-                    <h3 className="font-display text-base font-semibold text-foreground print:text-black">
+                    <h3 className="text-base font-semibold text-foreground print:text-black">
                       U.S. Army — 4th Infantry Division
                     </h3>
-                    <span className="text-muted-foreground font-mono text-xs print:text-gray-600">
+                    <span className="text-muted-foreground text-xs print:text-gray-600">
                       2013 – 2017
                     </span>
                   </div>
-                  <p className="text-primary font-mono text-xs mb-2 print:text-gray-700">
+                  <p className="text-primary text-xs mb-2 print:text-gray-700">
                     Specialist — Infantry & Security | Ft. Carson, CO
                   </p>
-                  <ul className="space-y-1 text-muted-foreground font-mono text-xs print:text-gray-700">
+                  <ul className="space-y-1 text-muted-foreground text-xs print:text-gray-700">
                     <li className="flex items-start gap-2">
                       <span className="text-primary print:text-gray-500">•</span>
                       Provided security coordination during visits by senior government officials including a former U.S. President
@@ -236,32 +236,32 @@ const Resume = () => {
 
             {/* Early Insight Programs */}
             <section className="mb-8">
-              <h2 className="font-display text-lg font-semibold text-foreground mb-3 uppercase tracking-wider print:text-black">
+              <h2 className="text-lg font-semibold text-foreground mb-3 uppercase tracking-wider print:text-black">
                 Early Insight Programs
               </h2>
               <div className="gold-line-left w-16 mb-4 print:hidden" />
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <h3 className="font-display text-sm font-semibold text-foreground print:text-black">
+                  <h3 className="text-sm font-semibold text-foreground print:text-black">
                     Citi — IB Early ID Program
                   </h3>
-                  <p className="text-muted-foreground font-mono text-xs print:text-gray-600">
+                  <p className="text-muted-foreground text-xs print:text-gray-600">
                     Jan – Mar 2019
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-display text-sm font-semibold text-foreground print:text-black">
+                  <h3 className="text-sm font-semibold text-foreground print:text-black">
                     Morgan Stanley — WM Winter Analyst
                   </h3>
-                  <p className="text-muted-foreground font-mono text-xs print:text-gray-600">
+                  <p className="text-muted-foreground text-xs print:text-gray-600">
                     Dec 2018 – Mar 2019
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-display text-sm font-semibold text-foreground print:text-black">
+                  <h3 className="text-sm font-semibold text-foreground print:text-black">
                     Morgan Stanley — IB Military Early Insight
                   </h3>
-                  <p className="text-muted-foreground font-mono text-xs print:text-gray-600">
+                  <p className="text-muted-foreground text-xs print:text-gray-600">
                     Nov 2018
                   </p>
                 </div>
@@ -270,48 +270,48 @@ const Resume = () => {
 
             {/* Education */}
             <section className="mb-8">
-              <h2 className="font-display text-lg font-semibold text-foreground mb-3 uppercase tracking-wider print:text-black">
+              <h2 className="text-lg font-semibold text-foreground mb-3 uppercase tracking-wider print:text-black">
                 Education
               </h2>
               <div className="gold-line-left w-16 mb-4 print:hidden" />
               <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
-                <h3 className="font-display text-base font-semibold text-foreground print:text-black">
+                <h3 className="text-base font-semibold text-foreground print:text-black">
                   University of Mobile
                 </h3>
-                <span className="text-muted-foreground font-mono text-xs print:text-gray-600">
+                <span className="text-muted-foreground text-xs print:text-gray-600">
                   Expected December 2026
                 </span>
               </div>
-              <p className="text-primary font-mono text-xs mb-2 print:text-gray-700">
+              <p className="text-primary text-xs mb-2 print:text-gray-700">
                 Bachelor of Science in Finance | GPA: 3.71
               </p>
-              <p className="text-muted-foreground font-mono text-xs print:text-gray-700">
+              <p className="text-muted-foreground text-xs print:text-gray-700">
                 Relevant Coursework: Financial Statement Analysis, Corporate Finance, Investments, Accounting
               </p>
             </section>
 
             {/* Skills */}
             <section className="mb-8">
-              <h2 className="font-display text-lg font-semibold text-foreground mb-3 uppercase tracking-wider print:text-black">
+              <h2 className="text-lg font-semibold text-foreground mb-3 uppercase tracking-wider print:text-black">
                 Skills & Certifications
               </h2>
               <div className="gold-line-left w-16 mb-4 print:hidden" />
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-display text-sm font-semibold text-foreground mb-2 print:text-black">
+                  <h3 className="text-sm font-semibold text-foreground mb-2 print:text-black">
                     Technical Skills
                   </h3>
-                  <p className="text-muted-foreground font-mono text-xs leading-relaxed print:text-gray-700">
+                  <p className="text-muted-foreground text-xs leading-relaxed print:text-gray-700">
                     Financial Modeling (DCF, LBO, Comps) • Capital Structure Analysis •
                     Liquidation Waterfalls • 13-Week Cash Flow • Excel/Google Sheets •
                     Bloomberg Terminal • CapIQ • Pitchbook
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-display text-sm font-semibold text-foreground mb-2 print:text-black">
+                  <h3 className="text-sm font-semibold text-foreground mb-2 print:text-black">
                     Industry Knowledge
                   </h3>
-                  <p className="text-muted-foreground font-mono text-xs leading-relaxed print:text-gray-700">
+                  <p className="text-muted-foreground text-xs leading-relaxed print:text-gray-700">
                     Distressed Debt • Restructuring • Chapter 11 Bankruptcy • Special Situations •
                     Credit Analysis • Covenant Analysis • Working Capital Management
                   </p>
@@ -321,14 +321,14 @@ const Resume = () => {
 
             {/* Additional */}
             <section>
-              <h2 className="font-display text-lg font-semibold text-foreground mb-3 uppercase tracking-wider print:text-black">
+              <h2 className="text-lg font-semibold text-foreground mb-3 uppercase tracking-wider print:text-black">
                 Additional
               </h2>
               <div className="gold-line-left w-16 mb-4 print:hidden" />
-              <p className="text-muted-foreground font-mono text-xs leading-relaxed print:text-gray-700">
+              <p className="text-muted-foreground text-xs leading-relaxed print:text-gray-700">
                 <strong className="text-foreground print:text-black">Interests:</strong> Distance running (5:52 mile PR), restructuring case studies, financial history
               </p>
-              <p className="text-muted-foreground font-mono text-xs leading-relaxed mt-2 print:text-gray-700">
+              <p className="text-muted-foreground text-xs leading-relaxed mt-2 print:text-gray-700">
                 <strong className="text-foreground print:text-black">Military:</strong> U.S. Army Veteran, Honorable Discharge, Security Clearance (inactive)
               </p>
             </section>

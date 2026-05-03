@@ -20,7 +20,7 @@ export const PullQuote = ({ children, className }: PullQuoteProps) => {
         className
       )}
     >
-      <p className="font-display text-xl md:text-2xl lg:text-3xl text-foreground italic leading-relaxed text-center">
+      <p className="text-xl md:text-2xl lg:text-3xl text-foreground italic leading-relaxed text-center">
         {children}
       </p>
     </motion.blockquote>

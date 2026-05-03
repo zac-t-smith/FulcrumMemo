@@ -8,7 +8,11 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "data:fred": "cd quant && python scripts/fetch_fred_data.py --ts-dir ../src/data --data-dir data",
+    "data:etf": "cd quant && python scripts/fetch_etf_data.py --ts-dir ../src/data --data-dir data",
+    "data:all": "npm run data:fred && npm run data:etf",
+    "data:test": "cd quant && python scripts/test_pipeline.py"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

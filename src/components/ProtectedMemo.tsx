@@ -43,7 +43,7 @@ const ProtectedMemo = ({ children, memoTitle }: ProtectedMemoProps) => {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="animate-pulse text-muted-foreground font-mono text-sm">
+        <div className="animate-pulse text-muted-foreground text-sm">
           Loading...
         </div>
       </div>
@@ -71,10 +71,10 @@ const ProtectedMemo = ({ children, memoTitle }: ProtectedMemoProps) => {
           </div>
 
           {/* Title */}
-          <h1 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
+          <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
             Protected Content
           </h1>
-          <p className="text-muted-foreground font-mono text-sm mb-6">
+          <p className="text-muted-foreground text-sm mb-6">
             "{memoTitle}" is a private memo. Enter the passcode to continue.
           </p>
 
@@ -86,7 +86,7 @@ const ProtectedMemo = ({ children, memoTitle }: ProtectedMemoProps) => {
                 value={passcode}
                 onChange={(e) => setPasscode(e.target.value)}
                 placeholder="Enter passcode"
-                className="w-full px-4 py-3 bg-background border border-border rounded text-foreground font-mono text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                className="w-full px-4 py-3 bg-background border border-border rounded text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                 autoFocus
               />
             </div>
@@ -95,7 +95,7 @@ const ProtectedMemo = ({ children, memoTitle }: ProtectedMemoProps) => {
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex items-center justify-center gap-2 text-red-400 font-mono text-xs"
+                className="flex items-center justify-center gap-2 text-red-400 text-xs"
               >
                 <AlertCircle size={14} />
                 <span>{error}</span>
@@ -104,7 +104,7 @@ const ProtectedMemo = ({ children, memoTitle }: ProtectedMemoProps) => {
 
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-mono text-sm uppercase tracking-wider glow-subtle hover:bg-gold-glow transition-all duration-300 group"
+              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground text-sm uppercase tracking-wider glow-subtle hover:bg-gold-glow transition-all duration-300 group"
             >
               <span>Access Memo</span>
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
@@ -112,7 +112,7 @@ const ProtectedMemo = ({ children, memoTitle }: ProtectedMemoProps) => {
           </form>
 
           {/* Hint */}
-          <p className="text-muted-foreground/60 font-mono text-xs mt-6">
+          <p className="text-muted-foreground/60 text-xs mt-6">
             Contact{' '}
             <a href="mailto:zac.smith@financier.com" className="text-primary hover:text-gold-glow transition-colors">
               zac.smith@financier.com

@@ -92,7 +92,7 @@ const IranMemoPartIIIFull = () => {
           >
             <Link
               to="/memos"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-xs uppercase tracking-wider mb-8"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-xs uppercase tracking-wider mb-8"
             >
               <ArrowLeft size={14} />
               All Memos
@@ -107,14 +107,14 @@ const IranMemoPartIIIFull = () => {
             className="surface-elevated border border-primary/30 p-4 mb-8 flex items-center justify-between flex-wrap gap-4"
           >
             <div>
-              <p className="text-primary font-mono text-[10px] tracking-wider uppercase mb-1">
+              <p className="text-primary text-[10px] tracking-wider uppercase mb-1">
                 The Iran Trap — Asymmetric Restructuring Series
               </p>
-              <p className="text-muted-foreground font-mono text-sm">Part III of III</p>
+              <p className="text-muted-foreground text-sm">Part III of III</p>
             </div>
             <Link
               to="/memos/iran-part-ii"
-              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors font-mono text-sm group"
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm group"
             >
               <ArrowLeft size={14} className="transition-transform group-hover:-translate-x-0.5" />
               Read Part II
@@ -128,7 +128,7 @@ const IranMemoPartIIIFull = () => {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="mb-8"
           >
-            <p className="text-primary font-mono text-[10px] tracking-[0.2em] uppercase mb-2">
+            <p className="text-primary text-[10px] tracking-[0.2em] uppercase mb-2">
               The Fulcrum Memo
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
@@ -137,15 +137,15 @@ const IranMemoPartIIIFull = () => {
               <span className="tag-pill">Energy & Commodities</span>
               <span className="tag-pill">Macro</span>
             </div>
-            <h1 className="font-display text-2xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
+            <h1 className="text-2xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
               The Trojan Horse: The Largest Distressed Asset Play in History
             </h1>
-            <p className="text-muted-foreground font-mono text-base italic mb-6 leading-relaxed">
+            <p className="text-muted-foreground text-base italic mb-6 leading-relaxed">
               How the sequencing of Venezuela, tariffs, and Iran describes the construction of
               structural energy and trade dominance — a sovereign-level distressed asset play
               reframing the entire conflict
             </p>
-            <div className="flex flex-wrap items-center gap-4 text-muted-foreground font-mono text-xs">
+            <div className="flex flex-wrap items-center gap-4 text-muted-foreground text-xs">
               <span>April 2026</span>
               <span className="text-primary">|</span>
               <span>Zachary Smith</span>
@@ -196,10 +196,10 @@ const IranMemoPartIIIFull = () => {
             viewport={{ once: true }}
             className="surface-elevated border-l-2 border-primary p-6 mb-8"
           >
-            <h3 className="text-primary font-mono text-[10px] uppercase tracking-wider mb-4">
+            <h3 className="text-primary text-[10px] uppercase tracking-wider mb-4">
               Executive Summary
             </h3>
-            <ul className="space-y-3 text-muted-foreground font-mono text-sm">
+            <ul className="space-y-3 text-muted-foreground text-sm">
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold mt-0.5">▸</span>
                 <span>
@@ -346,15 +346,15 @@ const IranMemoPartIIIFull = () => {
               viewport={{ once: true }}
               className="my-8 p-6 surface-card border border-border rounded-lg"
             >
-              <h4 className="font-display text-lg font-semibold text-foreground mb-4">
+              <h4 className="text-lg font-semibold text-foreground mb-4">
                 How the Deal Was Structured
               </h4>
               <div className="space-y-4">
                 <div className="border-l-2 border-primary pl-4">
-                  <p className="font-mono text-sm font-semibold text-foreground mb-1">
+                  <p className="text-sm font-semibold text-foreground mb-1">
                     Cash Flow Control
                   </p>
-                  <p className="font-mono text-xs text-muted-foreground">
+                  <p className="text-xs text-muted-foreground">
                     All proceeds from Venezuelan oil sales settle first in U.S.-controlled accounts.
                     Venezuela submits a monthly budget; the U.S. determines what the oil money can fund.
                     This is a <GlossaryTooltip term="dip">DIP facility</GlossaryTooltip> structure
@@ -362,20 +362,20 @@ const IranMemoPartIIIFull = () => {
                   </p>
                 </div>
                 <div className="border-l-2 border-primary pl-4">
-                  <p className="font-mono text-sm font-semibold text-foreground mb-1">
+                  <p className="text-sm font-semibold text-foreground mb-1">
                     Operational Control
                   </p>
-                  <p className="font-mono text-xs text-muted-foreground">
+                  <p className="text-xs text-muted-foreground">
                     OFAC issued GL 46 (Jan 29), GL 47 (Feb 3), GL 49 and GL 50 (Feb 13) — sequencing
                     the restructuring to maximize control at every stage. Each license was a controlled
                     release of value.
                   </p>
                 </div>
                 <div className="border-l-2 border-primary pl-4">
-                  <p className="font-mono text-sm font-semibold text-foreground mb-1">
+                  <p className="text-sm font-semibold text-foreground mb-1">
                     Exclusivity Clause
                   </p>
-                  <p className="font-mono text-xs text-muted-foreground">
+                  <p className="text-xs text-muted-foreground">
                     Venezuela severed ties with China, Russia, Iran, and Cuba. 19 existing contracts
                     with private companies cancelled. Junior creditors stripped out; recovery
                     concentrated in senior secured tranche.
@@ -493,17 +493,17 @@ const IranMemoPartIIIFull = () => {
                   className="p-4 bg-muted/30 rounded-lg border border-border"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <h5 className="font-mono text-sm font-semibold text-foreground">
+                    <h5 className="text-sm font-semibold text-foreground">
                       {item.ally}
                     </h5>
-                    <span className="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-mono">
+                    <span className="px-2 py-0.5 bg-primary/10 text-primary text-[10px] ">
                       {item.tariff} tariff
                     </span>
                   </div>
-                  <p className="font-mono text-[10px] text-primary mb-2">
+                  <p className="text-[10px] text-primary mb-2">
                     Hormuz Dependency: {item.hormuzDep}
                   </p>
-                  <p className="font-mono text-xs text-muted-foreground">{item.status}</p>
+                  <p className="text-xs text-muted-foreground">{item.status}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -566,31 +566,31 @@ const IranMemoPartIIIFull = () => {
               viewport={{ once: true }}
               className="my-8 p-6 surface-elevated border border-red-500/30 rounded-lg"
             >
-              <h4 className="font-display text-lg font-semibold text-red-400 mb-4">
+              <h4 className="text-lg font-semibold text-red-400 mb-4">
                 Immediate Impact
               </h4>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <p className="font-mono text-[10px] text-muted-foreground uppercase mb-2">
+                  <p className="text-[10px] text-muted-foreground uppercase mb-2">
                     Tanker Traffic
                   </p>
-                  <ul className="space-y-2 font-mono text-sm text-zinc-300">
+                  <ul className="space-y-2 text-sm text-zinc-300">
                     <li>• Collapsed 70-80% within days</li>
                     <li>• 10 crossings over 4 days vs. normal 280-320</li>
                     <li>• By March 7: 1 vessel vs. 138/day average</li>
                   </ul>
                 </div>
                 <div>
-                  <p className="font-mono text-[10px] text-muted-foreground uppercase mb-2">
+                  <p className="text-[10px] text-muted-foreground uppercase mb-2">
                     Oil Prices
                   </p>
-                  <ul className="space-y-2 font-mono text-sm text-zinc-300">
+                  <ul className="space-y-2 text-sm text-zinc-300">
                     <li>• Brent: $71.32 → $94.35 by March 9</li>
                     <li>• Crossed $100 on March 12</li>
                     <li>• Peaked at $121.88 (March 30)</li>
                     <li>• Dated Brent hit $141 (April 2)</li>
                   </ul>
-                  <p className="font-mono text-[9px] text-muted-foreground/70 mt-2">
+                  <p className="text-[9px] text-muted-foreground/70 mt-2">
                     {EIA_SOURCE_ATTRIBUTION}
                   </p>
                 </div>
@@ -663,34 +663,34 @@ const IranMemoPartIIIFull = () => {
               viewport={{ once: true }}
               className="my-8 p-6 surface-card border border-amber-500/30 rounded-lg"
             >
-              <h4 className="font-display text-lg font-semibold text-amber-400 mb-4">
+              <h4 className="text-lg font-semibold text-amber-400 mb-4">
                 What Iran Actually Did by Closing Hormuz
               </h4>
               <div className="space-y-4">
                 <div>
-                  <p className="font-mono text-sm font-semibold text-foreground mb-1">
+                  <p className="text-sm font-semibold text-foreground mb-1">
                     Zeroed Its Own Export Revenue
                   </p>
-                  <p className="font-mono text-xs text-muted-foreground">
+                  <p className="text-xs text-muted-foreground">
                     Iran was shipping ~1.6 million bpd (10.6% of Hormuz flows) generating cash for
                     government, military, and proxy networks. By closing the strait, Iran cut its
                     own throat. The distressed debtor didn't just default — it burned the collateral.
                   </p>
                 </div>
                 <div>
-                  <p className="font-mono text-sm font-semibold text-foreground mb-1">
+                  <p className="text-sm font-semibold text-foreground mb-1">
                     Leadership Simultaneously Degraded
                   </p>
-                  <p className="font-mono text-xs text-muted-foreground">
+                  <p className="text-xs text-muted-foreground">
                     Khamenei killed, IRGC command disrupted, military infrastructure degraded. The
                     entity making the "strategic" decision was already in free fall.
                   </p>
                 </div>
                 <div>
-                  <p className="font-mono text-sm font-semibold text-foreground mb-1">
+                  <p className="text-sm font-semibold text-foreground mb-1">
                     No Credible Economic Backstop
                   </p>
-                  <p className="font-mono text-xs text-muted-foreground">
+                  <p className="text-xs text-muted-foreground">
                     Russia is fighting its own war. China permits some ships but hasn't provided
                     financial lifeline. Iran has no DIP lender, no emergency liquidity, no path
                     to restructuring.
@@ -761,10 +761,10 @@ const IranMemoPartIIIFull = () => {
             >
               {/* U.S. Position */}
               <div className="p-6 surface-elevated border border-emerald-500/30 rounded-lg">
-                <h4 className="font-display text-lg font-semibold text-emerald-400 mb-4">
+                <h4 className="text-lg font-semibold text-emerald-400 mb-4">
                   U.S. Position Going In
                 </h4>
-                <ul className="space-y-2 font-mono text-xs text-zinc-300">
+                <ul className="space-y-2 text-xs text-zinc-300">
                   <li className="flex items-start gap-2">
                     <span className="text-emerald-400">✓</span>
                     World's largest oil producer at 13.6M bpd
@@ -790,10 +790,10 @@ const IranMemoPartIIIFull = () => {
 
               {/* Allied Position */}
               <div className="p-6 surface-elevated border border-red-500/30 rounded-lg">
-                <h4 className="font-display text-lg font-semibold text-red-400 mb-4">
+                <h4 className="text-lg font-semibold text-red-400 mb-4">
                   Allied Position Going In
                 </h4>
-                <ul className="space-y-2 font-mono text-xs text-zinc-300">
+                <ul className="space-y-2 text-xs text-zinc-300">
                   <li className="flex items-start gap-2">
                     <span className="text-red-400">✗</span>
                     Japan: 87% fossil fuel import dependency
@@ -828,7 +828,7 @@ const IranMemoPartIIIFull = () => {
               viewport={{ once: true }}
               className="memo-body space-y-6"
             >
-              <h4 className="font-display text-lg font-semibold text-foreground">
+              <h4 className="text-lg font-semibold text-foreground">
                 What the Endgame Produces
               </h4>
               <div className="space-y-4">
@@ -897,10 +897,10 @@ const IranMemoPartIIIFull = () => {
               className="my-8 grid md:grid-cols-2 gap-4"
             >
               <div className="p-5 surface-card border border-emerald-500/30 rounded-lg">
-                <h5 className="font-mono text-sm font-semibold text-emerald-400 mb-3">
+                <h5 className="text-sm font-semibold text-emerald-400 mb-3">
                   The Case for Design
                 </h5>
-                <ul className="space-y-2 font-mono text-xs text-muted-foreground">
+                <ul className="space-y-2 text-xs text-muted-foreground">
                   <li>• Venezuela involved months of planning, secret talks, CIA ops</li>
                   <li>• 15,000+ service members pre-positioned</li>
                   <li>• Tariff architecture built throughout 2025</li>
@@ -909,10 +909,10 @@ const IranMemoPartIIIFull = () => {
                 </ul>
               </div>
               <div className="p-5 surface-card border border-amber-500/30 rounded-lg">
-                <h5 className="font-mono text-sm font-semibold text-amber-400 mb-3">
+                <h5 className="text-sm font-semibold text-amber-400 mb-3">
                   The Case for Opportunism
                 </h5>
-                <ul className="space-y-2 font-mono text-xs text-muted-foreground">
+                <ul className="space-y-2 text-xs text-muted-foreground">
                   <li>• Venezuela targeted for independent reasons (drugs, Maduro)</li>
                   <li>• Tariffs predated any Iran timeline</li>
                   <li>• Iran escalation building since 2025 Geneva talks failure</li>
@@ -1000,12 +1000,12 @@ const IranMemoPartIIIFull = () => {
                   className="p-4 surface-card border border-border rounded-lg"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <h5 className="font-mono text-sm font-semibold text-foreground">{item.asset}</h5>
-                    <span className="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-mono">
+                    <h5 className="text-sm font-semibold text-foreground">{item.asset}</h5>
+                    <span className="px-2 py-0.5 bg-primary/10 text-primary text-[10px] ">
                       {item.view}
                     </span>
                   </div>
-                  <p className="font-mono text-xs text-muted-foreground">{item.detail}</p>
+                  <p className="text-xs text-muted-foreground">{item.detail}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -1089,7 +1089,7 @@ const IranMemoPartIIIFull = () => {
             <button
               onClick={handleDownloadPdf}
               disabled={isGeneratingPdf}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-mono text-sm uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground text-sm uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isGeneratingPdf ? (
                 <>
@@ -1112,7 +1112,7 @@ const IranMemoPartIIIFull = () => {
             viewport={{ once: true }}
             className="memo-series-nav surface-card"
           >
-            <h3 className="text-foreground font-display font-semibold mb-4">
+            <h3 className="text-foreground font-semibold mb-4">
               The Iran Trap — Asymmetric Restructuring Series
             </h3>
             <div className="space-y-3">
@@ -1121,10 +1121,10 @@ const IranMemoPartIIIFull = () => {
                 className="flex items-center justify-between p-3 border border-border hover:border-primary/50 transition-colors group"
               >
                 <div>
-                  <p className="text-muted-foreground font-mono text-[10px] uppercase tracking-wider mb-1">
+                  <p className="text-muted-foreground text-[10px] uppercase tracking-wider mb-1">
                     Part I
                   </p>
-                  <p className="text-foreground font-mono text-sm group-hover:text-primary transition-colors">
+                  <p className="text-foreground text-sm group-hover:text-primary transition-colors">
                     The Asymmetric Restructuring of the Middle East
                   </p>
                 </div>
@@ -1135,10 +1135,10 @@ const IranMemoPartIIIFull = () => {
                 className="flex items-center justify-between p-3 border border-border hover:border-primary/50 transition-colors group"
               >
                 <div>
-                  <p className="text-muted-foreground font-mono text-[10px] uppercase tracking-wider mb-1">
+                  <p className="text-muted-foreground text-[10px] uppercase tracking-wider mb-1">
                     Part II
                   </p>
-                  <p className="text-foreground font-mono text-sm group-hover:text-primary transition-colors">
+                  <p className="text-foreground text-sm group-hover:text-primary transition-colors">
                     Second-Order Effects: Sector Repricing & The Coming Restructuring Cycle
                   </p>
                 </div>
@@ -1146,10 +1146,10 @@ const IranMemoPartIIIFull = () => {
               </Link>
               <div className="flex items-center justify-between p-3 border-2 border-primary bg-primary/5">
                 <div>
-                  <p className="text-primary font-mono text-[10px] uppercase tracking-wider mb-1">
+                  <p className="text-primary text-[10px] uppercase tracking-wider mb-1">
                     Part III - You are here
                   </p>
-                  <p className="text-foreground font-mono text-sm">
+                  <p className="text-foreground text-sm">
                     The Trojan Horse: The Largest Distressed Asset Play in History
                   </p>
                 </div>
@@ -1170,13 +1170,13 @@ const IranMemoPartIIIFull = () => {
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <span className="inline-block px-2 py-0.5 bg-amber-500/20 text-amber-400 font-mono text-[10px] uppercase tracking-wider border border-amber-500/30 mb-3">
+                  <span className="inline-block px-2 py-0.5 bg-amber-500/20 text-amber-400 text-[10px] uppercase tracking-wider border border-amber-500/30 mb-3">
                     Addendum to Part III
                   </span>
-                  <h4 className="font-display text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
+                  <h4 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
                     The Shadow Partner: Russia as Unpriced Counterparty
                   </h4>
-                  <p className="text-muted-foreground font-mono text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     How Russia's intelligence sharing, oil arbitrage, and attention capture make it the largest unacknowledged
                     beneficiary of the Iran conflict — and why the coalition's cost-benefit calculus is missing a $50-60 billion line item.
                   </p>
@@ -1193,7 +1193,7 @@ const IranMemoPartIIIFull = () => {
             viewport={{ once: true }}
             className="my-8 p-6 surface-card border border-primary/30 rounded-lg"
           >
-            <p className="text-muted-foreground font-mono text-sm mb-3">
+            <p className="text-muted-foreground text-sm mb-3">
               Follow the daily <Link to="/field-notes" className="text-primary hover:underline">Field Notes</Link> for
               prediction tracking and updated analysis.
             </p>
@@ -1206,7 +1206,7 @@ const IranMemoPartIIIFull = () => {
             viewport={{ once: true }}
             className="mt-16 pt-8 border-t border-border"
           >
-            <div className="text-muted-foreground font-mono text-sm mb-4">
+            <div className="text-muted-foreground text-sm mb-4">
               <p className="font-semibold text-foreground mb-2">About the Author</p>
               <p className="text-xs leading-relaxed mb-4">
                 Zachary Smith is a U.S. Army veteran (4th Infantry Division, 2013-2017) who founded
@@ -1219,7 +1219,7 @@ const IranMemoPartIIIFull = () => {
               <p className="font-semibold text-foreground mb-2">Contact</p>
               <p>Zachary Smith | zac.t.smith@outlook.com</p>
             </div>
-            <p className="text-muted-foreground font-mono text-xs leading-relaxed">
+            <p className="text-muted-foreground text-xs leading-relaxed">
               <strong>Disclaimer:</strong> This analysis is for educational purposes only and does
               not constitute investment, military, or policy advice. All information is based on
               publicly available sources and estimates, which may prove incorrect. Data reflects

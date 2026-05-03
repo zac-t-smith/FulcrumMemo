@@ -16,10 +16,10 @@ export const ScenarioProbabilityMatrix = ({ className }: { className?: string })
       className={cn('my-8 p-6 surface-card border border-border rounded-lg', className)}
     >
       <div className="mb-6">
-        <h4 className="font-display text-lg font-semibold text-foreground mb-1">
+        <h4 className="text-lg font-semibold text-foreground mb-1">
           Scenario Probability Matrix
         </h4>
-        <p className="font-mono text-xs text-muted-foreground">
+        <p className="text-xs text-muted-foreground">
           Click a scenario to expand full analysis
         </p>
       </div>
@@ -40,11 +40,11 @@ export const ScenarioProbabilityMatrix = ({ className }: { className?: string })
               }}
               whileHover={{ scale: 1.02 }}
             >
-              <span className="font-mono text-[10px] font-bold text-background">
+              <span className="text-[10px] font-bold text-background">
                 {scenario.probability}%
               </span>
               {scenario.isBaseCase && (
-                <span className="absolute -top-5 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-primary text-primary-foreground text-[8px] font-mono uppercase rounded">
+                <span className="absolute -top-5 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-primary text-primary-foreground text-[8px] uppercase rounded">
                   Base Case
                 </span>
               )}
@@ -55,7 +55,7 @@ export const ScenarioProbabilityMatrix = ({ className }: { className?: string })
           {scenarioData.map((scenario) => (
             <div
               key={scenario.name}
-              className="font-mono text-[10px] text-muted-foreground text-center"
+              className="text-[10px] text-muted-foreground text-center"
               style={{ width: `${scenario.probability}%` }}
             >
               {scenario.name.split(' ')[0]}
@@ -93,12 +93,12 @@ export const ScenarioProbabilityMatrix = ({ className }: { className?: string })
                 />
                 <div className="text-left">
                   <div className="flex items-center gap-2">
-                    <span className="font-display text-sm font-semibold text-foreground">
+                    <span className="text-sm font-semibold text-foreground">
                       {scenario.name}
                     </span>
-                    <span className="font-mono text-xs text-primary">{scenario.probability}%</span>
+                    <span className="text-xs text-primary">{scenario.probability}%</span>
                     {scenario.isBaseCase && (
-                      <span className="px-2 py-0.5 bg-primary/20 text-primary text-[8px] font-mono uppercase rounded">
+                      <span className="px-2 py-0.5 bg-primary/20 text-primary text-[8px] uppercase rounded">
                         Base Case
                       </span>
                     )}
@@ -123,31 +123,31 @@ export const ScenarioProbabilityMatrix = ({ className }: { className?: string })
                 >
                   <div className="grid md:grid-cols-3 gap-4 mb-4">
                     <div className="p-3 bg-muted/50 rounded">
-                      <p className="font-mono text-[10px] text-muted-foreground uppercase mb-1">
+                      <p className="text-[10px] text-muted-foreground uppercase mb-1">
                         Oil Price Range
                       </p>
-                      <p className="font-mono text-sm font-semibold text-foreground">
+                      <p className="text-sm font-semibold text-foreground">
                         {scenario.oilPriceRange}
                       </p>
                     </div>
                     <div className="p-3 bg-muted/50 rounded">
-                      <p className="font-mono text-[10px] text-muted-foreground uppercase mb-1">
+                      <p className="text-[10px] text-muted-foreground uppercase mb-1">
                         GCC Damage Est.
                       </p>
-                      <p className="font-mono text-sm font-semibold text-foreground">
+                      <p className="text-sm font-semibold text-foreground">
                         {scenario.gccDamage}
                       </p>
                     </div>
                     <div className="p-3 bg-muted/50 rounded">
-                      <p className="font-mono text-[10px] text-muted-foreground uppercase mb-1">
+                      <p className="text-[10px] text-muted-foreground uppercase mb-1">
                         Iran Leverage
                       </p>
-                      <p className="font-mono text-sm font-semibold text-foreground">
+                      <p className="text-sm font-semibold text-foreground">
                         {scenario.iranLeverage}
                       </p>
                     </div>
                   </div>
-                  <p className="font-mono text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-xs text-muted-foreground leading-relaxed">
                     {scenario.description}
                   </p>
                 </motion.div>

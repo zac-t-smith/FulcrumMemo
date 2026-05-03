@@ -64,7 +64,7 @@ const ShadowPartnerMemo = () => {
             >
               <Link
                 to="/memos"
-                className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-xs uppercase tracking-wider mb-8"
+                className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-xs uppercase tracking-wider mb-8"
               >
                 <ArrowLeft size={14} />
                 All Memos
@@ -79,14 +79,14 @@ const ShadowPartnerMemo = () => {
               className="surface-elevated border border-amber-500/30 p-4 mb-8 flex items-center justify-between flex-wrap gap-4"
             >
               <div>
-                <p className="text-amber-400 font-mono text-[10px] tracking-wider uppercase mb-1">
+                <p className="text-amber-400 text-[10px] tracking-wider uppercase mb-1">
                   Special Analysis — Addendum to Part III
                 </p>
-                <p className="text-muted-foreground font-mono text-sm">The Trojan Horse Series</p>
+                <p className="text-muted-foreground text-sm">The Trojan Horse Series</p>
               </div>
               <Link
                 to="/memos/iran-part-iii"
-                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors font-mono text-sm group"
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm group"
               >
                 <ArrowLeft size={14} className="transition-transform group-hover:-translate-x-0.5" />
                 Read Part III
@@ -100,7 +100,7 @@ const ShadowPartnerMemo = () => {
               transition={{ duration: 0.6, delay: 0.15 }}
               className="mb-8"
             >
-              <p className="text-primary font-mono text-[10px] tracking-[0.2em] uppercase mb-2">
+              <p className="text-primary text-[10px] tracking-[0.2em] uppercase mb-2">
                 The Fulcrum Memo
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
@@ -109,14 +109,14 @@ const ShadowPartnerMemo = () => {
                 <span className="tag-pill">Energy & Commodities</span>
                 <span className="tag-pill">Game Theory</span>
               </div>
-              <h1 className="font-display text-2xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
+              <h1 className="text-2xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
                 The Shadow Partner: Russia as Off-Balance-Sheet Beneficiary in the 2026 Iran Conflict
               </h1>
-              <p className="text-muted-foreground font-mono text-base italic mb-6 leading-relaxed">
+              <p className="text-muted-foreground text-base italic mb-6 leading-relaxed">
                 Mapping the intelligence, economic, and strategic arbitrage — how Russia emerges as
                 the unpriced counterparty in the Trojan Horse architecture
               </p>
-              <div className="flex flex-wrap items-center gap-4 text-muted-foreground font-mono text-xs">
+              <div className="flex flex-wrap items-center gap-4 text-muted-foreground text-xs">
                 <span>April 17, 2026</span>
                 <span className="text-primary">|</span>
                 <span>Zachary Smith</span>
@@ -165,10 +165,10 @@ const ShadowPartnerMemo = () => {
               viewport={{ once: true }}
               className="surface-elevated border-l-2 border-amber-400 p-6 mb-8"
             >
-              <h3 className="text-amber-400 font-mono text-[10px] uppercase tracking-wider mb-4">
+              <h3 className="text-amber-400 text-[10px] uppercase tracking-wider mb-4">
                 Executive Summary
               </h3>
-              <ul className="space-y-3 text-muted-foreground font-mono text-sm">
+              <ul className="space-y-3 text-muted-foreground text-sm">
                 <li className="flex items-start gap-3">
                   <span className="text-amber-400 font-bold mt-0.5">▸</span>
                   <span>
@@ -244,29 +244,29 @@ const ShadowPartnerMemo = () => {
                 viewport={{ once: true }}
                 className="my-8 p-6 surface-card border border-border rounded-lg"
               >
-                <h4 className="font-display text-lg font-semibold text-foreground mb-4">
+                <h4 className="text-lg font-semibold text-foreground mb-4">
                   Intelligence Transfer Indicators
                 </h4>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <span className="text-emerald-400 font-mono text-sm font-bold">CONFIRMED</span>
+                    <span className="text-emerald-400 text-sm font-bold">CONFIRMED</span>
                     <div>
                       <p className="text-foreground text-sm font-semibold">Prince Sultan satellite imagery</p>
-                      <p className="text-muted-foreground text-xs font-mono">Zelensky statement, March 27, 2026</p>
+                      <p className="text-muted-foreground text-xs ">Zelensky statement, March 27, 2026</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <span className="text-amber-400 font-mono text-sm font-bold">ASSESSED</span>
+                    <span className="text-amber-400 text-sm font-bold">ASSESSED</span>
                     <div>
                       <p className="text-foreground text-sm font-semibold">Carrier group movement tracking</p>
-                      <p className="text-muted-foreground text-xs font-mono">Pattern analysis of Iranian repositioning</p>
+                      <p className="text-muted-foreground text-xs ">Pattern analysis of Iranian repositioning</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <span className="text-amber-400 font-mono text-sm font-bold">ASSESSED</span>
+                    <span className="text-amber-400 text-sm font-bold">ASSESSED</span>
                     <div>
                       <p className="text-foreground text-sm font-semibold">Tanker fleet coordination</p>
-                      <p className="text-muted-foreground text-xs font-mono">Shadow fleet movement synchronization</p>
+                      <p className="text-muted-foreground text-xs ">Shadow fleet movement synchronization</p>
                     </div>
                   </div>
                 </div>
@@ -317,20 +317,20 @@ const ShadowPartnerMemo = () => {
                 className="my-8 grid grid-cols-2 md:grid-cols-4 gap-4"
               >
                 <div className="p-4 surface-card border border-border rounded-lg text-center">
-                  <p className="font-display text-2xl font-bold text-amber-400">$88+</p>
-                  <p className="font-mono text-[10px] text-muted-foreground uppercase">Urals Crude</p>
+                  <p className="text-2xl font-bold text-amber-400">$88+</p>
+                  <p className="text-[10px] text-muted-foreground uppercase">Urals Crude</p>
                 </div>
                 <div className="p-4 surface-card border border-border rounded-lg text-center">
-                  <p className="font-display text-2xl font-bold text-emerald-400">$28+</p>
-                  <p className="font-mono text-[10px] text-muted-foreground uppercase">Price Premium</p>
+                  <p className="text-2xl font-bold text-emerald-400">$28+</p>
+                  <p className="text-[10px] text-muted-foreground uppercase">Price Premium</p>
                 </div>
                 <div className="p-4 surface-card border border-border rounded-lg text-center">
-                  <p className="font-display text-2xl font-bold text-blue-400">~$150M</p>
-                  <p className="font-mono text-[10px] text-muted-foreground uppercase">Daily Windfall</p>
+                  <p className="text-2xl font-bold text-blue-400">~$150M</p>
+                  <p className="text-[10px] text-muted-foreground uppercase">Daily Windfall</p>
                 </div>
                 <div className="p-4 surface-card border border-border rounded-lg text-center">
-                  <p className="font-display text-2xl font-bold text-primary">$55B</p>
-                  <p className="font-mono text-[10px] text-muted-foreground uppercase">Annual Windfall</p>
+                  <p className="text-2xl font-bold text-primary">$55B</p>
+                  <p className="text-[10px] text-muted-foreground uppercase">Annual Windfall</p>
                 </div>
               </motion.div>
 
@@ -340,7 +340,7 @@ const ShadowPartnerMemo = () => {
                 viewport={{ once: true }}
                 className="memo-body space-y-6"
               >
-                <h3 className="font-display text-xl font-semibold text-foreground mt-8 mb-4">
+                <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">
                   Demand Lock-In: India and China
                 </h3>
                 <p>
@@ -397,10 +397,10 @@ const ShadowPartnerMemo = () => {
                 viewport={{ once: true }}
                 className="my-8 p-6 surface-card border border-border rounded-lg overflow-x-auto"
               >
-                <h4 className="font-display text-lg font-semibold text-foreground mb-4">
+                <h4 className="text-lg font-semibold text-foreground mb-4">
                   Before/After: Attention Allocation
                 </h4>
-                <table className="w-full font-mono text-sm">
+                <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border">
                       <th className="text-left py-2 text-muted-foreground font-normal">Domain</th>
@@ -483,7 +483,7 @@ const ShadowPartnerMemo = () => {
                 className="my-8 grid md:grid-cols-3 gap-4"
               >
                 <div className="p-4 surface-card border border-red-500/30 rounded-lg">
-                  <h4 className="font-display text-lg font-semibold text-red-400 mb-3">Russia Provides</h4>
+                  <h4 className="text-lg font-semibold text-red-400 mb-3">Russia Provides</h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>• Satellite intelligence</li>
                     <li>• SIGINT capabilities</li>
@@ -493,7 +493,7 @@ const ShadowPartnerMemo = () => {
                   </ul>
                 </div>
                 <div className="p-4 surface-card border border-amber-500/30 rounded-lg">
-                  <h4 className="font-display text-lg font-semibold text-amber-400 mb-3">China Provides</h4>
+                  <h4 className="text-lg font-semibold text-amber-400 mb-3">China Provides</h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>• Economic lifeline (oil purchases)</li>
                     <li>• Banking/SWIFT alternatives</li>
@@ -503,7 +503,7 @@ const ShadowPartnerMemo = () => {
                   </ul>
                 </div>
                 <div className="p-4 surface-card border border-emerald-500/30 rounded-lg">
-                  <h4 className="font-display text-lg font-semibold text-emerald-400 mb-3">Iran Provides</h4>
+                  <h4 className="text-lg font-semibold text-emerald-400 mb-3">Iran Provides</h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>• Hormuz leverage</li>
                     <li>• Proxy network</li>
@@ -599,10 +599,10 @@ const ShadowPartnerMemo = () => {
                 viewport={{ once: true }}
                 className="my-8 p-6 surface-card border border-primary rounded-lg"
               >
-                <h4 className="font-display text-lg font-semibold text-foreground mb-4">
+                <h4 className="text-lg font-semibold text-foreground mb-4">
                   The Collection Priority
                 </h4>
-                <p className="text-muted-foreground font-mono text-sm mb-4">
+                <p className="text-muted-foreground text-sm mb-4">
                   To track Russia's role as shadow beneficiary, monitor:
                 </p>
                 <ul className="space-y-2 text-sm text-foreground">
@@ -667,10 +667,10 @@ const ShadowPartnerMemo = () => {
                 viewport={{ once: true }}
                 className="my-8 p-6 surface-elevated border-l-2 border-amber-400"
               >
-                <h4 className="font-display text-lg font-semibold text-foreground mb-4">
+                <h4 className="text-lg font-semibold text-foreground mb-4">
                   Equilibrium Conditions
                 </h4>
-                <ul className="space-y-3 text-muted-foreground font-mono text-sm">
+                <ul className="space-y-3 text-muted-foreground text-sm">
                   <li className="flex items-start gap-3">
                     <span className="text-amber-400 font-bold mt-0.5">1.</span>
                     <span>
@@ -734,7 +734,7 @@ const ShadowPartnerMemo = () => {
               >
                 {/* United States */}
                 <div className="p-4 surface-card border border-border rounded-lg">
-                  <h4 className="font-display text-lg font-semibold text-blue-400 mb-3">United States</h4>
+                  <h4 className="text-lg font-semibold text-blue-400 mb-3">United States</h4>
                   <div className="grid md:grid-cols-4 gap-4 text-sm">
                     <div>
                       <p className="text-muted-foreground text-xs uppercase mb-1">Wants</p>
@@ -757,7 +757,7 @@ const ShadowPartnerMemo = () => {
 
                 {/* Iran */}
                 <div className="p-4 surface-card border border-border rounded-lg">
-                  <h4 className="font-display text-lg font-semibold text-emerald-400 mb-3">Iran</h4>
+                  <h4 className="text-lg font-semibold text-emerald-400 mb-3">Iran</h4>
                   <div className="grid md:grid-cols-4 gap-4 text-sm">
                     <div>
                       <p className="text-muted-foreground text-xs uppercase mb-1">Wants</p>
@@ -780,7 +780,7 @@ const ShadowPartnerMemo = () => {
 
                 {/* Russia */}
                 <div className="p-4 surface-card border border-amber-500/30 rounded-lg">
-                  <h4 className="font-display text-lg font-semibold text-amber-400 mb-3">Russia (Shadow Beneficiary)</h4>
+                  <h4 className="text-lg font-semibold text-amber-400 mb-3">Russia (Shadow Beneficiary)</h4>
                   <div className="grid md:grid-cols-4 gap-4 text-sm">
                     <div>
                       <p className="text-muted-foreground text-xs uppercase mb-1">Wants</p>
@@ -803,7 +803,7 @@ const ShadowPartnerMemo = () => {
 
                 {/* China */}
                 <div className="p-4 surface-card border border-border rounded-lg">
-                  <h4 className="font-display text-lg font-semibold text-red-400 mb-3">China</h4>
+                  <h4 className="text-lg font-semibold text-red-400 mb-3">China</h4>
                   <div className="grid md:grid-cols-4 gap-4 text-sm">
                     <div>
                       <p className="text-muted-foreground text-xs uppercase mb-1">Wants</p>
@@ -826,7 +826,7 @@ const ShadowPartnerMemo = () => {
 
                 {/* Israel */}
                 <div className="p-4 surface-card border border-border rounded-lg">
-                  <h4 className="font-display text-lg font-semibold text-blue-400 mb-3">Israel</h4>
+                  <h4 className="text-lg font-semibold text-blue-400 mb-3">Israel</h4>
                   <div className="grid md:grid-cols-4 gap-4 text-sm">
                     <div>
                       <p className="text-muted-foreground text-xs uppercase mb-1">Wants</p>
@@ -849,7 +849,7 @@ const ShadowPartnerMemo = () => {
 
                 {/* Pakistan */}
                 <div className="p-4 surface-card border border-border rounded-lg">
-                  <h4 className="font-display text-lg font-semibold text-emerald-400 mb-3">Pakistan</h4>
+                  <h4 className="text-lg font-semibold text-emerald-400 mb-3">Pakistan</h4>
                   <div className="grid md:grid-cols-4 gap-4 text-sm">
                     <div>
                       <p className="text-muted-foreground text-xs uppercase mb-1">Wants</p>
@@ -872,7 +872,7 @@ const ShadowPartnerMemo = () => {
 
                 {/* GCC */}
                 <div className="p-4 surface-card border border-border rounded-lg">
-                  <h4 className="font-display text-lg font-semibold text-primary mb-3">GCC States</h4>
+                  <h4 className="text-lg font-semibold text-primary mb-3">GCC States</h4>
                   <div className="grid md:grid-cols-4 gap-4 text-sm">
                     <div>
                       <p className="text-muted-foreground text-xs uppercase mb-1">Wants</p>
@@ -926,8 +926,8 @@ const ShadowPartnerMemo = () => {
               >
                 <div className="p-6 surface-card border border-emerald-500/30 rounded-lg">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="font-display text-lg font-semibold text-emerald-400">Quick Resolution</h4>
-                    <span className="font-mono text-2xl font-bold text-emerald-400">5%</span>
+                    <h4 className="text-lg font-semibold text-emerald-400">Quick Resolution</h4>
+                    <span className="text-2xl font-bold text-emerald-400">5%</span>
                   </div>
                   <p className="text-muted-foreground text-sm mb-3">
                     U.S.-Iran deal reached within 30 days. Hormuz reopens. Oil returns to $70-80.
@@ -941,8 +941,8 @@ const ShadowPartnerMemo = () => {
 
                 <div className="p-6 surface-card border border-amber-500/30 rounded-lg">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="font-display text-lg font-semibold text-amber-400">Protracted Attrition</h4>
-                    <span className="font-mono text-2xl font-bold text-amber-400">65%</span>
+                    <h4 className="text-lg font-semibold text-amber-400">Protracted Attrition</h4>
+                    <span className="text-2xl font-bold text-amber-400">65%</span>
                   </div>
                   <p className="text-muted-foreground text-sm mb-3">
                     4-12 week conflict. Hormuz remains contested. Oil $85-110. Diplomatic talks
@@ -957,8 +957,8 @@ const ShadowPartnerMemo = () => {
 
                 <div className="p-6 surface-card border border-red-500/30 rounded-lg">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="font-display text-lg font-semibold text-red-400">Full Escalation</h4>
-                    <span className="font-mono text-2xl font-bold text-red-400">30%</span>
+                    <h4 className="text-lg font-semibold text-red-400">Full Escalation</h4>
+                    <span className="text-2xl font-bold text-red-400">30%</span>
                   </div>
                   <p className="text-muted-foreground text-sm mb-3">
                     Ground troops deployed. Multi-year occupation. Oil $120+. Regional conflagration.
@@ -1000,12 +1000,12 @@ const ShadowPartnerMemo = () => {
                 viewport={{ once: true }}
                 className="my-8 p-6 surface-card border border-border rounded-lg"
               >
-                <h4 className="font-display text-lg font-semibold text-foreground mb-4">
+                <h4 className="text-lg font-semibold text-foreground mb-4">
                   Key Data Sources
                 </h4>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h5 className="font-mono text-xs uppercase text-primary mb-2">Oil & Revenue</h5>
+                    <h5 className="text-xs uppercase text-primary mb-2">Oil & Revenue</h5>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li>• IEA Monthly Oil Market Report (total exports, not Bloomberg seaborne)</li>
                       <li>• Urals-Brent spread (Argus Media)</li>
@@ -1015,7 +1015,7 @@ const ShadowPartnerMemo = () => {
                     </ul>
                   </div>
                   <div>
-                    <h5 className="font-mono text-xs uppercase text-primary mb-2">Intelligence</h5>
+                    <h5 className="text-xs uppercase text-primary mb-2">Intelligence</h5>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li>• Russian satellite tasking (commercial imagery analysis)</li>
                       <li>• Iranian targeting precision changes</li>
@@ -1044,7 +1044,7 @@ const ShadowPartnerMemo = () => {
               viewport={{ once: true }}
               className="mt-12 pt-8 border-t border-border"
             >
-              <p className="text-muted-foreground font-mono text-sm leading-relaxed mb-6">
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                 The restructuring analyst's job is to identify who wins when everyone else is focused
                 on who's losing. In the 2026 Iran conflict, the market is pricing a bilateral war.
                 The actual structure is a multi-party game where the shadow beneficiary's optimal
@@ -1059,7 +1059,7 @@ const ShadowPartnerMemo = () => {
                 >
                   <ArrowLeft size={14} className="text-muted-foreground group-hover:text-primary transition-colors" />
                   <div>
-                    <p className="font-mono text-[10px] text-muted-foreground uppercase">Part III</p>
+                    <p className="text-[10px] text-muted-foreground uppercase">Part III</p>
                     <p className="text-sm text-foreground">The Trojan Horse</p>
                   </div>
                 </Link>
@@ -1068,7 +1068,7 @@ const ShadowPartnerMemo = () => {
                   className="flex items-center gap-2 px-4 py-3 border border-border rounded hover:border-primary/50 transition-colors group"
                 >
                   <div className="flex-1">
-                    <p className="font-mono text-[10px] text-muted-foreground uppercase">Applied Analysis</p>
+                    <p className="text-[10px] text-muted-foreground uppercase">Applied Analysis</p>
                     <p className="text-sm text-foreground">Analytical Positions</p>
                   </div>
                   <ArrowRight size={14} className="text-muted-foreground group-hover:text-primary transition-colors" />

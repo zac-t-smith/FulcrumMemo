@@ -83,7 +83,7 @@ export const NativeLanguageGlossary = () => {
                 </div>
                 <p className="text-sm text-muted-foreground mb-2">{term.meaning}</p>
                 {term.example && (
-                  <p className="text-xs italic text-primary/80 font-mono bg-muted/50 p-2 rounded">
+                  <p className="text-xs italic text-primary/80 bg-muted/50 p-2 rounded">
                     {term.example}
                   </p>
                 )}
@@ -114,7 +114,7 @@ export const NativeLanguageGlossary = () => {
                 </div>
                 <p className="text-sm text-muted-foreground mb-2">{term.meaning}</p>
                 {term.example && (
-                  <p className="text-xs italic text-primary/80 font-mono bg-muted/50 p-2 rounded">
+                  <p className="text-xs italic text-primary/80 bg-muted/50 p-2 rounded">
                     {term.example}
                   </p>
                 )}

@@ -28,7 +28,7 @@ const IranMemo = () => {
           >
             <Link
               to="/memos"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-xs uppercase tracking-wider mb-8"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-xs uppercase tracking-wider mb-8"
             >
               <ArrowLeft size={14} />
               All Memos
@@ -43,14 +43,14 @@ const IranMemo = () => {
             className="surface-elevated border border-primary/30 p-4 mb-8 flex items-center justify-between flex-wrap gap-4"
           >
             <div>
-              <p className="text-primary font-mono text-[10px] tracking-wider uppercase mb-1">
+              <p className="text-primary text-[10px] tracking-wider uppercase mb-1">
                 The Asymmetric Restructuring Series
               </p>
-              <p className="text-muted-foreground font-mono text-sm">Part I of II</p>
+              <p className="text-muted-foreground text-sm">Part I of II</p>
             </div>
             <Link
               to="/memos/iran-part-ii"
-              className="flex items-center gap-2 text-primary hover:text-foreground transition-colors font-mono text-sm group"
+              className="flex items-center gap-2 text-primary hover:text-foreground transition-colors text-sm group"
             >
               Read Part II
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
@@ -64,7 +64,7 @@ const IranMemo = () => {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="mb-8"
           >
-            <p className="text-primary font-mono text-[10px] tracking-[0.2em] uppercase mb-2">
+            <p className="text-primary text-[10px] tracking-[0.2em] uppercase mb-2">
               The Fulcrum Memo
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
@@ -72,14 +72,14 @@ const IranMemo = () => {
               <span className="tag-pill">Geopolitical Strategy</span>
               <span className="tag-pill">Game Theory</span>
             </div>
-            <h1 className="font-display text-2xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
+            <h1 className="text-2xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
               The Asymmetric Restructuring of the Middle East
             </h1>
-            <p className="text-muted-foreground font-mono text-base italic mb-6 leading-relaxed">
+            <p className="text-muted-foreground text-base italic mb-6 leading-relaxed">
               How Iran's infrastructure-targeting strategy exploits asymmetric cost dynamics to
               achieve leverage no conventional military campaign could deliver
             </p>
-            <div className="flex flex-wrap gap-4 text-muted-foreground font-mono text-xs">
+            <div className="flex flex-wrap gap-4 text-muted-foreground text-xs">
               <span>March 2026</span>
               <span className="text-primary">|</span>
               <span>Zachary Smith</span>
@@ -94,7 +94,7 @@ const IranMemo = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-foreground font-mono text-base leading-[1.8] mb-8"
+            className="text-foreground text-base leading-[1.8] mb-8"
           >
             This analysis examines the strategic calculus behind Iran's regional positioning
             through the lens of distressed credit analysis. By applying restructuring frameworks
@@ -109,10 +109,10 @@ const IranMemo = () => {
             transition={{ duration: 0.6, delay: 0.25 }}
             className="surface-elevated border-l-2 border-primary p-6 mb-8"
           >
-            <h3 className="text-primary font-mono text-[10px] uppercase tracking-wider mb-4">
+            <h3 className="text-primary text-[10px] uppercase tracking-wider mb-4">
               Full Analysis
             </h3>
-            <p className="text-muted-foreground font-mono text-sm leading-relaxed mb-4">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
               Download the complete PDF analysis for the full examination of Iran's
               infrastructure-targeting strategy, including detailed cost-benefit frameworks,
               scenario analysis, and geopolitical game theory applications.
@@ -120,7 +120,7 @@ const IranMemo = () => {
             <a
               href="/memos/Iran_Sovereign_Distress_Analysis_Series_1.pdf"
               download
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-mono text-sm uppercase tracking-wider glow-subtle hover:bg-gold-glow transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground text-sm uppercase tracking-wider glow-subtle hover:bg-gold-glow transition-all duration-300"
             >
               <Download size={18} />
               Download Full Analysis (PDF)
@@ -134,16 +134,16 @@ const IranMemo = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="surface-card p-6 mb-8"
           >
-            <h3 className="text-foreground font-display font-semibold mb-4">
+            <h3 className="text-foreground font-semibold mb-4">
               The Asymmetric Restructuring Series
             </h3>
             <div className="space-y-3">
               <div className="flex items-center justify-between p-3 border-2 border-primary bg-primary/5">
                 <div>
-                  <p className="text-primary font-mono text-[10px] uppercase tracking-wider mb-1">
+                  <p className="text-primary text-[10px] uppercase tracking-wider mb-1">
                     Part I - You are here
                   </p>
-                  <p className="text-foreground font-mono text-sm">
+                  <p className="text-foreground text-sm">
                     The Asymmetric Restructuring of the Middle East
                   </p>
                 </div>
@@ -153,10 +153,10 @@ const IranMemo = () => {
                 className="flex items-center justify-between p-3 border border-border hover:border-primary/50 transition-colors group"
               >
                 <div>
-                  <p className="text-muted-foreground font-mono text-[10px] uppercase tracking-wider mb-1">
+                  <p className="text-muted-foreground text-[10px] uppercase tracking-wider mb-1">
                     Part II
                   </p>
-                  <p className="text-foreground font-mono text-sm group-hover:text-primary transition-colors">
+                  <p className="text-foreground text-sm group-hover:text-primary transition-colors">
                     Second-Order Effects
                   </p>
                 </div>
@@ -172,11 +172,11 @@ const IranMemo = () => {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="mt-16 pt-8 border-t border-border"
           >
-            <div className="text-muted-foreground font-mono text-sm mb-4">
+            <div className="text-muted-foreground text-sm mb-4">
               <p className="font-semibold text-foreground mb-2">Contact</p>
               <p>Zachary Smith | zac.t.smith@outlook.com</p>
             </div>
-            <p className="text-muted-foreground font-mono text-xs leading-relaxed">
+            <p className="text-muted-foreground text-xs leading-relaxed">
               <strong>Disclaimer:</strong> This analysis is for educational purposes only and does
               not constitute investment advice. All information is based on publicly available
               sources and estimates, which may prove incorrect.

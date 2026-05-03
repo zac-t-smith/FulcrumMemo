@@ -50,19 +50,19 @@ export const GlossaryTooltip = ({ term, children, className }: GlossaryTooltipPr
             className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 p-4 surface-card border border-border rounded-lg shadow-xl"
           >
             <div className="flex items-center justify-between mb-2">
-              <span className="font-mono text-xs font-semibold text-foreground">
+              <span className="text-xs font-semibold text-foreground">
                 {termData.term}
               </span>
               <span
                 className={cn(
-                  'px-2 py-0.5 rounded text-[9px] font-mono uppercase tracking-wider',
+                  'px-2 py-0.5 rounded text-[9px] uppercase tracking-wider',
                   categoryColors[termData.category] || 'bg-muted text-muted-foreground'
                 )}
               >
                 {termData.category}
               </span>
             </div>
-            <p className="font-mono text-xs text-muted-foreground leading-relaxed">
+            <p className="text-xs text-muted-foreground leading-relaxed">
               {termData.definition}
             </p>
             {/* Arrow */}

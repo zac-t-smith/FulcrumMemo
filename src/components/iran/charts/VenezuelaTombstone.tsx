@@ -63,16 +63,16 @@ export const VenezuelaTombstone = ({ className }: { className?: string }) => {
       <div className="bg-zinc-900 border-2 border-primary rounded-t-lg p-6">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <p className="font-mono text-[10px] text-primary uppercase tracking-widest mb-1">
+            <p className="text-[10px] text-primary uppercase tracking-widest mb-1">
               Sovereign Acquisition Summary
             </p>
-            <h4 className="font-display text-xl font-bold text-foreground">
+            <h4 className="text-xl font-bold text-foreground">
               Operation Absolute Resolve
             </h4>
           </div>
           <div className="text-right">
-            <p className="font-mono text-[10px] text-zinc-500 uppercase">Effective Date</p>
-            <p className="font-mono text-sm text-foreground">January 3, 2026</p>
+            <p className="text-[10px] text-zinc-500 uppercase">Effective Date</p>
+            <p className="text-sm text-foreground">January 3, 2026</p>
           </div>
         </div>
 
@@ -94,18 +94,18 @@ export const VenezuelaTombstone = ({ className }: { className?: string }) => {
               metric.highlight && 'bg-primary/5'
             )}
           >
-            <span className="font-mono text-xs text-zinc-500 uppercase tracking-wider">
+            <span className="text-xs text-zinc-500 uppercase tracking-wider">
               {metric.label}
             </span>
             <div className="text-right">
               <span className={cn(
-                'font-mono text-sm',
+                'text-sm',
                 metric.highlight ? 'text-primary font-semibold' : 'text-foreground'
               )}>
                 {metric.value}
               </span>
               {metric.subtext && (
-                <p className="font-mono text-[10px] text-zinc-500 mt-0.5">
+                <p className="text-[10px] text-zinc-500 mt-0.5">
                   {metric.subtext}
                 </p>
               )}
@@ -120,26 +120,26 @@ export const VenezuelaTombstone = ({ className }: { className?: string }) => {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-500" />
-              <span className="font-mono text-[10px] text-zinc-400">Cash Flowing</span>
+              <span className="text-[10px] text-zinc-400">Cash Flowing</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-primary" />
-              <span className="font-mono text-[10px] text-zinc-400">U.S. Controlled</span>
+              <span className="text-[10px] text-zinc-400">U.S. Controlled</span>
             </div>
             {oil?.isLive && (
               <div className="flex items-center gap-1.5">
                 <Radio size={10} className="text-emerald-400 animate-pulse" />
-                <span className="font-mono text-[10px] text-emerald-400">LIVE</span>
+                <span className="text-[10px] text-emerald-400">LIVE</span>
               </div>
             )}
           </div>
-          <p className="font-mono text-[9px] text-zinc-600 italic">
+          <p className="text-[9px] text-zinc-600 italic">
             "Buying the company for the price of the debt"
           </p>
         </div>
         {/* EIA Attribution */}
         <div className="mt-2 pt-2 border-t border-zinc-800">
-          <p className="font-mono text-[9px] text-zinc-600">
+          <p className="text-[9px] text-zinc-600">
             {oil?.attribution || 'Source: U.S. Energy Information Administration'}
           </p>
         </div>
@@ -153,10 +153,10 @@ export const VenezuelaTombstone = ({ className }: { className?: string }) => {
         transition={{ duration: 0.4, delay: 0.5 }}
         className="mt-4 p-4 bg-emerald-500/10 rounded-lg border border-emerald-500/30"
       >
-        <p className="font-mono text-xs text-emerald-400 font-semibold mb-1">
+        <p className="text-xs text-emerald-400 font-semibold mb-1">
           Distressed Acquisition Thesis
         </p>
-        <p className="font-mono text-xs text-zinc-300 leading-relaxed">
+        <p className="text-xs text-zinc-300 leading-relaxed">
           Massive underlying value. Collapsed operating performance. Zero competitive bidding.
           No seller — just a seized debtor. Classic distressed playbook applied at sovereign scale.
         </p>

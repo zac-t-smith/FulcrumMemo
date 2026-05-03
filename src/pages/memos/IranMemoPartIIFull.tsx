@@ -84,7 +84,7 @@ const IranMemoPartIIFull = () => {
           >
             <Link
               to="/memos"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-xs uppercase tracking-wider mb-8"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-xs uppercase tracking-wider mb-8"
             >
               <ArrowLeft size={14} />
               All Memos
@@ -99,22 +99,22 @@ const IranMemoPartIIFull = () => {
             className="surface-elevated border border-primary/30 p-4 mb-8 flex items-center justify-between flex-wrap gap-4"
           >
             <div>
-              <p className="text-primary font-mono text-[10px] tracking-wider uppercase mb-1">
+              <p className="text-primary text-[10px] tracking-wider uppercase mb-1">
                 The Iran Trap — Asymmetric Restructuring Series
               </p>
-              <p className="text-muted-foreground font-mono text-sm">Part II of III</p>
+              <p className="text-muted-foreground text-sm">Part II of III</p>
             </div>
             <div className="flex gap-4">
               <Link
                 to="/memos/iran"
-                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors font-mono text-sm group"
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm group"
               >
                 <ArrowLeft size={14} className="transition-transform group-hover:-translate-x-0.5" />
                 Part I
               </Link>
               <Link
                 to="/memos/iran-part-iii"
-                className="flex items-center gap-2 text-primary hover:text-foreground transition-colors font-mono text-sm group"
+                className="flex items-center gap-2 text-primary hover:text-foreground transition-colors text-sm group"
               >
                 Part III
                 <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
@@ -129,7 +129,7 @@ const IranMemoPartIIFull = () => {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="mb-8"
           >
-            <p className="text-primary font-mono text-[10px] tracking-[0.2em] uppercase mb-2">
+            <p className="text-primary text-[10px] tracking-[0.2em] uppercase mb-2">
               The Fulcrum Memo
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
@@ -137,15 +137,15 @@ const IranMemoPartIIFull = () => {
               <span className="tag-pill">Credit Cycle</span>
               <span className="tag-pill">Macro</span>
             </div>
-            <h1 className="font-display text-2xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
+            <h1 className="text-2xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
               Second-Order Effects: Sector Repricing & The Coming Restructuring Cycle
             </h1>
-            <p className="text-muted-foreground font-mono text-base italic mb-6 leading-relaxed">
+            <p className="text-muted-foreground text-base italic mb-6 leading-relaxed">
               How the Iran conflict cascades from sovereign crisis to domestic political constraint
               to sector-level credit stress — and why the next 12-18 months will produce the largest
               restructuring cycle since 2008
             </p>
-            <div className="flex flex-wrap items-center gap-4 text-muted-foreground font-mono text-xs">
+            <div className="flex flex-wrap items-center gap-4 text-muted-foreground text-xs">
               <span>March 2026</span>
               <span className="text-primary">|</span>
               <span>Zachary Smith</span>
@@ -199,10 +199,10 @@ const IranMemoPartIIFull = () => {
             viewport={{ once: true }}
             className="surface-elevated border-l-2 border-primary p-6 mb-8"
           >
-            <h3 className="text-primary font-mono text-[10px] uppercase tracking-wider mb-4">
+            <h3 className="text-primary text-[10px] uppercase tracking-wider mb-4">
               Executive Summary
             </h3>
-            <ul className="space-y-3 text-muted-foreground font-mono text-sm">
+            <ul className="space-y-3 text-muted-foreground text-sm">
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold mt-0.5">▸</span>
                 <span>
@@ -286,7 +286,7 @@ const IranMemoPartIIFull = () => {
               viewport={{ once: true }}
               className="my-8"
             >
-              <h4 className="font-display text-lg font-semibold text-foreground mb-4">
+              <h4 className="text-lg font-semibold text-foreground mb-4">
                 The Strategic Box: Four Doors, All Bad
               </h4>
               <div className="grid md:grid-cols-2 gap-4">
@@ -328,15 +328,15 @@ const IranMemoPartIIFull = () => {
                     className="p-4 bg-muted/30 rounded-lg border border-border"
                   >
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-display font-bold">
+                      <span className="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-bold">
                         {door.number}
                       </span>
-                      <h5 className="font-mono text-sm font-semibold text-foreground">
+                      <h5 className="text-sm font-semibold text-foreground">
                         {door.title}
                       </h5>
                     </div>
-                    <p className="font-mono text-xs text-muted-foreground mb-2">{door.content}</p>
-                    <p className="font-mono text-[10px] text-red-400">
+                    <p className="text-xs text-muted-foreground mb-2">{door.content}</p>
+                    <p className="text-[10px] text-red-400">
                       Outcome: {door.outcome}
                     </p>
                   </motion.div>
@@ -426,19 +426,19 @@ const IranMemoPartIIFull = () => {
               viewport={{ once: true }}
               className="my-8 overflow-x-auto"
             >
-              <h4 className="font-display text-lg font-semibold text-foreground mb-4">
+              <h4 className="text-lg font-semibold text-foreground mb-4">
                 Immediate Market Response (Day 1-4)
               </h4>
               <table className="w-full border border-border">
                 <thead>
                   <tr className="bg-muted/50">
-                    <th className="p-3 text-left font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                    <th className="p-3 text-left text-[10px] uppercase tracking-wider text-muted-foreground">
                       Index / Asset
                     </th>
-                    <th className="p-3 text-left font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                    <th className="p-3 text-left text-[10px] uppercase tracking-wider text-muted-foreground">
                       Move (Mar 3)
                     </th>
-                    <th className="p-3 text-left font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                    <th className="p-3 text-left text-[10px] uppercase tracking-wider text-muted-foreground">
                       Signal
                     </th>
                   </tr>
@@ -453,13 +453,13 @@ const IranMemoPartIIFull = () => {
                     { index: 'VIX', move: '25.40 (+17%)', signal: 'Fear spike, not crisis levels', color: 'amber' },
                   ].map((row) => (
                     <tr key={row.index} className="border-t border-border hover:bg-muted/30">
-                      <td className="p-3 font-mono text-xs text-foreground font-semibold">
+                      <td className="p-3 text-xs text-foreground font-semibold">
                         {row.index}
                       </td>
-                      <td className={`p-3 font-mono text-xs font-semibold text-${row.color}-400`}>
+                      <td className={`p-3 text-xs font-semibold text-${row.color}-400`}>
                         {row.move}
                       </td>
-                      <td className="p-3 font-mono text-xs text-muted-foreground">{row.signal}</td>
+                      <td className="p-3 text-xs text-muted-foreground">{row.signal}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -701,7 +701,7 @@ const IranMemoPartIIFull = () => {
             <button
               onClick={handleDownloadPdf}
               disabled={isGeneratingPdf}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-mono text-sm uppercase tracking-wider glow-subtle hover:bg-gold-glow transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground text-sm uppercase tracking-wider glow-subtle hover:bg-gold-glow transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isGeneratingPdf ? (
                 <>
@@ -724,7 +724,7 @@ const IranMemoPartIIFull = () => {
             viewport={{ once: true }}
             className="memo-series-nav surface-card"
           >
-            <h3 className="text-foreground font-display font-semibold mb-4">
+            <h3 className="text-foreground font-semibold mb-4">
               The Iran Trap — Asymmetric Restructuring Series
             </h3>
             <div className="space-y-3">
@@ -733,10 +733,10 @@ const IranMemoPartIIFull = () => {
                 className="flex items-center justify-between p-3 border border-border hover:border-primary/50 transition-colors group"
               >
                 <div>
-                  <p className="text-muted-foreground font-mono text-[10px] uppercase tracking-wider mb-1">
+                  <p className="text-muted-foreground text-[10px] uppercase tracking-wider mb-1">
                     Part I
                   </p>
-                  <p className="text-foreground font-mono text-sm group-hover:text-primary transition-colors">
+                  <p className="text-foreground text-sm group-hover:text-primary transition-colors">
                     The Asymmetric Restructuring of the Middle East
                   </p>
                 </div>
@@ -744,10 +744,10 @@ const IranMemoPartIIFull = () => {
               </Link>
               <div className="flex items-center justify-between p-3 border-2 border-primary bg-primary/5">
                 <div>
-                  <p className="text-primary font-mono text-[10px] uppercase tracking-wider mb-1">
+                  <p className="text-primary text-[10px] uppercase tracking-wider mb-1">
                     Part II - You are here
                   </p>
-                  <p className="text-foreground font-mono text-sm">
+                  <p className="text-foreground text-sm">
                     Second-Order Effects: Sector Repricing & The Coming Restructuring Cycle
                   </p>
                 </div>
@@ -757,10 +757,10 @@ const IranMemoPartIIFull = () => {
                 className="flex items-center justify-between p-3 border border-border hover:border-primary/50 transition-colors group"
               >
                 <div>
-                  <p className="text-muted-foreground font-mono text-[10px] uppercase tracking-wider mb-1">
+                  <p className="text-muted-foreground text-[10px] uppercase tracking-wider mb-1">
                     Part III
                   </p>
-                  <p className="text-foreground font-mono text-sm group-hover:text-primary transition-colors">
+                  <p className="text-foreground text-sm group-hover:text-primary transition-colors">
                     The Trojan Horse: The Largest Distressed Asset Play in History
                   </p>
                 </div>
@@ -776,7 +776,7 @@ const IranMemoPartIIFull = () => {
             viewport={{ once: true }}
             className="mt-16 pt-8 border-t border-border"
           >
-            <div className="text-muted-foreground font-mono text-sm mb-4">
+            <div className="text-muted-foreground text-sm mb-4">
               <p className="font-semibold text-foreground mb-2">About the Author</p>
               <p className="text-xs leading-relaxed mb-4">
                 Zachary Smith is a U.S. Army veteran (4th Infantry Division, 2013-2017) who founded
@@ -789,7 +789,7 @@ const IranMemoPartIIFull = () => {
               <p className="font-semibold text-foreground mb-2">Contact</p>
               <p>Zachary Smith | zac.t.smith@outlook.com</p>
             </div>
-            <p className="text-muted-foreground font-mono text-xs leading-relaxed">
+            <p className="text-muted-foreground text-xs leading-relaxed">
               <strong>Disclaimer:</strong> This analysis is for educational purposes only and does
               not constitute investment advice. Political predictions and sector assessments
               represent the author's analysis of probable outcomes, not certainties. Data reflects

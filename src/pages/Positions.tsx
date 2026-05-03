@@ -180,11 +180,11 @@ const PositionCard = ({ position }: { position: Position }) => {
         <div className="flex items-start justify-between gap-4 mb-4">
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
-              <span className={cn('px-2 py-0.5 rounded text-xs font-mono font-semibold border', directionBg, directionColor)}>
+              <span className={cn('px-2 py-0.5 rounded text-xs font-semibold border', directionBg, directionColor)}>
                 {position.direction}
               </span>
               <span className={cn(
-                'px-2 py-0.5 rounded text-[10px] font-mono uppercase tracking-wider',
+                'px-2 py-0.5 rounded text-[10px] uppercase tracking-wider',
                 position.status === 'OPEN' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/30' :
                 position.status === 'WON' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30' :
                 'bg-red-500/10 text-red-400 border border-red-500/30'
@@ -192,18 +192,18 @@ const PositionCard = ({ position }: { position: Position }) => {
                 {position.status}
               </span>
             </div>
-            <h3 className="font-display text-lg font-semibold text-foreground mb-1">
+            <h3 className="text-lg font-semibold text-foreground mb-1">
               {position.market}
             </h3>
-            <p className="font-mono text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               {position.contract}
             </p>
           </div>
           <div className="text-right">
-            <p className="font-display text-2xl font-bold text-amber-400">
+            <p className="text-2xl font-bold text-amber-400">
               {position.potentialReturn}%
             </p>
-            <p className="font-mono text-[10px] text-muted-foreground uppercase">
+            <p className="text-[10px] text-muted-foreground uppercase">
               Potential Return
             </p>
           </div>
@@ -212,26 +212,26 @@ const PositionCard = ({ position }: { position: Position }) => {
         {/* Metrics Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
           <div className="p-3 bg-muted/30 rounded">
-            <p className="font-mono text-xs text-muted-foreground mb-1">Entry Price</p>
-            <p className="font-mono text-lg font-semibold text-foreground">{position.entryAvg}¢</p>
+            <p className="text-xs text-muted-foreground mb-1">Entry Price</p>
+            <p className="text-lg font-semibold text-foreground">{position.entryAvg}¢</p>
           </div>
           <div className="p-3 bg-amber-500/10 rounded border border-amber-500/20">
-            <p className="font-mono text-xs text-amber-400 mb-1">Edge at Entry</p>
-            <p className="font-mono text-lg font-semibold text-amber-400">{position.edgePercent}¢</p>
+            <p className="text-xs text-amber-400 mb-1">Edge at Entry</p>
+            <p className="text-lg font-semibold text-amber-400">{position.edgePercent}¢</p>
           </div>
           <div className="p-3 bg-muted/30 rounded">
-            <p className="font-mono text-xs text-muted-foreground mb-1">Date Opened</p>
-            <p className="font-mono text-sm font-semibold text-foreground">{position.dateOpened}</p>
+            <p className="text-xs text-muted-foreground mb-1">Date Opened</p>
+            <p className="text-sm font-semibold text-foreground">{position.dateOpened}</p>
           </div>
           <div className="p-3 bg-muted/30 rounded">
-            <p className="font-mono text-xs text-muted-foreground mb-1">Max Payout</p>
-            <p className="font-mono text-lg font-semibold text-foreground">${position.maxPayout.toFixed(2)}</p>
+            <p className="text-xs text-muted-foreground mb-1">Max Payout</p>
+            <p className="text-lg font-semibold text-foreground">${position.maxPayout.toFixed(2)}</p>
           </div>
         </div>
 
         {/* Thesis Summary */}
         <div className="mb-4">
-          <p className="font-mono text-xs text-muted-foreground mb-2">THESIS</p>
+          <p className="text-xs text-muted-foreground mb-2">THESIS</p>
           <p className="text-sm text-foreground leading-relaxed">{position.thesis}</p>
         </div>
 
@@ -242,7 +242,7 @@ const PositionCard = ({ position }: { position: Position }) => {
               <Link
                 key={idx}
                 to={analysis.link}
-                className="inline-flex items-center gap-1 px-2 py-1 bg-primary/10 border border-primary/30 rounded text-xs font-mono text-primary hover:bg-primary/20 transition-colors"
+                className="inline-flex items-center gap-1 px-2 py-1 bg-primary/10 border border-primary/30 rounded text-xs text-primary hover:bg-primary/20 transition-colors"
               >
                 {analysis.date.split(',')[0]}
                 <ExternalLink size={10} />
@@ -254,7 +254,7 @@ const PositionCard = ({ position }: { position: Position }) => {
         {/* Expand Button */}
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors font-mono text-xs"
+          className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-xs"
         >
           {isExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
           {isExpanded ? 'Hide Details' : 'Show Full Analysis'}
@@ -274,7 +274,7 @@ const PositionCard = ({ position }: { position: Position }) => {
             <div className="p-6 bg-muted/20 space-y-6">
               {/* Full Thesis */}
               <div>
-                <h4 className="font-mono text-xs uppercase tracking-wider text-primary mb-3 flex items-center gap-2">
+                <h4 className="text-xs uppercase tracking-wider text-primary mb-3 flex items-center gap-2">
                   <Target size={14} />
                   Full Analytical Basis
                 </h4>
@@ -285,7 +285,7 @@ const PositionCard = ({ position }: { position: Position }) => {
 
               {/* Preceding Analysis */}
               <div>
-                <h4 className="font-mono text-xs uppercase tracking-wider text-primary mb-3 flex items-center gap-2">
+                <h4 className="text-xs uppercase tracking-wider text-primary mb-3 flex items-center gap-2">
                   <Calendar size={14} />
                   Preceding Published Analysis
                 </h4>
@@ -293,7 +293,7 @@ const PositionCard = ({ position }: { position: Position }) => {
                   {position.precedingAnalysis.map((analysis, idx) => (
                     <div key={idx} className="flex items-center justify-between p-3 bg-background/50 rounded border border-border">
                       <div>
-                        <p className="font-mono text-xs text-muted-foreground">{analysis.date}</p>
+                        <p className="text-xs text-muted-foreground">{analysis.date}</p>
                         <p className="text-sm text-foreground">{analysis.description}</p>
                       </div>
                       <Link
@@ -309,12 +309,12 @@ const PositionCard = ({ position }: { position: Position }) => {
 
               {/* Resolution Criteria */}
               <div>
-                <h4 className="font-mono text-xs uppercase tracking-wider text-primary mb-3 flex items-center gap-2">
+                <h4 className="text-xs uppercase tracking-wider text-primary mb-3 flex items-center gap-2">
                   <Shield size={14} />
                   Contract Resolution Criteria
                 </h4>
                 <div className="p-4 bg-background/50 rounded border border-border">
-                  <p className="text-sm text-foreground leading-relaxed font-mono">
+                  <p className="text-sm text-foreground leading-relaxed ">
                     {position.resolutionCriteria}
                   </p>
                 </div>
@@ -322,7 +322,7 @@ const PositionCard = ({ position }: { position: Position }) => {
 
               {/* Risk Factors */}
               <div>
-                <h4 className="font-mono text-xs uppercase tracking-wider text-red-400 mb-3 flex items-center gap-2">
+                <h4 className="text-xs uppercase tracking-wider text-red-400 mb-3 flex items-center gap-2">
                   <AlertTriangle size={14} />
                   Risk Factors Acknowledged
                 </h4>
@@ -366,11 +366,11 @@ const PositionsPage = () => {
             className="mb-12"
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded text-emerald-400 font-mono text-[10px] uppercase tracking-wider">
+              <span className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded text-emerald-400 text-[10px] uppercase tracking-wider">
                 Kalshi — CFTC Regulated
               </span>
             </div>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Analytical Positions
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl">
@@ -387,23 +387,23 @@ const PositionsPage = () => {
           >
             <div className="p-4 surface-card border border-border rounded-lg text-center">
               <BarChart3 size={16} className="text-primary mx-auto mb-2" />
-              <p className="font-display text-2xl font-bold text-foreground">{positions.length}</p>
-              <p className="font-mono text-[10px] text-muted-foreground uppercase">Active Positions</p>
+              <p className="text-2xl font-bold text-foreground">{positions.length}</p>
+              <p className="text-[10px] text-muted-foreground uppercase">Active Positions</p>
             </div>
             <div className="p-4 surface-card border border-border rounded-lg text-center">
               <Percent size={16} className="text-amber-400 mx-auto mb-2" />
-              <p className="font-display text-2xl font-bold text-amber-400">{maxReturn.toFixed(0)}%</p>
-              <p className="font-mono text-[10px] text-muted-foreground uppercase">Max Return</p>
+              <p className="text-2xl font-bold text-amber-400">{maxReturn.toFixed(0)}%</p>
+              <p className="text-[10px] text-muted-foreground uppercase">Max Return</p>
             </div>
             <div className="p-4 surface-card border border-border rounded-lg text-center">
               <Target size={16} className="text-emerald-400 mx-auto mb-2" />
-              <p className="font-display text-2xl font-bold text-emerald-400">{avgEdge.toFixed(0)}¢</p>
-              <p className="font-mono text-[10px] text-muted-foreground uppercase">Avg Edge</p>
+              <p className="text-2xl font-bold text-emerald-400">{avgEdge.toFixed(0)}¢</p>
+              <p className="text-[10px] text-muted-foreground uppercase">Avg Edge</p>
             </div>
             <div className="p-4 surface-card border border-border rounded-lg text-center">
               <TrendingUp size={16} className="text-blue-400 mx-auto mb-2" />
-              <p className="font-display text-2xl font-bold text-blue-400">{avgPotentialReturn.toFixed(0)}%</p>
-              <p className="font-mono text-[10px] text-muted-foreground uppercase">Avg Potential</p>
+              <p className="text-2xl font-bold text-blue-400">{avgPotentialReturn.toFixed(0)}%</p>
+              <p className="text-[10px] text-muted-foreground uppercase">Avg Potential</p>
             </div>
           </motion.div>
 
@@ -414,7 +414,7 @@ const PositionsPage = () => {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="mb-12 p-6 surface-card border border-border rounded-lg"
           >
-            <h2 className="font-mono text-[10px] uppercase tracking-wider text-primary mb-4">
+            <h2 className="text-[10px] uppercase tracking-wider text-primary mb-4">
               Methodology
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -434,7 +434,7 @@ const PositionsPage = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-12"
           >
-            <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
+            <h2 className="text-2xl font-semibold text-foreground mb-6">
               Active Positions
             </h2>
             <div className="space-y-6">
@@ -451,29 +451,29 @@ const PositionsPage = () => {
             transition={{ duration: 0.6, delay: 0.25 }}
             className="mb-12 p-6 surface-card border border-border rounded-lg"
           >
-            <h2 className="font-mono text-[10px] uppercase tracking-wider text-primary mb-4 flex items-center gap-2">
+            <h2 className="text-[10px] uppercase tracking-wider text-primary mb-4 flex items-center gap-2">
               <Target size={14} />
               Edge Analysis
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="p-4 bg-amber-500/10 rounded border border-amber-500/20 text-center">
-                <p className="font-display text-3xl font-bold text-amber-400">{avgEdge.toFixed(0)}¢</p>
-                <p className="font-mono text-xs text-muted-foreground mt-1">Average Edge at Entry</p>
-                <p className="font-mono text-[10px] text-amber-400/70 mt-2">per $1 contract</p>
+                <p className="text-3xl font-bold text-amber-400">{avgEdge.toFixed(0)}¢</p>
+                <p className="text-xs text-muted-foreground mt-1">Average Edge at Entry</p>
+                <p className="text-[10px] text-amber-400/70 mt-2">per $1 contract</p>
               </div>
               <div className="p-4 bg-emerald-500/10 rounded border border-emerald-500/20 text-center">
-                <p className="font-display text-3xl font-bold text-emerald-400">{avgPotentialReturn.toFixed(0)}%</p>
-                <p className="font-mono text-xs text-muted-foreground mt-1">Average Potential Return</p>
-                <p className="font-mono text-[10px] text-emerald-400/70 mt-2">if positions resolve favorably</p>
+                <p className="text-3xl font-bold text-emerald-400">{avgPotentialReturn.toFixed(0)}%</p>
+                <p className="text-xs text-muted-foreground mt-1">Average Potential Return</p>
+                <p className="text-[10px] text-emerald-400/70 mt-2">if positions resolve favorably</p>
               </div>
               <div className="p-4 bg-blue-500/10 rounded border border-blue-500/20 text-center">
-                <p className="font-display text-3xl font-bold text-blue-400">100%</p>
-                <p className="font-mono text-xs text-muted-foreground mt-1">Positions with Prior Analysis</p>
-                <p className="font-mono text-[10px] text-blue-400/70 mt-2">timestamped & verifiable</p>
+                <p className="text-3xl font-bold text-blue-400">100%</p>
+                <p className="text-xs text-muted-foreground mt-1">Positions with Prior Analysis</p>
+                <p className="text-[10px] text-blue-400/70 mt-2">timestamped & verifiable</p>
               </div>
             </div>
             <div className="mt-6 p-4 bg-muted/30 rounded">
-              <p className="font-mono text-xs text-foreground font-semibold mb-2">Method: Contract Resolution Criteria Analysis</p>
+              <p className="text-xs text-foreground font-semibold mb-2">Method: Contract Resolution Criteria Analysis</p>
               <p className="text-sm text-muted-foreground">
                 The edge comes from carefully reading contract resolution criteria—the prediction market equivalent of reading a credit indenture.
                 Understanding exactly what data source triggers resolution, what constitutes "yes" vs "no," and where the market's assumptions diverge from the contract terms.
@@ -488,7 +488,7 @@ const PositionsPage = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="p-6 border border-dashed border-border rounded-lg"
           >
-            <p className="font-mono text-xs text-muted-foreground leading-relaxed">
+            <p className="text-xs text-muted-foreground leading-relaxed">
               <span className="text-foreground font-semibold">Disclaimer:</span> All positions placed on Kalshi, a CFTC-regulated US prediction market.
               Each position is grounded in analysis published on The Fulcrum Memo before the position was opened.
               Timestamps on both the analysis and the trades are independently verifiable.
